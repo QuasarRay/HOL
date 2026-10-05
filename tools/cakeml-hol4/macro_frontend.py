@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """Fail-closed HOL4 SML -> CakeML compatibility frontend.
 
-The frontend deliberately performs only audited lexical macros. It is not a
-proof authority. Each applied macro is recorded so HOL4 theories can later
-prove the corresponding source semantics rule. Any known Poly/ML/runtime
-construct without a proved lowering is rejected.
+The frontend performs only audited lexical macros. It is not a proof authority.
+Each applied macro is recorded so HOL4 theories can prove the corresponding
+source semantics rule. Rejection patterns are operation-specific: portable
+identifiers such as ThreadLocal and UniversalType must not be rejected merely
+because their names contain a backend-specific word.
 """
 from __future__ import annotations
 
@@ -14,13 +15,18 @@ import json
 from pathlib import Path
 import re
 
-REJECT = {
-    "PolyML": "Poly/ML compiler/runtime reflection has no proved CakeML lowering",
-    "Thread": "threads require an explicit CakeML concurrency model",
-    "Universal": "Poly/ML universal values require a proved representation",
-    "Posix.Process.fork": "process forking requires a modeled FFI",
-    "Signal.signal": "signals require a modeled FFI",
-}
+REJECT: list[tuple[str, re.Pattern[str], str]] = [
+    ("polyml-runtime", re.compile(r"\bPolyML\s*\."),
+     "Poly/ML compiler/runtime reflection has no proved CakeML lowering"),
+    ("raw-thread-runtime", re.compile(r"\bThread\s*\."),
+     "raw OS threads require an explicit CakeML concurrency contract"),
+    ("polyml-universal-runtime", re.compile(r"\bUniversal\s*\."),
+     "Poly/ML universal values require a proved representation"),
+    ("process-fork", re.compile(r"\bPosix\s*\.\s*Process\s*\.\s*fork\b"),
+     "process forking requires a modeled FFI"),
+    ("signal-handler", re.compile(r"\bSignal\s*\.\s*signal\b"),
+     "signals require a modeled FFI"),
+]
 
 MACROS: list[tuple[str, re.Pattern[str], str]] = [
     ("basis-commandline-name",
@@ -38,9 +44,12 @@ def digest(data: bytes) -> str:
 
 def translate(path: Path) -> tuple[str, list[dict]]:
     raw = path.read_text(encoding="utf-8")
-    for token, reason in REJECT.items():
-        if token in raw:
-            raise ValueError(f"{path}: unsupported token {token!r}: {reason}")
+    for name, pattern, reason in REJECT:
+        match = pattern.search(raw)
+        if match:
+            raise ValueError(
+                f"{path}: unsupported operation {name!r} at byte "
+                f"{match.start()}: {reason}")
     out = raw
     applied: list[dict] = []
     for name, pattern, replacement in MACROS:

@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - experiment/cakeml-hol4-selfhost-03-release-gate
+      - 'experiment/cakeml-hol4-selfhost-*'
 
 jobs:
   qualify:

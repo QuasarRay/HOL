@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+set -euo pipefail
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+SELF="$ROOT/tools/cakeml-hol4"
+OUT="${HOL4_CAKEML_OUT:-$ROOT/.hol4-cakeml}"
+HOLDIR="${HOLDIR:-$ROOT}"
+: "${CAKEMLDIR:?CAKEMLDIR must point to a built CakeML checkout}"
+
+usage() {
+  cat <<USAGE
+usage: tools/cakeml-hol4/cakeml-hol4 build [SML paths ...]
+
+One-command fail-closed path:
+  1. macro/lower selected HOL4 SML;
+  2. concatenate the accepted CakeML source;
+  3. invoke HOL4 on Hol4CakeCompileScript.sml;
+  4. retain exact theorem/assembly identities.
+
+The command fails until every selected construct has an accepted lowering.
+USAGE
+}
+
+[[ ${1:-} == build ]] || { usage; exit 64; }
+shift
+(( $# )) || { echo "no SML inputs supplied" >&2; exit 64; }
+mkdir -p "$OUT/lowered" "$OUT/proof"
+python3 "$SELF/macro_frontend.py" --root "$ROOT" --out "$OUT/lowered" "$@"
+
+PROGRAM="$OUT/hol4.cml"
+: > "$PROGRAM"
+for f in "$@"; do
+  cat "$OUT/lowered/$f" >> "$PROGRAM"
+  printf '\n' >> "$PROGRAM"
+done
+
+export HOL4_CAKEML_PROGRAM_CML="$PROGRAM"
+export HOL4_CAKEML_OUTPUT_ASM="$OUT/proof/hol4.S"
+(
+  cd "$SELF/formal"
+  "$HOLDIR/bin/Holmake" --qof --no-cache Hol4CakeCompileTheory.dat
+)
+cp "$SELF/formal/Hol4CakeCompileTheory."{dat,sig,sml} "$OUT/proof/" 2>/dev/null || true
+sha256sum "$PROGRAM" "$OUT/lowered/macro-manifest.json" "$OUT/proof/hol4.S" \
+  > "$OUT/proof/SHA256SUMS"
+printf '%s\n' "CHECKED: CakeML parse/compile theorem produced by HOL4 kernel" \
+  > "$OUT/proof/STATUS"

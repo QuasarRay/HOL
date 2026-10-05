@@ -1,0 +1,3 @@
+INCLUDES = $(CAKEMLDIR)/compiler $(CAKEMLDIR)/cv_translator
+
+all: Hol4CakeCompileTheory.dat

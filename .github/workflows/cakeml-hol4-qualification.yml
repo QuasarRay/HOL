@@ -17,7 +17,7 @@ jobs:
       - name: Install host prerequisites
         run: |
           sudo apt-get update
-          sudo apt-get install -y polyml z3 build-essential python3
+          sudo apt-get install -y polyml libpolyml-dev z3 build-essential python3
 
       - name: Build ordinary HOL4 acceptance environment
         run: |

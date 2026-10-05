@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "egglog": {
+    "repository": "https://github.com/egraphs-good/egglog.git",
+    "commit": "4821547da08c1a8e5a2f530625f1648f13b058a3",
+    "role": "untrusted equality-saturation search and rewrite-set prefilter"
+  },
+  "z3_tac": {
+    "path": "src/HolSmt",
+    "role": "SMT search with proof reconstruction in HOL4"
+  },
+  "tactictoe": {
+    "path": "src/tactictoe",
+    "role": "learned HOL4 tactic search"
+  },
+  "acceptance": "Every candidate is replayed into a closed theorem by the HOL4 kernel."
+}

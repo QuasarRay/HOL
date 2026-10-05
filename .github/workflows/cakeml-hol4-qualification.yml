@@ -1,0 +1,103 @@
+name: cakeml-hol4-qualification
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - experiment/cakeml-hol4-selfhost-03-release-gate
+
+jobs:
+  qualify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - name: Checkout HOL4 branch
+        uses: actions/checkout@v5
+
+      - name: Install host prerequisites
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y polyml z3 build-essential python3
+
+      - name: Build ordinary HOL4 acceptance environment
+        run: |
+          poly < tools/smart-configure.sml
+          bin/build -t --seq=tools/sequences/upto-parallel
+
+      - name: Inventory core HOL4 SML before translation
+        run: |
+          python3 tools/cakeml-hol4/inventory.py \
+            --root . --out /tmp/hol4-cakeml-inventory.json \
+            src/portableML src/0 src/1 src/thm
+
+      - name: Build pinned Egglog and bridge
+        run: |
+          git clone https://github.com/egraphs-good/egglog.git /tmp/egglog
+          git -C /tmp/egglog checkout --detach 4821547da08c1a8e5a2f530625f1648f13b058a3
+          cargo build --release --manifest-path /tmp/egglog/Cargo.toml
+          cargo check --manifest-path tools/cakeml-hol4/egglog-bridge/Cargo.toml
+
+      - name: Smoke Egglog candidate generation
+        run: |
+          printf '%s\t%s\t%s\n' \
+            'boolTheory.BOOL_EQ_REFL' '(App (Const "f") (Const "a"))' '(Const "b")' \
+            > /tmp/rules.tsv
+          cargo run --quiet --manifest-path tools/cakeml-hol4/egglog-bridge/Cargo.toml -- \
+            --egglog /tmp/egglog/target/release/egglog \
+            --rules /tmp/rules.tsv \
+            --lhs '(App (Const "f") (Const "a"))' --rhs '(Const "b")' \
+            --out /tmp/candidate.rewrites --receipt /tmp/egglog-receipt.json
+
+      - name: Fetch pinned CakeML once
+        run: |
+          git clone https://github.com/CakeML/cakeml.git /tmp/cakeml-source
+          git -C /tmp/cakeml-source checkout --detach c98da7fc904c5d6d0e9a75a18fac1796a9bfb1f9
+
+      - name: Materialize reused MetaRocq CakeML compatibility recipe
+        run: |
+          python3 tools/cakeml-hol4/materialize_cakeml_context_compat.py \
+            --source /tmp/cakeml-source --output /tmp/cakeml-compat \
+            --receipt /tmp/cakeml-compat.json
+
+      - name: Build CakeML in-logic x64 compile library
+        env:
+          HOLDIR: ${{ github.workspace }}
+          CAKEMLDIR: /tmp/cakeml-compat
+        run: |
+          cd /tmp/cakeml-compat/cv_translator
+          "$HOLDIR/bin/Holmake" -j2 eval_cake_compile_x64Lib.uo
+
+      - name: Compile proof-search replay library against real HOL4
+        env:
+          HOLDIR: ${{ github.workspace }}
+          CAKEMLDIR: /tmp/cakeml-compat
+        run: |
+          cd tools/cakeml-hol4/formal
+          "$HOLDIR/bin/Holmake" --qof --no-cache Hol4ProofSearchLib.uo
+
+      - name: One-command verified compile of actual HOL4 SML
+        env:
+          HOLDIR: ${{ github.workspace }}
+          CAKEMLDIR: /tmp/cakeml-compat
+          HOL4_CAKEML_OUT: /tmp/hol4-cakeml-proof
+        run: |
+          tools/cakeml-hol4/cakeml-hol4 build \
+            src/portableML/quotation_dtype.sml \
+            src/portableML/HOLsexp_dtype.sml
+
+      - name: Verify proof artifact digests
+        run: |
+          cd /tmp/hol4-cakeml-proof/proof
+          sha256sum -c SHA256SUMS
+
+      - name: Upload qualification evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cakeml-hol4-qualification
+          if-no-files-found: warn
+          path: |
+            /tmp/hol4-cakeml-inventory.json
+            /tmp/egglog-receipt.json
+            /tmp/cakeml-compat.json
+            /tmp/hol4-cakeml-proof/

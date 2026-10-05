@@ -1,23 +1,16 @@
 {
-  "schema": 1,
-  "project": "HOL4-on-CakeML self-hosting",
+  "cakeml_source": {
+    "commit": "c98da7fc904c5d6d0e9a75a18fac1796a9bfb1f9",
+    "compatibility_recipe": "ported from MetaRocq-rs tools/materialize_cakeml_context_compat.py",
+    "repository": "https://github.com/CakeML/cakeml.git"
+  },
   "hol4_source": {
-    "repository": "https://github.com/QuasarRay/HOL.git",
-    "base_commit": "ec34b4b4c4efb8b225f5bcea598f55a0095a7425"
+    "base_commit": "ec34b4b4c4efb8b225f5bcea598f55a0095a7425",
+    "repository": "https://github.com/QuasarRay/HOL.git"
   },
-  "reused_metarocq_stack": {
-    "repository": "https://github.com/QuasarRay/MetaRocq-rs.git",
-    "branch": "experiment/generated-hol4-cakeml-api-wrappers-machine",
-    "commit": "12b4c993942010862cecebb3faa928b7b80ff9a8",
-    "components": [
-      "formal/hol4/CompilerOutputAutomationLib.sml",
-      "formal/hol4/api-wrapper/GeneratedApiWrapperCompileScript.sml",
-      ".agents/infra/agentinfra/hol4.py",
-      "tools/materialize_tactictoe_transport.py"
-    ]
-  },
+  "non_claim": "This specification does not assert that the final HOL4 self-host theorem is already proved.",
+  "project": "HOL4-on-CakeML self-hosting",
   "proof_authority": "HOL4 kernel",
-  "search_engines": ["egglog", "HolSmtLib.Z3_TAC", "tacticToe.ttt"],
   "required_final_obligations": [
     "all selected HOL4 SML accepted by the fail-closed macro frontend",
     "semantics-preservation theorem for every macro/lowering rule",
@@ -26,5 +19,21 @@
     "original HOL4 binary replays release proof bundle",
     "CakeML-built HOL4 binary replays the same release proof bundle"
   ],
-  "non_claim": "This specification does not assert that the final HOL4 self-host theorem is already proved."
+  "reused_metarocq_stack": {
+    "branch": "experiment/generated-hol4-cakeml-api-wrappers-machine",
+    "commit": "12b4c993942010862cecebb3faa928b7b80ff9a8",
+    "components": [
+      "formal/hol4/CompilerOutputAutomationLib.sml",
+      "formal/hol4/api-wrapper/GeneratedApiWrapperCompileScript.sml",
+      ".agents/infra/agentinfra/hol4.py",
+      "tools/materialize_tactictoe_transport.py"
+    ],
+    "repository": "https://github.com/QuasarRay/MetaRocq-rs.git"
+  },
+  "schema": 1,
+  "search_engines": [
+    "egglog",
+    "HolSmtLib.Z3_TAC",
+    "tacticToe.ttt"
+  ]
 }

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Require the exact proof bundle to replay under both HOL4 executables."""
+"""Inspect the same bound theorem under two identified HOL4 executables."""
 from __future__ import annotations
 
 import argparse
@@ -8,6 +8,7 @@ import json
 import os
 from pathlib import Path
 import subprocess
+from proof_bundle import verify
 
 
 def digest(path: Path) -> str:
@@ -39,9 +40,13 @@ def main() -> int:
     p.add_argument("--cakeml-hol", type=Path, required=True)
     p.add_argument("--receipt", type=Path, required=True)
     args = p.parse_args()
+    args.receipt.unlink(missing_ok=True)
     try:
         root = args.bundle_root.resolve(strict=True)
         manifest = args.manifest.resolve(strict=True)
+        verify(root, manifest)
+        if digest(args.original_hol) == digest(args.cakeml_hol):
+            raise ValueError("both roles use the same executable bytes")
         data = json.loads(manifest.read_text())
         theorem = data["release_theorem"]
         md = digest(manifest)
@@ -56,12 +61,13 @@ def main() -> int:
         second = run(args.cakeml_hol.resolve(strict=True), args.replay_script, env, marker)
         receipt = {
             "schema": 1,
-            "status": "CHECKED",
+            "status": "DUAL_THEORY_IMPORT_OBSERVED",
             "manifest_sha256": md,
             "release_theorem": theorem,
+            "replay_script_sha256": digest(args.replay_script),
             "ordinary_hol4": first,
             "cakeml_hol4": second,
-            "claim": "same closed release theorem replayed by both executable identities",
+            "claim": "same theorem imported by two executable identities; independent proof reconstruction and CakeML binary provenance remain OPEN",
         }
         args.receipt.write_text(json.dumps(receipt, indent=2, sort_keys=True) + "\n")
         print(json.dumps(receipt, sort_keys=True))

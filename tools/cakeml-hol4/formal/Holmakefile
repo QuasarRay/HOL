@@ -1,4 +1,4 @@
-INCLUDES = $(CAKEMLDIR)/compiler $(CAKEMLDIR)/cv_translator \
-           $(HOLDIR)/src/HolSmt $(HOLDIR)/src/tactictoe/src
+INCLUDES = $(CAKEMLDIR)/compiler $(CAKEMLDIR)/cv_translator $(CAKEMLDIR)/semantics \
+           $(CAKEMLDIR)/semantics/proofs $(HOLDIR)/src/HolSmt $(HOLDIR)/src/tactictoe/src
 
 all: Hol4CakeCompileTheory.dat Hol4ProofSearchLib.uo

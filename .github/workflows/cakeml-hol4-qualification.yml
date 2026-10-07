@@ -2,9 +2,7 @@ name: cakeml-hol4-qualification
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - 'experiment/cakeml-hol4-selfhost-*'
+# Full regeneration is expensive; source checkpoints do not trigger it.
 
 jobs:
   qualify:
@@ -34,6 +32,10 @@ jobs:
           python3 tools/cakeml-hol4/inventory.py \
             --root . --out /tmp/hol4-cakeml-inventory.json \
             src/portableML src/0 src/1 src/thm
+
+      - name: Check frontend and evidence rejection boundaries
+        run: |
+          python3 -m unittest discover -s tools/cakeml-hol4 -p 'test_*.py' -v
 
       - name: Build pinned Egglog and bridge
         run: |
@@ -80,15 +82,22 @@ jobs:
           cd tools/cakeml-hol4/formal
           "$HOLDIR/bin/Holmake" --qof --no-cache Hol4ProofSearchLib.uo
 
-      - name: One-command verified compile of actual HOL4 SML
+      - name: Check normalized macro theorems
+        env:
+          HOLDIR: ${{ github.workspace }}
+          CAKEMLDIR: /tmp/cakeml-compat
+        run: |
+          cd tools/cakeml-hol4/formal
+          "$HOLDIR/bin/Holmake" --qof --no-cache Hol4SmlMacroTheory.uo
+
+      - name: Compile normalized CakeML matching fixture
         env:
           HOLDIR: ${{ github.workspace }}
           CAKEMLDIR: /tmp/cakeml-compat
           HOL4_CAKEML_OUT: /tmp/hol4-cakeml-proof
         run: |
           tools/cakeml-hol4/cakeml-hol4 build \
-            src/portableML/quotation_dtype.sml \
-            src/portableML/HOLsexp_dtype.sml
+            tools/cakeml-hol4/fixtures/match.cml
 
       - name: Verify proof artifact digests
         run: |

@@ -1,5 +1,5 @@
-(* Run inside either HOL4 executable. The Python gate binds the exact bundle
-   digest and theory directory; this script validates the named theorem object. *)
+(* Theory import inspection only. Loading .dat files does not replay the
+   original proof derivation. A release requires separate source reconstruction. *)
 open HolKernel boolLib bossLib;
 
 fun require_env name =

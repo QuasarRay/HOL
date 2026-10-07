@@ -1,5 +1,7 @@
 signature Hol4ProofSearchLib =
 sig
+  type term = Term.term
+  type thm = Thm.thm
   val inspect_exact : string -> term -> thm -> unit
   val read_rewrite_names : string -> string list
   val prove_with_search :

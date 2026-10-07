@@ -66,6 +66,9 @@ fn main() -> ExitCode {
         let rhs = arg_value(&args, "--rhs")?;
         let out = PathBuf::from(arg_value(&args, "--out")?);
         let receipt = PathBuf::from(arg_value(&args, "--receipt")?);
+        if out.exists() {
+            fs::remove_file(&out).map_err(|e| e.to_string())?;
+        }
         let rules = parse_rules(&rules_path)?;
 
         let mut program =
@@ -77,11 +80,11 @@ fn main() -> ExitCode {
             program.push_str(r);
             program.push_str(")\n");
         }
-        program.push_str("(run 20)\n(check (= ");
+        program.push_str("(let $lhs ");
         program.push_str(&lhs);
-        program.push(' ');
+        program.push_str(")\n(let $rhs ");
         program.push_str(&rhs);
-        program.push_str("))\n");
+        program.push_str(")\n(run 20)\n(check (= $lhs $rhs))\n");
 
         let temp =
             env::temp_dir().join(format!("hol4-egglog-{}.egg", std::process::id()));

@@ -1,0 +1,1369 @@
+Holmake: Scanning $(HOLDIR)/src/TeX
+Holmake: Scanning $(HOLDIR)/src/bag
+Holmake: Scanning $(HOLDIR)/src/sort
+Holmake: Scanning $(HOLDIR)/src/string
+Holmake: Scanning $(HOLDIR)/src/n-bit
+Holmake: Scanning $(HOLDIR)/src/res_quan/src
+Holmake: Scanning $(HOLDIR)/src/finite_maps
+Holmake: Scanning $(HOLDIR)/src/transfer
+Holmake: Scanning $(HOLDIR)/src/pred_set/src/more_theories
+Holmake: Scanning $(HOLDIR)/src/coalgebras
+Holmake: Scanning $(HOLDIR)/examples/pl-semantics/lprefix_lub
+Holmake: Scanning $(HOLDIR)/src/integer
+Holmake: Scanning $(HOLDIR)/src/rational
+Holmake: Scanning $(HOLDIR)/src/num/theories/cv_compute/automation
+Holmake: Scanning $(HOLDIR)/examples/bootstrap
+Holmake: Scanning $(HOLDIR)/src/algebra/base
+Holmake: Scanning $(HOLDIR)/src/algebra/construction
+Holmake: Scanning $(HOLDIR)/src/algebra
+Holmake: Scanning $(HOLDIR)/src/hol88
+Holmake: Scanning $(HOLDIR)/src/real
+Holmake: Scanning $(HOLDIR)/examples/data-structures/balanced_bst
+Holmake: Scanning $(HOLDIR)/examples/formal-languages
+Holmake: Scanning $(HOLDIR)/examples/formal-languages/context-free
+Holmake: Scanning $(HOLDIR)/src/search
+Holmake: Scanning $(HOLDIR)/examples/formal-languages/regular
+Holmake: Scanning $(HOLDIR)/examples/machine-code/hoare-triple
+Holmake: Scanning $(CAKEMLDIR)/developers
+Holmake: Scanning $(CAKEMLDIR)/misc
+Holmake: Scanning $(CAKEMLDIR)/basis/pure
+Holmake: Scanning $(HOLDIR)/examples/algorithms
+Holmake: Scanning $(HOLDIR)/examples/machine-code/multiword
+Holmake: Scanning $(CAKEMLDIR)/semantics/ffi
+Holmake: Scanning $(CAKEMLDIR)/semantics
+Holmake: Scanning $(CAKEMLDIR)/compiler/backend/pattern_matching
+Holmake: Scanning $(CAKEMLDIR)/translator/monadic/monad_base
+Holmake: Scanning $(CAKEMLDIR)/unverified/reg_alloc
+Holmake: Scanning $(CAKEMLDIR)/compiler/backend/reg_alloc
+Holmake: Scanning $(HOLDIR)/src/floating-point
+Holmake: Scanning $(HOLDIR)/src/monad/more_monads
+Holmake: Scanning $(HOLDIR)/src/update
+Holmake: Scanning $(HOLDIR)/examples/l3-machine-code/common
+Holmake: Scanning $(CAKEMLDIR)/compiler/encoders/asm
+Holmake: Scanning $(CAKEMLDIR)/semantics/proofs
+Holmake: Scanning $(CAKEMLDIR)/compiler/backend
+Holmake: Scanning $(CAKEMLDIR)/compiler/parsing
+Holmake: Scanning $(CAKEMLDIR)/translator
+Holmake: Scanning $(CAKEMLDIR)/characteristic
+Holmake: Scanning $(HOLDIR)/examples/algorithms/unification/triangular
+Holmake: Scanning $(HOLDIR)/src/transfer/examples
+Holmake: Scanning $(HOLDIR)/examples/algorithms/unification/triangular/first-order
+Holmake: Scanning $(HOLDIR)/examples/algorithms/unification/triangular/first-order/compilation
+Holmake: Scanning $(CAKEMLDIR)/compiler/inference
+Holmake: Scanning $(CAKEMLDIR)/compiler/printing
+Holmake: Scanning $(CAKEMLDIR)/translator/monadic
+Holmake: Scanning $(CAKEMLDIR)/basis
+Holmake: Scanning $(CAKEMLDIR)/compiler/encoders/ag32
+Holmake: Scanning $(CAKEMLDIR)/compiler/backend/ag32
+Holmake: Scanning $(HOLDIR)/examples/l3-machine-code/lib
+Holmake: Scanning $(HOLDIR)/examples/l3-machine-code/arm8/model
+Holmake: Scanning $(HOLDIR)/examples/machine-code/decompiler
+Holmake: Scanning $(HOLDIR)/examples/l3-machine-code
+Holmake: Scanning $(HOLDIR)/examples/l3-machine-code/arm8/step
+Holmake: Scanning $(CAKEMLDIR)/compiler/encoders/arm8
+Holmake: Scanning $(CAKEMLDIR)/compiler/backend/arm8
+Holmake: Scanning $(CAKEMLDIR)/compiler/backend/serialiser
+Holmake: Scanning $(HOLDIR)/examples/l3-machine-code/arm/model
+Holmake: Scanning $(HOLDIR)/examples/l3-machine-code/arm/step
+Holmake: Scanning $(CAKEMLDIR)/compiler/encoders/arm7
+Holmake: Scanning $(HOLDIR)/examples/l3-machine-code/mips/model
+Holmake: Scanning $(HOLDIR)/examples/l3-machine-code/mips/step
+Holmake: Scanning $(CAKEMLDIR)/compiler/encoders/mips
+Holmake: Scanning $(HOLDIR)/examples/l3-machine-code/riscv/model
+Holmake: Scanning $(HOLDIR)/examples/l3-machine-code/riscv/step
+Holmake: Scanning $(CAKEMLDIR)/compiler/encoders/riscv
+Holmake: Scanning $(HOLDIR)/examples/l3-machine-code/x64/model
+Holmake: Scanning $(HOLDIR)/examples/l3-machine-code/x64/step
+Holmake: Scanning $(CAKEMLDIR)/compiler/encoders/x64
+Holmake: Scanning $(CAKEMLDIR)/compiler/backend/cv_compute
+Holmake: Scanning $(CAKEMLDIR)/compiler/backend/x64
+Holmake: Scanned 80 directories
+Holmake: Building 93 theory files
+Holmake: Linking /workspace/scratch/7755a98cf62b/cakeml-compat/basis/pure/basis_cvScript.uo to produce theory-builder executable
+<<HOL message: Created theory "basis_cv">>
+Proved triviality ___ "list_mem"
+<<HOL warning: Context.snapshot: ambient context read while a proof was running (in basis_cv)>>
+Saved definition ____ "cv_sptree_fromAList_def"
+Saved induction _____ "cv_sptree_fromAList_ind"
+Saved theorem _______ "cv_sptree_fromAList_thm"
+Finished translating fromAList, stored in cv_sptree_fromAList_thm
+Saved definition ____ "from_misc_misc_app_list_def"
+Saved theorem _______ "from_misc_app_list_def"
+Saved theorem _______ "to_misc_app_list_def"
+Saved theorem _______ "from_misc_to_misc_app_list_thm"
+Saved theorem _______ "cv_rep_misc_misc_app_list_datatype"
+Saved theorem _______ "cv_misc_SmartAppend_thm"
+Finished translating SmartAppend, stored in cv_misc_SmartAppend_thm
+Saved definition ____ "cv_misc_append_aux_def"
+Saved induction _____ "cv_misc_append_aux_ind"
+Saved theorem _______ "cv_misc_append_aux_thm"
+Finished translating append_aux, stored in cv_misc_append_aux_thm
+Saved theorem _______ "cv_misc_append_thm"
+Finished translating append, stored in cv_misc_append_thm
+Saved theorem _______ "cv_misc_tlookup_thm"
+Finished translating tlookup, stored in cv_misc_tlookup_thm
+cv translator encountered a function type: :string -> mlstring
+Saved definition ____ "from_mlstring_mlstring_mlstring_def"
+Saved theorem _______ "from_mlstring_mlstring_def"
+Saved theorem _______ "to_mlstring_mlstring_def"
+Saved theorem _______ "from_mlstring_to_mlstring_mlstring_thm"
+Saved theorem _______ "cv_rep_mlstring_mlstring_mlstring_datatype"
+Saved theorem _______ "cv_mlstring_implode_thm"
+Finished translating implode, stored in cv_mlstring_implode_thm
+Saved theorem _______ "cv_mlstring_explode_thm"
+Finished translating explode, stored in cv_mlstring_explode_thm
+Saved theorem _______ "cv_mlstring_strcat_thm"
+Finished translating strcat, stored in cv_mlstring_strcat_thm
+Saved theorem _______ "cv_mlstring_str_thm"
+Finished translating str, stored in cv_mlstring_str_thm
+Starting translation of concat from mlstringTheory.
+Saved definition ____ "MAP_lam_mlstring_CASE_lam_1_def"
+Saved induction _____ "MAP_lam_mlstring_CASE_lam_1_ind"
+Starting translation of MAP_lam_mlstring_CASE_lam from basis_cvTheory.
+Saved definition ____ "cv_MAP_lam_mlstring_CASE_lam_def"
+Saved induction _____ "cv_MAP_lam_mlstring_CASE_lam_ind"
+Saved theorem _______ "cv_MAP_lam_mlstring_CASE_lam_thm"
+Finished translating MAP_lam_mlstring_CASE_lam, stored in cv_MAP_lam_mlstring_CASE_lam_thm
+Saved theorem _______ "MAP_lam_mlstring_CASE_lam_ho"
+Starting translation of concat from mlstringTheory.
+Saved theorem _______ "cv_mlstring_concat_thm"
+Finished translating concat, stored in cv_mlstring_concat_thm
+Saved theorem _______ "strsub_pre_rules"
+Saved theorem _______ "strsub_pre_ind"
+Saved theorem _______ "strsub_pre_strongind"
+Saved theorem _______ "strsub_pre_cases"
+Saved theorem _______ "cv_mlstring_strsub_thm"
+Finished translating strsub, stored in cv_mlstring_strsub_thm
+
+WARNING: definition of cv_mlstring_strsub has a precondition.
+You can set up the precondition proof as follows:
+
+Theorem strsub_pre[cv_pre]:
+  ∀v n. strsub_pre v n
+Proof
+  ho_match_mp_tac mlstringTheory.strsub_ind (* for example *)
+  ...
+QED
+
+Saved theorem _______ "strsub_pre"
+Saved definition ____ "cv_rich_list_MAX_LIST_def"
+Saved induction _____ "cv_rich_list_MAX_LIST_ind"
+Saved theorem _______ "cv_rich_list_MAX_LIST_thm"
+Finished translating MAX_LIST, stored in cv_rich_list_MAX_LIST_thm
+Saved theorem _______ "cv_misc_max3_thm"
+Finished translating max3, stored in cv_misc_max3_thm
+Saved theorem _______ "mlint_toChar_pre_rules"
+Saved theorem _______ "mlint_toChar_pre_ind"
+Saved theorem _______ "mlint_toChar_pre_strongind"
+Saved theorem _______ "mlint_toChar_pre_cases"
+Saved theorem _______ "cv_mlint_toChar_thm"
+Finished translating toChar, stored in cv_mlint_toChar_thm
+
+WARNING: definition of cv_mlint_toChar has a precondition.
+You can set up the precondition proof as follows:
+
+Theorem mlint_toChar_pre[cv_pre]:
+  ∀digit. mlint_toChar_pre digit
+Proof
+  ho_match_mp_tac mlintTheory.toChar_ind (* for example *)
+  ...
+QED
+
+Starting translation of num_to_chars from mlintTheory.
+Starting translation of exp_for_dec_enc from mlintTheory.
+Saved theorem _______ "cv_exp_for_dec_enc_thm"
+Finished translating exp_for_dec_enc, stored in cv_exp_for_dec_enc_thm
+Starting translation of num_to_chars from mlintTheory.
+Saved theorem _______ "mlint_num_to_chars_pre_rules"
+Saved theorem _______ "mlint_num_to_chars_pre_ind"
+Saved theorem _______ "mlint_num_to_chars_pre_strongind"
+Saved theorem _______ "mlint_num_to_chars_pre_cases"
+Saved theorem _______ "cv_mlint_num_to_chars_thm"
+Finished translating num_to_chars, stored in cv_mlint_num_to_chars_thm
+
+WARNING: definition of cv_mlint_num_to_chars has a precondition.
+You can set up the precondition proof as follows:
+
+Theorem mlint_num_to_chars_pre[cv_pre]:
+  ∀i v k acc. mlint_num_to_chars_pre i v k acc
+Proof
+  ho_match_mp_tac mlintTheory.num_to_chars_ind (* for example *)
+  ...
+QED
+
+Saved theorem _______ "IMP_toChar_pre"
+Proved triviality ___ "num_to_chars_pre"
+Proved triviality ___ "Num_ABS"
+Saved theorem _______ "cv_mlint_toString_thm"
+Finished translating toString, stored in cv_mlint_toString_thm
+Saved theorem _______ "cv_mlint_num_to_str_thm"
+Finished translating num_to_str, stored in cv_mlint_num_to_str_thm
+Starting translation of smart_remove from mlsexpTheory.
+Saved definition ____ "from_mlsexp_mlsexp_pretty_def"
+Saved theorem _______ "from_mlsexp_pretty_def"
+Saved theorem _______ "to_mlsexp_pretty_def"
+Saved theorem _______ "from_mlsexp_to_mlsexp_pretty_thm"
+Saved theorem _______ "cv_rep_mlsexp_mlsexp_pretty_datatype"
+Starting translation of get_size from mlsexpTheory.
+Saved definition ____ "cv_mlsexp_get_size_def"
+Saved induction _____ "cv_mlsexp_get_size_ind"
+Saved theorem _______ "cv_mlsexp_get_size_thm"
+Finished translating get_size, stored in cv_mlsexp_get_size_thm
+Starting translation of smart_remove from mlsexpTheory.
+Starting translation of get_next_size from mlsexpTheory.
+Saved definition ____ "cv_mlsexp_get_next_size_def"
+Saved induction _____ "cv_mlsexp_get_next_size_ind"
+Saved theorem _______ "cv_mlsexp_get_next_size_thm"
+Finished translating get_next_size, stored in cv_mlsexp_get_next_size_thm
+Starting translation of smart_remove from mlsexpTheory.
+Starting translation of remove_all from mlsexpTheory.
+Saved definition ____ "cv_mlsexp_remove_all_def"
+Saved induction _____ "cv_mlsexp_remove_all_ind"
+Saved theorem _______ "cv_mlsexp_remove_all_thm"
+Finished translating remove_all, stored in cv_mlsexp_remove_all_thm
+Starting translation of smart_remove from mlsexpTheory.
+Saved definition ____ "cv_mlsexp_smart_remove_def"
+Saved induction _____ "cv_mlsexp_smart_remove_ind"
+Saved theorem _______ "cv_mlsexp_smart_remove_thm"
+Finished translating smart_remove, stored in cv_mlsexp_smart_remove_thm
+Starting translation of v2pretty, vs2pretty from mlsexpTheory.
+Saved theorem _______ "from_mlsexp_str_tree_def"
+Saved theorem _______ "to_mlsexp_str_tree_def"
+Saved theorem _______ "from_mlsexp_to_mlsexp_str_tree_thm"
+Saved theorem _______ "cv_rep_mlsexp_mlsexp_str_tree_datatype"
+Starting translation of newlines from mlsexpTheory.
+Saved definition ____ "cv_mlsexp_newlines_def"
+Saved induction _____ "cv_mlsexp_newlines_ind"
+Saved theorem _______ "cv_mlsexp_newlines_thm"
+Finished translating newlines, stored in cv_mlsexp_newlines_thm
+Starting translation of v2pretty, vs2pretty from mlsexpTheory.
+Saved definition ____ "cv_mlsexp_v2pretty_def"
+Saved induction _____ "cv_mlsexp_v2pretty_ind"
+Saved theorem _______ "cv_mlsexp_v2pretty_thm"
+Finished translating v2pretty, vs2pretty, stored in cv_mlsexp_v2pretty_thm
+Starting translation of str_tree_to_strs from mlsexpTheory.
+Starting translation of flatten from mlsexpTheory.
+Saved definition ____ "cv_mlsexp_flatten_def"
+Saved induction _____ "cv_mlsexp_flatten_ind"
+Saved theorem _______ "cv_mlsexp_flatten_thm"
+Finished translating flatten, stored in cv_mlsexp_flatten_thm
+Starting translation of str_tree_to_strs from mlsexpTheory.
+Starting translation of annotate from mlsexpTheory.
+Starting translation of strlen from mlstringTheory.
+Saved theorem _______ "cv_mlstring_strlen_thm"
+Finished translating strlen, stored in cv_mlstring_strlen_thm
+Starting translation of annotate from mlsexpTheory.
+Saved definition ____ "cv_mlsexp_annotate_def"
+Saved induction _____ "cv_mlsexp_annotate_ind"
+Saved theorem _______ "cv_mlsexp_annotate_thm"
+Finished translating annotate, stored in cv_mlsexp_annotate_thm
+Starting translation of str_tree_to_strs from mlsexpTheory.
+Saved theorem _______ "cv_mlsexp_str_tree_to_strs_thm"
+Finished translating str_tree_to_strs, stored in cv_mlsexp_str_tree_to_strs_thm
+Exporting theory "basis_cv" ... done.
+Theory "basis_cv" took 1.9s to build
+Holmake: [1/93] basis_cv
+Holmake: Linking /workspace/scratch/7755a98cf62b/cakeml-compat/semantics/tokenUtilsScript.uo to produce theory-builder executable
+<<HOL message: Created theory "tokenUtils">>
+<<HOL message: mk_functional: 
+  pattern completion has added 66 clauses to the original specification.>>
+Saved definition ____ "isInt_def"
+Saved induction _____ "isInt_ind"
+<<HOL message: mk_functional: 
+  pattern completion has added 66 clauses to the original specification.>>
+Saved definition ____ "isString_def"
+Saved induction _____ "isString_ind"
+<<HOL message: mk_functional: 
+  pattern completion has added 66 clauses to the original specification.>>
+Saved definition ____ "isAlphaT_def"
+Saved induction _____ "isAlphaT_ind"
+<<HOL message: mk_functional: 
+  pattern completion has added 66 clauses to the original specification.>>
+Saved definition ____ "isSymbolT_def"
+Saved induction _____ "isSymbolT_ind"
+<<HOL message: mk_functional: 
+  pattern completion has added 65 clauses to the original specification.>>
+Saved definition ____ "isAlphaSym_def"
+Saved induction _____ "isAlphaSym_ind"
+<<HOL message: mk_functional: 
+  pattern completion has added 66 clauses to the original specification.>>
+Saved definition ____ "isTyvarT_def"
+Saved induction _____ "isTyvarT_ind"
+<<HOL message: mk_functional: 
+  pattern completion has added 66 clauses to the original specification.>>
+Saved definition ____ "isWhitespaceT_def"
+Saved induction _____ "isWhitespaceT_ind"
+<<HOL message: mk_functional: 
+  pattern completion has added 66 clauses to the original specification.>>
+Saved definition ____ "isCharT_def"
+Saved induction _____ "isCharT_ind"
+<<HOL message: mk_functional: 
+  pattern completion has added 66 clauses to the original specification.>>
+Saved definition ____ "isWordT_def"
+Saved induction _____ "isWordT_ind"
+<<HOL message: mk_functional: 
+  pattern completion has added 66 clauses to the original specification.>>
+Saved definition ____ "isLongidT_def"
+Saved induction _____ "isLongidT_ind"
+<<HOL message: mk_functional: 
+  pattern completion has added 66 clauses to the original specification.>>
+Saved definition ____ "destLongidT_def"
+Saved induction _____ "destLongidT_ind"
+Saved theorem _______ "destLongidT_EQ_SOME"
+<<HOL message: mk_functional: 
+  pattern completion has added 68 clauses to the original specification.>>
+Saved definition ____ "destTyvarPT_def"
+Saved induction _____ "destTyvarPT_ind"
+Saved definition ____ "destLf_def"
+Saved induction _____ "destLf_ind"
+Saved definition ____ "destTOK_def"
+Saved induction _____ "destTOK_ind"
+<<HOL message: mk_functional: 
+  pattern completion has added 66 clauses to the original specification.>>
+Saved definition ____ "destAlphaT_def"
+Saved induction _____ "destAlphaT_ind"
+Saved theorem _______ "destAlphaT_EQ_SOME"
+<<HOL message: mk_functional: 
+  pattern completion has added 66 clauses to the original specification.>>
+Saved definition ____ "destSymbolT_def"
+Saved induction _____ "destSymbolT_ind"
+Saved theorem _______ "destSymbolT_EQ_SOME"
+<<HOL message: mk_functional: 
+  pattern completion has added 66 clauses to the original specification.>>
+Saved definition ____ "destIntT_def"
+Saved induction _____ "destIntT_ind"
+<<HOL message: mk_functional: 
+  pattern completion has added 66 clauses to the original specification.>>
+Saved definition ____ "destCharT_def"
+Saved induction _____ "destCharT_ind"
+<<HOL message: mk_functional: 
+  pattern completion has added 66 clauses to the original specification.>>
+Saved definition ____ "destStringT_def"
+Saved induction _____ "destStringT_ind"
+<<HOL message: mk_functional: 
+  pattern completion has added 66 clauses to the original specification.>>
+Saved definition ____ "destWordT_def"
+Saved induction _____ "destWordT_ind"
+<<HOL message: mk_functional: 
+  pattern completion has added 66 clauses to the original specification.>>
+Saved definition ____ "destFFIT_def"
+Saved induction _____ "destFFIT_ind"
+<<HOL message: mk_functional: 
+  pattern completion has added 66 clauses to the original specification.>>
+Saved definition ____ "destREPLIDT_def"
+Saved induction _____ "destREPLIDT_ind"
+Exporting theory "tokenUtils" ... done.
+Theory "tokenUtils" took 5.1s to build
+Holmake: [2/93] tokenUtils
+Holmake: Linking /workspace/scratch/7755a98cf62b/cakeml-compat/semantics/cmlPtreeConversionScript.uo to produce theory-builder executable
+<<HOL message: Created theory "cmlPtreeConversion">>
+Saved theorem _______ "datatype_PCstate0"
+Saved theorem _______ "PCstate0_11"
+Saved theorem _______ "PCstate0_nchotomy"
+Saved theorem _______ "PCstate0_Axiom"
+Saved theorem _______ "PCstate0_induction"
+Saved theorem _______ "PCstate0_case_cong"
+Saved theorem _______ "PCstate0_case_eq"
+<<HOL message: Defined type: "PCstate0">>
+Saved definition ____ "empty_PCstate0_def"
+Saved definition ____ "mpushPC_scope_def"
+<<HOL warning: Context.snapshot: ambient context read while a proof was running (in cmlPtreeConversion)>>
+Saved definition ____ "fixity_lookup_def"
+Saved induction _____ "fixity_lookup_ind"
+Saved definition ____ "mfixity_lookup_def"
+Saved definition ____ "mFUPD_HD_def"
+Saved definition ____ "msetfix_def"
+Saved definition ____ "mpop_anonscope_def"
+Saved definition ____ "mpop_namedscope_def"
+Saved definition ____ "ifM_def"
+Saved definition ____ "mk_binop_def"
+Saved definition ____ "tokcheck_def"
+<<HOL message: mk_functional: 
+  pattern completion has added 1 clause to the original specification.>>
+Saved definition ____ "ptree_UQTyop_def"
+<<HOL message: mk_functional: 
+  pattern completion has added 1 clause to the original specification.>>
+Saved definition ____ "ptree_TyvarN_def"
+Saved definition ____ "Long_Short_def"
+<<HOL message: mk_functional: 
+  pattern completion has added 1 clause to the original specification.>>
+Saved definition ____ "ptree_Tyop_def"
+<<HOL message: mk_functional: 
+  pattern completion has added 1 clause to the original specification.>>
+Saved definition ____ "tokcheckl_def"
+Saved induction _____ "tokcheckl_ind"
+<<HOL message: mk_functional: 
+  pattern completion has added 2 clauses to the original specification.>>
+Saved definition ____ "ptree_linfix_def"
+Saved induction _____ "ptree_linfix_ind"
+Saved definition ____ "tuplify_def"
+Saved induction _____ "tuplify_ind"
+<<HOL message: mk_functional: 
+  pattern completion has added 2 clauses to the original specification.>>
+<<HOL message: mk_functional: 
+  pattern completion has added 1 clause to the original specification.>>
+<<HOL message: mk_functional: 
+  pattern completion has added 2 clauses to the original specification.>>
+<<HOL message: mk_functional: 
+  pattern completion has added 3 clauses to the original specification.>>
+<<HOL message: mk_functional: 
+  pattern completion has added 2 clauses to the original specification.>>
+<<HOL message: mk_functional: 
+  pattern completion has added 2 clauses to the original specification.>>
+Saved definition ____ "ptree_Type_def"
+Saved induction _____ "ptree_Type_ind"
+<<HOL message: mk_functional: 
+  pattern completion has added 2 clauses to the original specification.>>
+Saved definition ____ "ptree_TypeName_def"
+<<HOL message: mk_functional: 
+  pattern completion has added 1 clause to the original specification.>>
+Saved definition ____ "ptree_UQConstructorName_def"
+<<HOL message: mk_functional: 
+  pattern completion has added 1 clause to the original specification.>>
+Saved definition ____ "ptree_ConstructorName_def"
+<<HOL message: mk_functional: 
+  pattern completion has added 2 clauses to the original specification.>>
+Saved definition ____ "detuplify_def"
+Saved induction _____ "detuplify_ind"
+Saved theorem _______ "detuplify_pmatch"
+<<HOL message: mk_functional: 
+  pattern completion has added 2 clauses to the original specification.>>
+Saved definition ____ "ptree_PTbase_def"
+<<HOL message: mk_functional: 
+  pattern completion has added 1 clause to the original specification.>>
+Saved definition ____ "ptree_TbaseList_def"
+Saved induction _____ "ptree_TbaseList_ind"
+<<HOL message: mk_functional: 
+  pattern completion has added 1 clause to the original specification.>>
+Saved definition ____ "ptree_Dconstructor_def"
+<<HOL message: mk_functional: 
+  pattern completion has added 3 clauses to the original specification.>>
+Saved definition ____ "ptree_DtypeDecl_def"
+<<HOL message: mk_functional: 
+  pattern completion has added 2 clauses to the original specification.>>
+Saved definition ____ "ptree_TypeDec_def"
+<<HOL message: mk_functional: 
+  pattern completion has added 4 clauses to the original specification.>>
+Saved definition ____ "ptree_TypeAbbrevDec_def"
+<<HOL message: mk_functional: 
+  pattern completion has added 1 clause to the original specification.>>
+Saved definition ____ "singleSymP_def"
+Saved induction _____ "singleSymP_ind"
+Saved definition ____ "ptree_Op_def"
+<<HOL message: mk_functional: 
+  pattern completion has added 1 clause to the original specification.>>
+Saved definition ____ "ptree_V_def"
+<<HOL message: mk_functional: 
+  pattern completion has added 1 clause to the original specification.>>
+Saved definition ____ "ptree_FQV_def"
+Saved definition ____ "isSymbolicConstructor_def"
+Saved definition ____ "isConstructor_def"
+<<HOL message: mk_functional: 
+  pattern completion has added 11 clauses to the original specification.>>
+Saved definition ____ "EtoPat_def"
+Saved induction _____ "EtoPat_ind"
+<<HOL message: mk_functional: 
+  pattern completion has added 3 clauses to the original specification.>>
+Saved definition ____ "ptree_OpID_def"
+<<HOL message: mk_functional: 
+  pattern completion has added 5 clauses to the original specification.>>
+Saved definition ____ "Papply_def"
+<<HOL message: mk_functional: 
+  pattern completion has added 16 clauses to the original specification.>>
+Saved definition ____ "maybe_handleRef_def"
+Saved induction _____ "maybe_handleRef_ind"
+<<HOL message: mk_functional: 
+  pattern completion has added 1 clause to the original specification.>>
+<<HOL message: mk_functional: 
+  pattern completion has added 1 clause to the original specification.>>
+<<HOL message: mk_functional: 
+  pattern completion has added 1 clause to the original specification.>>
+<<HOL message: mk_functional: 
+  pattern completion has added 2 clauses to the original specification.>>
+<<HOL message: mk_functional: 
+  pattern completion has added 2 clauses to the original specification.>>
+<<HOL message: mk_functional: 
+  pattern completion has added 2 clauses to the original specification.>>
+<<HOL message: mk_functional: 
+  pattern completion has added 2 clauses to the original specification.>>
+<<HOL message: mk_functional: 
+  pattern completion has added 2 clauses to the original specification.>>
+Saved definition ____ "ptree_Pattern_def"
+Saved induction _____ "ptree_Pattern_ind"
+Saved theorem _______ "ptree_Pattern_pevaled"
+Saved theorem _______ "ptree_Plist_thm"
+<<HOL message: mk_functional: 
+  pattern completion has added 1 clause to the original specification.>>
+Saved definition ____ "ptree_PbaseList1_def"
+Saved induction _____ "ptree_PbaseList1_ind"
+Saved definition ____ "Eseq_encode_def"
+Saved induction _____ "Eseq_encode_ind"
+<<HOL message: mk_functional: 
+  pattern completion has added 12 clauses to the original specification.>>
+Saved definition ____ "dest_Conk_def"
+Saved induction _____ "dest_Conk_ind"
+<<HOL message: mk_functional: 
+  pattern completion has added 41 clauses to the original specification.>>
+Saved definition ____ "destFFIop_def"
+Saved induction _____ "destFFIop_ind"
+<<HOL message: mk_functional: 
+  pattern completion has added 12 clauses to the original specification.>>
+Saved definition ____ "strip_loc_expr_def"
+Saved induction _____ "strip_loc_expr_ind"
+<<HOL message: mk_functional: 
+  pattern completion has added 1 clause to the original specification.>>
+Saved definition ____ "merge_locsopt_def"
+Saved induction _____ "merge_locsopt_ind"
+Saved definition ____ "optLannot_def"
+<<HOL message: mk_functional: 
+  pattern completion has added 12 clauses to the original specification.>>
+Saved definition ____ "mkAst_App_def"
+<<HOL message: mk_functional: 
+  pattern completion has added 5 clauses to the original specification.>>
+Saved definition ____ "dePat_def"
+Saved induction _____ "dePat_ind"
+Saved definition ____ "mkFun_def"
+Saved definition ____ "ptree_Eliteral_def"
+<<HOL message: mk_functional: 
+  pattern completion has added 12 clauses to the original specification.>>
+Saved definition ____ "bind_loc_def"
+Saved induction _____ "bind_loc_ind"
+<<HOL message: mk_functional: 
+  pattern completion has added 4 clauses to the original specification.>>
+Saved definition ____ "letFromPat_def"
+<<HOL message: mk_functional: 
+  pattern completion has added 2 clauses to the original specification.>>
+<<HOL message: mk_functional: 
+  pattern completion has added 1 clause to the original specification.>>
+<<HOL message: mk_functional: 
+  pattern completion has added 3 clauses to the original specification.>>
+<<HOL message: mk_functional: 
+  pattern completion has added 2 clauses to the original specification.>>
+<<HOL message: mk_functional: 
+  pattern completion has added 2 clauses to the original specification.>>
+<<HOL message: mk_functional: 
+  pattern completion has added 2 clauses to the original specification.>>
+<<HOL message: mk_functional: 
+  pattern completion has added 2 clauses to the original specification.>>
+<<HOL message: mk_functional: 
+  pattern completion has added 2 clauses to the original specification.>>
+<<HOL message: mk_functional: 
+  pattern completion has added 2 clauses to the original specification.>>
+<<HOL message: mk_functional: 
+  pattern completion has added 2 clauses to the original specification.>>
+<<HOL message: mk_functional: 
+  pattern completion has added 2 clauses to the original specification.>>
+<<HOL message: mk_functional: 
+  pattern completion has added 2 clauses to the original specification.>>
+<<HOL message: mk_functional: 
+  pattern completion has added 2 clauses to the original specification.>>
+<<HOL message: mk_functional: 
+  pattern completion has added 3 clauses to the original specification.>>
+<<HOL message: mk_functional: 
+  pattern completion has added 2 clauses to the original specification.>>
+<<HOL message: mk_functional: 
+  pattern completion has added 3 clauses to the original specification.>>
+<<HOL message: mk_functional: 
+  pattern completion has added 2 clauses to the original specification.>>
+<<HOL message: mk_functional: 
+  pattern completion has added 4 clauses to the original specification.>>
+<<HOL message: mk_functional: 
+  pattern completion has added 1 clause to the original specification.>>
+<<HOL message: mk_functional: 
+  pattern completion has added 3 clauses to the original specification.>>
+<<HOL message: mk_functional: 
+  pattern completion has added 3 clauses to the original specification.>>
+<<HOL message: mk_functional: 
+  pattern completion has added 4 clauses to the original specification.>>
+<<HOL message: mk_functional: 
+  pattern completion has added 1 clause to the original specification.>>
+<<HOL message: mk_functional: 
+  pattern completion has added 2 clauses to the original specification.>>
+Saved definition ____ "ptree_Expr_def"
+Saved induction _____ "ptree_Expr_ind"
+Proved triviality ___ "dumb1"
+Proved triviality ___ "dumb2"
+Proved triviality ___ "ptree_Expr_def'"
+Saved theorem _______ "ptree_Expr_pevaled"
+Saved theorem _______ "ptree_Expr_others"
+<<HOL message: mk_functional: 
+  pattern completion has added 1 clause to the original specification.>>
+Saved definition ____ "ptree_StructName_def"
+<<HOL message: mk_functional: 
+  pattern completion has added 1 clause to the original specification.>>
+Saved definition ____ "ptree_OptTypEqn_def"
+<<HOL message: mk_functional: 
+  pattern completion has added 1 clause to the original specification.>>
+Saved definition ____ "ptree_SpecLine_def"
+<<HOL message: mk_functional: 
+  pattern completion has added 1 clause to the original specification.>>
+Saved definition ____ "ptree_SpeclineList_def"
+Saved induction _____ "ptree_SpeclineList_ind"
+<<HOL message: mk_functional: 
+  pattern completion has added 3 clauses to the original specification.>>
+Saved definition ____ "ptree_SignatureValue_def"
+<<HOL message: mk_functional: 
+  pattern completion has added 2 clauses to the original specification.>>
+<<HOL message: mk_functional: 
+  pattern completion has added 1 clause to the original specification.>>
+<<HOL message: mk_functional: 
+  pattern completion has added 1 clause to the original specification.>>
+<<HOL message: mk_functional: 
+  pattern completion has added 7 clauses to the original specification.>>
+Saved definition ____ "ptree_Decl_def"
+Saved induction _____ "ptree_Decl_ind"
+<<HOL message: mk_functional: 
+  pattern completion has added 1 clause to the original specification.>>
+<<HOL message: mk_functional: 
+  pattern completion has added 1 clause to the original specification.>>
+Saved definition ____ "ptree_TopLevelDecs_def"
+Saved induction _____ "ptree_TopLevelDecs_ind"
+Exporting theory "cmlPtreeConversion" ... done.
+Theory "cmlPtreeConversion" took 10.9s to build
+Holmake: [3/93] cmlPtreeConversion
+Holmake: Linking /workspace/scratch/7755a98cf62b/cakeml-compat/semantics/evaluateScript.uo to produce theory-builder executable
+<<HOL message: Created theory "evaluate">>
+Saved definition ____ "fix_clock_def"
+Saved definition ____ "dec_clock_def"
+Saved definition ____ "do_eval_res_def"
+Saved definition ____ "list_result_def"
+Proved triviality ___ "fix_clock_IMP"
+Proved triviality ___ "list_size_REVERSE"
+Saved definition ____ "sing_env_def"
+<<HOL warning: Context.snapshot: ambient context read while a proof was running (in evaluate)>>
+Saved definition ____ "evaluate_def"
+Saved induction _____ "evaluate_ind"
+Saved theorem _______ "evaluate_clock"
+Saved theorem _______ "fix_clock_do_eval_res"
+Saved theorem _______ "fix_clock_evaluate"
+Saved theorem _______ "full_evaluate_def"
+Saved theorem _______ "full_evaluate_ind"
+Saved theorem _______ "evaluate_def"
+Saved theorem _______ "evaluate_match_def"
+Saved theorem _______ "evaluate_decs_def"
+Saved theorem _______ "evaluate_ind"
+Saved theorem _______ "evaluate_match_ind"
+Saved theorem _______ "evaluate_decs_ind"
+Exporting theory "evaluate" ... done.
+Theory "evaluate" took 3.0s to build
+Holmake: [4/93] evaluate
+Holmake: Linking /workspace/scratch/7755a98cf62b/cakeml-compat/semantics/lexer_funScript.uo to produce theory-builder executable
+<<HOL message: Created theory "lexer_fun">>
+Saved theorem _______ "datatype_symbol"
+Saved theorem _______ "symbol_11"
+Saved theorem _______ "symbol_distinct"
+Saved theorem _______ "symbol_nchotomy"
+Saved theorem _______ "symbol_Axiom"
+Saved theorem _______ "symbol_induction"
+Saved theorem _______ "symbol_case_cong"
+Saved theorem _______ "symbol_case_eq"
+<<HOL message: Defined type: "symbol">>
+<<HOL message: mk_functional: 
+  pattern completion has added 6 clauses to the original specification.>>
+Saved definition ____ "mkCharS_def"
+Saved induction _____ "mkCharS_ind"
+Saved definition ____ "read_while_def"
+Saved theorem _______ "read_while_thm"
+Saved definition ____ "is_single_char_symbol_def"
+Saved definition ____ "isSymbol_def"
+<<HOL message: mk_functional: 
+  pattern completion has added 1 clause to the original specification.>>
+Saved definition ____ "next_loc_def"
+Saved induction _____ "next_loc_ind"
+<<HOL message: mk_functional: 
+  pattern completion has added 1 clause to the original specification.>>
+Saved definition ____ "next_line_def"
+Saved induction _____ "next_line_ind"
+Saved definition ____ "read_char_as_3digits_def"
+Saved theorem _______ "read_char_as_3digits_reduces"
+<<HOL warning: Context.snapshot: ambient context read while a proof was running (in lexer_fun)>>
+Saved definition ____ "read_string_def"
+Saved induction _____ "read_string_ind"
+Saved theorem _______ "read_string_thm"
+Saved definition ____ "skip_comment_def"
+Saved induction _____ "skip_comment_ind"
+Saved theorem _______ "skip_comment_thm"
+Saved definition ____ "read_FFIcall_def"
+Saved theorem _______ "read_FFIcall_reduces_input"
+Saved definition ____ "read_REPLcommand_def"
+Saved theorem _______ "read_REPLcommand_reduces_input"
+Saved definition ____ "isAlphaNumPrime_def"
+Saved definition ____ "read_Ident_ret_def"
+Saved definition ____ "read_Ident_def"
+Saved induction _____ "read_Ident_ind"
+Saved definition ____ "next_sym_def"
+Saved induction _____ "next_sym_ind"
+Proved triviality ___ "lem1"
+Proved triviality ___ "lem2"
+Saved theorem _______ "read_while_EMPTY"
+Proved triviality ___ "NOT_NIL_EXISTS_CONS"
+Saved theorem _______ "read_Ident_LESS"
+Saved theorem _______ "next_sym_LESS"
+Saved definition ____ "init_loc_def"
+Saved definition ____ "processIdent_def"
+Saved definition ____ "get_token_def"
+Saved definition ____ "to_path_def"
+Saved definition ____ "token_of_sym_def"
+Saved definition ____ "next_token_def"
+Saved theorem _______ "next_token_LESS"
+Saved definition ____ "lexer_fun_aux_def"
+Saved induction _____ "lexer_fun_aux_ind"
+Saved definition ____ "lexer_fun_def"
+Saved definition ____ "toplevel_semi_dex_def"
+Saved induction _____ "toplevel_semi_dex_ind"
+Proved triviality ___ "toplevel_semi_dex_non0"
+Saved definition ____ "split_top_level_semi_def"
+Saved induction _____ "split_top_level_semi_ind"
+Exporting theory "lexer_fun" ... done.
+Theory "lexer_fun" took 4.6s to build
+Holmake: [5/93] lexer_fun
+Holmake: Linking /workspace/scratch/7755a98cf62b/cakeml-compat/semantics/typeSystemScript.uo to produce theory-builder executable
+<<HOL message: Created theory "typeSystem">>
+Saved theorem _______ "datatype_t"
+Saved theorem _______ "t_11"
+Saved theorem _______ "t_distinct"
+Saved theorem _______ "t_nchotomy"
+Saved theorem _______ "t_Axiom"
+Saved theorem _______ "t_induction"
+Saved theorem _______ "t_case_cong"
+Saved theorem _______ "t_case_eq"
+<<HOL message: Defined type: "t">>
+Saved definition ____ "Tarray_num_def"
+Saved definition ____ "Tbool_num_def"
+Saved definition ____ "Tchar_num_def"
+Saved definition ____ "Texn_num_def"
+Saved definition ____ "Tfn_num_def"
+Saved definition ____ "Tint_num_def"
+Saved definition ____ "Tlist_num_def"
+Saved definition ____ "Tref_num_def"
+Saved definition ____ "Tstring_num_def"
+Saved definition ____ "Ttup_num_def"
+Saved definition ____ "Tvector_num_def"
+Saved definition ____ "Tword64_num_def"
+Saved definition ____ "Tword8_num_def"
+Saved definition ____ "Tword8array_num_def"
+Saved definition ____ "Tdouble_num_def"
+Saved definition ____ "prim_type_nums_def"
+Saved definition ____ "Tarray_def"
+Saved definition ____ "Tbool_def"
+Saved definition ____ "Tchar_def"
+Saved definition ____ "Texn_def"
+Saved definition ____ "Tfn_def"
+Saved definition ____ "Tint_def"
+Saved definition ____ "Tlist_def"
+Saved definition ____ "Tref_def"
+Saved definition ____ "Tstring_def"
+Saved definition ____ "Ttup_def"
+Saved definition ____ "Tvector_def"
+Saved definition ____ "Tword64_def"
+Saved definition ____ "Tword8_def"
+Saved definition ____ "Tword8array_def"
+Saved definition ____ "Tdouble_def"
+<<HOL warning: Context.snapshot: ambient context read while a proof was running (in typeSystem)>>
+Saved definition ____ "check_freevars_def"
+Saved induction _____ "check_freevars_ind"
+Saved definition ____ "check_freevars_ast_def"
+Saved induction _____ "check_freevars_ast_ind"
+Saved definition ____ "type_subst_def"
+Saved induction _____ "type_subst_ind"
+Saved definition ____ "deBruijn_inc_def"
+Saved induction _____ "deBruijn_inc_ind"
+Saved definition ____ "deBruijn_subst_def"
+Saved induction _____ "deBruijn_subst_ind"
+Saved theorem _______ "datatype_tenv_val_exp"
+Saved theorem _______ "tenv_val_exp_11"
+Saved theorem _______ "tenv_val_exp_distinct"
+Saved theorem _______ "tenv_val_exp_nchotomy"
+Saved theorem _______ "tenv_val_exp_Axiom"
+Saved theorem _______ "tenv_val_exp_induction"
+Saved theorem _______ "tenv_val_exp_case_cong"
+Saved theorem _______ "tenv_val_exp_case_eq"
+<<HOL message: Defined type: "tenv_val_exp">>
+Saved definition ____ "bind_tvar_def"
+Saved definition ____ "opt_bind_name_def"
+Saved definition ____ "tveLookup_def"
+Saved theorem _______ "datatype_type_env"
+Saved theorem _______ "type_env_11"
+Saved theorem _______ "type_env_nchotomy"
+Saved theorem _______ "type_env_Axiom"
+Saved theorem _______ "type_env_induction"
+Saved theorem _______ "type_env_case_cong"
+Saved theorem _______ "type_env_case_eq"
+<<HOL message: Defined type: "type_env">>
+Saved definition ____ "extend_dec_tenv_def"
+Saved definition ____ "lookup_varE_def"
+Saved definition ____ "lookup_var_def"
+Saved definition ____ "num_tvs_def"
+Saved definition ____ "bind_var_list_def"
+Saved induction _____ "bind_var_list_ind"
+Saved definition ____ "t_of_def"
+Saved induction _____ "t_of_ind"
+Saved definition ____ "supported_test_def"
+Saved induction _____ "supported_test_ind"
+<<HOL message: mk_functional: 
+  pattern completion has added 1 clause to the original specification.>>
+Saved definition ____ "supported_arith_def"
+Saved induction _____ "supported_arith_ind"
+<<HOL message: mk_functional: 
+  pattern completion has added 21 clauses to the original specification.>>
+Saved definition ____ "supported_conversion_def"
+Saved induction _____ "supported_conversion_ind"
+<<HOL message: mk_functional: 
+  pattern completion has added 118 clauses to the original specification.>>
+Saved definition ____ "type_op_def"
+Saved definition ____ "check_type_names_def"
+Saved induction _____ "check_type_names_ind"
+Saved definition ____ "type_name_subst_def"
+Saved induction _____ "type_name_subst_ind"
+Saved definition ____ "check_ctor_tenv_def"
+Saved induction _____ "check_ctor_tenv_ind"
+<<HOL message: mk_functional: 
+  pattern completion has added 1 clause to the original specification.>>
+Saved definition ____ "build_ctor_tenv_def"
+Saved induction _____ "build_ctor_tenv_ind"
+<<HOL message: mk_functional: 
+  pattern completion has added 7 clauses to the original specification.>>
+Saved definition ____ "is_value_def"
+Saved induction _____ "is_value_ind"
+Saved theorem _______ "type_p_rules"
+Saved theorem _______ "type_p_ind"
+Saved theorem _______ "type_p_strongind"
+Saved theorem _______ "type_p_cases"
+Saved theorem _______ "type_e_rules"
+Saved theorem _______ "type_e_ind"
+Saved theorem _______ "type_e_strongind"
+Saved theorem _______ "type_e_cases"
+Saved definition ____ "tenv_add_tvs_def"
+Saved definition ____ "type_pe_determ_def"
+Saved definition ____ "tscheme_inst_def"
+Saved definition ____ "tenvLift_def"
+Saved theorem _______ "type_d_rules"
+Saved theorem _______ "type_d_ind"
+Saved theorem _______ "type_d_strongind"
+Saved theorem _______ "type_d_cases"
+Saved definition ____ "tscheme_inst2_def"
+Saved definition ____ "weak_tenv_def"
+Exporting theory "typeSystem" ... done.
+Theory "typeSystem" took 2.6s to build
+Holmake: [6/93] typeSystem
+Holmake: Linking /workspace/scratch/7755a98cf62b/cakeml-compat/semantics/primTypesScript.uo to produce theory-builder executable
+<<HOL message: Created theory "primTypes">>
+Saved definition ____ "prim_types_program_def"
+Saved definition ____ "add_to_sem_env_def"
+Saved definition ____ "prim_sem_env_def"
+Saved definition ____ "prim_tenv_def"
+Saved definition ____ "prim_type_ids_def"
+Exporting theory "primTypes" ... done.
+Theory "primTypes" took 0.38828s to build
+Holmake: [7/93] primTypes
+Holmake: Linking /workspace/scratch/7755a98cf62b/cakeml-compat/semantics/semanticsScript.uo to produce theory-builder executable
+<<HOL message: Created theory "semantics">>
+Saved definition ____ "parse_def"
+Saved theorem _______ "datatype_state"
+Saved theorem _______ "state_11"
+Saved theorem _______ "state_nchotomy"
+Saved theorem _______ "state_Axiom"
+Saved theorem _______ "state_induction"
+Saved theorem _______ "state_case_cong"
+Saved theorem _______ "state_case_eq"
+<<HOL message: Defined type: "state">>
+Saved definition ____ "can_type_prog_def"
+Saved definition ____ "evaluate_prog_with_clock_def"
+<<HOL message: mk_functional: 
+  pattern completion has added 3 clauses to the original specification.>>
+Saved definition ____ "semantics_prog_def"
+Saved theorem _______ "datatype_semantics"
+Saved theorem _______ "semantics_11"
+Saved theorem _______ "semantics_distinct"
+Saved theorem _______ "semantics_nchotomy"
+Saved theorem _______ "semantics_Axiom"
+Saved theorem _______ "semantics_induction"
+Saved theorem _______ "semantics_case_cong"
+Saved theorem _______ "semantics_case_eq"
+<<HOL message: Defined type: "semantics">>
+Saved definition ____ "semantics_def"
+Saved definition ____ "semantics_init_def"
+Exporting theory "semantics" ... done.
+Theory "semantics" took 0.79141s to build
+Holmake: [8/93] semantics
+Holmake: Linking /workspace/scratch/7755a98cf62b/cakeml-compat/compiler/backend/pattern_matching/pattern_semanticsScript.uo to produce theory-builder executable
+<<HOL warning: Tactical.TAC_PROOF: no current theory when proving: (P ⇒ Q ⇒ R) ⇒ Q ⇒ P ⇒ R [proving without a current theory is deprecated and this permissive mode will be removed]>>
+<<HOL message: Created theory "pattern_semantics">>
+Saved theorem _______ "datatype_pat"
+Saved theorem _______ "pat_11"
+Saved theorem _______ "pat_distinct"
+Saved theorem _______ "pat_nchotomy"
+Saved theorem _______ "pat_Axiom"
+Saved theorem _______ "pat_induction"
+Saved theorem _______ "pat_case_cong"
+Saved theorem _______ "pat_case_eq"
+<<HOL message: Defined type: "pat">>
+Saved theorem _______ "datatype_dTest"
+Saved theorem _______ "dTest_11"
+Saved theorem _______ "dTest_distinct"
+Saved theorem _______ "dTest_nchotomy"
+Saved theorem _______ "dTest_Axiom"
+Saved theorem _______ "dTest_induction"
+Saved theorem _______ "dTest_case_cong"
+Saved theorem _______ "dTest_case_eq"
+<<HOL message: Defined type: "dTest">>
+Saved theorem _______ "datatype_dGuard"
+Saved theorem _______ "dGuard_11"
+Saved theorem _______ "dGuard_distinct"
+Saved theorem _______ "dGuard_nchotomy"
+Saved theorem _______ "dGuard_Axiom"
+Saved theorem _______ "dGuard_induction"
+Saved theorem _______ "dGuard_case_cong"
+Saved theorem _______ "dGuard_case_eq"
+<<HOL message: Defined type: "dGuard">>
+Saved theorem _______ "datatype_dTree"
+Saved theorem _______ "dTree_11"
+Saved theorem _______ "dTree_distinct"
+Saved theorem _______ "dTree_nchotomy"
+Saved theorem _______ "dTree_Axiom"
+Saved theorem _______ "dTree_induction"
+Saved theorem _______ "dTree_case_cong"
+Saved theorem _______ "dTree_case_eq"
+<<HOL message: Defined type: "dTree">>
+Saved theorem _______ "datatype_term"
+Saved theorem _______ "term_11"
+Saved theorem _______ "term_distinct"
+Saved theorem _______ "term_nchotomy"
+Saved theorem _______ "term_Axiom"
+Saved theorem _______ "term_induction"
+Saved theorem _______ "term_case_cong"
+Saved theorem _______ "term_case_eq"
+<<HOL message: Defined type: "term">>
+Saved definition ____ "is_sibling_def"
+<<HOL message: mk_functional: 
+  pattern completion has added 1 clause to the original specification.>>
+<<HOL message: mk_functional: 
+  pattern completion has added 1 clause to the original specification.>>
+<<HOL message: mk_functional: 
+  pattern completion has added 10 clauses to the original specification.>>
+<<HOL warning: Context.snapshot: ambient context read while a proof was running (in pattern_semantics)>>
+Saved definition ____ "pmatch_def"
+Saved induction _____ "pmatch_ind"
+Saved definition ____ "match_def"
+Saved induction _____ "match_ind"
+<<HOL message: mk_functional: 
+  pattern completion has added 4 clauses to the original specification.>>
+Saved definition ____ "dt_test_def"
+Saved induction _____ "dt_test_ind"
+<<HOL message: mk_functional: 
+  pattern completion has added 6 clauses to the original specification.>>
+Saved theorem _______ "app_pos_compute"
+Saved definition ____ "app_pos_def"
+Saved induction _____ "app_pos_ind"
+Saved definition ____ "dt_eval_guard_def"
+Saved definition ____ "dt_eval_def"
+Saved induction _____ "dt_eval_ind"
+Exporting theory "pattern_semantics" ... done.
+Theory "pattern_semantics" took 1.3s to build
+Holmake: [9/93] pattern_semantics
+Holmake: Linking /workspace/scratch/7755a98cf62b/cakeml-compat/compiler/backend/pattern_matching/pattern_compScript.uo to produce theory-builder executable
+<<HOL warning: Tactical.TAC_PROOF: no current theory when proving: (P ⇒ Q ⇒ R) ⇒ Q ⇒ P ⇒ R [proving without a current theory is deprecated and this permissive mode will be removed]>>
+<<HOL message: Created theory "pattern_comp">>
+<<HOL message: mk_functional: 
+  pattern completion has added 3 clauses to the original specification.>>
+Saved definition ____ "is_const_row_def"
+Saved induction _____ "is_const_row_ind"
+<<HOL message: mk_functional: 
+  pattern completion has added 2 clauses to the original specification.>>
+<<HOL warning: Context.snapshot: ambient context read while a proof was running (in pattern_comp)>>
+Saved definition ____ "is_Any_def"
+Saved induction _____ "is_Any_ind"
+<<HOL message: mk_functional: 
+  pattern completion has added 3 clauses to the original specification.>>
+Saved definition ____ "is_Or_row_def"
+Saved induction _____ "is_Or_row_ind"
+Saved definition ____ "take_until_Any_def"
+Saved induction _____ "take_until_Any_ind"
+Saved definition ____ "move_const_up_def"
+Saved theorem _______ "is_Any_pmatch"
+Saved theorem _______ "match_take_until_Any"
+Saved theorem _______ "match_append"
+Proved triviality ___ "pmatchResult_case_NONE"
+Saved theorem _______ "pmatchResult_case_NONE"
+Saved theorem _______ "is_const_row_lemma"
+Saved theorem _______ "not_is_const_row"
+Saved theorem _______ "EVERY_take_until_Any"
+Saved theorem _______ "matdch_FILTER_NOT_NONE"
+Saved theorem _______ "match_move_const_up"
+<<HOL message: mk_functional: 
+  pattern completion has added 2 clauses to the original specification.>>
+Saved definition ____ "exh_pat_def"
+Saved induction _____ "exh_pat_ind"
+<<HOL message: mk_functional: 
+  pattern completion has added 3 clauses to the original specification.>>
+Saved definition ____ "cons_exh_pat_def"
+Saved induction _____ "cons_exh_pat_ind"
+<<HOL message: mk_functional: 
+  pattern completion has added 4 clauses to the original specification.>>
+Saved definition ____ "sib_exists_def"
+Saved induction _____ "sib_exists_ind"
+<<HOL message: mk_functional: 
+  pattern completion has added 6 clauses to the original specification.>>
+Saved definition ____ "exh_rows_def"
+Saved theorem _______ "exh_pat_thm"
+Saved theorem _______ "exh_pat_pmatch_list"
+Saved theorem _______ "pmatch_list_LENGTH"
+Saved theorem _______ "exh_rows_thm"
+Saved definition ____ "insert_Any_def"
+Saved induction _____ "insert_Any_ind"
+Saved theorem _______ "match_insert_Any"
+<<HOL message: mk_functional: 
+  pattern completion has added 3 clauses to the original specification.>>
+Saved definition ____ "is_True_def"
+Saved induction _____ "is_True_ind"
+Saved definition ____ "mk_Disj_def"
+Saved definition ____ "mk_Conj_def"
+Saved definition ____ "mk_If_def"
+Saved definition ____ "get_pos_def"
+Saved definition ____ "pat_to_guard_def"
+Saved induction _____ "pat_to_guard_ind"
+Saved definition ____ "pats_to_code_def"
+Saved induction _____ "pats_to_code_ind"
+<<HOL message: mk_functional: 
+  pattern completion has added 1 clause to the original specification.>>
+Saved definition ____ "walk_def"
+<<HOL message: mk_functional: 
+  pattern completion has added 3 clauses to the original specification.>>
+Saved definition ____ "walk_list_def"
+Saved theorem _______ "app_pos_Pos"
+Saved theorem _______ "walk_thm"
+Saved theorem _______ "walk_append"
+Proved triviality ___ "is_True_thm"
+Proved triviality ___ "dt_eval_guard_mk_Conj"
+Saved theorem _______ "dt_eval_guard_pat_to_guard"
+Proved triviality ___ "mk_If_thm"
+Saved theorem _______ "pat_to_code_thm"
+Saved definition ____ "comp_def"
+Saved theorem _______ "comp_thm"
+Exporting theory "pattern_comp" ... done.
+Theory "pattern_comp" took 2.4s to build
+Holmake: [10/93] pattern_comp
+Holmake: Linking /workspace/scratch/7755a98cf62b/cakeml-compat/translator/monadic/monad_base/ml_monadBaseScript.uo to produce theory-builder executable
+<<HOL warning: Tactical.TAC_PROOF: no current theory when proving: (P ⇒ Q ⇒ R) ⇒ Q ⇒ P ⇒ R [proving without a current theory is deprecated and this permissive mode will be removed]>>
+<<HOL message: Created theory "ml_monadBase">>
+Saved theorem _______ "exc_bnd1"
+Saved theorem _______ "exc_bnd2"
+Saved theorem _______ "exc_MAP_ID"
+Saved theorem _______ "exc_MAP_O"
+Saved theorem _______ "exc_MAP_IMAGE1"
+Saved theorem _______ "exc_MAP_IMAGE2"
+Saved theorem _______ "exc_MAP_CONG"
+Saved theorem _______ "exc_wit1"
+Saved theorem _______ "exc_wit2"
+Saved theorem _______ "exc_inh1"
+Saved theorem _______ "exc_inh2"
+Saved theorem _______ "datatype_exc"
+Saved theorem _______ "exc_11"
+Saved theorem _______ "exc_distinct"
+Saved theorem _______ "exc_nchotomy"
+Saved theorem _______ "exc_Axiom"
+Saved theorem _______ "exc_induction"
+Saved theorem _______ "exc_case_cong"
+Saved theorem _______ "exc_case_eq"
+<<HOL message: Defined type: "exc">>
+Saved definition ____ "liftM_def"
+Saved definition ____ "st_ex_bind_def"
+Saved definition ____ "st_ex_ignore_bind_def"
+Saved theorem _______ "st_ex_ignore_bind_CONG"
+Saved theorem _______ "st_ex_bind_CONG"
+Saved definition ____ "st_ex_return_def"
+Saved definition ____ "otherwise_def"
+Saved definition ____ "can_def"
+Saved theorem _______ "datatype_store_ref"
+Saved theorem _______ "store_ref_11"
+Saved theorem _______ "store_ref_nchotomy"
+Saved theorem _______ "store_ref_Axiom"
+Saved theorem _______ "store_ref_induction"
+Saved theorem _______ "store_ref_case_cong"
+Saved theorem _______ "store_ref_case_eq"
+<<HOL message: Defined type: "store_ref">>
+<<HOL warning: Context.snapshot: ambient context read while a proof was running (in ml_monadBase)>>
+Saved definition ____ "Msub_def"
+Saved induction _____ "Msub_ind"
+Saved theorem _______ "Msub_eq"
+Saved theorem _______ "Msub_exn_eq"
+Saved definition ____ "Mupdate_def"
+Saved induction _____ "Mupdate_ind"
+Saved theorem _______ "Mupdate_eq"
+Saved theorem _______ "Mupdate_exn_eq"
+Saved definition ____ "array_resize_def"
+Saved induction _____ "array_resize_ind"
+Saved theorem _______ "array_resize_eq"
+Saved definition ____ "Marray_length_def"
+Saved definition ____ "Marray_sub_def"
+Saved definition ____ "Marray_update_def"
+Saved definition ____ "Marray_alloc_def"
+Saved definition ____ "Marray_resize_def"
+Saved definition ____ "Mref_def"
+Saved definition ____ "dref_def"
+Saved definition ____ "Mdref_aux_def"
+Saved induction _____ "Mdref_aux_ind"
+Saved definition ____ "Mdref_def"
+Saved definition ____ "Mpop_ref_def"
+Saved definition ____ "Mref_assign_aux_def"
+Saved induction _____ "Mref_assign_aux_ind"
+Saved definition ____ "Mref_assign_def"
+Saved definition ____ "ref_assign_def"
+Saved theorem _______ "dref_cons_state"
+Saved theorem _______ "dref_first"
+Saved theorem _______ "Mdref_eq"
+Saved theorem _______ "Mref_assign_aux_eq"
+Saved theorem _______ "Mref_assign_eq"
+Saved definition ____ "ref_bind_def"
+Saved definition ____ "Mget_ref_def"
+Saved definition ____ "Mset_ref_def"
+Proved triviality ___ "st_ex_return_success"
+Proved triviality ___ "st_ex_bind_success"
+Proved triviality ___ "otherwise_success"
+Proved triviality ___ "otherwise_failure"
+Proved triviality ___ "otherwise_eq"
+Proved triviality ___ "can_success"
+Proved triviality ___ "Marray_length_success"
+Proved triviality ___ "Marray_sub_success"
+Proved triviality ___ "Marray_sub_failure"
+Proved triviality ___ "Marray_sub_eq"
+Proved triviality ___ "Marray_update_success"
+Proved triviality ___ "Marray_update_failure"
+Proved triviality ___ "Marray_update_eq"
+Proved triviality ___ "Marray_alloc_success"
+Saved theorem _______ "monad_eqs"
+Saved definition ____ "run_def"
+Exporting theory "ml_monadBase" ... done.
+Theory "ml_monadBase" took 1.7s to build
+Holmake: [11/93] ml_monadBase
+Holmake: Linking /workspace/scratch/7755a98cf62b/cakeml-compat/compiler/backend/reg_alloc/reg_allocScript.uo to produce theory-builder executable
+<<HOL warning: Tactical.TAC_PROOF: no current theory when proving: (P ⇒ Q ⇒ R) ⇒ Q ⇒ P ⇒ R [proving without a current theory is deprecated and this permissive mode will be removed]>>
+<<HOL message: Created theory "reg_alloc">>
+Saved theorem _______ "datatype_tag"
+Saved theorem _______ "tag_11"
+Saved theorem _______ "tag_distinct"
+Saved theorem _______ "tag_nchotomy"
+Saved theorem _______ "tag_Axiom"
+Saved theorem _______ "tag_induction"
+Saved theorem _______ "tag_case_cong"
+Saved theorem _______ "tag_case_eq"
+<<HOL message: Defined type: "tag">>
+Saved theorem _______ "datatype_ra_state"
+Saved theorem _______ "ra_state_11"
+Saved theorem _______ "ra_state_nchotomy"
+Saved theorem _______ "ra_state_Axiom"
+Saved theorem _______ "ra_state_induction"
+Saved theorem _______ "ra_state_case_cong"
+Saved theorem _______ "ra_state_case_eq"
+<<HOL message: Defined type: "ra_state">>
+Saved definition ____ "get_adj_ls_def"
+Saved definition ____ "get_node_tag_def"
+Saved definition ____ "get_degrees_def"
+Saved definition ____ "get_dim_def"
+Saved definition ____ "get_simp_wl_def"
+Saved definition ____ "get_spill_wl_def"
+Saved definition ____ "get_freeze_wl_def"
+Saved definition ____ "get_avail_moves_wl_def"
+Saved definition ____ "get_unavail_moves_wl_def"
+Saved definition ____ "get_coalesced_def"
+Saved definition ____ "get_move_related_def"
+Saved definition ____ "get_stack_def"
+Saved definition ____ "set_adj_ls_def"
+Saved definition ____ "set_node_tag_def"
+Saved definition ____ "set_degrees_def"
+Saved definition ____ "set_dim_def"
+Saved definition ____ "set_simp_wl_def"
+Saved definition ____ "set_spill_wl_def"
+Saved definition ____ "set_freeze_wl_def"
+Saved definition ____ "set_avail_moves_wl_def"
+Saved definition ____ "set_unavail_moves_wl_def"
+Saved definition ____ "set_coalesced_def"
+Saved definition ____ "set_move_related_def"
+Saved definition ____ "set_stack_def"
+Saved theorem _______ "datatype_state_exn"
+Saved theorem _______ "state_exn_11"
+Saved theorem _______ "state_exn_distinct"
+Saved theorem _______ "state_exn_nchotomy"
+Saved theorem _______ "state_exn_Axiom"
+Saved theorem _______ "state_exn_induction"
+Saved theorem _______ "state_exn_case_cong"
+Saved theorem _______ "state_exn_case_eq"
+<<HOL message: Defined type: "state_exn">>
+Saved definition ____ "raise_Fail_def"
+Saved definition ____ "raise_Subscript_def"
+Saved definition ____ "handle_Fail_def"
+Saved definition ____ "handle_Subscript_def"
+Saved definition ____ "adj_ls_length_def"
+Saved definition ____ "adj_ls_sub_def"
+Saved definition ____ "update_adj_ls_def"
+Saved definition ____ "node_tag_length_def"
+Saved definition ____ "node_tag_sub_def"
+Saved definition ____ "update_node_tag_def"
+Saved definition ____ "degrees_length_def"
+Saved definition ____ "degrees_sub_def"
+Saved definition ____ "update_degrees_def"
+Saved definition ____ "coalesced_length_def"
+Saved definition ____ "coalesced_sub_def"
+Saved definition ____ "update_coalesced_def"
+Saved definition ____ "move_related_length_def"
+Saved definition ____ "move_related_sub_def"
+Saved definition ____ "update_move_related_def"
+Saved theorem _______ "adj_ls_accessor"
+Saved theorem _______ "node_tag_accessor"
+Saved theorem _______ "degrees_accessor"
+Saved theorem _______ "coalesced_accessor"
+Saved theorem _______ "move_related_accessor"
+Saved definition ____ "st_ex_FOREACH_def"
+Saved definition ____ "st_ex_MAP_def"
+Saved definition ____ "st_ex_PARTITION_def"
+Saved definition ____ "st_ex_FILTER_def"
+Saved definition ____ "sorted_insert_def"
+Saved definition ____ "sorted_mem_def"
+Saved definition ____ "insert_edge_def"
+Saved definition ____ "list_insert_edge_def"
+Saved definition ____ "clique_insert_edge_def"
+Saved definition ____ "extend_clique_def"
+Saved definition ____ "dec_deg_def"
+Saved definition ____ "dec_degree_def"
+Saved definition ____ "add_simp_wl_def"
+Saved definition ____ "add_spill_wl_def"
+Saved definition ____ "add_freeze_wl_def"
+Saved definition ____ "push_stack_def"
+Saved definition ____ "add_unavail_moves_wl_def"
+Saved definition ____ "is_not_coalesced_def"
+Saved definition ____ "split_degree_def"
+Saved definition ____ "sort_moves_def"
+<<HOL warning: Context.snapshot: ambient context read while a proof was running (in reg_alloc)>>
+Saved definition ____ "smerge_def"
+Saved induction _____ "smerge_ind"
+Saved definition ____ "revive_moves_def"
+Saved definition ____ "unspill_def"
+Saved definition ____ "do_simplify_def"
+Saved definition ____ "inc_deg_def"
+<<HOL message: mk_functional: 
+  pattern completion has added 1 clause to the original specification.>>
+Saved definition ____ "is_Fixed_def"
+Saved definition ____ "do_coalesce_real_def"
+Saved definition ____ "is_Atemp_def"
+<<HOL message: mk_functional: 
+  pattern completion has added 1 clause to the original specification.>>
+Saved definition ____ "is_Fixed_k_def"
+Saved definition ____ "considered_var_def"
+Saved definition ____ "deg_or_inf_def"
+Saved definition ____ "bg_ok_def"
+Saved definition ____ "consistency_ok_def"
+Saved definition ____ "coalesce_parent_def"
+Saved induction _____ "coalesce_parent_ind"
+Saved definition ____ "canonize_move_def"
+Saved definition ____ "st_ex_FIRST_def"
+Saved definition ____ "respill_def"
+Saved definition ____ "do_coalesce_def"
+Saved definition ____ "reset_move_related_def"
+Saved definition ____ "do_prefreeze_def"
+Saved definition ____ "do_freeze_def"
+Saved definition ____ "safe_div_def"
+Saved definition ____ "st_ex_list_MIN_cost_def"
+Saved definition ____ "st_ex_list_MAX_deg_def"
+Saved definition ____ "do_spill_def"
+Saved definition ____ "do_step_def"
+Saved theorem _______ "rpt_do_step_compute"
+Saved definition ____ "rpt_do_step_def"
+<<HOL message: mk_functional: 
+  pattern completion has added 1 clause to the original specification.>>
+Saved definition ____ "remove_colours_def"
+Saved induction _____ "remove_colours_ind"
+<<HOL message: mk_functional: 
+  pattern completion has added 1 clause to the original specification.>>
+Saved definition ____ "assign_Atemp_tag_def"
+Saved definition ____ "assign_Atemps_def"
+<<HOL message: mk_functional: 
+  pattern completion has added 1 clause to the original specification.>>
+Saved definition ____ "tag_col_def"
+Saved induction _____ "tag_col_ind"
+Saved definition ____ "unbound_colour_def"
+<<HOL message: mk_functional: 
+  pattern completion has added 1 clause to the original specification.>>
+Saved definition ____ "assign_Stemp_tag_def"
+Saved definition ____ "assign_Stemps_def"
+<<HOL message: mk_functional: 
+  pattern completion has added 1 clause to the original specification.>>
+Saved definition ____ "first_match_col_def"
+Saved theorem _______ "datatype_clash_tree"
+Saved theorem _______ "clash_tree_11"
+Saved theorem _______ "clash_tree_distinct"
+Saved theorem _______ "clash_tree_nchotomy"
+Saved theorem _______ "clash_tree_Axiom"
+Saved theorem _______ "clash_tree_induction"
+Saved theorem _______ "clash_tree_case_cong"
+Saved theorem _______ "clash_tree_case_eq"
+<<HOL message: Defined type: "clash_tree">>
+Saved definition ____ "numset_list_delete_def"
+Saved definition ____ "check_col_def"
+Saved definition ____ "check_partial_col_def"
+Saved definition ____ "check_clash_tree_def"
+Saved definition ____ "list_remap_def"
+Saved induction _____ "list_remap_ind"
+Saved definition ____ "mk_bij_aux_def"
+Saved definition ____ "mk_bij_def"
+Saved definition ____ "is_stack_var_def"
+Saved definition ____ "is_phy_var_def"
+Saved definition ____ "is_alloc_var_def"
+Saved theorem _______ "convention_partitions"
+Saved definition ____ "mk_tags_def"
+Saved definition ____ "mk_graph_def"
+Saved definition ____ "sp_default_def"
+Saved definition ____ "extend_graph_def"
+Saved induction _____ "extend_graph_ind"
+Saved definition ____ "init_ra_state_def"
+Saved definition ____ "do_upd_coalesce_def"
+Saved definition ____ "init_alloc1_heu_def"
+Saved definition ____ "do_alloc1_def"
+<<HOL message: mk_functional: 
+  pattern completion has added 1 clause to the original specification.>>
+Saved definition ____ "extract_tag_def"
+Saved definition ____ "extract_color_def"
+Saved definition ____ "pri_move_insert_def"
+Saved definition ____ "undir_move_insert_def"
+Saved definition ____ "moves_to_sp_def"
+Saved definition ____ "resort_moves_def"
+Saved theorem _______ "num2algorithm_algorithm2num"
+Saved theorem _______ "algorithm2num_num2algorithm"
+Saved theorem _______ "num2algorithm_11"
+Saved theorem _______ "algorithm2num_11"
+Saved theorem _______ "num2algorithm_ONTO"
+Saved theorem _______ "algorithm2num_ONTO"
+Saved theorem _______ "num2algorithm_thm"
+Saved theorem _______ "algorithm2num_thm"
+Saved theorem _______ "algorithm_EQ_algorithm"
+Saved theorem _______ "algorithm_case_def"
+Saved theorem _______ "datatype_algorithm"
+Saved theorem _______ "algorithm_distinct"
+Saved theorem _______ "algorithm_nchotomy"
+Saved theorem _______ "algorithm_Axiom"
+Saved theorem _______ "algorithm_induction"
+Saved theorem _______ "algorithm_case_cong"
+Saved theorem _______ "algorithm_case_eq"
+<<HOL message: Defined type: "algorithm">>
+Saved definition ____ "biased_pref_def"
+Saved definition ____ "full_consistency_ok_def"
+Saved definition ____ "update_move_def"
+<<HOL message: mk_functional: 
+  pattern completion has added 1 clause to the original specification.>>
+Saved definition ____ "neg_first_match_col_def"
+Saved definition ____ "neg_biased_pref_def"
+Saved definition ____ "do_reg_alloc_def"
+Saved theorem _______ "datatype_ira_state"
+Saved theorem _______ "ira_state_11"
+Saved theorem _______ "ira_state_nchotomy"
+Saved theorem _______ "ira_state_Axiom"
+Saved theorem _______ "ira_state_induction"
+Saved theorem _______ "ira_state_case_cong"
+Saved theorem _______ "ira_state_case_eq"
+<<HOL message: Defined type: "ira_state">>
+Saved definition ____ "run_ira_state_def"
+Saved definition ____ "reg_alloc_aux_def"
+Saved definition ____ "reg_alloc_def"
+Exporting theory "reg_alloc" ... done.
+Theory "reg_alloc" took 5.1s to build
+Holmake: [12/93] reg_alloc
+Holmake: Linking /workspace/scratch/7755a98cf62b/cakeml-compat/compiler/backend/reg_alloc/linear_scanScript.uo to produce theory-builder executable

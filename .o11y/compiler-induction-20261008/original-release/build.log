@@ -1,0 +1,123 @@
+Holmake: Scanning $(HOLDIR)/src/TeX
+Holmake: Scanning $(HOLDIR)/src/bag
+Holmake: Scanning $(HOLDIR)/src/sort
+Holmake: Scanning $(HOLDIR)/src/string
+Holmake: Scanning $(HOLDIR)/src/n-bit
+Holmake: Scanning $(HOLDIR)/src/res_quan/src
+Holmake: Scanning $(HOLDIR)/src/finite_maps
+Holmake: Scanning $(HOLDIR)/examples/formal-languages/context-free
+Holmake: Scanning $(HOLDIR)/src/transfer
+Holmake: Scanning $(HOLDIR)/src/pred_set/src/more_theories
+Holmake: Scanning $(HOLDIR)/src/coalgebras
+Holmake: Scanning $(HOLDIR)/examples/fun-op-sem/lprefix_lub
+Holmake: Scanning $(HOLDIR)/examples/machine-code/hoare-triple
+Holmake: Scanning $(HOLDIR)/src/hol88
+Holmake: Scanning $(HOLDIR)/src/integer
+Holmake: Scanning $(HOLDIR)/src/rational
+Holmake: Scanning $(HOLDIR)/src/algebra/base
+Holmake: Scanning $(HOLDIR)/src/algebra/construction
+Holmake: Scanning $(HOLDIR)/src/algebra
+Holmake: Scanning $(HOLDIR)/src/real
+Holmake: Scanning $(HOLDIR)/src/real/analysis
+Holmake: Scanning $(HOLDIR)/src/HolSmt
+Holmake: Scanning $(HOLDIR)/src/tactictoe/src
+Holmake: Scanning /workspace/scratch/7755a98cf62b/release-context
+Holmake: Scanned 25 directories
+Holmake: Linking /workspace/scratch/7755a98cf62b/mlsexp-original-checker-evidence/mlsexpScript.uo to produce theory-builder executable
+<<HOL message: Created theory "mlsexp">>
+Saved theorem _______ "datatype_sexp"
+Saved theorem _______ "sexp_11"
+Saved theorem _______ "sexp_distinct"
+Saved theorem _______ "sexp_nchotomy"
+Saved theorem _______ "sexp_Axiom"
+Saved theorem _______ "sexp_induction"
+Saved theorem _______ "sexp_case_cong"
+Saved theorem _______ "sexp_case_eq"
+<<HOL message: Defined type: "sexp">>
+Saved theorem _______ "datatype_token"
+Saved theorem _______ "token_11"
+Saved theorem _______ "token_distinct"
+Saved theorem _______ "token_nchotomy"
+Saved theorem _______ "token_Axiom"
+Saved theorem _______ "token_induction"
+Saved theorem _______ "token_case_cong"
+Saved theorem _______ "token_case_eq"
+<<HOL message: Defined type: "token">>
+Saved definition ____ "read_string_aux_def"
+Saved induction _____ "read_string_aux_ind"
+Saved definition ____ "read_string_def"
+Saved theorem _______ "read_string_aux_length"
+Saved theorem _______ "read_string_length"
+Saved definition ____ "read_symbol_def"
+Saved theorem _______ "read_symbol_length"
+Saved definition ____ "lex_aux_def"
+Saved induction _____ "lex_aux_ind"
+Saved theorem _______ "lex_aux_length"
+Saved definition ____ "lex_def"
+Saved theorem _______ "lex_IMP_LENGTH_LESS"
+Proved triviality ___ "test_lex"
+Saved definition ____ "parse_aux_def"
+Saved induction _____ "parse_aux_ind"
+Saved definition ____ "parse_def"
+Saved theorem _______ "parse_IMP_LENGTH_LESS"
+Saved theorem _______ "parse_space"
+Proved triviality ___ "test_parse"
+Saved definition ____ "fromString_def"
+Saved theorem _______ "datatype_str_tree"
+Saved theorem _______ "str_tree_11"
+Saved theorem _______ "str_tree_distinct"
+Saved theorem _______ "str_tree_nchotomy"
+Saved theorem _______ "str_tree_Axiom"
+Saved theorem _______ "str_tree_induction"
+Saved theorem _______ "str_tree_case_cong"
+Saved theorem _______ "str_tree_case_eq"
+<<HOL message: Defined type: "str_tree">>
+Saved theorem _______ "datatype_pretty"
+Saved theorem _______ "pretty_11"
+Saved theorem _______ "pretty_distinct"
+Saved theorem _______ "pretty_nchotomy"
+Saved theorem _______ "pretty_Axiom"
+Saved theorem _______ "pretty_induction"
+Saved theorem _______ "pretty_case_cong"
+Saved theorem _______ "pretty_case_eq"
+<<HOL message: Defined type: "pretty">>
+Saved definition ____ "newlines_def"
+Saved induction _____ "newlines_ind"
+Saved definition ____ "v2pretty_def"
+Saved induction _____ "v2pretty_ind"
+Saved definition ____ "get_size_def"
+Saved induction _____ "get_size_ind"
+Saved definition ____ "get_next_size_def"
+Saved induction _____ "get_next_size_ind"
+Saved definition ____ "annotate_def"
+Saved definition ____ "remove_all_def"
+Saved definition ____ "smart_remove_def"
+Saved definition ____ "flatten_def"
+Saved definition ____ "str_tree_to_strs_def"
+Proved triviality ___ "test1_str_tree_to_strs"
+Proved triviality ___ "test2_str_tree_to_strs"
+Saved definition ____ "is_safe_char_def"
+Saved definition ____ "str_every_def"
+Saved induction _____ "str_every_ind"
+Saved definition ____ "make_str_safe_def"
+Saved definition ____ "sexp2tree_def"
+Saved definition ____ "sexp_to_app_list_def"
+Saved definition ____ "sexp_to_string_def"
+Saved definition ____ "sexp_to_pretty_string_def"
+Saved definition ____ "to_tokens_def"
+Saved induction _____ "to_tokens_ind"
+Proved triviality ___ "parse_aux_to_tokens_lemma"
+Saved theorem _______ "parse_aux_to_tokens_thm"
+Saved theorem _______ "str_every_thm"
+Saved theorem _______ "read_symbol_thm"
+Saved theorem _______ "read_string_aux_thm"
+/workspace/scratch/7755a98cf62b/mlsexp-original-checker-evidence/mlsexpScript.sml:482: error: Value or constructor (implode_def) has not been declared
+Found near [Once read_string_aux_def, implode_def]
+/workspace/scratch/7755a98cf62b/mlsexp-original-checker-evidence/mlsexpScript.sml:494: error: Value or constructor (implode_def) has not been declared
+Found near [implode_def]
+/workspace/scratch/7755a98cf62b/mlsexp-original-checker-evidence/mlsexpScript.sml:495: error: Value or constructor (implode_def) has not been declared
+Found near [escape_str_def, implode_def]
+error in quse /workspace/scratch/7755a98cf62b/mlsexp-original-checker-evidence/mlsexpScript.sml : Fail "Static Errors"
+error in load /workspace/scratch/7755a98cf62b/mlsexp-original-checker-evidence/mlsexpScript : Fail "Static Errors"
+Uncaught exception at ./basis/FinalPolyML.sml:491: Fail "Static Errors"
+Holmake: Failed script build for /workspace/scratch/7755a98cf62b/mlsexp-original-checker-evidence/mlsexpScript - exited with code 1

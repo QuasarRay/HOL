@@ -1,0 +1,11 @@
+test_missing_macro_exports_are_rejected (test_hol4_inspection.Hol4InspectionTests.test_missing_macro_exports_are_rejected) ... ok
+test_missing_mlsexp_exports_are_rejected (test_hol4_inspection.Hol4InspectionTests.test_missing_mlsexp_exports_are_rejected) ... ok
+test_missing_report_witness_exports_are_rejected (test_hol4_inspection.Hol4InspectionTests.test_missing_report_witness_exports_are_rejected) ... ok
+test_nonexistent_release_theorem_is_rejected (test_hol4_inspection.Hol4InspectionTests.test_nonexistent_release_theorem_is_rejected) ... ok
+test_open_mlsexp_exports_are_rejected (test_hol4_inspection.Hol4InspectionTests.test_open_mlsexp_exports_are_rejected) ... ok
+test_open_release_theorem_is_rejected (test_hol4_inspection.Hol4InspectionTests.test_open_release_theorem_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 6.892s
+
+OK

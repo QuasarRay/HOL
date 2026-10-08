@@ -1,0 +1,413 @@
+
+---------------------------------------------------------------------
+     HOL4 [Trindemossen 2 (stdknl, built Thu Oct 08 11:34:41 2026)]
+
+     For introductory HOL help, type: help "hol";
+     To exit type <Control>-D
+---------------------------------------------------------------------
+** Load path (see loadPath variable) now contains 42 entries
+** after consulting Holmakefiles and any holproject.toml
+
+[In non-standard heap: /workspace/scratch/7755a98cf62b/cakeml-compat/misc/cakeml-heap]
+> val inspect = fn: unit -> unit
+KERNEL_THEOREM mlsexp.v2pretty_ind
+⊢ ∀P0 P1.
+    (∀v. (∀l. v = Trees l ⇒ P1 l) ∧ (∀w. v = GrabLine w ⇒ P0 w) ⇒ P0 v) ∧
+    (∀vs.
+       (∀v vs'. vs = v::vs' ⇒ P0 v) ∧ (∀v vs'. vs = v::vs' ⇒ P1 vs') ⇒ P1 vs) ⇒
+    (∀v0. P0 v0) ∧ ∀v0. P1 v0
+KERNEL_THEOREM mlsexp.v2pretty_def
+⊢ (∀v. v2pretty v =
+       case v of
+         Str s => String s
+       | Trees l => Parenthesis (newlines (vs2pretty l))
+       | GrabLine w => Size 100000 (v2pretty w)) ∧
+  ∀vs.
+    vs2pretty vs = case vs of [] => [] | v::vs' => v2pretty v::vs2pretty vs'
+KERNEL_THEOREM mlsexp.token_nchotomy
+⊢ ∀tt. tt = OPEN ∨ tt = CLOSE ∨ ∃m. tt = SYMBOL m
+KERNEL_THEOREM mlsexp.token_induction
+⊢ ∀P. P OPEN ∧ P CLOSE ∧ (∀m. P (SYMBOL m)) ⇒ ∀t. P t
+KERNEL_THEOREM mlsexp.token_distinct
+⊢ OPEN ≠ CLOSE ∧ (∀a. OPEN ≠ SYMBOL a) ∧ ∀a. CLOSE ≠ SYMBOL a
+KERNEL_THEOREM mlsexp.token_case_eq
+⊢ token_CASE x v v1 f = v' ⇔
+  x = OPEN ∧ v = v' ∨ x = CLOSE ∧ v1 = v' ∨ ∃m. x = SYMBOL m ∧ f m = v'
+KERNEL_THEOREM mlsexp.token_case_cong
+⊢ ∀M M' v v1 f.
+    M = M' ∧ (M' = OPEN ⇒ v = v') ∧ (M' = CLOSE ⇒ v1 = v1') ∧
+    (∀a. M' = SYMBOL a ⇒ f a = f' a) ⇒
+    token_CASE M v v1 f = token_CASE M' v' v1' f'
+KERNEL_THEOREM mlsexp.token_Axiom
+⊢ ∀f0 f1 f2. ∃fn. fn OPEN = f0 ∧ fn CLOSE = f1 ∧ ∀a. fn (SYMBOL a) = f2 a
+KERNEL_THEOREM mlsexp.token_11
+⊢ ∀a a'. SYMBOL a = SYMBOL a' ⇔ a = a'
+KERNEL_THEOREM mlsexp.to_tokens_ind
+⊢ ∀P. (∀a. P (Atom a)) ∧ (∀xs. (∀x. MEM x xs ⇒ P x) ⇒ P (Expr xs)) ⇒ ∀v. P v
+KERNEL_THEOREM mlsexp.to_tokens_def
+⊢ (∀a. to_tokens (Atom a) = [SYMBOL a]) ∧
+  ∀xs.
+    to_tokens (Expr xs) =
+    [OPEN] ++ FLAT (MAP (λx. to_tokens x) xs) ++ [CLOSE]
+KERNEL_THEOREM mlsexp.str_tree_nchotomy
+⊢ ∀ss. (∃m. ss = Str m) ∨ (∃l. ss = Trees l) ∨ ∃s. ss = GrabLine s
+KERNEL_THEOREM mlsexp.str_tree_induction
+⊢ ∀P. (∀m. P (Str m)) ∧ (∀l. (∀s. MEM s l ⇒ P s) ⇒ P (Trees l)) ∧
+      (∀s. P s ⇒ P (GrabLine s)) ⇒
+      ∀s. P s
+KERNEL_THEOREM mlsexp.str_tree_distinct
+⊢ (∀a0' a0. Str a0 ≠ Trees a0') ∧ (∀a0' a0. Str a0 ≠ GrabLine a0') ∧
+  ∀a0' a0. Trees a0 ≠ GrabLine a0'
+KERNEL_THEOREM mlsexp.str_tree_case_eq
+⊢ str_tree_CASE x f f0 f1 = v ⇔
+  (∃m. x = Str m ∧ f m = v) ∨ (∃l. x = Trees l ∧ f0 l = v) ∨
+  ∃s. x = GrabLine s ∧ f1 s = v
+KERNEL_THEOREM mlsexp.str_tree_case_cong
+⊢ ∀M M' f f0 f1.
+    M = M' ∧ (∀a0. M' = Str a0 ⇒ f a0 = f' a0) ∧
+    (∀a0. M' = Trees a0 ⇒ f0 a0 = f0' a0) ∧
+    (∀a0. M' = GrabLine a0 ⇒ f1 a0 = f1' a0) ⇒
+    str_tree_CASE M f f0 f1 = str_tree_CASE M' f' f0' f1'
+KERNEL_THEOREM mlsexp.str_tree_Axiom
+⊢ ∀f0 f1 f2. ∃h.
+    (∀a0. h (Str a0) = f0 a0) ∧ (∀a0. h (Trees a0) = f1 a0 (MAP h a0)) ∧
+    ∀a0. h (GrabLine a0) = f2 a0 (h a0)
+KERNEL_THEOREM mlsexp.str_tree_11
+⊢ (∀a0 a0'. Str a0 = Str a0' ⇔ a0 = a0') ∧
+  (∀a0 a0'. Trees a0 = Trees a0' ⇔ a0 = a0') ∧
+  ∀a0 a0'. GrabLine a0 = GrabLine a0' ⇔ a0 = a0'
+KERNEL_THEOREM mlsexp.str_every_thm
+⊢ ∀P i m. str_every P i m ∧ i ≤ strlen m ⇒ ∀k. k < i ⇒ P (explode m)❲k❳
+KERNEL_THEOREM mlsexp.str_every_ind
+⊢ ∀P. (∀p n s. (n ≠ 0 ⇒ P p (n − 1) s) ⇒ P p n s) ⇒ ∀v v1 v2. P v v1 v2
+KERNEL_THEOREM mlsexp.str_every_def
+⊢ ∀s p n.
+    str_every p n s ⇔
+    if n = 0 then T else p (strsub s (n − 1)) ∧ str_every p (n − 1) s
+KERNEL_THEOREM mlsexp.sexp_to_app_list_ind
+⊢ ∀P0 P1.
+    (∀s. P0 (Atom s)) ∧ (∀l. P1 l ⇒ P0 (Expr l)) ∧ P1 [] ∧
+    (∀v vs.
+       (NULL vs ⇒ P0 v) ∧ (¬NULL vs ⇒ P0 v) ∧ (¬NULL vs ⇒ P1 vs) ⇒ P1 (v::vs)) ⇒
+    (∀v0. P0 v0) ∧ ∀v0. P1 v0
+KERNEL_THEOREM mlsexp.sexp_to_app_list_def
+⊢ (∀s. sexp_to_app_list (Atom s) = List [make_str_safe s]) ∧
+  (∀l. sexp_to_app_list (Expr l) =
+       Append (List [«(»]) (Append (sexps_to_app_list l) (List [«)»]))) ∧
+  sexps_to_app_list [] = List [] ∧
+  ∀vs v.
+    sexps_to_app_list (v::vs) =
+    if NULL vs then sexp_to_app_list v
+    else
+      Append (sexp_to_app_list v)
+        (Append (List [« »]) (sexps_to_app_list vs))
+KERNEL_THEOREM mlsexp.sexp_nchotomy
+⊢ ∀ss. (∃m. ss = Atom m) ∨ ∃l. ss = Expr l
+KERNEL_THEOREM mlsexp.sexp_induction
+⊢ ∀P. (∀m. P (Atom m)) ∧ (∀l. (∀s. MEM s l ⇒ P s) ⇒ P (Expr l)) ⇒ ∀s. P s
+KERNEL_THEOREM mlsexp.sexp_distinct
+⊢ ∀a0' a0. Atom a0 ≠ Expr a0'
+KERNEL_THEOREM mlsexp.sexp_case_eq
+⊢ sexp_CASE x f f0 = v ⇔
+  (∃m. x = Atom m ∧ f m = v) ∨ ∃l. x = Expr l ∧ f0 l = v
+KERNEL_THEOREM mlsexp.sexp_case_cong
+⊢ ∀M M' f f0.
+    M = M' ∧ (∀a0. M' = Atom a0 ⇒ f a0 = f' a0) ∧
+    (∀a0. M' = Expr a0 ⇒ f0 a0 = f0' a0) ⇒
+    sexp_CASE M f f0 = sexp_CASE M' f' f0'
+KERNEL_THEOREM mlsexp.sexp_Axiom
+⊢ ∀f0 f1. ∃h.
+    (∀a0. h (Atom a0) = f0 a0) ∧ ∀a0. h (Expr a0) = f1 a0 (MAP h a0)
+KERNEL_THEOREM mlsexp.sexp_11
+⊢ (∀a0 a0'. Atom a0 = Atom a0' ⇔ a0 = a0') ∧
+  ∀a0 a0'. Expr a0 = Expr a0' ⇔ a0 = a0'
+KERNEL_THEOREM mlsexp.sexp2tree_ind
+⊢ ∀P0 P1.
+    (∀s. P0 (Atom s)) ∧ (∀l. P1 l ⇒ P0 (Expr l)) ∧ P1 [] ∧
+    (∀v vs. P0 v ∧ P1 vs ⇒ P1 (v::vs)) ⇒
+    (∀v0. P0 v0) ∧ ∀v0. P1 v0
+KERNEL_THEOREM mlsexp.sexp2tree_def
+⊢ (∀s. sexp2tree (Atom s) = Str (make_str_safe s)) ∧
+  (∀l. sexp2tree (Expr l) = Trees (sexp2trees l)) ∧ sexp2trees [] = [] ∧
+  ∀vs v. sexp2trees (v::vs) = sexp2tree v::sexp2trees vs
+KERNEL_THEOREM mlsexp.read_symbol_thm
+⊢ ∀t s acc.
+    EVERY is_safe_char t ∧ (s ≠ "" ⇒ isSpace (HD s) ∨ HD s = #")") ⇒
+    read_symbol (STRCAT t s) acc = (implode (STRCAT (REVERSE acc) t),s)
+KERNEL_THEOREM mlsexp.read_symbol_length
+⊢ ∀input acc. read_symbol input acc = (s,rest) ⇒ STRLEN rest ≤ STRLEN input
+KERNEL_THEOREM mlsexp.read_string_length
+⊢ read_string input = INR (s,rest) ⇒ STRLEN rest ≤ STRLEN input
+KERNEL_THEOREM mlsexp.read_string_aux_thm
+⊢ ∀xs s acc.
+    read_string_aux (STRCAT (STRCAT (CONCAT (MAP char_escaped xs)) "\"") s)
+      acc = INR (implode (STRCAT (REVERSE acc) xs),s)
+KERNEL_THEOREM mlsexp.read_string_aux_length
+⊢ ∀input acc.
+    read_string_aux input acc = INR (s,rest) ⇒ STRLEN rest ≤ STRLEN input
+KERNEL_THEOREM mlsexp.read_string_aux_ind
+⊢ ∀P. (∀acc. P "" acc) ∧
+      (∀c rest acc.
+         (∀v v1.
+            c ≠ #"\"" ∧ c = #"\\" ∧ rest = STRING v v1 ∧ v ≠ #"\\" ∧
+            v ≠ #"\"" ∧ v ≠ #"0" ∧ v ≠ #"n" ∧ v ≠ #"r" ∧ v = #"t" ⇒
+            P v1 (STRING #"\t" acc)) ∧
+         (∀v v1.
+            c ≠ #"\"" ∧ c = #"\\" ∧ rest = STRING v v1 ∧ v ≠ #"\\" ∧
+            v ≠ #"\"" ∧ v ≠ #"0" ∧ v ≠ #"n" ∧ v = #"r" ⇒
+            P v1 (STRING #"\r" acc)) ∧
+         (∀v v1.
+            c ≠ #"\"" ∧ c = #"\\" ∧ rest = STRING v v1 ∧ v ≠ #"\\" ∧
+            v ≠ #"\"" ∧ v ≠ #"0" ∧ v = #"n" ⇒
+            P v1 (STRING #"\n" acc)) ∧
+         (∀v v1.
+            c ≠ #"\"" ∧ c = #"\\" ∧ rest = STRING v v1 ∧ v ≠ #"\\" ∧
+            v ≠ #"\"" ∧ v = #"0" ⇒
+            P v1 (STRING #"\^@" acc)) ∧
+         (∀v v1.
+            c ≠ #"\"" ∧ c = #"\\" ∧ rest = STRING v v1 ∧ v ≠ #"\\" ∧
+            v = #"\"" ⇒
+            P v1 (STRING #"\"" acc)) ∧
+         (∀v v1.
+            c ≠ #"\"" ∧ c = #"\\" ∧ rest = STRING v v1 ∧ v = #"\\" ⇒
+            P v1 (STRING #"\\" acc)) ∧
+         (c ≠ #"\"" ∧ c ≠ #"\\" ⇒ P rest (STRING c acc)) ∧
+         (c ≠ #"\"" ∧ c = #"\\" ∧ rest = "" ⇒ P rest acc) ⇒
+         P (STRING c rest) acc) ⇒
+      ∀v v1. P v v1
+KERNEL_THEOREM mlsexp.read_string_aux_def
+⊢ (∀acc.
+     read_string_aux "" acc =
+     INL («read_string_aux: unterminated string literal»,"")) ∧
+  ∀rest c acc.
+    read_string_aux (STRING c rest) acc =
+    if c = #"\"" then INR (implode (REVERSE acc),rest)
+    else if c = #"\\" then
+      case rest of
+        "" => read_string_aux rest acc
+      | STRING #"\\" v1 => read_string_aux v1 (STRING #"\\" acc)
+      | STRING #"\"" v1 => read_string_aux v1 (STRING #"\"" acc)
+      | STRING #"0" v1 => read_string_aux v1 (STRING #"\^@" acc)
+      | STRING #"n" v1 => read_string_aux v1 (STRING #"\n" acc)
+      | STRING #"r" v1 => read_string_aux v1 (STRING #"\r" acc)
+      | STRING #"t" v1 => read_string_aux v1 (STRING #"\t" acc)
+      | STRING v v1 => INL («read_string_aux: unrecognised escape»,v1)
+    else read_string_aux rest (STRING c acc)
+KERNEL_THEOREM mlsexp.pretty_nchotomy
+⊢ ∀pp.
+    (∃p. pp = Parenthesis p) ∨ (∃m. pp = String m) ∨
+    (∃p b p0. pp = Append p b p0) ∨ ∃n p. pp = Size n p
+KERNEL_THEOREM mlsexp.pretty_induction
+⊢ ∀P. (∀p. P p ⇒ P (Parenthesis p)) ∧ (∀m. P (String m)) ∧
+      (∀p p0. P p ∧ P p0 ⇒ ∀b. P (Append p b p0)) ∧
+      (∀p. P p ⇒ ∀n. P (Size n p)) ⇒
+      ∀p. P p
+KERNEL_THEOREM mlsexp.pretty_distinct
+⊢ (∀a0' a0. Parenthesis a0 ≠ String a0') ∧
+  (∀a2 a1 a0' a0. Parenthesis a0 ≠ Append a0' a1 a2) ∧
+  (∀a1 a0' a0. Parenthesis a0 ≠ Size a0' a1) ∧
+  (∀a2 a1 a0' a0. String a0 ≠ Append a0' a1 a2) ∧
+  (∀a1 a0' a0. String a0 ≠ Size a0' a1) ∧
+  ∀a2 a1' a1 a0' a0. Append a0 a1 a2 ≠ Size a0' a1'
+KERNEL_THEOREM mlsexp.pretty_case_eq
+⊢ pretty_CASE x f f0 f1 f2 = v ⇔
+  (∃p. x = Parenthesis p ∧ f p = v) ∨ (∃m. x = String m ∧ f0 m = v) ∨
+  (∃p b p0. x = Append p b p0 ∧ f1 p b p0 = v) ∨
+  ∃n p. x = Size n p ∧ f2 n p = v
+KERNEL_THEOREM mlsexp.pretty_case_cong
+⊢ ∀M M' f f0 f1 f2.
+    M = M' ∧ (∀a0. M' = Parenthesis a0 ⇒ f a0 = f' a0) ∧
+    (∀a0. M' = String a0 ⇒ f0 a0 = f0' a0) ∧
+    (∀a0 a1 a2. M' = Append a0 a1 a2 ⇒ f1 a0 a1 a2 = f1' a0 a1 a2) ∧
+    (∀a0 a1. M' = Size a0 a1 ⇒ f2 a0 a1 = f2' a0 a1) ⇒
+    pretty_CASE M f f0 f1 f2 = pretty_CASE M' f' f0' f1' f2'
+KERNEL_THEOREM mlsexp.pretty_Axiom
+⊢ ∀f0 f1 f2 f3. ∃h.
+    (∀a0. h (Parenthesis a0) = f0 a0 (h a0)) ∧ (∀a0. h (String a0) = f1 a0) ∧
+    (∀a0 a1 a2. h (Append a0 a1 a2) = f2 a1 a0 a2 (h a0) (h a2)) ∧
+    ∀a0 a1. h (Size a0 a1) = f3 a0 a1 (h a1)
+KERNEL_THEOREM mlsexp.pretty_11
+⊢ (∀a0 a0'. Parenthesis a0 = Parenthesis a0' ⇔ a0 = a0') ∧
+  (∀a0 a0'. String a0 = String a0' ⇔ a0 = a0') ∧
+  (∀a0 a1 a2 a0' a1' a2'.
+     Append a0 a1 a2 = Append a0' a1' a2' ⇔ a0 = a0' ∧ (a1 ⇔ a1') ∧ a2 = a2') ∧
+  ∀a0 a1 a0' a1'. Size a0 a1 = Size a0' a1' ⇔ a0 = a0' ∧ a1 = a1'
+KERNEL_THEOREM mlsexp.parse_space
+⊢ parse (STRING #"\n" xs) = parse xs
+KERNEL_THEOREM mlsexp.parse_sexp_to_string
+⊢ ∀s x.
+    (s ≠ "" ⇒ isSpace (HD s)) ⇒
+    parse (STRCAT (explode (sexp_to_string x)) s) = INR (x,s)
+KERNEL_THEOREM mlsexp.parse_sexp_to_pretty_string
+⊢ ∀s x.
+    parse (STRCAT (explode (sexp_to_pretty_string x)) s) =
+    INR (x,STRCAT "\n" s)
+KERNEL_THEOREM mlsexp.parse_IMP_LENGTH_LESS
+⊢ ∀input x rest. parse input = INR (x,rest) ⇒ STRLEN rest < STRLEN input
+KERNEL_THEOREM mlsexp.parse_aux_to_tokens_thm
+⊢ parse_aux (REVERSE (to_tokens x)) [] [] = [x]
+KERNEL_THEOREM mlsexp.parse_aux_ind
+⊢ ∀P. (∀xs s. P [] xs s) ∧
+      (∀rest xs s. P rest [] (xs::s) ⇒ P (CLOSE::rest) xs s) ∧
+      (∀rest xs s.
+         (∀y ys. s = y::ys ⇒ P rest (Expr xs::y) ys) ∧ (s = [] ⇒ P rest xs s) ⇒
+         P (OPEN::rest) xs s) ∧
+      (∀sy rest xs s. P rest (Atom sy::xs) s ⇒ P (SYMBOL sy::rest) xs s) ⇒
+      ∀v v1 v2. P v v1 v2
+KERNEL_THEOREM mlsexp.parse_aux_def
+⊢ (∀xs s. parse_aux [] xs s = xs) ∧
+  (∀xs s rest. parse_aux (CLOSE::rest) xs s = parse_aux rest [] (xs::s)) ∧
+  (∀xs s rest.
+     parse_aux (OPEN::rest) xs s =
+     case s of
+       [] => parse_aux rest xs s
+     | y::ys => parse_aux rest (Expr xs::y) ys) ∧
+  ∀xs sy s rest.
+    parse_aux (SYMBOL sy::rest) xs s = parse_aux rest (Atom sy::xs) s
+KERNEL_THEOREM mlsexp.newlines_ind
+⊢ ∀P. P [] ∧ (∀x. P [x]) ∧ (∀x v2 v3. P (v2::v3) ⇒ P (x::v2::v3)) ⇒ ∀v. P v
+KERNEL_THEOREM mlsexp.newlines_def
+⊢ newlines [] = String «» ∧ (∀x. newlines [x] = x) ∧
+  ∀x v3 v2. newlines (x::v2::v3) = Append x T (newlines (v2::v3))
+KERNEL_THEOREM mlsexp.lex_IMP_LENGTH_LESS
+⊢ ∀input x rest.
+    lex input = INR (x,rest) ⇒ STRLEN rest < STRLEN input ∨ x = []
+KERNEL_THEOREM mlsexp.lex_aux_spaces
+⊢ ∀t rest ts depth.
+    EVERY isSpace t ⇒
+    lex_aux depth (STRCAT t rest) ts = lex_aux depth rest ts
+KERNEL_THEOREM mlsexp.lex_aux_sexp_to_list
+⊢ (∀x s ts depth.
+     (s ≠ "" ⇒ isSpace (HD s) ∨ HD s = #")") ∧ (depth = 0 ⇒ ts = []) ⇒
+     lex_aux depth
+       (STRCAT (explode (concat (append (sexp_to_app_list x)))) s) ts =
+     if depth = 0 then INR (REVERSE (to_tokens x) ++ ts,s)
+     else lex_aux depth s (REVERSE (to_tokens x) ++ ts)) ∧
+  ∀xs s ts depth.
+    (s ≠ "" ⇒ isSpace (HD s) ∨ HD s = #")") ∧ depth ≠ 0 ⇒
+    lex_aux depth
+      (STRCAT (explode (concat (append (sexps_to_app_list xs)))) s) ts =
+    lex_aux depth s (REVERSE (FLAT (MAP (λx. to_tokens x) xs)) ++ ts)
+KERNEL_THEOREM mlsexp.lex_aux_sexp2tree
+⊢ (∀x s ts depth m n indent.
+     (s ≠ "" ⇒ isSpace (HD s) ∨ HD s = #")") ∧ (depth = 0 ⇒ ts = []) ∧
+     indent ≠ «» ∧ EVERY isSpace (explode indent) ⇒
+     lex_aux depth
+       (STRCAT
+          (explode
+             (concat
+                (flatten indent
+                   (smart_remove m n (annotate (v2pretty (sexp2tree x)))) [])))
+          s) ts =
+     (if depth = 0 then INR (REVERSE (to_tokens x) ++ ts,s)
+      else lex_aux depth s (REVERSE (to_tokens x) ++ ts)) ∧
+     lex_aux depth
+       (STRCAT
+          (explode
+             (concat
+                (flatten indent
+                   (remove_all (annotate (v2pretty (sexp2tree x)))) []))) s)
+       ts =
+     if depth = 0 then INR (REVERSE (to_tokens x) ++ ts,s)
+     else lex_aux depth s (REVERSE (to_tokens x) ++ ts)) ∧
+  ∀xs s ts depth indent m n.
+    (s ≠ "" ⇒ isSpace (HD s) ∨ HD s = #")") ∧ depth ≠ 0 ∧ indent ≠ «» ∧
+    EVERY isSpace (explode indent) ⇒
+    lex_aux depth
+      (STRCAT
+         (explode
+            (concat
+               (flatten indent
+                  (smart_remove m n
+                     (annotate (newlines (vs2pretty (sexp2trees xs))))) [])))
+         s) ts = lex_aux depth s (REVERSE (FLAT (MAP to_tokens xs)) ++ ts) ∧
+    lex_aux depth
+      (STRCAT
+         (explode
+            (concat
+               (flatten indent
+                  (remove_all
+                     (annotate (newlines (vs2pretty (sexp2trees xs))))) [])))
+         s) ts = lex_aux depth s (REVERSE (FLAT (MAP to_tokens xs)) ++ ts)
+KERNEL_THEOREM mlsexp.lex_aux_make_str_safe
+⊢ ∀m s ts depth.
+    (s ≠ "" ⇒ isSpace (HD s) ∨ HD s = #")") ∧ (depth = 0 ⇒ ts = []) ⇒
+    lex_aux depth (STRCAT (case make_str_safe m of strlit x => x) s) ts =
+    if depth = 0 then INR (SYMBOL m::ts,s)
+    else lex_aux depth s (SYMBOL m::ts)
+KERNEL_THEOREM mlsexp.lex_aux_length
+⊢ ∀depth input acc e rest.
+    lex_aux depth input acc = INR (e,rest) ⇒ STRLEN rest ≤ STRLEN input
+KERNEL_THEOREM mlsexp.lex_aux_ind
+⊢ ∀P. (∀depth acc. P depth "" acc) ∧
+      (∀depth c cs acc.
+         (∀s rest.
+            ¬isSpace c ∧ c ≠ #"(" ∧ c ≠ #")" ∧ c ≠ #"\"" ∧
+            read_symbol cs (STRING c "") = (s,rest) ∧ depth ≠ 0 ⇒
+            P depth rest (SYMBOL s::acc)) ∧
+         (∀v1 s rest'.
+            ¬isSpace c ∧ c ≠ #"(" ∧ c ≠ #")" ∧ c = #"\"" ∧
+            read_string cs = INR v1 ∧ v1 = (s,rest') ∧ depth ≠ 0 ⇒
+            P depth rest' (SYMBOL s::acc)) ∧ (isSpace c ⇒ P depth cs acc) ∧
+         (¬isSpace c ∧ c ≠ #"(" ∧ c = #")" ∧ depth ≠ 0 ∧ depth ≠ 1 ⇒
+          P (depth − 1) cs (CLOSE::acc)) ∧
+         (¬isSpace c ∧ c = #"(" ⇒ P (depth + 1) cs (OPEN::acc)) ⇒
+         P depth (STRING c cs) acc) ⇒
+      ∀v v1 v2. P v v1 v2
+KERNEL_THEOREM mlsexp.lex_aux_def
+⊢ (∀depth acc.
+     lex_aux depth "" acc =
+     if depth = 0 then INR (acc,"")
+     else INL («lex_aux: missing closing parenthesis»,"")) ∧
+  ∀depth cs c acc.
+    lex_aux depth (STRING c cs) acc =
+    if isSpace c then lex_aux depth cs acc
+    else if c = #"(" then lex_aux (depth + 1) cs (OPEN::acc)
+    else if c = #")" then
+      if depth = 0 then INL («lex_aux: too many closing parenthesis»,cs)
+      else if depth = 1 then INR (CLOSE::acc,cs)
+      else lex_aux (depth − 1) cs (CLOSE::acc)
+    else if c = #"\"" then
+      case read_string cs of
+        INL (msg,rest) => INL (msg,rest)
+      | INR (s,rest') =>
+        if depth = 0 then INR ([SYMBOL s],rest')
+        else lex_aux depth rest' (SYMBOL s::acc)
+    else
+      case read_symbol cs (STRING c "") of
+        (s,rest) =>
+          if depth = 0 then INR ([SYMBOL s],rest)
+          else lex_aux depth rest (SYMBOL s::acc)
+KERNEL_THEOREM mlsexp.get_size_ind
+⊢ ∀P. (∀n x. P (Size n x)) ∧ (∀x v0 y. P x ∧ P y ⇒ P (Append x v0 y)) ∧
+      (∀x. P x ⇒ P (Parenthesis x)) ∧ (∀v2. P (String v2)) ⇒
+      ∀v. P v
+KERNEL_THEOREM mlsexp.get_size_def
+⊢ (∀x n. get_size (Size n x) = n) ∧
+  (∀y x v0. get_size (Append x v0 y) = get_size x + get_size y + 1) ∧
+  (∀x. get_size (Parenthesis x) = get_size x + 2) ∧
+  ∀v2. get_size (String v2) = 0
+KERNEL_THEOREM mlsexp.get_next_size_ind
+⊢ ∀P. (∀n x. P (Size n x)) ∧ (∀x v0 y. P x ⇒ P (Append x v0 y)) ∧
+      (∀x. P x ⇒ P (Parenthesis x)) ∧ (∀v2. P (String v2)) ⇒
+      ∀v. P v
+KERNEL_THEOREM mlsexp.get_next_size_def
+⊢ (∀x n. get_next_size (Size n x) = n) ∧
+  (∀y x v0. get_next_size (Append x v0 y) = get_next_size x) ∧
+  (∀x. get_next_size (Parenthesis x) = get_next_size x + 2) ∧
+  ∀v2. get_next_size (String v2) = 0
+KERNEL_THEOREM mlsexp.fromString_sexp_to_string
+⊢ fromString (sexp_to_string x) = SOME x
+KERNEL_THEOREM mlsexp.fromString_sexp_to_pretty_string
+⊢ fromString (sexp_to_pretty_string x) = SOME x
+KERNEL_THEOREM mlsexp.flatten_acc
+⊢ ∀x indent s. flatten indent x s = flatten indent x [] ++ s
+KERNEL_THEOREM mlsexp.datatype_token
+⊢ DATATYPE (token OPEN CLOSE SYMBOL)
+KERNEL_THEOREM mlsexp.datatype_str_tree
+⊢ DATATYPE (str_tree Str Trees GrabLine)
+KERNEL_THEOREM mlsexp.datatype_sexp
+⊢ DATATYPE (sexp Atom Expr)
+KERNEL_THEOREM mlsexp.datatype_pretty
+⊢ DATATYPE (pretty Parenthesis String Append Size)
+HOL4_MLSEXP_EXPORTS_INSPECTED 74

@@ -21,6 +21,7 @@ PREAMBLE = "misc/preamble.sml"
 ASM_LIBRARY = "compiler/encoders/asm/asmLib.sml"
 EVALUATOR_LIBRARY = "cv_translator/eval_cake_compileLib.sml"
 PATTERN_AST = "semantics/astScript.sml"
+MLSEXP = "basis/pure/mlsexpScript.sml"
 COMPUTE_UPDATES = {
     "compiler/parsing/cmlPEGScript.sml": (
         "val _ = (computeLib.the_compset := computeLib.add_thms distinct_ths (!computeLib.the_compset))",
@@ -114,6 +115,40 @@ End"""
     return original.replace(before, after)
 
 
+def compatible_mlsexp_induction(original: str) -> str:
+    """Select exact mutual induction rules; hash-guard each original proof body."""
+    repairs = (
+        ('lex_aux_sexp2tree', '0f88ad5fd6710a863a42ecf0836239a57493b05ee912e88bdbadf8c2791b5b50', (
+            ('Proof\n  Induct',
+             'Proof\n  ho_match_mp_tac sexp2tree_ind \\\\ rpt conj_tac'),
+            ('(simp [sexp2tree_def]',
+             '(gen_tac \\\\ rename1 ‘sexp2tree (Atom m)’\n    \\\\ simp [sexp2tree_def]'),
+            ('(rpt gen_tac \\\\ strip_tac',
+             '(rpt gen_tac \\\\ strip_tac \\\\ rpt gen_tac \\\\ strip_tac'),
+            ('  \\\\ Cases_on ‘xs’',
+             '  \\\\ rpt gen_tac \\\\ strip_tac\n  \\\\ rename1 ‘sexp2trees (x::xs)’\n  \\\\ Cases_on ‘xs’'),
+        )),
+        ('lex_aux_sexp_to_list', 'ccb2a0b673d3782b977bd3b2fcf681acb1947e4d9cdd6af809c3872a05e6aaaa', (
+            ('Proof\n  Induct',
+             'Proof\n  ho_match_mp_tac sexp_to_app_list_ind \\\\ rpt conj_tac'),
+            ('(fs [to_tokens_def]',
+             '(gen_tac \\\\ rename1 ‘sexp_to_app_list (Atom m)’\n    \\\\ fs [to_tokens_def]'),
+        )),
+    )
+    for name, expected, replacements in repairs:
+        start = original.index("\nProof\n", original.index("Theorem " + name + ":"))
+        end = original.index("\nQED", start)
+        proof = original[start:end]
+        if hashlib.sha256(proof.encode()).hexdigest() != expected:
+            raise ValueError("pinned mlsexp proof changed; re-audit required")
+        for before, after in replacements:
+            if before not in proof:
+                raise ValueError("pinned mlsexp proof anchor changed; re-audit required")
+            proof = proof.replace(before, after, 1)
+        original = original[:start] + proof + original[end:]
+    return original
+
+
 def adaptations(source: Path) -> dict[str, str]:
     result = {PREAMBLE: compatible_preamble((source / PREAMBLE).read_text())}
     result[ASM_LIBRARY] = compatible_asm_library((source / ASM_LIBRARY).read_text())
@@ -129,6 +164,8 @@ def adaptations(source: Path) -> dict[str, str]:
         result[name] = compatible_compute_update(name, text)
     text = result.get(PATTERN_AST, (source / PATTERN_AST).read_text())
     result[PATTERN_AST] = compatible_pattern_termination(text)
+    text = result.get(MLSEXP, (source / MLSEXP).read_text())
+    result[MLSEXP] = compatible_mlsexp_induction(text)
     return result
 
 

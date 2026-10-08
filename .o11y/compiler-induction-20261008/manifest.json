@@ -1,0 +1,151 @@
+{
+  "claim": "byte identities and observed outcomes; proof acceptance scope is receipt.json",
+  "files": [
+    {
+      "bytes": 99,
+      "path": ".gitattributes",
+      "sha256": "2c1d9bc30ef3c21995079d22dbb20bb02cad9570a921a97fed69400d6242800a"
+    },
+    {
+      "bytes": 185,
+      "path": "AGENTS.md",
+      "sha256": "5977eb708329d803bc79047a2eeddeaf2d939fca92d85a31d3a672277e37828c"
+    },
+    {
+      "bytes": 54681,
+      "path": "compatibility.patch",
+      "sha256": "3f5d3450cca23d64fef447b0887bc75a445927a589a4a96ead3c1c246c93417b"
+    },
+    {
+      "bytes": 62894,
+      "path": "compiler-after-mlsexp.log",
+      "sha256": "3f63946d336edfb8254661f41e5d3d51dea3637532710c9412217d971bf65cb2"
+    },
+    {
+      "bytes": 416,
+      "path": "compiler-compat-tests.log",
+      "sha256": "5dbb74528d7f914b082cb8282a52bb978d496d9c7f59534bf49f55faff6fdfc4"
+    },
+    {
+      "bytes": 900,
+      "path": "compiler-inspection-tests.log",
+      "sha256": "82ba78e4776c1ac455425fc83cbab77042a135f7dac6a433d33c72ce3e9af0f9"
+    },
+    {
+      "bytes": 25,
+      "path": "development/STATUS",
+      "sha256": "8d9aaafed5e6de64ebc5abfa5da820cd9b6f054158dd51ddb1fb9594fa4e0092"
+    },
+    {
+      "bytes": 5583,
+      "path": "development/build.log",
+      "sha256": "ef30e40a868a35d88c3903e2c0b3efe87228f2dc0475b0ace479a29673cbbb48"
+    },
+    {
+      "bytes": 28260,
+      "path": "development/compatibility-receipt.json",
+      "sha256": "cbd2e82b19327ae5f4b7e69d52ffb565b56f3e01bd0fbdac6680a22f718519aa"
+    },
+    {
+      "bytes": 68,
+      "path": "development/holmake-flags.txt",
+      "sha256": "329b060de55c533c5d823d1391f361f918b4d8522b63ba8c4c613703ea596967"
+    },
+    {
+      "bytes": 19067,
+      "path": "development/inspection.log",
+      "sha256": "6c06626e4d47541b24fecaba9c5ac2e21506b1a36eb3f24426e6c0e4731a150e"
+    },
+    {
+      "bytes": 108,
+      "path": "development/materialization.log",
+      "sha256": "3d499479bf4ffb7bf33b87f162e496c51580af9f9687a222c10865694233ac5e"
+    },
+    {
+      "bytes": 117222,
+      "path": "development/mlsexpTheory.dat",
+      "sha256": "d1fac974925d68e329673885a7d4210dda466510470eb6aa85c046e59febd010"
+    },
+    {
+      "bytes": 3179,
+      "path": "development/mlsexpTheory.sig",
+      "sha256": "ff30f1c0dd43a28c8c494b5ddcd2242df07e22d23283d8da158aee90a14033ef"
+    },
+    {
+      "bytes": 9568,
+      "path": "development/mlsexpTheory.sml",
+      "sha256": "42b0e02aba7e2b09ae7250ff678b0f3d377bfcc2ab00db049e4fcf9fe78d53b4"
+    },
+    {
+      "bytes": 23985,
+      "path": "mlsexp-adapted.sml",
+      "sha256": "cc029c2f5f148b55272b3c6803d901fb3c4ad07b5cbc21de50e2f6226ef3cf74"
+    },
+    {
+      "bytes": 23695,
+      "path": "mlsexp-original.sml",
+      "sha256": "7f812c450e2567f5cc7b64b3a5d89c6058743cbc771d67b626357260c0871558"
+    },
+    {
+      "bytes": 59,
+      "path": "original-release/Holmakefile",
+      "sha256": "a9e131ae5f929bc526d354e8b58b520ac99df1f25a34f3dd0a28eb4f04f1d0a0"
+    },
+    {
+      "bytes": 2054,
+      "path": "original-release/build-pinned-mlstring.log",
+      "sha256": "c8b2d635a847b1bb68300932a14b5a42ee84f3d65229fe880a0c4ef0b59cfa77"
+    },
+    {
+      "bytes": 4540,
+      "path": "original-release/build-pinned-pair.log",
+      "sha256": "b24f0aede8995f7110b23a73f76105bec4e267348c355b3990e49033384f64d5"
+    },
+    {
+      "bytes": 5730,
+      "path": "original-release/build.log",
+      "sha256": "00860f2c84d955b411022fc2340a2dd78636eeee9fb307f9368f44e8c9d0aa5e"
+    },
+    {
+      "bytes": 40233,
+      "path": "original-release/mlstringScript.sml",
+      "sha256": "44dac6bac81e75b36f312e58aa56df3f9528019d6f8994748331f2fb1e331961"
+    },
+    {
+      "bytes": 1160,
+      "path": "receipt.json",
+      "sha256": "0f480e5ae41aeb98b78aa832185c29c2b10270b9a02fedf31d647fc4014c239b"
+    },
+    {
+      "bytes": 10692,
+      "repository_path": "tools/cakeml-hol4/materialize_cakeml_context_compat.py",
+      "sha256": "ac362f50bad2500420fd9df6665b4c13a9b6d09d4251398e344594ae186f4328"
+    },
+    {
+      "bytes": 1387,
+      "repository_path": "tools/cakeml-hol4/formal/Hol4MlsexpInspect.sml",
+      "sha256": "7d97c5359cff17b8f7c1c34490126b376bcbec6b2f4ddf06cf56a3e3b8eb81bf"
+    },
+    {
+      "bytes": 1606,
+      "repository_path": "tools/cakeml-hol4/qualify_compiler_mlsexp.sh",
+      "sha256": "df58abe2299c86c3634196defb6450072a571427412007cd84ca456c8eb75a19"
+    },
+    {
+      "bytes": 1421,
+      "repository_path": "tools/cakeml-hol4/test_compiler_compat.py",
+      "sha256": "18a51057d00b1f933966a0d305b231b8ed668c3199adcbd69fb892fe7290fb98"
+    },
+    {
+      "bytes": 4137,
+      "repository_path": "tools/cakeml-hol4/test_hol4_inspection.py",
+      "sha256": "2770d30732b57354f5a4ab0f9cb21480328882c2382bbc5a4e7d8bd878d327e6"
+    },
+    {
+      "bytes": 8374,
+      "repository_path": ".github/workflows/cakeml-hol4-qualification.yml",
+      "sha256": "211124ee6cbf425041e906f9b804fd47cf8088e870c6d286e802b9ce73a7a81e"
+    }
+  ],
+  "schema": 1
+}

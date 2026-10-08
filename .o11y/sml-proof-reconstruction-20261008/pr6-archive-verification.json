@@ -1,0 +1,6 @@
+{
+  "artifacts": 203,
+  "claim": "archive identity check only; existing proofs are being reconstructed independently",
+  "sha256": "42a7673d74b72623be760eb3f8cafd06fc70daebdc944d1f467fb8d97b411d7e",
+  "status": "ARTIFACT_IDENTITIES_VERIFIED"
+}

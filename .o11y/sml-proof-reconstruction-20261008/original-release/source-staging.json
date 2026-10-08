@@ -1,0 +1,420 @@
+{
+  "cakeml_commit": "f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6",
+  "claim": "build controls replaced; optional final ML hashes are in proof-adaptations.json; kernel reconstruction required",
+  "files": [
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "2337ea4d1d0ee65eef2a098c68d8eb8012a952a9414d1c690f9afcd99b205402",
+      "source_path": "basis/pure/basis_cvScript.sml",
+      "staged_name": "basis_cvScript.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "cbb02b0dfd636005e7f61d39d94b4965ca6c53639c7fcb616171640341fcfa79",
+      "source_path": "basis/pure/mlintScript.sml",
+      "staged_name": "mlintScript.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "21280a9df00bc9674329eebe2699b453eaffc717ec81ab37f91c3b7cc9d25f27",
+      "source_path": "basis/pure/mllistScript.sml",
+      "staged_name": "mllistScript.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "8fa160835a8d0b823031c6cb1ed257e605dfbb3e1df56b1170524e25467a9788",
+      "source_path": "basis/pure/mlmapScript.sml",
+      "staged_name": "mlmapScript.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "6bc4710f8d755e5a0638f02629d6e7157c7d90e5c0b54645e00293ccc5285a9f",
+      "source_path": "basis/pure/mloptionScript.sml",
+      "staged_name": "mloptionScript.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "549980b5eb71748adbc7381aa8cca6c3597ebd096ea0524aebb213c218a06122",
+      "source_path": "basis/pure/mlprettyprinterScript.sml",
+      "staged_name": "mlprettyprinterScript.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "4455912cc4e33657dc9442cbf38d772f72c66ff2b4255b0fd741ab48e63725c9",
+      "source_path": "basis/pure/mlratScript.sml",
+      "staged_name": "mlratScript.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "d8795385a53f238776443522fe52aaf95fda5500045aa8b300368c1a80eafeb0",
+      "source_path": "basis/pure/mlsetScript.sml",
+      "staged_name": "mlsetScript.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "33a33afbe5f356a013281ddab6213eb044b0b5e55c18d0be0022e04dda559467",
+      "source_path": "basis/pure/mlsexpScript.sml",
+      "staged_name": "mlsexpScript.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "d9583b3df9f1518675e373292b831fb95664f9b9ac23b275bd72a5256e2834cc",
+      "source_path": "basis/pure/mlstringLib.sig",
+      "staged_name": "mlstringLib.sig"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "8ed4a9cb9a1ceed4604114e3b4ee1804aaeaab4d75cbf002d263ab56fe9d0b0c",
+      "source_path": "basis/pure/mlstringLib.sml",
+      "staged_name": "mlstringLib.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "b7a7a18de4561b5ffccaaf5ad10267367c526e4f44c7084e99c716c1b50afa96",
+      "source_path": "basis/pure/mlstringScript.sml",
+      "staged_name": "mlstringScript.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "40c5d34311d23cf38250b3dd9d98c0127c81c4f40237a6531b06102e82f740ff",
+      "source_path": "basis/pure/mlstringSyntax.sig",
+      "staged_name": "mlstringSyntax.sig"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "0d51cf5ced25415a115dd6a8e5af7927fba0f58d7380b50cbf6f65dd2b423360",
+      "source_path": "basis/pure/mlstringSyntax.sml",
+      "staged_name": "mlstringSyntax.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "e7daa4df1f842b67e3164f08379e768e1832d35a10848d671d53124c14671f5e",
+      "source_path": "basis/pure/mlvectorScript.sml",
+      "staged_name": "mlvectorScript.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "f3f7233cd1dcd5d42105b9749f7f91a7dfd1395c9c00623eb305222cef5f5709",
+      "source_path": "basis/pure/mlvectorSyntax.sig",
+      "staged_name": "mlvectorSyntax.sig"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "62550d652f1d0588d31c8c30517166822e1861ac8428196cdad3328bb8fe00a5",
+      "source_path": "basis/pure/mlvectorSyntax.sml",
+      "staged_name": "mlvectorSyntax.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "46ae9121abec4ed0a4ebb6a5a073f6d3e7eb2bca68e8bb4d203d811d4fc4349f",
+      "source_path": "misc/basicComputeLib.sig",
+      "staged_name": "basicComputeLib.sig"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "b52f1dd68e2048829d69761d7a4c5d0f0e096263543f13d98ebcbfb7d24bfb94",
+      "source_path": "misc/basicComputeLib.sml",
+      "staged_name": "basicComputeLib.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "130b30632a89a0e1219cbee594bbccc9a15f8625d3bc13e82edb66c3fa344877",
+      "source_path": "misc/induct_tweakLib.sml",
+      "staged_name": "induct_tweakLib.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "bd21f980357d3475e13de1f90278805d02d25940d853914b135d088370f81288",
+      "source_path": "misc/miscScript.sml",
+      "staged_name": "miscScript.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "a8e6030f1c50d3f6441ad7d1b12ecd49edb1e10b90619b776127e3fd9fb7fb09",
+      "source_path": "misc/packLib.sml",
+      "staged_name": "packLib.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "6c3ba19a6af82469595d9e4e1274990dff34fbb6137d238007bda5af285c5540",
+      "source_path": "misc/preamble.sml",
+      "staged_name": "preamble.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "c1fbebc2c5f58c2a9dbfd9bd92cceb46ac12d0ca8a76d1e105ae4e6c80b1a17a",
+      "source_path": "semantics/astPP.sml",
+      "staged_name": "astPP.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "af9141014a24ec7dba44930a58cbf72f6d8b50aa5847314e0d016924d0728412",
+      "source_path": "semantics/astScript.sml",
+      "staged_name": "astScript.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "8de55934d3d9ee06c41aa092a946a34933e807c1ce3c85fac94a4ac212187ee1",
+      "source_path": "semantics/astSyntax.sml",
+      "staged_name": "astSyntax.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "2b6395a05792a48f4dbee73e07011aa87465bba2eb3ec87740d72791346c50ce",
+      "source_path": "semantics/cmlPtreeConversionScript.sml",
+      "staged_name": "cmlPtreeConversionScript.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "f552951e84b96bae6033e5754ef095347f07d10f95758bf1c508e55287c53e35",
+      "source_path": "semantics/evaluateScript.sml",
+      "staged_name": "evaluateScript.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "91ba9834ba7661c0278d7fcf88a22bca174c088a8eac62a72d6d452e4e39229d",
+      "source_path": "semantics/ffi/ffiScript.sml",
+      "staged_name": "ffiScript.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "8db2d2ceb599e4172a55dd3c6c6fd72000c3aec27734a9074f0c8f3a6c6f8e08",
+      "source_path": "semantics/ffi/simpleIOScript.sml",
+      "staged_name": "simpleIOScript.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "d49e2cfe46be1da997a46dcbf6f313b296c5649265ad9dca8f90db3a052f18db",
+      "source_path": "semantics/fpSemScript.sml",
+      "staged_name": "fpSemScript.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "e5f57fec083cd28ebd2a053020d6f3a1d08fe955203d5a0fc081b7edc24fe51d",
+      "source_path": "semantics/gramScript.sml",
+      "staged_name": "gramScript.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "5ab19d0956616a47b183a4221afeb705cbf17d4452695cc4c7e75cdb81a1c9ca",
+      "source_path": "semantics/lexer_funScript.sml",
+      "staged_name": "lexer_funScript.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "c801a0c47db1a07ddc1cc84b7f72f9bae9215be70d6ee21ee65ef43e82cd8b0c",
+      "source_path": "semantics/namespaceScript.sml",
+      "staged_name": "namespaceScript.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "fa56d165b0f775b52b11c07736a6e4244326749488656ddd78c48034be23a4a9",
+      "source_path": "semantics/primTypesScript.sml",
+      "staged_name": "primTypesScript.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "4fdf00edae14a280a3c3df24b5fff0017620b79ffe0005ee994e5ccd52b4e3c4",
+      "source_path": "semantics/proofs/cmlPtreeConversionPropsScript.sml",
+      "staged_name": "cmlPtreeConversionPropsScript.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "98c78618c993fe1f5653daee05dce69fe162ffd00cccad082d7ca2caa23a029a",
+      "source_path": "semantics/proofs/evaluateComputeLib.sml",
+      "staged_name": "evaluateComputeLib.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "7fcb386f8adc802a73b3477374588a921652a6ea6242386753295f0ec73ad989",
+      "source_path": "semantics/proofs/evaluatePropsScript.sml",
+      "staged_name": "evaluatePropsScript.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "8aa180e42f90472d162f0fcd6725db225c528af57509e63ec3d6ea2ba73f9fbd",
+      "source_path": "semantics/proofs/gramPropsScript.sml",
+      "staged_name": "gramPropsScript.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "5d7600686725052d1ff0d4a4a723361b899f1a10a98fc6edd0d67d23e9df186a",
+      "source_path": "semantics/proofs/namespacePropsScript.sml",
+      "staged_name": "namespacePropsScript.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "12843f59526052df532d08bab0c63b3e5801b1abf851cc83aeb13399b4444faa",
+      "source_path": "semantics/proofs/primSemEnvScript.sml",
+      "staged_name": "primSemEnvScript.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "89a7d8a03ad47701d5a498435ea6a7056b1642cca384213a69a5325a2524acb1",
+      "source_path": "semantics/proofs/semanticPrimitivesPropsScript.sml",
+      "staged_name": "semanticPrimitivesPropsScript.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "445b190477082ff7097c72e560fcb9ee1c9cdf34b6faf7cc7a1a44b96b8183e8",
+      "source_path": "semantics/proofs/semanticsComputeLib.sig",
+      "staged_name": "semanticsComputeLib.sig"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "556adbebe2290c8841a19b39411e6ccc77586c4f3b64bb5e80893d4aa0635af5",
+      "source_path": "semantics/proofs/semanticsComputeLib.sml",
+      "staged_name": "semanticsComputeLib.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "67aadd36426512d5de30ac20d5efa12d693041227201c5403e5f2a20098a7688",
+      "source_path": "semantics/proofs/semanticsPropsScript.sml",
+      "staged_name": "semanticsPropsScript.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "cae91375f8a9223961b1a284630348fdddd871d45623254ad19db9529fa4358b",
+      "source_path": "semantics/proofs/source_cvScript.sml",
+      "staged_name": "source_cvScript.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "7950dc3997250c3e1f3a7be7c0c0566aa04ebab4a370f2859254835f7813c749",
+      "source_path": "semantics/proofs/typeSoundInvariantsScript.sml",
+      "staged_name": "typeSoundInvariantsScript.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "53d460575cec7979e4bc49b65e95aa514f68449873bd44e9a3d8be1db606627d",
+      "source_path": "semantics/proofs/typeSoundScript.sml",
+      "staged_name": "typeSoundScript.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "6f057ad534128060deabe59c450a7918ab07d586c8aab929a0c2c32dcbac7d4d",
+      "source_path": "semantics/proofs/typeSysPropsScript.sml",
+      "staged_name": "typeSysPropsScript.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "9b2ac5808b933ef01f96be63a68ef564c04b31da1432b02112df1793e01fe25d",
+      "source_path": "semantics/proofs/weakeningScript.sml",
+      "staged_name": "weakeningScript.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "909404fe1878878874b8f301122fd8d66626f3ce3af94d8f5ccb9c40a843d568",
+      "source_path": "semantics/proofs/wordShiftPropsScript.sml",
+      "staged_name": "wordShiftPropsScript.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "21879d0f9d956f923bd8f0d8f490880461c9fb30cb55979c3fe78c5372ac28bf",
+      "source_path": "semantics/semanticPrimitivesScript.sml",
+      "staged_name": "semanticPrimitivesScript.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "b9410953904f4974b447cb0442f52b88065df7e5c7b4dcddb08a7ce427b38563",
+      "source_path": "semantics/semanticPrimitivesSyntax.sml",
+      "staged_name": "semanticPrimitivesSyntax.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "ebc161d3a518ffb9d1f2d1867ac834a5bd7c8596a424802de5aabb89dd0a045e",
+      "source_path": "semantics/semanticsScript.sml",
+      "staged_name": "semanticsScript.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "b9a9a14a58e4e9cdacb40c85ddc780b7796b2052d56919e3c6fa551842a0ee9a",
+      "source_path": "semantics/tokenUtilsScript.sml",
+      "staged_name": "tokenUtilsScript.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "211c3ac993e1e79ab35ffbeb95d813d9cb5cb67ae24bdc8ec4c08f17169965e1",
+      "source_path": "semantics/tokensScript.sml",
+      "staged_name": "tokensScript.sml"
+    },
+    {
+      "repository": "CakeML/cakeml",
+      "sha256": "0b10a496e8202683e1c37fdc44185d35898feb88090d7a04b46b642b67d777d1",
+      "source_path": "semantics/typeSystemScript.sml",
+      "staged_name": "typeSystemScript.sml"
+    },
+    {
+      "repository": "QuasarRay/HOL",
+      "sha256": "8e3a3de74e0ac4a515dd7a134fc0a146d9c1077f7fa29386dc86d6fbdc081ef2",
+      "source_path": "tools/cakeml-hol4/formal/Hol4SmlMacroScript.sml",
+      "staged_name": "Hol4SmlMacroScript.sml"
+    },
+    {
+      "repository": "QuasarRay/HOL",
+      "sha256": "2fef7cb6fd5acba4e453e991d75e54d7b29947da0cdccf8af7db6831b16cec94",
+      "source_path": "tools/cakeml-hol4/formal/Hol4SmlApplicationScript.sml",
+      "staged_name": "Hol4SmlApplicationScript.sml"
+    },
+    {
+      "repository": "QuasarRay/HOL",
+      "sha256": "befe493294b603e5e4456e2987cf562679d4380e39cd60ad56261a834fa1d072",
+      "source_path": "tools/cakeml-hol4/formal/Hol4SmlOrderScript.sml",
+      "staged_name": "Hol4SmlOrderScript.sml"
+    },
+    {
+      "repository": "QuasarRay/HOL",
+      "sha256": "0d5a922617ff0fbf7718fdc94a36f787f5056124bb00c533c716972ea8c14e23",
+      "source_path": "tools/cakeml-hol4/formal/Hol4SmlMacroLib.sml",
+      "staged_name": "Hol4SmlMacroLib.sml"
+    },
+    {
+      "repository": "QuasarRay/HOL",
+      "sha256": "c06f700855778ca31f877c89b088b6f83bae9797a2b720d9d8bf39a51fe7f796",
+      "source_path": "tools/cakeml-hol4/formal/Hol4SmlMacroLib.sig",
+      "staged_name": "Hol4SmlMacroLib.sig"
+    },
+    {
+      "repository": "QuasarRay/HOL",
+      "sha256": "ad77d7c5a0ac19e894dac9068ed9e90c39e5b741c65a0d1705f366b3374e1124",
+      "source_path": "tools/cakeml-hol4/formal/Hol4SmlMacroQualificationScript.sml",
+      "staged_name": "Hol4SmlMacroQualificationScript.sml"
+    },
+    {
+      "repository": "QuasarRay/HOL",
+      "sha256": "b1d4c2266d554e0a8819c30cde7dbb9c1a31de55584f2994429635b6fa02aebe",
+      "source_path": "tools/cakeml-hol4/formal/Hol4ProofSearchLib.sml",
+      "staged_name": "Hol4ProofSearchLib.sml"
+    },
+    {
+      "repository": "QuasarRay/HOL",
+      "sha256": "5d1652b6174e018c8a580deab431f5b3e00a1ef2950a2ad92e9cb430d01b988b",
+      "source_path": "tools/cakeml-hol4/formal/Hol4ProofSearchLib.sig",
+      "staged_name": "Hol4ProofSearchLib.sig"
+    },
+    {
+      "repository": "QuasarRay/HOL",
+      "sha256": "1d36e191d59f2725c7798d24dc59a142f4d5157a73539ecf2d38eecad46dd5d4",
+      "source_path": "tools/cakeml-hol4/formal/Hol4SmlGapWitnessScript.sml",
+      "staged_name": "Hol4SmlGapWitnessScript.sml"
+    },
+    {
+      "repository": "QuasarRay/HOL",
+      "sha256": "18d140af509e008f5b5ea90f5a95a2982bc627655e183c88f9733d81bb8cad9e",
+      "source_path": "tools/cakeml-hol4/formal/Hol4SmlMacroInspect.sml",
+      "staged_name": "Hol4SmlMacroInspect.sml"
+    },
+    {
+      "repository": "QuasarRay/HOL",
+      "sha256": "e7f057ef01ec4b041b65acc868b3caaf80034fb5e74d594f9650096d09f69f37",
+      "source_path": "tools/cakeml-hol4/formal/Hol4SmlGapInspect.sml",
+      "staged_name": "Hol4SmlGapInspect.sml"
+    }
+  ],
+  "has_proof_adaptations": true,
+  "hash_scope": "pre-adaptation input bytes",
+  "holmakefile_sha256": "831cf7b3b0f8d0faa9935fc99d606ae110f965c3765645c85152c7dea7653f33",
+  "schema": 1,
+  "source_update": "Project proof source now includes the explicit state self-update lemma required by the old simplifier; no theorem statement or semantic definition changed.",
+  "status": "EXACT_ML_INPUT_IDENTITIES_RECORDED"
+}

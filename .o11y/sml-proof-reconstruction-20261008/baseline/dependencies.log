@@ -1,0 +1,328 @@
+Executing /workspace/scratch/7755a98cf62b/HOL/examples/l3-machine-code/arm8/asl-equiv/.hol_preexec:
+  HOLORIG=/workspace/scratch/7755a98cf62b/cakeml-report/semantics [ -d "armv8.6-asl-snapshot" ] || ./get-armv8.6-hol-snapshot
+Scanning $(HOLDIR)/src/TeX
+Scanning $(HOLDIR)/src/bag
+Scanning $(HOLDIR)/src/sort
+Scanning $(HOLDIR)/src/string
+Scanning $(HOLDIR)/src/n-bit
+Scanning $(HOLDIR)/src/res_quan/src
+Scanning $(HOLDIR)/src/finite_maps
+Scanning $(HOLDIR)/examples/formal-languages/context-free
+Scanning $(CAKEMLDIR)/basis/pure
+Scanning $(HOLDIR)/src/transfer
+Scanning $(HOLDIR)/src/pred_set/src/more_theories
+Scanning $(HOLDIR)/src/coalgebras
+Scanning $(HOLDIR)/examples/pl-semantics/lprefix_lub
+Scanning $(CAKEMLDIR)/misc
+Scanning $(CAKEMLDIR)/semantics/ffi
+Scanning $(HOLDIR)/src/integer
+Scanning $(HOLDIR)/src/rational
+Scanning $(HOLDIR)/src/num/theories/cv_compute/automation
+Scanning $(HOLDIR)/src/algebra/base
+Scanning $(HOLDIR)/src/algebra/construction
+Scanning $(HOLDIR)/src/algebra
+Scanning $(HOLDIR)/src/hol88
+Scanning $(HOLDIR)/src/real
+Scanning $(HOLDIR)/examples/formal-languages
+Scanning $(HOLDIR)/src/search
+Scanning $(HOLDIR)/examples/machine-code/hoare-triple
+Scanning $(HOLDIR)/src/floating-point
+Scanning $(HOLDIR)/src/monad/more_monads
+Scanning $(HOLDIR)/src/update
+Scanning $(HOLDIR)/examples/l3-machine-code/common
+Scanning $(HOLDIR)/examples/l3-machine-code/lib
+Scanning $(HOLDIR)/examples/l3-machine-code/arm8/asl-equiv/armv8.6-asl-snapshot/A64_ISA_v86A/lib/lem
+Scanning $(HOLDIR)/examples/l3-machine-code/arm8/asl-equiv/armv8.6-asl-snapshot/A64_ISA_v86A/lib/sail
+Scanning $(HOLDIR)/examples/l3-machine-code/arm8/asl-equiv/armv8.6-asl-snapshot/A64_ISA_v86A
+Scanning $(HOLDIR)/examples/l3-machine-code/arm8/model
+Scanning $(HOLDIR)/examples/machine-code/decompiler
+Scanning $(HOLDIR)/examples/l3-machine-code
+Scanning $(HOLDIR)/examples/l3-machine-code/arm8/step
+Scanning $(CAKEMLDIR)/basis
+Scanning $(CAKEMLDIR)/candle
+Scanning $(CAKEMLDIR)/candle/prover
+Scanning $(CAKEMLDIR)/candle/prover/compute
+Scanning $(CAKEMLDIR)/candle/set-theory
+Scanning $(CAKEMLDIR)/candle/standard
+Scanning $(CAKEMLDIR)/candle/standard/ml_kernel
+Scanning $(CAKEMLDIR)/candle/standard/monadic
+Scanning $(CAKEMLDIR)/candle/standard/semantics
+Scanning $(CAKEMLDIR)/candle/standard/syntax
+Scanning $(CAKEMLDIR)/candle/standard/syntax/little_theories
+Scanning $(CAKEMLDIR)/candle/syntax-lib
+Scanning $(CAKEMLDIR)/characteristic
+Scanning $(CAKEMLDIR)/characteristic/examples
+Scanning $(CAKEMLDIR)/compiler
+Scanning $(CAKEMLDIR)/compiler/backend
+Scanning $(CAKEMLDIR)/compiler/backend/reg_alloc
+Scanning $(CAKEMLDIR)/compiler/backend/semantics
+Scanning $(CAKEMLDIR)/compiler/encoders/asm
+Scanning $(HOLDIR)/examples/l3-machine-code/riscv/step
+Scanning $(CAKEMLDIR)/compiler/encoders/riscv
+Scanning $(HOLDIR)/examples/l3-machine-code/riscv/prog
+Scanning $(CAKEMLDIR)/compiler/encoders/riscv/proofs
+Scanning $(CAKEMLDIR)/semantics
+Scanning $(CAKEMLDIR)/semantics/proofs
+Scanning $(CAKEMLDIR)/compiler/backend/San
+Scanning $(CAKEMLDIR)/compiler/backend/ag32
+Scanning $(CAKEMLDIR)/compiler/backend/ag32/proofs
+Scanning $(CAKEMLDIR)/compiler/backend/arm7
+Scanning $(CAKEMLDIR)/compiler/backend/arm7/proofs
+Scanning $(CAKEMLDIR)/compiler/backend/arm8
+Scanning $(CAKEMLDIR)/compiler/backend/arm8/proofs
+Scanning $(CAKEMLDIR)/compiler/backend/arm8_asl
+Scanning $(CAKEMLDIR)/compiler/backend/cv_compute
+Scanning $(CAKEMLDIR)/compiler/backend/gc
+Scanning $(CAKEMLDIR)/compiler/backend/mips
+Scanning $(CAKEMLDIR)/compiler/backend/mips/proofs
+Scanning $(CAKEMLDIR)/compiler/backend/pattern_matching
+Scanning $(CAKEMLDIR)/compiler/backend/proofs
+Scanning $(CAKEMLDIR)/compiler/backend/reg_alloc/proofs
+Scanning $(CAKEMLDIR)/compiler/backend/riscv
+Scanning $(CAKEMLDIR)/compiler/backend/riscv/proofs
+Scanning $(CAKEMLDIR)/compiler/backend/serialiser
+Scanning $(CAKEMLDIR)/compiler/backend/x64
+Scanning $(CAKEMLDIR)/compiler/backend/x64/proofs
+Scanning $(CAKEMLDIR)/unverified/sexpr-bootstrap/export/x64/64
+Scanning $(CAKEMLDIR)/unverified/sexpr-bootstrap/x64/64
+Scanning $(CAKEMLDIR)/compiler/benchmarks/cakeml_benchmarks/cakeml
+Scanning $(CAKEMLDIR)/compiler/benchmarks/mlton_benchmarks/cakeml
+Scanning $(CAKEMLDIR)/compiler/benchmarks
+Scanning $(CAKEMLDIR)/compiler/benchmarks/cakeml_benchmarks
+Scanning $(CAKEMLDIR)/compiler/benchmarks/cakeml_benchmarks/ocaml
+Scanning $(CAKEMLDIR)/compiler/benchmarks/mlton_benchmarks
+Scanning $(CAKEMLDIR)/compiler/bootstrap
+Scanning $(CAKEMLDIR)/compiler/bootstrap/compilation
+Scanning $(CAKEMLDIR)/compiler/bootstrap/compilation/ag32
+Scanning $(CAKEMLDIR)/compiler/bootstrap/compilation/ag32/32
+Scanning $(CAKEMLDIR)/compiler/bootstrap/compilation/ag32/32/proofs
+Scanning $(CAKEMLDIR)/compiler/bootstrap/compilation/arm8
+Scanning $(CAKEMLDIR)/unverified/sexpr-bootstrap/export/32
+Scanning $(CAKEMLDIR)/unverified/sexpr-bootstrap/export/arm8/64
+Scanning $(CAKEMLDIR)/compiler/bootstrap/compilation/arm8/64
+Scanning $(CAKEMLDIR)/compiler/bootstrap/compilation/arm8/64/proofs
+Scanning $(CAKEMLDIR)/compiler/bootstrap/compilation/x64
+Scanning $(CAKEMLDIR)/compiler/bootstrap/compilation/x64/32
+Scanning $(CAKEMLDIR)/compiler/bootstrap/compilation/x64/32/proofs
+Scanning $(CAKEMLDIR)/compiler/bootstrap/compilation/x64/64
+Scanning $(CAKEMLDIR)/compiler/bootstrap/compilation/x64/64/proofs
+Scanning $(CAKEMLDIR)/compiler/bootstrap/translation
+Scanning $(CAKEMLDIR)/compiler/dafny
+Scanning $(CAKEMLDIR)/compiler/dafny/compilation
+Scanning $(CAKEMLDIR)/compiler/dafny/examples
+Scanning $(CAKEMLDIR)/compiler/dafny/examples/output
+Scanning $(CAKEMLDIR)/compiler/dafny/proofs
+Scanning $(CAKEMLDIR)/compiler/dafny/semantics
+Scanning $(CAKEMLDIR)/compiler/dafny/translation
+Scanning $(CAKEMLDIR)/compiler/dafny/vcg
+Scanning $(CAKEMLDIR)/compiler/dafny/vcg/examples
+Scanning $(CAKEMLDIR)/compiler/encoders
+Scanning $(CAKEMLDIR)/compiler/encoders/ag32
+Scanning $(CAKEMLDIR)/compiler/encoders/ag32/proofs
+Scanning $(HOLDIR)/examples/l3-machine-code/arm/step
+Scanning $(CAKEMLDIR)/compiler/encoders/arm7
+Scanning $(HOLDIR)/examples/l3-machine-code/arm/prog
+Scanning $(CAKEMLDIR)/compiler/encoders/arm7/proofs
+Scanning $(CAKEMLDIR)/compiler/encoders/arm8
+Scanning $(HOLDIR)/examples/l3-machine-code/arm8/prog
+Scanning $(CAKEMLDIR)/compiler/encoders/arm8/proofs
+Scanning $(CAKEMLDIR)/compiler/encoders/arm8_asl
+Scanning $(CAKEMLDIR)/compiler/encoders/arm8_asl/proofs
+Scanning $(HOLDIR)/examples/l3-machine-code/mips/step
+Scanning $(CAKEMLDIR)/compiler/encoders/mips
+Scanning $(HOLDIR)/examples/l3-machine-code/mips/prog
+Scanning $(CAKEMLDIR)/compiler/encoders/mips/proofs
+Scanning $(CAKEMLDIR)/compiler/encoders/monadic_enc
+Scanning $(CAKEMLDIR)/compiler/encoders/tests
+Scanning $(HOLDIR)/examples/l3-machine-code/x64/step
+Scanning $(CAKEMLDIR)/compiler/encoders/x64
+Scanning $(HOLDIR)/examples/l3-machine-code/x64/prog
+Scanning $(CAKEMLDIR)/compiler/encoders/x64/proofs
+Scanning $(HOLDIR)/examples/algorithms/unification/triangular
+Scanning $(HOLDIR)/src/transfer/examples
+Scanning $(HOLDIR)/examples/algorithms/unification/triangular/first-order
+Scanning $(HOLDIR)/examples/algorithms/unification/triangular/first-order/compilation
+Scanning $(CAKEMLDIR)/compiler/inference
+Scanning $(CAKEMLDIR)/compiler/inference/proofs
+Scanning $(CAKEMLDIR)/compiler/inference/tests
+Scanning $(CAKEMLDIR)/compiler/parsing
+Scanning $(CAKEMLDIR)/compiler/parsing/ocaml
+Scanning $(CAKEMLDIR)/compiler/parsing/proofs
+Scanning $(CAKEMLDIR)/compiler/parsing/tests
+Scanning $(CAKEMLDIR)/compiler/printing
+Scanning $(CAKEMLDIR)/compiler/printing/test
+Scanning $(CAKEMLDIR)/compiler/proofs
+Scanning $(CAKEMLDIR)/compiler/repl
+Scanning $(CAKEMLDIR)/compiler/scheme
+Scanning $(CAKEMLDIR)/compiler/scheme/compilation
+Scanning $(CAKEMLDIR)/compiler/scheme/examples
+Scanning $(CAKEMLDIR)/compiler/scheme/proofs
+Scanning $(CAKEMLDIR)/compiler/scheme/translation
+Scanning $(CAKEMLDIR)/compiler/scheme/unverified
+Scanning $(CAKEMLDIR)/cv_translator
+Scanning $(CAKEMLDIR)/developers
+Scanning $(CAKEMLDIR)/developers/bin
+Scanning $(HOLDIR)/examples/Crypto/AES
+Scanning $(HOLDIR)/src/real/analysis
+Scanning $(HOLDIR)/src/probability
+Scanning $(HOLDIR)/examples/Crypto/DES
+Scanning $(HOLDIR)/examples/Crypto/IDEA
+Scanning $(HOLDIR)/examples/Crypto/Keccak
+Scanning $(HOLDIR)/examples/Crypto/MARS
+Scanning $(HOLDIR)/examples/Crypto/MD5
+Scanning $(HOLDIR)/examples/Crypto/RC6
+Scanning $(HOLDIR)/examples/Crypto/MD
+Scanning $(HOLDIR)/examples/Crypto/RIPEMD
+Scanning $(HOLDIR)/examples/Crypto/SHA-1
+Scanning $(HOLDIR)/examples/Crypto/SHA-2
+Scanning $(HOLDIR)/examples/Crypto/Serpent/Bitslice
+Scanning $(HOLDIR)/examples/Crypto/Serpent/Reference
+Scanning $(HOLDIR)/src/emit
+Scanning $(HOLDIR)/examples/Crypto/TEA
+Scanning $(HOLDIR)/examples/Crypto/TWOFISH
+Scanning $(HOLDIR)/examples/Crypto
+Scanning $(CAKEMLDIR)/examples
+Scanning $(CAKEMLDIR)/examples/compilation
+Scanning $(CAKEMLDIR)/examples/compilation/ag32
+Scanning $(CAKEMLDIR)/examples/compilation/ag32/proofs
+Scanning $(CAKEMLDIR)/examples/compilation/x64
+Scanning $(CAKEMLDIR)/examples/compilation/x64/proofs
+Scanning $(CAKEMLDIR)/examples/deflate
+Scanning $(CAKEMLDIR)/examples/deflate/translation
+Scanning $(CAKEMLDIR)/examples/deflate/translation/compilation
+Scanning $(CAKEMLDIR)/examples/deflate/translation/compilation/tests
+Scanning $(CAKEMLDIR)/examples/flover
+Scanning $(CAKEMLDIR)/examples/flover/Infra
+Scanning $(CAKEMLDIR)/examples/flover/semantics
+Scanning $(CAKEMLDIR)/examples/template
+Scanning $(CAKEMLDIR)/examples/template/compilation
+Scanning $(CAKEMLDIR)/examples/template/translation
+Scanning $(CAKEMLDIR)/examples/vipr
+Scanning $(CAKEMLDIR)/examples/vipr/compilation
+Scanning $(CAKEMLDIR)/pancake
+Scanning $(CAKEMLDIR)/pancake/parser
+Scanning $(CAKEMLDIR)/pancake/semantics
+Scanning $(CAKEMLDIR)/pancake/decompiler
+Scanning $(CAKEMLDIR)/pancake/decompiler/examples
+Scanning $(CAKEMLDIR)/pancake/proofs
+Scanning $(CAKEMLDIR)/pancake/static_checker
+Scanning $(CAKEMLDIR)/pancake/temp
+Scanning $(CAKEMLDIR)/profiler
+Scanning $(CAKEMLDIR)/semantics/alt_semantics
+Scanning $(CAKEMLDIR)/semantics/alt_semantics/proofs
+Scanning $(CAKEMLDIR)/translator
+Scanning $(CAKEMLDIR)/translator/monadic
+Scanning $(CAKEMLDIR)/translator/monadic/examples
+Scanning $(CAKEMLDIR)/translator/monadic/monad_base
+Scanning $(CAKEMLDIR)/translator/okasaki-examples
+Scanning $(HOLDIR)/examples/Crypto/RSA
+Scanning $(HOLDIR)/examples/miller/ho_prover
+Scanning $(HOLDIR)/examples/miller/subtypes
+Scanning $(HOLDIR)/examples/miller/formalize
+Scanning $(HOLDIR)/examples/miller/groups
+Scanning $(HOLDIR)/examples/probability/legacy
+Scanning $(HOLDIR)/examples/miller/prob
+Scanning $(HOLDIR)/examples/miller/miller
+Scanning $(CAKEMLDIR)/translator/other-examples
+Scanning $(CAKEMLDIR)/translator/other-examples/auxiliary
+Scanning $(CAKEMLDIR)/tutorial
+Scanning $(CAKEMLDIR)/unverified
+Scanning $(CAKEMLDIR)/unverified/front-end
+Scanning $(CAKEMLDIR)/unverified/hol-light-syntax
+Scanning $(CAKEMLDIR)/unverified/ocaml-syntax
+Scanning $(CAKEMLDIR)/unverified/ocaml-syntax/lib
+Scanning $(CAKEMLDIR)/unverified/ocaml-syntax/tests
+Scanning $(CAKEMLDIR)/unverified/reg_alloc
+Scanning $(CAKEMLDIR)/unverified/sexpr-bootstrap
+Scanning $(CAKEMLDIR)/unverified/sexpr-bootstrap/export
+Scanning $(CAKEMLDIR)/unverified/sexpr-bootstrap/export/arm8
+Scanning $(CAKEMLDIR)/unverified/sexpr-bootstrap/export/x64
+Scanning $(CAKEMLDIR)/unverified/sexpr-bootstrap/x64
+Scanning $(CAKEMLDIR)/unverified/sexpr-bootstrap/x64/32
+Scanning $(candle_overloading)/ml_checker
+Scanning $(candle_overloading)/ml_kernel
+Scanning $(candle_overloading)/monadic
+Scanning $(candle_overloading)/semantics
+Scanning $(candle_overloading)/syntax
+Scanning $(cnf)/array
+Scanning $(cnf)/dist
+Scanning $(cnf)/dist/array
+Scanning $(cnf)/dist/array/compilation
+Scanning $(cnf)/dist/array/compilation/proofs
+Scanning $(cnf)/lrup
+Scanning $(cnf)/lrup/array
+Scanning $(cnf)/lrup/array/compilation
+Scanning $(cnf)/lrup/array/compilation/proofs
+Scanning $(cnf)/xlrup
+Scanning $(cnf)/xlrup/array
+Scanning $(cnf)/xlrup/array/compilation
+Scanning $(cnf)/xlrup/array/compilation/proofs
+Scanning $(lpr_checker)/array
+Scanning $(lpr_checker)/array/compilation
+Scanning $(lpr_checker)/array/compilation/proofs
+Scanning $(lpr_checker)/array/compilation/proofsARM8
+Scanning $(opentheory)/compilation
+Scanning $(opentheory)/compilation/ag32
+Scanning $(opentheory)/compilation/ag32/proofs
+Scanning $(opentheory)/compilation/proofs
+Scanning $(pseudo_bool)/array
+Scanning $(pseudo_bool)/array/compilation
+Scanning $(pseudo_bool)/array/compilation/proofs
+Scanning $(pseudo_bool)/array/compilation/proofsARM8
+Scanning $(pseudo_bool)/cnf_encoding
+Scanning $(pseudo_bool)/cnf_encoding/array
+Scanning $(pseudo_bool)/cnf_encoding/array/compilation
+Scanning $(pseudo_bool)/cnf_encoding/array/compilation/proofs
+Scanning $(pseudo_bool)/cp_encoding
+Scanning $(pseudo_bool)/cp_encoding/array
+Scanning $(pseudo_bool)/cp_encoding/array/compilation
+Scanning $(pseudo_bool)/cp_encoding/array/compilation/proofs
+Scanning $(pseudo_bool)/graph_encoding
+Scanning $(pseudo_bool)/graph_encoding/array
+Scanning $(pseudo_bool)/graph_encoding/array/compilation
+Scanning $(pseudo_bool)/graph_encoding/array/compilation/proofs
+Scanning $(sat_encodings)/case_studies
+Scanning $(sat_encodings)/demo
+Scanning $(sat_encodings)/translation
+Scanning $(sat_encodings)/translation/compilation
+Scanning $(scpog_checker)/array
+Scanning $(scpog_checker)/array/compilation
+Scanning $(scpog_checker)/array/compilation/proofs
+Scanning $(xlrup_checker)/array
+Scanning $(xlrup_checker)/array/compilation
+Scanning $(xlrup_checker)/array/compilation/proofs
+Scanned 311 directories
+Building 14 theory files
+Starting work on locationTheory
+Finished $(HOLDIR)/src/finite_maps                                     (0.000s) 
+Starting work on ffiTheory
+locationTheory $(HOLDIR)/.../formal-languages/context-free  (0s)  [1/14]     OK
+Starting work on grammarTheory
+grammarTheory  $(HOLDIR)/.../formal-languages/context-free  (2s)  [2/14]     OK
+Starting work on namespaceTheory
+Finished $(HOLDIR)/examples/formal-languages/context-free [#theories: 2] (3.059s) 
+namespaceTheory                     $(CAKEMLDIR)/semantics  (0s)  [3/14]     OK
+Starting work on astTheory
+ffiTheory                       $(CAKEMLDIR)/semantics/ffi  (8s)  [4/14]     OK
+Starting work on tokensTheory
+Finished $(CAKEMLDIR)/semantics/ffi [#theories: 1]                     (8.947s) 
+astTheory                           $(CAKEMLDIR)/semantics  (5s)  [5/14]     OK
+Starting work on fpSemTheory
+fpSemTheory                         $(CAKEMLDIR)/semantics  (1s)  [6/14]     OK
+Starting work on semanticPrimitivesTheory
+tokensTheory                        $(CAKEMLDIR)/semantics  (5s)  [7/14]     OK
+Starting work on lexer_funTheory
+lexer_funTheory                     $(CAKEMLDIR)/semantics  (9s)  [8/14]     OK
+Starting work on gramTheory
+semanticPrimitivesTheory            $(CAKEMLDIR)/semantics (13s)  [9/14]     OK
+Starting work on tokenUtilsTheory
+gramTheory                          $(CAKEMLDIR)/semantics  (9s) [10/14]     OK
+Starting work on evaluateTheory
+tokenUtilsTheory                    $(CAKEMLDIR)/semantics  (9s) [11/14]     OK
+Starting work on cmlPtreeConversionTheory
+evaluateTheory                      $(CAKEMLDIR)/semantics  (5s) [12/14]     OK
+Starting work on namespacePropsTheory
+namespacePropsTheory         $(CAKEMLDIR)/semantics/proofs  (5s) [13/14]     OK
+Finished $(CAKEMLDIR)/semantics/proofs [#theories: 1]                  (5.933s) 
+cmlPtreeConversionTheory            $(CAKEMLDIR)/semantics (16s) [14/14]     OK
+Finished $(CAKEMLDIR)/semantics [#theories: 10]                       (77.086s) 

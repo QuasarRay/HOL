@@ -1,0 +1,19 @@
+Not executing /workspace/scratch/7755a98cf62b/HOL/examples/l3-machine-code/arm8/asl-equiv/.hol_preexec:
+  HOLORIG=/workspace/scratch/7755a98cf62b/cakeml-report/semantics/proofs [ -d "armv8.6-asl-snapshot" ] || ./get-armv8.6-hol-snapshot
+Scanning $(HOLDIR)/src/TeX
+Scanning $(HOLDIR)/src/bag
+Scanning $(HOLDIR)/src/sort
+Scanning $(HOLDIR)/src/string
+Scanning $(HOLDIR)/src/n-bit
+Scanning $(HOLDIR)/src/res_quan/src
+Scanning $(HOLDIR)/src/finite_maps
+Scanning $(HOLDIR)/examples/formal-languages/context-free
+Scanning $(CAKEMLDIR)/basis/pure
+Scanning $(HOLDIR)/src/transfer
+Scanning $(HOLDIR)/src/pred_set/src/more_theories
+Scanning $(HOLDIR)/src/coalgebras
+Scanning $(HOLDIR)/examples/pl-semantics/lprefix_lub
+Scanning $(CAKEMLDIR)/misc
+Scanning $(CAKEMLDIR)/semantics
+Scanning $(CAKEMLDIR)/semantics/ffi
+Scanned 17 directories

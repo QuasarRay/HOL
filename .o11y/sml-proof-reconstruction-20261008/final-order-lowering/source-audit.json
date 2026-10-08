@@ -1,0 +1,1437 @@
+{
+  "claim": "Python source inspection does not formally verify report claims",
+  "compiler_pin": "c98da7fc904c5d6d0e9a75a18fac1796a9bfb1f9",
+  "compiler_revision_differences": [
+    {
+      "compiler_sha256": "0a7f9d4bdaf9cf3c99b44c7c3e823c972f8ffaa60ea33bf9a035ecb90599fcaf",
+      "report_sha256": "e5f57fec083cd28ebd2a053020d6f3a1d08fe955203d5a0fc081b7edc24fe51d",
+      "source": "cakeml_grammar"
+    },
+    {
+      "compiler_sha256": "12b18cafa8957529fbf70f2153b8ec0b4aaec3d38be390b6315cde09e6960f51",
+      "report_sha256": "af9141014a24ec7dba44930a58cbf72f6d8b50aa5847314e0d016924d0728412",
+      "source": "cakeml_ast"
+    },
+    {
+      "compiler_sha256": "73bb75450c69120e431ba572ac9d8cba80559d59916dad7e03da45a43199dbd1",
+      "report_sha256": "2b6395a05792a48f4dbee73e07011aa87465bba2eb3ec87740d72791346c50ce",
+      "source": "cakeml_conversion"
+    },
+    {
+      "compiler_sha256": "d0586b766e60b97f9901b35bd230fda254c8e589b99e47b76bf5db95876005db",
+      "report_sha256": "4810353ee642b1b01b39e416a57d270c3d1c93d398b1427bf736ef2d8fb1cde4",
+      "source": "cakeml_infer"
+    },
+    {
+      "compiler_sha256": "99c5c418d444811b729e43ada3755c640df759447ded30389e3ecb5fde4b27d3",
+      "report_sha256": "21879d0f9d956f923bd8f0d8f490880461c9fb30cb55979c3fe78c5372ac28bf",
+      "source": "cakeml_semprim"
+    },
+    {
+      "compiler_sha256": "84f6b49ec274e92646a405b40b18c8a8478381f8c73f7726ed3aba74e00f0af0",
+      "report_sha256": "f552951e84b96bae6033e5754ef095347f07d10f95758bf1c508e55287c53e35",
+      "source": "cakeml_evaluate"
+    },
+    {
+      "compiler_sha256": "a9154ca5620f3599ca89a545506764f2e45e2e927242fc00038a44f0d80a6cf0",
+      "report_sha256": "a535daf0de96673945b1b6544d62bcfa23e4c4d68a27b5fd956dfc6a0fd2a35a",
+      "source": "cakeml_howto"
+    }
+  ],
+  "feature_count": 80,
+  "features": [
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "C01",
+      "name": "Record types",
+      "references_resolved": [
+        "cakeml_ast",
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_syncor"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "C02",
+      "name": "Record expressions",
+      "references_resolved": [
+        "cakeml_ast",
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_syncor"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "C03",
+      "name": "Record patterns",
+      "references_resolved": [
+        "cakeml_ast",
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_syncor"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "C04",
+      "name": "Flexible record patterns",
+      "references_resolved": [
+        "cakeml_ast",
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_syncor"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "C05",
+      "name": "Record shorthand rows",
+      "references_resolved": [
+        "cakeml_ast",
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_syncor"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "C06",
+      "name": "Record selectors",
+      "references_resolved": [
+        "cakeml_ast",
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_syncor"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "C07",
+      "name": "`while`",
+      "references_resolved": [
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_syncor"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "C08",
+      "name": "Multi-arm `fn`",
+      "references_resolved": [
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_syncor"
+      ],
+      "reported_compatibility": "restricted"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "C09",
+      "name": "Multi-clause same-name `fun`",
+      "references_resolved": [
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_syncor"
+      ],
+      "reported_compatibility": "restricted"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "C10",
+      "name": "SML constructor declaration syntax",
+      "references_resolved": [
+        "cakeml_ast",
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_syncor"
+      ],
+      "reported_compatibility": "semantic_mismatch"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "C11",
+      "name": "Constructor values / partial use",
+      "references_resolved": [
+        "cakeml_grammar",
+        "cakeml_howto",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_syncor"
+      ],
+      "reported_compatibility": "restricted"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "C12",
+      "name": "Environment-based constructor naming",
+      "references_resolved": [
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_syncor"
+      ],
+      "reported_compatibility": "restricted"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "C13",
+      "name": "Symbolic / `op` constructor forms",
+      "references_resolved": [
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_syncor"
+      ],
+      "reported_compatibility": "restricted"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "C14",
+      "name": "SML built-in constructor names",
+      "references_resolved": [
+        "cakeml_howto",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_syncor"
+      ],
+      "reported_compatibility": "surface_mismatch"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "C15",
+      "name": "Real literals",
+      "references_resolved": [
+        "cakeml_ast",
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_syncor"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "C16",
+      "name": "Word literal patterns",
+      "references_resolved": [
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_syncor"
+      ],
+      "reported_compatibility": "restricted"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "C17",
+      "name": "Full layered pattern binder annotation",
+      "references_resolved": [
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_syncor"
+      ],
+      "reported_compatibility": "restricted"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "C18",
+      "name": "Full declarations inside expression `let`",
+      "references_resolved": [
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_syncor"
+      ],
+      "reported_compatibility": "restricted"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "C19",
+      "name": "SuccessorML or-pattern AST support",
+      "references_resolved": [
+        "cakeml_ast",
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_syncor"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "D01",
+      "name": "`val rec`",
+      "references_resolved": [
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_syncor"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "D02",
+      "name": "Simultaneous `val ... and ...`",
+      "references_resolved": [
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_syncor"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "D03",
+      "name": "Explicit declaration tyvar sequence",
+      "references_resolved": [
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_syncor"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "D04",
+      "name": "`type ... and ...`",
+      "references_resolved": [
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_syncor"
+      ],
+      "reported_compatibility": "restricted"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "D05",
+      "name": "`datatype ... withtype ...`",
+      "references_resolved": [
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_syncor"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "D06",
+      "name": "`abstype`",
+      "references_resolved": [
+        "cakeml_ast",
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_syncor"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "D07",
+      "name": "Datatype replication",
+      "references_resolved": [
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_syncor"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "D08",
+      "name": "Exception replication",
+      "references_resolved": [
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_syncor"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "D09",
+      "name": "Grouped exception declarations",
+      "references_resolved": [
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_syncor"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "D10",
+      "name": "`infix`",
+      "references_resolved": [
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_syncor"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "D11",
+      "name": "`infixr`",
+      "references_resolved": [
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_syncor"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "D12",
+      "name": "`nonfix`",
+      "references_resolved": [
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_syncor"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "D13",
+      "name": "Multiple paths in one `open`",
+      "references_resolved": [
+        "cakeml_ast",
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_syncor"
+      ],
+      "reported_compatibility": "restricted"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "M01",
+      "name": "Named signatures",
+      "references_resolved": [
+        "cakeml_ast",
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_synmod"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "M02",
+      "name": "Signature conformance checking",
+      "references_resolved": [
+        "cakeml_ast",
+        "cakeml_conversion",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_synmod"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "M03",
+      "name": "Transparent ascription",
+      "references_resolved": [
+        "cakeml_ast",
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_synmod"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "M04",
+      "name": "Opaque ascription semantics",
+      "references_resolved": [
+        "cakeml_ast",
+        "cakeml_conversion",
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_synmod"
+      ],
+      "reported_compatibility": "parsed_but_semantically_discarded"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "M05",
+      "name": "Named signature expressions",
+      "references_resolved": [
+        "cakeml_ast",
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_synmod"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "M06",
+      "name": "`where type`",
+      "references_resolved": [
+        "cakeml_ast",
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_synmod"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "M07",
+      "name": "`include` specs",
+      "references_resolved": [
+        "cakeml_ast",
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_synmod"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "M08",
+      "name": "`eqtype` specs",
+      "references_resolved": [
+        "cakeml_grammar",
+        "cakeml_infer",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_synmod"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "M09",
+      "name": "`sharing type`",
+      "references_resolved": [
+        "cakeml_ast",
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_synmod"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "M10",
+      "name": "Structure sharing",
+      "references_resolved": [
+        "cakeml_ast",
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_synmod"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "M11",
+      "name": "Nested structure specs",
+      "references_resolved": [
+        "cakeml_conversion",
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_synmod"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "M12",
+      "name": "Functor declarations",
+      "references_resolved": [
+        "cakeml_ast",
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_synmod"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "M13",
+      "name": "Functor application",
+      "references_resolved": [
+        "cakeml_ast",
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_synmod"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "M14",
+      "name": "Functor inline-spec args",
+      "references_resolved": [
+        "cakeml_ast",
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_synmod"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "M15",
+      "name": "Structure aliases",
+      "references_resolved": [
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_synmod"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "M16",
+      "name": "General structure constraints",
+      "references_resolved": [
+        "cakeml_ast",
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_synmod"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "M17",
+      "name": "Structure `let` expressions",
+      "references_resolved": [
+        "cakeml_ast",
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_synmod"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "M18",
+      "name": "Simultaneous structure bindings",
+      "references_resolved": [
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_synmod"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "M19",
+      "name": "Rich local/open/include/spec combinations in signatures",
+      "references_resolved": [
+        "cakeml_conversion",
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_synmod"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "S01",
+      "name": "Non-top-level let-polymorphism",
+      "references_resolved": [
+        "cakeml_howto",
+        "cakeml_infer",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_statcor",
+        "sml97_syncor"
+      ],
+      "reported_compatibility": "semantic_mismatch"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "S02",
+      "name": "Equality type variables",
+      "references_resolved": [
+        "cakeml_howto",
+        "cakeml_infer",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_statcor",
+        "sml97_syncor"
+      ],
+      "reported_compatibility": "semantic_mismatch"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "S03",
+      "name": "Equality type specs",
+      "references_resolved": [
+        "cakeml_grammar",
+        "cakeml_infer",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_statcor",
+        "sml97_syncor"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "S04",
+      "name": "SML function-equality rejection",
+      "references_resolved": [
+        "cakeml_infer",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_statcor",
+        "sml97_syncor"
+      ],
+      "reported_compatibility": "semantic_mismatch"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "S05",
+      "name": "SML equality runtime semantics",
+      "references_resolved": [
+        "cakeml_howto",
+        "cakeml_semprim",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_dyncor",
+        "sml97_syncor"
+      ],
+      "reported_compatibility": "semantic_mismatch"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "S06",
+      "name": "SML observable evaluation order",
+      "references_resolved": [
+        "cakeml_evaluate",
+        "cakeml_howto",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_dyncor",
+        "sml97_syncor"
+      ],
+      "reported_compatibility": "semantic_mismatch"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "S07",
+      "name": "`Match` exception",
+      "references_resolved": [
+        "cakeml_howto",
+        "cakeml_semprim",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_dyncor",
+        "sml97_syncor"
+      ],
+      "reported_compatibility": "semantic_mismatch"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "S08",
+      "name": "`Bind`/`Match` distinction",
+      "references_resolved": [
+        "cakeml_howto",
+        "cakeml_semprim",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_dyncor",
+        "sml97_syncor"
+      ],
+      "reported_compatibility": "semantic_mismatch"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "S09",
+      "name": "Type variables in expression/pattern annotations",
+      "references_resolved": [
+        "cakeml_ast",
+        "cakeml_infer",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_statcor",
+        "sml97_syncor"
+      ],
+      "reported_compatibility": "semantic_mismatch"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "S10",
+      "name": "Dynamic fixity environment",
+      "references_resolved": [
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_statcor",
+        "sml97_syncor"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "S11",
+      "name": "Opaque type identity/sealing",
+      "references_resolved": [
+        "cakeml_ast",
+        "cakeml_conversion",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_dynmod",
+        "sml97_statmod",
+        "sml97_syncor"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "S12",
+      "name": "`abstype` representation hiding",
+      "references_resolved": [
+        "cakeml_ast",
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser",
+        "sml97_statcor",
+        "sml97_syncor"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "H01",
+      "name": "Theory header language",
+      "references_resolved": [
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "H02",
+      "name": "Definition blocks",
+      "references_resolved": [
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "H03",
+      "name": "Theorem blocks",
+      "references_resolved": [
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "H04",
+      "name": "`Triviality`",
+      "references_resolved": [
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "H05",
+      "name": "`Inductive` / `CoInductive`",
+      "references_resolved": [
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "H06",
+      "name": "HOL `Datatype:` command",
+      "references_resolved": [
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "H07",
+      "name": "HOL quotations",
+      "references_resolved": [
+        "cakeml_ast",
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "H08",
+      "name": "Antiquotation",
+      "references_resolved": [
+        "cakeml_ast",
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "H09",
+      "name": "`Quote` declarations",
+      "references_resolved": [
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "H10",
+      "name": "HOL `Type` / `Overload` declarations",
+      "references_resolved": [
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "H11",
+      "name": "`Resume` / `Finalise`",
+      "references_resolved": [
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "H12",
+      "name": "HOL attributes",
+      "references_resolved": [
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "H13",
+      "name": "`#(LINE)` / `#(FILE)` pragmas",
+      "references_resolved": [
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "X01",
+      "name": "Moscow ML `prim_val`",
+      "references_resolved": [
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "X02",
+      "name": "Moscow ML `prim_type`",
+      "references_resolved": [
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "X03",
+      "name": "Moscow ML `prim_eqtype`",
+      "references_resolved": [
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser"
+      ],
+      "reported_compatibility": "absent"
+    },
+    {
+      "formal_report_verification": "OPEN",
+      "full_source_lowering": "UNSUPPORTED",
+      "id": "X04",
+      "name": "Moscow ML `prim_EQtype`",
+      "references_resolved": [
+        "cakeml_grammar",
+        "hol4_ast",
+        "hol4_parser"
+      ],
+      "reported_compatibility": "absent"
+    }
+  ],
+  "inputs": {
+    "AGENTS.md": "0e59a2b7c682a13f31d8a8390a97f9041c87bb3f48b96f1ee0771890fd54b072",
+    "archives/AGENTS.md": "aa81d89f7f15b3f93233bb120786a6247e16efbbcb53457787097f35746fe2c7",
+    "archives/hol4-cakeml-sml-gap-audit.zip": "48bd226e01cb8a51237e13118776f482418c123f9e88e6843fffc2c9d0d05c74",
+    "archives/hol4-sml-cakeml-machine-readable.zip": "1388beba94f0e64a739a279bf0f46ff72bd96af2681207f17562235a490510f6",
+    "machine/AGENTS.md": "0e59a2b7c682a13f31d8a8390a97f9041c87bb3f48b96f1ee0771890fd54b072",
+    "machine/MANIFEST.json": "4bae39fa9010627ed6411d9b1d92ccdbd3106fa7b73f7a2e9d5bfa3d8ac21a87",
+    "machine/README.md": "f0c879bb698e8007aff06a3bff817b3e80937a4bff6324c66e91176b2cdcfabc",
+    "machine/authoritative-sources.json": "9fb717b5d739fbddabc75ed43380cc5919fc13a2e0cd306c6673eed803e9d54e",
+    "machine/hol4-sml-vs-cakeml-gaps.json": "3c713c78c88af52dbdd1c8822a865b2e9da8a3ac87be7711aa8e42939d46e325",
+    "machine/hol4-sml-vs-cakeml-gaps.jsonl": "a6040a210fc49b7d4692786f77565435e3dc9902f2a3f9da4afb2fbd62ebb1aa",
+    "machine/hol4-sml-vs-cakeml-gaps.schema.json": "61b615aa1c6574ac83cecc60efb348328a8b9d988f1150950ab7f31df1ab6868",
+    "machine/hol4-sml-vs-cakeml-strict.json": "30b025984fab8404174988d9b84e61359e8af2b100d2ea965e15b19477c42b04",
+    "report/00-scope-method-and-snapshots.md": "17c2da90f11ac66b4df1949a8cf13e2cea28c7ce07ca6b36fac9bcd7fc75d08c",
+    "report/01-core-expressions-patterns-and-types.md": "f70b673495ea143cd4b3681e16b7a1d3be171bed54c69dddb29e86ac1d5032d9",
+    "report/02-declarations-and-fixity.md": "b0a411608458f5ac6cb2a74dbe56f878f5036d4e2216a331e301a81f947f7112",
+    "report/03-module-system-and-signatures.md": "4d3021e386f7111ced9e49e2d9639cbfc85c6be37e28d965dcc9429d902c5b07",
+    "report/04-static-and-dynamic-semantics.md": "6629836a7e74e8f6394a5951152d8868853483f6d503fa376eb30d00061b0452",
+    "report/05-hol4-language-extensions.md": "e81e6fdb38b8118f21601a9618db62a2372d6f595c1dc061849eec5ae8c08254",
+    "report/06-polyml-mosml-basis-and-runtime-gaps.md": "db271dbf8a4102aefe036eac1cc2dbda1c9c4de3c639025159c55af5d95ec38e",
+    "report/07-exhaustive-feature-matrix.md": "53bf204fb8443c78075360d9781e60689628490b91dee031160e06083845065b",
+    "report/08-representative-hol4-evidence.md": "ed959f84d5c70d317cfe19b739ab731708b7fc68d6eebd52fd83a7fdeba9de24",
+    "report/09-porting-priority-and-desugaring.md": "2d11c5a740bb6d3204f39344beb353a89bef72b897134dfee486443b258124d3",
+    "report/AGENTS.md": "0e59a2b7c682a13f31d8a8390a97f9041c87bb3f48b96f1ee0771890fd54b072",
+    "report/MANIFEST.json": "4c3165b0a083b2f8b1cd7a9c3bb54f906c962a297815b0973567932e33600f94",
+    "report/README.md": "ad9f2f08f76c2a1735e41cbcbd1fd1e2fcc9270017ded27b1529f2c4794c74b7",
+    "report/SOURCES.md": "adef21cc00f2b0b66a6a33f68ce977850b0cd93d081c96c0e5b35595cf59b656"
+  },
+  "observed_paths": {
+    "help/src-sml/Asynt.sml": {
+      "bytes": 2192,
+      "sha256": "1b5d697cffa036c61c2920399e00879bcb62ccd97fb47369a85a69e3ee911659"
+    },
+    "src/0/Net.sig": {
+      "bytes": 4027,
+      "sha256": "ecc653733f8ddd44d0413ea9b07bd8a15221533441a0ef5b3dfc5938c0718af5"
+    },
+    "src/0/Subst.sig": {
+      "bytes": 341,
+      "sha256": "b8cc2c5ecb8f7e7aafd64e45761688b644127c5018345e016528f77909131cab"
+    },
+    "src/0/Term.sig": {
+      "bytes": 596,
+      "sha256": "b7c0e95185443ba8febd8a7d19c8e48002c421f5c5a366266b9ccfe8586c55b7"
+    },
+    "src/0/Type.sig": {
+      "bytes": 89,
+      "sha256": "64fe075d2e28a0c444d706c4b7782e810a2f40e58c2698497ec979d1819170fe"
+    },
+    "src/1/DefnBaseCore.sml": {
+      "bytes": 9270,
+      "sha256": "350857a373ef02ab0983491ec35eac7ad02dd6cae33dac0c21f3d58d408b2e26"
+    },
+    "src/1/Pmatch.sml": {
+      "bytes": 33405,
+      "sha256": "885e4bf04353da82460ad2d34afbc2c782de34fee34de3b48fe60bb6e1517edb"
+    },
+    "src/1/Rewrite.sml": {
+      "bytes": 11718,
+      "sha256": "6446f6aa5d67f24a392fad7e107b0dc13fadbaec7d8d8cbf8a65efca58d40194"
+    },
+    "src/1/ScaledTests.sml": {
+      "bytes": 914,
+      "sha256": "d99a691fba1fa803be65572afb58fd9311fa3d3b2c8865b9bd7c878241ff22ae"
+    },
+    "src/1/match_goal.sml": {
+      "bytes": 5654,
+      "sha256": "364502e368ef86320501e891231a74a558032a18923a4c13430695463315b46b"
+    },
+    "src/datatype/bnfLib.sml": {
+      "bytes": 8332,
+      "sha256": "53421e70d951d413ebb66d765fe68b21f84d1f66b7e61cc4b4aefc11e504a2e7"
+    },
+    "src/floating-point/fp-functor.sml": {
+      "bytes": 4835,
+      "sha256": "0356570141a3db6d5ff45d1bf7c30871e34b1d04ba7d71c01bb18458249755e9"
+    },
+    "src/metis/mlibMeter.sml": {
+      "bytes": 3682,
+      "sha256": "ff526d2766fc7bd5faf2a5fb21391ae96acb5b192c7c743075f546fc0d3775fb"
+    },
+    "src/metis/mlibParser.sml": {
+      "bytes": 7729,
+      "sha256": "2a0a75e1842ae1b5464f377c2bfc3cfb9b6371b326f19797a782a70dc931561d"
+    },
+    "src/parse/LVTermNetFunctor.sml": {
+      "bytes": 7803,
+      "sha256": "dc5b7527026bb47823b5c56ed11e5bf41f265ba4ac81bf14fb567686a52fec57"
+    },
+    "src/portableML/poly/Synchronized.sml": {
+      "bytes": 1800,
+      "sha256": "0fbc3f391d2c6444dc9b0bd117554508a25780332c23779d5c8404c32f3217d0"
+    },
+    "src/portableML/poly/Thread_Data.sml": {
+      "bytes": 994,
+      "sha256": "90313fc5a458c65a721e7a6f5d55c3a984231611f40c4bb89aa3de336ef73411"
+    },
+    "src/prekernel/Nonce.sig": {
+      "bytes": 88,
+      "sha256": "3d165b3d3cbc59b6e21cbc2ffd8b0b3930bac9901b3df2c0ab414619f53a64dc"
+    },
+    "src/q/Q.sml": {
+      "bytes": 23935,
+      "sha256": "45335dc492f176da9f8fec3415b6d618d5daa04f5a6b59421cb8447f18e7c30d"
+    },
+    "src/q/QLib.sig": {
+      "bytes": 1938,
+      "sha256": "5fa36901844a5524d7250263eea0193454f2e3129c53690f48f82949d2cc0219"
+    },
+    "src/tactictoe/src/tttInfix.sml": {
+      "bytes": 4298,
+      "sha256": "b1afdb7279cf131bde188c268aad58444cc5229da4018da59c699c96fd2330b5"
+    },
+    "src/tactictoe/src/tttLearn.sml": {
+      "bytes": 5147,
+      "sha256": "53834819dba44c8c953645bfbf14a7016b535bb958ec81b0af7f6227a4d2ba74"
+    },
+    "src/thm/Overlay.sml": {
+      "bytes": 1448,
+      "sha256": "367c04c2d36a6d3ce92379572bcd5bb8dcc600075049f43036ef6898812e1bf8"
+    },
+    "tools-poly/poly/quse.sml": {
+      "bytes": 974,
+      "sha256": "466d63e41dc334e591274a37c4fa0ad0af669b0ff35160dbdf2faec2a0103445"
+    },
+    "tools/Holmake/toml/TOMLvalue_dtype.sml": {
+      "bytes": 573,
+      "sha256": "dd85168be01d03720475121fe0ea4b5a14f85d26ccf6b0232e7446be7f51f796"
+    },
+    "tools/Holmake/toml/parseTOMLFunctor.sml": {
+      "bytes": 50410,
+      "sha256": "30e3fc4c7c525ee5ff460f3593cd851ac5c1f9e9d870f816216834ccbe5dca97"
+    },
+    "tools/mlyacc/src/parse.sml": {
+      "bytes": 1736,
+      "sha256": "1a940cd7182142e01d67fd8ae1a9e2dab5e83169e9f7a214a4165309d06ef4f6"
+    },
+    "tools/mlyacc/src/shrink.sml": {
+      "bytes": 8753,
+      "sha256": "7083b4450f362c0de1c8c53e3966ab797e8626d2ab0e45fe7ef5bc85f4a6217e"
+    },
+    "tools/mlyacc/src/sigs.sml": {
+      "bytes": 14330,
+      "sha256": "aa9fbb435d7b3fc1a9daffed498dcc3cdf7730b5fbcb53eb97e115d385ddfeac"
+    }
+  },
+  "schema": 1,
+  "snapshots": {
+    "cakeml": {
+      "commit": "f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6",
+      "commit_date": "2026-10-07T07:48:42Z",
+      "repository": "CakeML/cakeml"
+    },
+    "hol4": {
+      "commit": "652d1f0aad5cd537ed1e5d470ba3444e70ba470e",
+      "commit_date": "2026-09-27T02:14:15Z",
+      "repository": "HOL-Theorem-Prover/HOL"
+    },
+    "sml97_definition_source": {
+      "commit": "c4212f434cafd06669171619f7d332341a5b31f3",
+      "commit_date": "2017-02-24T04:34:39Z",
+      "repository": "SMLFamily/The-Definition-of-Standard-ML-Revised"
+    }
+  },
+  "source_observations": [
+    {
+      "feature": "M04",
+      "line": 1529,
+      "source": "cakeml_conversion",
+      "status": "SOURCE_OBSERVATION_ONLY"
+    },
+    {
+      "feature": "S01",
+      "line": 979,
+      "source": "cakeml_infer",
+      "status": "SOURCE_OBSERVATION_ONLY"
+    },
+    {
+      "feature": "S04/S05",
+      "line": 489,
+      "source": "cakeml_semprim",
+      "status": "SOURCE_OBSERVATION_ONLY"
+    },
+    {
+      "feature": "S06",
+      "line": 191,
+      "source": "cakeml_howto",
+      "status": "SOURCE_OBSERVATION_ONLY"
+    },
+    {
+      "feature": "S09",
+      "line": 563,
+      "source": "cakeml_infer",
+      "status": "SOURCE_OBSERVATION_ONLY"
+    }
+  ],
+  "sources": {
+    "cakeml_ast": {
+      "bytes": 8193,
+      "commit": "f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6",
+      "path": "semantics/astScript.sml",
+      "repository": "CakeML/cakeml",
+      "sha256": "af9141014a24ec7dba44930a58cbf72f6d8b50aa5847314e0d016924d0728412"
+    },
+    "cakeml_conversion": {
+      "bytes": 47880,
+      "commit": "f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6",
+      "path": "semantics/cmlPtreeConversionScript.sml",
+      "repository": "CakeML/cakeml",
+      "sha256": "2b6395a05792a48f4dbee73e07011aa87465bba2eb3ec87740d72791346c50ce"
+    },
+    "cakeml_evaluate": {
+      "bytes": 13632,
+      "commit": "f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6",
+      "path": "semantics/evaluateScript.sml",
+      "repository": "CakeML/cakeml",
+      "sha256": "f552951e84b96bae6033e5754ef095347f07d10f95758bf1c508e55287c53e35"
+    },
+    "cakeml_grammar": {
+      "bytes": 11059,
+      "commit": "f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6",
+      "path": "semantics/gramScript.sml",
+      "repository": "CakeML/cakeml",
+      "sha256": "e5f57fec083cd28ebd2a053020d6f3a1d08fe955203d5a0fc081b7edc24fe51d"
+    },
+    "cakeml_howto": {
+      "bytes": 16169,
+      "commit": "f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6",
+      "path": "how-to.md",
+      "repository": "CakeML/cakeml",
+      "sha256": "a535daf0de96673945b1b6544d62bcfa23e4c4d68a27b5fd956dfc6a0fd2a35a"
+    },
+    "cakeml_infer": {
+      "bytes": 47984,
+      "commit": "f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6",
+      "path": "compiler/inference/inferScript.sml",
+      "repository": "CakeML/cakeml",
+      "sha256": "4810353ee642b1b01b39e416a57d270c3d1c93d398b1427bf736ef2d8fb1cde4"
+    },
+    "cakeml_semprim": {
+      "bytes": 48561,
+      "commit": "f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6",
+      "path": "semantics/semanticPrimitivesScript.sml",
+      "repository": "CakeML/cakeml",
+      "sha256": "21879d0f9d956f923bd8f0d8f490880461c9fb30cb55979c3fe78c5372ac28bf"
+    },
+    "hol4_ast": {
+      "bytes": 31566,
+      "commit": "652d1f0aad5cd537ed1e5d470ba3444e70ba470e",
+      "path": "tools/parsing/HOLSourceAST.sml",
+      "repository": "HOL-Theorem-Prover/HOL",
+      "sha256": "0682aefe184bf8ca0d066307ce5d15c213dcfbfab22cb87001d3b87e0d7bf803"
+    },
+    "hol4_parser": {
+      "bytes": 61080,
+      "commit": "652d1f0aad5cd537ed1e5d470ba3444e70ba470e",
+      "path": "tools/parsing/HOLSourceParser.sml",
+      "repository": "HOL-Theorem-Prover/HOL",
+      "sha256": "92d0c89dbbce1d2678a8acfc4e968c1fd7a7f96e73d67983667b38ed5ab33643"
+    },
+    "hol4_parser_grammar": {
+      "bytes": 11242,
+      "commit": "652d1f0aad5cd537ed1e5d470ba3444e70ba470e",
+      "path": "help/src-sml/Parser.grm",
+      "repository": "HOL-Theorem-Prover/HOL",
+      "sha256": "afacab3532aea064527b3a23d9ae64b02cf5a90a0ffef6c520da2344d02586a3"
+    },
+    "sml97_dyncor": {
+      "bytes": 38902,
+      "commit": "c4212f434cafd06669171619f7d332341a5b31f3",
+      "path": "dyncor.tex",
+      "repository": "SMLFamily/The-Definition-of-Standard-ML-Revised",
+      "sha256": "fdfcbbdadba383b1feaa2d2eab6f34022b71c0f622c79defd9e3609642e7c83f"
+    },
+    "sml97_dynmod": {
+      "bytes": 24337,
+      "commit": "c4212f434cafd06669171619f7d332341a5b31f3",
+      "path": "dynmod.tex",
+      "repository": "SMLFamily/The-Definition-of-Standard-ML-Revised",
+      "sha256": "49f0c2a3f795a415c80467740c05b2d69d1607e4c01a7d6fee9a15cc7ec6998e"
+    },
+    "sml97_statcor": {
+      "bytes": 61284,
+      "commit": "c4212f434cafd06669171619f7d332341a5b31f3",
+      "path": "statcor.tex",
+      "repository": "SMLFamily/The-Definition-of-Standard-ML-Revised",
+      "sha256": "ca663a3d20654fbe07b85ef6526f5883193edea0ff6f76a9395715de5d96052f"
+    },
+    "sml97_statmod": {
+      "bytes": 56776,
+      "commit": "c4212f434cafd06669171619f7d332341a5b31f3",
+      "path": "statmod.tex",
+      "repository": "SMLFamily/The-Definition-of-Standard-ML-Revised",
+      "sha256": "259d2770c7c39d735adb3c44cf89f1fc7f8f6e80be28068015e18f8d47a16dac"
+    },
+    "sml97_syncor": {
+      "bytes": 27910,
+      "commit": "c4212f434cafd06669171619f7d332341a5b31f3",
+      "path": "syncor.tex",
+      "repository": "SMLFamily/The-Definition-of-Standard-ML-Revised",
+      "sha256": "5cadab270f3d724e950a011af04ad93193cddd8fcbc75d463547f1d14f9cea32"
+    },
+    "sml97_synmod": {
+      "bytes": 16622,
+      "commit": "c4212f434cafd06669171619f7d332341a5b31f3",
+      "path": "synmod.tex",
+      "repository": "SMLFamily/The-Definition-of-Standard-ML-Revised",
+      "sha256": "ca51261c26c1509c11c6aa19355b73e27d6a59a420982a7b1a415386cc87bd03"
+    }
+  },
+  "status": "INTEGRITY_AND_SOURCE_REFERENCES_CHECKED",
+  "strict_feature_count": 79,
+  "warnings": [
+    "generated_utc predates the cited CakeML commit; it is not reliable generation provenance"
+  ]
+}

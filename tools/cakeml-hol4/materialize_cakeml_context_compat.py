@@ -20,6 +20,7 @@ SPEC = REPO / "tools/cakeml-hol4/spec.json"
 PREAMBLE = "misc/preamble.sml"
 ASM_LIBRARY = "compiler/encoders/asm/asmLib.sml"
 EVALUATOR_LIBRARY = "cv_translator/eval_cake_compileLib.sml"
+PATTERN_AST = "semantics/astScript.sml"
 COMPUTE_UPDATES = {
     "compiler/parsing/cmlPEGScript.sml": (
         "val _ = (computeLib.the_compset := computeLib.add_thms distinct_ths (!computeLib.the_compset))",
@@ -97,6 +98,22 @@ def compatible_compute_update(name: str, original: str) -> str:
     return original.replace(before, after)
 
 
+def compatible_pattern_termination(original: str) -> str:
+    """Retain the accumulator equations and prove their structural measure."""
+    before = "  pats_bindings ps (pat_bindings p already_bound)\nEnd"
+    after = """  pats_bindings ps (pat_bindings p already_bound)
+Termination
+  WF_REL_TAC
+    `inv_image $< (\\x. case x of
+       INL (p,already_bound) => pat_size p
+     | INR (ps,already_bound) => list_size pat_size ps)` >>
+  simp [listTheory.list_size_def]
+End"""
+    if original.count(before) != 1:
+        raise ValueError("pinned pattern accumulator changed; re-audit required")
+    return original.replace(before, after)
+
+
 def adaptations(source: Path) -> dict[str, str]:
     result = {PREAMBLE: compatible_preamble((source / PREAMBLE).read_text())}
     result[ASM_LIBRARY] = compatible_asm_library((source / ASM_LIBRARY).read_text())
@@ -110,6 +127,8 @@ def adaptations(source: Path) -> dict[str, str]:
     for name in COMPUTE_UPDATES:
         text = result.get(name, (source / name).read_text())
         result[name] = compatible_compute_update(name, text)
+    text = result.get(PATTERN_AST, (source / PATTERN_AST).read_text())
+    result[PATTERN_AST] = compatible_pattern_termination(text)
     return result
 
 
@@ -140,9 +159,11 @@ def materialize(source: Path, target: Path, expected: str) -> dict:
         file = target / name
         if file.is_symlink() or file.stat().st_nlink != 1:
             raise ValueError(f"derived source is not independent: {name}")
-        if file.read_text() not in (originals[name], adapted):
+        current = file.read_text()
+        if current not in (originals[name], adapted):
             raise ValueError(f"refusing to overwrite derived progress: {name}")
-        file.write_text(adapted)
+        if current != adapted:
+            file.write_text(adapted)
     modified = sorted(rendered)
     observed = git(target, "diff", "HEAD", "--name-only").splitlines()
     if observed != modified:

@@ -1,0 +1,65 @@
+{
+  "bundle_sha256": "3d8d367b7e94b74530e4e6b17d9e5eb0b67dfd590442542cd706f4bf42319e4c",
+  "cakeml_commit": "f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6",
+  "cakeml_hol4_binary_replay": "OPEN",
+  "cakeml_runtime_image_sha256": "41dfea0bf8357375afaadd976536b8beba00d66b279e57cd12075620e92d0be8",
+  "claim": "scoped target semantics and normalized macro proofs only; not all report claims or a verified HOL4 binary",
+  "formal_report_verification": "OPEN",
+  "full_sml97_source_bridge": "OPEN",
+  "hol4_commit": "9bf0e20dc653ff811ad43242d44b67f1fd50681a",
+  "hol4_executable_sha256": "ba3c88aa3e1387c104a5444c2f5127e1ba64d21b336e273b26ad5922c3691aa3",
+  "hol4_runtime_image_sha256": "7616c8383af85f324d7a12299459166d872128e0fc10448288733a003f9589d4",
+  "holmake_executable_sha256": "6a3e60d8c9e774899f3d8b3098d2d748324fe500e48b31b1677ffd78a9c3da6e",
+  "holmake_flags": [
+    "--nolmbc",
+    "--qof",
+    "--no_preexecs",
+    "--rebuild_deps",
+    "--no-project",
+    "--no-cache"
+  ],
+  "macro_implementation_machine_code": "OPEN",
+  "macro_theorems": 54,
+  "original_release_binary_replay": "OPEN",
+  "report_witnesses": {
+    "C08": [
+      "Hol4SmlMacro.lower_sml_multifn_application_correct"
+    ],
+    "M04": [
+      "Hol4SmlGapWitness.accepted_inline_signature_is_erased"
+    ],
+    "S04": [
+      "Hol4SmlGapWitness.target_closure_equality"
+    ],
+    "S05": [
+      "Hol4SmlGapWitness.target_closure_equality",
+      "Hol4SmlGapWitness.target_recursive_closure_equality"
+    ],
+    "S06": [
+      "Hol4SmlGapWitness.target_tuple_raises_second",
+      "Hol4SmlGapWitness.explicit_sequence_raises_first",
+      "Hol4SmlGapWitness.target_order_is_observable",
+      "Hol4SmlApplication.lower_sml_left_application_correct",
+      "Hol4SmlApplication.temporary_capture_is_observable",
+      "Hol4SmlOrder.lower_sml_con_ltr_correct",
+      "Hol4SmlOrder.lower_sml_application_ltr_correct",
+      "Hol4SmlOrder.source_closure_environment_is_preserved"
+    ],
+    "S07": [
+      "Hol4SmlGapWitness.target_failed_case_raises_bind",
+      "Hol4SmlMacro.lower_sml_match_correct"
+    ],
+    "S08": [
+      "Hol4SmlMacro.matched_body_bind_is_preserved"
+    ]
+  },
+  "schema": 1,
+  "source_audit_sha256": "88cf0dee02c7fe3e7a3b1cd20386ce63a11f3bbef9541b6923a1e7dcafe95a96",
+  "status": "SCOPED_REPORT_WITNESSES_RECONSTRUCTED",
+  "tactictoe_loaded_calls": [
+    1759
+  ],
+  "tactictoe_manifest_sha256": "8832e20aed5a3e9c620a0f29beece1af319e7aba0567d12b8ae4dae653e730f9",
+  "target_witness_theorems": 7,
+  "z3_executable_sha256": "c05be002097e2f2106efeeac03e58032e3f5cca10104f95d7a0ddc0bd3f907cb"
+}

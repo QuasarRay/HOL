@@ -1,0 +1,1 @@
+Hol4SmlMacro.lower_sml_sequence_correct	(App (App (Const "LetNone") x) y)	(App (App (Const "SmlSeq") x) y)

@@ -1,0 +1,12 @@
+<<HOL message: Created theory "Hol4SmlGapWitness">>
+Saved theorem _______ "target_closure_equality"
+Saved theorem _______ "target_recursive_closure_equality"
+Saved theorem _______ "target_tuple_raises_second"
+Saved theorem _______ "explicit_sequence_raises_first"
+Saved theorem _______ "target_order_is_observable"
+Saved theorem _______ "target_failed_case_raises_bind"
+Saved theorem _______ "accepted_inline_signature_is_erased"
+Exporting theory "Hol4SmlGapWitness" ... done.
+Theory "Hol4SmlGapWitness" took 0.46279s to build
+Exporting theory "Hol4SmlGapWitness" ... done.
+Theory "Hol4SmlGapWitness" took 0.74756s to build

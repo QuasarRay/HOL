@@ -128,6 +128,7 @@ def main():
     inputs = [(source / name, "CakeML/cakeml", name) for name in tracked
               if str(Path(name).parent) in parents and Path(name).suffix in {".sml", ".sig"}]
     formal = ["Hol4SmlMacroScript.sml", "Hol4SmlApplicationScript.sml",
+              "Hol4SmlOrderScript.sml",
               "Hol4SmlMacroLib.sml", "Hol4SmlMacroLib.sig",
               "Hol4SmlMacroQualificationScript.sml", "Hol4ProofSearchLib.sml",
               "Hol4ProofSearchLib.sig", "Hol4SmlGapWitnessScript.sml",

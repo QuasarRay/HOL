@@ -1,0 +1,47 @@
+<<HOL message: HolSmtLib: CVC not configured: set the HOL4_CVC_EXECUTABLE environment variable to point to the cvc5 executable file.>>
+<<HOL message: HolSmtLib: Yices not configured: set the HOL4_YICES_EXECUTABLE environment variable to point to the Yices executable file.>>
+<<HOL message: HolSmtLib: solver Z3 (oracle) is available.>>
+<<HOL message: HolSmtLib: solver Z3 (with proofs) is available.>>
+<<HOL message: Created theory "Hol4SmlMacroQualification">>
+Saved theorem _______ "generated_match_expansion"
+Saved theorem _______ "generated_match_semantics"
+Saved theorem _______ "generated_fn_expansion"
+Saved theorem _______ "generated_fn_closure"
+Saved theorem _______ "generated_fn_application_expansion"
+Saved theorem _______ "generated_fn_application_semantics"
+Saved theorem _______ "generated_left_application_expansion"
+Saved theorem _______ "generated_left_application_semantics"
+Saved theorem _______ "generated_variable_application_expansion"
+Saved theorem _______ "generated_variable_application_semantics"
+Saved theorem _______ "generated_sequence_expansion"
+Saved theorem _______ "generated_sequence_semantics"
+Saved theorem _______ "generated_sequence_list_expansion"
+Saved theorem _______ "generated_sequence_list_semantics"
+Saved theorem _______ "generated_constructor_ltr_expansion"
+Saved theorem _______ "generated_constructor_ltr_semantics"
+Saved theorem _______ "generated_application_ltr_expansion"
+Saved theorem _______ "generated_application_ltr_semantics"
+Saved theorem _______ "egglog_sequence_replay"
+Saved theorem _______ "egglog_application_replay"
+Saved theorem _______ "egglog_constructor_ltr_replay"
+Saved theorem _______ "egglog_application_ltr_replay"
+<<HOL warning: SmtLib.translate_type: uninterpreted type :num>>
+<<HOL warning: SmtLib.translate_term: uninterpreted constant $&>>
+<<HOL warning: SmtLib.translate_term: uninterpreted constant Num>>
+<<HOL warning: SmtLib.translate_term: uninterpreted constant $->>
+<<HOL warning: SmtLib.translate_term: uninterpreted constant $<>>
+<<HOL message: HolSmtLib: calling external command '/workspace/scratch/7755a98cf62b/host-tools/usr/bin/z3 proof=true pp.simplify_implies=false -smt2 -file:/tmp/MLTEMP4sIJGl > /tmp/MLTEMPFqW7nY'>>
+<<HOL message: HolSmtLib: parsing Z3 proof>>
+<<HOL message: HolSmtLib: checking Z3 proof>>
+<<HOL message: HolSmtLib: solver reports negated term to be 'unsatisfiable' (proof checked)>>
+Saved theorem _______ "z3_clock_step"
+Missing tactic data: topology wellorder cardinal real_sigma metric nets primeFactor intExtension frac rat HolSmt Hol4SmlMacro Hol4SmlApplication evaluate namespaceProps ffi mergesort lprefix_lub set_sep tailrec prog alignment address hrat hreal realax real_arith real intreal binary_ieee machine_ieee poset fixedPoint llist path set_relation toto comparison bag container sptree gcd int_arith cooper normalizer integer intReduce Omega integer_word bitstring numeral_bit permutes iterate fcp sum_num logroot bit numposrep ternaryComparisons string ASCIInumbers words blast byte res_quan misc mllist mlstring ConseqConv quantHeuristics patternMatches ind_type divides while cv reduce sum option pair prim_rec arithmetic numeral basicSize numpair pred_set list rich_list indexedLists hol sorting finite_map alist namespace ast fpSem semanticPrimitives semanticPrimitivesProps evaluateProps Hol4SmlOrder
+Run tttUnfold.ttt_record ()
+Loading 1503 tactic calls in 0.02 seconds
+  srw_tac [] []
+Saved theorem _______ "tactictoe_clause_count"
+HOL4_MACRO_SEARCH_CHECKED egglog-replay z3-reconstruction tactictoe
+Exporting theory "Hol4SmlMacroQualification" ... done.
+Theory "Hol4SmlMacroQualification" took 3.1s to build
+Exporting theory "Hol4SmlMacroQualification" ... done.
+Theory "Hol4SmlMacroQualification" took 3.2s to build

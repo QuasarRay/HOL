@@ -1,0 +1,34 @@
+Executing /workspace/scratch/7755a98cf62b/HOL/examples/l3-machine-code/arm8/asl-equiv/.hol_preexec:
+  HOLORIG=/workspace/scratch/7755a98cf62b/new-proof-evidence/run-WGuGbEVm/witnesses [ -d "armv8.6-asl-snapshot" ] || ./get-armv8.6-hol-snapshot
+Scanning $(HOLDIR)/src/hol88
+Scanning $(HOLDIR)/src/TeX
+Scanning $(HOLDIR)/src/bag
+Scanning $(HOLDIR)/src/sort
+Scanning $(HOLDIR)/src/string
+Scanning $(HOLDIR)/src/n-bit
+Scanning $(HOLDIR)/src/res_quan/src
+Scanning $(HOLDIR)/src/finite_maps
+Scanning $(HOLDIR)/src/integer
+Scanning $(HOLDIR)/src/rational
+Scanning $(HOLDIR)/src/transfer
+Scanning $(HOLDIR)/src/pred_set/src/more_theories
+Scanning $(HOLDIR)/src/algebra/base
+Scanning $(HOLDIR)/src/algebra/construction
+Scanning $(HOLDIR)/src/algebra
+Scanning $(HOLDIR)/src/real
+Scanning $(HOLDIR)/src/real/analysis
+Scanning $(HOLDIR)/src/HolSmt
+Scanning $(HOLDIR)/src/tactictoe/src
+Scanning $(CAKEMLDIR)/basis/pure
+Scanning $(CAKEMLDIR)/compiler
+Scanning $(CAKEMLDIR)/cv_translator
+Scanning $(HOLDIR)/src/coalgebras
+Scanning $(HOLDIR)/examples/pl-semantics/lprefix_lub
+Scanning $(CAKEMLDIR)/misc
+Scanning $(CAKEMLDIR)/semantics
+Scanning $(CAKEMLDIR)/semantics/ffi
+Scanning $(CAKEMLDIR)/semantics/proofs
+Scanned 29 directories
+Building 1 theory file
+Starting work on Hol4SmlGapWitnessTheory
+Hol4SmlGapWitnessTheory                                     (8s)   [1/1]     OK

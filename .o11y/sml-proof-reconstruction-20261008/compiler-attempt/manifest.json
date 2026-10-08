@@ -1,0 +1,36 @@
+{
+  "artifacts": [
+    {
+      "path": "ast-proof.log",
+      "sha256": "5b3939a714228a8fad76496ffaea4ea29d55c9d7d28c12bccca771748654a4ff",
+      "size": 8734
+    },
+    {
+      "path": "bounded-retry.log",
+      "sha256": "f0aac864135cc1c10bfc8617fcbcb63b7b69ad7b53a7da0ccfa0b3a3ce664228",
+      "size": 8107
+    },
+    {
+      "path": "compatibility-receipt.json",
+      "sha256": "5c5ce82e69090bc3b49ee79a18b68b319e66abd5ef73a1b53dae3050c14ffd30",
+      "size": 28011
+    },
+    {
+      "path": "compatibility.patch",
+      "sha256": "7caf2276ea495d83802364f1e8ac957f55c06de23f0d4a34a25b70628767edc1",
+      "size": 52805
+    },
+    {
+      "path": "idempotence.log",
+      "sha256": "f775607c0aea14b346ead4f761bb9f3954b47752250ea048448f3bce6389506a",
+      "size": 171
+    },
+    {
+      "path": "receipt.json",
+      "sha256": "11dc61c95dd6ef4bde7747d5e53b930bbaa93ebbc330ea027305828e3fc56701",
+      "size": 908
+    }
+  ],
+  "claim": "artifact identities only; incomplete compiler proof attempt",
+  "schema": 1
+}

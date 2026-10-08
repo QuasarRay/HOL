@@ -1,0 +1,176 @@
+Scanning $(HOLDIR)/src/TeX
+Scanning $(HOLDIR)/src/bag
+Scanning $(HOLDIR)/src/sort
+Scanning $(HOLDIR)/src/string
+Scanning $(HOLDIR)/src/n-bit
+Scanning $(HOLDIR)/src/res_quan/src
+Scanning $(HOLDIR)/src/finite_maps
+Scanning $(HOLDIR)/examples/formal-languages/context-free
+Scanning $(HOLDIR)/src/transfer
+Scanning $(HOLDIR)/src/pred_set/src/more_theories
+Scanning $(HOLDIR)/src/coalgebras
+Scanning $(HOLDIR)/examples/fun-op-sem/lprefix_lub
+Scanning $(HOLDIR)/examples/machine-code/hoare-triple
+Scanning $(HOLDIR)/src/hol88
+Scanning $(HOLDIR)/src/integer
+Scanning $(HOLDIR)/src/rational
+Scanning $(HOLDIR)/src/algebra/base
+Scanning $(HOLDIR)/src/algebra/construction
+Scanning $(HOLDIR)/src/algebra
+Scanning $(HOLDIR)/src/real
+Scanning $(HOLDIR)/src/real/analysis
+Scanning $(HOLDIR)/src/HolSmt
+Scanning $(HOLDIR)/src/tactictoe/src
+Scanned 24 directories
+Starting work on bagTheory
+Starting work on alignmentTheory
+alignmentTheory                                          src/n-bit  (3s)     OK
+Starting work on bitstringTheory
+bagTheory                                                  src/bag  (9s)     OK
+Starting work on primeFactorTheory
+primeFactorTheory                                          src/bag  (0s)     OK
+Finished $(HOLDIR)/src/bag [#theories: 2]                             (10.075s) 
+Starting work on blastTheory
+blastTheory                                              src/n-bit  (4s)     OK
+Starting work on res_quanTheory
+bitstringTheory                                          src/n-bit (12s)     OK
+Starting work on byteTheory
+res_quanTheory                                    src/res_quan/src  (5s)     OK
+Finished $(HOLDIR)/src/res_quan/src [#theories: 1]                     (5.090s) 
+Starting work on finite_mapTheory
+byteTheory                                               src/n-bit  (7s)     OK
+Finished $(HOLDIR)/src/n-bit [#theories: 4]                           (28.499s) 
+Starting work on totoTheory
+finite_mapTheory                                   src/finite_maps  (6s)     OK
+Starting work on alistTheory
+totoTheory                                         src/finite_maps  (3s)     OK
+Starting work on comparisonTheory
+alistTheory                                        src/finite_maps  (2s)     OK
+Starting work on containerTheory
+containerTheory                                    src/finite_maps  (1s)     OK
+Starting work on sptreeTheory
+comparisonTheory                                   src/finite_maps  (6s)     OK
+Starting work on wellorderTheory
+wellorderTheory                     src/pred_set/src/more_theories  (7s)     OK
+Starting work on cardinalTheory
+sptreeTheory                                       src/finite_maps (16s)     OK
+Finished $(HOLDIR)/src/finite_maps [#theories: 6]                     (37.714s) 
+Starting work on llistTheory
+cardinalTheory                      src/pred_set/src/more_theories (12s)     OK
+Starting work on topologyTheory
+llistTheory                                         src/coalgebras  (6s)     OK
+Starting work on pathTheory
+pathTheory                                          src/coalgebras  (5s)     OK
+Finished $(HOLDIR)/src/coalgebras [#theories: 2]                      (11.955s) 
+Starting work on lprefix_lubTheory
+topologyTheory                      src/pred_set/src/more_theories  (5s)     OK
+Finished $(HOLDIR)/src/pred_set/src/more_theories [#theories: 3]      (26.145s) 
+Starting work on set_sepTheory
+lprefix_lubTheory                  examples/fun-op-sem/lprefix_lub  (3s)     OK
+Finished $(HOLDIR)/examples/fun-op-sem/lprefix_lub [#theories: 1]      (3.254s) 
+Starting work on tailrecTheory
+tailrecTheory                   examples/machine-code/hoare-triple  (0s)     OK
+Finished $(HOLDIR)/src/integer                                         (0.000s) 
+Starting work on intExtensionTheory
+set_sepTheory                   examples/machine-code/hoare-triple  (4s)     OK
+Starting work on progTheory
+intExtensionTheory                                    src/rational  (3s)     OK
+Starting work on fracTheory
+progTheory                      examples/machine-code/hoare-triple  (3s)     OK
+Starting work on addressTheory
+fracTheory                                            src/rational  (5s)     OK
+Starting work on ratTheory
+addressTheory                   examples/machine-code/hoare-triple  (6s)     OK
+Finished $(HOLDIR)/examples/machine-code/hoare-triple [#theories: 4]  (15.089s) 
+Starting work on real_sigmaTheory
+ratTheory                                             src/rational (11s)     OK
+Finished $(HOLDIR)/src/rational [#theories: 3]                        (20.117s) 
+Starting work on miscTheory
+real_sigmaTheory                                          src/real (23s)     OK
+Starting work on metricTheory
+metricTheory                                              src/real  (7s)     OK
+Starting work on netsTheory
+miscTheory          workspace/scratch/7755a98cf62b/release-context (25s)     OK
+Starting work on mllistTheory
+netsTheory                                                src/real  (5s)     OK
+Finished $(HOLDIR)/src/real [#theories: 3]                            (36.088s) 
+Starting work on realheap
+realheap                                         src/real/analysis  (5s)     OK
+Finished $(HOLDIR)/src/real/analysis                                   (5.654s) 
+Starting work on smtheap
+smtheap                                                 src/HolSmt  (7s)     OK
+Starting work on HolSmtTheory
+mllistTheory        workspace/scratch/7755a98cf62b/release-context (13s)     OK
+Starting work on mlstringTheory
+HolSmtTheory                                            src/HolSmt  (5s)     OK
+Finished $(HOLDIR)/src/HolSmt [#theories: 1]                          (12.569s) 
+Starting work on namespaceTheory
+namespaceTheory     workspace/scratch/7755a98cf62b/release-context  (2s)     OK
+mlstringTheory      workspace/scratch/7755a98cf62b/release-context (22s)     OK
+Starting work on astTheory
+Starting work on ffiTheory
+ffiTheory           workspace/scratch/7755a98cf62b/release-context  (8s)     OK
+astTheory           workspace/scratch/7755a98cf62b/release-context (18s)     OK
+Starting work on fpSemTheory
+Starting work on namespacePropsTheory
+fpSemTheory         workspace/scratch/7755a98cf62b/release-context  (7s)     OK
+Starting work on semanticPrimitivesTheory
+namespacePropsTheory ...space/scratch/7755a98cf62b/release-context (13s)     OK
+semanticPrimitivesTheory ...e/scratch/7755a98cf62b/release-context (36s)     OK
+Starting work on evaluateTheory
+Starting work on semanticPrimitivesPropsTheory
+evaluateTheory      workspace/scratch/7755a98cf62b/release-context (11s)     OK
+Starting work on Hol4SmlMacroTheory
+Hol4SmlMacroTheory  workspace/scratch/7755a98cf62b/release-context  (7s)     OK
+Starting work on Hol4SmlApplicationTheory
+Hol4SmlApplicationTheory ...e/scratch/7755a98cf62b/release-context  (8s)     OK
+semanticPrimitivesPropsTheory ...atch/7755a98cf62b/release-context (38s)     OK
+Starting work on evaluatePropsTheory
+evaluatePropsTheory workspace/scratch/7755a98cf62b/release-context (82s)     OK
+Starting work on Hol4SmlOrderTheory
+Hol4SmlOrderTheory  workspace/scratch/7755a98cf62b/release-context  (7s)FAIL<1>
+ <<HOL message: Created theory "Hol4SmlOrder">>
+ Saved definition ____ "lower_sml_sequence_list_def"
+ Saved definition ____ "sml_sequence_list_reference_def"
+ Saved definition ____ "sml_sequence_list_derived_def"
+ Saved theorem _______ "lower_sml_sequence_list_correct"
+ Saved theorem _______ "derived_sequence_list_correct"
+ Saved theorem _______ "lower_sequence_matches_derived_form"
+ Saved definition ____ "lower_sml_con_ltr_def"
+ Saved definition ____ "lower_sml_application_ltr_def"
+ Saved definition ____ "sml_application_ltr_reference_def"
+ Saved theorem _______ "application_reference_two"
+ Saved definition ____ "sml_con_ltr_reference_def"
+ Saved theorem _______ "pmatch_capture_variables"
+ Saved theorem _______ "capture_pattern_bindings"
+ Saved theorem _______ "evaluate_variable_list"
+ Saved theorem _______ "captured_variable_lookups"
+ Saved theorem _______ "construct_from_variable_list"
+ Saved theorem _______ "lower_sml_con_ltr_correct"
+ Saved theorem _______ "apply_from_variable_list"
+ Saved theorem _______ "lower_sml_application_ltr_correct"
+ Saved theorem _______ "lowered_tuple_raises_first"
+ Saved theorem _______ "lowered_tuple_keeps_value_order"
+ 
+ Exception raised at Tactical.TAC_PROOF:
+ unsolved goals
+ error in quse /workspace/scratch/7755a98cf62b/release-context/Hol4SmlOrderScript.sml : HOL_ERR {message = "unsolved goals", origin_function = "TAC_PROOF", origin_structure = "Tactical", source_location = Loc_Unknown}
+ error in load /workspace/scratch/7755a98cf62b/release-context/Hol4SmlOrderScript : HOL_ERR {message = "unsolved goals", origin_function = "TAC_PROOF", origin_structure = "Tactical", source_location = Loc_Unknown}
+ Proof of 
+ 
+ nsLookup env.v (Short «hol4_sml_capture_0») = SOME (Litv (IntLit 41)) ∧
+ 0 < st.clock ⇒
+ evaluate st env
+   [lower_sml_application_ltr
+      [Fun «ignored» (Var (Short «hol4_sml_capture_0»)); Lit (IntLit 7)]
+      [«hol4_sml_capture_0»; «hol4_sml_capture_1»]] =
+ (dec_clock st,Rval [Litv (IntLit 41)])
+ 
+ failed.
+ First unsolved sub-goal is
+ 
+ dec_clock (st with clock := st.clock) = dec_clock st
+ 
+ Failed to prove theorem source_closure_environment_is_preserved.
+ Uncaught exception at /workspace/scratch/7755a98cf62b/HOL-release/src/prekernel/Feedback.sml:124: HOL_ERR {message = "unsolved goals", origin_function = "TAC_PROOF", origin_structure = "Tactical", source_location = Loc_Unknown}
+ Full log: /workspace/scratch/7755a98cf62b/release-context/.hol/logs/Hol4SmlOrderTheory

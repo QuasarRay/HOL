@@ -1,0 +1,12 @@
+{
+  "claim": "untrusted search hint; not the pinned CLI; HOL4 replay required",
+  "engine": "native Rust bindings",
+  "native_sha256": "c82bed123f2f522a85de8d1e671128a67638050ad84d2c127b17a2794c079a7d",
+  "package": "egglog",
+  "program_sha256": "d08f1c282733b0ce045616f41360713430356171ba707a5180500141bf1c8e46",
+  "round_limit": 8,
+  "rules_sha256": "773db8e004105798310e56a60d7963c3341a8991ed29f699467612a36ddeb37f",
+  "schema": 1,
+  "status": "CANDIDATE",
+  "version": "14.0.0"
+}

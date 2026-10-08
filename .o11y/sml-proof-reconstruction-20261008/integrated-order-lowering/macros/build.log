@@ -1,0 +1,41 @@
+Not executing /workspace/scratch/7755a98cf62b/HOL/examples/l3-machine-code/arm8/asl-equiv/.hol_preexec:
+  HOLORIG=/workspace/scratch/7755a98cf62b/integrated-proof-evidence/run-uOJLQoQg/macros/build-AbCNtsbl [ -d "armv8.6-asl-snapshot" ] || ./get-armv8.6-hol-snapshot
+Scanning $(HOLDIR)/src/TeX
+Scanning $(HOLDIR)/src/bag
+Scanning $(HOLDIR)/src/sort
+Scanning $(HOLDIR)/src/string
+Scanning $(HOLDIR)/src/n-bit
+Scanning $(HOLDIR)/src/res_quan/src
+Scanning $(HOLDIR)/src/finite_maps
+Scanning $(HOLDIR)/examples/formal-languages/context-free
+Scanning $(HOLDIR)/src/hol88
+Scanning $(HOLDIR)/src/integer
+Scanning $(HOLDIR)/src/rational
+Scanning $(HOLDIR)/src/transfer
+Scanning $(HOLDIR)/src/pred_set/src/more_theories
+Scanning $(HOLDIR)/src/algebra/base
+Scanning $(HOLDIR)/src/algebra/construction
+Scanning $(HOLDIR)/src/algebra
+Scanning $(HOLDIR)/src/real
+Scanning $(HOLDIR)/src/real/analysis
+Scanning $(HOLDIR)/src/HolSmt
+Scanning $(HOLDIR)/src/tactictoe/src
+Scanning $(CAKEMLDIR)/basis/pure
+Scanning $(CAKEMLDIR)/compiler
+Scanning $(CAKEMLDIR)/cv_translator
+Scanning $(HOLDIR)/src/coalgebras
+Scanning $(HOLDIR)/examples/pl-semantics/lprefix_lub
+Scanning $(CAKEMLDIR)/misc
+Scanning $(CAKEMLDIR)/semantics
+Scanning $(CAKEMLDIR)/semantics/ffi
+Scanning $(CAKEMLDIR)/semantics/proofs
+Scanned 30 directories
+Building 4 theory files
+Starting work on Hol4SmlMacroTheory
+Hol4SmlMacroTheory                                          (8s)   [1/4]     OK
+Starting work on Hol4SmlApplicationTheory
+Hol4SmlApplicationTheory                                    (8s)   [2/4]     OK
+Starting work on Hol4SmlOrderTheory
+Hol4SmlOrderTheory                                          (9s)   [3/4]     OK
+Starting work on Hol4SmlMacroQualificationTheory
+Hol4SmlMacroQualificationTheory                            (20s)   [4/4]     OK

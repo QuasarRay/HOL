@@ -1,0 +1,211 @@
+{
+  "automation": {
+    "egglog": "Native Rust bindings 14.0.0, four candidate queries, named HOL4 replay with guards retained; pinned CLI unqualified.",
+    "github_actions": "NOT_DISPATCHED; manual qualification workflow preserved",
+    "legacy_hint_policy": "Byte-identical raw hints; accepted proofs independently reconstructed; no modern ancestry validation claimed.",
+    "tactictoe_development_loaded_calls": 1759,
+    "tactictoe_original_release_loaded_calls": 1503,
+    "z3": "4.8.12, proof-reconstructing HolSmtLib.Z3_TAC under both kernels."
+  },
+  "claim": "Normalized target contracts and selected report witnesses; full authoritative SML97/source/machine/release correspondence remains OPEN.",
+  "compiler_attempt": {
+    "ast_theory_kernel_build": "PASS",
+    "base_commit": "c98da7fc904c5d6d0e9a75a18fac1796a9bfb1f9",
+    "claim": "compiler build compatibility and exposed resource observations; no compiler correctness instance or macro machine-code theorem",
+    "compatibility_files": 99,
+    "initial_attempt": "mlsexpTheory terminated with Signal 9; cgroup oom_kill became 1",
+    "initial_full_log_retained": false,
+    "macro_machine_code_equivalence": "OPEN",
+    "materialization_timestamp_idempotence": "PASS",
+    "pattern_binding_equations_changed": false,
+    "retry": {
+      "heap_limit_megabytes": 4096,
+      "jobs": 1,
+      "last_observed_cpu_seconds": 697.36,
+      "outcome": "manually interrupted with exit 130 after over 700 seconds without advancing beyond lex_aux_spaces",
+      "requested_theory_time_limit_seconds": 600
+    },
+    "schema": 1,
+    "status": "COMPILER_INSTANCE_OPEN",
+    "workspace_memory_limit_bytes": 8589934592
+  },
+  "date": "2026-10-08",
+  "inherited_progress": {
+    "duplicated_legacy_application_contract": false,
+    "pr6_artifact_identities_verified": 203,
+    "pr6_commit": "0b137238dfba936da54055c7723b362068c99cf4",
+    "pr6_macro_proofs_independently_reconstructed": 31,
+    "pull_requests": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "reuse": "Preserve PR #6 APIs, certificate checks, build controls and release staging; prove the new binary application reference equal to its existing contract."
+  },
+  "local_checkout_identity_note": "Receipt hol4_commit is the native checkout HEAD observed during testing; copied proof sources and source-identity.json identify the actual ML inputs. The development checker core was built from public bc025dff474b4dabff1a3d7606e929e492778fe8.",
+  "new_apis": [
+    "sequence_list",
+    "constructor_ltr",
+    "application_ltr"
+  ],
+  "open_obligations": [
+    "All-79 report correctness and full language coverage",
+    "SML97/HOL4 typing, elaboration, values/closures and source lowering correspondence",
+    "Records, fixity, modules/functors, sealing, equality kinds, source exceptions and runtime contracts",
+    "Matching report/compiler semantic pins or a preservation bridge",
+    "Macro generator and expanded-program source-to-machine proofs, installation and linking",
+    "Vendor prebuilt and CakeML-built HOL4 source reconstruction; original-release parser equivalence"
+  ],
+  "original_release_evidence_path": "../../../.o11y/sml-proof-reconstruction-20261008/original-release",
+  "original_release_manifest_sha256": "82a1ce530c4b2a5069350139ffa2c2318a434170d911757dbcbacd5a2bb266f1",
+  "original_release_reconstruction": {
+    "all_four_macro_theories_reconstructed_from_source_in_final_run": true,
+    "allowed_oracle_tags": [
+      "DISK_THM"
+    ],
+    "axioms": 0,
+    "binary_provenance": "locally source-built official release tag; no vendor prebuilt or CakeML-built HOL4 qualified",
+    "cakeml_commit": "f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6",
+    "checked_exports": 54,
+    "checker_build_scope": "core sequence and required prerequisites completed; help database generation failed; runtime startup and selected source proofs passed",
+    "claim": "independent source reconstruction of normalized macro contracts only; not a whole release certificate",
+    "complete_selected_proof_logs_retained": true,
+    "dependency_proof_or_ML_API_adaptations": 3,
+    "full_sml97_source_bridge": "OPEN",
+    "hol4_commit": "bdc6917eeafd45f1067c08b6061c2243c1b1edb0",
+    "hol4_launcher_sha256": "a2b31a738f716b63426049f7c4c2502df2a2af3b910c021b70eac9b6b74f5282",
+    "hol4_native_runner_sha256": "2c52cca1b7a553846bdd37f078e9572bc4eeaade5e982f3b041d657519193a3a",
+    "hol4_release": "trindemossen-2",
+    "hol4_runtime_image_sha256": "d666466dfb090cc03797a8da26b90e04d12cf01a6aa27273ca7afedf2b426409",
+    "holmake_sha256": "7c7e928375309464be347f5dffc681be55d5ae206c1535d6e4fc15b34e579420",
+    "host_polyml": "5.7.1",
+    "hypotheses": 0,
+    "legacy_cache_trust": "raw untrusted hints; no modern ancestry validation; accepted theorem reconstructed by the kernel",
+    "macro_implementation_machine_code": "OPEN",
+    "own_ML_sources_match_final_development": true,
+    "parser_compatibility": "OPEN: temp_enable_pmatch absent; no substitute case grammar assumed equivalent",
+    "report_witnesses_reconstructed": 0,
+    "schema": 1,
+    "semantic_definitions_and_theorem_statements_changed": false,
+    "staged_ML_sources": 68,
+    "status": "SCOPED_MACRO_SOURCE_RECONSTRUCTION_PASS",
+    "tactictoe_loaded_calls": [
+      1503
+    ],
+    "tracked_HOL4_sources_unchanged": true,
+    "vendor_prebuilt_replay": "OPEN",
+    "z3": "4.8.12 proof-reconstructing Z3_TAC"
+  },
+  "preservation": [
+    "Arbitrary finite sequencing agrees with the normalized SML97 nested wildcard-case form.",
+    "Constructor and application operands evaluate left to right in the original environment before generated names are bound.",
+    "General correctness preserves operand values, state, exceptions and clock behavior; named constructors retain the lookup/arity condition.",
+    "Generated semantic certificates name exactly the returned AST; binary application reuses PR #6 reference semantics."
+  ],
+  "qualification": {
+    "added_exports_relative_to_pr6": 23,
+    "allowed_oracle_tags": [
+      "DISK_THM"
+    ],
+    "axioms": 0,
+    "bundle_sha256": "3d8d367b7e94b74530e4e6b17d9e5eb0b67dfd590442542cd706f4bf42319e4c",
+    "evidence_path": "../../../.o11y/sml-proof-reconstruction-20261008/final-order-lowering",
+    "hypotheses": 0,
+    "macro_support_generated_search_theorems": 54,
+    "receipt": {
+      "bundle_sha256": "3d8d367b7e94b74530e4e6b17d9e5eb0b67dfd590442542cd706f4bf42319e4c",
+      "cakeml_commit": "f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6",
+      "cakeml_hol4_binary_replay": "OPEN",
+      "cakeml_runtime_image_sha256": "41dfea0bf8357375afaadd976536b8beba00d66b279e57cd12075620e92d0be8",
+      "claim": "scoped target semantics and normalized macro proofs only; not all report claims or a verified HOL4 binary",
+      "formal_report_verification": "OPEN",
+      "full_sml97_source_bridge": "OPEN",
+      "hol4_commit": "9bf0e20dc653ff811ad43242d44b67f1fd50681a",
+      "hol4_executable_sha256": "ba3c88aa3e1387c104a5444c2f5127e1ba64d21b336e273b26ad5922c3691aa3",
+      "hol4_runtime_image_sha256": "7616c8383af85f324d7a12299459166d872128e0fc10448288733a003f9589d4",
+      "holmake_executable_sha256": "6a3e60d8c9e774899f3d8b3098d2d748324fe500e48b31b1677ffd78a9c3da6e",
+      "holmake_flags": [
+        "--nolmbc",
+        "--qof",
+        "--no_preexecs",
+        "--rebuild_deps",
+        "--no-project",
+        "--no-cache"
+      ],
+      "macro_implementation_machine_code": "OPEN",
+      "macro_theorems": 54,
+      "original_release_binary_replay": "OPEN",
+      "report_witnesses": {
+        "C08": [
+          "Hol4SmlMacro.lower_sml_multifn_application_correct"
+        ],
+        "M04": [
+          "Hol4SmlGapWitness.accepted_inline_signature_is_erased"
+        ],
+        "S04": [
+          "Hol4SmlGapWitness.target_closure_equality"
+        ],
+        "S05": [
+          "Hol4SmlGapWitness.target_closure_equality",
+          "Hol4SmlGapWitness.target_recursive_closure_equality"
+        ],
+        "S06": [
+          "Hol4SmlGapWitness.target_tuple_raises_second",
+          "Hol4SmlGapWitness.explicit_sequence_raises_first",
+          "Hol4SmlGapWitness.target_order_is_observable",
+          "Hol4SmlApplication.lower_sml_left_application_correct",
+          "Hol4SmlApplication.temporary_capture_is_observable",
+          "Hol4SmlOrder.lower_sml_con_ltr_correct",
+          "Hol4SmlOrder.lower_sml_application_ltr_correct",
+          "Hol4SmlOrder.source_closure_environment_is_preserved"
+        ],
+        "S07": [
+          "Hol4SmlGapWitness.target_failed_case_raises_bind",
+          "Hol4SmlMacro.lower_sml_match_correct"
+        ],
+        "S08": [
+          "Hol4SmlMacro.matched_body_bind_is_preserved"
+        ]
+      },
+      "schema": 1,
+      "source_audit_sha256": "88cf0dee02c7fe3e7a3b1cd20386ce63a11f3bbef9541b6923a1e7dcafe95a96",
+      "status": "SCOPED_REPORT_WITNESSES_RECONSTRUCTED",
+      "tactictoe_loaded_calls": [
+        1759
+      ],
+      "tactictoe_manifest_sha256": "8832e20aed5a3e9c620a0f29beece1af319e7aba0567d12b8ae4dae653e730f9",
+      "target_witness_theorems": 7,
+      "z3_executable_sha256": "c05be002097e2f2106efeeac03e58032e3f5cca10104f95d7a0ddc0bd3f907cb"
+    },
+    "source_identity_path": "../../../.o11y/sml-proof-reconstruction-20261008/source-identity.json",
+    "status": "PASS",
+    "target_report_witnesses": 7,
+    "total": 61
+  },
+  "regressions": {
+    "log": "../../../.o11y/sml-proof-reconstruction-20261008/integrated-regressions.log",
+    "passed": 20,
+    "runtime": "real development HOL4, including successful startup before negative inspection tests",
+    "skipped": 0
+  },
+  "report_inputs": {
+    "entries": 80,
+    "formal_all_report_verification": "OPEN",
+    "report_compiler_cited_files_differ": 7,
+    "resolved_authority_files": 16,
+    "source_audit_sha256": "88cf0dee02c7fe3e7a3b1cd20386ce63a11f3bbef9541b6923a1e7dcafe95a96",
+    "strict_entries": 79,
+    "timestamp_warning": "generated_utc predates the cited CakeML commit",
+    "zip_member_bytes_match_preserved_inputs": true
+  },
+  "reuse": {
+    "aegis_components_byte_verified": 10,
+    "lock": "../../../.agents/reuse-lock.json",
+    "postgresql": "BLOCKED_NO_DSN; exposed events retained in durable outbox"
+  },
+  "schema": 1,
+  "status": "SCOPED_KERNEL_RECONSTRUCTION_RETAINED"
+}

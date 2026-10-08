@@ -1,10 +1,9 @@
 # HOL4 SML through checked CakeML macros
 
 The full HOL4 SML frontend and self-hosting theorem remain OPEN.
-See `reports/ordered-application.md` and
-`reports/verification-ordered-application-20261008.json` for the latest scope
-and retained evidence. `reports/verification-20261008.json` preserves the
-earlier checkpoint.
+See `reports/README.md` and `reports/verification-20261008-reconstruction.json`
+for current scope, pins, retained proof artifacts and blockers. The older
+`verification-20261008.json` records the previous source checkpoint.
 
 `Hol4SmlMacroLib` expands typed AST terms and returns an expansion theorem and
 a normalized semantic theorem. Matching retains the exception lookup condition
@@ -13,11 +12,21 @@ certificates cover closure construction and application, including clock and
 post-binding exception lookup conditions. SML97 typing, elaboration, freshness
 and source correspondence remain open.
 
-`left_application` inserts nested bindings to evaluate the function before
-its argument. Its theorem preserves distinct-name and argument-binding
-stability conditions. Literal and unshadowed variable instances discharge
-them. Every certificate checks both the expansion and semantic proof and
-requires the semantic left-hand side to contain exactly the returned AST.
+PR #6's `left_application` API and its argument-binding stability condition
+are preserved. Certificates check both proofs, rewrite the semantics to the
+returned AST and require that exact AST on the evaluator's left-hand side.
+
+The library also generates arbitrary finite sequencing, left-to-right
+constructor operands and left-to-right function application. `Hol4SmlOrder`
+proves these expansions against normalized reference evaluators, preserving
+state, errors, clock behavior and operand value order. Sequencing also agrees
+with SML97's nested wildcard-case derived form in the target evaluator.
+Operands run in their original environment before a tuple pattern captures
+their values; generated names therefore cannot capture source closures.
+The constructor theorem retains the constructor lookup/arity check. These
+contracts still need the SML97 elaboration and source-value correspondence.
+The automatic application API reuses `Hol4SmlApplication`'s reference through
+the checked `application_reference_two` theorem.
 
 `Hol4ProofSearchLib` tries named rewrite hints, proof-reconstructing Z3_TAC,
 then bounded learned TacticToe. It checks the exact goal, hypotheses, axioms and
@@ -49,14 +58,21 @@ export SML97DIR=/path/to/sml97 HOL4_TACTICTOE_CACHE=/path/to/new-cache
 tools/cakeml-hol4/qualify_gap_report.sh
 ```
 
-The latest qualification retained all 38 checked exports and complete logs.
-The separate source-built Trindemossen 2 kernel reconstructed the 31 macro
-and search exports with recorded proof/API adapters; its parser witness build
-remains blocked. The evidence archive includes the reproduction recipe.
-The manual workflow has a scoped report job and a separate compiler job; it
-does not run on every source checkpoint. Scoped reconstruction disables
-project-wide discovery and pre-execution fetch hooks and includes required
-dependency directories explicitly.
+The integrated local qualification reconstructed and inspected 61 theorems:
+54 macro/support/generated/search theorems and seven target report witnesses.
+All 20 regression tests passed without skips under the real HOL4 runtime.
+Complete theory exports, proof-source copies, logs and digest manifests are
+retained in `.o11y/sml-proof-reconstruction-20261008/`. The manual workflow has
+a scoped report job and a separate compiler job; it does not run on every
+source checkpoint.
+
+An independent source build of the official Trindemossen 2 tag reconstructed
+and inspected all 54 macro/support/generated/search theorems using identical
+project ML sources. Its three recorded CakeML dependency adaptations change
+proofs/ML APIs only. The seven report witnesses remain development-kernel
+results because their shared theory needs an incompatible parser hook. Vendor
+prebuilt replay remains open. See the reconstruction report for both checkers'
+binary identities and the original-release reproduction commands.
 
 The uploaded reports can be re-audited after restoring their extracted files
 as sibling `machine/` and `report/` directories:
@@ -84,8 +100,9 @@ The compiler path evaluates CakeML's lexer/parser and compiler inside HOL4.
 Fresh directories prevent stale theorem reuse; failed parsing, TRUTH-only
 results, missing theory exports and empty assembly are rejected. Compiler
 evaluation alone does not supply the SML bridge, machine installation/linking
-relation, or macro implementation binary correctness. Final artifact export
-verification is pending after the execution outage.
+relation, or macro implementation binary correctness. The current compiler
+attempt remains unqualified; its compatibility and resource-limit outcomes
+are recorded in the reconstruction report.
 
 `proof_bundle.py` checks confined, regular artifact identities before either
 executable runs. `dual_replay.py` rejects identical executable bytes and records

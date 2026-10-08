@@ -1,0 +1,118 @@
+
+---------------------------------------------------------------------
+     HOL4 [Trindemossen 2 (stdknl, built Thu Oct 08 11:34:41 2026)]
+
+     For introductory HOL help, type: help "hol";
+     To exit type <Control>-D
+---------------------------------------------------------------------
+** Load path (see loadPath variable) now contains 29 entries
+** after consulting Holmakefiles and any holproject.toml
+
+> val inspect = fn: unit -> unit
+<<HOL message: intLib loaded.  Use intLib.deprecate_int() to turn off integer parsing>>
+KERNEL_THEOREM Hol4SmlMacro.can_pmatch_all_fallback
+⊢ can_pmatch_all c refs (ps ++ [Pany]) value ⇔ can_pmatch_all c refs ps value
+KERNEL_THEOREM Hol4SmlMacro.evaluate_match_fallback
+⊢ nsLookup env.v match_id = SOME match_value ⇒
+  evaluate_match st env value (clauses ++ [(Pany,Raise (Var match_id))])
+    bind_exn_v = evaluate_match st env value clauses match_value
+KERNEL_THEOREM Hol4SmlMacro.lower_sml_match_correct
+⊢ nsLookup env.v match_id = SOME match_value ⇒
+  evaluate st env [lower_sml_match scrut clauses match_id] =
+  sml_match_reference st env scrut clauses match_value
+KERNEL_THEOREM Hol4SmlMacro.lower_sml_multifn_closure
+⊢ evaluate st env [lower_sml_multifn arg clauses match_id] =
+  (st,
+   Rval
+     [Closure env arg (lower_sml_match (Var (Short arg)) clauses match_id)])
+KERNEL_THEOREM Hol4SmlMacro.lower_sml_multifn_application_correct
+⊢ nsLookup env.v value_id = SOME value ∧
+  nsLookup (nsBind arg value env.v) match_id = SOME match_value ⇒
+  evaluate st env
+    [lower_sml_multifn_application arg clauses match_id value_id] =
+  if st.clock = 0 then (st,Rerr (Rabort Rtimeout_error))
+  else
+    sml_match_reference (dec_clock st) (env with v := nsBind arg value env.v)
+      (Var (Short arg)) clauses match_value
+KERNEL_THEOREM Hol4SmlMacro.lower_sml_sequence_correct
+⊢ evaluate st env [Let NONE e1 e2] = sml_sequence_reference st env e1 e2
+KERNEL_THEOREM Hol4SmlMacro.cakeml_function_equality
+⊢ do_eq (Closure env1 arg1 body1) (Closure env2 arg2 body2) = Eq_val T
+KERNEL_THEOREM Hol4SmlMacro.cakeml_empty_match_raises_bind
+⊢ evaluate_match st env value [] bind_exn_v = (st,Rerr (Rraise bind_exn_v))
+KERNEL_THEOREM Hol4SmlMacro.matched_body_bind_is_preserved
+⊢ evaluate_match st env value
+    [(Pany,Raise (Con (SOME (Short «Bind»)) []));
+     (Pany,Raise (Var match_id))] bind_exn_v =
+  evaluate_match st env value [(Pany,Raise (Con (SOME (Short «Bind»)) []))]
+    match_value
+KERNEL_THEOREM Hol4SmlMacroQualification.generated_match_expansion
+⊢ lower_sml_match (Var (Short «subject»))
+    [(Plit (IntLit 0),Lit (IntLit 10)); (Plit (IntLit 1),Lit (IntLit 20))]
+    (Short «sml_match_exception») =
+  Mat (Var (Short «subject»))
+    ([(Plit (IntLit 0),Lit (IntLit 10)); (Plit (IntLit 1),Lit (IntLit 20))] ++
+     [(Pany,Raise (Var (Short «sml_match_exception»)))])
+KERNEL_THEOREM Hol4SmlMacroQualification.generated_match_semantics
+⊢ nsLookup env.v (Short «sml_match_exception») = SOME match_value ⇒
+  evaluate st env
+    [lower_sml_match (Var (Short «subject»))
+       [(Plit (IntLit 0),Lit (IntLit 10)); (Plit (IntLit 1),Lit (IntLit 20))]
+       (Short «sml_match_exception»)] =
+  sml_match_reference st env (Var (Short «subject»))
+    [(Plit (IntLit 0),Lit (IntLit 10)); (Plit (IntLit 1),Lit (IntLit 20))]
+    match_value
+KERNEL_THEOREM Hol4SmlMacroQualification.generated_fn_expansion
+⊢ lower_sml_multifn «subject»
+    [(Plit (IntLit 0),Lit (IntLit 10)); (Plit (IntLit 1),Lit (IntLit 20))]
+    (Short «sml_match_exception») =
+  Fun «subject»
+    (Mat (Var (Short «subject»))
+       ([(Plit (IntLit 0),Lit (IntLit 10));
+         (Plit (IntLit 1),Lit (IntLit 20))] ++
+        [(Pany,Raise (Var (Short «sml_match_exception»)))]))
+KERNEL_THEOREM Hol4SmlMacroQualification.generated_fn_closure
+⊢ evaluate st env
+    [lower_sml_multifn «subject»
+       [(Plit (IntLit 0),Lit (IntLit 10)); (Plit (IntLit 1),Lit (IntLit 20))]
+       (Short «sml_match_exception»)] =
+  (st,
+   Rval
+     [Closure env «subject»
+        (lower_sml_match (Var (Short «subject»))
+           [(Plit (IntLit 0),Lit (IntLit 10));
+            (Plit (IntLit 1),Lit (IntLit 20))] (Short «sml_match_exception»))])
+KERNEL_THEOREM Hol4SmlMacroQualification.generated_fn_application_expansion
+⊢ lower_sml_multifn_application «subject»
+    [(Plit (IntLit 0),Lit (IntLit 10)); (Plit (IntLit 1),Lit (IntLit 20))]
+    (Short «sml_match_exception») (Short «argument») =
+  App Opapp
+    [Fun «subject»
+       (Mat (Var (Short «subject»))
+          ([(Plit (IntLit 0),Lit (IntLit 10));
+            (Plit (IntLit 1),Lit (IntLit 20))] ++
+           [(Pany,Raise (Var (Short «sml_match_exception»)))]));
+     Var (Short «argument»)]
+KERNEL_THEOREM Hol4SmlMacroQualification.generated_fn_application_semantics
+⊢ nsLookup env.v (Short «argument») = SOME value ∧
+  nsLookup (nsBind «subject» value env.v) (Short «sml_match_exception») =
+  SOME match_value ⇒
+  evaluate st env
+    [lower_sml_multifn_application «subject»
+       [(Plit (IntLit 0),Lit (IntLit 10)); (Plit (IntLit 1),Lit (IntLit 20))]
+       (Short «sml_match_exception») (Short «argument»)] =
+  if st.clock = 0 then (st,Rerr (Rabort Rtimeout_error))
+  else
+    sml_match_reference (dec_clock st)
+      (env with v := nsBind «subject» value env.v) (Var (Short «subject»))
+      [(Plit (IntLit 0),Lit (IntLit 10)); (Plit (IntLit 1),Lit (IntLit 20))]
+      match_value
+KERNEL_THEOREM Hol4SmlMacroQualification.egglog_sequence_replay
+⊢ evaluate st env [Let NONE e1 e2] = sml_sequence_reference st env e1 e2
+KERNEL_THEOREM Hol4SmlMacroQualification.z3_clock_step
+⊢ ∀clock. 0 < clock ⇒ clock − 1 < clock
+KERNEL_THEOREM Hol4SmlMacroQualification.tactictoe_clause_count
+⊢ ∀clauses.
+    LENGTH (clauses ++ [(Pany,Raise (Var (Short «sml_match_exception»)))]) =
+    LENGTH clauses + 1
+HOL4_MACRO_EXPORTS_INSPECTED 18

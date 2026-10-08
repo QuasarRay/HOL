@@ -1,0 +1,56 @@
+{
+  "checker_core_build_commit": "bc025dff474b4dabff1a3d7606e929e492778fe8",
+  "claim": "source identities used by the integrated qualification; native checkout HEAD in receipts is an observation, not a clean whole-checker source pin",
+  "files": [
+    {
+      "path": "tools/cakeml-hol4/formal/Hol4SmlOrderScript.sml",
+      "sha256": "befe493294b603e5e4456e2987cf562679d4380e39cd60ad56261a834fa1d072"
+    },
+    {
+      "path": "tools/cakeml-hol4/formal/Hol4SmlMacroLib.sml",
+      "sha256": "0d5a922617ff0fbf7718fdc94a36f787f5056124bb00c533c716972ea8c14e23"
+    },
+    {
+      "path": "tools/cakeml-hol4/formal/Hol4SmlMacroLib.sig",
+      "sha256": "c06f700855778ca31f877c89b088b6f83bae9797a2b720d9d8bf39a51fe7f796"
+    },
+    {
+      "path": "tools/cakeml-hol4/formal/Hol4SmlMacroQualificationScript.sml",
+      "sha256": "ad77d7c5a0ac19e894dac9068ed9e90c39e5b741c65a0d1705f366b3374e1124"
+    },
+    {
+      "path": "tools/cakeml-hol4/formal/Hol4SmlMacroInspect.sml",
+      "sha256": "18d140af509e008f5b5ea90f5a95a2982bc627655e183c88f9733d81bb8cad9e"
+    },
+    {
+      "path": "tools/cakeml-hol4/formal/Hol4SmlMacroScript.sml",
+      "sha256": "8e3a3de74e0ac4a515dd7a134fc0a146d9c1077f7fa29386dc86d6fbdc081ef2"
+    },
+    {
+      "path": "tools/cakeml-hol4/formal/Hol4SmlApplicationScript.sml",
+      "sha256": "2fef7cb6fd5acba4e453e991d75e54d7b29947da0cdccf8af7db6831b16cec94"
+    },
+    {
+      "path": "tools/cakeml-hol4/formal/macro-rewrites.tsv",
+      "sha256": "1339331c9b4db7b9d7a35c0002312e75e6d9458d458e50cf9b7ad53dcbfc235e"
+    },
+    {
+      "path": "tools/cakeml-hol4/qualify_gap_report.sh",
+      "sha256": "5f17219d530a28011353180543bef5ea638a4c6afd8f04920f25b43ce33590b2"
+    },
+    {
+      "path": "tools/cakeml-hol4/qualify_macros.sh",
+      "sha256": "22734ca0834b451a8c148a9b790e4a3bc032de540f72a92a6fd87c775f35306a"
+    },
+    {
+      "path": "tools/cakeml-hol4/materialize_cakeml_context_compat.py",
+      "sha256": "c94e3f2595c84824070042cb5b18510f525c9d895a470e7eeda1bc61962a03c2"
+    },
+    {
+      "path": "tools/cakeml-hol4/materialize_release_context.py",
+      "sha256": "76942b8c1836ee48649003d82c12882e46d9dae2c7576f752bf1f26ff2d87e6b"
+    }
+  ],
+  "inherited_pr6_commit": "0b137238dfba936da54055c7723b362068c99cf4",
+  "schema": 1
+}

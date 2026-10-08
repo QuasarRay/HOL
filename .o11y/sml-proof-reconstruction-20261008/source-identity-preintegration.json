@@ -1,0 +1,42 @@
+{
+  "claim": "identity of source used by this observed qualification; not a release certificate",
+  "files": [
+    {
+      "path": "tools/cakeml-hol4/formal/Hol4SmlOrderScript.sml",
+      "sha256": "78ad15e771498408181e0289ff5e026a0ef8f2fdee8a0874643b3cd3b9697b89"
+    },
+    {
+      "path": "tools/cakeml-hol4/formal/Hol4SmlMacroLib.sml",
+      "sha256": "d1a4b3816d2b924f9e0fd24b9abeb44cf6a366a923d97d86315f93cbb6f3b61a"
+    },
+    {
+      "path": "tools/cakeml-hol4/formal/Hol4SmlMacroLib.sig",
+      "sha256": "0c4c45e0d980cb6c81648652e6d06446143b9b7185f733dfbcc0db1b838b01c8"
+    },
+    {
+      "path": "tools/cakeml-hol4/formal/Hol4SmlMacroQualificationScript.sml",
+      "sha256": "dec4e671e54f786f93ba3edc525ea85a530c69ea0bf907561c6c0901f272cfeb"
+    },
+    {
+      "path": "tools/cakeml-hol4/formal/Hol4SmlMacroInspect.sml",
+      "sha256": "c3ed881fd1cc40cb3e055721e0f78723583e71811008874ebfbb31ab014f456a"
+    },
+    {
+      "path": "tools/cakeml-hol4/formal/macro-rewrites.tsv",
+      "sha256": "1339331c9b4db7b9d7a35c0002312e75e6d9458d458e50cf9b7ad53dcbfc235e"
+    },
+    {
+      "path": "tools/cakeml-hol4/qualify_gap_report.sh",
+      "sha256": "49823c1734524174d196467524697cd769e14f57c2422f46a9885ec385859a02"
+    },
+    {
+      "path": "tools/cakeml-hol4/qualify_macros.sh",
+      "sha256": "626a5cbed805af8947fa62d7316184fa8ed4b773c75973d9ae7698d9aee3bc62"
+    },
+    {
+      "path": "tools/cakeml-hol4/materialize_cakeml_context_compat.py",
+      "sha256": "c94e3f2595c84824070042cb5b18510f525c9d895a470e7eeda1bc61962a03c2"
+    }
+  ],
+  "schema": 1
+}

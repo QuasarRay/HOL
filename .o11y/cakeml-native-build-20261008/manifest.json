@@ -12,9 +12,19 @@
       "sha256": "1dd2611a2938e865f28ecb6698e582a642c28aae2b57f4ab250cb03cf370e5b6"
     },
     {
+      "path": "aegis-pinned-capture.json",
+      "bytes": 276,
+      "sha256": "74d3826f93d845082064f4223a81e883c315451a75b6cb30d23284ff1718d330"
+    },
+    {
       "path": "cc-version.log",
       "bytes": 243,
       "sha256": "e412d6c932acaaea35c743bc158d4ba2400ca0e3df66df406a872b2ce0f8601b"
+    },
+    {
+      "path": "checked-output-boundary-tests.log",
+      "bytes": 424,
+      "sha256": "1d0333b43f092267d312b4e68bcc338ca18829d7252e2f726592096b3ec9b33f"
     },
     {
       "path": "closLang-missing-size.log",
@@ -77,6 +87,11 @@
       "sha256": "df7e0e04cfb016c8ffcf472c24db55244dbe7ad267387302a985f4eb6cbecf11"
     },
     {
+      "path": "event-pinned.json",
+      "bytes": 396,
+      "sha256": "0aa316cc42d5140a4bffae82d27f840f7c4b7ce608f5888a9fae8c1fd7dabc35"
+    },
+    {
       "path": "event.json",
       "bytes": 858,
       "sha256": "38a9122333640ff0240d225fc9b86eacb1a23ea8b38836d8fa5197ceb4afb7f1"
@@ -85,6 +100,16 @@
       "path": "hol-vendor-archive.json",
       "bytes": 980,
       "sha256": "9a765f2ff94c8784b4e03ea668e12381e9ec7a9b5ae0cc059c954b923ccaf096"
+    },
+    {
+      "path": "incomplete-export.json",
+      "bytes": 1040,
+      "sha256": "2321e798ecb4fa43961729ed030d28d6bac20da9f31f68e69d88d84da8c5e95c"
+    },
+    {
+      "path": "integrated-tests-32.log",
+      "bytes": 4643,
+      "sha256": "3181d048a78c2adc1704f55b06f6f4b58ee28672feb154ed145bad91a6e96220"
     },
     {
       "path": "integrated-tests.log",
@@ -117,6 +142,11 @@
       "sha256": "dee2cd17e8dfda9a2ab168380e9504a042bb9d160def5a6c0a15e7ba583163c2"
     },
     {
+      "path": "matched-exports.log",
+      "bytes": 136905,
+      "sha256": "10885d252935498aca9a0deaa86e9af0326d88d6aa172449d276a26c97606acb"
+    },
+    {
       "path": "matched-host-configure.log",
       "bytes": 3147,
       "sha256": "d497c7d618f70d44a3dd1d21b393c6a83dfddfba1f70c818007d63daf52dd5be"
@@ -125,6 +155,21 @@
       "path": "matched-host-sequence.txt",
       "bytes": 92,
       "sha256": "2dfdc863e765068103e40bae58194e2103468cc34ad0b1bd1b81a5fa3c77536f"
+    },
+    {
+      "path": "matched-inspection.sml",
+      "bytes": 1487,
+      "sha256": "4367f05b931444184d8137b770249ad495026d41b85b9a86b2ed6e873d0239d9"
+    },
+    {
+      "path": "matched-proof-exports-manifest.json",
+      "bytes": 2305,
+      "sha256": "fb318c98f52536a382d23222a9e34459d3b6fcab46ad344f84957b4426b554f9"
+    },
+    {
+      "path": "matched-proof-exports.zip",
+      "bytes": 142931,
+      "sha256": "ae66624b33d5818e851b71034e42fc8d13dc7cea02bbce172335b708c4ecfcfe"
     },
     {
       "path": "merge-regressions.log",
@@ -175,6 +220,11 @@
       "path": "native-runtime-linkage.log",
       "bytes": 222,
       "sha256": "a9fa6f9e4f2ce5dd42c9573f2f1fd168f70311bddc66b58979daadf3203f84e9"
+    },
+    {
+      "path": "pinned-build-attempts.zip",
+      "bytes": 89227,
+      "sha256": "d77f6eba3979519b3212a210b877d8859bdc6eb3ed2ecd2bd9147eb84d5a21cd"
     },
     {
       "path": "semanticPrimitivesProps-original.sml",
@@ -275,6 +325,11 @@
       "path": "vendor-version.log",
       "bytes": 221,
       "sha256": "fd2cda588bff1e417497cda0471e04c672dcbb4c0fea94c9b1c409075d6d5a81"
+    },
+    {
+      "path": "verification-pinned.json",
+      "bytes": 1362,
+      "sha256": "1a5744d1820473bd0cdb6e09d633f43628e441b5a816424b7d9faff91337de87"
     },
     {
       "path": "verification.json",

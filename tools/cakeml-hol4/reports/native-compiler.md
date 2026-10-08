@@ -26,7 +26,7 @@ executable bytes are retained in the evidence ZIP, together with source, logs
 and digests. The adapter rejects foreign advertised pins, successful exit with
 empty assembly, reused output directories, and build timeouts. These results
 have status `NATIVE_COMPILED_UNQUALIFIED` and contain no semantic proof claim.
-All 31 regression tests passed without skips, including the real native compile,
+All 32 regression tests passed without skips, including the real native compile,
 execution, kernel-source rejection and failed-host-build gate.
 
 Compiling unchanged `src/0/KernelTypes.sml` failed with a parser error. Separate
@@ -59,6 +59,24 @@ the unchanged compiler context. That checker is a source-built bootstrap
 environment; it is not an original vendor HOL executable or CakeML-built HOL4.
 The aggregate optional host build was interrupted after the core was available;
 the pinned build adapter reconstructs only its explicit compiler prerequisites.
+
+Fresh inspection under that release-matched checker accepted 336 theorem exports:
+77 from `semanticPrimitivesProps`, 96 from `typeSysProps`, 84 from `evaluateProps`
+and 79 from `closLang`. All four theories were reconstructed from unchanged
+compiler-pinned source. Inspection also required the actual `closLang.exp1_size`
+constant and its size lemma. These are a separate scope from the 173 development
+checker exports above; the counts must not be added as distinct theorems.
+
+Two 900-second compiler-library attempts completed 42 and 37 dependency theories.
+The second stopped during `clos_known` export, leaving zero-byte generated SML
+and signature files that the older build tool subsequently treated as available.
+Those five generated artifacts were retained outside build search paths, and
+`clos_known` was rebuilt successfully. Missing host `cv_typeLib`, `cv_transLib`
+and `cv_memLib` links were also repaired. The next attempt has advanced through
+`data_to_word` and `labLang`; no compiler correctness instance has been returned.
+The adapter now retains per-stage exit codes. The checked compilation wrapper
+selects flags supported by the chosen HOL release and requires a fresh output
+directory before writing selected source or evidence.
 
 The official Trindemossen 2 archive was also downloaded and checked against its
 published SHA-256 `0a2cba21a07b2eac0a9593a7130d47d48715a122ff6df6d0c6858f7190f71f7c`.

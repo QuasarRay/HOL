@@ -1,0 +1,30 @@
+{
+  "cakeml_source_commit": "c98da7fc904c5d6d0e9a75a18fac1796a9bfb1f9",
+  "cakeml_tracked_source_changes": [],
+  "claim": "unchanged pinned dependency source proofs under a source-built bootstrap checker; full HOL4 source/runtime/machine/release bridges remain OPEN",
+  "compiler_attempts": {
+    "attempt_2": "900-second limit after 42 completed theories",
+    "attempt_3": "900-second limit after 37 completed theories; clos_known export incomplete",
+    "attempt_4": "FAILED; empty cached clos_known export and three absent host CV library links",
+    "attempt_5": "IN_PROGRESS; advanced through data_to_word and labLang",
+    "recovery": "incomplete generated files retained outside search paths; source unchanged; CV dependencies built and linked"
+  },
+  "export_inspection": "PASS; no hypotheses, axioms or unexpected oracle tags; disk import tags allowed",
+  "full_hol4_executable": "NOT_BUILT",
+  "hol_source_commit": "b725f6e8834462a5b4bb2fb67b35e36f368cb8b6",
+  "inspected_theorems": {
+    "closLang": 79,
+    "evaluateProps": 84,
+    "semanticPrimitivesProps": 77,
+    "typeSysProps": 96
+  },
+  "legacy_exp1_size": "DECLARED_AND_LEMMA_CHECKED",
+  "machine_compiler_instance": "NOT_RETURNED",
+  "regressions": {
+    "outcome": "PASS",
+    "skips": 0,
+    "tests": 32
+  },
+  "schema": 1,
+  "status": "MATCHED_DEPENDENCY_PROOFS_CHECKED_FULL_HOL4_OPEN"
+}

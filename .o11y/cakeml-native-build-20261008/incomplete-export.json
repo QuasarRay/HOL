@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "reason": "900-second build interruption left an empty generated theory implementation",
+  "preserved_files": [
+    {
+      "path": "clos_knownTheory.sml",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "clos_knownTheory.sig",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "clos_knownTheory.dat",
+      "bytes": 168337,
+      "sha256": "4ca09f0954c7eea97bca5d9f9e3948e408427c2c489a18cac0498b4c791594e5"
+    },
+    {
+      "path": "clos_knownTheory.ui",
+      "bytes": 123,
+      "sha256": "d86ac40a0a033964d7294b3a443b9f80c20eca8bc202ac866e29bbdee3e57056"
+    },
+    {
+      "path": "clos_knownTheory.uo",
+      "bytes": 170,
+      "sha256": "9e1fe9c3328fe0243ffc8d908aa9ab00d41c400b15076b7f40e77f3636ae1221"
+    }
+  ],
+  "action": "retained generated files outside build search paths; source script unchanged",
+  "claim": "incomplete outputs unqualified"
+}

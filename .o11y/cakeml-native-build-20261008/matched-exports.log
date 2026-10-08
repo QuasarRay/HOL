@@ -1,0 +1,2605 @@
+
+---------------------------------------------------------------------
+     HOL4 [Trindemossen 2 (stdknl, )]
+
+     For introductory HOL help, type: help "hol";
+     To exit type <Control>-D
+---------------------------------------------------------------------
+** Load path (see loadPath variable) now contains 30 entries
+** after consulting Holmakefiles
+
+[In non-standard heap: /workspace/scratch/7755a98cf62b/cakeml-release-context/misc/cakeml-heap]
+> # # # # # # # # # # # # # # # # # # # # # val inspect_all = fn: unit -> unit
+> # # KERNEL_THEOREM semanticPrimitivesProps.with_same_v
+⊢ env with v := env.v = env
+KERNEL_THEOREM semanticPrimitivesProps.with_same_clock
+⊢ st with clock := st.clock = st
+KERNEL_THEOREM semanticPrimitivesProps.unchanged_env
+⊢ ∀env. <|v := env.v; c := env.c|> = env
+KERNEL_THEOREM semanticPrimitivesProps.sv_rel_trans
+⊢ ∀R. (∀x y z. R x y ∧ R y z ⇒ R x z) ⇒
+      ∀x y z. sv_rel R x y ∧ sv_rel R y z ⇒ sv_rel R x z
+KERNEL_THEOREM semanticPrimitivesProps.sv_rel_refl
+⊢ ∀R x. (∀x. R x x) ⇒ sv_rel R x x
+KERNEL_THEOREM semanticPrimitivesProps.sv_rel_O
+⊢ ∀R1 R2. sv_rel (R1 ∘ᵣ R2) = sv_rel R1 ∘ᵣ sv_rel R2
+KERNEL_THEOREM semanticPrimitivesProps.sv_rel_mono
+⊢ (∀x y. P x y ⇒ Q x y) ⇒ sv_rel P x y ⇒ sv_rel Q x y
+KERNEL_THEOREM semanticPrimitivesProps.sv_rel_ind
+⊢ ∀P. (∀R v1 v2. P R (Refv v1) (Refv v2)) ∧
+      (∀R w1 w2. P R (W8array w1) (W8array w2)) ∧
+      (∀R vs1 vs2. P R (Varray vs1) (Varray vs2)) ∧
+      (∀R m1 v1 m2 v2. P R (Thunk m1 v1) (Thunk m2 v2)) ∧
+      (∀R v7 v18. P R (Refv v7) (W8array v18)) ∧
+      (∀R v7 v19. P R (Refv v7) (Varray v19)) ∧
+      (∀R v7 v20 v21. P R (Refv v7) (Thunk v20 v21)) ∧
+      (∀R v8 v27. P R (W8array v8) (Refv v27)) ∧
+      (∀R v8 v29. P R (W8array v8) (Varray v29)) ∧
+      (∀R v8 v30 v31. P R (W8array v8) (Thunk v30 v31)) ∧
+      (∀R v9 v37. P R (Varray v9) (Refv v37)) ∧
+      (∀R v9 v38. P R (Varray v9) (W8array v38)) ∧
+      (∀R v9 v40 v41. P R (Varray v9) (Thunk v40 v41)) ∧
+      (∀R v10 v11 v47. P R (Thunk v10 v11) (Refv v47)) ∧
+      (∀R v10 v11 v48. P R (Thunk v10 v11) (W8array v48)) ∧
+      (∀R v10 v11 v49. P R (Thunk v10 v11) (Varray v49)) ⇒
+      ∀v v1 v2. P v v1 v2
+KERNEL_THEOREM semanticPrimitivesProps.sv_rel_def
+⊢ (sv_rel R (Refv v1) (Refv v2) ⇔ R v1 v2) ∧
+  (sv_rel R (W8array w1) (W8array w2) ⇔ w1 = w2) ∧
+  (sv_rel R (Varray vs1) (Varray vs2) ⇔ LIST_REL R vs1 vs2) ∧
+  (sv_rel R (Thunk m1 v1) (Thunk m2 v2) ⇔ m1 = m2 ∧ R v1 v2) ∧
+  (sv_rel R (Refv v7) (W8array v18) ⇔ F) ∧
+  (sv_rel R (Refv v7) (Varray v19) ⇔ F) ∧
+  (sv_rel R (Refv v7) (Thunk v20 v21) ⇔ F) ∧
+  (sv_rel R (W8array v8) (Refv v27) ⇔ F) ∧
+  (sv_rel R (W8array v8) (Varray v29) ⇔ F) ∧
+  (sv_rel R (W8array v8) (Thunk v30 v31) ⇔ F) ∧
+  (sv_rel R (Varray v9) (Refv v37) ⇔ F) ∧
+  (sv_rel R (Varray v9) (W8array v38) ⇔ F) ∧
+  (sv_rel R (Varray v9) (Thunk v40 v41) ⇔ F) ∧
+  (sv_rel R (Thunk v10 v11) (Refv v47) ⇔ F) ∧
+  (sv_rel R (Thunk v10 v11) (W8array v48) ⇔ F) ∧
+  (sv_rel R (Thunk v10 v11) (Varray v49) ⇔ F)
+KERNEL_THEOREM semanticPrimitivesProps.sv_rel_cases
+⊢ ∀x y.
+    sv_rel R x y ⇔
+    (∃v1 v2. x = Refv v1 ∧ y = Refv v2 ∧ R v1 v2) ∨
+    (∃w. x = W8array w ∧ y = W8array w) ∨
+    (∃m v1 v2. x = Thunk m v1 ∧ y = Thunk m v2 ∧ R v1 v2) ∨
+    ∃vs1 vs2. x = Varray vs1 ∧ y = Varray vs2 ∧ LIST_REL R vs1 vs2
+KERNEL_THEOREM semanticPrimitivesProps.sv_every_ind
+⊢ ∀P'.
+    (∀P v. P' P (Refv v)) ∧ (∀P vs. P' P (Varray vs)) ∧
+    (∀P m v. P' P (Thunk m v)) ∧ (∀P v4. P' P (W8array v4)) ⇒
+    ∀v v1. P' v v1
+KERNEL_THEOREM semanticPrimitivesProps.sv_every_def
+⊢ (sv_every P (Refv v) ⇔ P v) ∧ (sv_every P (Varray vs) ⇔ EVERY P vs) ∧
+  (sv_every P (Thunk m v) ⇔ P v) ∧ (sv_every P (W8array v4) ⇔ T)
+KERNEL_THEOREM semanticPrimitivesProps.result_rel_trans
+⊢ (∀x y z. R1 x y ∧ R1 y z ⇒ R1 x z) ∧ (∀x y z. R2 x y ∧ R2 y z ⇒ R2 x z) ⇒
+  ∀x y z. result_rel R1 R2 x y ∧ result_rel R1 R2 y z ⇒ result_rel R1 R2 x z
+KERNEL_THEOREM semanticPrimitivesProps.result_rel_Rval
+⊢ result_rel R1 R2 (Rval v) r ⇔ ∃v'. r = Rval v' ∧ R1 v v'
+KERNEL_THEOREM semanticPrimitivesProps.result_rel_Rerr2
+⊢ result_rel R1 R2 r (Rerr e) ⇔ ∃e'. r = Rerr e' ∧ exc_rel R2 e' e
+KERNEL_THEOREM semanticPrimitivesProps.result_rel_Rerr1
+⊢ result_rel R1 R2 (Rerr e) r ⇔ ∃e'. r = Rerr e' ∧ exc_rel R2 e e'
+KERNEL_THEOREM semanticPrimitivesProps.result_rel_refl
+⊢ (∀x. R1 x x) ∧ (∀x. R2 x x) ⇒ ∀x. result_rel R1 R2 x x
+KERNEL_THEOREM semanticPrimitivesProps.result_rel_ind
+⊢ ∀P. (∀R1 v0 v1 v2. P R1 v0 (Rval v1) (Rval v2)) ∧
+      (∀v3 R2 e1 e2. P v3 R2 (Rerr e1) (Rerr e2)) ∧
+      (∀v4 v5 v13 v18. P v4 v5 (Rval v13) (Rerr v18)) ∧
+      (∀v4 v5 v14 v21. P v4 v5 (Rerr v14) (Rval v21)) ⇒
+      ∀v v1 v2 v3. P v v1 v2 v3
+KERNEL_THEOREM semanticPrimitivesProps.result_rel_def
+⊢ (result_rel R1 v0 (Rval v1) (Rval v2) ⇔ R1 v1 v2) ∧
+  (result_rel v3 R2 (Rerr e1) (Rerr e2) ⇔ exc_rel R2 e1 e2) ∧
+  (result_rel v4 v5 (Rval v13) (Rerr v18) ⇔ F) ∧
+  (result_rel v4 v5 (Rerr v14) (Rval v21) ⇔ F)
+KERNEL_THEOREM semanticPrimitivesProps.prim_type_cases
+⊢ ∀ty.
+    ty = BoolT ∨ ty = IntT ∨ ty = CharT ∨ ty = StrT ∨ ty = WordT W8 ∨
+    ty = WordT W64 ∨ ty = Float64T
+KERNEL_THEOREM semanticPrimitivesProps.pmatch_nsAppend_No_match
+⊢ ∀ns st pat v env m ns'.
+    pmatch ns st pat v env = No_match ⇒
+    pmatch (nsAppend ns ns') st pat v env = No_match
+KERNEL_THEOREM semanticPrimitivesProps.pmatch_nsAppend_Match
+⊢ ∀ns st pat v env m ns'.
+    pmatch ns st pat v env = Match m ⇒
+    pmatch (nsAppend ns ns') st pat v env = Match m
+KERNEL_THEOREM semanticPrimitivesProps.pmatch_nsAppend
+⊢ (∀ns st pat v env m ns'.
+     (pmatch ns st pat v env = No_match ⇒
+      pmatch (nsAppend ns ns') st pat v env = No_match) ∧
+     (pmatch ns st pat v env = Match m ⇒
+      pmatch (nsAppend ns ns') st pat v env = Match m)) ∧
+  ∀ns st pats vs env m ns'.
+    (pmatch_list ns st pats vs env = No_match ⇒
+     pmatch_list (nsAppend ns ns') st pats vs env = No_match) ∧
+    (pmatch_list ns st pats vs env = Match m ⇒
+     pmatch_list (nsAppend ns ns') st pats vs env = Match m)
+KERNEL_THEOREM semanticPrimitivesProps.pmatch_extend
+⊢ (∀cenv s p v env env' env''.
+     pmatch cenv s p v env = Match env' ⇒
+     ∃env''. env' = env'' ++ env ∧ MAP FST env'' = pat_bindings p []) ∧
+  ∀cenv s ps vs env env' env''.
+    pmatch_list cenv s ps vs env = Match env' ⇒
+    ∃env''. env' = env'' ++ env ∧ MAP FST env'' = pats_bindings ps []
+KERNEL_THEOREM semanticPrimitivesProps.pmatch_append
+⊢ (∀cenv st p v env env' env''.
+     pmatch cenv st p v env = Match env' ⇒
+     pmatch cenv st p v (env ++ env'') = Match (env' ++ env'')) ∧
+  ∀cenv st ps v env env' env''.
+    pmatch_list cenv st ps v env = Match env' ⇒
+    pmatch_list cenv st ps v (env ++ env'') = Match (env' ++ env'')
+KERNEL_THEOREM semanticPrimitivesProps.pmatch_acc
+⊢ (∀envc store p v env env' env2.
+     (pmatch envc store p v env = Match env' ⇔
+      pmatch envc store p v (env ++ env2) = Match (env' ++ env2)) ∧
+     (pmatch envc store p v env = No_match ⇔
+      pmatch envc store p v (env ++ env2) = No_match) ∧
+     (pmatch envc store p v env = Match_type_error ⇔
+      pmatch envc store p v (env ++ env2) = Match_type_error)) ∧
+  ∀envc store ps vs env env' env2.
+    (pmatch_list envc store ps vs env = Match env' ⇔
+     pmatch_list envc store ps vs (env ++ env2) = Match (env' ++ env2)) ∧
+    (pmatch_list envc store ps vs env = No_match ⇔
+     pmatch_list envc store ps vs (env ++ env2) = No_match) ∧
+    (pmatch_list envc store ps vs env = Match_type_error ⇔
+     pmatch_list envc store ps vs (env ++ env2) = Match_type_error)
+KERNEL_THEOREM semanticPrimitivesProps.pat_bindings_accum
+⊢ (∀p acc. pat_bindings p acc = pat_bindings p [] ++ acc) ∧
+  ∀ps acc. pats_bindings ps acc = pats_bindings ps [] ++ acc
+KERNEL_THEOREM semanticPrimitivesProps.nat_to_v_11
+⊢ ∀i j. nat_to_v i = nat_to_v j ⇔ i = j
+KERNEL_THEOREM semanticPrimitivesProps.map_sv_compose
+⊢ map_sv f (map_sv g x) = map_sv (f ∘ g) x
+KERNEL_THEOREM semanticPrimitivesProps.map_result_Rval
+⊢ map_result f1 f2 e = Rval x ⇔ ∃y. e = Rval y ∧ x = f1 y
+KERNEL_THEOREM semanticPrimitivesProps.map_result_Rerr
+⊢ map_result f1 f2 e = Rerr e' ⇔ ∃a. e = Rerr a ∧ map_error_result f2 a = e'
+KERNEL_THEOREM semanticPrimitivesProps.map_match_ind
+⊢ ∀P. (∀f env. P f (Match env)) ∧ (∀f. P f No_match) ∧
+      (∀f. P f Match_type_error) ⇒
+      ∀v v1. P v v1
+KERNEL_THEOREM semanticPrimitivesProps.map_match_def
+⊢ map_match f (Match env) = Match (f env) ∧ map_match f No_match = No_match ∧
+  map_match f Match_type_error = Match_type_error
+KERNEL_THEOREM semanticPrimitivesProps.map_error_result_Rtype_error
+⊢ map_error_result f e = Rabort a ⇔ e = Rabort a
+KERNEL_THEOREM semanticPrimitivesProps.map_error_result_I
+⊢ map_error_result I e = e
+KERNEL_THEOREM semanticPrimitivesProps.lit_same_type_sym
+⊢ ∀l1 l2. lit_same_type l1 l2 ⇒ lit_same_type l2 l1
+KERNEL_THEOREM semanticPrimitivesProps.lit_same_type_refl
+⊢ ∀l. lit_same_type l l
+KERNEL_THEOREM semanticPrimitivesProps.LIST_REL_store_vs_intro
+⊢ ∀P l1 l2.
+    LIST_REL (sv_rel P) l1 l2 ⇒ LIST_REL P (store_vs l1) (store_vs l2)
+KERNEL_THEOREM semanticPrimitivesProps.is_Refv_ind
+⊢ ∀P. (∀v0. P (Refv v0)) ∧ (∀v2. P (W8array v2)) ∧ (∀v3. P (Varray v3)) ∧
+      (∀v4 v5. P (Thunk v4 v5)) ⇒
+      ∀v. P v
+KERNEL_THEOREM semanticPrimitivesProps.is_Refv_def
+⊢ (is_Refv (Refv v0) ⇔ T) ∧ (is_Refv (W8array v2) ⇔ F) ∧
+  (is_Refv (Varray v3) ⇔ F) ∧ (is_Refv (Thunk v4 v5) ⇔ F)
+KERNEL_THEOREM semanticPrimitivesProps.FV_pes_MAP
+⊢ FV_pes pes =
+  BIGUNION
+    (IMAGE (λ(p,e). FV e DIFF IMAGE Short (set (pat_bindings p [])))
+       (set pes))
+KERNEL_THEOREM semanticPrimitivesProps.FV_ind
+⊢ ∀P0 P1 P2 P3.
+    (∀e. P0 e ⇒ P0 (Raise e)) ∧ (∀e pes. P0 e ∧ P2 pes ⇒ P0 (Handle e pes)) ∧
+    (∀v0. P0 (Lit v0)) ∧ (∀v1 ls. P1 ls ⇒ P0 (Con v1 ls)) ∧
+    (∀id. P0 (Var id)) ∧ (∀x e. P0 e ⇒ P0 (Fun x e)) ∧
+    (∀v2 es. P1 es ⇒ P0 (App v2 es)) ∧
+    (∀v3 e1 e2. P0 e1 ∧ P0 e2 ⇒ P0 (Log v3 e1 e2)) ∧
+    (∀e1 e2 e3. P0 e1 ∧ P0 e2 ∧ P0 e3 ⇒ P0 (If e1 e2 e3)) ∧
+    (∀e pes. P0 e ∧ P2 pes ⇒ P0 (Mat e pes)) ∧
+    (∀xo e b. P0 b ∧ P0 e ⇒ P0 (Let xo e b)) ∧
+    (∀defs b. P0 b ∧ P3 defs ⇒ P0 (Letrec defs b)) ∧
+    (∀e t. P0 e ⇒ P0 (Tannot e t)) ∧ (∀e l. P0 e ⇒ P0 (Lannot e l)) ∧ P1 [] ∧
+    (∀e es. P0 e ∧ P1 es ⇒ P1 (e::es)) ∧ P2 [] ∧
+    (∀p e pes. P0 e ∧ P2 pes ⇒ P2 ((p,e)::pes)) ∧ P3 [] ∧
+    (∀v4 x e defs. P0 e ∧ P3 defs ⇒ P3 ((v4,x,e)::defs)) ⇒
+    (∀v0. P0 v0) ∧ (∀v0. P1 v0) ∧ (∀v0. P2 v0) ∧ ∀v0. P3 v0
+KERNEL_THEOREM semanticPrimitivesProps.FV_defs_MAP
+⊢ ∀ls. FV_defs ls = BIGUNION (IMAGE (λ(f,x,e). FV e DIFF {Short x}) (set ls))
+KERNEL_THEOREM semanticPrimitivesProps.FV_def
+⊢ (∀e. FV (Raise e) = FV e) ∧
+  (∀pes e. FV (Handle e pes) = FV e ∪ FV_pes pes) ∧ (∀v0. FV (Lit v0) = ∅) ∧
+  (∀v1 ls. FV (Con v1 ls) = FV_list ls) ∧ (∀id. FV (Var id) = {id}) ∧
+  (∀x e. FV (Fun x e) = FV e DIFF {Short x}) ∧
+  (∀v2 es. FV (App v2 es) = FV_list es) ∧
+  (∀v3 e2 e1. FV (Log v3 e1 e2) = FV e1 ∪ FV e2) ∧
+  (∀e3 e2 e1. FV (If e1 e2 e3) = FV e1 ∪ FV e2 ∪ FV e3) ∧
+  (∀pes e. FV (Mat e pes) = FV e ∪ FV_pes pes) ∧
+  (∀xo e b.
+     FV (Let xo e b) =
+     FV e ∪ (FV b DIFF case xo of NONE => ∅ | SOME x => {Short x})) ∧
+  (∀defs b.
+     FV (Letrec defs b) =
+     FV_defs defs ∪ FV b DIFF set (MAP (Short ∘ FST) defs)) ∧
+  (∀t e. FV (Tannot e t) = FV e) ∧ (∀l e. FV (Lannot e l) = FV e) ∧
+  FV_list [] = ∅ ∧ (∀es e. FV_list (e::es) = FV e ∪ FV_list es) ∧
+  FV_pes [] = ∅ ∧
+  (∀pes p e.
+     FV_pes ((p,e)::pes) =
+     FV e DIFF IMAGE Short (set (pat_bindings p [])) ∪ FV_pes pes) ∧
+  FV_defs [] = ∅ ∧
+  ∀x v4 e defs. FV_defs ((v4,x,e)::defs) = FV e DIFF {Short x} ∪ FV_defs defs
+KERNEL_THEOREM semanticPrimitivesProps.find_recfun_el
+⊢ ∀f funs x e n.
+    ALL_DISTINCT (MAP (λ(f,x,e). f) funs) ∧ n < LENGTH funs ∧
+    funs❲n❳ = (f,x,e) ⇒
+    find_recfun f funs = SOME (x,e)
+KERNEL_THEOREM semanticPrimitivesProps.find_recfun_ALOOKUP
+⊢ ∀funs n. find_recfun n funs = ALOOKUP funs n
+KERNEL_THEOREM semanticPrimitivesProps.extend_dec_env_assoc
+⊢ ∀env1 env2 env3. env1 +++ (env2 +++ env3) = env1 +++ env2 +++ env3
+KERNEL_THEOREM semanticPrimitivesProps.exc_rel_type_error2
+⊢ exc_rel R e (Rabort a) ⇔ e = Rabort a
+KERNEL_THEOREM semanticPrimitivesProps.exc_rel_type_error1
+⊢ exc_rel R (Rabort a) e ⇔ e = Rabort a
+KERNEL_THEOREM semanticPrimitivesProps.exc_rel_trans
+⊢ (∀x y z. R x y ∧ R y z ⇒ R x z) ⇒
+  ∀x y z. exc_rel R x y ∧ exc_rel R y z ⇒ exc_rel R x z
+KERNEL_THEOREM semanticPrimitivesProps.exc_rel_refl
+⊢ (∀x. R x x) ⇒ ∀x. exc_rel R x x
+KERNEL_THEOREM semanticPrimitivesProps.exc_rel_raise2
+⊢ exc_rel R e (Rraise v) ⇔ ∃v'. e = Rraise v' ∧ R v' v
+KERNEL_THEOREM semanticPrimitivesProps.exc_rel_raise1
+⊢ exc_rel R (Rraise v) e ⇔ ∃v'. e = Rraise v' ∧ R v v'
+KERNEL_THEOREM semanticPrimitivesProps.exc_rel_ind
+⊢ ∀P. (∀R v1 v2. P R (Rraise v1) (Rraise v2)) ∧
+      (∀v0 a1 a2. P v0 (Rabort a1) (Rabort a2)) ∧
+      (∀v3 v9 v14. P v3 (Rraise v9) (Rabort v14)) ∧
+      (∀v3 v10 v17. P v3 (Rabort v10) (Rraise v17)) ⇒
+      ∀v v1 v2. P v v1 v2
+KERNEL_THEOREM semanticPrimitivesProps.exc_rel_def
+⊢ (exc_rel R (Rraise v1) (Rraise v2) ⇔ R v1 v2) ∧
+  (exc_rel v0 (Rabort a1) (Rabort a2) ⇔ a1 = a2) ∧
+  (exc_rel v3 (Rraise v9) (Rabort v14) ⇔ F) ∧
+  (exc_rel v3 (Rabort v10) (Rraise v17) ⇔ F)
+KERNEL_THEOREM semanticPrimitivesProps.EVERY_sv_every_MAP_map_sv
+⊢ ∀P f ls.
+    EVERY P (MAP f (store_vs ls)) ⇒ EVERY (sv_every P) (MAP (map_sv f) ls)
+KERNEL_THEOREM semanticPrimitivesProps.EVERY_sv_every_EVERY_store_vs
+⊢ ∀P ls. EVERY (sv_every P) ls ⇔ EVERY P (store_vs ls)
+KERNEL_THEOREM semanticPrimitivesProps.EVERY_store_vs_intro
+⊢ ∀P ls. EVERY (sv_every P) ls ⇒ EVERY P (store_vs ls)
+KERNEL_THEOREM semanticPrimitivesProps.do_shift_ind
+⊢ ∀P. (∀sh n w. P sh n W8 (Word8 w)) ∧ (∀sh n w. P sh n W64 (Word64 w)) ∧
+      (∀v0 v1 v2 v9. P v0 v1 v2 (IntLit v9)) ∧
+      (∀v0 v1 v2 v10. P v0 v1 v2 (Char v10)) ∧
+      (∀v0 v1 v2 v11. P v0 v1 v2 (StrLit v11)) ∧
+      (∀v0 v1 v12. P v0 v1 W64 (Word8 v12)) ∧
+      (∀v0 v1 v13. P v0 v1 W8 (Word64 v13)) ∧
+      (∀v0 v1 v2 v14. P v0 v1 v2 (Float64 v14)) ⇒
+      ∀v v1 v2 v3. P v v1 v2 v3
+KERNEL_THEOREM semanticPrimitivesProps.do_shift_def
+⊢ do_shift sh n W8 (Word8 w') = SOME (Word8 (shift_lookup sh w' n)) ∧
+  do_shift sh n W64 (Word64 w) = SOME (Word64 (shift_lookup sh w n)) ∧
+  do_shift v0 v1 v2 (IntLit v9) = NONE ∧
+  do_shift v0 v1 v2 (Char v10) = NONE ∧
+  do_shift v0 v1 v2 (StrLit v11) = NONE ∧
+  do_shift v0 v1 W64 (Word8 v12) = NONE ∧
+  do_shift v0 v1 W8 (Word64 v13) = NONE ∧
+  do_shift v0 v1 v2 (Float64 v14) = NONE
+KERNEL_THEOREM semanticPrimitivesProps.do_opapp_cases
+⊢ ∀env' vs v.
+    do_opapp vs = SOME (env',v) ⇔
+    (∃v2 env'' n e.
+       vs = [Closure env'' n e; v2] ∧
+       env' = env'' with v := nsBind n v2 env''.v ∧ v = e) ∨
+    ∃v2 env'' funs n' n'' e.
+      vs = [Recclosure env'' funs n'; v2] ∧
+      find_recfun n' funs = SOME (n'',e) ∧
+      ALL_DISTINCT (MAP (λ(f,x,e). f) funs) ∧
+      env' = env'' with v := nsBind n'' v2 (build_rec_env funs env'' env''.v) ∧
+      v = e
+KERNEL_THEOREM semanticPrimitivesProps.do_conversion_check_type
+⊢ do_conversion v ty1 ty2 = SOME (INR res) ⇒ check_type ty2 res
+KERNEL_THEOREM semanticPrimitivesProps.do_con_check_build_conv
+⊢ ∀tenvC cn vs l.
+    do_con_check tenvC cn l ⇒ ∃v. build_conv tenvC cn vs = SOME v
+KERNEL_THEOREM semanticPrimitivesProps.do_arith_check_type
+⊢ do_arith a ty vs = SOME (INR res) ⇒ check_type ty res
+KERNEL_THEOREM semanticPrimitivesProps.do_app_type_error
+⊢ do_app s op es = SOME (x,Rerr (Rabort a)) ⇒ x = s
+KERNEL_THEOREM semanticPrimitivesProps.do_app_SOME_ffi_same
+⊢ do_app (refs,ffi) op args = SOME ((refs',ffi),r) ∧
+  (∀outcome. r ≠ Rerr (Rabort (Rffi_error outcome))) ⇒
+  do_app (refs,ffi') op args = SOME ((refs',ffi'),r)
+KERNEL_THEOREM semanticPrimitivesProps.do_app_not_timeout
+⊢ do_app s op vs = SOME (s',Rerr (Rabort a)) ⇒ a ≠ Rtimeout_error
+KERNEL_THEOREM semanticPrimitivesProps.do_app_NONE_ffi
+⊢ do_app (refs,ffi) op args = NONE ⇒ do_app (refs,ffi') op args = NONE
+KERNEL_THEOREM semanticPrimitivesProps.do_app_ffi_unchanged
+⊢ ∀st ffi op vs st' ffi' res.
+    (∀s. op ≠ FFI s) ∧ do_app (st,ffi) op vs = SOME ((st',ffi'),res) ⇒
+    ffi = ffi'
+KERNEL_THEOREM semanticPrimitivesProps.do_app_ffi_changed
+⊢ do_app (st,ffi) op vs = SOME ((st',ffi'),res) ∧ ffi ≠ ffi' ⇒
+  ∃s conf lnum ws ffi_st ws' b.
+    op = FFI s ∧ vs = [Litv (StrLit conf); Loc b lnum] ∧
+    store_lookup lnum st = SOME (W8array ws) ∧ s ≠ «» ∧
+    ffi.oracle (ExtCall s) ffi.ffi_state
+      (MAP (λc. n2w (ORD c)) (explode conf)) ws = Oracle_return ffi_st ws' ∧
+    LENGTH ws = LENGTH ws' ∧ st' = LUPDATE (W8array ws') lnum st ∧
+    ffi'.oracle = ffi.oracle ∧ ffi'.ffi_state = ffi_st ∧
+    ffi'.io_events =
+    ffi.io_events ++
+    [IO_event (ExtCall s) (MAP (λc. n2w (ORD c)) (explode conf))
+       (ZIP (ws,ws'))]
+KERNEL_THEOREM semanticPrimitivesProps.do_app_cases
+⊢ do_app (s,t) op vs = SOME (st',v) ⇔
+  (∃a ty v'.
+     op = Arith a ty ∧ EVERY (check_type ty) vs ∧
+     do_arith a ty vs = SOME v' ∧
+     (case v' of
+        INL exn => SOME ((s,t),Rerr (Rraise exn))
+      | INR res => SOME ((s,t),Rval res)) = SOME (st',v)) ∨
+  (∃ty1 ty2 v'⁸' l.
+     op = FromTo ty1 ty2 ∧ vs = v'⁸'::l ∧
+     (¬check_type ty1 v'⁸' ∨
+      ∃v'.
+        l = [] ∧ do_conversion v'⁸' ty1 ty2 = SOME v' ∧
+        (case v' of
+           INL exn => SOME ((s,t),Rerr (Rraise exn))
+         | INR res => SOME ((s,t),Rval res)) = SOME (st',v)) ∧
+     check_type ty1 v'⁸') ∨
+  (∃v50 op' n v83.
+     op = Shift v50 op' n ∧ vs = [Litv v83] ∧
+     ((∃w. v50 = W8 ∧ v83 = Word8 w ∧ (s,t) = st' ∧
+           Rval (Litv (Word8 (shift8_lookup op' w n))) = v) ∨
+      ∃w'.
+        v50 = W64 ∧ v83 = Word64 w' ∧ (s,t) = st' ∧
+        Rval (Litv (Word64 (shift64_lookup op' w' n))) = v)) ∨
+  (∃v1 v2 b.
+     op = Equality ∧ vs = [v1; v2] ∧ do_eq v1 v2 = Eq_val b ∧ (s,t) = st' ∧
+     Rval (Boolv b) = v) ∨
+  (∃test test_ty v1' v2' b.
+     op = Test test test_ty ∧ vs = [v1'; v2'] ∧
+     do_test test test_ty v1' v2' = Eq_val b ∧ (s,t) = st' ∧
+     Rval (Boolv b) = v) ∨
+  (∃b lnum v' s'.
+     op = Opassign ∧ vs = [Loc b lnum; v'] ∧
+     store_assign lnum (Refv v') s = SOME s' ∧ (s',t) = st' ∧
+     v = Rval (Conv NONE [])) ∨
+  (∃v' s' n.
+     op = Opref ∧ vs = [v'] ∧ store_alloc (Refv v') s = (s',n) ∧
+     (s',t) = st' ∧ Rval (Loc T n) = v) ∨
+  (∃b' n' v'.
+     op = Opderef ∧ vs = [Loc b' n'] ∧ store_lookup n' s = SOME (Refv v') ∧
+     (s,t) = st' ∧ Rval v' = v) ∨
+  (∃v240 w'' n''.
+     op = Aw8alloc ∧ vs = Litv (IntLit n'')::Litv (Word8 w'')::v240 ∧
+     (¬(n'' < 0) ∨ v240 = [] ∧ (s,t) = st' ∧ v = Rerr (Rraise sub_exn_v)) ∧
+     (n'' < 0 ∨
+      ∃s' lnum.
+        v240 = [] ∧
+        store_alloc (W8array (REPLICATE (Num (ABS n'')) w'')) s = (s',lnum) ∧
+        (s',t) = st' ∧ Rval (Loc T lnum) = v)) ∨
+  (∃v352 lnum' v360 i.
+     op = Aw8sub ∧ vs = Loc v352 lnum'::Litv (IntLit i)::v360 ∧
+     (¬(i < 0) ∨
+      ∃ws.
+        v360 = [] ∧ store_lookup lnum' s = SOME (W8array ws) ∧ (s,t) = st' ∧
+        v = Rerr (Rraise sub_exn_v)) ∧
+     (i < 0 ∨
+      ∃ws.
+        v360 = [] ∧ store_lookup lnum' s = SOME (W8array ws) ∧
+        (¬(Num (ABS i) ≥ LENGTH ws) ∨
+         (s,t) = st' ∧ v = Rerr (Rraise sub_exn_v)) ∧
+        (Num (ABS i) ≥ LENGTH ws ∨
+         (s,t) = st' ∧ Rval (Litv (Word8 ws❲Num (ABS i)❳)) = v))) ∨
+  (∃v432 n'³' ws.
+     op = Aw8length ∧ vs = [Loc v432 n'³'] ∧
+     store_lookup n'³' s = SOME (W8array ws) ∧ (s,t) = st' ∧
+     Rval (Litv (IntLit (&LENGTH ws))) = v) ∨
+  (∃v468 lnum'³' v480 w'³' i''.
+     op = Aw8update ∧
+     vs = Loc v468 lnum'³'::Litv (IntLit i'')::Litv (Word8 w'³')::v480 ∧
+     (¬(i'' < 0) ∨
+      ∃ws.
+        v480 = [] ∧ store_lookup lnum'³' s = SOME (W8array ws) ∧
+        (s,t) = st' ∧ v = Rerr (Rraise sub_exn_v)) ∧
+     (i'' < 0 ∨
+      ∃ws.
+        v480 = [] ∧ store_lookup lnum'³' s = SOME (W8array ws) ∧
+        (¬(Num (ABS i'') ≥ LENGTH ws) ∨
+         (s,t) = st' ∧ v = Rerr (Rraise sub_exn_v)) ∧
+        (Num (ABS i'') ≥ LENGTH ws ∨
+         ∃s'.
+           store_assign lnum'³' (W8array (LUPDATE w'³' (Num (ABS i'')) ws)) s =
+           SOME s' ∧ (s',t) = st' ∧ v = Rval (Conv NONE [])))) ∨
+  (∃len off strng.
+     op = CopyStrStr ∧
+     vs = [Litv (StrLit strng); Litv (IntLit off); Litv (IntLit len)] ∧
+     (s,t) = st' ∧
+     (copy_array (explode strng,off) len NONE = NONE ∧
+      v = Rerr (Rraise sub_exn_v) ∨
+      ∃cs.
+        copy_array (explode strng,off) len NONE = SOME cs ∧
+        Rval (Litv (StrLit (implode cs))) = v)) ∨
+  (∃v740 dst dstoff len' off' strng' ws.
+     op = CopyStrAw8 ∧
+     vs =
+     [Litv (StrLit strng'); Litv (IntLit off'); Litv (IntLit len');
+      Loc v740 dst; Litv (IntLit dstoff)] ∧
+     store_lookup dst s = SOME (W8array ws) ∧
+     (copy_array (explode strng',off') len' (SOME (ws_to_chars ws,dstoff)) =
+      NONE ∧ (s,t) = st' ∧ v = Rerr (Rraise sub_exn_v) ∨
+      ∃cs s'.
+        copy_array (explode strng',off') len' (SOME (ws_to_chars ws,dstoff)) =
+        SOME cs ∧ store_assign dst (W8array (chars_to_ws cs)) s = SOME s' ∧
+        (s',t) = st' ∧ v = Rval (Conv NONE []))) ∨
+  (∃v940 src len'' off'' ws.
+     op = CopyAw8Str ∧
+     vs = [Loc v940 src; Litv (IntLit off''); Litv (IntLit len'')] ∧
+     store_lookup src s = SOME (W8array ws) ∧ (s,t) = st' ∧
+     (copy_array (ws,off'') len'' NONE = NONE ∧ v = Rerr (Rraise sub_exn_v) ∨
+      ∃ws'.
+        copy_array (ws,off'') len'' NONE = SOME ws' ∧
+        Rval (Litv (StrLit (implode (ws_to_chars ws')))) = v)) ∨
+  (∃v1064 src' v1104 dst' dstoff' len'³' off'³' ws ds.
+     op = CopyAw8Aw8 ∧
+     vs =
+     [Loc v1064 src'; Litv (IntLit off'³'); Litv (IntLit len'³');
+      Loc v1104 dst'; Litv (IntLit dstoff')] ∧
+     store_lookup src' s = SOME (W8array ws) ∧
+     store_lookup dst' s = SOME (W8array ds) ∧
+     (copy_array (ws,off'³') len'³' (SOME (ds,dstoff')) = NONE ∧
+      (s,t) = st' ∧ v = Rerr (Rraise sub_exn_v) ∨
+      ∃ws' s'.
+        copy_array (ws,off'³') len'³' (SOME (ds,dstoff')) = SOME ws' ∧
+        store_assign dst' (W8array ws') s = SOME s' ∧ (s',t) = st' ∧
+        v = Rval (Conv NONE []))) ∨
+  (∃v1264 dst'' str_arg bs new_bs s'.
+     op = XorAw8Str_unsafe ∧ vs = [Loc v1264 dst''; Litv (StrLit str_arg)] ∧
+     store_lookup dst'' s = SOME (W8array bs) ∧
+     xor_bytes (MAP (n2w ∘ ORD) (explode str_arg)) bs = SOME new_bs ∧
+     store_assign dst'' (W8array new_bs) s = SOME s' ∧ (s',t) = st' ∧
+     v = Rval (Conv NONE [])) ∨
+  (∃v'' ls.
+     op = Implode ∧ vs = [v''] ∧ v_to_char_list v'' = SOME ls ∧ (s,t) = st' ∧
+     Rval (Litv (StrLit (implode ls))) = v) ∨
+  (∃strng.
+     op = Explode ∧ vs = [Litv (StrLit strng)] ∧ (s,t) = st' ∧
+     Rval (list_to_v (MAP (λc. Litv (Char c)) (explode strng))) = v) ∨
+  (∃v1335 v1340 i'⁴'.
+     op = Strsub ∧ vs = v1335::Litv (IntLit i'⁴')::v1340 ∧
+     (¬(i'⁴' < 0) ∨
+      ∃strng''.
+        v1335 = Litv (StrLit strng'') ∧ v1340 = [] ∧ (s,t) = st' ∧
+        v = Rerr (Rraise sub_exn_v)) ∧
+     (i'⁴' < 0 ∨
+      ∃strng''.
+        v1335 = Litv (StrLit strng'') ∧ v1340 = [] ∧
+        (¬(Num (ABS i'⁴') ≥ strlen strng'') ∨
+         (s,t) = st' ∧ v = Rerr (Rraise sub_exn_v)) ∧
+        (Num (ABS i'⁴') ≥ strlen strng'' ∨
+         (s,t) = st' ∧
+         Rval (Litv (Char (explode strng'')❲Num (ABS i'⁴')❳)) = v))) ∨
+  (∃strng'³'.
+     op = Strlen ∧ vs = [Litv (StrLit strng'³')] ∧ (s,t) = st' ∧
+     Rval (Litv (IntLit (&strlen strng'³'))) = v) ∨
+  (∃v'³' vs' strng.
+     op = Strcat ∧ vs = [v'³'] ∧ v_to_list v'³' = SOME vs' ∧
+     vs_to_string vs' = SOME strng ∧ (s,t) = st' ∧
+     Rval (Litv (StrLit strng)) = v) ∨
+  (∃v'⁴' vs'.
+     op = VfromList ∧ vs = [v'⁴'] ∧ v_to_list v'⁴' = SOME vs' ∧ (s,t) = st' ∧
+     Rval (Vectorv vs') = v) ∨
+  (∃v1491 v1496 i'⁶'.
+     op = Vsub ∧ vs = v1491::Litv (IntLit i'⁶')::v1496 ∧
+     (¬(i'⁶' < 0) ∨
+      ∃vs'.
+        v1491 = Vectorv vs' ∧ v1496 = [] ∧ (s,t) = st' ∧
+        v = Rerr (Rraise sub_exn_v)) ∧
+     (i'⁶' < 0 ∨
+      ∃vs'.
+        v1491 = Vectorv vs' ∧ v1496 = [] ∧
+        (¬(Num (ABS i'⁶') ≥ LENGTH vs') ∨
+         (s,t) = st' ∧ v = Rerr (Rraise sub_exn_v)) ∧
+        (Num (ABS i'⁶') ≥ LENGTH vs' ∨
+         (s,t) = st' ∧ Rval vs'❲Num (ABS i'⁶')❳ = v))) ∨
+  (∃vs''.
+     op = Vlength ∧ vs = [Vectorv vs''] ∧ (s,t) = st' ∧
+     Rval (Litv (IntLit (&LENGTH vs''))) = v) ∨
+  (∃v'⁵' v1612 n'⁴'.
+     op = Aalloc ∧ vs = Litv (IntLit n'⁴')::v'⁵'::v1612 ∧
+     (¬(n'⁴' < 0) ∨ v1612 = [] ∧ (s,t) = st' ∧ v = Rerr (Rraise sub_exn_v)) ∧
+     (n'⁴' < 0 ∨
+      ∃s' lnum.
+        v1612 = [] ∧
+        store_alloc (Varray (REPLICATE (Num (ABS n'⁴')) v'⁵')) s = (s',lnum) ∧
+        (s',t) = st' ∧ Rval (Loc T lnum) = v)) ∨
+  (∃s' lnum.
+     op = AallocEmpty ∧ vs = [Conv NONE []] ∧
+     store_alloc (Varray []) s = (s',lnum) ∧ (s',t) = st' ∧
+     Rval (Loc T lnum) = v) ∨
+  (∃s' lnum.
+     op = AallocFixed ∧ store_alloc (Varray vs) s = (s',lnum) ∧
+     (s',t) = st' ∧ Rval (Loc T lnum) = v) ∨
+  (∃v1726 lnum'⁵' v1734 i'⁷'.
+     op = Asub ∧ vs = Loc v1726 lnum'⁵'::Litv (IntLit i'⁷')::v1734 ∧
+     (¬(i'⁷' < 0) ∨
+      ∃vs.
+        v1734 = [] ∧ store_lookup lnum'⁵' s = SOME (Varray vs) ∧
+        (s,t) = st' ∧ v = Rerr (Rraise sub_exn_v)) ∧
+     (i'⁷' < 0 ∨
+      ∃vs.
+        v1734 = [] ∧ store_lookup lnum'⁵' s = SOME (Varray vs) ∧
+        (¬(Num (ABS i'⁷') ≥ LENGTH vs) ∨
+         (s,t) = st' ∧ v = Rerr (Rraise sub_exn_v)) ∧
+        (Num (ABS i'⁷') ≥ LENGTH vs ∨
+         (s,t) = st' ∧ Rval vs❲Num (ABS i'⁷')❳ = v))) ∨
+  (∃v1806 n'⁵' ws.
+     op = Alength ∧ vs = [Loc v1806 n'⁵'] ∧
+     store_lookup n'⁵' s = SOME (Varray ws) ∧ (s,t) = st' ∧
+     Rval (Litv (IntLit (&LENGTH ws))) = v) ∨
+  (∃v1842 lnum'⁷' v'⁶' v1854 i'⁹'.
+     op = Aupdate ∧ vs = Loc v1842 lnum'⁷'::Litv (IntLit i'⁹')::v'⁶'::v1854 ∧
+     (¬(i'⁹' < 0) ∨
+      ∃vs.
+        v1854 = [] ∧ store_lookup lnum'⁷' s = SOME (Varray vs) ∧
+        (s,t) = st' ∧ v = Rerr (Rraise sub_exn_v)) ∧
+     (i'⁹' < 0 ∨
+      ∃vs.
+        v1854 = [] ∧ store_lookup lnum'⁷' s = SOME (Varray vs) ∧
+        (¬(Num (ABS i'⁹') ≥ LENGTH vs) ∨
+         (s,t) = st' ∧ v = Rerr (Rraise sub_exn_v)) ∧
+        (Num (ABS i'⁹') ≥ LENGTH vs ∨
+         ∃s'.
+           store_assign lnum'⁷' (Varray (LUPDATE v'⁶' (Num (ABS i'⁹')) vs)) s =
+           SOME s' ∧ (s',t) = st' ∧ v = Rval (Conv NONE [])))) ∨
+  (∃v1906 i'⁵' vs'.
+     op = Vsub_unsafe ∧ vs = Vectorv vs'::Litv (IntLit i'⁵')::v1906 ∧
+     ((¬(0 ≤ i'⁵') ∨ ¬(Num i'⁵' < LENGTH vs')) ∨
+      v1906 = [] ∧ (s,t) = st' ∧ Rval vs'❲Num i'⁵'❳ = v) ∧ 0 ≤ i'⁵' ∧
+     Num i'⁵' < LENGTH vs') ∨
+  (∃v2006 lnum'⁶' v2014 i'⁸'.
+     op = Asub_unsafe ∧ vs = Loc v2006 lnum'⁶'::Litv (IntLit i'⁸')::v2014 ∧
+     ¬(i'⁸' < 0) ∧
+     (i'⁸' < 0 ∨
+      ∃vs.
+        v2014 = [] ∧ store_lookup lnum'⁶' s = SOME (Varray vs) ∧
+        ¬(Num (ABS i'⁸') ≥ LENGTH vs) ∧
+        (Num (ABS i'⁸') ≥ LENGTH vs ∨
+         (s,t) = st' ∧ Rval vs❲Num (ABS i'⁸')❳ = v))) ∨
+  (∃v2086 lnum'⁸' v'⁷' v2098 i'¹⁰'.
+     op = Aupdate_unsafe ∧
+     vs = Loc v2086 lnum'⁸'::Litv (IntLit i'¹⁰')::v'⁷'::v2098 ∧
+     ¬(i'¹⁰' < 0) ∧
+     (i'¹⁰' < 0 ∨
+      ∃vs.
+        v2098 = [] ∧ store_lookup lnum'⁸' s = SOME (Varray vs) ∧
+        ¬(Num (ABS i'¹⁰') ≥ LENGTH vs) ∧
+        (Num (ABS i'¹⁰') ≥ LENGTH vs ∨
+         ∃s'.
+           store_assign lnum'⁸' (Varray (LUPDATE v'⁷' (Num (ABS i'¹⁰')) vs))
+             s = SOME s' ∧ (s',t) = st' ∧ v = Rval (Conv NONE [])))) ∨
+  (∃v2170 lnum'' v2178 i'.
+     op = Aw8sub_unsafe ∧ vs = Loc v2170 lnum''::Litv (IntLit i')::v2178 ∧
+     ¬(i' < 0) ∧
+     (i' < 0 ∨
+      ∃ws.
+        v2178 = [] ∧ store_lookup lnum'' s = SOME (W8array ws) ∧
+        ¬(Num (ABS i') ≥ LENGTH ws) ∧
+        (Num (ABS i') ≥ LENGTH ws ∨
+         (s,t) = st' ∧ Rval (Litv (Word8 ws❲Num (ABS i')❳)) = v))) ∨
+  (∃v2250 lnum'⁴' v2262 w'⁴' i'³'.
+     op = Aw8update_unsafe ∧
+     vs = Loc v2250 lnum'⁴'::Litv (IntLit i'³')::Litv (Word8 w'⁴')::v2262 ∧
+     ¬(i'³' < 0) ∧
+     (i'³' < 0 ∨
+      ∃ws.
+        v2262 = [] ∧ store_lookup lnum'⁴' s = SOME (W8array ws) ∧
+        ¬(Num (ABS i'³') ≥ LENGTH ws) ∧
+        (Num (ABS i'³') ≥ LENGTH ws ∨
+         ∃s'.
+           store_assign lnum'⁴' (W8array (LUPDATE w'⁴' (Num (ABS i'³')) ws))
+             s = SOME s' ∧ (s',t) = st' ∧ v = Rval (Conv NONE [])))) ∨
+  (∃th_op. op = ThunkOp th_op ∧ thunk_op (s,t) th_op vs = SOME (st',v)) ∨
+  (∃x1 x2 xs ys.
+     op = ListAppend ∧ vs = [x1; x2] ∧ v_to_list x1 = SOME xs ∧
+     v_to_list x2 = SOME ys ∧ (s,t) = st' ∧ Rval (list_to_v (xs ++ ys)) = v) ∨
+  (∃j i'¹¹'.
+     op = ConfigGC ∧ vs = [Litv (IntLit i'¹¹'); Litv (IntLit j)] ∧
+     (s,t) = st' ∧ v = Rval (Conv NONE [])) ∨
+  (∃n'⁶' v2482 lnum'⁹' conf ws.
+     op = FFI n'⁶' ∧ vs = [Litv (StrLit conf); Loc v2482 lnum'⁹'] ∧
+     store_lookup lnum'⁹' s = SOME (W8array ws) ∧
+     (case call_FFI t (ExtCall n'⁶') (MAP (n2w ∘ ORD) (explode conf)) ws of
+        FFI_return t' ws' =>
+          (case store_assign lnum'⁹' (W8array ws') s of
+             NONE => NONE
+           | SOME s' => SOME ((s',t'),Rval (Conv NONE [])))
+      | FFI_final outcome => SOME ((s,t),Rerr (Rabort (Rffi_error outcome)))) =
+     SOME (st',v)) ∨
+  ∃v2533.
+    op = Env_id ∧ vs = [v2533] ∧
+    ((∃gen' id'.
+        v2533 = Conv NONE [gen'; id'] ∧ (s,t) = st' ∧
+        Rval (Conv NONE [gen'; id']) = v) ∨
+     ∃env gen id.
+       v2533 = Env env (gen,id) ∧ (s,t) = st' ∧
+       Rval (Conv NONE [nat_to_v gen; nat_to_v id]) = v)
+KERNEL_THEOREM semanticPrimitivesProps.ctors_of_dec_ind
+⊢ ∀P. (∀locs tds. P (Dtype locs tds)) ∧ (∀locs s v0. P (Dexn locs s v0)) ∧
+      (∀v v2 v3. P (Dlet v v2 v3)) ∧ (∀v4 v5. P (Dletrec v4 v5)) ∧
+      (∀v8 v9 v10 v11. P (Dtabbrev v8 v9 v10 v11)) ∧
+      (∀v15 v16. P (Dmod v15 v16)) ∧ (∀v17 v18. P (Dlocal v17 v18)) ∧
+      (∀v19. P (Denv v19)) ⇒
+      ∀v. P v
+KERNEL_THEOREM semanticPrimitivesProps.ctors_of_dec_def
+⊢ ctors_of_dec (Dtype locs tds) = FLAT (MAP ctors_of_tdef tds) ∧
+  ctors_of_dec (Dexn locs s v0) = [s] ∧ ctors_of_dec (Dlet v v2 v3) = [] ∧
+  ctors_of_dec (Dletrec v4 v5) = [] ∧
+  ctors_of_dec (Dtabbrev v8 v9 v10 v11) = [] ∧
+  ctors_of_dec (Dmod v15 v16) = [] ∧ ctors_of_dec (Dlocal v17 v18) = [] ∧
+  ctors_of_dec (Denv v19) = []
+KERNEL_THEOREM semanticPrimitivesProps.concrete_v_simps
+⊢ (concrete_v (Litv l) ⇔ T) ∧ (concrete_v (Loc b n) ⇔ T) ∧
+  (concrete_v (Conv stmp xs) ⇔ EVERY concrete_v xs) ∧
+  (concrete_v (Vectorv xs) ⇔ EVERY concrete_v xs) ∧
+  (concrete_v (Env id e) ⇔ F) ∧ (concrete_v (Closure e2 nm x) ⇔ F) ∧
+  (concrete_v (Recclosure e3 funs nm2) ⇔ F)
+KERNEL_THEOREM semanticPrimitivesProps.concrete_v_list
+⊢ ∀xs. concrete_v_list xs ⇔ EVERY concrete_v xs
+KERNEL_THEOREM semanticPrimitivesProps.build_rec_env_merge
+⊢ ∀funs funs' env env'.
+    build_rec_env funs env env' =
+    nsAppend (alist_to_ns (MAP (λ(f,n,e). (f,Recclosure env funs f)) funs))
+      env'
+KERNEL_THEOREM semanticPrimitivesProps.Boolv_11
+⊢ Boolv b1 = Boolv b2 ⇔ (b1 ⇔ b2)
+MATCHED_EXPORTS_INSPECTED semanticPrimitivesProps 77
+KERNEL_THEOREM typeSysProps.unchanged_tenv
+⊢ ∀tenv. <|v := tenv.v; c := tenv.c; t := tenv.t|> = tenv
+KERNEL_THEOREM typeSysProps.type_v_freevars
+⊢ ∀tvs tenvC tenvS v t. type_v tvs tenvC tenvS v t ⇒ check_freevars tvs [] t
+KERNEL_THEOREM typeSysProps.type_subst_deBruijn_subst_list
+⊢ ∀t tvs tvs' ts ts' ts'' inc.
+    LENGTH tvs = LENGTH ts ∧ EVERY (check_freevars 0 tvs) ts'' ⇒
+    MAP (deBruijn_subst inc ts')
+      (MAP (type_subst (alist_to_fmap (ZIP (tvs,ts)))) ts'') =
+    MAP
+      (type_subst
+         (alist_to_fmap (ZIP (tvs,MAP (λt. deBruijn_subst inc ts' t) ts))))
+      ts''
+KERNEL_THEOREM typeSysProps.type_subst_deBruijn_inc_list
+⊢ ∀ts' ts tvs inc sk.
+    LENGTH tvs = LENGTH ts ∧ EVERY (check_freevars 0 tvs) ts' ⇒
+    MAP (deBruijn_inc sk inc)
+      (MAP (type_subst (alist_to_fmap (ZIP (tvs,ts)))) ts') =
+    MAP
+      (type_subst
+         (alist_to_fmap (ZIP (tvs,MAP (λt. deBruijn_inc sk inc t) ts)))) ts'
+KERNEL_THEOREM typeSysProps.type_subst
+⊢ ∀tvs ctMap tenvS v t.
+    type_v tvs ctMap tenvS v t ⇒
+    tvs = LENGTH targs ∧ ctMap_ok ctMap ∧
+    EVERY (check_freevars tvs' []) targs ∧ check_freevars (LENGTH targs) [] t ⇒
+    type_v tvs' ctMap tenvS v (deBruijn_subst 0 targs t)
+KERNEL_THEOREM typeSysProps.type_recfun_lookup
+⊢ ∀fn funs n e tenv tenvE bindings tvs t1 t2.
+    find_recfun fn funs = SOME (n,e) ∧ type_funs tenv tenvE funs bindings ∧
+    ALOOKUP bindings fn = SOME (Tfn t1 t2) ⇒
+    type_e tenv (Bind_name n 0 t1 tenvE) e t2 ∧
+    check_freevars (num_tvs tenvE) [] (Tfn t1 t2)
+KERNEL_THEOREM typeSysProps.type_ps_length
+⊢ ∀tvs tenvC ps ts tenv. type_ps tvs tenvC ps ts tenv ⇒ LENGTH ps = LENGTH ts
+KERNEL_THEOREM typeSysProps.type_pes_cons
+⊢ ∀tvs tvs' tenv tenvE p e pes t1 t2.
+    type_pes tvs tvs' tenv tenvE ((p,e)::pes) t1 t2 ⇔
+    ALL_DISTINCT (pat_bindings p []) ∧
+    (∃bindings.
+       type_p tvs tenv p t1 bindings ∧
+       type_e tenv (bind_var_list tvs' bindings tenvE) e t2) ∧
+    type_pes tvs tvs' tenv tenvE pes t1 t2
+KERNEL_THEOREM typeSysProps.type_p_tenvV_indep
+⊢ (∀p tvs tenv t bindings tenvV.
+     type_p tvs tenv p t bindings ⇔
+     type_p tvs (tenv with v := tenvV) p t bindings) ∧
+  ∀ps tvs tenv t bindings tenvV.
+    type_ps tvs tenv ps t bindings ⇔
+    type_ps tvs (tenv with v := tenvV) ps t bindings
+KERNEL_THEOREM typeSysProps.type_p_subst
+⊢ (∀n tenv p t new_bindings.
+     type_p n tenv p t new_bindings ⇒
+     ∀targs' inc tvs targs.
+       tenv_abbrev_ok tenv.t ∧ tenv_ctor_ok tenv.c ∧ n = inc + LENGTH targs ∧
+       EVERY (check_freevars tvs []) targs ∧
+       targs' = MAP (deBruijn_inc 0 inc) targs ⇒
+       type_p (inc + tvs) tenv p (deBruijn_subst inc targs' t)
+         (MAP (λ(x,t). (x,deBruijn_subst inc targs' t)) new_bindings)) ∧
+  ∀n tenv ps ts new_bindings.
+    type_ps n tenv ps ts new_bindings ⇒
+    ∀targs' inc targs tvs.
+      tenv_abbrev_ok tenv.t ∧ tenv_ctor_ok tenv.c ∧ n = inc + LENGTH targs ∧
+      EVERY (check_freevars tvs []) targs ∧
+      targs' = MAP (deBruijn_inc 0 inc) targs ⇒
+      type_ps (inc + tvs) tenv ps (MAP (deBruijn_subst inc targs') ts)
+        (MAP (λ(x,t). (x,deBruijn_subst inc targs' t)) new_bindings)
+KERNEL_THEOREM typeSysProps.type_p_freevars
+⊢ (∀tvs tenvC p t env'.
+     type_p tvs tenvC p t env' ⇒
+     check_freevars tvs [] t ∧ EVERY (check_freevars tvs []) (MAP SND env')) ∧
+  ∀tvs tenvC ps ts env'.
+    type_ps tvs tenvC ps ts env' ⇒
+    EVERY (check_freevars tvs []) ts ∧
+    EVERY (check_freevars tvs []) (MAP SND env')
+KERNEL_THEOREM typeSysProps.type_p_bvl
+⊢ (∀tvs tenvC p t bindings.
+     type_p tvs tenvC p t bindings ⇒
+     ∀tenv'.
+       tenv_val_exp_ok tenv' ⇒
+       tenv_val_exp_ok (bind_var_list tvs bindings tenv')) ∧
+  ∀tvs tenvC ps ts bindings.
+    type_ps tvs tenvC ps ts bindings ⇒
+    ∀tenv'.
+      tenv_val_exp_ok tenv' ⇒
+      tenv_val_exp_ok (bind_var_list tvs bindings tenv')
+KERNEL_THEOREM typeSysProps.type_op_cases
+⊢ type_op op ts t3 ⇔
+  (∃a ty.
+     op = Arith a ty ∧ EVERY (λarg. arg = t_of ty) ts ∧ t3 = t_of ty ∧
+     supported_arith a ty = SOME (LENGTH ts)) ∨
+  (∃ty1 ty2.
+     op = FromTo ty1 ty2 ∧ ts = [t_of ty1] ∧ t3 = t_of ty2 ∧
+     supported_conversion ty1 ty2) ∨
+  ((∃v20 v21.
+      op = Shift W8 v20 v21 ∧ ts = [Tapp [] Tword8_num] ∧
+      t3 = Tapp [] Tword8_num) ∨
+   ∃v20 v21.
+     op = Shift W64 v20 v21 ∧ ts = [Tapp [] Tword64_num] ∧
+     t3 = Tapp [] Tword64_num) ∨
+  (∃t1''. op = Equality ∧ ts = [t1''; t1''] ∧ t3 = Tapp [] Tbool_num) ∨
+  (∃test ty'.
+     op = Test test ty' ∧ ts = [t_of ty'; t_of ty'] ∧
+     t3 = Tapp [] Tbool_num ∧ supported_test test ty') ∨
+  (∃t2. op = Opapp ∧ ts = [Tapp [t2; t3] Tfn_num; t2]) ∨
+  (∃t2'³'.
+     op = Opassign ∧ ts = [Tapp [t2'³'] Tref_num; t2'³'] ∧
+     t3 = Tapp [] Ttup_num) ∨
+  (∃t1'⁶'. op = Opref ∧ ts = [t1'⁶'] ∧ t3 = Tapp [t1'⁶'] Tref_num) ∨
+  op = Opderef ∧ ts = [Tapp [t3] Tref_num] ∨
+  op = Aw8alloc ∧ ts = [Tapp [] Tint_num; Tapp [] Tword8_num] ∧
+  t3 = Tapp [] Tword8array_num ∨
+  op = Aw8sub ∧ ts = [Tapp [] Tword8array_num; Tapp [] Tint_num] ∧
+  t3 = Tapp [] Tword8_num ∨
+  op = Aw8length ∧ ts = [Tapp [] Tword8array_num] ∧ t3 = Tapp [] Tint_num ∨
+  op = Aw8update ∧
+  ts = [Tapp [] Tword8array_num; Tapp [] Tint_num; Tapp [] Tword8_num] ∧
+  t3 = Tapp [] Ttup_num ∨
+  op = CopyStrStr ∧
+  ts = [Tapp [] Tstring_num; Tapp [] Tint_num; Tapp [] Tint_num] ∧
+  t3 = Tapp [] Tstring_num ∨
+  op = CopyStrAw8 ∧
+  ts =
+  [Tapp [] Tstring_num; Tapp [] Tint_num; Tapp [] Tint_num;
+   Tapp [] Tword8array_num; Tapp [] Tint_num] ∧ t3 = Tapp [] Ttup_num ∨
+  op = CopyAw8Str ∧
+  ts = [Tapp [] Tword8array_num; Tapp [] Tint_num; Tapp [] Tint_num] ∧
+  t3 = Tapp [] Tstring_num ∨
+  op = CopyAw8Aw8 ∧
+  ts =
+  [Tapp [] Tword8array_num; Tapp [] Tint_num; Tapp [] Tint_num;
+   Tapp [] Tword8array_num; Tapp [] Tint_num] ∧ t3 = Tapp [] Ttup_num ∨
+  op = Implode ∧ ts = [Tapp [Tapp [] Tchar_num] Tlist_num] ∧
+  t3 = Tapp [] Tstring_num ∨
+  op = Explode ∧ ts = [Tapp [] Tstring_num] ∧
+  t3 = Tapp [Tapp [] Tchar_num] Tlist_num ∨
+  op = Strsub ∧ ts = [Tapp [] Tstring_num; Tapp [] Tint_num] ∧
+  t3 = Tapp [] Tchar_num ∨
+  op = Strlen ∧ ts = [Tapp [] Tstring_num] ∧ t3 = Tapp [] Tint_num ∨
+  op = Strcat ∧ ts = [Tapp [Tapp [] Tstring_num] Tlist_num] ∧
+  t3 = Tapp [] Tstring_num ∨
+  (∃t1'²¹'.
+     op = VfromList ∧ ts = [Tapp [t1'²¹'] Tlist_num] ∧
+     t3 = Tapp [t1'²¹'] Tvector_num) ∨
+  op = Vsub ∧ ts = [Tapp [t3] Tvector_num; Tapp [] Tint_num] ∨
+  (∃t1'²³'.
+     op = Vlength ∧ ts = [Tapp [t1'²³'] Tvector_num] ∧ t3 = Tapp [] Tint_num) ∨
+  (∃t2'¹³'.
+     op = Aalloc ∧ ts = [Tapp [] Tint_num; t2'¹³'] ∧
+     t3 = Tapp [t2'¹³'] Tarray_num) ∨
+  (∃t2.
+     op = AallocEmpty ∧ ts = [Tapp [] Ttup_num] ∧ t3 = Tapp [t2] Tarray_num) ∨
+  op = Asub ∧ ts = [Tapp [t3] Tarray_num; Tapp [] Tint_num] ∨
+  (∃t1'²⁷'.
+     op = Alength ∧ ts = [Tapp [t1'²⁷'] Tarray_num] ∧ t3 = Tapp [] Tint_num) ∨
+  (∃t3'⁵'.
+     op = Aupdate ∧ ts = [Tapp [t3'⁵'] Tarray_num; Tapp [] Tint_num; t3'⁵'] ∧
+     t3 = Tapp [] Ttup_num) ∨
+  (∃t1'³¹'.
+     op = ListAppend ∧
+     ts = [Tapp [t1'³¹'] Tlist_num; Tapp [t1'³¹'] Tlist_num] ∧
+     t3 = Tapp [t1'³¹'] Tlist_num) ∨
+  op = ConfigGC ∧ ts = [Tapp [] Tint_num; Tapp [] Tint_num] ∧
+  t3 = Tapp [] Ttup_num ∨
+  ∃n. op = FFI n ∧ ts = [Tapp [] Tstring_num; Tapp [] Tword8array_num] ∧
+      t3 = Tapp [] Ttup_num
+KERNEL_THEOREM typeSysProps.type_funs_Tfn
+⊢ ∀tenv tenvE funs bindings tvs t n.
+    type_funs tenv tenvE funs bindings ∧ ALOOKUP bindings n = SOME t ⇒
+    ∃t1 t2. t = Tfn t1 t2 ∧ check_freevars (num_tvs tenvE) [] (Tfn t1 t2)
+KERNEL_THEOREM typeSysProps.type_funs_tenv_exp_ok
+⊢ ∀funs env tenv tenvE tvs bindings.
+    num_tvs tenvE = 0 ∧
+    type_funs tenv (bind_var_list 0 bindings (bind_tvar tvs tenvE)) funs env ⇒
+    tenv_val_exp_ok (bind_var_list tvs env Empty)
+KERNEL_THEOREM typeSysProps.type_funs_MAP_FST
+⊢ ∀funs tenv tenvE env.
+    type_funs tenv tenvE funs env ⇒ MAP FST funs = MAP FST env
+KERNEL_THEOREM typeSysProps.type_funs_lookup
+⊢ ∀fn tenvE funs bindings n e tenv.
+    MEM (fn,n,e) funs ∧ type_funs tenv tenvE funs bindings ⇒
+    ∃t. ALOOKUP bindings fn = SOME t
+KERNEL_THEOREM typeSysProps.type_funs_find_recfun
+⊢ ∀fn env funs bindings e tenv tenvE t.
+    ALOOKUP bindings fn = SOME t ∧ type_funs tenv tenvE funs bindings ⇒
+    ∃n e. find_recfun fn funs = SOME (n,e)
+KERNEL_THEOREM typeSysProps.type_funs_distinct
+⊢ ∀tenv tenvE funs bindings.
+    type_funs tenv tenvE funs bindings ⇒
+    ALL_DISTINCT (MAP (λ(x,y,z). x) funs)
+KERNEL_THEOREM typeSysProps.type_es_list_rel
+⊢ ∀es ts tenv tenvE.
+    type_es tenv tenvE es ts ⇔ LIST_REL (type_e tenv tenvE) es ts
+KERNEL_THEOREM typeSysProps.type_es_length
+⊢ ∀tenv tenvE es ts. type_es tenv tenvE es ts ⇒ LENGTH es = LENGTH ts
+KERNEL_THEOREM typeSysProps.type_e_subst_lem3
+⊢ ∀tvs tvs2 t.
+    check_freevars tvs tvs2 t ⇒
+    ∀tvs' targs n.
+      tvs = n + LENGTH targs ∧ EVERY (check_freevars tvs' tvs2) targs ⇒
+      check_freevars (n + tvs') tvs2
+        (deBruijn_subst n (MAP (deBruijn_inc 0 n) targs) t)
+KERNEL_THEOREM typeSysProps.type_e_subst
+⊢ (∀tenv tenvE e t.
+     type_e tenv tenvE e t ⇒
+     ∀tenvE1 targs tvs targs'.
+       num_tvs tenvE2 = 0 ∧ tenv_abbrev_ok tenv.t ∧ tenv_ctor_ok tenv.c ∧
+       tenv_val_ok tenv.v ∧ tenv_val_exp_ok tenvE ∧
+       EVERY (check_freevars tvs []) targs ∧
+       tenvE = db_merge tenvE1 (bind_tvar (LENGTH targs) tenvE2) ∧
+       targs' = MAP (deBruijn_inc 0 (num_tvs tenvE1)) targs ⇒
+       type_e tenv
+         (db_merge (deBruijn_subst_tenvE targs tenvE1) (bind_tvar tvs tenvE2))
+         e (deBruijn_subst (num_tvs tenvE1) targs' t)) ∧
+  (∀tenv tenvE es ts.
+     type_es tenv tenvE es ts ⇒
+     ∀tenvE1 targs tvs targs'.
+       num_tvs tenvE2 = 0 ∧ tenv_abbrev_ok tenv.t ∧ tenv_ctor_ok tenv.c ∧
+       tenv_val_ok tenv.v ∧ tenv_val_exp_ok tenvE ∧
+       EVERY (check_freevars tvs []) targs ∧
+       tenvE = db_merge tenvE1 (bind_tvar (LENGTH targs) tenvE2) ∧
+       targs' = MAP (deBruijn_inc 0 (num_tvs tenvE1)) targs ⇒
+       type_es tenv
+         (db_merge (deBruijn_subst_tenvE targs tenvE1) (bind_tvar tvs tenvE2))
+         es (MAP (deBruijn_subst (num_tvs tenvE1) targs') ts)) ∧
+  ∀tenv tenvE funs env.
+    type_funs tenv tenvE funs env ⇒
+    ∀tenvE1 targs tvs targs'.
+      num_tvs tenvE2 = 0 ∧ tenv_abbrev_ok tenv.t ∧ tenv_ctor_ok tenv.c ∧
+      tenv_val_ok tenv.v ∧ tenv_val_exp_ok tenvE ∧
+      EVERY (check_freevars tvs []) targs ∧
+      tenvE = db_merge tenvE1 (bind_tvar (LENGTH targs) tenvE2) ∧
+      targs' = MAP (deBruijn_inc 0 (num_tvs tenvE1)) targs ⇒
+      type_funs tenv
+        (db_merge (deBruijn_subst_tenvE targs tenvE1) (bind_tvar tvs tenvE2))
+        funs (MAP (λ(x,t). (x,deBruijn_subst (num_tvs tenvE1) targs' t)) env)
+KERNEL_THEOREM typeSysProps.type_e_freevars
+⊢ (∀tenv tenvE e t.
+     type_e tenv tenvE e t ⇒
+     tenv_val_exp_ok tenvE ∧ tenv_val_ok tenv.v ⇒
+     check_freevars (num_tvs tenvE) [] t) ∧
+  (∀tenv tenvE es ts.
+     type_es tenv tenvE es ts ⇒
+     tenv_val_exp_ok tenvE ∧ tenv_val_ok tenv.v ⇒
+     EVERY (check_freevars (num_tvs tenvE) []) ts) ∧
+  ∀tenv tenvE funs env.
+    type_funs tenv tenvE funs env ⇒
+    tenv_val_exp_ok tenvE ∧ tenv_val_ok tenv.v ⇒
+    EVERY (check_freevars (num_tvs tenvE) []) (MAP SND env)
+KERNEL_THEOREM typeSysProps.type_ds_sing
+⊢ ∀check tenv d decls r.
+    type_ds check tenv [d] decls r ⇔ type_d check tenv d decls r
+KERNEL_THEOREM typeSysProps.type_ds_empty
+⊢ ∀check tenv decls r.
+    type_ds check tenv [] decls r ⇔
+    decls = ∅ ∧ r = <|v := nsEmpty; c := nsEmpty; t := nsEmpty|>
+KERNEL_THEOREM typeSysProps.type_def_to_ctMap_mem
+⊢ ∀tenvT next tds tids.
+    ALOOKUP (type_def_to_ctMap tenvT next tds tids) k = SOME x ∧
+    LENGTH tds = LENGTH tids ⇒
+    MEM (SND (SND x)) tids
+KERNEL_THEOREM typeSysProps.type_def_to_ctMap_ind
+⊢ ∀P. (∀tenvT next_stamp. P tenvT next_stamp [] []) ∧
+      (∀tenvT next_stamp tvs tn ctors tds id ids.
+         P tenvT (next_stamp + 1) tds ids ⇒
+         P tenvT next_stamp ((tvs,tn,ctors)::tds) (id::ids)) ∧
+      (∀v13 v12 v10 v11. P v13 v12 [] (v10::v11)) ∧
+      (∀v19 v18 v16 v17. P v19 v18 (v16::v17) []) ⇒
+      ∀v v1 v2 v3. P v v1 v2 v3
+KERNEL_THEOREM typeSysProps.type_def_to_ctMap_def
+⊢ (∀tenvT next_stamp. type_def_to_ctMap tenvT next_stamp [] [] = []) ∧
+  ∀tvs tn tenvT tds next_stamp ids id ctors.
+    type_def_to_ctMap tenvT next_stamp ((tvs,tn,ctors)::tds) (id::ids) =
+    type_def_to_ctMap tenvT (next_stamp + 1) tds ids ++
+    REVERSE
+      (MAP
+         (λ(cn,ts).
+              (TypeStamp cn next_stamp,tvs,MAP (type_name_subst tenvT) ts,id))
+         ctors)
+KERNEL_THEOREM typeSysProps.type_d_tenv_ok_helper
+⊢ (∀check tenv d tdecs tenv'.
+     type_d check tenv d tdecs tenv' ⇒ tenv_ok tenv ⇒ tenv_ok tenv') ∧
+  ∀check tenv d tdecs tenv'.
+    type_ds check tenv d tdecs tenv' ⇒ tenv_ok tenv ⇒ tenv_ok tenv'
+KERNEL_THEOREM typeSysProps.type_d_tenv_ok
+⊢ ∀check tenv d tdecs tenv'.
+    type_d check tenv d tdecs tenv' ∧ tenv_ok tenv ⇒
+    tenv_ok (extend_dec_tenv tenv' tenv)
+KERNEL_THEOREM typeSysProps.type_d_check_uniq
+⊢ (∀check tenv d tdecs new_tenv.
+     type_d check tenv d tdecs new_tenv ⇒ type_d F tenv d tdecs new_tenv) ∧
+  ∀check tenv d tdecs new_tenv.
+    type_ds check tenv d tdecs new_tenv ⇒ type_ds F tenv d tdecs new_tenv
+KERNEL_THEOREM typeSysProps.type_ctor_long
+⊢ ∀ctMap mn id. type_ctor ctMap (Long mn id) = type_ctor ctMap id
+KERNEL_THEOREM typeSysProps.tveLookup_subst_some
+⊢ ∀n e targs tvs t inc.
+    tveLookup n inc e = SOME (tvs,t) ⇒
+    tveLookup n inc (deBruijn_subst_tenvE targs e) =
+    SOME
+      (tvs,
+       deBruijn_subst (tvs + inc + num_tvs e)
+         (MAP (deBruijn_inc 0 (tvs + inc + num_tvs e)) targs) t)
+KERNEL_THEOREM typeSysProps.tveLookup_subst_none
+⊢ ∀n inc e.
+    tveLookup n inc (deBruijn_subst_tenvE targs e) = NONE ⇔
+    tveLookup n inc e = NONE
+KERNEL_THEOREM typeSysProps.tveLookup_no_tvs
+⊢ ∀tvs l tenv n t.
+    tenv_val_exp_ok tenv ∧ num_tvs tenv = 0 ⇒
+    (tveLookup n tvs tenv = SOME (l,t) ⇔ tveLookup n 0 tenv = SOME (l,t))
+KERNEL_THEOREM typeSysProps.tveLookup_inc_some
+⊢ ∀n inc e tvs t inc2.
+    tveLookup n inc e = SOME (tvs,t) ⇒
+    ∃t'.
+      t = deBruijn_inc tvs inc t' ∧
+      tveLookup n inc2 e = SOME (tvs,deBruijn_inc tvs inc2 t')
+KERNEL_THEOREM typeSysProps.tveLookup_inc_none
+⊢ ∀n inc e. tveLookup n inc e = NONE ⇔ tveLookup n 0 e = NONE
+KERNEL_THEOREM typeSysProps.tveLookup_freevars_subst
+⊢ ∀tenvE targs n t inc.
+    EVERY (check_freevars (inc + num_tvs tenvE) []) targs ∧
+    tveLookup n inc tenvE = SOME (LENGTH targs,t) ∧ tenv_val_exp_ok tenvE ⇒
+    check_freevars (inc + num_tvs tenvE) [] (deBruijn_subst 0 targs t)
+KERNEL_THEOREM typeSysProps.tveLookup_freevars
+⊢ ∀n tvs tenvE tvs' t.
+    tenv_val_exp_ok tenvE ∧ num_tvs tenvE = 0 ∧
+    tveLookup n tvs tenvE = SOME (tvs',t) ⇒
+    check_freevars tvs' [] t
+KERNEL_THEOREM typeSysProps.tveLookup_db_merge_some
+⊢ ∀n inc tenvE1 tenvE2 tvs t.
+    tveLookup n inc (db_merge tenvE1 tenvE2) = SOME (tvs,t) ⇔
+    tveLookup n inc tenvE1 = SOME (tvs,t) ∨
+    tveLookup n inc tenvE1 = NONE ∧
+    tveLookup n (num_tvs tenvE1 + inc) tenvE2 = SOME (tvs,t)
+KERNEL_THEOREM typeSysProps.tveLookup_db_merge_none
+⊢ ∀n inc e1 e2.
+    tveLookup n inc (db_merge e1 e2) = NONE ⇔
+    tveLookup n inc e1 = NONE ∧ tveLookup n (num_tvs e1 + inc) e2 = NONE
+KERNEL_THEOREM typeSysProps.tveLookup_bvl
+⊢ ∀x tvs tvs' bindings tenvE.
+    tveLookup x tvs (bind_var_list tvs' bindings tenvE) =
+    case ALOOKUP bindings x of
+      NONE => tveLookup x tvs tenvE
+    | SOME t => SOME (tvs',deBruijn_inc tvs' tvs t)
+KERNEL_THEOREM typeSysProps.tveLookup_add_inc
+⊢ ∀x inc tenv tvs t inc2.
+    tveLookup x inc tenv = SOME (tvs,t) ⇒
+    tveLookup x (inc2 + inc) tenv = SOME (tvs,deBruijn_inc tvs inc2 t)
+KERNEL_THEOREM typeSysProps.tenv_val_ok_nsEmpty
+⊢ tenv_val_ok nsEmpty
+KERNEL_THEOREM typeSysProps.tenv_val_ok_add_tenvE
+⊢ ∀tenvE tenvV.
+    num_tvs tenvE = 0 ∧ tenv_val_exp_ok tenvE ∧ tenv_val_ok tenvV ⇒
+    tenv_val_ok (add_tenvE tenvE tenvV)
+KERNEL_THEOREM typeSysProps.tenv_val_exp_ok_db_merge
+⊢ ∀e1 e2. tenv_val_exp_ok (db_merge e1 e2) ⇒ tenv_val_exp_ok e2
+KERNEL_THEOREM typeSysProps.tenv_val_exp_ok_bvl_tvs
+⊢ ∀funs tenv env tvs bindings tenvE.
+    type_funs tenv (bind_var_list 0 bindings (bind_tvar tvs tenvE)) funs env ∧
+    tenv_val_exp_ok tenvE ⇒
+    tenv_val_exp_ok (bind_var_list tvs env tenvE)
+KERNEL_THEOREM typeSysProps.tenv_val_exp_ok_bvl_funs
+⊢ ∀funs env tenv bindings tenv_val tenvE.
+    type_funs tenv (bind_var_list 0 bindings tenvE) funs env ∧
+    tenv_val_exp_ok tenvE ⇒
+    tenv_val_exp_ok (bind_var_list 0 env tenvE)
+KERNEL_THEOREM typeSysProps.tenv_val_exp_ok_bvl
+⊢ ∀tenvE env.
+    tenv_val_exp_ok tenvE ∧
+    EVERY (check_freevars (num_tvs tenvE) []) (MAP SND env) ⇒
+    tenv_val_exp_ok (bind_var_list 0 env tenvE)
+KERNEL_THEOREM typeSysProps.tenv_ok_empty
+⊢ tenv_ok <|v := nsEmpty; c := nsEmpty; t := nsEmpty|>
+KERNEL_THEOREM typeSysProps.tenv_ctor_ok_nsEmpty
+⊢ tenv_ctor_ok nsEmpty
+KERNEL_THEOREM typeSysProps.tenv_ctor_ok_merge
+⊢ ∀tenvC1 tenvC2.
+    tenv_ctor_ok tenvC1 ∧ tenv_ctor_ok tenvC2 ⇒
+    tenv_ctor_ok (nsAppend tenvC1 tenvC2)
+KERNEL_THEOREM typeSysProps.tenv_ctor_ok_lookup
+⊢ ∀tenvC cn tvs ts tn.
+    tenv_ctor_ok tenvC ∧ nsLookup tenvC cn = SOME (tvs,ts,tn) ⇒
+    EVERY (check_freevars 0 tvs) ts
+KERNEL_THEOREM typeSysProps.tenv_abbrev_ok_nsEmpty
+⊢ tenv_abbrev_ok nsEmpty
+KERNEL_THEOREM typeSysProps.tenv_abbrev_ok_merge
+⊢ ∀tenvT1 tenvT2.
+    tenv_abbrev_ok tenvT1 ∧ tenv_abbrev_ok tenvT2 ⇒
+    tenv_abbrev_ok (nsAppend tenvT1 tenvT2)
+KERNEL_THEOREM typeSysProps.tenv_abbrev_ok_lookup
+⊢ ∀tenvT tn tvs t.
+    tenv_abbrev_ok tenvT ∧ nsLookup tenvT tn = SOME (tvs,t) ⇒
+    check_freevars 0 tvs t
+KERNEL_THEOREM typeSysProps.subst_inc_cancel
+⊢ (∀t ts inc.
+     deBruijn_subst 0 ts (deBruijn_inc 0 (inc + LENGTH ts) t) =
+     deBruijn_inc 0 inc t) ∧
+  ∀ts' ts inc.
+    MAP (deBruijn_subst 0 ts) (MAP (deBruijn_inc 0 (inc + LENGTH ts)) ts') =
+    MAP (deBruijn_inc 0 inc) ts'
+KERNEL_THEOREM typeSysProps.num_tvs_deBruijn_subst_tenvE
+⊢ ∀targs tenvE. num_tvs (deBruijn_subst_tenvE targs tenvE) = num_tvs tenvE
+KERNEL_THEOREM typeSysProps.num_tvs_db_merge
+⊢ ∀e1 e2. num_tvs (db_merge e1 e2) = num_tvs e1 + num_tvs e2
+KERNEL_THEOREM typeSysProps.num_tvs_bind_var_list
+⊢ ∀tvs env tenvE. num_tvs (bind_var_list tvs env tenvE) = num_tvs tenvE
+KERNEL_THEOREM typeSysProps.nsMap_build_ctor_tenv
+⊢ ∀ga g h tenvT tds ids.
+    LENGTH tds = LENGTH ids ∧
+    (∀x. MEM x (MAP SND (FLAT (MAP (SND ∘ SND) tds))) ⇒
+         MAP (type_name_subst tenvT) (ga x) =
+         g (MAP (type_name_subst tenvT) x)) ⇒
+    nsMap (λ(tvs,ts,tid). (tvs,g ts,h tid)) (build_ctor_tenv tenvT tds ids) =
+    build_ctor_tenv tenvT (MAP (I ## I ## MAP (I ## ga)) tds) (MAP h ids)
+KERNEL_THEOREM typeSysProps.nsLookup_add_tenvE3
+⊢ ∀tenvE tenvV n t tvs2 mn.
+    nsLookup tenvV (Long mn n) = SOME (tvs2,t) ⇒
+    nsLookup (add_tenvE tenvE tenvV) (Long mn n) = SOME (tvs2,t)
+KERNEL_THEOREM typeSysProps.nsLookup_add_tenvE2
+⊢ ∀tenvE tenvV n tvs t tvs2.
+    tveLookup n tvs tenvE = NONE ∧ nsLookup tenvV (Short n) = SOME (tvs2,t) ⇒
+    nsLookup (add_tenvE tenvE tenvV) (Short n) = SOME (tvs2,t)
+KERNEL_THEOREM typeSysProps.nsLookup_add_tenvE1
+⊢ ∀tenvE tenvV n tvs t tvs2.
+    check_freevars tvs2 [] t ∧ tveLookup n tvs tenvE = SOME (tvs2,t) ⇒
+    nsLookup (add_tenvE tenvE tenvV) (Short n) = SOME (tvs2,t)
+KERNEL_THEOREM typeSysProps.nil_deBruijn_subst
+⊢ ∀skip tvs t. check_freevars skip [] t ⇒ deBruijn_subst skip tvs t = t
+KERNEL_THEOREM typeSysProps.nil_deBruijn_inc
+⊢ ∀skip tvs t.
+    check_freevars skip [] t ∨
+    check_freevars skip [] (deBruijn_inc skip tvs t) ⇒
+    deBruijn_inc skip tvs t = t
+KERNEL_THEOREM typeSysProps.mem_type_def_to_ctMap
+⊢ ∀tenvT next tds ids stamp x.
+    MEM (stamp,x) (type_def_to_ctMap tenvT next tds ids) ∧
+    LENGTH tds = LENGTH ids ⇒
+    ∃cn i. stamp = TypeStamp cn i ∧ next ≤ i ∧ i < next + LENGTH tds
+KERNEL_THEOREM typeSysProps.extend_dec_tenv_ok
+⊢ ∀tenv tenv'.
+    tenv_ok tenv ∧ tenv_ok tenv' ⇒ tenv_ok (extend_dec_tenv tenv tenv')
+KERNEL_THEOREM typeSysProps.extend_dec_tenv_assoc
+⊢ ∀tenv1 tenv2 tenv3.
+    extend_dec_tenv tenv1 (extend_dec_tenv tenv2 tenv3) =
+    extend_dec_tenv (extend_dec_tenv tenv1 tenv2) tenv3
+KERNEL_THEOREM typeSysProps.deBruijn_subst_id
+⊢ (∀t n.
+     check_freevars n [] t ⇒
+     deBruijn_subst 0 (MAP Tvar_db (COUNT_LIST n)) t = t) ∧
+  ∀ts n.
+    EVERY (check_freevars n []) ts ⇒
+    MAP (deBruijn_subst 0 (MAP Tvar_db (COUNT_LIST n))) ts = ts
+KERNEL_THEOREM typeSysProps.deBruijn_subst_freevars
+⊢ ∀skip targs t tvs.
+    skip = 0 ∧ EVERY (check_freevars tvs []) targs ∧
+    check_freevars (LENGTH targs) [] t ⇒
+    check_freevars tvs [] (deBruijn_subst skip targs t)
+KERNEL_THEOREM typeSysProps.deBruijn_subst_E_bvl
+⊢ ∀tenv1 tenv2 tvs.
+    deBruijn_subst_tenvE targs (bind_var_list tvs tenv1 tenv2) =
+    bind_var_list tvs
+      (MAP
+         (λ(x,t).
+              (x,
+               deBruijn_subst (tvs + num_tvs tenv2)
+                 (MAP (deBruijn_inc 0 (tvs + num_tvs tenv2)) targs) t)) tenv1)
+      (deBruijn_subst_tenvE targs tenv2)
+KERNEL_THEOREM typeSysProps.deBruijn_subst_check_freevars2
+⊢ ∀tvs tvs' t ts n tvs''.
+    check_freevars (LENGTH ts) tvs' t ∧ EVERY (check_freevars tvs tvs') ts ⇒
+    check_freevars tvs tvs' (deBruijn_subst 0 ts t)
+KERNEL_THEOREM typeSysProps.deBruijn_subst_check_freevars
+⊢ ∀tvs tvs' t ts n.
+    check_freevars tvs tvs' t ∧ EVERY (check_freevars tvs tvs') ts ⇒
+    check_freevars tvs tvs' (deBruijn_subst 0 ts t)
+KERNEL_THEOREM typeSysProps.deBruijn_subst2
+⊢ (∀t sk targs targs' tvs'.
+     check_freevars (LENGTH targs) [] t ⇒
+     deBruijn_subst sk (MAP (deBruijn_inc 0 sk) targs')
+       (deBruijn_subst 0 targs t) =
+     deBruijn_subst 0
+       (MAP (deBruijn_subst sk (MAP (deBruijn_inc 0 sk) targs')) targs) t) ∧
+  ∀ts sk targs targs' tvs'.
+    EVERY (check_freevars (LENGTH targs) []) ts ⇒
+    MAP (deBruijn_subst sk (MAP (deBruijn_inc 0 sk) targs'))
+      (MAP (deBruijn_subst 0 targs) ts) =
+    MAP
+      (deBruijn_subst 0
+         (MAP (deBruijn_subst sk (MAP (deBruijn_inc 0 sk) targs')) targs)) ts
+KERNEL_THEOREM typeSysProps.deBruijn_inc_deBruijn_inc
+⊢ ∀sk i2 t i1.
+    deBruijn_inc sk i1 (deBruijn_inc sk i2 t) = deBruijn_inc sk (i1 + i2) t
+KERNEL_THEOREM typeSysProps.deBruijn_inc0
+⊢ (∀t sk. deBruijn_inc sk 0 t = t) ∧ ∀ts sk. MAP (deBruijn_inc sk 0) ts = ts
+KERNEL_THEOREM typeSysProps.db_merge_bvl
+⊢ ∀tenv1 tenv2 tenv3 tvs.
+    db_merge (bind_var_list tvs tenv1 tenv2) tenv3 =
+    bind_var_list tvs tenv1 (db_merge tenv2 tenv3)
+KERNEL_THEOREM typeSysProps.ctMap_ok_type_defs
+⊢ ∀tenvT next tds tids.
+    ALL_DISTINCT tids ∧ DISJOINT (set tids) (set prim_type_nums) ∧
+    LENGTH tds = LENGTH tids ∧ check_ctor_tenv tenvT tds ∧
+    tenv_abbrev_ok tenvT ⇒
+    ctMap_ok (FEMPTY |++ REVERSE (type_def_to_ctMap tenvT next tds tids))
+KERNEL_THEOREM typeSysProps.ctMap_ok_merge_imp
+⊢ ∀ctMap1 ctMap2.
+    DISJOINT (FRANGE ((SND ∘ SND) o_f ctMap1))
+      (FRANGE ((SND ∘ SND) o_f ctMap2)) ∧ ctMap_ok ctMap1 ∧ ctMap_ok ctMap2 ⇒
+    ctMap_ok (ctMap1 ⊌ ctMap2)
+KERNEL_THEOREM typeSysProps.ctMap_ok_lookup
+⊢ ∀ctMap cn tvs ts ti tn.
+    ctMap_ok ctMap ∧ FLOOKUP ctMap tn = SOME (tvs,ts,ti) ⇒
+    EVERY (check_freevars 0 tvs) ts
+KERNEL_THEOREM typeSysProps.check_freevars_type_name_subst
+⊢ ∀tvs t dbmax tenvT.
+    tenv_abbrev_ok tenvT ∧ check_type_names tenvT t ∧
+    check_freevars_ast tvs t ⇒
+    check_freevars dbmax tvs (type_name_subst tenvT t)
+KERNEL_THEOREM typeSysProps.check_freevars_subst_single
+⊢ ∀dbmax tvs t tvs' ts.
+    LENGTH tvs = LENGTH ts ∧ check_freevars dbmax tvs t ∧
+    EVERY (check_freevars dbmax tvs') ts ⇒
+    check_freevars dbmax tvs' (type_subst (alist_to_fmap (ZIP (tvs,ts))) t)
+KERNEL_THEOREM typeSysProps.check_freevars_subst_list
+⊢ ∀dbmax tvs tvs' ts ts'.
+    LENGTH tvs = LENGTH ts ∧ EVERY (check_freevars dbmax tvs) ts' ∧
+    EVERY (check_freevars dbmax tvs') ts ⇒
+    EVERY (check_freevars dbmax tvs')
+      (MAP (type_subst (alist_to_fmap (ZIP (tvs,ts)))) ts')
+KERNEL_THEOREM typeSysProps.check_freevars_subst_inc
+⊢ ∀tvs tvs2 t.
+    check_freevars tvs tvs2 t ⇒
+    ∀tvs' targs tvs1.
+      tvs = LENGTH targs + tvs' ∧
+      EVERY (check_freevars (tvs1 + tvs') tvs2) targs ⇒
+      check_freevars (tvs1 + tvs') tvs2
+        (deBruijn_subst 0 targs (deBruijn_inc (LENGTH targs) tvs1 t))
+KERNEL_THEOREM typeSysProps.check_freevars_subst
+⊢ ∀tvs tvs2 t.
+    check_freevars tvs tvs2 t ⇒
+    ∀tvs' targs tvs1.
+      tvs = LENGTH targs + tvs' ∧
+      EVERY (check_freevars (tvs1 + tvs') tvs2) targs ⇒
+      check_freevars (tvs1 + tvs') tvs2 (deBruijn_subst 0 targs t)
+KERNEL_THEOREM typeSysProps.check_freevars_add
+⊢ ∀tvs tvs' t.
+    check_freevars tvs tvs' t ⇒
+    ∀tvs''. tvs'' ≥ tvs ⇒ check_freevars tvs'' tvs' t
+KERNEL_THEOREM typeSysProps.check_ctor_tenv_ok
+⊢ ∀tenvT tds tis.
+    LENGTH tds = LENGTH tis ∧ check_ctor_tenv tenvT tds ∧
+    tenv_abbrev_ok tenvT ⇒
+    tenv_ctor_ok (build_ctor_tenv tenvT tds tis)
+KERNEL_THEOREM typeSysProps.check_ctor_tenv_EVERY
+⊢ ∀tenvT tds.
+    check_ctor_tenv tenvT tds ⇔
+    EVERY check_dup_ctors tds ∧ EVERY (ALL_DISTINCT ∘ FST) tds ∧
+    EVERY
+      (λ(tvs,tn,ctors).
+           EVERY
+             (λ(cn,ts).
+                  EVERY (check_freevars_ast tvs) ts ∧
+                  EVERY (check_type_names tenvT) ts) ctors) tds ∧
+    ALL_DISTINCT (MAP (FST ∘ SND) tds)
+KERNEL_THEOREM typeSysProps.check_ctor_tenv_change_tenvT
+⊢ ∀tenvT1 env tenvT2.
+    EVERY
+      (λ(cn,ts).
+           EVERY (check_type_names tenvT1) ts ⇒
+           EVERY (check_type_names tenvT2) ts) (FLAT (MAP (SND ∘ SND) env)) ∧
+    check_ctor_tenv tenvT1 env ⇒
+    check_ctor_tenv tenvT2 env
+KERNEL_THEOREM typeSysProps.bind_var_list_append
+⊢ ∀n te1 te2 te3.
+    bind_var_list n (te1 ++ te2) te3 =
+    bind_var_list n te1 (bind_var_list n te2 te3)
+KERNEL_THEOREM typeSysProps.bind_tvar_rewrites
+⊢ (∀tvs e1 e2.
+     db_merge (bind_tvar tvs e1) e2 = bind_tvar tvs (db_merge e1 e2)) ∧
+  (∀tvs e. num_tvs (bind_tvar tvs e) = tvs + num_tvs e) ∧
+  (∀tvs e. num_tvs (Bind_tvar tvs e) = tvs + num_tvs e) ∧
+  (∀tvs n t e. num_tvs (Bind_name n tvs t e) = num_tvs e) ∧
+  (∀tvs e. num_tvs Empty = 0) ∧
+  (∀n inc tvs e.
+     tveLookup n inc (bind_tvar tvs e) = tveLookup n (inc + tvs) e) ∧
+  (∀tvs e. tenv_val_exp_ok (bind_tvar tvs e) ⇔ tenv_val_exp_ok e) ∧
+  ∀targs tvs e.
+    deBruijn_subst_tenvE targs (bind_tvar tvs e) =
+    bind_tvar tvs (deBruijn_subst_tenvE targs e)
+KERNEL_THEOREM typeSysProps.bind_tvar0
+⊢ ∀x. bind_tvar 0 x = x
+KERNEL_THEOREM typeSysProps.add_tenvE_nsAppend
+⊢ ∀tenvE tenvV.
+    nsAppend (add_tenvE tenvE nsEmpty) tenvV = add_tenvE tenvE tenvV
+KERNEL_THEOREM typeSysProps.add_tenvE_bvl
+⊢ ∀n bindings tenvE tenvV.
+    add_tenvE (bind_var_list n bindings tenvE) tenvV =
+    nsBindList (MAP (λ(x,t). (x,n,t)) bindings) (add_tenvE tenvE tenvV)
+MATCHED_EXPORTS_INSPECTED typeSysProps 96
+KERNEL_THEOREM evaluateProps.same_type_trans
+⊢ same_type t1 t2 ∧ same_type t1 t3 ⇒ same_type t2 t3
+KERNEL_THEOREM evaluateProps.same_type_sym
+⊢ same_type t1 t2 ⇒ same_type t2 t1
+KERNEL_THEOREM evaluateProps.RTC_call_FFI_rel_consts
+⊢ ∀s1 s2. call_FFI_rel꙳ s1 s2 ⇒ s2.oracle = s1.oracle
+KERNEL_THEOREM evaluateProps.result_rel_list_result
+⊢ result_rel (LIST_REL R) Q (list_result r1) (list_result r2) ⇔
+  result_rel R Q r1 r2
+KERNEL_THEOREM evaluateProps.pmatch_not_type_error_EQ
+⊢ (pmatch envC refs Pany v acc ≠ Match_type_error ⇔ T) ∧
+  (pmatch envC refs (Pvar n) v acc ≠ Match_type_error ⇔ T) ∧
+  (pmatch envC refs (Pcon (SOME name) xs) v acc ≠ Match_type_error ⇔
+   ∃ys t l stamp.
+     v = Conv (SOME t) ys ∧ nsLookup envC name = SOME (l,stamp) ∧
+     LENGTH xs = l ∧ same_type stamp t ∧
+     (t = stamp ⇒
+      l = LENGTH ys ∧ pmatch_list envC refs xs ys acc ≠ Match_type_error)) ∧
+  (pmatch envC refs (Pcon NONE xs) v acc ≠ Match_type_error ⇔
+   ∃ys.
+     v = Conv NONE ys ∧ LENGTH xs = LENGTH ys ∧
+     pmatch_list envC refs xs ys acc ≠ Match_type_error) ∧
+  (pmatch_list envC refs [] [] acc ≠ Match_type_error ⇔ T) ∧
+  (pmatch_list envC refs [] (v::vs) acc ≠ Match_type_error ⇔ F) ∧
+  (pmatch_list envC refs (p::ps) [] acc ≠ Match_type_error ⇔ F) ∧
+  (pmatch_list envC refs (p::ps) (v::vs) acc ≠ Match_type_error ⇔
+   pmatch envC refs p v acc ≠ Match_type_error ∧
+   (∀a. pmatch envC refs p v acc = No_match ⇒
+        pmatch_list envC refs ps vs acc ≠ Match_type_error) ∧
+   ∀a. pmatch envC refs p v acc = Match a ⇒
+       pmatch_list envC refs ps vs a ≠ Match_type_error)
+KERNEL_THEOREM evaluateProps.pair_CASE_eq_forall
+⊢ (case x of (a,b) => P a b) ⇔ ∀a b. x = (a,b) ⇒ P a b
+KERNEL_THEOREM evaluateProps.list_result_inj
+⊢ list_result x = list_result y ⇒ x = y
+KERNEL_THEOREM evaluateProps.list_result_eq_Rval
+⊢ list_result r = Rval r' ⇔ ∃v. r' = [v] ∧ r = Rval v
+KERNEL_THEOREM evaluateProps.list_result_eq_Rerr
+⊢ list_result r = Rerr e ⇔ r = Rerr e
+KERNEL_THEOREM evaluateProps.is_clock_io_mono_set_clock
+⊢ is_clock_io_mono f s ⇒
+  f s = (s',r) ∧ r ≠ Rerr (Rabort Rtimeout_error) ⇒
+  ∃ck0. f (s with clock := ck0) = (s' with clock := ck1,r)
+KERNEL_THEOREM evaluateProps.is_clock_io_mono_return
+⊢ is_clock_io_mono (λs. (s,Rval r)) s
+KERNEL_THEOREM evaluateProps.is_clock_io_mono_option_case_safe
+⊢ (∀st clk. f (st with clock := clk) = f st) ∧
+  is_clock_io_mono (λst'. case f st of NONE => g st' | SOME x => h x st') st ⇒
+  is_clock_io_mono (λst'. case f st' of NONE => g st' | SOME x => h x st') st
+KERNEL_THEOREM evaluateProps.is_clock_io_mono_minimal
+⊢ is_clock_io_mono f s ⇒
+  f s = (s',r) ∧ s'.clock = 0 ∧ r ≠ Rerr (Rabort Rtimeout_error) ∧
+  s.clock > k ⇒
+  ∃s''.
+    f (s with clock := k) = (s'',Rerr (Rabort Rtimeout_error)) ∧
+    io_events_mono s''.ffi s'.ffi
+KERNEL_THEOREM evaluateProps.is_clock_io_mono_match_case_safe
+⊢ (∀st clk. f (st with clock := clk) = f st) ∧
+  is_clock_io_mono
+    (λst'.
+         case f st of
+           No_match => g st'
+         | Match_type_error => h st'
+         | Match env => j env st') st ⇒
+  is_clock_io_mono
+    (λst'.
+         case f st' of
+           No_match => g st'
+         | Match_type_error => h st'
+         | Match env => j env st') st
+KERNEL_THEOREM evaluateProps.is_clock_io_mono_match_case_pair_safe
+⊢ (∀st clk. f (st with clock := clk) = f st) ∧
+  is_clock_io_mono
+    (λst'.
+         (st',
+          case f st of
+            No_match => g st'
+          | Match_type_error => h st'
+          | Match env => j env st')) st ⇒
+  is_clock_io_mono
+    (λst'.
+         (st',
+          case f st' of
+            No_match => g st'
+          | Match_type_error => h st'
+          | Match env => j env st')) st
+KERNEL_THEOREM evaluateProps.is_clock_io_mono_if_safe
+⊢ (∀st clk. f (st with clock := clk) ⇔ f st) ∧
+  is_clock_io_mono (λst'. if f st then j st' else k st') st ⇒
+  is_clock_io_mono (λst'. if f st' then j st' else k st') st
+KERNEL_THEOREM evaluateProps.is_clock_io_mono_extra_mono
+⊢ (∀s. is_clock_io_mono f s) ⇒
+  io_events_mono (FST (f s)).ffi
+    (FST (f (s with clock := s.clock + extra))).ffi
+KERNEL_THEOREM evaluateProps.is_clock_io_mono_extra
+⊢ (∀s. is_clock_io_mono f s) ⇒
+  f s = (s',r) ∧ r ≠ Rerr (Rabort Rtimeout_error) ⇒
+  f (s with clock := s.clock + extra) = (s' with clock := s'.clock + extra,r)
+KERNEL_THEOREM evaluateProps.is_clock_io_mono_evaluate_decs
+⊢ ∀s e p. is_clock_io_mono (λs. evaluate_decs s e p) s
+KERNEL_THEOREM evaluateProps.is_clock_io_mono_evaluate
+⊢ (∀s env es. is_clock_io_mono (λs. evaluate s env es) s) ∧
+  (∀s env v pes err_v.
+     is_clock_io_mono (λs. evaluate_match s env v pes err_v) s) ∧
+  ∀s env ds. is_clock_io_mono (λs. evaluate_decs s env ds) s
+KERNEL_THEOREM evaluateProps.is_clock_io_mono_err
+⊢ is_clock_io_mono (λs. (s,Rerr r)) s
+KERNEL_THEOREM evaluateProps.is_clock_io_mono_do_app_simple
+⊢ ∀xs st.
+    is_clock_io_mono
+      (λst'.
+           case do_app (st'.refs,st'.ffi) op xs of
+             NONE => (st',Rerr (Rabort Rtype_error))
+           | SOME ((refs,ffi),r) =>
+             (st' with <|refs := refs; ffi := ffi|>,list_result r)) st
+KERNEL_THEOREM evaluateProps.is_clock_io_mono_cong
+⊢ s = t ⇒
+  (∀s. s.eval_state = t.eval_state ∧ s.refs = t.refs ∧ s.ffi = t.ffi ⇒
+       f s = g s) ⇒
+  (is_clock_io_mono f s ⇔ is_clock_io_mono g t)
+KERNEL_THEOREM evaluateProps.is_clock_io_mono_check
+⊢ (s.clock ≠ 0 ⇒ is_clock_io_mono (λs. f (adj_clock 1 0 s)) (dec_clock s)) ⇒
+  is_clock_io_mono
+    (λs. if s.clock = 0 then (s,Rerr (Rabort Rtimeout_error)) else f s) s
+KERNEL_THEOREM evaluateProps.is_clock_io_mono_bind
+⊢ is_clock_io_mono f s ∧ (∀s' r. f s = (s',r) ⇒ is_clock_io_mono (g r) s') ∧
+  (∀s'.
+     g (Rerr (Rabort Rtimeout_error)) s' = (s',Rerr (Rabort Rtimeout_error))) ⇒
+  is_clock_io_mono (λs. case f s of (s',r) => g r s') s
+KERNEL_THEOREM evaluateProps.is_clock_io_mono_acc_safe
+⊢ ∀v g.
+    (∀st clk. f (st with clock := clk) = f st) ∧ (f st = v ∨ f st ≠ v) ∧
+    is_clock_io_mono (λst'. g (f st) st') st ⇒
+    is_clock_io_mono (λst'. g (f st') st') st
+KERNEL_THEOREM evaluateProps.io_events_mono_trans
+⊢ io_events_mono ffi1 ffi2 ∧ io_events_mono ffi2 ffi3 ⇒
+  io_events_mono ffi1 ffi3
+KERNEL_THEOREM evaluateProps.io_events_mono_refl
+⊢ io_events_mono ffi ffi
+KERNEL_THEOREM evaluateProps.io_events_mono_antisym
+⊢ io_events_mono s1 s2 ∧ io_events_mono s2 s1 ⇒ s1 = s2
+KERNEL_THEOREM evaluateProps.evaluate_sing
+⊢ ∀s env e s' vs. evaluate s env [e] = (s',Rval vs) ⇒ ∃v. vs = [v]
+KERNEL_THEOREM evaluateProps.evaluate_set_next_stamps
+⊢ (∀s0 env xs s1 res.
+     evaluate s0 env xs = (s1,res) ⇒
+     (s1.next_type_stamp = s0.next_type_stamp ⇒
+      ∀k. evaluate (s0 with next_type_stamp := k) env xs =
+          (s1 with next_type_stamp := k,res)) ∧
+     (s1.next_exn_stamp = s0.next_exn_stamp ⇒
+      ∀k. evaluate (s0 with next_exn_stamp := k) env xs =
+          (s1 with next_exn_stamp := k,res))) ∧
+  (∀s0 env v pes errv s1 res.
+     evaluate_match s0 env v pes errv = (s1,res) ⇒
+     (s1.next_type_stamp = s0.next_type_stamp ⇒
+      ∀k. evaluate_match (s0 with next_type_stamp := k) env v pes errv =
+          (s1 with next_type_stamp := k,res)) ∧
+     (s1.next_exn_stamp = s0.next_exn_stamp ⇒
+      ∀k. evaluate_match (s0 with next_exn_stamp := k) env v pes errv =
+          (s1 with next_exn_stamp := k,res))) ∧
+  ∀s0 env ds s1 res.
+    evaluate_decs s0 env ds = (s1,res) ⇒
+    (s1.next_type_stamp = s0.next_type_stamp ⇒
+     ∀k. evaluate_decs (s0 with next_type_stamp := k) env ds =
+         (s1 with next_type_stamp := k,res)) ∧
+    (s1.next_exn_stamp = s0.next_exn_stamp ⇒
+     ∀k. evaluate_decs (s0 with next_exn_stamp := k) env ds =
+         (s1 with next_exn_stamp := k,res))
+KERNEL_THEOREM evaluateProps.evaluate_set_init_clock
+⊢ evaluate st env xs = (st',res) ∧ res ≠ Rerr (Rabort Rtimeout_error) ⇒
+  ∀k. ∃ck res1 st1.
+    evaluate (st with clock := k) env xs = (st1,res1) ∧
+    (res1 = res ∧ st1 = st' with clock := ck ∨
+     res1 = Rerr (Rabort Rtimeout_error) ∧ io_events_mono st1.ffi st'.ffi)
+KERNEL_THEOREM evaluateProps.evaluate_set_clock
+⊢ ∀s env exps s1 res.
+    evaluate s env exps = (s1,res) ∧ res ≠ Rerr (Rabort Rtimeout_error) ⇒
+    ∀ck. ∃ck1.
+      evaluate (s with clock := ck1) env exps = (s1 with clock := ck,res)
+KERNEL_THEOREM evaluateProps.evaluate_refs_length_mono
+⊢ (∀s env es s' r.
+     evaluate s env es = (s',r) ⇒ LENGTH s.refs ≤ LENGTH s'.refs) ∧
+  ∀s env v pes err_v s' r.
+    evaluate_match s env v pes err_v = (s',r) ⇒
+    LENGTH s.refs ≤ LENGTH s'.refs
+KERNEL_THEOREM evaluateProps.evaluate_nil
+⊢ ∀s env. evaluate s env [] = (s,Rval [])
+KERNEL_THEOREM evaluateProps.evaluate_next_type_stamp_mono
+⊢ (evaluate s env es = (s',res1) ⇒ s.next_type_stamp ≤ s'.next_type_stamp) ∧
+  (evaluate_match s env v pes err_v = (s',res2) ⇒
+   s.next_type_stamp ≤ s'.next_type_stamp) ∧
+  (evaluate_decs s env ds = (s',res3) ⇒
+   s.next_type_stamp ≤ s'.next_type_stamp)
+KERNEL_THEOREM evaluateProps.evaluate_next_exn_stamp_mono
+⊢ (evaluate s env es = (s',res1) ⇒ s.next_exn_stamp ≤ s'.next_exn_stamp) ∧
+  (evaluate_match s env v pes err_v = (s',res2) ⇒
+   s.next_exn_stamp ≤ s'.next_exn_stamp) ∧
+  (evaluate_decs s env ds = (s',res3) ⇒ s.next_exn_stamp ≤ s'.next_exn_stamp)
+KERNEL_THEOREM evaluateProps.evaluate_minimal_clock
+⊢ ∀s env es s' r k.
+    evaluate s env es = (s',r) ∧ s'.clock = 0 ∧
+    r ≠ Rerr (Rabort Rtimeout_error) ∧ s.clock > k ⇒
+    ∃s''.
+      evaluate (s with clock := k) env es =
+      (s'',Rerr (Rabort Rtimeout_error)) ∧ io_events_mono s''.ffi s'.ffi
+KERNEL_THEOREM evaluateProps.evaluate_match_minimal_clock
+⊢ ∀s env v pes err_v s' r k.
+    evaluate_match s env v pes err_v = (s',r) ∧ s'.clock = 0 ∧
+    r ≠ Rerr (Rabort Rtimeout_error) ∧ s.clock > k ⇒
+    ∃s''.
+      evaluate_match (s with clock := k) env v pes err_v =
+      (s'',Rerr (Rabort Rtimeout_error)) ∧ io_events_mono s''.ffi s'.ffi
+KERNEL_THEOREM evaluateProps.evaluate_match_list_result
+⊢ evaluate_match s e v p er = (s',r) ⇒ ∃r'. r = list_result r'
+KERNEL_THEOREM evaluateProps.evaluate_match_add_to_clock
+⊢ ∀s env v pes err_v s' r extra.
+    evaluate_match s env v pes err_v = (s',r) ∧
+    r ≠ Rerr (Rabort Rtimeout_error) ⇒
+    evaluate_match (s with clock := s.clock + extra) env v pes err_v =
+    (s' with clock := s'.clock + extra,r)
+KERNEL_THEOREM evaluateProps.evaluate_length
+⊢ (∀s e p s' r. evaluate s e p = (s',Rval r) ⇒ LENGTH r = LENGTH p) ∧
+  (∀s e v p er s' r. evaluate_match s e v p er = (s',Rval r) ⇒ LENGTH r = 1) ∧
+  ∀s e ds s' r. evaluate_decs s e ds = (s',Rval r) ⇒ T
+KERNEL_THEOREM evaluateProps.evaluate_io_events_mono_imp
+⊢ (∀s e p s' r. evaluate s e p = (s',r) ⇒ io_events_mono s.ffi s'.ffi) ∧
+  (∀s e v pes errv s' r.
+     evaluate_match s e v pes errv = (s',r) ⇒ io_events_mono s.ffi s'.ffi) ∧
+  ∀s e p s' r. evaluate_decs s e p = (s',r) ⇒ io_events_mono s.ffi s'.ffi
+KERNEL_THEOREM evaluateProps.evaluate_io_events_mono
+⊢ (∀s e exp. io_events_mono s.ffi (FST (evaluate s e exp)).ffi) ∧
+  (∀s e v pes errv.
+     io_events_mono s.ffi (FST (evaluate_match s e v pes errv)).ffi) ∧
+  ∀s e d. io_events_mono s.ffi (FST (evaluate_decs s e d)).ffi
+KERNEL_THEOREM evaluateProps.evaluate_history_irrelevance
+⊢ (∀st env exp st' res.
+     evaluate st env exp = (st',res) ⇒
+     ∃new_io.
+       st'.ffi.io_events = st.ffi.io_events ++ new_io ∧
+       ∀l. evaluate (st with ffi := st.ffi with io_events := l) env exp =
+           (st' with ffi := st'.ffi with io_events := l ++ new_io,res)) ∧
+  (∀st env v pes err_v st' res.
+     evaluate_match st env v pes err_v = (st',res) ⇒
+     ∃new_io.
+       st'.ffi.io_events = st.ffi.io_events ++ new_io ∧
+       ∀l. evaluate_match (st with ffi := st.ffi with io_events := l) env v
+             pes err_v =
+           (st' with ffi := st'.ffi with io_events := l ++ new_io,res)) ∧
+  ∀st env ds st' res.
+    evaluate_decs st env ds = (st',res) ⇒
+    ∃new_io.
+      st'.ffi.io_events = st.ffi.io_events ++ new_io ∧
+      ∀l. evaluate_decs (st with ffi := st.ffi with io_events := l) env ds =
+          (st' with ffi := st'.ffi with io_events := l ++ new_io,res)
+KERNEL_THEOREM evaluateProps.evaluate_ffi_intro
+⊢ (∀s env e s' r.
+     evaluate s env e = (s',r) ∧ s'.ffi = s.ffi ∧
+     (∀outcome. r ≠ Rerr (Rabort (Rffi_error outcome))) ⇒
+     ∀nffi. evaluate (s with ffi := nffi) env e = (s' with ffi := nffi,r)) ∧
+  (∀s env v pes errv s' r.
+     evaluate_match s env v pes errv = (s',r) ∧ s'.ffi = s.ffi ∧
+     (∀outcome. r ≠ Rerr (Rabort (Rffi_error outcome))) ⇒
+     ∀nffi.
+       evaluate_match (s with ffi := nffi) env v pes errv =
+       (s' with ffi := nffi,r)) ∧
+  ∀s env ds s' r.
+    evaluate_decs s env ds = (s',r) ∧ s'.ffi = s.ffi ∧
+    (∀outcome. r ≠ Rerr (Rabort (Rffi_error outcome))) ⇒
+    ∀nffi.
+      evaluate_decs (s with ffi := nffi) env ds = (s' with ffi := nffi,r)
+KERNEL_THEOREM evaluateProps.evaluate_ffi_etc_intro
+⊢ evaluate s0 env xs = (s1,res) ∧
+  (∀outcome. res ≠ Rerr (Rabort (Rffi_error outcome))) ∧ s1.ffi = s0.ffi ∧
+  s1.next_type_stamp = s0.next_type_stamp ∧
+  s1.next_exn_stamp = s0.next_exn_stamp ∧ s0.eval_state = NONE ∧
+  res ≠ Rerr (Rabort Rtype_error) ∧ s.refs = s0.refs ⇒
+  ∃ck1 ck2.
+    evaluate (s with clock := ck1) env xs =
+    (s with <|refs := s1.refs; clock := ck2|>,res)
+KERNEL_THEOREM evaluateProps.evaluate_decs_set_clock
+⊢ ∀s env decs s1 res.
+    evaluate_decs s env decs = (s1,res) ∧ res ≠ Rerr (Rabort Rtimeout_error) ⇒
+    ∀ck. ∃ck1.
+      evaluate_decs (s with clock := ck1) env decs =
+      (s1 with clock := ck,res)
+KERNEL_THEOREM evaluateProps.evaluate_decs_nil
+⊢ ∀s env. evaluate_decs s env [] = (s,Rval <|v := nsEmpty; c := nsEmpty|>)
+KERNEL_THEOREM evaluateProps.evaluate_decs_ffi_mono_clock
+⊢ ∀k1 k2 s e p.
+    k1 ≤ k2 ⇒
+    io_events_mono (FST (evaluate_decs (s with clock := k1) e p)).ffi
+      (FST (evaluate_decs (s with clock := k2) e p)).ffi
+KERNEL_THEOREM evaluateProps.evaluate_decs_cons
+⊢ ∀s env d ds.
+    evaluate_decs s env (d::ds) =
+    case evaluate_decs s env [d] of
+      (s1,Rval env1) =>
+        (case evaluate_decs s1 (env1 +++ env) ds of
+           (s2,r) => (s2,combine_dec_result env1 r))
+    | (s1,Rerr v7) => (s1,Rerr v7)
+KERNEL_THEOREM evaluateProps.evaluate_decs_clock_determ
+⊢ ∀s e p s1 r1 s2 r2 k1 k2.
+    evaluate_decs (s with clock := k1) e p = (s1,r1) ∧
+    evaluate_decs (s with clock := k2) e p = (s2,r2) ⇒
+    case (r1,r2) of
+      (Rval v12,Rval v8) => s1.ffi = s2.ffi ∧ r1 = r2
+    | (Rerr (Rraise v16),Rval v8) => s1.ffi = s2.ffi ∧ r1 = r2
+    | (Rerr (Rabort Rtype_error),Rval v8) => s1.ffi = s2.ffi ∧ r1 = r2
+    | (Rerr (Rabort Rtimeout_error),Rval v8) => k1 < k2
+    | (Rerr (Rabort (Rffi_error v19)),Rval v8) => s1.ffi = s2.ffi ∧ r1 = r2
+    | (Rval v24,Rerr (Rraise v28)) => s1.ffi = s2.ffi ∧ r1 = r2
+    | (Rval v24,Rerr (Rabort Rtype_error)) => s1.ffi = s2.ffi ∧ r1 = r2
+    | (Rval v24,Rerr (Rabort Rtimeout_error)) => k2 < k1
+    | (Rval v24,Rerr (Rabort (Rffi_error v31))) => s1.ffi = s2.ffi ∧ r1 = r2
+    | (Rerr (Rraise v40),Rerr (Rraise v36)) => s1.ffi = s2.ffi ∧ r1 = r2
+    | (Rerr (Rabort Rtype_error),Rerr (Rraise v36)) =>
+      s1.ffi = s2.ffi ∧ r1 = r2
+    | (Rerr (Rabort Rtimeout_error),Rerr (Rraise v36)) => k1 < k2
+    | (Rerr (Rabort (Rffi_error v43)),Rerr (Rraise v36)) =>
+      s1.ffi = s2.ffi ∧ r1 = r2
+    | (Rerr (Rraise v48),Rerr (Rabort Rtype_error)) =>
+      s1.ffi = s2.ffi ∧ r1 = r2
+    | (Rerr (Rraise v48),Rerr (Rabort Rtimeout_error)) => k2 < k1
+    | (Rerr (Rraise v48),Rerr (Rabort (Rffi_error v51))) =>
+      s1.ffi = s2.ffi ∧ r1 = r2
+    | (Rerr (Rabort Rtype_error),Rerr (Rabort Rtype_error)) =>
+      s1.ffi = s2.ffi ∧ r1 = r2
+    | (Rerr (Rabort Rtimeout_error),Rerr (Rabort Rtype_error)) => k1 < k2
+    | (Rerr (Rabort (Rffi_error v56)),Rerr (Rabort Rtype_error)) =>
+      s1.ffi = s2.ffi ∧ r1 = r2
+    | (Rerr (Rabort Rtype_error),Rerr (Rabort Rtimeout_error)) => k2 < k1
+    | (Rerr (Rabort Rtimeout_error),Rerr (Rabort Rtimeout_error)) => T
+    | (Rerr (Rabort (Rffi_error v59)),Rerr (Rabort Rtimeout_error)) =>
+      k2 < k1
+    | (Rerr (Rabort Rtype_error),Rerr (Rabort (Rffi_error v54))) =>
+      s1.ffi = s2.ffi ∧ r1 = r2
+    | (Rerr (Rabort Rtimeout_error),Rerr (Rabort (Rffi_error v54))) =>
+      k1 < k2
+    | (Rerr (Rabort (Rffi_error v61)),Rerr (Rabort (Rffi_error v54))) =>
+      s1.ffi = s2.ffi ∧ r1 = r2
+KERNEL_THEOREM evaluateProps.evaluate_decs_call_FFI_rel_imp
+⊢ ∀s e p s' r. evaluate_decs s e p = (s',r) ⇒ call_FFI_rel꙳ s.ffi s'.ffi
+KERNEL_THEOREM evaluateProps.evaluate_decs_append
+⊢ ∀ds1 s env ds2.
+    evaluate_decs s env (ds1 ++ ds2) =
+    case evaluate_decs s env ds1 of
+      (s1,Rval env1) =>
+        (case evaluate_decs s1 (env1 +++ env) ds2 of
+           (s2,r) => (s2,combine_dec_result env1 r))
+    | (s1,Rerr v7) => (s1,Rerr v7)
+KERNEL_THEOREM evaluateProps.evaluate_decs_add_to_clock_io_events_mono
+⊢ ∀s e d.
+    io_events_mono (FST (evaluate_decs s e d)).ffi
+      (FST (evaluate_decs (s with clock := s.clock + extra) e d)).ffi
+KERNEL_THEOREM evaluateProps.evaluate_decs_add_to_clock
+⊢ ∀s e p s' r extra.
+    evaluate_decs s e p = (s',r) ∧ r ≠ Rerr (Rabort Rtimeout_error) ⇒
+    evaluate_decs (s with clock := s.clock + extra) e p =
+    (s' with clock := s'.clock + extra,r)
+KERNEL_THEOREM evaluateProps.evaluate_cons
+⊢ ∀s env e es.
+    evaluate s env (e::es) =
+    case evaluate s env [e] of
+      (s',Rval vs) =>
+        (case evaluate s' env es of
+           (s'',Rval vs') => (s'',Rval (vs ++ vs'))
+         | (s'',Rerr v7) => (s'',Rerr v7))
+    | (s',Rerr v9) => (s',Rerr v9)
+KERNEL_THEOREM evaluateProps.evaluate_case_eqs
+⊢ (pair_CASE p f = v ⇔ ∃x y. p = (x,y) ∧ f x y = v) ∧
+  (result_CASE x f f1 = v ⇔
+   (∃a. x = Rval a ∧ f a = v) ∨ ∃e. x = Rerr e ∧ f1 e = v) ∧
+  (error_result_CASE x f f1 = v ⇔
+   (∃a. x = Rraise a ∧ f a = v) ∨ ∃a. x = Rabort a ∧ f1 a = v) ∧
+  ((if x then t1 else t2) = v ⇔ (x ⇔ T) ∧ t1 = v ∨ (x ⇔ F) ∧ t2 = v) ∧
+  (option_CASE opt nc sc = v ⇔
+   opt = NONE ∧ nc = v ∨ ∃x. opt = SOME x ∧ sc x = v) ∧
+  (list_CASE x v f = v' ⇔ x = [] ∧ v = v' ∨ ∃a l. x = a::l ∧ f a l = v') ∧
+  (exp_or_val_CASE x f f1 = v ⇔
+   (∃e. x = Exp e ∧ f e = v) ∨ ∃v'. x = Val v' ∧ f1 v' = v) ∧
+  (match_result_CASE x v v1 f = v' ⇔
+   x = No_match ∧ v = v' ∨ x = Match_type_error ∧ v1 = v' ∨
+   ∃a. x = Match a ∧ f a = v')
+KERNEL_THEOREM evaluateProps.evaluate_call_FFI_rel_imp
+⊢ (∀s e p s' r. evaluate s e p = (s',r) ⇒ call_FFI_rel꙳ s.ffi s'.ffi) ∧
+  (∀s e v pes errv s' r.
+     evaluate_match s e v pes errv = (s',r) ⇒ call_FFI_rel꙳ s.ffi s'.ffi) ∧
+  ∀s e p s' r. evaluate_decs s e p = (s',r) ⇒ call_FFI_rel꙳ s.ffi s'.ffi
+KERNEL_THEOREM evaluateProps.evaluate_call_FFI_rel
+⊢ (∀s e exp. call_FFI_rel꙳ s.ffi (FST (evaluate s e exp)).ffi) ∧
+  (∀s e v pes errv.
+     call_FFI_rel꙳ s.ffi (FST (evaluate_match s e v pes errv)).ffi) ∧
+  ∀s e ds. call_FFI_rel꙳ s.ffi (FST (evaluate_decs s e ds)).ffi
+KERNEL_THEOREM evaluateProps.evaluate_Apps_Rerr
+⊢ ∀xs f st env s1 e.
+    evaluate st env xs = (s1,Rerr e) ⇒
+    evaluate st env [Apps f (REVERSE xs)] = (s1,Rerr e)
+KERNEL_THEOREM evaluateProps.evaluate_Apps_Funs_timeout
+⊢ ∀l x ns vs st s1 s2 env env1 e.
+    evaluate st env l = (s1,Rval vs) ∧
+    evaluate s1 env [x] = (s2,Rval [Closure env1 (HD ns) (Funs (TL ns) e)]) ∧
+    LENGTH l = LENGTH ns ∧ ns ≠ [] ∧ s2.clock < LENGTH ns ⇒
+    evaluate st env [Apps x (REVERSE l)] =
+    (s2 with clock := 0,Rerr (Rabort Rtimeout_error))
+KERNEL_THEOREM evaluateProps.evaluate_Apps_Funs
+⊢ ∀l x ns vs st s1 s2 env env1 e.
+    evaluate st env l = (s1,Rval vs) ∧
+    evaluate s1 env [x] = (s2,Rval [Closure env1 (HD ns) (Funs (TL ns) e)]) ∧
+    LENGTH l = LENGTH ns ∧ ns ≠ [] ∧ LENGTH ns ≤ s2.clock ⇒
+    evaluate st env [Apps x (REVERSE l)] =
+    evaluate (s2 with clock := s2.clock − LENGTH ns)
+      (env1 with v := nsAppend (alist_to_ns (ZIP (REVERSE ns,vs))) env1.v)
+      [e]
+KERNEL_THEOREM evaluateProps.evaluate_Apps_f_err
+⊢ ∀xs vs st envs1 f s1 s2.
+    evaluate st env xs = (s1,Rval vs) ∧ evaluate s1 env [f] = (s2,Rerr r) ⇒
+    evaluate st env [Apps f (REVERSE xs)] = (s2,Rerr r)
+KERNEL_THEOREM evaluateProps.evaluate_Apps
+⊢ ∀xs st env s1 s2 vs.
+    evaluate st env xs = (s1,Rval vs) ∧ LENGTH xs = SUC (LENGTH ns) ∧
+    nsLookup env.v n = SOME clos_v ∧
+    do_opapp [clos_v; LAST vs] = SOME (env1,Funs ns e) ⇒
+    evaluate st env [Apps (Var n) (REVERSE xs)] =
+    if s1.clock < LENGTH xs then
+      (s1 with clock := 0,Rerr (Rabort Rtimeout_error))
+    else
+      evaluate (s1 with clock := s1.clock − LENGTH xs)
+        (env1 with
+         v := nsAppend (alist_to_ns (ZIP (REVERSE ns,FRONT vs))) env1.v) [e]
+KERNEL_THEOREM evaluateProps.evaluate_append
+⊢ ∀s env xs ys.
+    evaluate s env (xs ++ ys) =
+    case evaluate s env xs of
+      (s',Rval vs) =>
+        (case evaluate s' env ys of
+           (s'',Rval vs') => (s'',Rval (vs ++ vs'))
+         | (s'',Rerr v7) => (s'',Rerr v7))
+    | (s',Rerr v9) => (s',Rerr v9)
+KERNEL_THEOREM evaluateProps.evaluate_add_to_clock_io_events_mono
+⊢ (∀s e d extra.
+     io_events_mono (FST (evaluate s e d)).ffi
+       (FST (evaluate (s with clock := s.clock + extra) e d)).ffi) ∧
+  ∀s e v d er extra.
+    io_events_mono (FST (evaluate_match s e v d er)).ffi
+      (FST (evaluate_match (s with clock := s.clock + extra) e v d er)).ffi
+KERNEL_THEOREM evaluateProps.evaluate_add_to_clock
+⊢ ∀s env es s' r extra.
+    evaluate s env es = (s',r) ∧ r ≠ Rerr (Rabort Rtimeout_error) ⇒
+    evaluate (s with clock := s.clock + extra) env es =
+    (s' with clock := s'.clock + extra,r)
+KERNEL_THEOREM evaluateProps.evaluate_add_history
+⊢ (∀st env exp st' res.
+     evaluate (st with ffi := st.ffi with io_events := []) env exp =
+     (st',res) ⇒
+     evaluate st env exp =
+     (st' with
+      ffi := st'.ffi with io_events := st.ffi.io_events ++ st'.ffi.io_events,
+      res)) ∧
+  ∀st env v pes err_v st' res.
+    evaluate_match (st with ffi := st.ffi with io_events := []) env v pes
+      err_v = (st',res) ⇒
+    evaluate_match st env v pes err_v =
+    (st' with
+     ffi := st'.ffi with io_events := st.ffi.io_events ++ st'.ffi.io_events,
+     res)
+KERNEL_THEOREM evaluateProps.eval_no_eval_simulation
+⊢ (∀s env exps s' res.
+     evaluate s env exps = (s',res) ∧ s.eval_state = NONE ∧
+     res ≠ Rerr (Rabort Rtype_error) ⇒
+     s'.eval_state = NONE ∧
+     evaluate (s with eval_state := es) env exps =
+     (s' with eval_state := es,res)) ∧
+  (∀s env x pes err_x s' res.
+     evaluate_match s env x pes err_x = (s',res) ∧ s.eval_state = NONE ∧
+     res ≠ Rerr (Rabort Rtype_error) ⇒
+     s'.eval_state = NONE ∧
+     evaluate_match (s with eval_state := es) env x pes err_x =
+     (s' with eval_state := es,res)) ∧
+  ∀s env decs s' res.
+    evaluate_decs s env decs = (s',res) ∧ s.eval_state = NONE ∧
+    res ≠ Rerr (Rabort Rtype_error) ⇒
+    s'.eval_state = NONE ∧
+    evaluate_decs (s with eval_state := es) env decs =
+    (s' with eval_state := es,res)
+KERNEL_THEOREM evaluateProps.do_app_SOME_ffi_same_oracle_state
+⊢ do_app (refs,ffi) op args = SOME ((refs',ffi'),r) ⇒
+  do_app (refs,ffi with io_events := l) op args =
+  SOME
+    ((refs',
+      ffi' with io_events := l ++ DROP (LENGTH ffi.io_events) ffi'.io_events),
+     r)
+KERNEL_THEOREM evaluateProps.do_app_refs_length
+⊢ do_app refs_ffi op vs = SOME res ⇒
+  LENGTH (FST refs_ffi) ≤ LENGTH (FST (FST res))
+KERNEL_THEOREM evaluateProps.do_app_io_events_mono
+⊢ do_app (r,ffi) op vs = SOME ((r',ffi'),res) ⇒ io_events_mono ffi ffi'
+KERNEL_THEOREM evaluateProps.do_app_ffi_unchanged
+⊢ do_app (refs,ffi) op vs = SOME ((refs',ffi),r) ⇒
+  (∀outcome. r ≠ Rerr (Rabort (Rffi_error outcome))) ⇒
+  ∀ffi2. do_app (refs,ffi2) op vs = SOME ((refs',ffi2),r)
+KERNEL_THEOREM evaluateProps.do_app_ffi_mono
+⊢ do_app (refs,ffi) op args = SOME ((refs',ffi'),r) ⇒
+  ∃l. ffi'.io_events = ffi.io_events ++ l
+KERNEL_THEOREM evaluateProps.do_app_call_FFI_rel
+⊢ do_app (r,ffi) op vs = SOME ((r',ffi'),res) ⇒ call_FFI_rel꙳ ffi ffi'
+KERNEL_THEOREM evaluateProps.dec_inc_clock
+⊢ dec_clock (adj_clock 1 0 s) = s
+KERNEL_THEOREM evaluateProps.combine_dec_result_eq_Rerr
+⊢ combine_dec_result env r = Rerr e ⇔ r = Rerr e
+KERNEL_THEOREM evaluateProps.can_pmatch_all_EVERY
+⊢ can_pmatch_all envC refs ps v ⇔
+  EVERY (λp. pmatch envC refs p v [] ≠ Match_type_error) ps
+KERNEL_THEOREM evaluateProps.call_FFI_return_unchanged
+⊢ call_FFI ffi s conf bytes = FFI_return ffi bytes' ⇔
+  s = ExtCall «» ∧ bytes' = bytes
+KERNEL_THEOREM evaluateProps.call_FFI_rel_io_events_mono
+⊢ ∀s1 s2. call_FFI_rel꙳ s1 s2 ⇒ io_events_mono s1 s2
+KERNEL_THEOREM evaluateProps.call_FFI_rel_consts
+⊢ call_FFI_rel s1 s2 ⇒ s2.oracle = s1.oracle
+KERNEL_THEOREM evaluateProps.call_FFI_LENGTH
+⊢ call_FFI st index conf x = FFI_return new_st new_bytes ⇒
+  LENGTH x = LENGTH new_bytes
+KERNEL_THEOREM evaluateProps.Apps_append
+⊢ ∀xs ys f. Apps f (xs ++ ys) = Apps (Apps f xs) ys
+MATCHED_EXPORTS_INSPECTED evaluateProps 84
+KERNEL_THEOREM closLang.word_op_nchotomy
+⊢ ∀ww.
+    (∃w $o. ww = WordOpw w $o) ∨ (∃w s n. ww = WordShift w s n) ∨
+    (∃w t. ww = WordTest w t) ∨ ww = WordFromInt ∨ ww = WordToInt ∨
+    (∃b. ww = WordFromWord b) ∨ (∃f. ww = FP_cmp f) ∨ (∃f. ww = FP_uop f) ∨
+    (∃f. ww = FP_bop f) ∨ ∃f. ww = FP_top f
+KERNEL_THEOREM closLang.word_op_induction
+⊢ ∀P. (∀w $o. P (WordOpw w $o)) ∧ (∀w s n. P (WordShift w s n)) ∧
+      (∀w t. P (WordTest w t)) ∧ P WordFromInt ∧ P WordToInt ∧
+      (∀b. P (WordFromWord b)) ∧ (∀f. P (FP_cmp f)) ∧ (∀f. P (FP_uop f)) ∧
+      (∀f. P (FP_bop f)) ∧ (∀f. P (FP_top f)) ⇒
+      ∀w. P w
+KERNEL_THEOREM closLang.word_op_distinct
+⊢ (∀a2 a1' a1 a0' a0. WordOpw a0 a1 ≠ WordShift a0' a1' a2) ∧
+  (∀a1' a1 a0' a0. WordOpw a0 a1 ≠ WordTest a0' a1') ∧
+  (∀a1 a0. WordOpw a0 a1 ≠ WordFromInt) ∧
+  (∀a1 a0. WordOpw a0 a1 ≠ WordToInt) ∧
+  (∀a1 a0 a. WordOpw a0 a1 ≠ WordFromWord a) ∧
+  (∀a1 a0 a. WordOpw a0 a1 ≠ FP_cmp a) ∧
+  (∀a1 a0 a. WordOpw a0 a1 ≠ FP_uop a) ∧
+  (∀a1 a0 a. WordOpw a0 a1 ≠ FP_bop a) ∧
+  (∀a1 a0 a. WordOpw a0 a1 ≠ FP_top a) ∧
+  (∀a2 a1' a1 a0' a0. WordShift a0 a1 a2 ≠ WordTest a0' a1') ∧
+  (∀a2 a1 a0. WordShift a0 a1 a2 ≠ WordFromInt) ∧
+  (∀a2 a1 a0. WordShift a0 a1 a2 ≠ WordToInt) ∧
+  (∀a2 a1 a0 a. WordShift a0 a1 a2 ≠ WordFromWord a) ∧
+  (∀a2 a1 a0 a. WordShift a0 a1 a2 ≠ FP_cmp a) ∧
+  (∀a2 a1 a0 a. WordShift a0 a1 a2 ≠ FP_uop a) ∧
+  (∀a2 a1 a0 a. WordShift a0 a1 a2 ≠ FP_bop a) ∧
+  (∀a2 a1 a0 a. WordShift a0 a1 a2 ≠ FP_top a) ∧
+  (∀a1 a0. WordTest a0 a1 ≠ WordFromInt) ∧
+  (∀a1 a0. WordTest a0 a1 ≠ WordToInt) ∧
+  (∀a1 a0 a. WordTest a0 a1 ≠ WordFromWord a) ∧
+  (∀a1 a0 a. WordTest a0 a1 ≠ FP_cmp a) ∧
+  (∀a1 a0 a. WordTest a0 a1 ≠ FP_uop a) ∧
+  (∀a1 a0 a. WordTest a0 a1 ≠ FP_bop a) ∧
+  (∀a1 a0 a. WordTest a0 a1 ≠ FP_top a) ∧ WordFromInt ≠ WordToInt ∧
+  (∀a. WordFromInt ≠ WordFromWord a) ∧ (∀a. WordFromInt ≠ FP_cmp a) ∧
+  (∀a. WordFromInt ≠ FP_uop a) ∧ (∀a. WordFromInt ≠ FP_bop a) ∧
+  (∀a. WordFromInt ≠ FP_top a) ∧ (∀a. WordToInt ≠ WordFromWord a) ∧
+  (∀a. WordToInt ≠ FP_cmp a) ∧ (∀a. WordToInt ≠ FP_uop a) ∧
+  (∀a. WordToInt ≠ FP_bop a) ∧ (∀a. WordToInt ≠ FP_top a) ∧
+  (∀a' a. WordFromWord a ≠ FP_cmp a') ∧ (∀a' a. WordFromWord a ≠ FP_uop a') ∧
+  (∀a' a. WordFromWord a ≠ FP_bop a') ∧ (∀a' a. WordFromWord a ≠ FP_top a') ∧
+  (∀a' a. FP_cmp a ≠ FP_uop a') ∧ (∀a' a. FP_cmp a ≠ FP_bop a') ∧
+  (∀a' a. FP_cmp a ≠ FP_top a') ∧ (∀a' a. FP_uop a ≠ FP_bop a') ∧
+  (∀a' a. FP_uop a ≠ FP_top a') ∧ ∀a' a. FP_bop a ≠ FP_top a'
+KERNEL_THEOREM closLang.word_op_case_eq
+⊢ word_op_CASE x f f1 f2 v v1 f3 f4 f5 f6 f7 = v' ⇔
+  (∃w o'. x = WordOpw w o' ∧ f w o' = v') ∨
+  (∃w s n. x = WordShift w s n ∧ f1 w s n = v') ∨
+  (∃w t. x = WordTest w t ∧ f2 w t = v') ∨ x = WordFromInt ∧ v = v' ∨
+  x = WordToInt ∧ v1 = v' ∨ (∃b. x = WordFromWord b ∧ f3 b = v') ∨
+  (∃f'. x = FP_cmp f' ∧ f4 f' = v') ∨ (∃f'. x = FP_uop f' ∧ f5 f' = v') ∨
+  (∃f'. x = FP_bop f' ∧ f6 f' = v') ∨ ∃f'. x = FP_top f' ∧ f7 f' = v'
+KERNEL_THEOREM closLang.word_op_case_cong
+⊢ ∀M M' f f1 f2 v v1 f3 f4 f5 f6 f7.
+    M = M' ∧ (∀a0 a1. M' = WordOpw a0 a1 ⇒ f a0 a1 = f' a0 a1) ∧
+    (∀a0 a1 a2. M' = WordShift a0 a1 a2 ⇒ f1 a0 a1 a2 = f1' a0 a1 a2) ∧
+    (∀a0 a1. M' = WordTest a0 a1 ⇒ f2 a0 a1 = f2' a0 a1) ∧
+    (M' = WordFromInt ⇒ v = v') ∧ (M' = WordToInt ⇒ v1 = v1') ∧
+    (∀a. M' = WordFromWord a ⇒ f3 a = f3' a) ∧
+    (∀a. M' = FP_cmp a ⇒ f4 a = f4' a) ∧ (∀a. M' = FP_uop a ⇒ f5 a = f5' a) ∧
+    (∀a. M' = FP_bop a ⇒ f6 a = f6' a) ∧ (∀a. M' = FP_top a ⇒ f7 a = f7' a) ⇒
+    word_op_CASE M f f1 f2 v v1 f3 f4 f5 f6 f7 =
+    word_op_CASE M' f' f1' f2' v' v1' f3' f4' f5' f6' f7'
+KERNEL_THEOREM closLang.word_op_Axiom
+⊢ ∀f0 f1 f2 f3 f4 f5 f6 f7 f8 f9. ∃fn.
+    (∀a0 a1. fn (WordOpw a0 a1) = f0 a0 a1) ∧
+    (∀a0 a1 a2. fn (WordShift a0 a1 a2) = f1 a0 a1 a2) ∧
+    (∀a0 a1. fn (WordTest a0 a1) = f2 a0 a1) ∧ fn WordFromInt = f3 ∧
+    fn WordToInt = f4 ∧ (∀a. fn (WordFromWord a) = f5 a) ∧
+    (∀a. fn (FP_cmp a) = f6 a) ∧ (∀a. fn (FP_uop a) = f7 a) ∧
+    (∀a. fn (FP_bop a) = f8 a) ∧ ∀a. fn (FP_top a) = f9 a
+KERNEL_THEOREM closLang.word_op_11
+⊢ (∀a0 a1 a0' a1'. WordOpw a0 a1 = WordOpw a0' a1' ⇔ a0 = a0' ∧ a1 = a1') ∧
+  (∀a0 a1 a2 a0' a1' a2'.
+     WordShift a0 a1 a2 = WordShift a0' a1' a2' ⇔
+     a0 = a0' ∧ a1 = a1' ∧ a2 = a2') ∧
+  (∀a0 a1 a0' a1'. WordTest a0 a1 = WordTest a0' a1' ⇔ a0 = a0' ∧ a1 = a1') ∧
+  (∀a a'. WordFromWord a = WordFromWord a' ⇔ (a ⇔ a')) ∧
+  (∀a a'. FP_cmp a = FP_cmp a' ⇔ a = a') ∧
+  (∀a a'. FP_uop a = FP_uop a' ⇔ a = a') ∧
+  (∀a a'. FP_bop a = FP_bop a' ⇔ a = a') ∧
+  ∀a a'. FP_top a = FP_top a' ⇔ a = a'
+KERNEL_THEOREM closLang.pure_ind
+⊢ ∀P. (∀v0 v1. P (Var v0 v1)) ∧
+      (∀v2 e1 e2 e3. P e1 ∧ P e2 ∧ P e3 ⇒ P (If v2 e1 e2 e3)) ∧
+      (∀v3 es e2. (∀a. MEM a es ⇒ P a) ∧ P e2 ⇒ P (Let v3 es e2)) ∧
+      (∀v4 v5. P (Raise v4 v5)) ∧ (∀v6 e1 e2. P e1 ⇒ P (Handle v6 e1 e2)) ∧
+      (∀v7 v8. P (Tick v7 v8)) ∧ (∀v9 v10 v11 v12. P (Call v9 v10 v11 v12)) ∧
+      (∀v13 v14 v15 v16. P (App v13 v14 v15 v16)) ∧
+      (∀v17 v18 v19 v20 v21. P (Fn v17 v18 v19 v20 v21)) ∧
+      (∀v22 v23 v24 v25 x. P x ⇒ P (Letrec v22 v23 v24 v25 x)) ∧
+      (∀v26 opn es. (∀a. MEM a es ⇒ P a) ⇒ P (Op v26 opn es)) ⇒
+      ∀v. P v
+KERNEL_THEOREM closLang.pure_def
+⊢ (∀v1 v0. pure (Var v0 v1) ⇔ T) ∧
+  (∀v2 e3 e2 e1. pure (If v2 e1 e2 e3) ⇔ pure e1 ∧ pure e2 ∧ pure e3) ∧
+  (∀v3 es e2. pure (Let v3 es e2) ⇔ EVERY (λa. pure a) es ∧ pure e2) ∧
+  (∀v5 v4. pure (Raise v4 v5) ⇔ F) ∧
+  (∀v6 e2 e1. pure (Handle v6 e1 e2) ⇔ pure e1) ∧
+  (∀v8 v7. pure (Tick v7 v8) ⇔ F) ∧
+  (∀v9 v12 v11 v10. pure (Call v9 v10 v11 v12) ⇔ F) ∧
+  (∀v16 v15 v14 v13. pure (App v13 v14 v15 v16) ⇔ F) ∧
+  (∀v21 v20 v19 v18 v17. pure (Fn v17 v18 v19 v20 v21) ⇔ T) ∧
+  (∀x v25 v24 v23 v22. pure (Letrec v22 v23 v24 v25 x) ⇔ pure x) ∧
+  ∀v26 opn es. pure (Op v26 opn es) ⇔ EVERY (λa. pure a) es ∧ pure_op opn
+KERNEL_THEOREM closLang.op_nchotomy
+⊢ ∀oo.
+    (∃n. oo = Label n) ∨ (∃m. oo = FFI m) ∨ (∃i. oo = IntOp i) ∨
+    (∃w. oo = WordOp w) ∨ (∃b. oo = BlockOp b) ∨ (∃g. oo = GlobOp g) ∨
+    (∃m. oo = MemOp m) ∨ oo = Install ∨ ∃t. oo = ThunkOp t
+KERNEL_THEOREM closLang.op_induction
+⊢ ∀P. (∀n. P (Label n)) ∧ (∀m. P (FFI m)) ∧ (∀i. P (IntOp i)) ∧
+      (∀w. P (WordOp w)) ∧ (∀b. P (BlockOp b)) ∧ (∀g. P (GlobOp g)) ∧
+      (∀m. P (MemOp m)) ∧ P Install ∧ (∀t. P (ThunkOp t)) ⇒
+      ∀ $o. P $o
+KERNEL_THEOREM closLang.op_distinct
+⊢ (∀a' a. Label a ≠ FFI a') ∧ (∀a' a. Label a ≠ IntOp a') ∧
+  (∀a' a. Label a ≠ WordOp a') ∧ (∀a' a. Label a ≠ BlockOp a') ∧
+  (∀a' a. Label a ≠ GlobOp a') ∧ (∀a' a. Label a ≠ MemOp a') ∧
+  (∀a. Label a ≠ Install) ∧ (∀a' a. Label a ≠ ThunkOp a') ∧
+  (∀a' a. FFI a ≠ IntOp a') ∧ (∀a' a. FFI a ≠ WordOp a') ∧
+  (∀a' a. FFI a ≠ BlockOp a') ∧ (∀a' a. FFI a ≠ GlobOp a') ∧
+  (∀a' a. FFI a ≠ MemOp a') ∧ (∀a. FFI a ≠ Install) ∧
+  (∀a' a. FFI a ≠ ThunkOp a') ∧ (∀a' a. IntOp a ≠ WordOp a') ∧
+  (∀a' a. IntOp a ≠ BlockOp a') ∧ (∀a' a. IntOp a ≠ GlobOp a') ∧
+  (∀a' a. IntOp a ≠ MemOp a') ∧ (∀a. IntOp a ≠ Install) ∧
+  (∀a' a. IntOp a ≠ ThunkOp a') ∧ (∀a' a. WordOp a ≠ BlockOp a') ∧
+  (∀a' a. WordOp a ≠ GlobOp a') ∧ (∀a' a. WordOp a ≠ MemOp a') ∧
+  (∀a. WordOp a ≠ Install) ∧ (∀a' a. WordOp a ≠ ThunkOp a') ∧
+  (∀a' a. BlockOp a ≠ GlobOp a') ∧ (∀a' a. BlockOp a ≠ MemOp a') ∧
+  (∀a. BlockOp a ≠ Install) ∧ (∀a' a. BlockOp a ≠ ThunkOp a') ∧
+  (∀a' a. GlobOp a ≠ MemOp a') ∧ (∀a. GlobOp a ≠ Install) ∧
+  (∀a' a. GlobOp a ≠ ThunkOp a') ∧ (∀a. MemOp a ≠ Install) ∧
+  (∀a' a. MemOp a ≠ ThunkOp a') ∧ ∀a. Install ≠ ThunkOp a
+KERNEL_THEOREM closLang.op_case_eq
+⊢ op_CASE x f f1 f2 f3 f4 f5 f6 v f7 = v' ⇔
+  (∃n. x = Label n ∧ f n = v') ∨ (∃m. x = FFI m ∧ f1 m = v') ∨
+  (∃i. x = IntOp i ∧ f2 i = v') ∨ (∃w. x = WordOp w ∧ f3 w = v') ∨
+  (∃b. x = BlockOp b ∧ f4 b = v') ∨ (∃g. x = GlobOp g ∧ f5 g = v') ∨
+  (∃m. x = MemOp m ∧ f6 m = v') ∨ x = Install ∧ v = v' ∨
+  ∃t. x = ThunkOp t ∧ f7 t = v'
+KERNEL_THEOREM closLang.op_case_cong
+⊢ ∀M M' f f1 f2 f3 f4 f5 f6 v f7.
+    M = M' ∧ (∀a. M' = Label a ⇒ f a = f' a) ∧
+    (∀a. M' = FFI a ⇒ f1 a = f1' a) ∧ (∀a. M' = IntOp a ⇒ f2 a = f2' a) ∧
+    (∀a. M' = WordOp a ⇒ f3 a = f3' a) ∧
+    (∀a. M' = BlockOp a ⇒ f4 a = f4' a) ∧
+    (∀a. M' = GlobOp a ⇒ f5 a = f5' a) ∧ (∀a. M' = MemOp a ⇒ f6 a = f6' a) ∧
+    (M' = Install ⇒ v = v') ∧ (∀a. M' = ThunkOp a ⇒ f7 a = f7' a) ⇒
+    op_CASE M f f1 f2 f3 f4 f5 f6 v f7 =
+    op_CASE M' f' f1' f2' f3' f4' f5' f6' v' f7'
+KERNEL_THEOREM closLang.op_Axiom
+⊢ ∀f0 f1 f2 f3 f4 f5 f6 f7 f8. ∃fn.
+    (∀a. fn (Label a) = f0 a) ∧ (∀a. fn (FFI a) = f1 a) ∧
+    (∀a. fn (IntOp a) = f2 a) ∧ (∀a. fn (WordOp a) = f3 a) ∧
+    (∀a. fn (BlockOp a) = f4 a) ∧ (∀a. fn (GlobOp a) = f5 a) ∧
+    (∀a. fn (MemOp a) = f6 a) ∧ fn Install = f7 ∧ ∀a. fn (ThunkOp a) = f8 a
+KERNEL_THEOREM closLang.op_11
+⊢ (∀a a'. Label a = Label a' ⇔ a = a') ∧ (∀a a'. FFI a = FFI a' ⇔ a = a') ∧
+  (∀a a'. IntOp a = IntOp a' ⇔ a = a') ∧
+  (∀a a'. WordOp a = WordOp a' ⇔ a = a') ∧
+  (∀a a'. BlockOp a = BlockOp a' ⇔ a = a') ∧
+  (∀a a'. GlobOp a = GlobOp a' ⇔ a = a') ∧
+  (∀a a'. MemOp a = MemOp a' ⇔ a = a') ∧
+  ∀a a'. ThunkOp a = ThunkOp a' ⇔ a = a'
+KERNEL_THEOREM closLang.mem_op_nchotomy
+⊢ ∀mm.
+    mm = Ref ∨ mm = Update ∨ mm = El ∨ mm = Length ∨ mm = LengthByte ∨
+    (∃b. mm = RefByte b) ∨ mm = RefArray ∨ mm = DerefByte ∨ mm = UpdateByte ∨
+    mm = ConcatByteVec ∨ (∃b. mm = CopyByte b) ∨ mm = FromListByte ∨
+    mm = ToListByte ∨ mm = LengthByteVec ∨ mm = DerefByteVec ∨ mm = XorByte ∨
+    mm = BoundsCheckArray ∨ (∃b. mm = BoundsCheckByte b) ∨ mm = ConfigGC
+KERNEL_THEOREM closLang.mem_op_induction
+⊢ ∀P. P Ref ∧ P Update ∧ P El ∧ P Length ∧ P LengthByte ∧
+      (∀b. P (RefByte b)) ∧ P RefArray ∧ P DerefByte ∧ P UpdateByte ∧
+      P ConcatByteVec ∧ (∀b. P (CopyByte b)) ∧ P FromListByte ∧
+      P ToListByte ∧ P LengthByteVec ∧ P DerefByteVec ∧ P XorByte ∧
+      P BoundsCheckArray ∧ (∀b. P (BoundsCheckByte b)) ∧ P ConfigGC ⇒
+      ∀m. P m
+KERNEL_THEOREM closLang.mem_op_distinct
+⊢ Ref ≠ Update ∧ Ref ≠ El ∧ Ref ≠ Length ∧ Ref ≠ LengthByte ∧
+  (∀a. Ref ≠ RefByte a) ∧ Ref ≠ RefArray ∧ Ref ≠ DerefByte ∧
+  Ref ≠ UpdateByte ∧ Ref ≠ ConcatByteVec ∧ (∀a. Ref ≠ CopyByte a) ∧
+  Ref ≠ FromListByte ∧ Ref ≠ ToListByte ∧ Ref ≠ LengthByteVec ∧
+  Ref ≠ DerefByteVec ∧ Ref ≠ XorByte ∧ Ref ≠ BoundsCheckArray ∧
+  (∀a. Ref ≠ BoundsCheckByte a) ∧ Ref ≠ ConfigGC ∧ Update ≠ El ∧
+  Update ≠ Length ∧ Update ≠ LengthByte ∧ (∀a. Update ≠ RefByte a) ∧
+  Update ≠ RefArray ∧ Update ≠ DerefByte ∧ Update ≠ UpdateByte ∧
+  Update ≠ ConcatByteVec ∧ (∀a. Update ≠ CopyByte a) ∧
+  Update ≠ FromListByte ∧ Update ≠ ToListByte ∧ Update ≠ LengthByteVec ∧
+  Update ≠ DerefByteVec ∧ Update ≠ XorByte ∧ Update ≠ BoundsCheckArray ∧
+  (∀a. Update ≠ BoundsCheckByte a) ∧ Update ≠ ConfigGC ∧ El ≠ Length ∧
+  El ≠ LengthByte ∧ (∀a. El ≠ RefByte a) ∧ El ≠ RefArray ∧ El ≠ DerefByte ∧
+  El ≠ UpdateByte ∧ El ≠ ConcatByteVec ∧ (∀a. El ≠ CopyByte a) ∧
+  El ≠ FromListByte ∧ El ≠ ToListByte ∧ El ≠ LengthByteVec ∧
+  El ≠ DerefByteVec ∧ El ≠ XorByte ∧ El ≠ BoundsCheckArray ∧
+  (∀a. El ≠ BoundsCheckByte a) ∧ El ≠ ConfigGC ∧ Length ≠ LengthByte ∧
+  (∀a. Length ≠ RefByte a) ∧ Length ≠ RefArray ∧ Length ≠ DerefByte ∧
+  Length ≠ UpdateByte ∧ Length ≠ ConcatByteVec ∧ (∀a. Length ≠ CopyByte a) ∧
+  Length ≠ FromListByte ∧ Length ≠ ToListByte ∧ Length ≠ LengthByteVec ∧
+  Length ≠ DerefByteVec ∧ Length ≠ XorByte ∧ Length ≠ BoundsCheckArray ∧
+  (∀a. Length ≠ BoundsCheckByte a) ∧ Length ≠ ConfigGC ∧
+  (∀a. LengthByte ≠ RefByte a) ∧ LengthByte ≠ RefArray ∧
+  LengthByte ≠ DerefByte ∧ LengthByte ≠ UpdateByte ∧
+  LengthByte ≠ ConcatByteVec ∧ (∀a. LengthByte ≠ CopyByte a) ∧
+  LengthByte ≠ FromListByte ∧ LengthByte ≠ ToListByte ∧
+  LengthByte ≠ LengthByteVec ∧ LengthByte ≠ DerefByteVec ∧
+  LengthByte ≠ XorByte ∧ LengthByte ≠ BoundsCheckArray ∧
+  (∀a. LengthByte ≠ BoundsCheckByte a) ∧ LengthByte ≠ ConfigGC ∧
+  (∀a. RefByte a ≠ RefArray) ∧ (∀a. RefByte a ≠ DerefByte) ∧
+  (∀a. RefByte a ≠ UpdateByte) ∧ (∀a. RefByte a ≠ ConcatByteVec) ∧
+  (∀a' a. RefByte a ≠ CopyByte a') ∧ (∀a. RefByte a ≠ FromListByte) ∧
+  (∀a. RefByte a ≠ ToListByte) ∧ (∀a. RefByte a ≠ LengthByteVec) ∧
+  (∀a. RefByte a ≠ DerefByteVec) ∧ (∀a. RefByte a ≠ XorByte) ∧
+  (∀a. RefByte a ≠ BoundsCheckArray) ∧
+  (∀a' a. RefByte a ≠ BoundsCheckByte a') ∧ (∀a. RefByte a ≠ ConfigGC) ∧
+  RefArray ≠ DerefByte ∧ RefArray ≠ UpdateByte ∧ RefArray ≠ ConcatByteVec ∧
+  (∀a. RefArray ≠ CopyByte a) ∧ RefArray ≠ FromListByte ∧
+  RefArray ≠ ToListByte ∧ RefArray ≠ LengthByteVec ∧
+  RefArray ≠ DerefByteVec ∧ RefArray ≠ XorByte ∧
+  RefArray ≠ BoundsCheckArray ∧ (∀a. RefArray ≠ BoundsCheckByte a) ∧
+  RefArray ≠ ConfigGC ∧ DerefByte ≠ UpdateByte ∧ DerefByte ≠ ConcatByteVec ∧
+  (∀a. DerefByte ≠ CopyByte a) ∧ DerefByte ≠ FromListByte ∧
+  DerefByte ≠ ToListByte ∧ DerefByte ≠ LengthByteVec ∧
+  DerefByte ≠ DerefByteVec ∧ DerefByte ≠ XorByte ∧
+  DerefByte ≠ BoundsCheckArray ∧ (∀a. DerefByte ≠ BoundsCheckByte a) ∧
+  DerefByte ≠ ConfigGC ∧ UpdateByte ≠ ConcatByteVec ∧
+  (∀a. UpdateByte ≠ CopyByte a) ∧ UpdateByte ≠ FromListByte ∧
+  UpdateByte ≠ ToListByte ∧ UpdateByte ≠ LengthByteVec ∧
+  UpdateByte ≠ DerefByteVec ∧ UpdateByte ≠ XorByte ∧
+  UpdateByte ≠ BoundsCheckArray ∧ (∀a. UpdateByte ≠ BoundsCheckByte a) ∧
+  UpdateByte ≠ ConfigGC ∧ (∀a. ConcatByteVec ≠ CopyByte a) ∧
+  ConcatByteVec ≠ FromListByte ∧ ConcatByteVec ≠ ToListByte ∧
+  ConcatByteVec ≠ LengthByteVec ∧ ConcatByteVec ≠ DerefByteVec ∧
+  ConcatByteVec ≠ XorByte ∧ ConcatByteVec ≠ BoundsCheckArray ∧
+  (∀a. ConcatByteVec ≠ BoundsCheckByte a) ∧ ConcatByteVec ≠ ConfigGC ∧
+  (∀a. CopyByte a ≠ FromListByte) ∧ (∀a. CopyByte a ≠ ToListByte) ∧
+  (∀a. CopyByte a ≠ LengthByteVec) ∧ (∀a. CopyByte a ≠ DerefByteVec) ∧
+  (∀a. CopyByte a ≠ XorByte) ∧ (∀a. CopyByte a ≠ BoundsCheckArray) ∧
+  (∀a' a. CopyByte a ≠ BoundsCheckByte a') ∧ (∀a. CopyByte a ≠ ConfigGC) ∧
+  FromListByte ≠ ToListByte ∧ FromListByte ≠ LengthByteVec ∧
+  FromListByte ≠ DerefByteVec ∧ FromListByte ≠ XorByte ∧
+  FromListByte ≠ BoundsCheckArray ∧ (∀a. FromListByte ≠ BoundsCheckByte a) ∧
+  FromListByte ≠ ConfigGC ∧ ToListByte ≠ LengthByteVec ∧
+  ToListByte ≠ DerefByteVec ∧ ToListByte ≠ XorByte ∧
+  ToListByte ≠ BoundsCheckArray ∧ (∀a. ToListByte ≠ BoundsCheckByte a) ∧
+  ToListByte ≠ ConfigGC ∧ LengthByteVec ≠ DerefByteVec ∧
+  LengthByteVec ≠ XorByte ∧ LengthByteVec ≠ BoundsCheckArray ∧
+  (∀a. LengthByteVec ≠ BoundsCheckByte a) ∧ LengthByteVec ≠ ConfigGC ∧
+  DerefByteVec ≠ XorByte ∧ DerefByteVec ≠ BoundsCheckArray ∧
+  (∀a. DerefByteVec ≠ BoundsCheckByte a) ∧ DerefByteVec ≠ ConfigGC ∧
+  XorByte ≠ BoundsCheckArray ∧ (∀a. XorByte ≠ BoundsCheckByte a) ∧
+  XorByte ≠ ConfigGC ∧ (∀a. BoundsCheckArray ≠ BoundsCheckByte a) ∧
+  BoundsCheckArray ≠ ConfigGC ∧ ∀a. BoundsCheckByte a ≠ ConfigGC
+KERNEL_THEOREM closLang.mem_op_case_eq
+⊢ mem_op_CASE x v v1 v2 v3 v4 f v5 v6 v7 v8 f1 v9 v10 v11 v12 v13 v14 f2 v15 =
+  v' ⇔
+  x = Ref ∧ v = v' ∨ x = Update ∧ v1 = v' ∨ x = El ∧ v2 = v' ∨
+  x = Length ∧ v3 = v' ∨ x = LengthByte ∧ v4 = v' ∨
+  (∃b. x = RefByte b ∧ f b = v') ∨ x = RefArray ∧ v5 = v' ∨
+  x = DerefByte ∧ v6 = v' ∨ x = UpdateByte ∧ v7 = v' ∨
+  x = ConcatByteVec ∧ v8 = v' ∨ (∃b. x = CopyByte b ∧ f1 b = v') ∨
+  x = FromListByte ∧ v9 = v' ∨ x = ToListByte ∧ v10 = v' ∨
+  x = LengthByteVec ∧ v11 = v' ∨ x = DerefByteVec ∧ v12 = v' ∨
+  x = XorByte ∧ v13 = v' ∨ x = BoundsCheckArray ∧ v14 = v' ∨
+  (∃b. x = BoundsCheckByte b ∧ f2 b = v') ∨ x = ConfigGC ∧ v15 = v'
+KERNEL_THEOREM closLang.mem_op_case_cong
+⊢ ∀M M' v v1 v2 v3 v4 f v5 v6 v7 v8 f1 v9 v10 v11 v12 v13 v14 f2 v15.
+    M = M' ∧ (M' = Ref ⇒ v = v') ∧ (M' = Update ⇒ v1 = v1') ∧
+    (M' = El ⇒ v2 = v2') ∧ (M' = Length ⇒ v3 = v3') ∧
+    (M' = LengthByte ⇒ v4 = v4') ∧ (∀a. M' = RefByte a ⇒ f a = f' a) ∧
+    (M' = RefArray ⇒ v5 = v5') ∧ (M' = DerefByte ⇒ v6 = v6') ∧
+    (M' = UpdateByte ⇒ v7 = v7') ∧ (M' = ConcatByteVec ⇒ v8 = v8') ∧
+    (∀a. M' = CopyByte a ⇒ f1 a = f1' a) ∧ (M' = FromListByte ⇒ v9 = v9') ∧
+    (M' = ToListByte ⇒ v10 = v10') ∧ (M' = LengthByteVec ⇒ v11 = v11') ∧
+    (M' = DerefByteVec ⇒ v12 = v12') ∧ (M' = XorByte ⇒ v13 = v13') ∧
+    (M' = BoundsCheckArray ⇒ v14 = v14') ∧
+    (∀a. M' = BoundsCheckByte a ⇒ f2 a = f2' a) ∧
+    (M' = ConfigGC ⇒ v15 = v15') ⇒
+    mem_op_CASE M v v1 v2 v3 v4 f v5 v6 v7 v8 f1 v9 v10 v11 v12 v13 v14 f2
+      v15 =
+    mem_op_CASE M' v' v1' v2' v3' v4' f' v5' v6' v7' v8' f1' v9' v10' v11'
+      v12' v13' v14' f2' v15'
+KERNEL_THEOREM closLang.mem_op_Axiom
+⊢ ∀f0 f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12 f13 f14 f15 f16 f17 f18. ∃fn.
+    fn Ref = f0 ∧ fn Update = f1 ∧ fn El = f2 ∧ fn Length = f3 ∧
+    fn LengthByte = f4 ∧ (∀a. fn (RefByte a) = f5 a) ∧ fn RefArray = f6 ∧
+    fn DerefByte = f7 ∧ fn UpdateByte = f8 ∧ fn ConcatByteVec = f9 ∧
+    (∀a. fn (CopyByte a) = f10 a) ∧ fn FromListByte = f11 ∧
+    fn ToListByte = f12 ∧ fn LengthByteVec = f13 ∧ fn DerefByteVec = f14 ∧
+    fn XorByte = f15 ∧ fn BoundsCheckArray = f16 ∧
+    (∀a. fn (BoundsCheckByte a) = f17 a) ∧ fn ConfigGC = f18
+KERNEL_THEOREM closLang.mem_op_11
+⊢ (∀a a'. RefByte a = RefByte a' ⇔ (a ⇔ a')) ∧
+  (∀a a'. CopyByte a = CopyByte a' ⇔ (a ⇔ a')) ∧
+  ∀a a'. BoundsCheckByte a = BoundsCheckByte a' ⇔ (a ⇔ a')
+KERNEL_THEOREM closLang.int_op_nchotomy
+⊢ ∀ii.
+    (∃i. ii = Const i) ∨ ii = Add ∨ ii = Sub ∨ ii = Mult ∨ ii = Div ∨
+    ii = Mod ∨ ii = Less ∨ ii = LessEq ∨ ii = Greater ∨ ii = GreaterEq ∨
+    ∃n. ii = LessConstSmall n
+KERNEL_THEOREM closLang.int_op_induction
+⊢ ∀P. (∀i. P (Const i)) ∧ P Add ∧ P Sub ∧ P Mult ∧ P Div ∧ P Mod ∧ P Less ∧
+      P LessEq ∧ P Greater ∧ P GreaterEq ∧ (∀n. P (LessConstSmall n)) ⇒
+      ∀i. P i
+KERNEL_THEOREM closLang.int_op_distinct
+⊢ (∀a. Const a ≠ Add) ∧ (∀a. Const a ≠ Sub) ∧ (∀a. Const a ≠ Mult) ∧
+  (∀a. Const a ≠ Div) ∧ (∀a. Const a ≠ Mod) ∧ (∀a. Const a ≠ Less) ∧
+  (∀a. Const a ≠ LessEq) ∧ (∀a. Const a ≠ Greater) ∧
+  (∀a. Const a ≠ GreaterEq) ∧ (∀a' a. Const a ≠ LessConstSmall a') ∧
+  Add ≠ Sub ∧ Add ≠ Mult ∧ Add ≠ Div ∧ Add ≠ Mod ∧ Add ≠ Less ∧
+  Add ≠ LessEq ∧ Add ≠ Greater ∧ Add ≠ GreaterEq ∧
+  (∀a. Add ≠ LessConstSmall a) ∧ Sub ≠ Mult ∧ Sub ≠ Div ∧ Sub ≠ Mod ∧
+  Sub ≠ Less ∧ Sub ≠ LessEq ∧ Sub ≠ Greater ∧ Sub ≠ GreaterEq ∧
+  (∀a. Sub ≠ LessConstSmall a) ∧ Mult ≠ Div ∧ Mult ≠ Mod ∧ Mult ≠ Less ∧
+  Mult ≠ LessEq ∧ Mult ≠ Greater ∧ Mult ≠ GreaterEq ∧
+  (∀a. Mult ≠ LessConstSmall a) ∧ Div ≠ Mod ∧ Div ≠ Less ∧ Div ≠ LessEq ∧
+  Div ≠ Greater ∧ Div ≠ GreaterEq ∧ (∀a. Div ≠ LessConstSmall a) ∧
+  Mod ≠ Less ∧ Mod ≠ LessEq ∧ Mod ≠ Greater ∧ Mod ≠ GreaterEq ∧
+  (∀a. Mod ≠ LessConstSmall a) ∧ Less ≠ LessEq ∧ Less ≠ Greater ∧
+  Less ≠ GreaterEq ∧ (∀a. Less ≠ LessConstSmall a) ∧ LessEq ≠ Greater ∧
+  LessEq ≠ GreaterEq ∧ (∀a. LessEq ≠ LessConstSmall a) ∧
+  Greater ≠ GreaterEq ∧ (∀a. Greater ≠ LessConstSmall a) ∧
+  ∀a. GreaterEq ≠ LessConstSmall a
+KERNEL_THEOREM closLang.int_op_case_eq
+⊢ int_op_CASE x f v v1 v2 v3 v4 v5 v6 v7 v8 f1 = v' ⇔
+  (∃i. x = Const i ∧ f i = v') ∨ x = Add ∧ v = v' ∨ x = Sub ∧ v1 = v' ∨
+  x = Mult ∧ v2 = v' ∨ x = Div ∧ v3 = v' ∨ x = Mod ∧ v4 = v' ∨
+  x = Less ∧ v5 = v' ∨ x = LessEq ∧ v6 = v' ∨ x = Greater ∧ v7 = v' ∨
+  x = GreaterEq ∧ v8 = v' ∨ ∃n. x = LessConstSmall n ∧ f1 n = v'
+KERNEL_THEOREM closLang.int_op_case_cong
+⊢ ∀M M' f v v1 v2 v3 v4 v5 v6 v7 v8 f1.
+    M = M' ∧ (∀a. M' = Const a ⇒ f a = f' a) ∧ (M' = Add ⇒ v = v') ∧
+    (M' = Sub ⇒ v1 = v1') ∧ (M' = Mult ⇒ v2 = v2') ∧ (M' = Div ⇒ v3 = v3') ∧
+    (M' = Mod ⇒ v4 = v4') ∧ (M' = Less ⇒ v5 = v5') ∧
+    (M' = LessEq ⇒ v6 = v6') ∧ (M' = Greater ⇒ v7 = v7') ∧
+    (M' = GreaterEq ⇒ v8 = v8') ∧ (∀a. M' = LessConstSmall a ⇒ f1 a = f1' a) ⇒
+    int_op_CASE M f v v1 v2 v3 v4 v5 v6 v7 v8 f1 =
+    int_op_CASE M' f' v' v1' v2' v3' v4' v5' v6' v7' v8' f1'
+KERNEL_THEOREM closLang.int_op_Axiom
+⊢ ∀f0 f1 f2 f3 f4 f5 f6 f7 f8 f9 f10. ∃fn.
+    (∀a. fn (Const a) = f0 a) ∧ fn Add = f1 ∧ fn Sub = f2 ∧ fn Mult = f3 ∧
+    fn Div = f4 ∧ fn Mod = f5 ∧ fn Less = f6 ∧ fn LessEq = f7 ∧
+    fn Greater = f8 ∧ fn GreaterEq = f9 ∧ ∀a. fn (LessConstSmall a) = f10 a
+KERNEL_THEOREM closLang.int_op_11
+⊢ (∀a a'. Const a = Const a' ⇔ a = a') ∧
+  ∀a a'. LessConstSmall a = LessConstSmall a' ⇔ a = a'
+KERNEL_THEOREM closLang.has_install_ind
+⊢ ∀P0 P1.
+    (∀t n. P0 (Var t n)) ∧
+    (∀t e1 e2 e3. P0 e1 ∧ P0 e2 ∧ P0 e3 ⇒ P0 (If t e1 e2 e3)) ∧
+    (∀t es e. P0 e ∧ P1 es ⇒ P0 (Let t es e)) ∧
+    (∀t p es. P1 es ⇒ P0 (Op t p es)) ∧ (∀t e. P0 e ⇒ P0 (Raise t e)) ∧
+    (∀t e. P0 e ⇒ P0 (Tick t e)) ∧
+    (∀v0 v1 v2 v3 e. P0 e ⇒ P0 (Fn v0 v1 v2 v3 e)) ∧
+    (∀t e1 e2. P0 e1 ∧ P0 e2 ⇒ P0 (Handle t e1 e2)) ∧
+    (∀v4 v5 v6 es. P1 es ⇒ P0 (Call v4 v5 v6 es)) ∧
+    (∀v7 v8 e es. P0 e ∧ P1 es ⇒ P0 (App v7 v8 e es)) ∧
+    (∀v9 v10 v11 fns e.
+       P0 e ∧ P1 (MAP SND fns) ⇒ P0 (Letrec v9 v10 v11 fns e)) ∧ P1 [] ∧
+    (∀x xs. P0 x ∧ P1 xs ⇒ P1 (x::xs)) ⇒
+    (∀v0. P0 v0) ∧ ∀v0. P1 v0
+KERNEL_THEOREM closLang.has_install_def
+⊢ (∀t n. has_install (Var t n) ⇔ F) ∧
+  (∀t e3 e2 e1.
+     has_install (If t e1 e2 e3) ⇔
+     has_install e1 ∨ has_install e2 ∨ has_install e3) ∧
+  (∀t es e. has_install (Let t es e) ⇔ has_install e ∨ has_install_list es) ∧
+  (∀t p es. has_install (Op t p es) ⇔ p = Install ∨ has_install_list es) ∧
+  (∀t e. has_install (Raise t e) ⇔ has_install e) ∧
+  (∀t e. has_install (Tick t e) ⇔ has_install e) ∧
+  (∀v3 v2 v1 v0 e. has_install (Fn v0 v1 v2 v3 e) ⇔ has_install e) ∧
+  (∀t e2 e1. has_install (Handle t e1 e2) ⇔ has_install e1 ∨ has_install e2) ∧
+  (∀v6 v5 v4 es. has_install (Call v4 v5 v6 es) ⇔ has_install_list es) ∧
+  (∀v8 v7 es e.
+     has_install (App v7 v8 e es) ⇔ has_install e ∨ has_install_list es) ∧
+  (∀v9 v11 v10 fns e.
+     has_install (Letrec v9 v10 v11 fns e) ⇔
+     has_install_list (MAP SND fns) ∨ has_install e) ∧
+  (has_install_list [] ⇔ F) ∧
+  ∀xs x. has_install_list (x::xs) ⇔ has_install x ∨ has_install_list xs
+KERNEL_THEOREM closLang.glob_op_nchotomy
+⊢ ∀gg.
+    (∃n. gg = Global n) ∨ (∃n. gg = SetGlobal n) ∨ gg = AllocGlobal ∨
+    gg = GlobalsPtr ∨ gg = SetGlobalsPtr
+KERNEL_THEOREM closLang.glob_op_induction
+⊢ ∀P. (∀n. P (Global n)) ∧ (∀n. P (SetGlobal n)) ∧ P AllocGlobal ∧
+      P GlobalsPtr ∧ P SetGlobalsPtr ⇒
+      ∀g. P g
+KERNEL_THEOREM closLang.glob_op_distinct
+⊢ (∀a' a. Global a ≠ SetGlobal a') ∧ (∀a. Global a ≠ AllocGlobal) ∧
+  (∀a. Global a ≠ GlobalsPtr) ∧ (∀a. Global a ≠ SetGlobalsPtr) ∧
+  (∀a. SetGlobal a ≠ AllocGlobal) ∧ (∀a. SetGlobal a ≠ GlobalsPtr) ∧
+  (∀a. SetGlobal a ≠ SetGlobalsPtr) ∧ AllocGlobal ≠ GlobalsPtr ∧
+  AllocGlobal ≠ SetGlobalsPtr ∧ GlobalsPtr ≠ SetGlobalsPtr
+KERNEL_THEOREM closLang.glob_op_case_eq
+⊢ glob_op_CASE x f f1 v v1 v2 = v' ⇔
+  (∃n. x = Global n ∧ f n = v') ∨ (∃n. x = SetGlobal n ∧ f1 n = v') ∨
+  x = AllocGlobal ∧ v = v' ∨ x = GlobalsPtr ∧ v1 = v' ∨
+  x = SetGlobalsPtr ∧ v2 = v'
+KERNEL_THEOREM closLang.glob_op_case_cong
+⊢ ∀M M' f f1 v v1 v2.
+    M = M' ∧ (∀a. M' = Global a ⇒ f a = f' a) ∧
+    (∀a. M' = SetGlobal a ⇒ f1 a = f1' a) ∧ (M' = AllocGlobal ⇒ v = v') ∧
+    (M' = GlobalsPtr ⇒ v1 = v1') ∧ (M' = SetGlobalsPtr ⇒ v2 = v2') ⇒
+    glob_op_CASE M f f1 v v1 v2 = glob_op_CASE M' f' f1' v' v1' v2'
+KERNEL_THEOREM closLang.glob_op_Axiom
+⊢ ∀f0 f1 f2 f3 f4. ∃fn.
+    (∀a. fn (Global a) = f0 a) ∧ (∀a. fn (SetGlobal a) = f1 a) ∧
+    fn AllocGlobal = f2 ∧ fn GlobalsPtr = f3 ∧ fn SetGlobalsPtr = f4
+KERNEL_THEOREM closLang.glob_op_11
+⊢ (∀a a'. Global a = Global a' ⇔ a = a') ∧
+  ∀a a'. SetGlobal a = SetGlobal a' ⇔ a = a'
+KERNEL_THEOREM closLang.exp_nchotomy
+⊢ ∀ee.
+    (∃t n. ee = Var t n) ∨ (∃t e e0 e1. ee = If t e e0 e1) ∨
+    (∃t l e. ee = Let t l e) ∨ (∃t e. ee = Raise t e) ∨
+    (∃t e e0. ee = Handle t e e0) ∨ (∃t e. ee = Tick t e) ∨
+    (∃t n0 n l. ee = Call t n0 n l) ∨ (∃t o' e l. ee = App t o' e l) ∨
+    (∃m o0 o' n e. ee = Fn m o0 o' n e) ∨
+    (∃l0 o0 o' l e. ee = Letrec l0 o0 o' l e) ∨ ∃t o' l. ee = Op t o' l
+KERNEL_THEOREM closLang.exp_induction
+⊢ ∀P0 P1 P2 P3.
+    (∀t n. P0 (Var t n)) ∧
+    (∀e e0 e1. P0 e ∧ P0 e0 ∧ P0 e1 ⇒ ∀t. P0 (If t e e0 e1)) ∧
+    (∀l e. P3 l ∧ P0 e ⇒ ∀t. P0 (Let t l e)) ∧
+    (∀e. P0 e ⇒ ∀t. P0 (Raise t e)) ∧
+    (∀e e0. P0 e ∧ P0 e0 ⇒ ∀t. P0 (Handle t e e0)) ∧
+    (∀e. P0 e ⇒ ∀t. P0 (Tick t e)) ∧
+    (∀l. P3 l ⇒ ∀n n0 t. P0 (Call t n0 n l)) ∧
+    (∀e l. P0 e ∧ P3 l ⇒ ∀ $o t. P0 (App t $o e l)) ∧
+    (∀e. P0 e ⇒ ∀n $o o0 m. P0 (Fn m o0 $o n e)) ∧
+    (∀l e. P1 l ∧ P0 e ⇒ ∀ $o o0 l0. P0 (Letrec l0 o0 $o l e)) ∧
+    (∀l. P3 l ⇒ ∀ $o t. P0 (Op t $o l)) ∧ P1 [] ∧
+    (∀p l. P2 p ∧ P1 l ⇒ P1 (p::l)) ∧ (∀e. P0 e ⇒ ∀n. P2 (n,e)) ∧ P3 [] ∧
+    (∀e l. P0 e ∧ P3 l ⇒ P3 (e::l)) ⇒
+    (∀e. P0 e) ∧ (∀l. P1 l) ∧ (∀p. P2 p) ∧ ∀l. P3 l
+KERNEL_THEOREM closLang.exp_distinct
+⊢ (∀a3 a2 a1' a1 a0' a0. Var a0 a1 ≠ If a0' a1' a2 a3) ∧
+  (∀a2 a1' a1 a0' a0. Var a0 a1 ≠ Let a0' a1' a2) ∧
+  (∀a1' a1 a0' a0. Var a0 a1 ≠ Raise a0' a1') ∧
+  (∀a2 a1' a1 a0' a0. Var a0 a1 ≠ Handle a0' a1' a2) ∧
+  (∀a1' a1 a0' a0. Var a0 a1 ≠ Tick a0' a1') ∧
+  (∀a3 a2 a1' a1 a0' a0. Var a0 a1 ≠ Call a0' a1' a2 a3) ∧
+  (∀a3 a2 a1' a1 a0' a0. Var a0 a1 ≠ App a0' a1' a2 a3) ∧
+  (∀a4 a3 a2 a1' a1 a0' a0. Var a0 a1 ≠ Fn a0' a1' a2 a3 a4) ∧
+  (∀a4 a3 a2 a1' a1 a0' a0. Var a0 a1 ≠ Letrec a0' a1' a2 a3 a4) ∧
+  (∀a2 a1' a1 a0' a0. Var a0 a1 ≠ Op a0' a1' a2) ∧
+  (∀a3 a2' a2 a1' a1 a0' a0. If a0 a1 a2 a3 ≠ Let a0' a1' a2') ∧
+  (∀a3 a2 a1' a1 a0' a0. If a0 a1 a2 a3 ≠ Raise a0' a1') ∧
+  (∀a3 a2' a2 a1' a1 a0' a0. If a0 a1 a2 a3 ≠ Handle a0' a1' a2') ∧
+  (∀a3 a2 a1' a1 a0' a0. If a0 a1 a2 a3 ≠ Tick a0' a1') ∧
+  (∀a3' a3 a2' a2 a1' a1 a0' a0. If a0 a1 a2 a3 ≠ Call a0' a1' a2' a3') ∧
+  (∀a3' a3 a2' a2 a1' a1 a0' a0. If a0 a1 a2 a3 ≠ App a0' a1' a2' a3') ∧
+  (∀a4 a3' a3 a2' a2 a1' a1 a0' a0. If a0 a1 a2 a3 ≠ Fn a0' a1' a2' a3' a4) ∧
+  (∀a4 a3' a3 a2' a2 a1' a1 a0' a0.
+     If a0 a1 a2 a3 ≠ Letrec a0' a1' a2' a3' a4) ∧
+  (∀a3 a2' a2 a1' a1 a0' a0. If a0 a1 a2 a3 ≠ Op a0' a1' a2') ∧
+  (∀a2 a1' a1 a0' a0. Let a0 a1 a2 ≠ Raise a0' a1') ∧
+  (∀a2' a2 a1' a1 a0' a0. Let a0 a1 a2 ≠ Handle a0' a1' a2') ∧
+  (∀a2 a1' a1 a0' a0. Let a0 a1 a2 ≠ Tick a0' a1') ∧
+  (∀a3 a2' a2 a1' a1 a0' a0. Let a0 a1 a2 ≠ Call a0' a1' a2' a3) ∧
+  (∀a3 a2' a2 a1' a1 a0' a0. Let a0 a1 a2 ≠ App a0' a1' a2' a3) ∧
+  (∀a4 a3 a2' a2 a1' a1 a0' a0. Let a0 a1 a2 ≠ Fn a0' a1' a2' a3 a4) ∧
+  (∀a4 a3 a2' a2 a1' a1 a0' a0. Let a0 a1 a2 ≠ Letrec a0' a1' a2' a3 a4) ∧
+  (∀a2' a2 a1' a1 a0' a0. Let a0 a1 a2 ≠ Op a0' a1' a2') ∧
+  (∀a2 a1' a1 a0' a0. Raise a0 a1 ≠ Handle a0' a1' a2) ∧
+  (∀a1' a1 a0' a0. Raise a0 a1 ≠ Tick a0' a1') ∧
+  (∀a3 a2 a1' a1 a0' a0. Raise a0 a1 ≠ Call a0' a1' a2 a3) ∧
+  (∀a3 a2 a1' a1 a0' a0. Raise a0 a1 ≠ App a0' a1' a2 a3) ∧
+  (∀a4 a3 a2 a1' a1 a0' a0. Raise a0 a1 ≠ Fn a0' a1' a2 a3 a4) ∧
+  (∀a4 a3 a2 a1' a1 a0' a0. Raise a0 a1 ≠ Letrec a0' a1' a2 a3 a4) ∧
+  (∀a2 a1' a1 a0' a0. Raise a0 a1 ≠ Op a0' a1' a2) ∧
+  (∀a2 a1' a1 a0' a0. Handle a0 a1 a2 ≠ Tick a0' a1') ∧
+  (∀a3 a2' a2 a1' a1 a0' a0. Handle a0 a1 a2 ≠ Call a0' a1' a2' a3) ∧
+  (∀a3 a2' a2 a1' a1 a0' a0. Handle a0 a1 a2 ≠ App a0' a1' a2' a3) ∧
+  (∀a4 a3 a2' a2 a1' a1 a0' a0. Handle a0 a1 a2 ≠ Fn a0' a1' a2' a3 a4) ∧
+  (∀a4 a3 a2' a2 a1' a1 a0' a0. Handle a0 a1 a2 ≠ Letrec a0' a1' a2' a3 a4) ∧
+  (∀a2' a2 a1' a1 a0' a0. Handle a0 a1 a2 ≠ Op a0' a1' a2') ∧
+  (∀a3 a2 a1' a1 a0' a0. Tick a0 a1 ≠ Call a0' a1' a2 a3) ∧
+  (∀a3 a2 a1' a1 a0' a0. Tick a0 a1 ≠ App a0' a1' a2 a3) ∧
+  (∀a4 a3 a2 a1' a1 a0' a0. Tick a0 a1 ≠ Fn a0' a1' a2 a3 a4) ∧
+  (∀a4 a3 a2 a1' a1 a0' a0. Tick a0 a1 ≠ Letrec a0' a1' a2 a3 a4) ∧
+  (∀a2 a1' a1 a0' a0. Tick a0 a1 ≠ Op a0' a1' a2) ∧
+  (∀a3' a3 a2' a2 a1' a1 a0' a0. Call a0 a1 a2 a3 ≠ App a0' a1' a2' a3') ∧
+  (∀a4 a3' a3 a2' a2 a1' a1 a0' a0. Call a0 a1 a2 a3 ≠ Fn a0' a1' a2' a3' a4) ∧
+  (∀a4 a3' a3 a2' a2 a1' a1 a0' a0.
+     Call a0 a1 a2 a3 ≠ Letrec a0' a1' a2' a3' a4) ∧
+  (∀a3 a2' a2 a1' a1 a0' a0. Call a0 a1 a2 a3 ≠ Op a0' a1' a2') ∧
+  (∀a4 a3' a3 a2' a2 a1' a1 a0' a0. App a0 a1 a2 a3 ≠ Fn a0' a1' a2' a3' a4) ∧
+  (∀a4 a3' a3 a2' a2 a1' a1 a0' a0.
+     App a0 a1 a2 a3 ≠ Letrec a0' a1' a2' a3' a4) ∧
+  (∀a3 a2' a2 a1' a1 a0' a0. App a0 a1 a2 a3 ≠ Op a0' a1' a2') ∧
+  (∀a4' a4 a3' a3 a2' a2 a1' a1 a0' a0.
+     Fn a0 a1 a2 a3 a4 ≠ Letrec a0' a1' a2' a3' a4') ∧
+  (∀a4 a3 a2' a2 a1' a1 a0' a0. Fn a0 a1 a2 a3 a4 ≠ Op a0' a1' a2') ∧
+  ∀a4 a3 a2' a2 a1' a1 a0' a0. Letrec a0 a1 a2 a3 a4 ≠ Op a0' a1' a2'
+KERNEL_THEOREM closLang.exp_case_eq
+⊢ exp_CASE x f f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 = v ⇔
+  (∃t n. x = Var t n ∧ f t n = v) ∨
+  (∃t e e0 e1. x = If t e e0 e1 ∧ f1 t e e0 e1 = v) ∨
+  (∃t l e. x = Let t l e ∧ f2 t l e = v) ∨
+  (∃t e. x = Raise t e ∧ f3 t e = v) ∨
+  (∃t e e0. x = Handle t e e0 ∧ f4 t e e0 = v) ∨
+  (∃t e. x = Tick t e ∧ f5 t e = v) ∨
+  (∃t n0 n l. x = Call t n0 n l ∧ f6 t n0 n l = v) ∨
+  (∃t o' e l. x = App t o' e l ∧ f7 t o' e l = v) ∨
+  (∃m o0 o' n e. x = Fn m o0 o' n e ∧ f8 m o0 o' n e = v) ∨
+  (∃l0 o0 o' l e. x = Letrec l0 o0 o' l e ∧ f9 l0 o0 o' l e = v) ∨
+  ∃t o' l. x = Op t o' l ∧ f10 t o' l = v
+KERNEL_THEOREM closLang.exp_case_cong
+⊢ ∀M M' f f1 f2 f3 f4 f5 f6 f7 f8 f9 f10.
+    M = M' ∧ (∀a0 a1. M' = Var a0 a1 ⇒ f a0 a1 = f' a0 a1) ∧
+    (∀a0 a1 a2 a3. M' = If a0 a1 a2 a3 ⇒ f1 a0 a1 a2 a3 = f1' a0 a1 a2 a3) ∧
+    (∀a0 a1 a2. M' = Let a0 a1 a2 ⇒ f2 a0 a1 a2 = f2' a0 a1 a2) ∧
+    (∀a0 a1. M' = Raise a0 a1 ⇒ f3 a0 a1 = f3' a0 a1) ∧
+    (∀a0 a1 a2. M' = Handle a0 a1 a2 ⇒ f4 a0 a1 a2 = f4' a0 a1 a2) ∧
+    (∀a0 a1. M' = Tick a0 a1 ⇒ f5 a0 a1 = f5' a0 a1) ∧
+    (∀a0 a1 a2 a3. M' = Call a0 a1 a2 a3 ⇒ f6 a0 a1 a2 a3 = f6' a0 a1 a2 a3) ∧
+    (∀a0 a1 a2 a3. M' = App a0 a1 a2 a3 ⇒ f7 a0 a1 a2 a3 = f7' a0 a1 a2 a3) ∧
+    (∀a0 a1 a2 a3 a4.
+       M' = Fn a0 a1 a2 a3 a4 ⇒ f8 a0 a1 a2 a3 a4 = f8' a0 a1 a2 a3 a4) ∧
+    (∀a0 a1 a2 a3 a4.
+       M' = Letrec a0 a1 a2 a3 a4 ⇒ f9 a0 a1 a2 a3 a4 = f9' a0 a1 a2 a3 a4) ∧
+    (∀a0 a1 a2. M' = Op a0 a1 a2 ⇒ f10 a0 a1 a2 = f10' a0 a1 a2) ⇒
+    exp_CASE M f f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 =
+    exp_CASE M' f' f1' f2' f3' f4' f5' f6' f7' f8' f9' f10'
+KERNEL_THEOREM closLang.exp_Axiom
+⊢ ∀f0 f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12 f13 f14 f15. ∃fn0 fn1 fn2 fn3.
+    (∀a0 a1. fn0 (Var a0 a1) = f0 a0 a1) ∧
+    (∀a0 a1 a2 a3.
+       fn0 (If a0 a1 a2 a3) = f1 a0 a1 a2 a3 (fn0 a1) (fn0 a2) (fn0 a3)) ∧
+    (∀a0 a1 a2. fn0 (Let a0 a1 a2) = f2 a0 a1 a2 (fn3 a1) (fn0 a2)) ∧
+    (∀a0 a1. fn0 (Raise a0 a1) = f3 a0 a1 (fn0 a1)) ∧
+    (∀a0 a1 a2. fn0 (Handle a0 a1 a2) = f4 a0 a1 a2 (fn0 a1) (fn0 a2)) ∧
+    (∀a0 a1. fn0 (Tick a0 a1) = f5 a0 a1 (fn0 a1)) ∧
+    (∀a0 a1 a2 a3. fn0 (Call a0 a1 a2 a3) = f6 a0 a1 a2 a3 (fn3 a3)) ∧
+    (∀a0 a1 a2 a3. fn0 (App a0 a1 a2 a3) = f7 a0 a1 a2 a3 (fn0 a2) (fn3 a3)) ∧
+    (∀a0 a1 a2 a3 a4. fn0 (Fn a0 a1 a2 a3 a4) = f8 a0 a1 a2 a3 a4 (fn0 a4)) ∧
+    (∀a0 a1 a2 a3 a4.
+       fn0 (Letrec a0 a1 a2 a3 a4) = f9 a0 a1 a2 a3 a4 (fn1 a3) (fn0 a4)) ∧
+    (∀a0 a1 a2. fn0 (Op a0 a1 a2) = f10 a0 a1 a2 (fn3 a2)) ∧ fn1 [] = f11 ∧
+    (∀a0 a1. fn1 (a0::a1) = f12 a0 a1 (fn2 a0) (fn1 a1)) ∧
+    (∀a0 a1. fn2 (a0,a1) = f13 a0 a1 (fn0 a1)) ∧ fn3 [] = f14 ∧
+    ∀a0 a1. fn3 (a0::a1) = f15 a0 a1 (fn0 a0) (fn3 a1)
+KERNEL_THEOREM closLang.exp_11
+⊢ (∀a0 a1 a0' a1'. Var a0 a1 = Var a0' a1' ⇔ a0 = a0' ∧ a1 = a1') ∧
+  (∀a0 a1 a2 a3 a0' a1' a2' a3'.
+     If a0 a1 a2 a3 = If a0' a1' a2' a3' ⇔
+     a0 = a0' ∧ a1 = a1' ∧ a2 = a2' ∧ a3 = a3') ∧
+  (∀a0 a1 a2 a0' a1' a2'.
+     Let a0 a1 a2 = Let a0' a1' a2' ⇔ a0 = a0' ∧ a1 = a1' ∧ a2 = a2') ∧
+  (∀a0 a1 a0' a1'. Raise a0 a1 = Raise a0' a1' ⇔ a0 = a0' ∧ a1 = a1') ∧
+  (∀a0 a1 a2 a0' a1' a2'.
+     Handle a0 a1 a2 = Handle a0' a1' a2' ⇔ a0 = a0' ∧ a1 = a1' ∧ a2 = a2') ∧
+  (∀a0 a1 a0' a1'. Tick a0 a1 = Tick a0' a1' ⇔ a0 = a0' ∧ a1 = a1') ∧
+  (∀a0 a1 a2 a3 a0' a1' a2' a3'.
+     Call a0 a1 a2 a3 = Call a0' a1' a2' a3' ⇔
+     a0 = a0' ∧ a1 = a1' ∧ a2 = a2' ∧ a3 = a3') ∧
+  (∀a0 a1 a2 a3 a0' a1' a2' a3'.
+     App a0 a1 a2 a3 = App a0' a1' a2' a3' ⇔
+     a0 = a0' ∧ a1 = a1' ∧ a2 = a2' ∧ a3 = a3') ∧
+  (∀a0 a1 a2 a3 a4 a0' a1' a2' a3' a4'.
+     Fn a0 a1 a2 a3 a4 = Fn a0' a1' a2' a3' a4' ⇔
+     a0 = a0' ∧ a1 = a1' ∧ a2 = a2' ∧ a3 = a3' ∧ a4 = a4') ∧
+  (∀a0 a1 a2 a3 a4 a0' a1' a2' a3' a4'.
+     Letrec a0 a1 a2 a3 a4 = Letrec a0' a1' a2' a3' a4' ⇔
+     a0 = a0' ∧ a1 = a1' ∧ a2 = a2' ∧ a3 = a3' ∧ a4 = a4') ∧
+  ∀a0 a1 a2 a0' a1' a2'.
+    Op a0 a1 a2 = Op a0' a1' a2' ⇔ a0 = a0' ∧ a1 = a1' ∧ a2 = a2'
+KERNEL_THEOREM closLang.exp1_size_lemma
+⊢ ∀fns n x. MEM (n,x) fns ⇒ exp_size x < exp1_size fns
+KERNEL_THEOREM closLang.datatype_word_op
+⊢ DATATYPE
+    (word_op WordOpw WordShift WordTest WordFromInt WordToInt WordFromWord
+       FP_cmp FP_uop FP_bop FP_top)
+KERNEL_THEOREM closLang.datatype_op
+⊢ DATATYPE (op Label FFI IntOp WordOp BlockOp GlobOp MemOp Install ThunkOp)
+KERNEL_THEOREM closLang.datatype_mem_op
+⊢ DATATYPE
+    (mem_op Ref Update El Length LengthByte RefByte RefArray DerefByte
+       UpdateByte ConcatByteVec CopyByte FromListByte ToListByte
+       LengthByteVec DerefByteVec XorByte BoundsCheckArray BoundsCheckByte
+       ConfigGC)
+KERNEL_THEOREM closLang.datatype_int_op
+⊢ DATATYPE
+    (int_op Const Add Sub Mult Div Mod Less LessEq Greater GreaterEq
+       LessConstSmall)
+KERNEL_THEOREM closLang.datatype_glob_op
+⊢ DATATYPE (glob_op Global SetGlobal AllocGlobal GlobalsPtr SetGlobalsPtr)
+KERNEL_THEOREM closLang.datatype_exp
+⊢ DATATYPE (exp Var If Let Raise Handle Tick Call App Fn Letrec Op)
+KERNEL_THEOREM closLang.datatype_const_part
+⊢ DATATYPE (const_part Con Int Str W64)
+KERNEL_THEOREM closLang.datatype_const
+⊢ DATATYPE (const ConstCons ConstInt ConstStr ConstWord64)
+KERNEL_THEOREM closLang.datatype_block_op
+⊢ DATATYPE
+    (block_op Cons ElemAt TagLenEq LenEq TagEq LengthBlock BoolTest BoolNot
+       BoundsCheckBlock ConsExtend FromList ListAppend Constant Equal
+       EqualConst Build)
+KERNEL_THEOREM closLang.const_part_nchotomy
+⊢ ∀cc.
+    (∃n l. cc = Con n l) ∨ (∃i. cc = Int i) ∨ (∃m. cc = Str m) ∨
+    ∃c. cc = W64 c
+KERNEL_THEOREM closLang.const_part_induction
+⊢ ∀P. (∀n l. P (Con n l)) ∧ (∀i. P (Int i)) ∧ (∀m. P (Str m)) ∧
+      (∀c. P (W64 c)) ⇒
+      ∀c. P c
+KERNEL_THEOREM closLang.const_part_distinct
+⊢ (∀a1 a0 a. Con a0 a1 ≠ Int a) ∧ (∀a1 a0 a. Con a0 a1 ≠ Str a) ∧
+  (∀a1 a0 a. Con a0 a1 ≠ W64 a) ∧ (∀a' a. Int a ≠ Str a') ∧
+  (∀a' a. Int a ≠ W64 a') ∧ ∀a' a. Str a ≠ W64 a'
+KERNEL_THEOREM closLang.const_part_case_eq
+⊢ const_part_CASE x f f1 f2 f3 = v ⇔
+  (∃n l. x = Con n l ∧ f n l = v) ∨ (∃i. x = Int i ∧ f1 i = v) ∨
+  (∃m. x = Str m ∧ f2 m = v) ∨ ∃c. x = W64 c ∧ f3 c = v
+KERNEL_THEOREM closLang.const_part_case_cong
+⊢ ∀M M' f f1 f2 f3.
+    M = M' ∧ (∀a0 a1. M' = Con a0 a1 ⇒ f a0 a1 = f' a0 a1) ∧
+    (∀a. M' = Int a ⇒ f1 a = f1' a) ∧ (∀a. M' = Str a ⇒ f2 a = f2' a) ∧
+    (∀a. M' = W64 a ⇒ f3 a = f3' a) ⇒
+    const_part_CASE M f f1 f2 f3 = const_part_CASE M' f' f1' f2' f3'
+KERNEL_THEOREM closLang.const_part_Axiom
+⊢ ∀f0 f1 f2 f3. ∃fn.
+    (∀a0 a1. fn (Con a0 a1) = f0 a0 a1) ∧ (∀a. fn (Int a) = f1 a) ∧
+    (∀a. fn (Str a) = f2 a) ∧ ∀a. fn (W64 a) = f3 a
+KERNEL_THEOREM closLang.const_part_11
+⊢ (∀a0 a1 a0' a1'. Con a0 a1 = Con a0' a1' ⇔ a0 = a0' ∧ a1 = a1') ∧
+  (∀a a'. Int a = Int a' ⇔ a = a') ∧ (∀a a'. Str a = Str a' ⇔ a = a') ∧
+  ∀a a'. W64 a = W64 a' ⇔ a = a'
+KERNEL_THEOREM closLang.const_nchotomy
+⊢ ∀cc.
+    (∃n l. cc = ConstCons n l) ∨ (∃i. cc = ConstInt i) ∨
+    (∃m. cc = ConstStr m) ∨ ∃c. cc = ConstWord64 c
+KERNEL_THEOREM closLang.const_induction
+⊢ ∀P0 P1.
+    (∀l. P1 l ⇒ ∀n. P0 (ConstCons n l)) ∧ (∀i. P0 (ConstInt i)) ∧
+    (∀m. P0 (ConstStr m)) ∧ (∀c. P0 (ConstWord64 c)) ∧ P1 [] ∧
+    (∀c l. P0 c ∧ P1 l ⇒ P1 (c::l)) ⇒
+    (∀c. P0 c) ∧ ∀l. P1 l
+KERNEL_THEOREM closLang.const_distinct
+⊢ (∀a1 a0 a. ConstCons a0 a1 ≠ ConstInt a) ∧
+  (∀a1 a0 a. ConstCons a0 a1 ≠ ConstStr a) ∧
+  (∀a1 a0 a. ConstCons a0 a1 ≠ ConstWord64 a) ∧
+  (∀a' a. ConstInt a ≠ ConstStr a') ∧ (∀a' a. ConstInt a ≠ ConstWord64 a') ∧
+  ∀a' a. ConstStr a ≠ ConstWord64 a'
+KERNEL_THEOREM closLang.const_case_eq
+⊢ const_CASE x f f1 f2 f3 = v ⇔
+  (∃n l. x = ConstCons n l ∧ f n l = v) ∨ (∃i. x = ConstInt i ∧ f1 i = v) ∨
+  (∃m. x = ConstStr m ∧ f2 m = v) ∨ ∃c. x = ConstWord64 c ∧ f3 c = v
+KERNEL_THEOREM closLang.const_case_cong
+⊢ ∀M M' f f1 f2 f3.
+    M = M' ∧ (∀a0 a1. M' = ConstCons a0 a1 ⇒ f a0 a1 = f' a0 a1) ∧
+    (∀a. M' = ConstInt a ⇒ f1 a = f1' a) ∧
+    (∀a. M' = ConstStr a ⇒ f2 a = f2' a) ∧
+    (∀a. M' = ConstWord64 a ⇒ f3 a = f3' a) ⇒
+    const_CASE M f f1 f2 f3 = const_CASE M' f' f1' f2' f3'
+KERNEL_THEOREM closLang.const_Axiom
+⊢ ∀f0 f1 f2 f3 f4 f5. ∃fn0 fn1.
+    (∀a0 a1. fn0 (ConstCons a0 a1) = f0 a0 a1 (fn1 a1)) ∧
+    (∀a. fn0 (ConstInt a) = f1 a) ∧ (∀a. fn0 (ConstStr a) = f2 a) ∧
+    (∀a. fn0 (ConstWord64 a) = f3 a) ∧ fn1 [] = f4 ∧
+    ∀a0 a1. fn1 (a0::a1) = f5 a0 a1 (fn0 a0) (fn1 a1)
+KERNEL_THEOREM closLang.const_11
+⊢ (∀a0 a1 a0' a1'. ConstCons a0 a1 = ConstCons a0' a1' ⇔ a0 = a0' ∧ a1 = a1') ∧
+  (∀a a'. ConstInt a = ConstInt a' ⇔ a = a') ∧
+  (∀a a'. ConstStr a = ConstStr a' ⇔ a = a') ∧
+  ∀a a'. ConstWord64 a = ConstWord64 a' ⇔ a = a'
+KERNEL_THEOREM closLang.block_op_nchotomy
+⊢ ∀bb.
+    (∃n. bb = Cons n) ∨ (∃n. bb = ElemAt n) ∨ (∃n n0. bb = TagLenEq n n0) ∨
+    (∃n. bb = LenEq n) ∨ (∃n. bb = TagEq n) ∨ bb = LengthBlock ∨
+    (∃t. bb = BoolTest t) ∨ bb = BoolNot ∨ bb = BoundsCheckBlock ∨
+    (∃n. bb = ConsExtend n) ∨ (∃n. bb = FromList n) ∨ bb = ListAppend ∨
+    (∃c. bb = Constant c) ∨ bb = Equal ∨ (∃c. bb = EqualConst c) ∨
+    ∃l. bb = Build l
+KERNEL_THEOREM closLang.block_op_induction
+⊢ ∀P. (∀n. P (Cons n)) ∧ (∀n. P (ElemAt n)) ∧ (∀n n0. P (TagLenEq n n0)) ∧
+      (∀n. P (LenEq n)) ∧ (∀n. P (TagEq n)) ∧ P LengthBlock ∧
+      (∀t. P (BoolTest t)) ∧ P BoolNot ∧ P BoundsCheckBlock ∧
+      (∀n. P (ConsExtend n)) ∧ (∀n. P (FromList n)) ∧ P ListAppend ∧
+      (∀c. P (Constant c)) ∧ P Equal ∧ (∀c. P (EqualConst c)) ∧
+      (∀l. P (Build l)) ⇒
+      ∀b. P b
+KERNEL_THEOREM closLang.block_op_distinct
+⊢ (∀a' a. Cons a ≠ ElemAt a') ∧ (∀a1 a0 a. Cons a ≠ TagLenEq a0 a1) ∧
+  (∀a' a. Cons a ≠ LenEq a') ∧ (∀a' a. Cons a ≠ TagEq a') ∧
+  (∀a. Cons a ≠ LengthBlock) ∧ (∀a' a. Cons a ≠ BoolTest a') ∧
+  (∀a. Cons a ≠ BoolNot) ∧ (∀a. Cons a ≠ BoundsCheckBlock) ∧
+  (∀a' a. Cons a ≠ ConsExtend a') ∧ (∀a' a. Cons a ≠ FromList a') ∧
+  (∀a. Cons a ≠ ListAppend) ∧ (∀a' a. Cons a ≠ Constant a') ∧
+  (∀a. Cons a ≠ Equal) ∧ (∀a' a. Cons a ≠ EqualConst a') ∧
+  (∀a' a. Cons a ≠ Build a') ∧ (∀a1 a0 a. ElemAt a ≠ TagLenEq a0 a1) ∧
+  (∀a' a. ElemAt a ≠ LenEq a') ∧ (∀a' a. ElemAt a ≠ TagEq a') ∧
+  (∀a. ElemAt a ≠ LengthBlock) ∧ (∀a' a. ElemAt a ≠ BoolTest a') ∧
+  (∀a. ElemAt a ≠ BoolNot) ∧ (∀a. ElemAt a ≠ BoundsCheckBlock) ∧
+  (∀a' a. ElemAt a ≠ ConsExtend a') ∧ (∀a' a. ElemAt a ≠ FromList a') ∧
+  (∀a. ElemAt a ≠ ListAppend) ∧ (∀a' a. ElemAt a ≠ Constant a') ∧
+  (∀a. ElemAt a ≠ Equal) ∧ (∀a' a. ElemAt a ≠ EqualConst a') ∧
+  (∀a' a. ElemAt a ≠ Build a') ∧ (∀a1 a0 a. TagLenEq a0 a1 ≠ LenEq a) ∧
+  (∀a1 a0 a. TagLenEq a0 a1 ≠ TagEq a) ∧
+  (∀a1 a0. TagLenEq a0 a1 ≠ LengthBlock) ∧
+  (∀a1 a0 a. TagLenEq a0 a1 ≠ BoolTest a) ∧
+  (∀a1 a0. TagLenEq a0 a1 ≠ BoolNot) ∧
+  (∀a1 a0. TagLenEq a0 a1 ≠ BoundsCheckBlock) ∧
+  (∀a1 a0 a. TagLenEq a0 a1 ≠ ConsExtend a) ∧
+  (∀a1 a0 a. TagLenEq a0 a1 ≠ FromList a) ∧
+  (∀a1 a0. TagLenEq a0 a1 ≠ ListAppend) ∧
+  (∀a1 a0 a. TagLenEq a0 a1 ≠ Constant a) ∧
+  (∀a1 a0. TagLenEq a0 a1 ≠ Equal) ∧
+  (∀a1 a0 a. TagLenEq a0 a1 ≠ EqualConst a) ∧
+  (∀a1 a0 a. TagLenEq a0 a1 ≠ Build a) ∧ (∀a' a. LenEq a ≠ TagEq a') ∧
+  (∀a. LenEq a ≠ LengthBlock) ∧ (∀a' a. LenEq a ≠ BoolTest a') ∧
+  (∀a. LenEq a ≠ BoolNot) ∧ (∀a. LenEq a ≠ BoundsCheckBlock) ∧
+  (∀a' a. LenEq a ≠ ConsExtend a') ∧ (∀a' a. LenEq a ≠ FromList a') ∧
+  (∀a. LenEq a ≠ ListAppend) ∧ (∀a' a. LenEq a ≠ Constant a') ∧
+  (∀a. LenEq a ≠ Equal) ∧ (∀a' a. LenEq a ≠ EqualConst a') ∧
+  (∀a' a. LenEq a ≠ Build a') ∧ (∀a. TagEq a ≠ LengthBlock) ∧
+  (∀a' a. TagEq a ≠ BoolTest a') ∧ (∀a. TagEq a ≠ BoolNot) ∧
+  (∀a. TagEq a ≠ BoundsCheckBlock) ∧ (∀a' a. TagEq a ≠ ConsExtend a') ∧
+  (∀a' a. TagEq a ≠ FromList a') ∧ (∀a. TagEq a ≠ ListAppend) ∧
+  (∀a' a. TagEq a ≠ Constant a') ∧ (∀a. TagEq a ≠ Equal) ∧
+  (∀a' a. TagEq a ≠ EqualConst a') ∧ (∀a' a. TagEq a ≠ Build a') ∧
+  (∀a. LengthBlock ≠ BoolTest a) ∧ LengthBlock ≠ BoolNot ∧
+  LengthBlock ≠ BoundsCheckBlock ∧ (∀a. LengthBlock ≠ ConsExtend a) ∧
+  (∀a. LengthBlock ≠ FromList a) ∧ LengthBlock ≠ ListAppend ∧
+  (∀a. LengthBlock ≠ Constant a) ∧ LengthBlock ≠ Equal ∧
+  (∀a. LengthBlock ≠ EqualConst a) ∧ (∀a. LengthBlock ≠ Build a) ∧
+  (∀a. BoolTest a ≠ BoolNot) ∧ (∀a. BoolTest a ≠ BoundsCheckBlock) ∧
+  (∀a' a. BoolTest a ≠ ConsExtend a') ∧ (∀a' a. BoolTest a ≠ FromList a') ∧
+  (∀a. BoolTest a ≠ ListAppend) ∧ (∀a' a. BoolTest a ≠ Constant a') ∧
+  (∀a. BoolTest a ≠ Equal) ∧ (∀a' a. BoolTest a ≠ EqualConst a') ∧
+  (∀a' a. BoolTest a ≠ Build a') ∧ BoolNot ≠ BoundsCheckBlock ∧
+  (∀a. BoolNot ≠ ConsExtend a) ∧ (∀a. BoolNot ≠ FromList a) ∧
+  BoolNot ≠ ListAppend ∧ (∀a. BoolNot ≠ Constant a) ∧ BoolNot ≠ Equal ∧
+  (∀a. BoolNot ≠ EqualConst a) ∧ (∀a. BoolNot ≠ Build a) ∧
+  (∀a. BoundsCheckBlock ≠ ConsExtend a) ∧
+  (∀a. BoundsCheckBlock ≠ FromList a) ∧ BoundsCheckBlock ≠ ListAppend ∧
+  (∀a. BoundsCheckBlock ≠ Constant a) ∧ BoundsCheckBlock ≠ Equal ∧
+  (∀a. BoundsCheckBlock ≠ EqualConst a) ∧ (∀a. BoundsCheckBlock ≠ Build a) ∧
+  (∀a' a. ConsExtend a ≠ FromList a') ∧ (∀a. ConsExtend a ≠ ListAppend) ∧
+  (∀a' a. ConsExtend a ≠ Constant a') ∧ (∀a. ConsExtend a ≠ Equal) ∧
+  (∀a' a. ConsExtend a ≠ EqualConst a') ∧ (∀a' a. ConsExtend a ≠ Build a') ∧
+  (∀a. FromList a ≠ ListAppend) ∧ (∀a' a. FromList a ≠ Constant a') ∧
+  (∀a. FromList a ≠ Equal) ∧ (∀a' a. FromList a ≠ EqualConst a') ∧
+  (∀a' a. FromList a ≠ Build a') ∧ (∀a. ListAppend ≠ Constant a) ∧
+  ListAppend ≠ Equal ∧ (∀a. ListAppend ≠ EqualConst a) ∧
+  (∀a. ListAppend ≠ Build a) ∧ (∀a. Constant a ≠ Equal) ∧
+  (∀a' a. Constant a ≠ EqualConst a') ∧ (∀a' a. Constant a ≠ Build a') ∧
+  (∀a. Equal ≠ EqualConst a) ∧ (∀a. Equal ≠ Build a) ∧
+  ∀a' a. EqualConst a ≠ Build a'
+KERNEL_THEOREM closLang.block_op_case_eq
+⊢ block_op_CASE x f f1 f2 f3 f4 v f5 v1 v2 f6 f7 v3 f8 v4 f9 f10 = v' ⇔
+  (∃n. x = Cons n ∧ f n = v') ∨ (∃n. x = ElemAt n ∧ f1 n = v') ∨
+  (∃n n0. x = TagLenEq n n0 ∧ f2 n n0 = v') ∨ (∃n. x = LenEq n ∧ f3 n = v') ∨
+  (∃n. x = TagEq n ∧ f4 n = v') ∨ x = LengthBlock ∧ v = v' ∨
+  (∃t. x = BoolTest t ∧ f5 t = v') ∨ x = BoolNot ∧ v1 = v' ∨
+  x = BoundsCheckBlock ∧ v2 = v' ∨ (∃n. x = ConsExtend n ∧ f6 n = v') ∨
+  (∃n. x = FromList n ∧ f7 n = v') ∨ x = ListAppend ∧ v3 = v' ∨
+  (∃c. x = Constant c ∧ f8 c = v') ∨ x = Equal ∧ v4 = v' ∨
+  (∃c. x = EqualConst c ∧ f9 c = v') ∨ ∃l. x = Build l ∧ f10 l = v'
+KERNEL_THEOREM closLang.block_op_case_cong
+⊢ ∀M M' f f1 f2 f3 f4 v f5 v1 v2 f6 f7 v3 f8 v4 f9 f10.
+    M = M' ∧ (∀a. M' = Cons a ⇒ f a = f' a) ∧
+    (∀a. M' = ElemAt a ⇒ f1 a = f1' a) ∧
+    (∀a0 a1. M' = TagLenEq a0 a1 ⇒ f2 a0 a1 = f2' a0 a1) ∧
+    (∀a. M' = LenEq a ⇒ f3 a = f3' a) ∧ (∀a. M' = TagEq a ⇒ f4 a = f4' a) ∧
+    (M' = LengthBlock ⇒ v = v') ∧ (∀a. M' = BoolTest a ⇒ f5 a = f5' a) ∧
+    (M' = BoolNot ⇒ v1 = v1') ∧ (M' = BoundsCheckBlock ⇒ v2 = v2') ∧
+    (∀a. M' = ConsExtend a ⇒ f6 a = f6' a) ∧
+    (∀a. M' = FromList a ⇒ f7 a = f7' a) ∧ (M' = ListAppend ⇒ v3 = v3') ∧
+    (∀a. M' = Constant a ⇒ f8 a = f8' a) ∧ (M' = Equal ⇒ v4 = v4') ∧
+    (∀a. M' = EqualConst a ⇒ f9 a = f9' a) ∧
+    (∀a. M' = Build a ⇒ f10 a = f10' a) ⇒
+    block_op_CASE M f f1 f2 f3 f4 v f5 v1 v2 f6 f7 v3 f8 v4 f9 f10 =
+    block_op_CASE M' f' f1' f2' f3' f4' v' f5' v1' v2' f6' f7' v3' f8' v4'
+      f9' f10'
+KERNEL_THEOREM closLang.block_op_Axiom
+⊢ ∀f0 f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12 f13 f14 f15. ∃fn.
+    (∀a. fn (Cons a) = f0 a) ∧ (∀a. fn (ElemAt a) = f1 a) ∧
+    (∀a0 a1. fn (TagLenEq a0 a1) = f2 a0 a1) ∧ (∀a. fn (LenEq a) = f3 a) ∧
+    (∀a. fn (TagEq a) = f4 a) ∧ fn LengthBlock = f5 ∧
+    (∀a. fn (BoolTest a) = f6 a) ∧ fn BoolNot = f7 ∧
+    fn BoundsCheckBlock = f8 ∧ (∀a. fn (ConsExtend a) = f9 a) ∧
+    (∀a. fn (FromList a) = f10 a) ∧ fn ListAppend = f11 ∧
+    (∀a. fn (Constant a) = f12 a) ∧ fn Equal = f13 ∧
+    (∀a. fn (EqualConst a) = f14 a) ∧ ∀a. fn (Build a) = f15 a
+KERNEL_THEOREM closLang.block_op_11
+⊢ (∀a a'. Cons a = Cons a' ⇔ a = a') ∧
+  (∀a a'. ElemAt a = ElemAt a' ⇔ a = a') ∧
+  (∀a0 a1 a0' a1'. TagLenEq a0 a1 = TagLenEq a0' a1' ⇔ a0 = a0' ∧ a1 = a1') ∧
+  (∀a a'. LenEq a = LenEq a' ⇔ a = a') ∧
+  (∀a a'. TagEq a = TagEq a' ⇔ a = a') ∧
+  (∀a a'. BoolTest a = BoolTest a' ⇔ a = a') ∧
+  (∀a a'. ConsExtend a = ConsExtend a' ⇔ a = a') ∧
+  (∀a a'. FromList a = FromList a' ⇔ a = a') ∧
+  (∀a a'. Constant a = Constant a' ⇔ a = a') ∧
+  (∀a a'. EqualConst a = EqualConst a' ⇔ a = a') ∧
+  ∀a a'. Build a = Build a' ⇔ a = a'
+KERNEL_THEOREM closLang.assign_get_code_label_ind
+⊢ ∀P. (∀x. P (Label x)) ∧ (∀v1. P (FFI v1)) ∧ (∀v2. P (IntOp v2)) ∧
+      (∀v3. P (WordOp v3)) ∧ (∀v4. P (BlockOp v4)) ∧ (∀v5. P (GlobOp v5)) ∧
+      (∀v6. P (MemOp v6)) ∧ P Install ∧ (∀v7. P (ThunkOp v7)) ⇒
+      ∀v. P v
+KERNEL_THEOREM closLang.assign_get_code_label_def
+⊢ assign_get_code_label (Label x) = {x} ∧
+  assign_get_code_label (FFI v1) = ∅ ∧ assign_get_code_label (IntOp v2) = ∅ ∧
+  assign_get_code_label (WordOp v3) = ∅ ∧
+  assign_get_code_label (BlockOp v4) = ∅ ∧
+  assign_get_code_label (GlobOp v5) = ∅ ∧
+  assign_get_code_label (MemOp v6) = ∅ ∧ assign_get_code_label Install = ∅ ∧
+  assign_get_code_label (ThunkOp v7) = ∅
+MATCHED_EXPORTS_INSPECTED closLang 79
+MATCHED_COMPILER_EXPORT_INSPECTION_PASSED

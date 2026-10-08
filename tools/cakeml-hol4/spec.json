@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "project": "HOL4-on-CakeML self-hosting",
+  "hol4_source": {
+    "repository": "https://github.com/QuasarRay/HOL.git",
+    "base_commit": "ec34b4b4c4efb8b225f5bcea598f55a0095a7425"
+  },
+  "reused_metarocq_stack": {
+    "repository": "https://github.com/QuasarRay/MetaRocq-rs.git",
+    "branch": "experiment/generated-hol4-cakeml-api-wrappers-machine",
+    "commit": "12b4c993942010862cecebb3faa928b7b80ff9a8",
+    "components": [
+      "formal/hol4/CompilerOutputAutomationLib.sml",
+      "formal/hol4/api-wrapper/GeneratedApiWrapperCompileScript.sml",
+      ".agents/infra/agentinfra/hol4.py",
+      "tools/materialize_tactictoe_transport.py"
+    ]
+  },
+  "proof_authority": "HOL4 kernel",
+  "search_engines": ["egglog", "HolSmtLib.Z3_TAC", "tacticToe.ttt"],
+  "required_final_obligations": [
+    "all selected HOL4 SML accepted by the fail-closed macro frontend",
+    "semantics-preservation theorem for every macro/lowering rule",
+    "closed HOL4 theorem connecting translated CakeML program to HOL4 behavior",
+    "closed CakeML compiler theorem for exact x64 code/data image",
+    "original HOL4 binary replays release proof bundle",
+    "CakeML-built HOL4 binary replays the same release proof bundle"
+  ],
+  "non_claim": "This specification does not assert that the final HOL4 self-host theorem is already proved."
+}

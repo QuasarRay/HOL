@@ -7,11 +7,39 @@ import sys
 import tempfile
 import unittest
 
-from audit_reports import HERE, audit
+from audit_reports import HERE, audit, require_report_checkout
 from proof_bundle import build, verify
 
 
 class EvidenceTests(unittest.TestCase):
+    def test_report_checkout_rejects_wrong_pin_and_dirty_sources(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            checkout = root / "checkout"
+            checkout.mkdir()
+            def git(*args):
+                return subprocess.check_output(["git", "-C", str(checkout), *args],
+                                               stderr=subprocess.STDOUT, text=True).strip()
+            git("init", "-q")
+            (checkout / "semantics.sml").write_text("pinned source")
+            git("add", "semantics.sml")
+            git("-c", "user.name=Test", "-c", "user.email=test@example.invalid",
+                "commit", "-qm", "pinned test source")
+            pin = git("rev-parse", "HEAD")
+            machine = root / "input/machine"
+            machine.mkdir(parents=True)
+            data = machine / "hol4-sml-vs-cakeml-gaps.json"
+            def report(commit):
+                data.write_text(json.dumps({"snapshots": {"cakeml": {"commit": commit}}}))
+            report("0" * 40)
+            with self.assertRaisesRegex(ValueError, "require the report CakeML pin"):
+                require_report_checkout(root / "input", checkout)
+            report(pin)
+            self.assertEqual(require_report_checkout(root / "input", checkout), pin)
+            (checkout / "semantics.sml").write_text("modified source")
+            with self.assertRaisesRegex(ValueError, "modified CakeML source"):
+                require_report_checkout(root / "input", checkout)
+
     def test_changed_report_bytes_are_rejected_before_source_lookup(self):
         # Self-contained fixture; the original archives await workspace recovery.
         with tempfile.TemporaryDirectory() as td:

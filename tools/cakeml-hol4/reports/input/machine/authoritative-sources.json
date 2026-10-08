@@ -1,0 +1,183 @@
+{
+  "catalog_id": "hol4-sml-cakeml-authoritative-machine-readable-sources",
+  "snapshots": {
+    "hol4": {
+      "repository": "HOL-Theorem-Prover/HOL",
+      "commit": "652d1f0aad5cd537ed1e5d470ba3444e70ba470e",
+      "commit_date": "2026-09-27T02:14:15Z"
+    },
+    "cakeml": {
+      "repository": "CakeML/cakeml",
+      "commit": "f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6",
+      "commit_date": "2026-10-07T07:48:42Z"
+    },
+    "sml97_definition_source": {
+      "repository": "SMLFamily/The-Definition-of-Standard-ML-Revised",
+      "commit": "c4212f434cafd06669171619f7d332341a5b31f3",
+      "commit_date": "2017-02-24T04:34:39Z"
+    }
+  },
+  "sources": {
+    "sml97_syncor": {
+      "authority": "normative",
+      "scope": "Standard ML 1997 core concrete syntax",
+      "format": "TeX source",
+      "repository": "SMLFamily/The-Definition-of-Standard-ML-Revised",
+      "commit": "c4212f434cafd06669171619f7d332341a5b31f3",
+      "path": "syncor.tex",
+      "url": "https://github.com/SMLFamily/The-Definition-of-Standard-ML-Revised/blob/c4212f434cafd06669171619f7d332341a5b31f3/syncor.tex"
+    },
+    "sml97_synmod": {
+      "authority": "normative",
+      "scope": "Standard ML 1997 module concrete syntax",
+      "format": "TeX source",
+      "repository": "SMLFamily/The-Definition-of-Standard-ML-Revised",
+      "commit": "c4212f434cafd06669171619f7d332341a5b31f3",
+      "path": "synmod.tex",
+      "url": "https://github.com/SMLFamily/The-Definition-of-Standard-ML-Revised/blob/c4212f434cafd06669171619f7d332341a5b31f3/synmod.tex"
+    },
+    "sml97_statcor": {
+      "authority": "normative",
+      "scope": "Standard ML 1997 core static semantics",
+      "format": "TeX source",
+      "repository": "SMLFamily/The-Definition-of-Standard-ML-Revised",
+      "commit": "c4212f434cafd06669171619f7d332341a5b31f3",
+      "path": "statcor.tex",
+      "url": "https://github.com/SMLFamily/The-Definition-of-Standard-ML-Revised/blob/c4212f434cafd06669171619f7d332341a5b31f3/statcor.tex"
+    },
+    "sml97_dyncor": {
+      "authority": "normative",
+      "scope": "Standard ML 1997 core dynamic semantics",
+      "format": "TeX source",
+      "repository": "SMLFamily/The-Definition-of-Standard-ML-Revised",
+      "commit": "c4212f434cafd06669171619f7d332341a5b31f3",
+      "path": "dyncor.tex",
+      "url": "https://github.com/SMLFamily/The-Definition-of-Standard-ML-Revised/blob/c4212f434cafd06669171619f7d332341a5b31f3/dyncor.tex"
+    },
+    "sml97_statmod": {
+      "authority": "normative",
+      "scope": "Standard ML 1997 module static semantics",
+      "format": "TeX source",
+      "repository": "SMLFamily/The-Definition-of-Standard-ML-Revised",
+      "commit": "c4212f434cafd06669171619f7d332341a5b31f3",
+      "path": "statmod.tex",
+      "url": "https://github.com/SMLFamily/The-Definition-of-Standard-ML-Revised/blob/c4212f434cafd06669171619f7d332341a5b31f3/statmod.tex"
+    },
+    "sml97_dynmod": {
+      "authority": "normative",
+      "scope": "Standard ML 1997 module dynamic semantics",
+      "format": "TeX source",
+      "repository": "SMLFamily/The-Definition-of-Standard-ML-Revised",
+      "commit": "c4212f434cafd06669171619f7d332341a5b31f3",
+      "path": "dynmod.tex",
+      "url": "https://github.com/SMLFamily/The-Definition-of-Standard-ML-Revised/blob/c4212f434cafd06669171619f7d332341a5b31f3/dynmod.tex"
+    },
+    "hol4_ast": {
+      "authority": "HOL4-maintained implementation reference",
+      "scope": "AST for Standard ML plus HOL-specific source extensions",
+      "format": "Standard ML source",
+      "repository": "HOL-Theorem-Prover/HOL",
+      "commit": "652d1f0aad5cd537ed1e5d470ba3444e70ba470e",
+      "path": "tools/parsing/HOLSourceAST.sml",
+      "url": "https://github.com/HOL-Theorem-Prover/HOL/blob/652d1f0aad5cd537ed1e5d470ba3444e70ba470e/tools/parsing/HOLSourceAST.sml"
+    },
+    "hol4_parser": {
+      "authority": "HOL4-maintained implementation reference",
+      "scope": "Lexer/parser, fixity environment, HOL source forms",
+      "format": "Standard ML source",
+      "repository": "HOL-Theorem-Prover/HOL",
+      "commit": "652d1f0aad5cd537ed1e5d470ba3444e70ba470e",
+      "path": "tools/parsing/HOLSourceParser.sml",
+      "url": "https://github.com/HOL-Theorem-Prover/HOL/blob/652d1f0aad5cd537ed1e5d470ba3444e70ba470e/tools/parsing/HOLSourceParser.sml"
+    },
+    "hol4_parser_grammar": {
+      "authority": "HOL4-maintained secondary grammar reference",
+      "scope": "SML grammar used by HOL4 help/source tooling",
+      "format": "ML-Yacc grammar",
+      "repository": "HOL-Theorem-Prover/HOL",
+      "commit": "652d1f0aad5cd537ed1e5d470ba3444e70ba470e",
+      "path": "help/src-sml/Parser.grm",
+      "url": "https://github.com/HOL-Theorem-Prover/HOL/blob/652d1f0aad5cd537ed1e5d470ba3444e70ba470e/help/src-sml/Parser.grm"
+    },
+    "cakeml_grammar": {
+      "authority": "definitive CakeML semantics source",
+      "scope": "Concrete syntax / grammar",
+      "format": "HOL4 theory source",
+      "repository": "CakeML/cakeml",
+      "commit": "f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6",
+      "path": "semantics/gramScript.sml",
+      "url": "https://github.com/CakeML/cakeml/blob/f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6/semantics/gramScript.sml"
+    },
+    "cakeml_ast": {
+      "authority": "definitive CakeML semantics source",
+      "scope": "Abstract syntax",
+      "format": "HOL4 theory source",
+      "repository": "CakeML/cakeml",
+      "commit": "f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6",
+      "path": "semantics/astScript.sml",
+      "url": "https://github.com/CakeML/cakeml/blob/f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6/semantics/astScript.sml"
+    },
+    "cakeml_conversion": {
+      "authority": "definitive CakeML front-end source",
+      "scope": "Parse tree to CakeML AST conversion",
+      "format": "HOL4 theory source",
+      "repository": "CakeML/cakeml",
+      "commit": "f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6",
+      "path": "semantics/cmlPtreeConversionScript.sml",
+      "url": "https://github.com/CakeML/cakeml/blob/f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6/semantics/cmlPtreeConversionScript.sml"
+    },
+    "cakeml_infer": {
+      "authority": "definitive CakeML type-inference source",
+      "scope": "Type inference and static restrictions",
+      "format": "HOL4 theory source",
+      "repository": "CakeML/cakeml",
+      "commit": "f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6",
+      "path": "compiler/inference/inferScript.sml",
+      "url": "https://github.com/CakeML/cakeml/blob/f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6/compiler/inference/inferScript.sml"
+    },
+    "cakeml_semprim": {
+      "authority": "definitive CakeML dynamic-semantics source",
+      "scope": "Values, matching, equality, primitive semantics",
+      "format": "HOL4 theory source",
+      "repository": "CakeML/cakeml",
+      "commit": "f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6",
+      "path": "semantics/semanticPrimitivesScript.sml",
+      "url": "https://github.com/CakeML/cakeml/blob/f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6/semantics/semanticPrimitivesScript.sml"
+    },
+    "cakeml_evaluate": {
+      "authority": "definitive CakeML dynamic-semantics source",
+      "scope": "Functional big-step evaluation semantics",
+      "format": "HOL4 theory source",
+      "repository": "CakeML/cakeml",
+      "commit": "f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6",
+      "path": "semantics/evaluateScript.sml",
+      "url": "https://github.com/CakeML/cakeml/blob/f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6/semantics/evaluateScript.sml"
+    },
+    "cakeml_howto": {
+      "authority": "explanatory; source semantics take precedence",
+      "scope": "Published CakeML/SML difference summary",
+      "format": "Markdown",
+      "repository": "CakeML/cakeml",
+      "commit": "f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6",
+      "path": "how-to.md",
+      "url": "https://github.com/CakeML/cakeml/blob/f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6/how-to.md",
+      "freshness_note": "Its claim that CakeML lacks open/signatures is stale relative to the pinned grammar; use source grammar/conversion as the authority."
+    }
+  },
+  "recommended_reference_stack": [
+    "sml97_syncor",
+    "sml97_synmod",
+    "sml97_statcor",
+    "sml97_dyncor",
+    "sml97_statmod",
+    "sml97_dynmod",
+    "hol4_ast",
+    "hol4_parser",
+    "cakeml_grammar",
+    "cakeml_ast",
+    "cakeml_conversion",
+    "cakeml_infer",
+    "cakeml_semprim",
+    "cakeml_evaluate"
+  ]
+}

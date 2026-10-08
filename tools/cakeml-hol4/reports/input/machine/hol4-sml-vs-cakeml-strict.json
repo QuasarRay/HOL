@@ -1,0 +1,3217 @@
+{
+  "dataset_id": "hol4-sml-strict-semantic-and-acceptance-gaps-vs-cakeml",
+  "generated_utc": "2026-10-07T00:00:00Z",
+  "schema_version": "1.0.0",
+  "snapshots": {
+    "hol4": {
+      "repository": "HOL-Theorem-Prover/HOL",
+      "commit": "652d1f0aad5cd537ed1e5d470ba3444e70ba470e",
+      "commit_date": "2026-09-27T02:14:15Z"
+    },
+    "cakeml": {
+      "repository": "CakeML/cakeml",
+      "commit": "f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6",
+      "commit_date": "2026-10-07T07:48:42Z"
+    },
+    "sml97_definition_source": {
+      "repository": "SMLFamily/The-Definition-of-Standard-ML-Revised",
+      "commit": "c4212f434cafd06669171619f7d332341a5b31f3",
+      "commit_date": "2017-02-24T04:34:39Z"
+    }
+  },
+  "authority_model": {
+    "syntax_acceptance": "HOL4 tools/parsing/HOLSourceParser.sml + HOLSourceAST.sml, cross-checked against SML97 source syntax",
+    "standard_sml_meaning": "SML97 Definition source (syncor/synmod/statcor/dyncor/statmod/dynmod)",
+    "cakeml_exclusion_test": "Pinned CakeML grammar, AST, parse-tree conversion, type inference, and dynamic semantics",
+    "important_note": "HOL4 does not bundle a single machine-readable formal semantics for all host-SML behavior. SML97 supplies normative SML semantics, while HOL4's maintained parser/AST supplies the dialect/surface accepted by HOL4 tooling."
+  },
+  "scope": {
+    "included": [
+      "SML97 core/declaration/module constructs represented by HOL4's source model but absent/restricted/non-equivalent in CakeML",
+      "SML static/dynamic semantic rules where CakeML differs",
+      "HOL4-specific source-language extensions represented by HOLSourceAST/HOLSourceParser",
+      "Moscow-ML primitive declaration extensions represented by HOL4's source model"
+    ],
+    "excluded": [
+      "CakeML-equivalent features such as case, if, raise, handle, tuples, lists, andalso, orelse, before",
+      "Basis-library/runtime API gaps such as PolyML.Compiler, threads, sockets, Time, BinIO; these are not language-semantic features",
+      "Frequency claims: parser-supported features are included even if rare in checked-in HOL4 code"
+    ],
+    "surface_only_entries": [
+      "C14"
+    ]
+  },
+  "counts": {
+    "total_entries": 79,
+    "strict_semantic_or_acceptance_entries": 79,
+    "surface_only_entries": 0,
+    "by_layer": {
+      "sml_core": 18,
+      "sml_declarations": 13,
+      "sml_modules": 19,
+      "sml_semantics": 12,
+      "hol4_extension": 13,
+      "implementation_extension": 4
+    },
+    "by_cakeml_compatibility": {
+      "absent": 59,
+      "restricted": 10,
+      "semantic_mismatch": 9,
+      "parsed_but_semantically_discarded": 1
+    }
+  },
+  "sources": {
+    "sml97_syncor": {
+      "authority": "normative",
+      "scope": "Standard ML 1997 core concrete syntax",
+      "format": "TeX source",
+      "repository": "SMLFamily/The-Definition-of-Standard-ML-Revised",
+      "commit": "c4212f434cafd06669171619f7d332341a5b31f3",
+      "path": "syncor.tex",
+      "url": "https://github.com/SMLFamily/The-Definition-of-Standard-ML-Revised/blob/c4212f434cafd06669171619f7d332341a5b31f3/syncor.tex"
+    },
+    "sml97_synmod": {
+      "authority": "normative",
+      "scope": "Standard ML 1997 module concrete syntax",
+      "format": "TeX source",
+      "repository": "SMLFamily/The-Definition-of-Standard-ML-Revised",
+      "commit": "c4212f434cafd06669171619f7d332341a5b31f3",
+      "path": "synmod.tex",
+      "url": "https://github.com/SMLFamily/The-Definition-of-Standard-ML-Revised/blob/c4212f434cafd06669171619f7d332341a5b31f3/synmod.tex"
+    },
+    "sml97_statcor": {
+      "authority": "normative",
+      "scope": "Standard ML 1997 core static semantics",
+      "format": "TeX source",
+      "repository": "SMLFamily/The-Definition-of-Standard-ML-Revised",
+      "commit": "c4212f434cafd06669171619f7d332341a5b31f3",
+      "path": "statcor.tex",
+      "url": "https://github.com/SMLFamily/The-Definition-of-Standard-ML-Revised/blob/c4212f434cafd06669171619f7d332341a5b31f3/statcor.tex"
+    },
+    "sml97_dyncor": {
+      "authority": "normative",
+      "scope": "Standard ML 1997 core dynamic semantics",
+      "format": "TeX source",
+      "repository": "SMLFamily/The-Definition-of-Standard-ML-Revised",
+      "commit": "c4212f434cafd06669171619f7d332341a5b31f3",
+      "path": "dyncor.tex",
+      "url": "https://github.com/SMLFamily/The-Definition-of-Standard-ML-Revised/blob/c4212f434cafd06669171619f7d332341a5b31f3/dyncor.tex"
+    },
+    "sml97_statmod": {
+      "authority": "normative",
+      "scope": "Standard ML 1997 module static semantics",
+      "format": "TeX source",
+      "repository": "SMLFamily/The-Definition-of-Standard-ML-Revised",
+      "commit": "c4212f434cafd06669171619f7d332341a5b31f3",
+      "path": "statmod.tex",
+      "url": "https://github.com/SMLFamily/The-Definition-of-Standard-ML-Revised/blob/c4212f434cafd06669171619f7d332341a5b31f3/statmod.tex"
+    },
+    "sml97_dynmod": {
+      "authority": "normative",
+      "scope": "Standard ML 1997 module dynamic semantics",
+      "format": "TeX source",
+      "repository": "SMLFamily/The-Definition-of-Standard-ML-Revised",
+      "commit": "c4212f434cafd06669171619f7d332341a5b31f3",
+      "path": "dynmod.tex",
+      "url": "https://github.com/SMLFamily/The-Definition-of-Standard-ML-Revised/blob/c4212f434cafd06669171619f7d332341a5b31f3/dynmod.tex"
+    },
+    "hol4_ast": {
+      "authority": "HOL4-maintained implementation reference",
+      "scope": "AST for Standard ML plus HOL-specific source extensions",
+      "format": "Standard ML source",
+      "repository": "HOL-Theorem-Prover/HOL",
+      "commit": "652d1f0aad5cd537ed1e5d470ba3444e70ba470e",
+      "path": "tools/parsing/HOLSourceAST.sml",
+      "url": "https://github.com/HOL-Theorem-Prover/HOL/blob/652d1f0aad5cd537ed1e5d470ba3444e70ba470e/tools/parsing/HOLSourceAST.sml"
+    },
+    "hol4_parser": {
+      "authority": "HOL4-maintained implementation reference",
+      "scope": "Lexer/parser, fixity environment, HOL source forms",
+      "format": "Standard ML source",
+      "repository": "HOL-Theorem-Prover/HOL",
+      "commit": "652d1f0aad5cd537ed1e5d470ba3444e70ba470e",
+      "path": "tools/parsing/HOLSourceParser.sml",
+      "url": "https://github.com/HOL-Theorem-Prover/HOL/blob/652d1f0aad5cd537ed1e5d470ba3444e70ba470e/tools/parsing/HOLSourceParser.sml"
+    },
+    "hol4_parser_grammar": {
+      "authority": "HOL4-maintained secondary grammar reference",
+      "scope": "SML grammar used by HOL4 help/source tooling",
+      "format": "ML-Yacc grammar",
+      "repository": "HOL-Theorem-Prover/HOL",
+      "commit": "652d1f0aad5cd537ed1e5d470ba3444e70ba470e",
+      "path": "help/src-sml/Parser.grm",
+      "url": "https://github.com/HOL-Theorem-Prover/HOL/blob/652d1f0aad5cd537ed1e5d470ba3444e70ba470e/help/src-sml/Parser.grm"
+    },
+    "cakeml_grammar": {
+      "authority": "definitive CakeML semantics source",
+      "scope": "Concrete syntax / grammar",
+      "format": "HOL4 theory source",
+      "repository": "CakeML/cakeml",
+      "commit": "f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6",
+      "path": "semantics/gramScript.sml",
+      "url": "https://github.com/CakeML/cakeml/blob/f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6/semantics/gramScript.sml"
+    },
+    "cakeml_ast": {
+      "authority": "definitive CakeML semantics source",
+      "scope": "Abstract syntax",
+      "format": "HOL4 theory source",
+      "repository": "CakeML/cakeml",
+      "commit": "f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6",
+      "path": "semantics/astScript.sml",
+      "url": "https://github.com/CakeML/cakeml/blob/f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6/semantics/astScript.sml"
+    },
+    "cakeml_conversion": {
+      "authority": "definitive CakeML front-end source",
+      "scope": "Parse tree to CakeML AST conversion",
+      "format": "HOL4 theory source",
+      "repository": "CakeML/cakeml",
+      "commit": "f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6",
+      "path": "semantics/cmlPtreeConversionScript.sml",
+      "url": "https://github.com/CakeML/cakeml/blob/f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6/semantics/cmlPtreeConversionScript.sml"
+    },
+    "cakeml_infer": {
+      "authority": "definitive CakeML type-inference source",
+      "scope": "Type inference and static restrictions",
+      "format": "HOL4 theory source",
+      "repository": "CakeML/cakeml",
+      "commit": "f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6",
+      "path": "compiler/inference/inferScript.sml",
+      "url": "https://github.com/CakeML/cakeml/blob/f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6/compiler/inference/inferScript.sml"
+    },
+    "cakeml_semprim": {
+      "authority": "definitive CakeML dynamic-semantics source",
+      "scope": "Values, matching, equality, primitive semantics",
+      "format": "HOL4 theory source",
+      "repository": "CakeML/cakeml",
+      "commit": "f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6",
+      "path": "semantics/semanticPrimitivesScript.sml",
+      "url": "https://github.com/CakeML/cakeml/blob/f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6/semantics/semanticPrimitivesScript.sml"
+    },
+    "cakeml_evaluate": {
+      "authority": "definitive CakeML dynamic-semantics source",
+      "scope": "Functional big-step evaluation semantics",
+      "format": "HOL4 theory source",
+      "repository": "CakeML/cakeml",
+      "commit": "f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6",
+      "path": "semantics/evaluateScript.sml",
+      "url": "https://github.com/CakeML/cakeml/blob/f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6/semantics/evaluateScript.sml"
+    },
+    "cakeml_howto": {
+      "authority": "explanatory; source semantics take precedence",
+      "scope": "Published CakeML/SML difference summary",
+      "format": "Markdown",
+      "repository": "CakeML/cakeml",
+      "commit": "f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6",
+      "path": "how-to.md",
+      "url": "https://github.com/CakeML/cakeml/blob/f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6/how-to.md",
+      "freshness_note": "Its claim that CakeML lacks open/signatures is stale relative to the pinned grammar; use source grammar/conversion as the authority."
+    }
+  },
+  "features": [
+    {
+      "id": "C01",
+      "layer": "sml_core",
+      "name": "Record types",
+      "semantic_dimension": "syntax_and_core_semantics",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "Record types carry labeled fields; field order is not the semantic identity of the record type.",
+      "syntax": {
+        "example": "{a:int,b:string}",
+        "normalized_ebnf": "ty ::= '{' label ':' ty (',' label ':' ty)*"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "ty.TyRecord"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_syncor"
+        ],
+        "observed_source_paths": [
+          {
+            "path": "src/metis/mlibMeter.sml",
+            "url": "https://github.com/HOL-Theorem-Prover/HOL/blob/652d1f0aad5cd537ed1e5d470ba3444e70ba470e/src/metis/mlibMeter.sml"
+          },
+          {
+            "path": "src/1/DefnBaseCore.sml",
+            "url": "https://github.com/HOL-Theorem-Prover/HOL/blob/652d1f0aad5cd537ed1e5d470ba3444e70ba470e/src/1/DefnBaseCore.sml"
+          }
+        ]
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No record type production in Type grammar and no record constructor in ast_t.",
+        "authority_refs": [
+          "cakeml_grammar",
+          "cakeml_ast"
+        ]
+      },
+      "translation": {
+        "hint": "Add records or encode",
+        "mechanically_lowerable": "conditional"
+      }
+    },
+    {
+      "id": "C02",
+      "layer": "sml_core",
+      "name": "Record expressions",
+      "semantic_dimension": "syntax_and_core_semantics",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "Record expressions construct labeled products whose components are selected by labels.",
+      "syntax": {
+        "example": "{a=1,b=2}",
+        "normalized_ebnf": "exp ::= '{' label '=' exp (',' label '=' exp)* '}'"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "exp.Record",
+          "row"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_syncor"
+        ],
+        "observed_source_paths": [
+          {
+            "path": "src/1/DefnBaseCore.sml",
+            "url": "https://github.com/HOL-Theorem-Prover/HOL/blob/652d1f0aad5cd537ed1e5d470ba3444e70ba470e/src/1/DefnBaseCore.sml"
+          }
+        ]
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No record expression production and no record expression AST constructor.",
+        "authority_refs": [
+          "cakeml_grammar",
+          "cakeml_ast"
+        ]
+      },
+      "translation": {
+        "hint": "Add records or encode",
+        "mechanically_lowerable": "conditional"
+      }
+    },
+    {
+      "id": "C03",
+      "layer": "sml_core",
+      "name": "Record patterns",
+      "semantic_dimension": "syntax_and_core_semantics",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "Record patterns destructure labeled fields during pattern matching.",
+      "syntax": {
+        "example": "{a=x,b=y}",
+        "normalized_ebnf": "pat ::= '{' rowpat (',' rowpat)* '}'"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "exp.Record",
+          "row"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_syncor"
+        ],
+        "observed_source_paths": [
+          {
+            "path": "src/1/DefnBaseCore.sml",
+            "url": "https://github.com/HOL-Theorem-Prover/HOL/blob/652d1f0aad5cd537ed1e5d470ba3444e70ba470e/src/1/DefnBaseCore.sml"
+          }
+        ]
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No record pattern production and no record pattern AST constructor.",
+        "authority_refs": [
+          "cakeml_grammar",
+          "cakeml_ast"
+        ]
+      },
+      "translation": {
+        "hint": "Add records or lower",
+        "mechanically_lowerable": "conditional"
+      }
+    },
+    {
+      "id": "C04",
+      "layer": "sml_core",
+      "name": "Flexible record patterns",
+      "semantic_dimension": "syntax_and_core_semantics",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "Flexible record patterns match a known subset of fields while leaving additional fields unconstrained.",
+      "syntax": {
+        "example": "{a=x,...}",
+        "normalized_ebnf": "rowpat ::= label '=' pat | label [':' ty] ['as' pat] | '...'"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "row.DotDotDot"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_syncor"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No record rows/flexible-row pattern syntax or AST.",
+        "authority_refs": [
+          "cakeml_grammar",
+          "cakeml_ast"
+        ]
+      },
+      "translation": {
+        "hint": "Needs row/record analysis",
+        "mechanically_lowerable": "conditional"
+      }
+    },
+    {
+      "id": "C05",
+      "layer": "sml_core",
+      "name": "Record shorthand rows",
+      "semantic_dimension": "syntax_and_core_semantics",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "Record row shorthand binds a field label as a variable, with optional layered-pattern/type forms in HOL4's source model.",
+      "syntax": {
+        "example": "{a,b}` / layered row forms",
+        "normalized_ebnf": "rowpat ::= label [':' ty] ['as' pat]"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "row.LabAs",
+          "row.LabEq"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_syncor"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No record-row shorthand because records are absent.",
+        "authority_refs": [
+          "cakeml_grammar",
+          "cakeml_ast"
+        ]
+      },
+      "translation": {
+        "hint": "Lower",
+        "mechanically_lowerable": "conditional"
+      }
+    },
+    {
+      "id": "C06",
+      "layer": "sml_core",
+      "name": "Record selectors",
+      "semantic_dimension": "syntax_and_core_semantics",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "A selector #label denotes a function that extracts the field named label from a compatible record.",
+      "syntax": {
+        "example": "#a r",
+        "normalized_ebnf": "exp ::= '#' label"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "exp.Select"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_syncor"
+        ],
+        "observed_source_paths": [
+          {
+            "path": "src/1/ScaledTests.sml",
+            "url": "https://github.com/HOL-Theorem-Prover/HOL/blob/652d1f0aad5cd537ed1e5d470ba3444e70ba470e/src/1/ScaledTests.sml"
+          }
+        ]
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No #label selector production or selector AST.",
+        "authority_refs": [
+          "cakeml_grammar",
+          "cakeml_ast"
+        ]
+      },
+      "translation": {
+        "hint": "Lower/add records",
+        "mechanically_lowerable": "conditional"
+      }
+    },
+    {
+      "id": "C07",
+      "layer": "sml_core",
+      "name": "`while`",
+      "semantic_dimension": "syntax_and_core_semantics",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "while repeatedly evaluates the condition and body for effects until the condition is false, then returns unit.",
+      "syntax": {
+        "example": "while p do e",
+        "normalized_ebnf": "exp ::= 'while' exp 'do' exp"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "exp.While"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_syncor"
+        ],
+        "observed_source_paths": [
+          {
+            "path": "tools-poly/poly/quse.sml",
+            "url": "https://github.com/HOL-Theorem-Prover/HOL/blob/652d1f0aad5cd537ed1e5d470ba3444e70ba470e/tools-poly/poly/quse.sml"
+          }
+        ]
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "Current expression grammar has no while production.",
+        "authority_refs": [
+          "cakeml_grammar"
+        ]
+      },
+      "translation": {
+        "hint": "Desugar with recursion",
+        "mechanically_lowerable": true
+      }
+    },
+    {
+      "id": "C08",
+      "layer": "sml_core",
+      "name": "Multi-arm `fn`",
+      "semantic_dimension": "syntax_and_core_semantics",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "A multi-arm anonymous function performs ordered pattern matching across all arms for each application.",
+      "syntax": {
+        "example": "fn A=>x",
+        "normalized_ebnf": "exp ::= 'fn' pat '=>' exp ('|' pat '=>' exp)+"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "exp.Fn",
+          "arm list"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_syncor"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "restricted",
+        "reason": "E accepts only fn Pattern => E; no additional | arms.",
+        "authority_refs": [
+          "cakeml_grammar"
+        ]
+      },
+      "translation": {
+        "hint": "Core",
+        "mechanically_lowerable": true
+      }
+    },
+    {
+      "id": "C09",
+      "layer": "sml_core",
+      "name": "Multi-clause same-name `fun`",
+      "semantic_dimension": "syntax_and_core_semantics",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "Multiple clauses of the same function name form one recursive function with ordered pattern matching over clause patterns.",
+      "syntax": {
+        "example": "fun f A=...",
+        "normalized_ebnf": "dec ::= 'fun' fclause ('|' fclause)+; fclause ::= vid atpat+ [':' ty] '=' exp"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "dec.DecFun",
+          "fvalarm list"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_syncor"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "restricted",
+        "reason": "Each FDecl is one equation; and combines mutually-recursive declarations but there is no same-name | clause family.",
+        "authority_refs": [
+          "cakeml_grammar"
+        ]
+      },
+      "translation": {
+        "hint": "Core",
+        "mechanically_lowerable": true
+      }
+    },
+    {
+      "id": "C10",
+      "layer": "sml_core",
+      "name": "SML constructor declaration syntax",
+      "semantic_dimension": "syntax_and_core_semantics",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "In SML, a constructor has zero or one constructor argument; a tuple can be that single argument. CakeML constructor declarations use a list of curried constructor arguments.",
+      "syntax": {
+        "example": "C of t",
+        "normalized_ebnf": "conbind ::= ['op'] vid ['of' ty]"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "conbind.arg",
+          "keyword of"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_syncor"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "semantic_mismatch",
+        "reason": "CakeML Dconstructor uses a list of base argument types rather than SML's optional single 'of ty' constructor argument.",
+        "authority_refs": [
+          "cakeml_grammar",
+          "cakeml_ast"
+        ]
+      },
+      "translation": {
+        "hint": "Syntax/arity lowering",
+        "mechanically_lowerable": "conditional"
+      }
+    },
+    {
+      "id": "C11",
+      "layer": "sml_core",
+      "name": "Constructor values / partial use",
+      "semantic_dimension": "syntax_and_core_semantics",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "An SML unary constructor is also a first-class function value and can be passed without immediate application.",
+      "syntax": {
+        "example": "map SOME xs",
+        "normalized_ebnf": "exp ::= longvid  # constructor identifier may denote a unary constructor function without immediate argument"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "constructor identifier status / application semantics"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_syncor"
+        ],
+        "observed_source_paths": [
+          {
+            "path": "src/datatype/bnfLib.sml",
+            "url": "https://github.com/HOL-Theorem-Prover/HOL/blob/652d1f0aad5cd537ed1e5d470ba3444e70ba470e/src/datatype/bnfLib.sml"
+          }
+        ]
+      },
+      "cakeml": {
+        "compatibility": "restricted",
+        "reason": "CakeML requires constructors to be fully applied; constructor-as-function use must be eta-expanded.",
+        "authority_refs": [
+          "cakeml_howto",
+          "cakeml_grammar"
+        ]
+      },
+      "translation": {
+        "hint": "Eta-expand",
+        "mechanically_lowerable": true
+      }
+    },
+    {
+      "id": "C12",
+      "layer": "sml_core",
+      "name": "Environment-based constructor naming",
+      "semantic_dimension": "syntax_and_core_semantics",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "SML constructor/value status is determined by the static environment, not by capitalization; the same lexical class can acquire constructor status.",
+      "syntax": {
+        "example": "constructor status not fixed by capitalization",
+        "normalized_ebnf": "identifier-status ::= resolved from static environment (constructor/exception/value), not capitalization"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "exp.Ident",
+          "conbind",
+          "identifier status from SML statics"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_syncor"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "restricted",
+        "reason": "CakeML grammar lexically requires constructor names to start uppercase and alpha-numeric variables/functions lowercase.",
+        "authority_refs": [
+          "cakeml_grammar"
+        ]
+      },
+      "translation": {
+        "hint": "Rename/elaborate first",
+        "mechanically_lowerable": "conditional"
+      }
+    },
+    {
+      "id": "C13",
+      "layer": "sml_core",
+      "name": "Symbolic / `op` constructor forms",
+      "semantic_dimension": "syntax_and_core_semantics",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "SML permits op-qualified and symbolic value/constructor identifiers where the static environment determines identifier status.",
+      "syntax": {
+        "example": "op ++` constructor",
+        "normalized_ebnf": "constructor-id ::= ['op'] vid  # vid may be symbolic where permitted by SML lexical/static rules"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "exp.Ident.op_",
+          "conbind.op_"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_syncor"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "restricted",
+        "reason": "CakeML's constructor grammar is uppercase-name based; general SML environment-classified symbolic/op constructor forms are not equivalent.",
+        "authority_refs": [
+          "cakeml_grammar"
+        ]
+      },
+      "translation": {
+        "hint": "Elaborate/rename",
+        "mechanically_lowerable": "conditional"
+      }
+    },
+    {
+      "id": "C15",
+      "layer": "sml_core",
+      "name": "Real literals",
+      "semantic_dimension": "syntax_and_core_semantics",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "Real constants are source literals denoting real values according to SML lexical and dynamic semantics.",
+      "syntax": {
+        "example": "0.0",
+        "normalized_ebnf": "scon(real) ::= decimal-real-literal"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "exp.RealConstant"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_syncor"
+        ],
+        "observed_source_paths": [
+          {
+            "path": "src/1/ScaledTests.sml",
+            "url": "https://github.com/HOL-Theorem-Prover/HOL/blob/652d1f0aad5cd537ed1e5d470ba3444e70ba470e/src/1/ScaledTests.sml"
+          },
+          {
+            "path": "src/metis/mlibMeter.sml",
+            "url": "https://github.com/HOL-Theorem-Prover/HOL/blob/652d1f0aad5cd537ed1e5d470ba3444e70ba470e/src/metis/mlibMeter.sml"
+          },
+          {
+            "path": "src/tactictoe/src/tttLearn.sml",
+            "url": "https://github.com/HOL-Theorem-Prover/HOL/blob/652d1f0aad5cd537ed1e5d470ba3444e70ba470e/src/tactictoe/src/tttLearn.sml"
+          }
+        ]
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "Eliteral includes IntT/CharT/StringT/WordT/FFIT but not real literals, despite internal Float64 support.",
+        "authority_refs": [
+          "cakeml_grammar",
+          "cakeml_ast"
+        ]
+      },
+      "translation": {
+        "hint": "Parse/lower to Double",
+        "mechanically_lowerable": "conditional"
+      }
+    },
+    {
+      "id": "C16",
+      "layer": "sml_core",
+      "name": "Word literal patterns",
+      "semantic_dimension": "syntax_and_core_semantics",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "Word constants can occur as constant patterns and participate in pattern matching.",
+      "syntax": {
+        "example": "0w1` in a pattern",
+        "normalized_ebnf": "pat ::= word-constant"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "exp.WordConstant"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_syncor"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "restricted",
+        "reason": "CakeML expression literals include WordT, but Pbase pattern literals omit WordT.",
+        "authority_refs": [
+          "cakeml_grammar"
+        ]
+      },
+      "translation": {
+        "hint": "Lower/check use",
+        "mechanically_lowerable": "conditional"
+      }
+    },
+    {
+      "id": "C17",
+      "layer": "sml_core",
+      "name": "Full layered pattern binder annotation",
+      "semantic_dimension": "syntax_and_core_semantics",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "A layered pattern can bind an identifier, optionally type-constrain that binder, and simultaneously require a nested pattern.",
+      "syntax": {
+        "example": "x:t as p",
+        "normalized_ebnf": "pat ::= ['op'] vid [':' ty] 'as' pat"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "exp.Layered"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_syncor"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "restricted",
+        "reason": "Pas is V as Pcons; a type annotation applies to the whole Pattern, not the SML layered binder form [op] vid [:ty] as pat.",
+        "authority_refs": [
+          "cakeml_grammar"
+        ]
+      },
+      "translation": {
+        "hint": "Normalize pattern",
+        "mechanically_lowerable": "conditional"
+      }
+    },
+    {
+      "id": "C18",
+      "layer": "sml_core",
+      "name": "Full declarations inside expression `let`",
+      "semantic_dimension": "syntax_and_core_semantics",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "The declaration sequence inside let is the general Core declaration language, so local datatypes, types, exceptions, local declarations, etc. affect the body scope.",
+      "syntax": {
+        "example": "let datatype ... in ... end",
+        "normalized_ebnf": "exp ::= 'let' dec* 'in' exp (';' exp)* 'end'"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "exp.LetInEnd.dec"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_syncor"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "restricted",
+        "reason": "Expression-level LetDec permits only val, fun, and open.",
+        "authority_refs": [
+          "cakeml_grammar"
+        ]
+      },
+      "translation": {
+        "hint": "Hoist/lower carefully",
+        "mechanically_lowerable": "conditional"
+      }
+    },
+    {
+      "id": "C19",
+      "layer": "sml_core",
+      "name": "SuccessorML or-pattern AST support",
+      "semantic_dimension": "syntax_and_core_semantics",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "HOL4's source model includes SuccessorML-style or-patterns, where alternatives are a single pattern form.",
+      "syntax": {
+        "example": "p1",
+        "normalized_ebnf": "pat ::= pat '|' pat ('|' pat)*  # SuccessorML form represented by HOL4 tooling"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "exp.Or"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_syncor"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No or-pattern AST or pattern production.",
+        "authority_refs": [
+          "cakeml_grammar",
+          "cakeml_ast"
+        ]
+      },
+      "translation": {
+        "hint": "HOL dialect",
+        "mechanically_lowerable": "conditional"
+      }
+    },
+    {
+      "id": "D01",
+      "layer": "sml_declarations",
+      "name": "`val rec`",
+      "semantic_dimension": "declaration_elaboration",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "val rec provides recursive value binding, typically for function-valued expressions, with recursive scope during evaluation/elaboration.",
+      "syntax": {
+        "example": "val rec f = fn ...",
+        "normalized_ebnf": "dec ::= 'val' tyvarseq? 'rec' pat '=' exp"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "dec.DecVal",
+          "valbind.rec_"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_syncor"
+        ],
+        "observed_source_paths": [
+          {
+            "path": "tools/mlyacc/src/shrink.sml",
+            "url": "https://github.com/HOL-Theorem-Prover/HOL/blob/652d1f0aad5cd537ed1e5d470ba3444e70ba470e/tools/mlyacc/src/shrink.sml"
+          }
+        ]
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No rec keyword/value-recursive val production.",
+        "authority_refs": [
+          "cakeml_grammar"
+        ]
+      },
+      "translation": {
+        "hint": "Rewrite to `fun`/rec AST",
+        "mechanically_lowerable": "conditional"
+      }
+    },
+    {
+      "id": "D02",
+      "layer": "sml_declarations",
+      "name": "Simultaneous `val ... and ...`",
+      "semantic_dimension": "declaration_elaboration",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "val ... and ... forms simultaneous bindings whose right-hand sides share the pre-declaration environment rather than seeing earlier sibling bindings.",
+      "syntax": {
+        "example": "val a=e and b=f",
+        "normalized_ebnf": "dec ::= 'val' tyvarseq? ['rec'] pat '=' exp ('and' ['rec'] pat '=' exp)+"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "dec.DecVal.elems"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_syncor"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "val declaration grammar binds one Pattern = E; no val ... and ... group.",
+        "authority_refs": [
+          "cakeml_grammar"
+        ]
+      },
+      "translation": {
+        "hint": "Preserve simultaneous scope",
+        "mechanically_lowerable": "conditional"
+      }
+    },
+    {
+      "id": "D03",
+      "layer": "sml_declarations",
+      "name": "Explicit declaration tyvar sequence",
+      "semantic_dimension": "declaration_elaboration",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "Core value/function declarations may explicitly bind type variables that scope over the declaration.",
+      "syntax": {
+        "example": "val 'a ...`, `fun 'a ...",
+        "normalized_ebnf": "dec ::= ('val'|'fun'|'prim_val') tyvarseq ..."
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "DecVal.tyvars",
+          "DecFun.tyvars"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_syncor"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No explicit tyvar sequence on val/fun declarations.",
+        "authority_refs": [
+          "cakeml_grammar"
+        ]
+      },
+      "translation": {
+        "hint": "Elaborate/remove",
+        "mechanically_lowerable": "conditional"
+      }
+    },
+    {
+      "id": "D04",
+      "layer": "sml_declarations",
+      "name": "`type ... and ...`",
+      "semantic_dimension": "declaration_elaboration",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "type bindings joined by and are elaborated as one simultaneous type-binding group.",
+      "syntax": {
+        "example": "simultaneous type aliases",
+        "normalized_ebnf": "dec ::= 'type' tybind ('and' tybind)+"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "dec.DecType.tybind"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_syncor"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "restricted",
+        "reason": "TypeAbbrevDec is a single type binding; no type ... and ... group.",
+        "authority_refs": [
+          "cakeml_grammar"
+        ]
+      },
+      "translation": {
+        "hint": "Split if scope-safe",
+        "mechanically_lowerable": "conditional"
+      }
+    },
+    {
+      "id": "D05",
+      "layer": "sml_declarations",
+      "name": "`datatype ... withtype ...`",
+      "semantic_dimension": "declaration_elaboration",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "withtype adds simultaneous type abbreviations to a datatype binding group and participates in the group's type scope.",
+      "syntax": {
+        "example": "withtype t = ...",
+        "normalized_ebnf": "dec ::= 'datatype' datbind ('and' datbind)* 'withtype' tybind ('and' tybind)*"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "dec.DecDatatype.withtype_"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_syncor"
+        ],
+        "observed_source_paths": [
+          {
+            "path": "tools/Holmake/toml/TOMLvalue_dtype.sml",
+            "url": "https://github.com/HOL-Theorem-Prover/HOL/blob/652d1f0aad5cd537ed1e5d470ba3444e70ba470e/tools/Holmake/toml/TOMLvalue_dtype.sml"
+          },
+          {
+            "path": "help/src-sml/Asynt.sml",
+            "url": "https://github.com/HOL-Theorem-Prover/HOL/blob/652d1f0aad5cd537ed1e5d470ba3444e70ba470e/help/src-sml/Asynt.sml"
+          }
+        ]
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No withtype production.",
+        "authority_refs": [
+          "cakeml_grammar"
+        ]
+      },
+      "translation": {
+        "hint": "Elaborate SCC",
+        "mechanically_lowerable": "conditional"
+      }
+    },
+    {
+      "id": "D06",
+      "layer": "sml_declarations",
+      "name": "`abstype`",
+      "semantic_dimension": "declaration_elaboration",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "abstype creates datatype representation internally, exposes an abstract type externally, and hides constructors after the body.",
+      "syntax": {
+        "example": "abstype ... with ... end",
+        "normalized_ebnf": "dec ::= 'abstype' datbind ('and' datbind)* ['withtype' tybinds] 'with' dec* 'end'"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "dec.DecAbstype"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_syncor"
+        ],
+        "observed_source_paths": [
+          {
+            "path": "src/1/Rewrite.sml",
+            "url": "https://github.com/HOL-Theorem-Prover/HOL/blob/652d1f0aad5cd537ed1e5d470ba3444e70ba470e/src/1/Rewrite.sml"
+          },
+          {
+            "path": "src/portableML/poly/Thread_Data.sml",
+            "url": "https://github.com/HOL-Theorem-Prover/HOL/blob/652d1f0aad5cd537ed1e5d470ba3444e70ba470e/src/portableML/poly/Thread_Data.sml"
+          },
+          {
+            "path": "src/portableML/poly/Synchronized.sml",
+            "url": "https://github.com/HOL-Theorem-Prover/HOL/blob/652d1f0aad5cd537ed1e5d470ba3444e70ba470e/src/portableML/poly/Synchronized.sml"
+          }
+        ]
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No abstype production or abstraction AST.",
+        "authority_refs": [
+          "cakeml_grammar",
+          "cakeml_ast"
+        ]
+      },
+      "translation": {
+        "hint": "Needs abstraction encoding",
+        "mechanically_lowerable": false
+      }
+    },
+    {
+      "id": "D07",
+      "layer": "sml_declarations",
+      "name": "Datatype replication",
+      "semantic_dimension": "declaration_elaboration",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "datatype replication re-exports an existing datatype and its constructor identities rather than creating fresh constructors.",
+      "syntax": {
+        "example": "datatype t = datatype A.t",
+        "normalized_ebnf": "datbind ::= tyvarseq tycon '=' 'datatype' longtycon"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "datval.DatvalDatatype"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_syncor"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No datatype replication production.",
+        "authority_refs": [
+          "cakeml_grammar"
+        ]
+      },
+      "translation": {
+        "hint": "Alias constructors/types",
+        "mechanically_lowerable": "conditional"
+      }
+    },
+    {
+      "id": "D08",
+      "layer": "sml_declarations",
+      "name": "Exception replication",
+      "semantic_dimension": "declaration_elaboration",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "exception replication binds a new exception identifier to the same exception identity as an existing exception.",
+      "syntax": {
+        "example": "exception E = A.E",
+        "normalized_ebnf": "exbind ::= ['op'] vid '=' longvid"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "exbind.ExnReplicate"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_syncor"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No exception replication production.",
+        "authority_refs": [
+          "cakeml_grammar"
+        ]
+      },
+      "translation": {
+        "hint": "Preserve exception identity",
+        "mechanically_lowerable": "conditional"
+      }
+    },
+    {
+      "id": "D09",
+      "layer": "sml_declarations",
+      "name": "Grouped exception declarations",
+      "semantic_dimension": "declaration_elaboration",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "Exception bindings may be grouped with and; each new exception binding is generative while replication preserves identity.",
+      "syntax": {
+        "example": "exception E ... and F ...",
+        "normalized_ebnf": "dec ::= 'exception' exbind ('and' exbind)+"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "dec.DecException.elems"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_syncor"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "Exception declaration accepts one Dconstructor; no and-group.",
+        "authority_refs": [
+          "cakeml_grammar"
+        ]
+      },
+      "translation": {
+        "hint": "Preserve scope/identity",
+        "mechanically_lowerable": "conditional"
+      }
+    },
+    {
+      "id": "D10",
+      "layer": "sml_declarations",
+      "name": "`infix`",
+      "semantic_dimension": "declaration_elaboration",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "infix changes the fixity environment for subsequent parsing/elaboration, with an optional precedence.",
+      "syntax": {
+        "example": "infix 5 ++",
+        "normalized_ebnf": "dec ::= 'infix' [digit] vid+"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "dec.DecInfix"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_syncor"
+        ],
+        "observed_source_paths": [
+          {
+            "path": "src/tactictoe/src/tttInfix.sml",
+            "url": "https://github.com/HOL-Theorem-Prover/HOL/blob/652d1f0aad5cd537ed1e5d470ba3444e70ba470e/src/tactictoe/src/tttInfix.sml"
+          },
+          {
+            "path": "src/metis/mlibParser.sml",
+            "url": "https://github.com/HOL-Theorem-Prover/HOL/blob/652d1f0aad5cd537ed1e5d470ba3444e70ba470e/src/metis/mlibParser.sml"
+          },
+          {
+            "path": "src/thm/Overlay.sml",
+            "url": "https://github.com/HOL-Theorem-Prover/HOL/blob/652d1f0aad5cd537ed1e5d470ba3444e70ba470e/src/thm/Overlay.sml"
+          }
+        ]
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No infix declaration; operators are assigned to fixed lexical precedence classes.",
+        "authority_refs": [
+          "cakeml_grammar"
+        ]
+      },
+      "translation": {
+        "hint": "SML fixity prepass",
+        "mechanically_lowerable": "conditional"
+      }
+    },
+    {
+      "id": "D11",
+      "layer": "sml_declarations",
+      "name": "`infixr`",
+      "semantic_dimension": "declaration_elaboration",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "infixr installs right-associative fixity for subsequent parsing/elaboration.",
+      "syntax": {
+        "example": "infixr 6 **>",
+        "normalized_ebnf": "dec ::= 'infixr' [digit] vid+"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "dec.DecInfixr"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_syncor"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No infixr declaration; associativity is fixed by the CakeML grammar.",
+        "authority_refs": [
+          "cakeml_grammar"
+        ]
+      },
+      "translation": {
+        "hint": "SML fixity prepass",
+        "mechanically_lowerable": "conditional"
+      }
+    },
+    {
+      "id": "D12",
+      "layer": "sml_declarations",
+      "name": "`nonfix`",
+      "semantic_dimension": "declaration_elaboration",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "nonfix removes an identifier's infix status for subsequent parsing/elaboration.",
+      "syntax": {
+        "example": "nonfix +",
+        "normalized_ebnf": "dec ::= 'nonfix' vid+"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "dec.DecNonfix"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_syncor"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No nonfix declaration or mutable fixity environment.",
+        "authority_refs": [
+          "cakeml_grammar"
+        ]
+      },
+      "translation": {
+        "hint": "SML fixity prepass",
+        "mechanically_lowerable": "conditional"
+      }
+    },
+    {
+      "id": "D13",
+      "layer": "sml_declarations",
+      "name": "Multiple paths in one `open`",
+      "semantic_dimension": "declaration_elaboration",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "One open declaration may open multiple structure paths in order.",
+      "syntax": {
+        "example": "open A B C",
+        "normalized_ebnf": "dec ::= 'open' longstrid+"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "dec.DecOpen.elems"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_syncor"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "restricted",
+        "reason": "open accepts exactly one ModPath per declaration.",
+        "authority_refs": [
+          "cakeml_grammar",
+          "cakeml_ast"
+        ]
+      },
+      "translation": {
+        "hint": "Split in order",
+        "mechanically_lowerable": true
+      }
+    },
+    {
+      "id": "M01",
+      "layer": "sml_modules",
+      "name": "Named signatures",
+      "semantic_dimension": "module_elaboration",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "A signature declaration binds a reusable signature identifier to a signature expression.",
+      "syntax": {
+        "example": "signature S = sig ... end",
+        "normalized_ebnf": "dec ::= 'signature' sigid '=' sigexp ('and' sigid '=' sigexp)*"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "dec.DecSignature",
+          "sigbind"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_synmod"
+        ],
+        "observed_source_paths": [
+          {
+            "path": "src/0/Net.sig",
+            "url": "https://github.com/HOL-Theorem-Prover/HOL/blob/652d1f0aad5cd537ed1e5d470ba3444e70ba470e/src/0/Net.sig"
+          },
+          {
+            "path": "src/0/Term.sig",
+            "url": "https://github.com/HOL-Theorem-Prover/HOL/blob/652d1f0aad5cd537ed1e5d470ba3444e70ba470e/src/0/Term.sig"
+          },
+          {
+            "path": "src/0/Type.sig",
+            "url": "https://github.com/HOL-Theorem-Prover/HOL/blob/652d1f0aad5cd537ed1e5d470ba3444e70ba470e/src/0/Type.sig"
+          },
+          {
+            "path": "src/0/Subst.sig",
+            "url": "https://github.com/HOL-Theorem-Prover/HOL/blob/652d1f0aad5cd537ed1e5d470ba3444e70ba470e/src/0/Subst.sig"
+          }
+        ]
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No signature declaration production or signature AST.",
+        "authority_refs": [
+          "cakeml_grammar",
+          "cakeml_ast"
+        ]
+      },
+      "translation": {
+        "hint": "Implement/elaborate",
+        "mechanically_lowerable": false
+      }
+    },
+    {
+      "id": "M02",
+      "layer": "sml_modules",
+      "name": "Signature conformance checking",
+      "semantic_dimension": "module_elaboration",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "Signature ascription checks that a structure matches a signature and restricts its externally visible interface.",
+      "syntax": {
+        "example": ": SIG` / `:> SIG",
+        "normalized_ebnf": "strbind ::= strid (':'|':>') sigexp '=' strexp"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "struct_kind",
+          "DecStructure.constraint"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_synmod"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No implemented signature-conformance semantics; restricted inline :> syntax is discarded during conversion.",
+        "authority_refs": [
+          "cakeml_conversion",
+          "cakeml_ast"
+        ]
+      },
+      "translation": {
+        "hint": "Real module elaborator",
+        "mechanically_lowerable": false
+      }
+    },
+    {
+      "id": "M03",
+      "layer": "sml_modules",
+      "name": "Transparent ascription",
+      "semantic_dimension": "module_elaboration",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "Transparent ascription constrains the visible interface while preserving type identities that can be inferred from the implementation.",
+      "syntax": {
+        "example": "structure M : S = ...",
+        "normalized_ebnf": "constraint ::= ':' sigexp"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "constraint.Colon"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_synmod"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No transparent ':' structure ascription syntax/semantics.",
+        "authority_refs": [
+          "cakeml_grammar",
+          "cakeml_ast"
+        ]
+      },
+      "translation": {
+        "hint": "Implement",
+        "mechanically_lowerable": false
+      }
+    },
+    {
+      "id": "M04",
+      "layer": "sml_modules",
+      "name": "Opaque ascription semantics",
+      "semantic_dimension": "module_elaboration",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "Opaque ascription seals a structure and generates abstract type identities for hidden type components.",
+      "syntax": {
+        "example": "structure M :> S = ...",
+        "normalized_ebnf": "constraint ::= ':>' sigexp"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "constraint.ColonGt"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_synmod"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "parsed_but_semantically_discarded",
+        "reason": "Restricted ':> sig ... end' is parsed, but SpecLine/SignatureValue reduce to unit and ptree_Structure drops asc before constructing Dmod.",
+        "authority_refs": [
+          "cakeml_grammar",
+          "cakeml_conversion",
+          "cakeml_ast"
+        ]
+      },
+      "translation": {
+        "hint": "Implement sealing",
+        "mechanically_lowerable": false
+      }
+    },
+    {
+      "id": "M05",
+      "layer": "sml_modules",
+      "name": "Named signature expressions",
+      "semantic_dimension": "module_elaboration",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "A named signature expression refers to a previously bound signature identifier.",
+      "syntax": {
+        "example": ":> S",
+        "normalized_ebnf": "sigexp ::= sigid"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "sigexp.SigIdent"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_synmod"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No named signature expression in structure ascription.",
+        "authority_refs": [
+          "cakeml_grammar",
+          "cakeml_ast"
+        ]
+      },
+      "translation": {
+        "hint": "Implement",
+        "mechanically_lowerable": false
+      }
+    },
+    {
+      "id": "M06",
+      "layer": "sml_modules",
+      "name": "`where type`",
+      "semantic_dimension": "module_elaboration",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "where type refines a signature by equating a specified type component with a concrete type.",
+      "syntax": {
+        "example": "S where type t = T",
+        "normalized_ebnf": "sigexp ::= sigexp 'where' 'type' tybind ('and' ['type'] tybind)*"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "sigexp.WhereType"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_synmod"
+        ],
+        "observed_source_paths": [
+          {
+            "path": "src/0/Term.sig",
+            "url": "https://github.com/HOL-Theorem-Prover/HOL/blob/652d1f0aad5cd537ed1e5d470ba3444e70ba470e/src/0/Term.sig"
+          },
+          {
+            "path": "src/0/Type.sig",
+            "url": "https://github.com/HOL-Theorem-Prover/HOL/blob/652d1f0aad5cd537ed1e5d470ba3444e70ba470e/src/0/Type.sig"
+          }
+        ]
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No where type signature refinement.",
+        "authority_refs": [
+          "cakeml_grammar",
+          "cakeml_ast"
+        ]
+      },
+      "translation": {
+        "hint": "Type refinement",
+        "mechanically_lowerable": false
+      }
+    },
+    {
+      "id": "M07",
+      "layer": "sml_modules",
+      "name": "`include` specs",
+      "semantic_dimension": "module_elaboration",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "include imports the specifications of one or more signatures into the enclosing signature/specification.",
+      "syntax": {
+        "example": "include S",
+        "normalized_ebnf": "spec ::= 'include' sigexp+"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "dec.DecInclude"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_synmod"
+        ],
+        "observed_source_paths": [
+          {
+            "path": "src/0/Term.sig",
+            "url": "https://github.com/HOL-Theorem-Prover/HOL/blob/652d1f0aad5cd537ed1e5d470ba3444e70ba470e/src/0/Term.sig"
+          },
+          {
+            "path": "src/q/QLib.sig",
+            "url": "https://github.com/HOL-Theorem-Prover/HOL/blob/652d1f0aad5cd537ed1e5d470ba3444e70ba470e/src/q/QLib.sig"
+          }
+        ]
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No include specification.",
+        "authority_refs": [
+          "cakeml_grammar",
+          "cakeml_ast"
+        ]
+      },
+      "translation": {
+        "hint": "Signature expansion",
+        "mechanically_lowerable": false
+      }
+    },
+    {
+      "id": "M08",
+      "layer": "sml_modules",
+      "name": "`eqtype` specs",
+      "semantic_dimension": "module_elaboration",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "eqtype requires a type component to admit equality.",
+      "syntax": {
+        "example": "eqtype t",
+        "normalized_ebnf": "spec ::= 'eqtype' tyvarseq tycon"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "type_kw.KWEqtype"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_synmod"
+        ],
+        "observed_source_paths": [
+          {
+            "path": "src/0/Subst.sig",
+            "url": "https://github.com/HOL-Theorem-Prover/HOL/blob/652d1f0aad5cd537ed1e5d470ba3444e70ba470e/src/0/Subst.sig"
+          },
+          {
+            "path": "src/prekernel/Nonce.sig",
+            "url": "https://github.com/HOL-Theorem-Prover/HOL/blob/652d1f0aad5cd537ed1e5d470ba3444e70ba470e/src/prekernel/Nonce.sig"
+          }
+        ]
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No eqtype specification or equality-kind semantics.",
+        "authority_refs": [
+          "cakeml_grammar",
+          "cakeml_infer"
+        ]
+      },
+      "translation": {
+        "hint": "Equality kinds",
+        "mechanically_lowerable": false
+      }
+    },
+    {
+      "id": "M09",
+      "layer": "sml_modules",
+      "name": "`sharing type`",
+      "semantic_dimension": "module_elaboration",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "sharing type imposes equality/unification constraints between type components.",
+      "syntax": {
+        "example": "sharing type A.t = B.t",
+        "normalized_ebnf": "spec ::= 'sharing' 'type' longtycon '=' longtycon ('=' longtycon)*"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "dec.Sharing(type_=SOME)"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_synmod"
+        ],
+        "observed_source_paths": [
+          {
+            "path": "tools/mlyacc/src/sigs.sml",
+            "url": "https://github.com/HOL-Theorem-Prover/HOL/blob/652d1f0aad5cd537ed1e5d470ba3444e70ba470e/tools/mlyacc/src/sigs.sml"
+          },
+          {
+            "path": "tools/mlyacc/src/parse.sml",
+            "url": "https://github.com/HOL-Theorem-Prover/HOL/blob/652d1f0aad5cd537ed1e5d470ba3444e70ba470e/tools/mlyacc/src/parse.sml"
+          }
+        ]
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No sharing type specification.",
+        "authority_refs": [
+          "cakeml_grammar",
+          "cakeml_ast"
+        ]
+      },
+      "translation": {
+        "hint": "Unification constraint",
+        "mechanically_lowerable": false
+      }
+    },
+    {
+      "id": "M10",
+      "layer": "sml_modules",
+      "name": "Structure sharing",
+      "semantic_dimension": "module_elaboration",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "Structure sharing constrains named structure components to denote the same compatible structure identity/interface as required by SML module semantics.",
+      "syntax": {
+        "example": "sharing A = B",
+        "normalized_ebnf": "spec ::= 'sharing' longstrid '=' longstrid ('=' longstrid)*"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "dec.Sharing(type_=NONE)"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_synmod"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No structure sharing specification.",
+        "authority_refs": [
+          "cakeml_grammar",
+          "cakeml_ast"
+        ]
+      },
+      "translation": {
+        "hint": "Module equality constraint",
+        "mechanically_lowerable": false
+      }
+    },
+    {
+      "id": "M11",
+      "layer": "sml_modules",
+      "name": "Nested structure specs",
+      "semantic_dimension": "module_elaboration",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "Signatures can contain nested structure specifications with their own signature constraints.",
+      "syntax": {
+        "example": "structure X : S` inside `sig",
+        "normalized_ebnf": "spec ::= 'structure' strid ':' sigexp"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "sigexp.Spec(dec list)",
+          "DecStructure"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_synmod"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "Restricted SpecLine has val/type/exception/datatype only; no nested structure spec.",
+        "authority_refs": [
+          "cakeml_grammar",
+          "cakeml_conversion"
+        ]
+      },
+      "translation": {
+        "hint": "Implement",
+        "mechanically_lowerable": false
+      }
+    },
+    {
+      "id": "M12",
+      "layer": "sml_modules",
+      "name": "Functor declarations",
+      "semantic_dimension": "module_elaboration",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "A functor is a module-level function from a structure argument satisfying a specification/signature to a structure result.",
+      "syntax": {
+        "example": "functor F(X:S)=...",
+        "normalized_ebnf": "dec ::= 'functor' funid '(' funarg ')' [constraint] '=' strexp"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "dec.DecFunctor"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_synmod"
+        ],
+        "observed_source_paths": [
+          {
+            "path": "src/floating-point/fp-functor.sml",
+            "url": "https://github.com/HOL-Theorem-Prover/HOL/blob/652d1f0aad5cd537ed1e5d470ba3444e70ba470e/src/floating-point/fp-functor.sml"
+          },
+          {
+            "path": "src/parse/LVTermNetFunctor.sml",
+            "url": "https://github.com/HOL-Theorem-Prover/HOL/blob/652d1f0aad5cd537ed1e5d470ba3444e70ba470e/src/parse/LVTermNetFunctor.sml"
+          },
+          {
+            "path": "tools/Holmake/toml/parseTOMLFunctor.sml",
+            "url": "https://github.com/HOL-Theorem-Prover/HOL/blob/652d1f0aad5cd537ed1e5d470ba3444e70ba470e/tools/Holmake/toml/parseTOMLFunctor.sml"
+          }
+        ]
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No functor declaration or functor AST.",
+        "authority_refs": [
+          "cakeml_grammar",
+          "cakeml_ast"
+        ]
+      },
+      "translation": {
+        "hint": "Implement/elaborate",
+        "mechanically_lowerable": false
+      }
+    },
+    {
+      "id": "M13",
+      "layer": "sml_modules",
+      "name": "Functor application",
+      "semantic_dimension": "module_elaboration",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "Functor application evaluates/elaborates a functor against a structure expression or inline structure declarations.",
+      "syntax": {
+        "example": "structure M = F(X)",
+        "normalized_ebnf": "strexp ::= funid '(' strexp ')' | funid '(' strdec* ')'"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "strexp.FunAppExp",
+          "strexp.FunAppDec"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_synmod"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No functor application structure expression.",
+        "authority_refs": [
+          "cakeml_grammar",
+          "cakeml_ast"
+        ]
+      },
+      "translation": {
+        "hint": "Elaborate",
+        "mechanically_lowerable": false
+      }
+    },
+    {
+      "id": "M14",
+      "layer": "sml_modules",
+      "name": "Functor inline-spec args",
+      "semantic_dimension": "module_elaboration",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "Functor parameters can be specified inline as a specification sequence rather than only as a named structure plus signature.",
+      "syntax": {
+        "example": "functor F(type t ...)=...",
+        "normalized_ebnf": "funarg ::= strid [':' sigexp] | spec*"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "funarg.ArgSpec"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_synmod"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No functor parameter specification language.",
+        "authority_refs": [
+          "cakeml_grammar",
+          "cakeml_ast"
+        ]
+      },
+      "translation": {
+        "hint": "Elaborate",
+        "mechanically_lowerable": false
+      }
+    },
+    {
+      "id": "M15",
+      "layer": "sml_modules",
+      "name": "Structure aliases",
+      "semantic_dimension": "module_elaboration",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "A structure expression may simply be a path to an existing structure, enabling structure aliases.",
+      "syntax": {
+        "example": "structure A = B",
+        "normalized_ebnf": "strexp ::= longstrid"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "strexp.StrIdent"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_synmod"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "Structure source form is only structure Name [restricted :> inline sig] = struct Decls end; no structure-path RHS alias.",
+        "authority_refs": [
+          "cakeml_grammar"
+        ]
+      },
+      "translation": {
+        "hint": "Add structure expressions",
+        "mechanically_lowerable": false
+      }
+    },
+    {
+      "id": "M16",
+      "layer": "sml_modules",
+      "name": "General structure constraints",
+      "semantic_dimension": "module_elaboration",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "Structure expressions can themselves be constrained by transparent or opaque signature ascription.",
+      "syntax": {
+        "example": "(strexp : S)` / `(strexp :> S)",
+        "normalized_ebnf": "strexp ::= strexp (':'|':>') sigexp"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "strexp.StrConstraint"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_synmod"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No general structure-expression constraints.",
+        "authority_refs": [
+          "cakeml_grammar",
+          "cakeml_ast"
+        ]
+      },
+      "translation": {
+        "hint": "Implement",
+        "mechanically_lowerable": false
+      }
+    },
+    {
+      "id": "M17",
+      "layer": "sml_modules",
+      "name": "Structure `let` expressions",
+      "semantic_dimension": "module_elaboration",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "A structure expression can contain local structure declarations via let ... in ... end.",
+      "syntax": {
+        "example": "let strdec in strexp end",
+        "normalized_ebnf": "strexp ::= 'let' strdec* 'in' strexp 'end'"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "strexp.StrLetInEnd"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_synmod"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No general structure-expression language and no structure let expression.",
+        "authority_refs": [
+          "cakeml_grammar",
+          "cakeml_ast"
+        ]
+      },
+      "translation": {
+        "hint": "Elaborate",
+        "mechanically_lowerable": false
+      }
+    },
+    {
+      "id": "M18",
+      "layer": "sml_modules",
+      "name": "Simultaneous structure bindings",
+      "semantic_dimension": "module_elaboration",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "Structure bindings joined by and are one declaration group with SML module scoping rules.",
+      "syntax": {
+        "example": "structure A=... and B=...",
+        "normalized_ebnf": "dec ::= 'structure' strbind ('and' strbind)+"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "dec.DecStructure.elems"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_synmod"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No structure ... and ... binding group.",
+        "authority_refs": [
+          "cakeml_grammar"
+        ]
+      },
+      "translation": {
+        "hint": "Preserve scope",
+        "mechanically_lowerable": false
+      }
+    },
+    {
+      "id": "M19",
+      "layer": "sml_modules",
+      "name": "Rich local/open/include/spec combinations in signatures",
+      "semantic_dimension": "module_elaboration",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "The SML module specification language composes declarations such as include, sharing, nested structures, and type/value/exception specifications; CakeML's parsed inline signature fragment is much smaller and is discarded.",
+      "syntax": {
+        "example": "various",
+        "normalized_ebnf": "sigexp ::= 'sig' spec* 'end'; spec composes val/type/eqtype/datatype/exception/structure/include/sharing/local/open/fixity forms as permitted by SML"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "sigexp.Spec",
+          "dec/specification forms"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_synmod"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No full SML specification language; the small inline signature fragment is semantically discarded.",
+        "authority_refs": [
+          "cakeml_grammar",
+          "cakeml_conversion"
+        ]
+      },
+      "translation": {
+        "hint": "Full SML module elaborator",
+        "mechanically_lowerable": false
+      }
+    },
+    {
+      "id": "S01",
+      "layer": "sml_semantics",
+      "name": "Non-top-level let-polymorphism",
+      "semantic_dimension": "static_or_dynamic_semantics",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "SML generalizes eligible local value bindings, allowing one let-bound value to be instantiated at multiple types in the body.",
+      "syntax": {
+        "example": "polymorphic local `val",
+        "normalized_ebnf": "let val x = value in ...x at multiple instantiations... end"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "SML97 static semantics for value declarations"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_syncor",
+          "sml97_statcor"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "semantic_mismatch",
+        "reason": "infer_e deliberately disables generalization for non-top-level Let and Letrec.",
+        "authority_refs": [
+          "cakeml_infer",
+          "cakeml_howto"
+        ]
+      },
+      "translation": {
+        "hint": "Extend inference",
+        "mechanically_lowerable": false
+      }
+    },
+    {
+      "id": "S02",
+      "layer": "sml_semantics",
+      "name": "Equality type variables",
+      "semantic_dimension": "static_or_dynamic_semantics",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "Equality type variables (written with a doubled quote, e.g. ''a) range only over types that admit equality.",
+      "syntax": {
+        "example": "''a",
+        "normalized_ebnf": "tyvar ::= \"''\" id"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "SML97 equality attribute on TyVar"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_syncor",
+          "sml97_statcor"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "semantic_mismatch",
+        "reason": "CakeML has no equality types/equality-kind restriction.",
+        "authority_refs": [
+          "cakeml_infer",
+          "cakeml_howto"
+        ]
+      },
+      "translation": {
+        "hint": "Add equality kinds",
+        "mechanically_lowerable": false
+      }
+    },
+    {
+      "id": "S03",
+      "layer": "sml_semantics",
+      "name": "Equality type specs",
+      "semantic_dimension": "static_or_dynamic_semantics",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "Equality-type specifications propagate the requirement that an abstract type admit equality.",
+      "syntax": {
+        "example": "eqtype t",
+        "normalized_ebnf": "spec ::= 'eqtype' tyvarseq tycon"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "type_kw.KWEqtype"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_syncor",
+          "sml97_statcor"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No eqtype spec or equality-kind propagation.",
+        "authority_refs": [
+          "cakeml_grammar",
+          "cakeml_infer"
+        ]
+      },
+      "translation": {
+        "hint": "Add equality kinds",
+        "mechanically_lowerable": false
+      }
+    },
+    {
+      "id": "S04",
+      "layer": "sml_semantics",
+      "name": "SML function-equality rejection",
+      "semantic_dimension": "static_or_dynamic_semantics",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "SML's static semantics rejects equality on function types because functions do not admit equality.",
+      "syntax": {
+        "example": "f = g` rejected",
+        "normalized_ebnf": "exp ::= exp '=' exp  # rejected statically when operand type does not admit equality"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "SML97 equality-type static semantics"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_syncor",
+          "sml97_statcor"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "semantic_mismatch",
+        "reason": "Equality inference only constrains the two operand types to be equal; it does not require an equality type.",
+        "authority_refs": [
+          "cakeml_infer"
+        ]
+      },
+      "translation": {
+        "hint": "Change equality typing",
+        "mechanically_lowerable": false
+      }
+    },
+    {
+      "id": "S05",
+      "layer": "sml_semantics",
+      "name": "SML equality runtime semantics",
+      "semantic_dimension": "static_or_dynamic_semantics",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "SML equality is defined only for equality types; function closures are not equality-comparable. CakeML instead makes closure comparisons succeed and treats all closures as equal.",
+      "syntax": {
+        "example": "no closure equality",
+        "normalized_ebnf": "exp ::= exp '=' exp  # dynamic equality defined only after SML equality-type admissibility"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "SML97 equality dynamic semantics"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_syncor",
+          "sml97_dyncor"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "semantic_mismatch",
+        "reason": "do_eq explicitly returns true for any Closure/Recclosure pair.",
+        "authority_refs": [
+          "cakeml_semprim",
+          "cakeml_howto"
+        ]
+      },
+      "translation": {
+        "hint": "Change `do_eq` contract",
+        "mechanically_lowerable": false
+      }
+    },
+    {
+      "id": "S06",
+      "layer": "sml_semantics",
+      "name": "SML observable evaluation order",
+      "semantic_dimension": "static_or_dynamic_semantics",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "SML specifies an observable evaluation order for expressions; CakeML deliberately uses right-to-left evaluation, so effectful programs can differ.",
+      "syntax": {
+        "example": "side-effectful args left-to-right",
+        "normalized_ebnf": "application/tuple/record/other effectful expression forms follow SML evaluation order"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "SML97 dynamic semantics"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_syncor",
+          "sml97_dyncor"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "semantic_mismatch",
+        "reason": "CakeML documents and defines right-to-left evaluation, unlike SML's observable evaluation order.",
+        "authority_refs": [
+          "cakeml_howto",
+          "cakeml_evaluate"
+        ]
+      },
+      "translation": {
+        "hint": "Change semantics or sequence",
+        "mechanically_lowerable": false
+      }
+    },
+    {
+      "id": "S07",
+      "layer": "sml_semantics",
+      "name": "`Match` exception",
+      "semantic_dimension": "static_or_dynamic_semantics",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "Failure of a case or anonymous-function match raises the predefined Match exception in SML.",
+      "syntax": {
+        "example": "failed `case`/`fn` => `Match",
+        "normalized_ebnf": "case exp of pat => exp | ...  # no matching arm => raise Match"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "predefined Match exception"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_syncor",
+          "sml97_dyncor"
+        ],
+        "observed_source_paths": [
+          {
+            "path": "src/1/match_goal.sml",
+            "url": "https://github.com/HOL-Theorem-Prover/HOL/blob/652d1f0aad5cd537ed1e5d470ba3444e70ba470e/src/1/match_goal.sml"
+          },
+          {
+            "path": "src/1/Pmatch.sml",
+            "url": "https://github.com/HOL-Theorem-Prover/HOL/blob/652d1f0aad5cd537ed1e5d470ba3444e70ba470e/src/1/Pmatch.sml"
+          },
+          {
+            "path": "src/1/Rewrite.sml",
+            "url": "https://github.com/HOL-Theorem-Prover/HOL/blob/652d1f0aad5cd537ed1e5d470ba3444e70ba470e/src/1/Rewrite.sml"
+          },
+          {
+            "path": "src/q/Q.sml",
+            "url": "https://github.com/HOL-Theorem-Prover/HOL/blob/652d1f0aad5cd537ed1e5d470ba3444e70ba470e/src/q/Q.sml"
+          }
+        ]
+      },
+      "cakeml": {
+        "compatibility": "semantic_mismatch",
+        "reason": "CakeML has no distinct Match exception; source docs state Bind is raised instead.",
+        "authority_refs": [
+          "cakeml_howto",
+          "cakeml_semprim"
+        ]
+      },
+      "translation": {
+        "hint": "Add `Match`",
+        "mechanically_lowerable": false
+      }
+    },
+    {
+      "id": "S08",
+      "layer": "sml_semantics",
+      "name": "`Bind`/`Match` distinction",
+      "semantic_dimension": "static_or_dynamic_semantics",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "SML distinguishes Bind (failed value binding) from Match (failed case/function match); CakeML collapses match failure to Bind.",
+      "syntax": {
+        "example": "val failure vs match failure",
+        "normalized_ebnf": "val pat = exp  # failed binding => Bind; case/fn match failure => Match"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "predefined Bind and Match exceptions"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_syncor",
+          "sml97_dyncor"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "semantic_mismatch",
+        "reason": "The SML Bind/Match failure distinction is not preserved.",
+        "authority_refs": [
+          "cakeml_howto",
+          "cakeml_semprim"
+        ]
+      },
+      "translation": {
+        "hint": "Restore distinction",
+        "mechanically_lowerable": false
+      }
+    },
+    {
+      "id": "S09",
+      "layer": "sml_semantics",
+      "name": "Type variables in expression/pattern annotations",
+      "semantic_dimension": "static_or_dynamic_semantics",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "SML permits type variables in explicit expression/pattern type annotations when they are correctly scoped; CakeML's AST represents them but its inference rejects them in source annotations.",
+      "syntax": {
+        "example": "(x : 'a)",
+        "normalized_ebnf": "exp ::= exp ':' ty; pat ::= pat ':' ty; ty may contain scoped type variables"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "exp.Typed",
+          "exp.Layered",
+          "ty.TyVar"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_syncor",
+          "sml97_statcor"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "semantic_mismatch",
+        "reason": "Atvar exists in the AST, but inference reports that type variables are not supported in source type annotations.",
+        "authority_refs": [
+          "cakeml_ast",
+          "cakeml_infer"
+        ]
+      },
+      "translation": {
+        "hint": "Extend annotation typing",
+        "mechanically_lowerable": false
+      }
+    },
+    {
+      "id": "S10",
+      "layer": "sml_semantics",
+      "name": "Dynamic fixity environment",
+      "semantic_dimension": "static_or_dynamic_semantics",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "Fixity declarations mutate a scoped fixity environment that determines how later infix source text is parsed; CakeML instead uses fixed operator classes.",
+      "syntax": {
+        "example": "declarations affect parse",
+        "normalized_ebnf": "dec ::= 'infix' ... | 'infixr' ... | 'nonfix' ...  # mutates parse fixity environment"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "HOLSourceParser.scope",
+          "updateScope"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_syncor",
+          "sml97_statcor"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No scoped user-defined fixity environment; grammar fixes precedence classes by operator spelling.",
+        "authority_refs": [
+          "cakeml_grammar"
+        ]
+      },
+      "translation": {
+        "hint": "SML parser pass",
+        "mechanically_lowerable": false
+      }
+    },
+    {
+      "id": "S11",
+      "layer": "sml_semantics",
+      "name": "Opaque type identity/sealing",
+      "semantic_dimension": "static_or_dynamic_semantics",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "Opaque sealing creates fresh abstract type identity and prevents clients from relying on hidden representation equalities.",
+      "syntax": {
+        "example": ":>` fresh abstraction",
+        "normalized_ebnf": "strbind ::= strid ':>' sigexp '=' strexp"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "constraint.ColonGt",
+          "SML97 module statics"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_syncor",
+          "sml97_statmod",
+          "sml97_dynmod"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No implemented opaque sealing/fresh abstract type identity; parsed restricted :> data is dropped.",
+        "authority_refs": [
+          "cakeml_conversion",
+          "cakeml_ast"
+        ]
+      },
+      "translation": {
+        "hint": "Implement",
+        "mechanically_lowerable": false
+      }
+    },
+    {
+      "id": "S12",
+      "layer": "sml_semantics",
+      "name": "`abstype` representation hiding",
+      "semantic_dimension": "static_or_dynamic_semantics",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "abstype representation hiding makes constructors available only inside the with ... end body and exposes only the abstract type outside.",
+      "syntax": {
+        "example": "constructor hidden outside body",
+        "normalized_ebnf": "dec ::= 'abstype' ... 'with' dec* 'end'"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "dec.DecAbstype"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser",
+          "sml97_syncor",
+          "sml97_statcor"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No abstype declaration or representation-hiding semantics.",
+        "authority_refs": [
+          "cakeml_grammar",
+          "cakeml_ast"
+        ]
+      },
+      "translation": {
+        "hint": "Implement/encode",
+        "mechanically_lowerable": false
+      }
+    },
+    {
+      "id": "H01",
+      "layer": "hol4_extension",
+      "name": "Theory header language",
+      "semantic_dimension": "hol4_source_semantics",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "HOL4 theory headers declare the theory name and source-level Ancestors/Libs metadata consumed by HOL tooling.",
+      "syntax": {
+        "example": "Theory`, `Ancestors`, `Libs",
+        "normalized_ebnf": "Theory ID [attrs] ; Ancestors ... ; Libs ..."
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "dec.HOLTheory",
+          "header.HOLAncestors",
+          "header.HOLLibs"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No HOL4 Theory/Ancestors/Libs source declaration in CakeML.",
+        "authority_refs": [
+          "cakeml_grammar"
+        ]
+      },
+      "translation": {
+        "hint": "HOL preprocessor",
+        "mechanically_lowerable": false
+      }
+    },
+    {
+      "id": "H02",
+      "layer": "hol4_extension",
+      "name": "Definition blocks",
+      "semantic_dimension": "hol4_source_semantics",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "Definition blocks package quoted HOL terms plus optional termination proof/tactic material into a source declaration.",
+      "syntax": {
+        "example": "Definition ... End",
+        "normalized_ebnf": "Definition ID [attrs] ':' quotation ['Termination' exp] 'End'"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "dec.HOLDefinition"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No HOL Definition block syntax.",
+        "authority_refs": [
+          "cakeml_grammar"
+        ]
+      },
+      "translation": {
+        "hint": "HOL preprocessor",
+        "mechanically_lowerable": false
+      }
+    },
+    {
+      "id": "H03",
+      "layer": "hol4_extension",
+      "name": "Theorem blocks",
+      "semantic_dimension": "hol4_source_semantics",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "Theorem blocks package a theorem statement quotation and proof/tactic body, terminated by QED; HOL4 also supports simple theorem-binding forms.",
+      "syntax": {
+        "example": "Theorem`, `Proof`, `QED",
+        "normalized_ebnf": "Theorem ID [attrs] ':' quotation ['Proof' [attrs]] exp 'QED'"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "dec.HOLTheoremDecl",
+          "dec.HOLSimpleThm"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No HOL Theorem/Proof/QED declaration syntax.",
+        "authority_refs": [
+          "cakeml_grammar"
+        ]
+      },
+      "translation": {
+        "hint": "HOL preprocessor",
+        "mechanically_lowerable": false
+      }
+    },
+    {
+      "id": "H04",
+      "layer": "hol4_extension",
+      "name": "`Triviality`",
+      "semantic_dimension": "hol4_source_semantics",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "Triviality is a theorem-declaration variant with different registration/export intent in HOL tooling.",
+      "syntax": {
+        "example": "theorem block variant",
+        "normalized_ebnf": "Triviality ID [attrs] ':' quotation ['Proof' [attrs]] exp 'QED'"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "HOLTheoremDecl.triv",
+          "HOLSimpleThm.triv"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No HOL Triviality declaration syntax.",
+        "authority_refs": [
+          "cakeml_grammar"
+        ]
+      },
+      "translation": {
+        "hint": "HOL preprocessor",
+        "mechanically_lowerable": false
+      }
+    },
+    {
+      "id": "H05",
+      "layer": "hol4_extension",
+      "name": "`Inductive` / `CoInductive`",
+      "semantic_dimension": "hol4_source_semantics",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "Inductive and CoInductive blocks introduce rule systems from quoted HOL syntax and invoke HOL-specific elaboration.",
+      "syntax": {
+        "example": "block syntax",
+        "normalized_ebnf": "('Inductive'|'CoInductive') ID ':' quotation 'End'"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "dec.HOLInductiveDecl"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No HOL Inductive/CoInductive declaration syntax.",
+        "authority_refs": [
+          "cakeml_grammar"
+        ]
+      },
+      "translation": {
+        "hint": "HOL preprocessor",
+        "mechanically_lowerable": false
+      }
+    },
+    {
+      "id": "H06",
+      "layer": "hol4_extension",
+      "name": "HOL `Datatype:` command",
+      "semantic_dimension": "hol4_source_semantics",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "HOL4's Datatype: ... End command is a quotation-based HOL datatype declaration distinct from SML datatype.",
+      "syntax": {
+        "example": "quotation-based datatype command",
+        "normalized_ebnf": "Datatype ':' quotation 'End'"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "dec.HOLDatatype"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No HOL Datatype: ... End command syntax.",
+        "authority_refs": [
+          "cakeml_grammar"
+        ]
+      },
+      "translation": {
+        "hint": "HOL preprocessor",
+        "mechanically_lowerable": false
+      }
+    },
+    {
+      "id": "H07",
+      "layer": "hol4_extension",
+      "name": "HOL quotations",
+      "semantic_dimension": "hol4_source_semantics",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "HOL quotations embed HOL term/type concrete syntax inside SML/HOL source.",
+      "syntax": {
+        "example": "backtick/full-quote forms",
+        "normalized_ebnf": "HOL quotation delimiters / full-quote forms containing quoted HOL source"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "exp.HOLFullQuote",
+          "exp.HOLQuote",
+          "qdecl.QuoteLiteral"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No HOL quotation syntax/AST.",
+        "authority_refs": [
+          "cakeml_grammar",
+          "cakeml_ast"
+        ]
+      },
+      "translation": {
+        "hint": "HOL parser",
+        "mechanically_lowerable": false
+      }
+    },
+    {
+      "id": "H08",
+      "layer": "hol4_extension",
+      "name": "Antiquotation",
+      "semantic_dimension": "hol4_source_semantics",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "Antiquotation splices an SML expression into a HOL quotation.",
+      "syntax": {
+        "example": "^expr` in quotation",
+        "normalized_ebnf": "quotation-part ::= '^' exp"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "qdecl.QuoteAntiq"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No HOL antiquotation syntax/AST.",
+        "authority_refs": [
+          "cakeml_grammar",
+          "cakeml_ast"
+        ]
+      },
+      "translation": {
+        "hint": "HOL parser",
+        "mechanically_lowerable": false
+      }
+    },
+    {
+      "id": "H09",
+      "layer": "hol4_extension",
+      "name": "`Quote` declarations",
+      "semantic_dimension": "hol4_source_semantics",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "Quote declarations bind named quotation material for user-supplied parsing/elaboration.",
+      "syntax": {
+        "example": "named quote blocks",
+        "normalized_ebnf": "Quote ID ['=' exp] ':' quotation 'End'"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "dec.HOLQuoteDecl"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No HOL Quote declaration syntax.",
+        "authority_refs": [
+          "cakeml_grammar"
+        ]
+      },
+      "translation": {
+        "hint": "HOL preprocessor",
+        "mechanically_lowerable": false
+      }
+    },
+    {
+      "id": "H10",
+      "layer": "hol4_extension",
+      "name": "HOL `Type` / `Overload` declarations",
+      "semantic_dimension": "hol4_source_semantics",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "HOL Type and Overload declarations modify HOL's logical type/overload environment from source.",
+      "syntax": {
+        "example": "logical grammar/type commands",
+        "normalized_ebnf": "('Type'|'Overload') id [attrs] ['=' exp]"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "dec.HOLType(overload flag)"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No HOL logical Type/Overload declaration syntax.",
+        "authority_refs": [
+          "cakeml_grammar"
+        ]
+      },
+      "translation": {
+        "hint": "HOL preprocessor",
+        "mechanically_lowerable": false
+      }
+    },
+    {
+      "id": "H11",
+      "layer": "hol4_extension",
+      "name": "`Resume` / `Finalise`",
+      "semantic_dimension": "hol4_source_semantics",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "Resume and Finalise are HOL proof-workflow declarations for suspended/finalized theorem construction.",
+      "syntax": {
+        "example": "suspended proof workflow",
+        "normalized_ebnf": "'Resume' id [attrs] ':' exp 'QED' | 'Finalise' id [attrs]"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "dec.HOLResume",
+          "dec.HOLFinalise"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No HOL Resume/Finalise declarations.",
+        "authority_refs": [
+          "cakeml_grammar"
+        ]
+      },
+      "translation": {
+        "hint": "HOL preprocessor",
+        "mechanically_lowerable": false
+      }
+    },
+    {
+      "id": "H12",
+      "layer": "hol4_extension",
+      "name": "HOL attributes",
+      "semantic_dimension": "hol4_source_semantics",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "HOL declarations accept attribute lists that control theorem/definition processing and metadata.",
+      "syntax": {
+        "example": "[attrs]",
+        "normalized_ebnf": "attrs ::= '[' attribute (',' attribute)* ']'"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "'a attrs",
+          "kvals attrs"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No HOL declaration attribute syntax/semantics.",
+        "authority_refs": [
+          "cakeml_grammar"
+        ]
+      },
+      "translation": {
+        "hint": "HOL preprocessor",
+        "mechanically_lowerable": false
+      }
+    },
+    {
+      "id": "H13",
+      "layer": "hol4_extension",
+      "name": "`#(LINE)` / `#(FILE)` pragmas",
+      "semantic_dimension": "hol4_source_semantics",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "HOL #(LINE) and #(FILE) pragmas alter source-location mapping used by tooling and diagnostics.",
+      "syntax": {
+        "example": "source mapping",
+        "normalized_ebnf": "pragma ::= '#(LINE)' | '#(FILE)' | '#(LINE=...)' | '#(FILE=\"...\")'"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "HOLLinePragma",
+          "HOLFilePragma",
+          "HOLLinePragmaWith",
+          "HOLFilePragmaWith"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No HOL #(LINE)/#(FILE) pragmas.",
+        "authority_refs": [
+          "cakeml_grammar"
+        ]
+      },
+      "translation": {
+        "hint": "Preprocess",
+        "mechanically_lowerable": false
+      }
+    },
+    {
+      "id": "X01",
+      "layer": "implementation_extension",
+      "name": "Moscow ML `prim_val`",
+      "semantic_dimension": "implementation_extension_semantics",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "Moscow ML prim_val binds an SML identifier directly to a runtime primitive described by arity/name metadata.",
+      "syntax": {
+        "example": "primitive binding declaration",
+        "normalized_ebnf": "dec ::= 'prim_val' tyvarseq id [':' ty] ['=' arity primitive-name] ('and' ...)*"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "dec.DecMosmlPrimVal",
+          "mosml_primvalbind"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No Moscow ML prim_val syntax.",
+        "authority_refs": [
+          "cakeml_grammar"
+        ]
+      },
+      "translation": {
+        "hint": "Replace with FFI/builtin",
+        "mechanically_lowerable": false
+      }
+    },
+    {
+      "id": "X02",
+      "layer": "implementation_extension",
+      "name": "Moscow ML `prim_type`",
+      "semantic_dimension": "implementation_extension_semantics",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "Moscow ML prim_type introduces a primitive type constructor supplied by the implementation.",
+      "syntax": {
+        "example": "primitive type declaration",
+        "normalized_ebnf": "dec ::= 'prim_type' tybinds"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "type_kw.KWMosmlPrimType"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No Moscow ML prim_type syntax.",
+        "authority_refs": [
+          "cakeml_grammar"
+        ]
+      },
+      "translation": {
+        "hint": "Replace",
+        "mechanically_lowerable": false
+      }
+    },
+    {
+      "id": "X03",
+      "layer": "implementation_extension",
+      "name": "Moscow ML `prim_eqtype`",
+      "semantic_dimension": "implementation_extension_semantics",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "Moscow ML prim_eqtype introduces an implementation primitive type that admits equality.",
+      "syntax": {
+        "example": "primitive equality type",
+        "normalized_ebnf": "dec ::= 'prim_eqtype' tybinds"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "type_kw.KWMosmlPrimEqtype"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No Moscow ML prim_eqtype syntax.",
+        "authority_refs": [
+          "cakeml_grammar"
+        ]
+      },
+      "translation": {
+        "hint": "Replace",
+        "mechanically_lowerable": false
+      }
+    },
+    {
+      "id": "X04",
+      "layer": "implementation_extension",
+      "name": "Moscow ML `prim_EQtype`",
+      "semantic_dimension": "implementation_extension_semantics",
+      "semantic_relevance": "semantic_or_acceptance",
+      "semantics": "Moscow ML prim_EQtype introduces the implementation's stronger primitive reference/equality-type form.",
+      "syntax": {
+        "example": "primitive ref/equality type form",
+        "normalized_ebnf": "dec ::= 'prim_EQtype' tybinds"
+      },
+      "hol4": {
+        "accepted_or_represented": true,
+        "ast_or_parser_symbols": [
+          "type_kw.KWMosmlPrimRefType"
+        ],
+        "authority_refs": [
+          "hol4_ast",
+          "hol4_parser"
+        ],
+        "observed_source_paths": []
+      },
+      "cakeml": {
+        "compatibility": "absent",
+        "reason": "No Moscow ML prim_EQtype syntax.",
+        "authority_refs": [
+          "cakeml_grammar"
+        ]
+      },
+      "translation": {
+        "hint": "Replace",
+        "mechanically_lowerable": false
+      }
+    }
+  ]
+}

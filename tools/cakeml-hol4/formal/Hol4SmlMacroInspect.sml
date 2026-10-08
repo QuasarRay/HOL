@@ -1,5 +1,6 @@
 (* Inspect exported theorems after source proof construction. This import
    check is additional evidence; it is not independent source reconstruction. *)
+fun inspect () = let
 val _ = load "Hol4SmlMacroQualificationTheory";
 val _ = Globals.max_print_depth := 100;
 val checked_theorems =
@@ -26,5 +27,7 @@ val _ = List.app (fn (thy,name) =>
               else raise Fail ("unclean theorem: " ^ thy ^ "." ^ name)
   in print ("KERNEL_THEOREM " ^ thy ^ "." ^ name ^ "\n" ^
             thm_to_string th ^ "\n") end) checked_theorems;
-val _ = print "HOL4_MACRO_EXPORTS_INSPECTED 15\n";
-val _ = OS.Process.exit OS.Process.success;
+in print ("HOL4_MACRO_EXPORTS_INSPECTED " ^ Int.toString (length checked_theorems) ^ "\n") end;
+val _ = ((inspect (); OS.Process.exit OS.Process.success)
+  handle e => (print ("HOL4_MACRO_INSPECTION_FAILED " ^ General.exnMessage e ^ "\n");
+               OS.Process.exit OS.Process.failure));

@@ -5,6 +5,7 @@ from collections import Counter
 import hashlib
 import json
 from pathlib import Path
+import re
 import subprocess
 
 HERE = Path(__file__).resolve().parent
@@ -15,7 +16,24 @@ def digest(raw):
 
 
 def source(root, commit, path):
-    return subprocess.check_output(["git", "-C", str(root), "show", f"{commit}:{path}"])
+    if not re.fullmatch(r"[0-9a-f]{40}", commit):
+        raise ValueError("source reference must use a full commit identity")
+    return subprocess.check_output(["git", "-C", str(root), "show", "--end-of-options", f"{commit}:{path}"])
+
+
+def require_report_checkout(inputs, checkout):
+    """Reject target snapshot drift before invoking proof tools."""
+    data = json.loads((inputs / "machine/hol4-sml-vs-cakeml-gaps.json").read_text())
+    expected = data["snapshots"]["cakeml"]["commit"]
+    if not re.fullmatch(r"[0-9a-f]{40}", expected):
+        raise ValueError("invalid report CakeML commit identity")
+    observed = subprocess.check_output(
+        ["git", "-C", str(checkout), "rev-parse", "HEAD"], text=True).strip()
+    if observed != expected:
+        raise ValueError("report witnesses require the report CakeML pin, not the compiler pin")
+    if subprocess.check_output(["git", "-C", str(checkout), "diff", "HEAD", "--"]):
+        raise ValueError("modified CakeML source cannot qualify the pinned reports")
+    return expected
 
 
 def audit(inputs, roots):

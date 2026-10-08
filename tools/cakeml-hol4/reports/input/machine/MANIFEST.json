@@ -1,0 +1,35 @@
+{
+  "notes": "Strict JSON excludes the one surface-only predefined-name spelling entry C14. Runtime/Basis API gaps are intentionally excluded from this language-semantic dataset.",
+  "files": [
+    {
+      "name": "README.md",
+      "bytes": 1022,
+      "sha256": "f0c879bb698e8007aff06a3bff817b3e80937a4bff6324c66e91176b2cdcfabc"
+    },
+    {
+      "name": "authoritative-sources.json",
+      "bytes": 8425,
+      "sha256": "9fb717b5d739fbddabc75ed43380cc5919fc13a2e0cd306c6673eed803e9d54e"
+    },
+    {
+      "name": "hol4-sml-vs-cakeml-gaps.json",
+      "bytes": 108608,
+      "sha256": "3c713c78c88af52dbdd1c8822a865b2e9da8a3ac87be7711aa8e42939d46e325"
+    },
+    {
+      "name": "hol4-sml-vs-cakeml-gaps.jsonl",
+      "bytes": 70830,
+      "sha256": "a6040a210fc49b7d4692786f77565435e3dc9902f2a3f9da4afb2fbd62ebb1aa"
+    },
+    {
+      "name": "hol4-sml-vs-cakeml-gaps.schema.json",
+      "bytes": 3088,
+      "sha256": "61b615aa1c6574ac83cecc60efb348328a8b9d988f1150950ab7f31df1ab6868"
+    },
+    {
+      "name": "hol4-sml-vs-cakeml-strict.json",
+      "bytes": 107383,
+      "sha256": "30b025984fab8404174988d9b84e61359e8af2b100d2ea965e15b19477c42b04"
+    }
+  ]
+}

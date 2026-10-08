@@ -1,0 +1,183 @@
+{
+  "acceptance": [
+    "all artifact digests verify",
+    "release theorem is closed and has no unexpected HOL4 oracle/axiom tags",
+    "original release HOL4 reconstructs the release proof sources",
+    "identified CakeML-built HOL4 reconstructs the identical release proof sources and bundle"
+  ],
+  "artifacts": [
+    {
+      "path": "dependencies.log",
+      "sha256": "6cac3e9bd8527b3eaa190947ba2c3c55ec58fbd4d6fc577248c3725ec7314226",
+      "size": 15598
+    },
+    {
+      "path": "macros/Hol4SmlMacro.log",
+      "sha256": "5b794ae3de9285f4b5afbfa9406675ef01ffbd294260e4410c3e889f95093885",
+      "size": 930
+    },
+    {
+      "path": "macros/Hol4SmlMacroQualification.log",
+      "sha256": "a4fbe7070735111783b5c48c0c037475994ebac045d9ca84e7d22e457d2f5746",
+      "size": 3740
+    },
+    {
+      "path": "macros/Hol4SmlMacroQualificationTheory.dat",
+      "sha256": "02fbb70776c9202804b6f940eef7aee65da70a440c086bcbc2fc50fc52cb491c",
+      "size": 19024
+    },
+    {
+      "path": "macros/Hol4SmlMacroQualificationTheory.sig",
+      "sha256": "53f922d7d0ecbd082f6c88764921754dc957f0dcec464776954a3ed8ba479807",
+      "size": 447
+    },
+    {
+      "path": "macros/Hol4SmlMacroQualificationTheory.sml",
+      "sha256": "2d10eff699822232830794e06385cec664d8d9211bfb751856e02c1eea25a302",
+      "size": 1931
+    },
+    {
+      "path": "macros/Hol4SmlMacroTheory.dat",
+      "sha256": "c8fcf5f646a5861dfc1ff2181ece58e85623bd3fdcf3ec30bfb14961520e0b1b",
+      "size": 9656
+    },
+    {
+      "path": "macros/Hol4SmlMacroTheory.sig",
+      "sha256": "e1acb278c5b856d5829d1b7cb5d0144af861912a7be5addfedffacccf2d176fe",
+      "size": 680
+    },
+    {
+      "path": "macros/Hol4SmlMacroTheory.sml",
+      "sha256": "e0b1c72219a1f9d8e5b1c4abcacb5c12752cf8fa334642e872548611ce61f3e6",
+      "size": 2508
+    },
+    {
+      "path": "macros/SHA256SUMS",
+      "sha256": "deb3392c611d8d9f489bb5061da054a6d9840d3d4bc72589ae47c463e7921a4b",
+      "size": 1159
+    },
+    {
+      "path": "macros/STATUS",
+      "sha256": "093b1cb435114362c18109fb65f4599aff909c431096b000eeea929081c3cb11",
+      "size": 79
+    },
+    {
+      "path": "macros/build-VbsVSPP9/Hol4ProofSearchLib.sig",
+      "sha256": "5d1652b6174e018c8a580deab431f5b3e00a1ef2950a2ad92e9cb430d01b988b",
+      "size": 402
+    },
+    {
+      "path": "macros/build-VbsVSPP9/Hol4ProofSearchLib.sml",
+      "sha256": "b1d4c2266d554e0a8819c30cde7dbb9c1a31de55584f2994429635b6fa02aebe",
+      "size": 2084
+    },
+    {
+      "path": "macros/build-VbsVSPP9/Hol4SmlMacroInspect.sml",
+      "sha256": "e572c16a82914879190d78e635fe4826dc1c574b076a9ac16fe40493d59211c3",
+      "size": 2058
+    },
+    {
+      "path": "macros/build-VbsVSPP9/Hol4SmlMacroLib.sig",
+      "sha256": "5108201d0c476af30103ae97c0c261d0348fb43a93166807fc3faab2cb06bc34",
+      "size": 521
+    },
+    {
+      "path": "macros/build-VbsVSPP9/Hol4SmlMacroLib.sml",
+      "sha256": "883f65ce1cffd21ee4252ec29b5ba9191bc18428f2c492c4f6662c24f6459400",
+      "size": 2311
+    },
+    {
+      "path": "macros/build-VbsVSPP9/Hol4SmlMacroQualificationScript.sml",
+      "sha256": "a9e70e8fd06ad3a009d17067918a9373e73da1e8a77cefae8c74fcf627a83d32",
+      "size": 2693
+    },
+    {
+      "path": "macros/build-VbsVSPP9/Hol4SmlMacroScript.sml",
+      "sha256": "7ba1882d19fb5eb9a877445b161a201e83cbe4fcaa2286d41304feea260df672",
+      "size": 5535
+    },
+    {
+      "path": "macros/build.log",
+      "sha256": "b197a507deb27d00724e5aed79885d2a13a50121f0bf6b5ab35470d30b690feb",
+      "size": 2862
+    },
+    {
+      "path": "macros/egglog-receipt.json",
+      "sha256": "be0803554efa564ecc5f66d27462b02edd53427ad570cd011779573b5228e6ad",
+      "size": 484
+    },
+    {
+      "path": "macros/macro-rewrites.tsv",
+      "sha256": "773db8e004105798310e56a60d7963c3341a8991ed29f699467612a36ddeb37f",
+      "size": 107
+    },
+    {
+      "path": "macros/macro.rewrites",
+      "sha256": "7e78e7d0624a33e4e7b37b61e39bbbd2a1621e179022e2fe6efe14e8c16e8fec",
+      "size": 40
+    },
+    {
+      "path": "macros/theorems.log",
+      "sha256": "4567354628ab82ffdeef97a7bf5c7d749a96b34e0d95ca310395061f592a6618",
+      "size": 5904
+    },
+    {
+      "path": "source-audit.json",
+      "sha256": "88cf0dee02c7fe3e7a3b1cd20386ce63a11f3bbef9541b6923a1e7dcafe95a96",
+      "size": 42797
+    },
+    {
+      "path": "tactictoe-manifest.txt",
+      "sha256": "8832e20aed5a3e9c620a0f29beece1af319e7aba0567d12b8ae4dae653e730f9",
+      "size": 2940
+    },
+    {
+      "path": "tactictoe-reuse.json",
+      "sha256": "0403ab590f391c7f80d3c85217d97b3e526e9e3ba8e6885853f5836e5273fdce",
+      "size": 638
+    },
+    {
+      "path": "witnesses/Hol4SmlGapInspect.sml",
+      "sha256": "e7f057ef01ec4b041b65acc868b3caaf80034fb5e74d594f9650096d09f69f37",
+      "size": 1180
+    },
+    {
+      "path": "witnesses/Hol4SmlGapWitnessScript.sml",
+      "sha256": "1d36e191d59f2725c7798d24dc59a142f4d5157a73539ecf2d38eecad46dd5d4",
+      "size": 3484
+    },
+    {
+      "path": "witnesses/Hol4SmlGapWitnessTheory.dat",
+      "sha256": "e02dc4cfd52296166c26c4e0025e55ee262edf15434550afd08a16b4d9f6ec40",
+      "size": 6650
+    },
+    {
+      "path": "witnesses/Hol4SmlGapWitnessTheory.sig",
+      "sha256": "efb5803e414bf6b81f788344bade7c469de86b8810116e4297fe78f2390b448f",
+      "size": 395
+    },
+    {
+      "path": "witnesses/Hol4SmlGapWitnessTheory.sml",
+      "sha256": "99e30643d57a1a0fd2bf72980aac89c531fc738c2f3e43122c85487d2c6726e9",
+      "size": 1775
+    },
+    {
+      "path": "witnesses/build.log",
+      "sha256": "11a17980a5f9efc1b311735a2affab5388d2e0b325a53a7c5821a877641bb606",
+      "size": 1357
+    },
+    {
+      "path": "witnesses/theorems.log",
+      "sha256": "9797afc2b5ff39c2a0c989805aedc4f8d02a9f9e02d80fe5b25b4cfbde280f68",
+      "size": 2435
+    },
+    {
+      "path": "witnesses/witness-proof.log",
+      "sha256": "8092ba4a7a8536c8e5f37ce762e0ceee41cde11a8b23da0f26577e05fe732952",
+      "size": 624
+    }
+  ],
+  "claim": "digest manifest only; theory imports do not reconstruct proofs or establish binary provenance",
+  "release_theorem": "Hol4SmlGapWitness.target_order_is_observable",
+  "schema": 1
+}

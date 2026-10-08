@@ -1,0 +1,57 @@
+Executing /workspace/scratch/7755a98cf62b/HOL/examples/l3-machine-code/arm8/asl-equiv/.hol_preexec:
+  HOLORIG=/workspace/scratch/7755a98cf62b/proof-evidence/run-QtQPG5iI/macros/build-VbsVSPP9 [ -d "armv8.6-asl-snapshot" ] || ./get-armv8.6-hol-snapshot
+Scanning $(HOLDIR)/src/hol88
+Scanning $(HOLDIR)/src/TeX
+Scanning $(HOLDIR)/src/bag
+Scanning $(HOLDIR)/src/sort
+Scanning $(HOLDIR)/src/string
+Scanning $(HOLDIR)/src/n-bit
+Scanning $(HOLDIR)/src/res_quan/src
+Scanning $(HOLDIR)/src/finite_maps
+Scanning $(HOLDIR)/src/integer
+Scanning $(HOLDIR)/src/rational
+Scanning $(HOLDIR)/src/transfer
+Scanning $(HOLDIR)/src/pred_set/src/more_theories
+Scanning $(HOLDIR)/src/algebra/base
+Scanning $(HOLDIR)/src/algebra/construction
+Scanning $(HOLDIR)/src/algebra
+Scanning $(HOLDIR)/src/real
+Scanning $(HOLDIR)/src/real/analysis
+Scanning $(HOLDIR)/src/HolSmt
+Scanning $(HOLDIR)/src/tactictoe/src
+Scanning $(CAKEMLDIR)/basis/pure
+Scanning $(CAKEMLDIR)/compiler
+Scanning $(CAKEMLDIR)/cv_translator
+Scanning $(HOLDIR)/src/coalgebras
+Scanning $(HOLDIR)/examples/pl-semantics/lprefix_lub
+Scanning $(CAKEMLDIR)/misc
+Scanning $(CAKEMLDIR)/semantics
+Scanning $(CAKEMLDIR)/semantics/ffi
+Scanning $(CAKEMLDIR)/semantics/proofs
+Scanned 29 directories
+Building 7 theory files
+Starting work on real_sigmaTheory
+Finished $(HOLDIR)/src/res_quan/src                                    (0.000s) 
+Starting work on topologyTheory
+Starting work on Hol4SmlMacroTheory
+Finished $(HOLDIR)/src/rational                                        (0.000s) 
+topologyTheory    $(HOLDIR)/src/pred_set/src/more_theories  (6s)   [1/7]     OK
+Finished $(HOLDIR)/src/pred_set/src/more_theories [#theories: 1]       (6.039s) 
+Hol4SmlMacroTheory    /workspace/.../macros/build-VbsVSPP9  (9s)   [2/7]     OK
+real_sigmaTheory                        $(HOLDIR)/src/real (12s)   [3/7]     OK
+Starting work on metricTheory
+metricTheory                            $(HOLDIR)/src/real  (9s)   [4/7]     OK
+Starting work on netsTheory
+netsTheory                              $(HOLDIR)/src/real  (6s)   [5/7]     OK
+Starting work on realheap
+Finished $(HOLDIR)/src/real [#theories: 3]                            (27.884s) 
+realheap                       $(HOLDIR)/src/real/analysis  (5s)             OK
+Finished $(HOLDIR)/src/real/analysis                                   (5.414s) 
+Starting work on smtheap
+smtheap                               $(HOLDIR)/src/HolSmt  (8s)             OK
+Starting work on HolSmtTheory
+HolSmtTheory                          $(HOLDIR)/src/HolSmt  (7s)   [6/7]     OK
+Starting work on Hol4SmlMacroQualificationTheory
+Finished $(HOLDIR)/src/HolSmt [#theories: 1]                          (15.315s) 
+Hol4SmlMacroQualificationTheory  .../macros/build-VbsVSPP9 (20s)   [7/7]     OK
+Finished /workspace/scratch/7755a98cf62b/proof-evidence/run-QtQPG5iI/macros/build-VbsVSPP9 [#theories: 2] (29.680s) 

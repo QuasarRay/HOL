@@ -1,0 +1,47 @@
+
+---------------------------------------------------------------------
+     HOL4 [Trindemossen 2 (stdknl, built Thu Oct 08 11:34:41 2026)]
+
+     For introductory HOL help, type: help "hol";
+     To exit type <Control>-D
+---------------------------------------------------------------------
+** Load path (see loadPath variable) now contains 29 entries
+** after consulting Holmakefiles and any holproject.toml
+
+> val inspect = fn: unit -> unit
+<<HOL message: intLib loaded.  Use intLib.deprecate_int() to turn off integer parsing>>
+KERNEL_THEOREM Hol4SmlGapWitness.target_closure_equality
+⊢ do_eq (Closure env1 arg1 body1) (Closure env2 arg2 body2) = Eq_val T
+KERNEL_THEOREM Hol4SmlGapWitness.target_recursive_closure_equality
+⊢ do_eq (Recclosure env1 funs1 name1) (Recclosure env2 funs2 name2) =
+  Eq_val T
+KERNEL_THEOREM Hol4SmlGapWitness.target_tuple_raises_second
+⊢ nsLookup env.v first_id = SOME first_value ∧
+  nsLookup env.v second_id = SOME second_value ⇒
+  evaluate st env [Con NONE [Raise (Var first_id); Raise (Var second_id)]] =
+  (st,Rerr (Rraise second_value))
+KERNEL_THEOREM Hol4SmlGapWitness.explicit_sequence_raises_first
+⊢ nsLookup env.v first_id = SOME first_value ⇒
+  evaluate st env [Let NONE (Raise (Var first_id)) (Raise (Var second_id))] =
+  (st,Rerr (Rraise first_value))
+KERNEL_THEOREM Hol4SmlGapWitness.target_order_is_observable
+⊢ nsLookup env.v first_id = SOME first_value ∧
+  nsLookup env.v second_id = SOME second_value ∧ first_value ≠ second_value ⇒
+  evaluate st env [Con NONE [Raise (Var first_id); Raise (Var second_id)]] ≠
+  evaluate st env [Let NONE (Raise (Var first_id)) (Raise (Var second_id))]
+KERNEL_THEOREM Hol4SmlGapWitness.target_failed_case_raises_bind
+⊢ evaluate st env [Mat (Lit (IntLit 1)) [(Plit (IntLit 0),Lit (IntLit 9))]] =
+  (st,Rerr (Rraise bind_exn_v))
+KERNEL_THEOREM Hol4SmlGapWitness.accepted_inline_signature_is_erased
+⊢ tokcheckl [structtok; structuretok; eqtok; endtok]
+    [StructT; StructureT; EqualsT; EndT] ∧ tokcheck sealtok SealT ∧
+  ptree_StructName name_pt = SOME name ∧
+  ptree_SignatureValue signature_pt = SOME () ∧
+  ptree_Decls decls_pt = SOME decls ⇒
+  ptree_Structure
+    (Nd (mkNT nStructure,loc)
+       [structuretok; name_pt;
+        Nd (mkNT nOptionalSignatureAscription,ascription_loc)
+          [sealtok; signature_pt]; eqtok; structtok; decls_pt; endtok]) =
+  SOME (Dmod name decls)
+HOL4_GAP_WITNESSES_INSPECTED 7

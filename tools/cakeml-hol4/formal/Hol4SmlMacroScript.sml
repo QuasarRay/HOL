@@ -99,6 +99,7 @@ Theorem lower_sml_sequence_correct:
   evaluate st env [Let NONE e1 e2] =
   sml_sequence_reference st env e1 e2
 Proof
+  `env with v := env.v = env` by simp [sem_env_component_equality] >>
   simp [evaluate_def,sml_sequence_reference_def,nsOptBind_def,fix_clock_evaluate]
 QED
 

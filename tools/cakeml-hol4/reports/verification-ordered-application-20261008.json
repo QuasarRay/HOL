@@ -1,0 +1,180 @@
+{
+  "automation": {
+    "egglog": "14.0.0 native Rust bindings; two named candidates independently reconstructed in HOL4",
+    "github_actions": "NOT_RUN; manually dispatched workflow only",
+    "tactictoe_cache_archive_sha256": "0a3f73f342c538c1efc1bb4f89512bf9c1b52642ab95d80ed2d877edf3c66b34",
+    "tactictoe_loaded_calls": [
+      1759
+    ],
+    "z3": "4.13.0, proof-reconstructing HolSmtLib.Z3_TAC"
+  },
+  "claim": "Normalized CakeML macro proofs and pinned target witnesses; full SML97 correspondence and machine/binary qualification remain OPEN.",
+  "date": "2026-10-08",
+  "evidence_archive": {
+    "claim": "retained source, theory exports, inspection logs, search receipts, reconstruction recipe and digest manifests; no complete machine/release certificate",
+    "crc_and_all_artifact_digests_verified": true,
+    "extracted_development_bundle_verified": true,
+    "identified_artifacts": 203,
+    "path": "ordered-application-evidence-20261008.zip",
+    "sha256": "42a7673d74b72623be760eb3f8cafd06fc70daebdc944d1f467fb8d97b411d7e",
+    "size": 482671
+  },
+  "inherited_stack": {
+    "head_commit": "bc025dff474b4dabff1a3d7606e929e492778fe8",
+    "pull_requests": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "original_release_reconstruction": {
+    "CakeML_dependency_files_with_proof_or_ML_API_adaptations": 3,
+    "ML_sources_staged": 67,
+    "allowed_oracle_tags": [
+      "DISK_THM"
+    ],
+    "axioms": 0,
+    "binary_provenance": "locally source-built original release tag; no vendor-provided prebuilt binary qualified",
+    "build_log_sha256": "fadb2974dac6bb8140445cb423d55b7e8402df0c54aca412e5335a127f31220e",
+    "cakeml_commit": "f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6",
+    "checked_exports": 31,
+    "claim": "independent kernel reconstruction of normalized macro/search proofs only; no full SML97 correspondence, vendor binary replay or machine-code theorem",
+    "complete_selected_proof_logs_retained": true,
+    "egglog": "both named candidates independently reconstructed; conditional application retains premises",
+    "final_run_rebuilt_all_three_macro_theories_from_source": true,
+    "full_original_release_binary_bundle": "OPEN",
+    "hol4_commit": "bdc6917eeafd45f1067c08b6061c2243c1b1edb0",
+    "hol4_launcher_sha256": "9bbf80b17a2c188a80c2f0b5dffe61df6129487ca03e27887356d4166841f65f",
+    "hol4_native_runner_sha256": "44f5b4c92d3fd5471ef9bdd76334387cfe12535370f4711933267d878ae7b5e0",
+    "hol4_release": "trindemossen-2",
+    "hol4_runtime_image_sha256": "70502686e84c416f51e9abc2f053e623fb80dd2c441eec4878aefa805f648b62",
+    "holmake_flags": [
+      "--nolmbc",
+      "--qof",
+      "--no_preexecs",
+      "--rebuild_deps",
+      "-j2"
+    ],
+    "holmake_sha256": "d0069dbedf3187ae4089748da6e3339c62e9d6369565ca34fbe8f7f50ce0a024",
+    "hypotheses": 0,
+    "legacy_cache_hints_sha256": "de3b259c23a919f4d1f7e8440e74b589619fa7af22300b83a3e5956291fdeee4",
+    "macro_machine_code_equivalence": "OPEN",
+    "own_ML_sources_match_development": true,
+    "parser_report_reconstruction": "BLOCKED: temp_enable_pmatch absent; old ENABLE_PMATCH_CASES changes ordinary case grammar, so substitution was removed",
+    "proof_adaptations_sha256": "523a14c2afd2b17612f9e1b492901867a464a23b75129d0400fc8b3b2986e483",
+    "report_witness_exports_checked": 0,
+    "reproduction_ML_files_byte_match_checked_context": 67,
+    "schema": 1,
+    "semantic_definitions_changed": false,
+    "source_staging_sha256": "1759e6e1e2dc0b5e08e54034c6bc274f2b378e9ef7a2df2b4382eec5c4d5ca31",
+    "status": "SCOPED_MACRO_SOURCE_RECONSTRUCTION_PASS",
+    "tactictoe_hint_trust": "legacy raw call hints; no modern manifest ancestry validation; accepted results kernel-reconstructed",
+    "tactictoe_loaded_calls": [
+      1503
+    ],
+    "tactictoe_raw_hints_exported": 1759,
+    "theorem_inspection_log_sha256": "4fadbc3fd7e7f84c476a7f78b932384bd59b867bd06578bf8933a874524db654",
+    "tracked_HOL4_sources_unchanged": true,
+    "z3": "4.13.0 proof reconstruction succeeded"
+  },
+  "qualification": {
+    "added_checked_exports": 13,
+    "allowed_dependency_tags": [
+      "DISK_THM"
+    ],
+    "axioms": 0,
+    "hypotheses": 0,
+    "macro_theorems": 31,
+    "receipt": {
+      "bundle_sha256": "b92950c04f7634a8fba00d272697963d5c006a5be1e2ca6c124ed18dd73fce1a",
+      "cakeml_commit": "f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6",
+      "cakeml_hol4_binary_replay": "OPEN",
+      "cakeml_runtime_image_sha256": "e4b7f9da7590fa24fddd2eb3f3b993283fc996e9703213c7fd7617e7b11c4444",
+      "claim": "scoped target semantics and normalized macro proofs only; not all report claims or a verified HOL4 binary",
+      "formal_report_verification": "OPEN",
+      "full_sml97_source_bridge": "OPEN",
+      "hol4_commit": "bc025dff474b4dabff1a3d7606e929e492778fe8",
+      "hol4_executable_sha256": "a5611d308a82009fbd98e5e2cac923fc795a1c5c417cf95a824eec80c2ddaa16",
+      "hol4_runtime_image_sha256": "88b038a5187d6dc45c63204ed3330f83d70b5da29bcb42dba5e8158cbbc0b334",
+      "holmake_executable_sha256": "ac766c387dc5a2411977ad282ca3a248c2aad84ab1167ba2fb580846c2514c15",
+      "holmake_flags": [
+        "--nolmbc",
+        "--qof",
+        "--no_preexecs",
+        "--rebuild_deps",
+        "--no-project",
+        "--no-cache"
+      ],
+      "macro_implementation_machine_code": "OPEN",
+      "macro_theorems": 31,
+      "original_release_binary_replay": "OPEN",
+      "report_witnesses": {
+        "C08": [
+          "Hol4SmlMacro.lower_sml_multifn_application_correct"
+        ],
+        "M04": [
+          "Hol4SmlGapWitness.accepted_inline_signature_is_erased"
+        ],
+        "S04": [
+          "Hol4SmlGapWitness.target_closure_equality"
+        ],
+        "S05": [
+          "Hol4SmlGapWitness.target_closure_equality",
+          "Hol4SmlGapWitness.target_recursive_closure_equality"
+        ],
+        "S06": [
+          "Hol4SmlGapWitness.target_tuple_raises_second",
+          "Hol4SmlGapWitness.explicit_sequence_raises_first",
+          "Hol4SmlGapWitness.target_order_is_observable",
+          "Hol4SmlApplication.lower_sml_left_application_correct",
+          "Hol4SmlApplication.temporary_capture_is_observable"
+        ],
+        "S07": [
+          "Hol4SmlGapWitness.target_failed_case_raises_bind",
+          "Hol4SmlMacro.lower_sml_match_correct"
+        ],
+        "S08": [
+          "Hol4SmlMacro.matched_body_bind_is_preserved"
+        ]
+      },
+      "schema": 1,
+      "source_audit_sha256": "88cf0dee02c7fe3e7a3b1cd20386ce63a11f3bbef9541b6923a1e7dcafe95a96",
+      "status": "SCOPED_REPORT_WITNESSES_RECONSTRUCTED",
+      "tactictoe_loaded_calls": [
+        1759
+      ],
+      "tactictoe_manifest_sha256": "8832e20aed5a3e9c620a0f29beece1af319e7aba0567d12b8ae4dae653e730f9",
+      "target_witness_theorems": 7,
+      "z3_executable_sha256": "155d56c29e95ca3cc9a5fd79b6c403dece00c6772cfdf9faf5970cb254fc687a"
+    },
+    "report_witness_theorems": 7,
+    "total_theorems": 38
+  },
+  "regressions": {
+    "log_sha256": "61a6bbd858c97ed03afbd34851634903e263261926f011023834a47aa8537963",
+    "passed": 20,
+    "skipped": 0
+  },
+  "reuse": {
+    "aegis_components_byte_verified": 10,
+    "postgresql": "NO_DSN; exposed outcomes retained in durable outbox",
+    "source_commit": "4329ddedd3bd2e97402df99d8b9ff29ec6712db7"
+  },
+  "schema": 1,
+  "scope": "Left-to-right application with distinct temporaries and exact argument-binding stability. Literal and unshadowed variable instances discharge the premises. Both expansion and semantic theorems are checked; the semantic left-hand side must contain the returned AST.",
+  "source_obligations": {
+    "SML97_elaboration_typing_and_value_simulation": "OPEN",
+    "cakeml_built_HOL4_qualification": "OPEN",
+    "closure_argument_generalization": "OPEN",
+    "compiler_pin_alignment": "OPEN; report f8da03a and compiler c98da7f have seven differing authority files",
+    "full_79_gap_report_verification": "OPEN",
+    "macro_generator_machine_code": "OPEN",
+    "original_release_full_bundle_qualification": "OPEN",
+    "original_release_parser_report_reconstruction": "BLOCKED: temp_enable_pmatch absent; old ENABLE_PMATCH_CASES changes ordinary case grammar, so substitution was removed",
+    "original_release_scoped_reconstruction": "PASS: 31 normalized macro/search exports under source-built trindemossen-2, with recorded proof/ML API adaptations",
+    "vendor_provided_original_release_binary": "OPEN; no vendor-provided prebuilt binary was qualified; inspected release assets are retained in the evidence archive"
+  },
+  "status": "SCOPED_KERNEL_RECONSTRUCTION_PASS_WITH_RETAINED_EXPORTS"
+}

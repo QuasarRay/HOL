@@ -1,6 +1,7 @@
 INCLUDES = $(CAKEMLDIR)/compiler $(CAKEMLDIR)/cv_translator $(CAKEMLDIR)/semantics \
            $(CAKEMLDIR)/semantics/proofs $(CAKEMLDIR)/semantics/ffi \
            $(CAKEMLDIR)/basis/pure $(CAKEMLDIR)/misc \
-           $(HOLDIR)/src/HolSmt $(HOLDIR)/src/tactictoe/src
+           $(HOLDIR)/src/HolSmt $(HOLDIR)/src/tactictoe/src \
+           $(HOLDIR)/examples/formal-languages/context-free
 
 all: Hol4CakeCompileTheory.dat Hol4ProofSearchLib.uo

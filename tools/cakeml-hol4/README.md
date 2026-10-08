@@ -1,8 +1,10 @@
 # HOL4 SML through checked CakeML macros
 
 The full HOL4 SML frontend and self-hosting theorem remain OPEN.
-See `reports/README.md` and `reports/verification-20261008.json` for current scope,
-pins, observed results and blockers.
+See `reports/ordered-application.md` and
+`reports/verification-ordered-application-20261008.json` for the latest scope
+and retained evidence. `reports/verification-20261008.json` preserves the
+earlier checkpoint.
 
 `Hol4SmlMacroLib` expands typed AST terms and returns an expansion theorem and
 a normalized semantic theorem. Matching retains the exception lookup condition
@@ -10,6 +12,12 @@ and preserves an explicit Bind from a matched body. Multi-arm function
 certificates cover closure construction and application, including clock and
 post-binding exception lookup conditions. SML97 typing, elaboration, freshness
 and source correspondence remain open.
+
+`left_application` inserts nested bindings to evaluate the function before
+its argument. Its theorem preserves distinct-name and argument-binding
+stability conditions. Literal and unshadowed variable instances discharge
+them. Every certificate checks both the expansion and semantic proof and
+requires the semantic left-hand side to contain exactly the returned AST.
 
 `Hol4ProofSearchLib` tries named rewrite hints, proof-reconstructing Z3_TAC,
 then bounded learned TacticToe. It checks the exact goal, hypotheses, axioms and
@@ -41,10 +49,14 @@ export SML97DIR=/path/to/sml97 HOL4_TACTICTOE_CACHE=/path/to/new-cache
 tools/cakeml-hol4/qualify_gap_report.sh
 ```
 
-The complete local qualification passed before a workspace transport failure
-blocked publication of its exports. The final metadata revision and published
-checkpoint need a fresh execution. The manual workflow has a scoped report job
-and a separate compiler job; it does not run on every source checkpoint.
+The latest qualification retained all 38 checked exports and complete logs.
+The separate source-built Trindemossen 2 kernel reconstructed the 31 macro
+and search exports with recorded proof/API adapters; its parser witness build
+remains blocked. The evidence archive includes the reproduction recipe.
+The manual workflow has a scoped report job and a separate compiler job; it
+does not run on every source checkpoint. Scoped reconstruction disables
+project-wide discovery and pre-execution fetch hooks and includes required
+dependency directories explicitly.
 
 The uploaded reports can be re-audited after restoring their extracted files
 as sibling `machine/` and `report/` directories:

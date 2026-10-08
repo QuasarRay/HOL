@@ -10,9 +10,80 @@ on:
         options:
           - report-witnesses
           - compiler
+          - native-compiler
 # Full regeneration is expensive; source checkpoints do not trigger it.
 
 jobs:
+  native-compiler:
+    if: inputs.target == 'native-compiler'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Checkout build adapter
+        uses: actions/checkout@v5
+
+      - name: Install native linking tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential python3 curl
+
+      - name: Link digest-pinned CakeML vendor image
+        run: |
+          curl --fail --location --retry 2 \
+            https://github.com/CakeML/cakeml/releases/download/v3213/cake-x64-64.tar.gz \
+            --output /tmp/cake-x64-64.tar.gz
+          python3 tools/cakeml-hol4/prepare_native.py \
+            --archive /tmp/cake-x64-64.tar.gz --out /tmp/native-release
+
+      - name: Check native acceptance boundaries
+        run: |
+          PYTHONPATH=tools/cakeml-hol4 python3 -m unittest \
+            test_native_build.NativeBoundaryTests -v
+
+      - name: Compile and run the normalized fixture
+        run: |
+          python3 tools/cakeml-hol4/build_native.py --root . \
+            --compiler /tmp/native-release/cake-x64-64/cake \
+            --ffi /tmp/native-release/cake-x64-64/basis_ffi.c \
+            --out /tmp/native-fixture tools/cakeml-hol4/fixtures/native-result.cml
+          CML_HEAP_SIZE=256 CML_STACK_SIZE=32 /tmp/native-fixture/program \
+            > /tmp/native-fixture/run.log
+          python3 - <<'PY'
+          from pathlib import Path
+          assert Path('/tmp/native-fixture/run.log').read_text() == '20\n'
+          PY
+
+      - name: Retain the current HOL4 source rejection
+        run: |
+          set +e
+          python3 tools/cakeml-hol4/build_native.py --root . \
+            --compiler /tmp/native-release/cake-x64-64/cake \
+            --ffi /tmp/native-release/cake-x64-64/basis_ffi.c \
+            --out /tmp/native-kernel src/0/KernelTypes.sml
+          status=$?
+          set -e
+          test "$status" -eq 2
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          receipt = json.loads(Path('/tmp/native-kernel/receipt.json').read_text())
+          assert receipt['status'] == 'SOURCE_REJECTED'
+          assert 'binary_sha256' not in receipt
+          PY
+
+      - name: Preserve native observations
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cakeml-native-unqualified-observations
+          path: |
+            /tmp/native-release/receipt.json
+            /tmp/native-release/compiler-version.log
+            /tmp/native-release/link.log
+            /tmp/native-fixture/
+            /tmp/native-kernel/
+          if-no-files-found: error
+
   report-witnesses:
     if: inputs.target == 'report-witnesses'
     runs-on: ubuntu-24.04

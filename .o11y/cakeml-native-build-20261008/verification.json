@@ -1,0 +1,125 @@
+{
+  "claim": "checked local dependency proofs and native observations; full HOL4-on-CakeML remains OPEN",
+  "compiler": {
+    "advertised_cakeml_commit": "c98da7fc904c5d6d0e9a75a18fac1796a9bfb1f9",
+    "advertised_hol_commit": "b725f6e8834462a5b4bb2fb67b35e36f368cb8b6",
+    "archive_sha256": "e99dc1cdb9e28366f78c7c4ef812dbaab6710eb301ae8c85d1b6ce2a2161b728",
+    "claim": "exact vendor archive and observed version; independent binary correctness replay remains OPEN",
+    "files": [
+      {
+        "bytes": 38699851,
+        "path": "cake-x64-64/cake.S",
+        "sha256": "c103818945c3efd329bbd27540d6d2fe2b9f905617064c69b9e9e5e1373a3b26"
+      },
+      {
+        "bytes": 12371,
+        "path": "cake-x64-64/basis_ffi.c",
+        "sha256": "e020485bd018e71cee8d3d02ccfa504fb378aa8d710ff0f0c6d52b1d96419335"
+      },
+      {
+        "bytes": 14743024,
+        "path": "cake-x64-64/cake",
+        "sha256": "85fbcdc9264b978abb11691376f752156a2b14587c83cb1cb78d2818970694e1"
+      }
+    ],
+    "release_tag": "v3213",
+    "schema": 1,
+    "status": "VENDOR_IMAGE_LINKED_UNQUALIFIED",
+    "url": "https://github.com/CakeML/cakeml/releases/download/v3213/cake-x64-64.tar.gz"
+  },
+  "development_checker": {
+    "Holmake_sha256": "6a3e60d8c9e774899f3d8b3098d2d748324fe500e48b31b1677ffd78a9c3da6e",
+    "hol_sha256": "ba3c88aa3e1387c104a5444c2f5127e1ba64d21b336e273b26ad5922c3691aa3",
+    "qualification": "kernel source builds plus clean export-tag inspection; not original-release or machine equivalence",
+    "source_commit": "9bd1279ae787a700a48dadf6b4aee97e68b1f690",
+    "theories": {
+      "semanticPrimitivesProps": 77,
+      "typeSysProps": 96
+    }
+  },
+  "full_hol4_executable": "NOT_BUILT",
+  "merge_repair": {
+    "all_mergeable": true,
+    "ci_state": "unstable; conflict freedom does not establish CI acceptance",
+    "conflicting_paths": 13,
+    "head_commits": [
+      "76b3f94c7e60e0b8d1dbc0d3260aae002fd00713",
+      "45b2dd6059f003b54397b916ca8c26b208d7f52b",
+      "402caa1287ccdd4b6e1d47c3de928ba01c0af8af",
+      "3d5b14ab56133ac0c547d3e91a248ebe5f28d6f0"
+    ],
+    "pull_requests": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "regression_tests": 20
+  },
+  "native_fixture": {
+    "assembly_sha256": "b5d5e9096b3da11079c39d01f9c3e388f81712c2f9c969dc05057b2c7fe495d1",
+    "binary_sha256": "b088ff1c43598a5a1650afbba4d829f1257f47ae9d7118f62b2567802f9f9208",
+    "claim": "native compilation observation; source preservation and machine-code proofs remain OPEN",
+    "compiler_advertised_commit": "c98da7fc904c5d6d0e9a75a18fac1796a9bfb1f9",
+    "compiler_exit_code": 0,
+    "compiler_sha256": "85fbcdc9264b978abb11691376f752156a2b14587c83cb1cb78d2818970694e1",
+    "ffi_sha256": "e020485bd018e71cee8d3d02ccfa504fb378aa8d710ff0f0c6d52b1d96419335",
+    "inputs": [
+      {
+        "path": "tools/cakeml-hol4/fixtures/native-result.cml",
+        "sha256": "d9e0da3518fcb38c37d50e32dc09342caf9a3ff51c147fc12884987c21922c78"
+      }
+    ],
+    "link_exit_code": 0,
+    "program_sha256": "4b0e536d6e526698432f8f9dfe10f3529863d0fc519790feadda912029ebdb2b",
+    "schema": 1,
+    "status": "NATIVE_COMPILED_UNQUALIFIED"
+  },
+  "native_runtime": {
+    "claim": "execution observation only",
+    "exit_code": 0,
+    "stdout": "20\n"
+  },
+  "open_obligations": [
+    "SML97 source parsing and elaboration correspondence",
+    "record, module, signature, functor and remaining syntax lowering",
+    "portable basis/runtime and native build/loading backend",
+    "exact source-to-machine compiler instance",
+    "macro-generator implementation binary correctness",
+    "original vendor HOL proof reconstruction",
+    "CakeML-built HOL4 proof reconstruction"
+  ],
+  "regressions": {
+    "outcome": "PASS",
+    "skips": 0,
+    "tests": 31
+  },
+  "release_matched_checker": {
+    "Holmake_sha256": "a197ff895f2d7e22761043afcf115b468cba04d9a4bc3f28b21f3aad60db60cd",
+    "aggregate_optional_build": "INTERRUPTED_EXIT_130",
+    "claim": "source-built bootstrap checker; vendor binary and CakeML-built HOL4 qualification remain OPEN",
+    "compiler_heap": "BUILT_FROM_UNCHANGED_CAKEML_PIN",
+    "compiler_library": "BUILD_IN_PROGRESS",
+    "core": "AVAILABLE",
+    "hol_sha256": "1899b411b3438db91c1bca4be792f71e9f35f1eeaeaad3423bbedabfc09f8e44",
+    "source_commit": "b725f6e8834462a5b4bb2fb67b35e36f368cb8b6"
+  },
+  "schema": 1,
+  "status": "HOL4_CAKEML_BUILD_OPEN",
+  "unchanged_hol4_kernel": {
+    "claim": "native compilation observation; source preservation and machine-code proofs remain OPEN",
+    "compiler_advertised_commit": "c98da7fc904c5d6d0e9a75a18fac1796a9bfb1f9",
+    "compiler_exit_code": 1,
+    "compiler_sha256": "85fbcdc9264b978abb11691376f752156a2b14587c83cb1cb78d2818970694e1",
+    "ffi_sha256": "e020485bd018e71cee8d3d02ccfa504fb378aa8d710ff0f0c6d52b1d96419335",
+    "inputs": [
+      {
+        "path": "src/0/KernelTypes.sml",
+        "sha256": "c47d4bb5f34e3ca6a2cc0e39e084bc0c69bd0ff1dd948237f96d06b9176aa208"
+      }
+    ],
+    "program_sha256": "dbbaa59438141c29110c823350a9e4f3db1a7eb12d81252c76c68747970527ec",
+    "schema": 1,
+    "status": "SOURCE_REJECTED"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "claim": "native compilation observation; source preservation and machine-code proofs remain OPEN",
+  "compiler_advertised_commit": "c98da7fc904c5d6d0e9a75a18fac1796a9bfb1f9",
+  "compiler_exit_code": 1,
+  "compiler_sha256": "85fbcdc9264b978abb11691376f752156a2b14587c83cb1cb78d2818970694e1",
+  "ffi_sha256": "e020485bd018e71cee8d3d02ccfa504fb378aa8d710ff0f0c6d52b1d96419335",
+  "inputs": [
+    {
+      "path": "src/0/KernelTypes.sml",
+      "sha256": "c47d4bb5f34e3ca6a2cc0e39e084bc0c69bd0ff1dd948237f96d06b9176aa208"
+    }
+  ],
+  "program_sha256": "dbbaa59438141c29110c823350a9e4f3db1a7eb12d81252c76c68747970527ec",
+  "schema": 1,
+  "status": "SOURCE_REJECTED"
+}

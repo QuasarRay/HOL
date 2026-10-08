@@ -1,0 +1,343 @@
+Holmake: Scanning $(HOLDIR)/src/TeX
+Holmake: Scanning $(HOLDIR)/src/bag
+Holmake: Scanning $(HOLDIR)/src/sort
+Holmake: Scanning $(HOLDIR)/src/string
+Holmake: Scanning $(HOLDIR)/src/n-bit
+Holmake: Scanning $(HOLDIR)/src/res_quan/src
+Holmake: Scanning $(HOLDIR)/src/finite_maps
+Holmake: Scanning $(HOLDIR)/src/transfer
+Holmake: Scanning $(HOLDIR)/src/pred_set/src/more_theories
+Holmake: Scanning $(HOLDIR)/src/coalgebras
+Holmake: Scanning $(HOLDIR)/examples/pl-semantics/lprefix_lub
+Holmake: Scanning $(HOLDIR)/src/integer
+Holmake: Scanning $(HOLDIR)/src/rational
+Holmake: Scanning $(HOLDIR)/src/num/theories/cv_compute/automation
+Holmake: Scanning $(HOLDIR)/examples/bootstrap
+Holmake: Scanning $(HOLDIR)/src/monad/more_monads
+Holmake: Scanning $(HOLDIR)/src/algebra/base
+Holmake: Scanning $(HOLDIR)/src/algebra/construction
+Holmake: Scanning $(HOLDIR)/src/algebra
+Holmake: Scanning $(HOLDIR)/src/hol88
+Holmake: Scanning $(HOLDIR)/src/real
+Holmake: Scanning $(HOLDIR)/examples/data-structures/balanced_bst
+Holmake: Scanning $(HOLDIR)/examples/formal-languages
+Holmake: Scanning $(HOLDIR)/examples/formal-languages/context-free
+Holmake: Scanning $(HOLDIR)/src/search
+Holmake: Scanning $(HOLDIR)/examples/formal-languages/regular
+Holmake: Scanning $(HOLDIR)/examples/machine-code/hoare-triple
+Holmake: Scanning $(CAKEMLDIR)/developers
+Holmake: Scanning $(CAKEMLDIR)/misc
+Holmake: Scanning $(CAKEMLDIR)/basis/pure
+Holmake: Scanning $(HOLDIR)/examples/algorithms
+Holmake: Scanning $(HOLDIR)/examples/machine-code/multiword
+Holmake: Scanning $(CAKEMLDIR)/semantics/ffi
+Holmake: Scanning $(CAKEMLDIR)/semantics
+Holmake: Scanning $(CAKEMLDIR)/compiler/backend/pattern_matching
+Holmake: Scanning $(CAKEMLDIR)/translator/monadic/monad_base
+Holmake: Scanning $(CAKEMLDIR)/unverified/reg_alloc
+Holmake: Scanning $(CAKEMLDIR)/compiler/backend/reg_alloc
+Holmake: Scanning $(HOLDIR)/src/floating-point
+Holmake: Scanning $(HOLDIR)/src/update
+Holmake: Scanning $(HOLDIR)/examples/l3-machine-code/common
+Holmake: Scanning $(CAKEMLDIR)/compiler/encoders/asm
+Holmake: Scanning $(CAKEMLDIR)/semantics/proofs
+Holmake: Scanning $(CAKEMLDIR)/compiler/backend
+Holmake: Scanning $(CAKEMLDIR)/compiler/parsing
+Holmake: Scanning $(CAKEMLDIR)/translator
+Holmake: Scanning $(CAKEMLDIR)/characteristic
+Holmake: Scanning $(HOLDIR)/examples/algorithms/unification/triangular
+Holmake: Scanning $(HOLDIR)/src/transfer/examples
+Holmake: Scanning $(HOLDIR)/examples/algorithms/unification/triangular/first-order
+Holmake: Scanning $(HOLDIR)/examples/algorithms/unification/triangular/first-order/compilation
+Holmake: Scanning $(CAKEMLDIR)/compiler/inference
+Holmake: Scanning $(CAKEMLDIR)/compiler/printing
+Holmake: Scanning $(CAKEMLDIR)/translator/monadic
+Holmake: Scanning $(CAKEMLDIR)/basis
+Holmake: Scanning $(CAKEMLDIR)/compiler/encoders/ag32
+Holmake: Scanning $(CAKEMLDIR)/compiler/backend/ag32
+Holmake: Scanning $(HOLDIR)/examples/l3-machine-code/lib
+Holmake: Scanning $(HOLDIR)/examples/l3-machine-code/arm8/model
+Holmake: Scanning $(HOLDIR)/examples/machine-code/decompiler
+Holmake: Scanning $(HOLDIR)/examples/l3-machine-code
+Holmake: Scanning $(HOLDIR)/examples/l3-machine-code/arm8/step
+Holmake: Scanning $(CAKEMLDIR)/compiler/encoders/arm8
+Holmake: Scanning $(CAKEMLDIR)/compiler/backend/arm8
+Holmake: Scanning $(CAKEMLDIR)/compiler/backend/serialiser
+Holmake: Scanning $(HOLDIR)/examples/l3-machine-code/arm/model
+Holmake: Scanning $(HOLDIR)/examples/l3-machine-code/arm/step
+Holmake: Scanning $(CAKEMLDIR)/compiler/encoders/arm7
+Holmake: Scanning $(HOLDIR)/examples/l3-machine-code/mips/model
+Holmake: Scanning $(HOLDIR)/examples/l3-machine-code/mips/step
+Holmake: Scanning $(CAKEMLDIR)/compiler/encoders/mips
+Holmake: Scanning $(HOLDIR)/examples/l3-machine-code/riscv/model
+Holmake: Scanning $(HOLDIR)/examples/l3-machine-code/riscv/step
+Holmake: Scanning $(CAKEMLDIR)/compiler/encoders/riscv
+Holmake: Scanning $(HOLDIR)/examples/l3-machine-code/x64/model
+Holmake: Scanning $(HOLDIR)/examples/l3-machine-code/x64/step
+Holmake: Scanning $(CAKEMLDIR)/compiler/encoders/x64
+Holmake: Scanning $(CAKEMLDIR)/compiler/backend/cv_compute
+Holmake: Scanning $(CAKEMLDIR)/compiler/backend/x64
+Holmake: Scanned 80 directories
+Holmake: Building 87 theory files
+Holmake: Linking /workspace/scratch/7755a98cf62b/cakeml-compat/semantics/proofs/primSemEnvScript.uo to produce theory-builder executable
+<<HOL message: Created theory "primSemEnv">>
+Saved theorem _______ "prim_sem_env_eq"
+Saved theorem _______ "prim_type_sound_invariants"
+Exporting theory "primSemEnv" ... done.
+Theory "primSemEnv" took 3.0s to build
+Holmake: [1/87] primSemEnv
+Holmake: Linking /workspace/scratch/7755a98cf62b/cakeml-compat/semantics/proofs/source_cvScript.uo to produce theory-builder executable
+<<HOL message: Created theory "source_cv">>
+Saved definition ____ "from_location_location_locn_def"
+Saved theorem _______ "from_location_locn_def"
+Saved theorem _______ "to_location_locn_def"
+Saved theorem _______ "from_location_to_location_locn_thm"
+Saved theorem _______ "cv_rep_location_location_locn_datatype"
+Saved definition ____ "from_location_location_locs_def"
+Saved theorem _______ "from_location_locs_def"
+Saved theorem _______ "to_location_locs_def"
+Saved theorem _______ "from_location_to_location_locs_thm"
+Saved theorem _______ "cv_rep_location_location_locs_datatype"
+Saved definition ____ "from_namespace_namespace_id_def"
+<<HOL warning: Context.snapshot: ambient context read while a proof was running (in source_cv)>>
+Saved theorem _______ "from_namespace_id_def"
+Saved theorem _______ "to_namespace_id_def"
+Saved theorem _______ "from_namespace_to_namespace_id_thm"
+Saved theorem _______ "cv_rep_namespace_namespace_id_datatype"
+Saved theorem _______ "from_namespace_namespace_def"
+Saved theorem _______ "to_namespace_namespace_def"
+Saved theorem _______ "from_namespace_to_namespace_namespace_thm"
+Saved theorem _______ "cv_rep_namespace_namespace_namespace_datatype"
+Saved definition ____ "from_ast_ast_lit_def"
+Saved theorem _______ "from_ast_lit_def"
+Saved theorem _______ "to_ast_lit_def"
+Saved theorem _______ "from_ast_to_ast_lit_thm"
+Saved theorem _______ "cv_rep_ast_ast_lit_datatype"
+Saved theorem _______ "from_ast_ast_t_def"
+Saved theorem _______ "to_ast_ast_t_def"
+Saved theorem _______ "from_ast_to_ast_ast_t_thm"
+Saved theorem _______ "cv_rep_ast_ast_ast_t_datatype"
+Saved theorem _______ "from_ast_pat_def"
+Saved theorem _______ "to_ast_pat_def"
+Saved theorem _______ "from_ast_to_ast_pat_thm"
+Saved theorem _______ "cv_rep_ast_ast_pat_datatype"
+Saved definition ____ "from_ast_ast_arith_def"
+Saved theorem _______ "from_ast_arith_def"
+Saved theorem _______ "to_ast_arith_def"
+Saved theorem _______ "from_ast_to_ast_arith_thm"
+Saved theorem _______ "cv_rep_ast_ast_arith_datatype"
+Saved definition ____ "from_ast_ast_word_size_def"
+Saved theorem _______ "from_ast_word_size_def"
+Saved theorem _______ "to_ast_word_size_def"
+Saved theorem _______ "from_ast_to_ast_word_size_thm"
+Saved theorem _______ "cv_rep_ast_ast_word_size_datatype"
+Saved definition ____ "from_ast_ast_prim_type_def"
+Saved theorem _______ "from_ast_prim_type_def"
+Saved theorem _______ "to_ast_prim_type_def"
+Saved theorem _______ "from_ast_to_ast_prim_type_thm"
+Saved theorem _______ "cv_rep_ast_ast_prim_type_datatype"
+Saved definition ____ "from_ast_ast_shift_def"
+Saved theorem _______ "from_ast_shift_def"
+Saved theorem _______ "to_ast_shift_def"
+Saved theorem _______ "from_ast_to_ast_shift_thm"
+Saved theorem _______ "cv_rep_ast_ast_shift_datatype"
+Saved definition ____ "from_ast_ast_opb_def"
+Saved theorem _______ "from_ast_opb_def"
+Saved theorem _______ "to_ast_opb_def"
+Saved theorem _______ "from_ast_to_ast_opb_thm"
+Saved theorem _______ "cv_rep_ast_ast_opb_datatype"
+Saved definition ____ "from_ast_ast_test_def"
+Saved theorem _______ "from_ast_test_def"
+Saved theorem _______ "to_ast_test_def"
+Saved theorem _______ "from_ast_to_ast_test_thm"
+Saved theorem _______ "cv_rep_ast_ast_test_datatype"
+Saved definition ____ "from_ast_ast_thunk_mode_def"
+Saved theorem _______ "from_ast_thunk_mode_def"
+Saved theorem _______ "to_ast_thunk_mode_def"
+Saved theorem _______ "from_ast_to_ast_thunk_mode_thm"
+Saved theorem _______ "cv_rep_ast_ast_thunk_mode_datatype"
+Saved definition ____ "from_ast_ast_thunk_op_def"
+Saved theorem _______ "from_ast_thunk_op_def"
+Saved theorem _______ "to_ast_thunk_op_def"
+Saved theorem _______ "from_ast_to_ast_thunk_op_thm"
+Saved theorem _______ "cv_rep_ast_ast_thunk_op_datatype"
+Saved definition ____ "from_ast_ast_op_def"
+Saved theorem _______ "from_ast_op_def"
+Saved theorem _______ "to_ast_op_def"
+Saved theorem _______ "from_ast_to_ast_op_thm"
+Saved theorem _______ "cv_rep_ast_ast_op_datatype"
+Saved definition ____ "from_ast_ast_lop_def"
+Saved theorem _______ "from_ast_lop_def"
+Saved theorem _______ "to_ast_lop_def"
+Saved theorem _______ "from_ast_to_ast_lop_thm"
+Saved theorem _______ "cv_rep_ast_ast_lop_datatype"
+Saved theorem _______ "from_ast_exp_def"
+Saved theorem _______ "to_ast_exp_def"
+Saved theorem _______ "from_ast_to_ast_exp_thm"
+Saved theorem _______ "cv_rep_ast_ast_exp_datatype"
+Saved theorem _______ "from_ast_dec_def"
+Saved theorem _______ "to_ast_dec_def"
+Saved theorem _______ "from_ast_to_ast_dec_thm"
+Saved theorem _______ "cv_rep_ast_ast_dec_datatype"
+Exporting theory "source_cv" ... done.
+Theory "source_cv" took 3.2s to build
+Holmake: [2/87] source_cv
+Holmake: Linking /workspace/scratch/7755a98cf62b/cakeml-compat/compiler/backend/backend_commonScript.uo to produce theory-builder executable
+<<HOL message: Created theory "backend_common">>
+Saved theorem _______ "num2opw_opw2num"
+Saved theorem _______ "opw2num_num2opw"
+Saved theorem _______ "num2opw_11"
+Saved theorem _______ "opw2num_11"
+Saved theorem _______ "num2opw_ONTO"
+Saved theorem _______ "opw2num_ONTO"
+Saved theorem _______ "num2opw_thm"
+Saved theorem _______ "opw2num_thm"
+Saved theorem _______ "opw_EQ_opw"
+Saved theorem _______ "opw_case_def"
+Saved theorem _______ "datatype_opw"
+Saved theorem _______ "opw_distinct"
+Saved theorem _______ "opw_nchotomy"
+Saved theorem _______ "opw_Axiom"
+Saved theorem _______ "opw_induction"
+Saved theorem _______ "opw_case_cong"
+Saved theorem _______ "opw_case_eq"
+<<HOL message: Defined type: "opw">>
+Saved definition ____ "small_enough_int_def"
+Saved definition ____ "bind_tag_def"
+Saved definition ____ "chr_tag_def"
+Saved definition ____ "div_tag_def"
+Saved definition ____ "subscript_tag_def"
+Saved definition ____ "false_tag_def"
+Saved definition ____ "true_tag_def"
+Saved definition ____ "nil_tag_def"
+Saved definition ____ "cons_tag_def"
+Saved definition ____ "none_tag_def"
+Saved definition ____ "some_tag_def"
+Saved definition ____ "tuple_tag_def"
+Saved definition ____ "closure_tag_def"
+Saved definition ____ "partial_app_tag_def"
+Saved definition ____ "clos_tag_shift_def"
+Saved theorem _______ "datatype_tra"
+Saved theorem _______ "tra_11"
+Saved theorem _______ "tra_distinct"
+Saved theorem _______ "tra_nchotomy"
+Saved theorem _______ "tra_Axiom"
+Saved theorem _______ "tra_induction"
+Saved theorem _______ "tra_case_cong"
+Saved theorem _______ "tra_case_eq"
+<<HOL message: Defined type: "tra">>
+Saved definition ____ "orphan_trace_def"
+<<HOL message: mk_functional: 
+  pattern completion has added 2 clauses to the original specification.>>
+Saved definition ____ "mk_cons_def"
+<<HOL message: mk_functional: 
+  pattern completion has added 2 clauses to the original specification.>>
+<<HOL message: mk_functional: 
+  pattern completion has added 2 clauses to the original specification.>>
+Saved definition ____ "mk_union_def"
+Saved definition ____ "bool_to_tag_def"
+Saved definition ____ "stack_num_stubs_def"
+Saved definition ____ "word_num_stubs_def"
+Saved definition ____ "data_num_stubs_def"
+Saved definition ____ "bvl_num_stubs_def"
+Saved definition ____ "bvl_to_bvi_namespaces_def"
+Saved theorem _______ "data_num_stubs_EVEN"
+Saved theorem _______ "bvl_num_stub_MOD"
+Saved definition ____ "word_shift_def"
+Exporting theory "backend_common" ... done.
+Theory "backend_common" took 0.99315s to build
+Holmake: [3/87] backend_common
+Holmake: Linking /workspace/scratch/7755a98cf62b/cakeml-compat/compiler/backend/closLangScript.uo to produce theory-builder executable
+<<HOL message: Created theory "closLang">>
+Saved theorem _______ "datatype_const"
+Saved theorem _______ "const_11"
+Saved theorem _______ "const_distinct"
+Saved theorem _______ "const_nchotomy"
+Saved theorem _______ "const_Axiom"
+Saved theorem _______ "const_induction"
+Saved theorem _______ "const_case_cong"
+Saved theorem _______ "const_case_eq"
+<<HOL message: Defined type: "const">>
+Saved theorem _______ "datatype_const_part"
+Saved theorem _______ "const_part_11"
+Saved theorem _______ "const_part_distinct"
+Saved theorem _______ "const_part_nchotomy"
+Saved theorem _______ "const_part_Axiom"
+Saved theorem _______ "const_part_induction"
+Saved theorem _______ "const_part_case_cong"
+Saved theorem _______ "const_part_case_eq"
+<<HOL message: Defined type: "const_part">>
+Saved theorem _______ "datatype_int_op"
+Saved theorem _______ "int_op_11"
+Saved theorem _______ "int_op_distinct"
+Saved theorem _______ "int_op_nchotomy"
+Saved theorem _______ "int_op_Axiom"
+Saved theorem _______ "int_op_induction"
+Saved theorem _______ "int_op_case_cong"
+Saved theorem _______ "int_op_case_eq"
+<<HOL message: Defined type: "int_op">>
+Saved theorem _______ "datatype_word_op"
+Saved theorem _______ "word_op_11"
+Saved theorem _______ "word_op_distinct"
+Saved theorem _______ "word_op_nchotomy"
+Saved theorem _______ "word_op_Axiom"
+Saved theorem _______ "word_op_induction"
+Saved theorem _______ "word_op_case_cong"
+Saved theorem _______ "word_op_case_eq"
+<<HOL message: Defined type: "word_op">>
+Saved theorem _______ "datatype_block_op"
+Saved theorem _______ "block_op_11"
+Saved theorem _______ "block_op_distinct"
+Saved theorem _______ "block_op_nchotomy"
+Saved theorem _______ "block_op_Axiom"
+Saved theorem _______ "block_op_induction"
+Saved theorem _______ "block_op_case_cong"
+Saved theorem _______ "block_op_case_eq"
+<<HOL message: Defined type: "block_op">>
+Saved theorem _______ "datatype_glob_op"
+Saved theorem _______ "glob_op_11"
+Saved theorem _______ "glob_op_distinct"
+Saved theorem _______ "glob_op_nchotomy"
+Saved theorem _______ "glob_op_Axiom"
+Saved theorem _______ "glob_op_induction"
+Saved theorem _______ "glob_op_case_cong"
+Saved theorem _______ "glob_op_case_eq"
+<<HOL message: Defined type: "glob_op">>
+Saved theorem _______ "datatype_mem_op"
+Saved theorem _______ "mem_op_11"
+Saved theorem _______ "mem_op_distinct"
+Saved theorem _______ "mem_op_nchotomy"
+Saved theorem _______ "mem_op_Axiom"
+Saved theorem _______ "mem_op_induction"
+Saved theorem _______ "mem_op_case_cong"
+Saved theorem _______ "mem_op_case_eq"
+<<HOL message: Defined type: "mem_op">>
+Saved theorem _______ "datatype_op"
+Saved theorem _______ "op_11"
+Saved theorem _______ "op_distinct"
+Saved theorem _______ "op_nchotomy"
+Saved theorem _______ "op_Axiom"
+Saved theorem _______ "op_induction"
+Saved theorem _______ "op_case_cong"
+Saved theorem _______ "op_case_eq"
+<<HOL message: Defined type: "op">>
+Saved theorem _______ "datatype_exp"
+Saved theorem _______ "exp_11"
+Saved theorem _______ "exp_distinct"
+Saved theorem _______ "exp_nchotomy"
+Saved theorem _______ "exp_Axiom"
+Saved theorem _______ "exp_induction"
+Saved theorem _______ "exp_case_cong"
+Saved theorem _______ "exp_case_eq"
+<<HOL message: Defined type: "exp">>
+<<HOL warning: Context.snapshot: ambient context read while a proof was running (in closLang)>>
+Saved definition ____ "has_install_def"
+Saved induction _____ "has_install_ind"
+Proof of 
+
+∀fns n x. MEM (n,x) fns ⇒ exp_size x < exp1_size fns
+
+failed.
+Tactic failure proving "exp1_size_lemma"; heap saved to closLang.exp1_size_lemma.dumpedheap.
+Resume with: bin/hol --holstate=closLang.exp1_size_lemma.dumpedheap
+Holmake: Failed script build for /workspace/scratch/7755a98cf62b/cakeml-compat/compiler/backend/closLangScript - exited with code 1

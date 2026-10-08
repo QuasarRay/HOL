@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "command": [
+    "/workspace/scratch/7755a98cf62b/native-reproducible-release-2/cake-x64-64/cake",
+    "--exclude_prelude=true",
+    "--types"
+  ],
+  "compiler_sha256": "85fbcdc9264b978abb11691376f752156a2b14587c83cb1cb78d2818970694e1",
+  "cases": [
+    {
+      "name": "structure",
+      "input_sha256": "9699550f10b8491abd3658aba12f5fb9494a1d4c53c98b6e285af4b9059222e0",
+      "exit_code": 0,
+      "result": "TYPECHECKED_OBSERVATION"
+    },
+    {
+      "name": "sml-constructor",
+      "input_sha256": "b5ca360a7be69f936251a3bcadbe4b2b70cc2496fe18df98badc6541203e4b5f",
+      "exit_code": 1,
+      "result": "REJECTED_OBSERVATION"
+    },
+    {
+      "name": "cakeml-constructor",
+      "input_sha256": "8998e00764bbdf383739806d33b74fccde21e700aad3f49c19963e05472c4ce5",
+      "exit_code": 0,
+      "result": "TYPECHECKED_OBSERVATION"
+    },
+    {
+      "name": "record",
+      "input_sha256": "d6fe9d31f98dac79547149fcee85ad55883760eac028744604d04eed52eeea6d",
+      "exit_code": 1,
+      "result": "REJECTED_OBSERVATION"
+    },
+    {
+      "name": "signature",
+      "input_sha256": "d959923a634b201f4915b1a43433c972cda26e4907ac5ed699691dad30e2fade",
+      "exit_code": 1,
+      "result": "REJECTED_OBSERVATION"
+    },
+    {
+      "name": "open",
+      "input_sha256": "3f2e601f6fa23177431a584c9d6edf928be700eafb73b5ca3a81a1d5f6fdceaf",
+      "exit_code": 1,
+      "result": "REJECTED_OBSERVATION"
+    },
+    {
+      "name": "functor",
+      "input_sha256": "a2bdf24c4ea7738ff63d20350185e8971c66cd9acddca7aad59efb2d8ceb80ed",
+      "exit_code": 1,
+      "result": "REJECTED_OBSERVATION"
+    }
+  ],
+  "claim": "exact source probes only; no semantics preservation or full HOL4 compilation claim"
+}

@@ -1,0 +1,65 @@
+Poly/ML 5.7.1 Release
+
+HOL smart configuration.
+
+[Using override file tools-poly/poly-includes.ML]
+
+Determining configuration parameters: holdir OS poly GNUMAKE 
+OS:                 linux
+poly:               /workspace/scratch/7755a98cf62b/host-tools/usr/bin/poly
+polyc:              /workspace/scratch/7755a98cf62b/host-tools/usr/bin/polyc
+polymllibdir:       /workspace/scratch/7755a98cf62b/host-tools/usr/lib/x86_64-linux-gnu
+holdir:             /workspace/scratch/7755a98cf62b/HOL-cakeml-host
+DOT_PATH:           NONE
+MLTON:              NONE
+GNUMAKE:            make
+
+Configuration will begin with above values.  If they are wrong
+press Control-C.
+
+Will continue in 3 seconds.Will continue in 2 seconds.Will continue in 1 seconds.
+
+Loading system specific functions
+Note: Int.maxInt = SOME 4611686018427387903
+Compiling system specific functions (sig sml)
+Beginning configuration.
+Making mllex
+/usr/bin/ld: warning: /tmp/polyobj.23.o: missing .note.GNU-stack section implies executable stack
+/usr/bin/ld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker
+Making mlyacc
+
+Number of states = 95
+Number of distinct rows = 47
+Approx. memory size of trans. table = 6063 bytes
+/usr/bin/ld: warning: /tmp/polyobj.59.o: missing .note.GNU-stack section implies executable stack
+/usr/bin/ld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker
+Making Holmake
+
+Number of states = 991
+Number of distinct rows = 837
+Approx. memory size of trans. table = 1714176 bytes
+/usr/bin/ld: warning: /tmp/polyobj.95.o: missing .note.GNU-stack section implies executable stack
+/usr/bin/ld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker
+Making unquote
+/usr/bin/ld: warning: /tmp/polyobj.116.o: missing .note.GNU-stack section implies executable stack
+/usr/bin/ld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker
+Making holdeptool
+/usr/bin/ld: warning: /tmp/polyobj.137.o: missing .note.GNU-stack section implies executable stack
+/usr/bin/ld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker
+Making build
+/usr/bin/ld: warning: /tmp/polyobj.158.o: missing .note.GNU-stack section implies executable stack
+/usr/bin/ld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker
+Making hol
+/usr/bin/ld: warning: /tmp/polyobj.181.o: missing .note.GNU-stack section implies executable stack
+/usr/bin/ld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker
+Making genscriptdep
+/usr/bin/ld: warning: /tmp/polyobj.202.o: missing .note.GNU-stack section implies executable stack
+/usr/bin/ld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker
+Making linkToSigobj
+/usr/bin/ld: warning: /tmp/polyobj.223.o: missing .note.GNU-stack section implies executable stack
+/usr/bin/ld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker
+Making hol-mode.el (for Emacs)
+Making tools/editor-modes/vim/*
+
+Finished configuration!
+val it = (): unit

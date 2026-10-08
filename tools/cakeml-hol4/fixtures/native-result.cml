@@ -1,0 +1,4 @@
+(* An observable native compilation fixture, without a HOL4 source claim. *)
+exception Match;
+fun f x = case x of 0 => 10 | 1 => 20 | _ => raise Match;
+print (Int.toString (f 1) ^ "\n");

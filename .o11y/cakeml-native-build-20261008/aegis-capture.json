@@ -1,0 +1,1 @@
+{"status": "BLOCKED_POSTGRESQL", "pending_event": "data/pending/hol4-cakeml-native-runtime/715369cd-6672-4484-925c-da7e7faaf01a.json", "error": "AEGIS_TASK_DSN is not configured; packet retained for Store.recover()", "claim": "exposed event capture only; not proof evidence"}

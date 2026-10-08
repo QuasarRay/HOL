@@ -1,0 +1,27 @@
+{
+  "advertised_cakeml_commit": "c98da7fc904c5d6d0e9a75a18fac1796a9bfb1f9",
+  "advertised_hol_commit": "b725f6e8834462a5b4bb2fb67b35e36f368cb8b6",
+  "archive_sha256": "e99dc1cdb9e28366f78c7c4ef812dbaab6710eb301ae8c85d1b6ce2a2161b728",
+  "claim": "exact vendor archive and observed version; independent binary correctness replay remains OPEN",
+  "files": [
+    {
+      "bytes": 38699851,
+      "path": "cake-x64-64/cake.S",
+      "sha256": "c103818945c3efd329bbd27540d6d2fe2b9f905617064c69b9e9e5e1373a3b26"
+    },
+    {
+      "bytes": 12371,
+      "path": "cake-x64-64/basis_ffi.c",
+      "sha256": "e020485bd018e71cee8d3d02ccfa504fb378aa8d710ff0f0c6d52b1d96419335"
+    },
+    {
+      "bytes": 14743024,
+      "path": "cake-x64-64/cake",
+      "sha256": "85fbcdc9264b978abb11691376f752156a2b14587c83cb1cb78d2818970694e1"
+    }
+  ],
+  "release_tag": "v3213",
+  "schema": 1,
+  "status": "VENDOR_IMAGE_LINKED_UNQUALIFIED",
+  "url": "https://github.com/CakeML/cakeml/releases/download/v3213/cake-x64-64.tar.gz"
+}

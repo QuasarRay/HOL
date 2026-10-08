@@ -1,0 +1,7 @@
+### ERROR: parse error
+Parsing failed at line 1
+
+functor F () = struct val x = 1 end; structure K = F ();
+^^^^^^^^
+
+Program exited with nonzero exit code.

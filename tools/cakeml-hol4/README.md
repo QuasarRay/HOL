@@ -1,6 +1,8 @@
 # HOL4 SML through checked CakeML macros
 
 The full HOL4 SML frontend and self-hosting theorem remain OPEN.
+The [native compiler report](reports/native-compiler.md) records the repaired
+merge stack, a working native CakeML compiler and the current HOL4 source rejection.
 See `reports/README.md` and `reports/verification-20261008-reconstruction.json`
 for current scope, pins, retained proof artifacts and blockers. The older
 `verification-20261008.json` records the previous source checkpoint.

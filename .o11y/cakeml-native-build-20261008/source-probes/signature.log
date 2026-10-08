@@ -1,0 +1,7 @@
+### ERROR: parse error
+Parsing failed at line 1
+
+signature S = sig val x : int end;
+^^^^^^^^^^
+
+Program exited with nonzero exit code.

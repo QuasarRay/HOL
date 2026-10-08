@@ -1,0 +1,1268 @@
+{
+  "claim": "source syntax counts only; parsing and semantic preservation not inferred",
+  "files": [
+    {
+      "path": "src/0/KernelTypes.sml",
+      "features": {
+        "of_tokens": 9
+      }
+    },
+    {
+      "path": "src/0/Net.sml",
+      "features": {
+        "record_syntax": 1,
+        "open": 2,
+        "opaque_signature": 1,
+        "of_tokens": 16
+      }
+    },
+    {
+      "path": "src/0/Subst.sml",
+      "features": {
+        "opaque_signature": 1,
+        "of_tokens": 3
+      }
+    },
+    {
+      "path": "src/0/Term.sml",
+      "features": {
+        "record_syntax": 19,
+        "record_selection": 3,
+        "open": 11,
+        "opaque_signature": 1,
+        "of_tokens": 61
+      }
+    },
+    {
+      "path": "src/0/Type.sml",
+      "features": {
+        "record_syntax": 20,
+        "open": 3,
+        "opaque_signature": 1,
+        "of_tokens": 10
+      }
+    },
+    {
+      "path": "src/portableML/AList.sml",
+      "features": {
+        "open": 1,
+        "opaque_signature": 1,
+        "of_tokens": 1
+      }
+    },
+    {
+      "path": "src/portableML/Arbint.sml",
+      "features": {
+        "open": 1,
+        "opaque_signature": 1
+      }
+    },
+    {
+      "path": "src/portableML/Arbnum.sml",
+      "features": {
+        "open": 2,
+        "opaque_signature": 1
+      }
+    },
+    {
+      "path": "src/portableML/Arbrat.sml",
+      "features": {
+        "open": 1,
+        "opaque_signature": 1
+      }
+    },
+    {
+      "path": "src/portableML/Chartab.sml",
+      "features": {}
+    },
+    {
+      "path": "src/portableML/DArray.sml",
+      "features": {
+        "record_syntax": 6,
+        "opaque_signature": 1,
+        "of_tokens": 1
+      }
+    },
+    {
+      "path": "src/portableML/DString.sml",
+      "features": {
+        "record_syntax": 10,
+        "opaque_signature": 1,
+        "of_tokens": 2
+      }
+    },
+    {
+      "path": "src/portableML/FlagDB.sml",
+      "features": {
+        "record_syntax": 2,
+        "open": 1,
+        "opaque_signature": 1,
+        "of_tokens": 1
+      }
+    },
+    {
+      "path": "src/portableML/Graph.sml",
+      "features": {
+        "open": 1,
+        "functor": 1,
+        "signature": 1,
+        "of_tokens": 11,
+        "abstype": 1
+      }
+    },
+    {
+      "path": "src/portableML/HOLPP.sml",
+      "features": {
+        "open": 1,
+        "opaque_signature": 1,
+        "of_tokens": 2
+      }
+    },
+    {
+      "path": "src/portableML/HOLquotation.sml",
+      "features": {
+        "open": 2,
+        "opaque_signature": 1,
+        "of_tokens": 1
+      }
+    },
+    {
+      "path": "src/portableML/HOLset.sml",
+      "features": {
+        "open": 2,
+        "opaque_signature": 1
+      }
+    },
+    {
+      "path": "src/portableML/HOLsexp.sml",
+      "features": {
+        "open": 2,
+        "opaque_signature": 1,
+        "of_tokens": 9
+      }
+    },
+    {
+      "path": "src/portableML/HOLsexp_dtype.sml",
+      "features": {
+        "of_tokens": 4
+      }
+    },
+    {
+      "path": "src/portableML/HOLsexp_parser.sml",
+      "features": {
+        "open": 1,
+        "opaque_signature": 1,
+        "of_tokens": 2
+      }
+    },
+    {
+      "path": "src/portableML/ISPEGParse.sml",
+      "features": {
+        "record_selection": 10,
+        "open": 1,
+        "opaque_signature": 1,
+        "of_tokens": 1
+      }
+    },
+    {
+      "path": "src/portableML/ISPEG_dtype.sml",
+      "features": {
+        "record_syntax": 1,
+        "of_tokens": 30
+      }
+    },
+    {
+      "path": "src/portableML/ImplicitGraph.sml",
+      "features": {
+        "opaque_signature": 1,
+        "of_tokens": 4
+      }
+    },
+    {
+      "path": "src/portableML/Int_Graph.sml",
+      "features": {}
+    },
+    {
+      "path": "src/portableML/Inttab.sml",
+      "features": {}
+    },
+    {
+      "path": "src/portableML/OldPP.sml",
+      "features": {
+        "record_syntax": 83,
+        "open": 1,
+        "opaque_signature": 1,
+        "of_tokens": 29,
+        "abstype": 3
+      }
+    },
+    {
+      "path": "src/portableML/PEGParse.sml",
+      "features": {
+        "record_syntax": 1,
+        "opaque_signature": 1,
+        "of_tokens": 22
+      }
+    },
+    {
+      "path": "src/portableML/PIntMap.sml",
+      "features": {
+        "opaque_signature": 1,
+        "of_tokens": 8
+      }
+    },
+    {
+      "path": "src/portableML/Portable.sml",
+      "features": {
+        "record_syntax": 17,
+        "open": 7,
+        "opaque_signature": 1,
+        "of_tokens": 30,
+        "abstype": 1
+      }
+    },
+    {
+      "path": "src/portableML/Profile.sml",
+      "features": {
+        "record_syntax": 10,
+        "record_selection": 8,
+        "open": 1,
+        "opaque_signature": 1,
+        "of_tokens": 5
+      }
+    },
+    {
+      "path": "src/portableML/Redblackmap.sml",
+      "features": {
+        "opaque_signature": 1,
+        "of_tokens": 55
+      }
+    },
+    {
+      "path": "src/portableML/Redblackset.sml",
+      "features": {
+        "opaque_signature": 1,
+        "of_tokens": 40
+      }
+    },
+    {
+      "path": "src/portableML/SHA1.sml",
+      "features": {
+        "open": 1,
+        "opaque_signature": 1
+      }
+    },
+    {
+      "path": "src/portableML/Streams.sml",
+      "features": {
+        "open": 2,
+        "opaque_signature": 1,
+        "of_tokens": 4
+      }
+    },
+    {
+      "path": "src/portableML/SymGraph.sml",
+      "features": {}
+    },
+    {
+      "path": "src/portableML/Symreltab.sml",
+      "features": {
+        "open": 1
+      }
+    },
+    {
+      "path": "src/portableML/Symtab.sml",
+      "features": {}
+    },
+    {
+      "path": "src/portableML/Table.sml",
+      "features": {
+        "open": 2,
+        "functor": 1,
+        "signature": 2,
+        "of_tokens": 69
+      }
+    },
+    {
+      "path": "src/portableML/UC_ASCII_Encode.sml",
+      "features": {
+        "open": 1,
+        "opaque_signature": 1
+      }
+    },
+    {
+      "path": "src/portableML/UTF8.sml",
+      "features": {
+        "open": 3,
+        "opaque_signature": 1,
+        "of_tokens": 12
+      }
+    },
+    {
+      "path": "src/portableML/UTF8Set.sml",
+      "features": {
+        "record_syntax": 1,
+        "open": 1,
+        "opaque_signature": 1,
+        "of_tokens": 7
+      }
+    },
+    {
+      "path": "src/portableML/UnicodeChars.sml",
+      "features": {
+        "opaque_signature": 1,
+        "of_tokens": 1
+      }
+    },
+    {
+      "path": "src/portableML/UniversalType.sml",
+      "features": {
+        "opaque_signature": 1,
+        "of_tokens": 2
+      }
+    },
+    {
+      "path": "src/portableML/Uref.sml",
+      "features": {
+        "opaque_signature": 1
+      }
+    },
+    {
+      "path": "src/portableML/holmake_holpathdb.sml",
+      "features": {
+        "record_syntax": 1
+      }
+    },
+    {
+      "path": "src/portableML/json/JSON.sml",
+      "features": {
+        "of_tokens": 6
+      }
+    },
+    {
+      "path": "src/portableML/json/JSONDecode.sml",
+      "features": {
+        "open": 1,
+        "opaque_signature": 1,
+        "of_tokens": 7
+      }
+    },
+    {
+      "path": "src/portableML/json/JSONErrors.sml",
+      "features": {
+        "opaque_signature": 1,
+        "of_tokens": 5
+      }
+    },
+    {
+      "path": "src/portableML/json/JSONParser.sml",
+      "features": {
+        "record_syntax": 1,
+        "opaque_signature": 1,
+        "of_tokens": 25
+      }
+    },
+    {
+      "path": "src/portableML/json/JSONSource.sml",
+      "features": {
+        "of_tokens": 1
+      }
+    },
+    {
+      "path": "src/portableML/json/JSONStreamParser.sml",
+      "features": {
+        "record_syntax": 2,
+        "record_selection": 16,
+        "opaque_signature": 1,
+        "of_tokens": 25
+      }
+    },
+    {
+      "path": "src/portableML/json/JSONUtil.sml",
+      "features": {
+        "record_syntax": 7,
+        "open": 1,
+        "opaque_signature": 1,
+        "of_tokens": 12
+      }
+    },
+    {
+      "path": "src/portableML/json/selftest.sml",
+      "features": {
+        "record_syntax": 1,
+        "open": 1,
+        "of_tokens": 1
+      }
+    },
+    {
+      "path": "src/portableML/locn.sml",
+      "features": {
+        "opaque_signature": 1,
+        "of_tokens": 8
+      }
+    },
+    {
+      "path": "src/portableML/mlton/FixedInt.sml",
+      "features": {}
+    },
+    {
+      "path": "src/portableML/mlton/Interrupt.sml",
+      "features": {}
+    },
+    {
+      "path": "src/portableML/mlton/MLSYSPortable.sml",
+      "features": {
+        "record_syntax": 2,
+        "of_tokens": 1
+      }
+    },
+    {
+      "path": "src/portableML/mlton/Unsynchronized.sml",
+      "features": {}
+    },
+    {
+      "path": "src/portableML/monads/errormonad.sml",
+      "features": {
+        "opaque_signature": 1,
+        "of_tokens": 9
+      }
+    },
+    {
+      "path": "src/portableML/monads/optmonad.sml",
+      "features": {
+        "opaque_signature": 1,
+        "of_tokens": 3
+      }
+    },
+    {
+      "path": "src/portableML/monads/readermonad.sml",
+      "features": {
+        "opaque_signature": 1
+      }
+    },
+    {
+      "path": "src/portableML/monads/seqmonad.sml",
+      "features": {
+        "open": 1,
+        "opaque_signature": 1,
+        "of_tokens": 5
+      }
+    },
+    {
+      "path": "src/portableML/monads/stmonad.sml",
+      "features": {
+        "opaque_signature": 1,
+        "of_tokens": 1
+      }
+    },
+    {
+      "path": "src/portableML/mosml/Arbintcore.sml",
+      "features": {
+        "open": 1,
+        "opaque_signature": 1
+      }
+    },
+    {
+      "path": "src/portableML/mosml/Arbnumcore.sml",
+      "features": {
+        "record_syntax": 4,
+        "open": 6,
+        "opaque_signature": 1,
+        "of_tokens": 11
+      }
+    },
+    {
+      "path": "src/portableML/mosml/CoreReplVARS.sml",
+      "features": {}
+    },
+    {
+      "path": "src/portableML/mosml/Exn.sml",
+      "features": {
+        "opaque_signature": 1,
+        "of_tokens": 2
+      }
+    },
+    {
+      "path": "src/portableML/mosml/FixedInt.sml",
+      "features": {
+        "open": 1,
+        "opaque_signature": 1
+      }
+    },
+    {
+      "path": "src/portableML/mosml/MLSYSPortable.sml",
+      "features": {
+        "record_syntax": 2
+      }
+    },
+    {
+      "path": "src/portableML/mosml/PrettyImpl.sml",
+      "features": {
+        "of_tokens": 6
+      }
+    },
+    {
+      "path": "src/portableML/mosml/SHA1_ML.sml",
+      "features": {
+        "record_syntax": 1,
+        "opaque_signature": 1,
+        "of_tokens": 1
+      }
+    },
+    {
+      "path": "src/portableML/mosml/Unsynchronized.sml",
+      "features": {
+        "opaque_signature": 1
+      }
+    },
+    {
+      "path": "src/portableML/mosml/concurrent/Future.sml",
+      "features": {
+        "opaque_signature": 1
+      }
+    },
+    {
+      "path": "src/portableML/mosml/concurrent/Lock.sml",
+      "features": {
+        "opaque_signature": 1
+      }
+    },
+    {
+      "path": "src/portableML/mosml/concurrent/Parmap.sml",
+      "features": {
+        "opaque_signature": 1
+      }
+    },
+    {
+      "path": "src/portableML/mosml/concurrent/RWLock.sml",
+      "features": {
+        "opaque_signature": 1
+      }
+    },
+    {
+      "path": "src/portableML/mosml/concurrent/Sref.sml",
+      "features": {
+        "opaque_signature": 1
+      }
+    },
+    {
+      "path": "src/portableML/mosml/concurrent/ThreadLocal.sml",
+      "features": {
+        "opaque_signature": 1
+      }
+    },
+    {
+      "path": "src/portableML/poly/Arbintcore.sml",
+      "features": {
+        "open": 2,
+        "opaque_signature": 1
+      }
+    },
+    {
+      "path": "src/portableML/poly/Arbnumcore.sml",
+      "features": {
+        "open": 1,
+        "opaque_signature": 1,
+        "of_tokens": 1
+      }
+    },
+    {
+      "path": "src/portableML/poly/ConcIsaLib.sml",
+      "features": {}
+    },
+    {
+      "path": "src/portableML/poly/CoreReplVARS.sml",
+      "features": {}
+    },
+    {
+      "path": "src/portableML/poly/Counter.sml",
+      "features": {
+        "signature": 1
+      }
+    },
+    {
+      "path": "src/portableML/poly/Dynarray.sml",
+      "features": {
+        "opaque_signature": 1,
+        "of_tokens": 1
+      }
+    },
+    {
+      "path": "src/portableML/poly/Exn.sml",
+      "features": {
+        "record_syntax": 1,
+        "of_tokens": 4
+      }
+    },
+    {
+      "path": "src/portableML/poly/Intmap.sml",
+      "features": {
+        "record_syntax": 48,
+        "record_selection": 6,
+        "opaque_signature": 1,
+        "of_tokens": 1
+      }
+    },
+    {
+      "path": "src/portableML/poly/Intset.sml",
+      "features": {
+        "opaque_signature": 1,
+        "of_tokens": 2
+      }
+    },
+    {
+      "path": "src/portableML/poly/MD5.sml",
+      "features": {
+        "record_syntax": 16,
+        "open": 1,
+        "opaque_signature": 1,
+        "of_tokens": 3
+      }
+    },
+    {
+      "path": "src/portableML/poly/MLSYSPortable.sml",
+      "features": {
+        "record_syntax": 3,
+        "of_tokens": 2
+      }
+    },
+    {
+      "path": "src/portableML/poly/Multithreading.sml",
+      "features": {
+        "signature": 1,
+        "of_tokens": 2
+      }
+    },
+    {
+      "path": "src/portableML/poly/Par_Exn.sml",
+      "features": {
+        "signature": 1,
+        "of_tokens": 2
+      }
+    },
+    {
+      "path": "src/portableML/poly/PrettyImpl.sml",
+      "features": {}
+    },
+    {
+      "path": "src/portableML/poly/Random.sml",
+      "features": {
+        "record_syntax": 8,
+        "opaque_signature": 1
+      }
+    },
+    {
+      "path": "src/portableML/poly/Single_Assignment.sml",
+      "features": {
+        "record_syntax": 5,
+        "signature": 1,
+        "of_tokens": 4,
+        "abstype": 1
+      }
+    },
+    {
+      "path": "src/portableML/poly/Standard_Thread.sml",
+      "features": {
+        "record_syntax": 3,
+        "record_selection": 1,
+        "signature": 1,
+        "of_tokens": 1
+      }
+    },
+    {
+      "path": "src/portableML/poly/Susp.sml",
+      "features": {
+        "opaque_signature": 1,
+        "of_tokens": 3
+      }
+    },
+    {
+      "path": "src/portableML/poly/Synchronized.sml",
+      "features": {
+        "record_syntax": 4,
+        "signature": 1,
+        "of_tokens": 3,
+        "abstype": 1
+      }
+    },
+    {
+      "path": "src/portableML/poly/Thread_Attributes.sml",
+      "features": {
+        "signature": 1,
+        "of_tokens": 1,
+        "abstype": 1
+      }
+    },
+    {
+      "path": "src/portableML/poly/Thread_Data.sml",
+      "features": {
+        "signature": 1,
+        "of_tokens": 2,
+        "abstype": 1
+      }
+    },
+    {
+      "path": "src/portableML/poly/Unsynchronized.sml",
+      "features": {
+        "signature": 1
+      }
+    },
+    {
+      "path": "src/portableML/poly/concurrent/Event_Timer.sml",
+      "features": {
+        "record_syntax": 11,
+        "open": 1,
+        "opaque_signature": 1,
+        "of_tokens": 5
+      }
+    },
+    {
+      "path": "src/portableML/poly/concurrent/Future.sml",
+      "features": {
+        "record_syntax": 18,
+        "open": 1,
+        "opaque_signature": 1,
+        "of_tokens": 20
+      }
+    },
+    {
+      "path": "src/portableML/poly/concurrent/Lock.sml",
+      "features": {
+        "record_syntax": 3,
+        "opaque_signature": 1
+      }
+    },
+    {
+      "path": "src/portableML/poly/concurrent/Parmap.sml",
+      "features": {
+        "open": 1,
+        "opaque_signature": 1
+      }
+    },
+    {
+      "path": "src/portableML/poly/concurrent/RWLock.sml",
+      "features": {
+        "record_syntax": 6,
+        "opaque_signature": 1
+      }
+    },
+    {
+      "path": "src/portableML/poly/concurrent/Sref.sml",
+      "features": {
+        "record_syntax": 5,
+        "opaque_signature": 1
+      }
+    },
+    {
+      "path": "src/portableML/poly/concurrent/Task_Queue.sml",
+      "features": {
+        "record_syntax": 35,
+        "open": 1,
+        "opaque_signature": 1,
+        "of_tokens": 20,
+        "abstype": 2
+      }
+    },
+    {
+      "path": "src/portableML/poly/concurrent/ThreadLocal.sml",
+      "features": {
+        "opaque_signature": 1
+      }
+    },
+    {
+      "path": "src/portableML/poly/concurrent/Timeout.sml",
+      "features": {
+        "opaque_signature": 1,
+        "of_tokens": 1
+      }
+    },
+    {
+      "path": "src/portableML/poly/concurrent/poly_decide_threadcount.sml",
+      "features": {
+        "of_tokens": 1
+      }
+    },
+    {
+      "path": "src/portableML/poly/fromIsabelle/CoreLib.sml",
+      "features": {}
+    },
+    {
+      "path": "src/portableML/quotation_dtype.sml",
+      "features": {
+        "of_tokens": 2
+      }
+    },
+    {
+      "path": "src/portableML/rawtheory/RawTermPP.sml",
+      "features": {
+        "record_syntax": 19,
+        "open": 2,
+        "opaque_signature": 1,
+        "of_tokens": 30
+      }
+    },
+    {
+      "path": "src/portableML/rawtheory/RawTheoryReader.sml",
+      "features": {
+        "record_syntax": 20,
+        "open": 2,
+        "opaque_signature": 1,
+        "of_tokens": 16
+      }
+    },
+    {
+      "path": "src/portableML/rawtheory/RawTheory_dtype.sml",
+      "features": {
+        "record_syntax": 14,
+        "record_selection": 4,
+        "of_tokens": 9
+      }
+    },
+    {
+      "path": "src/portableML/rawtheory/theorystats.sml",
+      "features": {
+        "record_syntax": 24,
+        "record_selection": 3,
+        "open": 6,
+        "opaque_signature": 1,
+        "of_tokens": 10
+      }
+    },
+    {
+      "path": "src/portableML/selftest.sml",
+      "features": {
+        "open": 5,
+        "of_tokens": 1
+      }
+    },
+    {
+      "path": "src/portableML/seq.sml",
+      "features": {
+        "opaque_signature": 1,
+        "of_tokens": 8
+      }
+    },
+    {
+      "path": "src/portableML/smpp.sml",
+      "features": {
+        "open": 1,
+        "opaque_signature": 1,
+        "of_tokens": 7
+      }
+    },
+    {
+      "path": "src/postkernel/DB.sml",
+      "features": {
+        "record_syntax": 23,
+        "record_selection": 2,
+        "open": 3,
+        "opaque_signature": 1,
+        "of_tokens": 18
+      }
+    },
+    {
+      "path": "src/postkernel/DBSearchParser.sml",
+      "features": {
+        "open": 3,
+        "opaque_signature": 1,
+        "of_tokens": 14
+      }
+    },
+    {
+      "path": "src/postkernel/DB_dtype.sml",
+      "features": {
+        "record_syntax": 9,
+        "record_selection": 2,
+        "open": 1,
+        "of_tokens": 7
+      }
+    },
+    {
+      "path": "src/postkernel/HolKernel.sml",
+      "features": {
+        "record_syntax": 39,
+        "record_selection": 3,
+        "open": 3,
+        "of_tokens": 25
+      }
+    },
+    {
+      "path": "src/postkernel/SharingTables.sml",
+      "features": {
+        "record_syntax": 75,
+        "record_selection": 14,
+        "open": 9,
+        "opaque_signature": 1,
+        "of_tokens": 24
+      }
+    },
+    {
+      "path": "src/postkernel/Termtab.sml",
+      "features": {
+        "record_syntax": 1,
+        "open": 1,
+        "of_tokens": 3
+      }
+    },
+    {
+      "path": "src/postkernel/Theory.sml",
+      "features": {
+        "record_syntax": 108,
+        "record_selection": 30,
+        "open": 8,
+        "opaque_signature": 1,
+        "of_tokens": 38,
+        "abstype": 1
+      }
+    },
+    {
+      "path": "src/postkernel/TheoryDelta.sml",
+      "features": {
+        "record_syntax": 3,
+        "of_tokens": 12
+      }
+    },
+    {
+      "path": "src/postkernel/TheoryGraph.sml",
+      "features": {
+        "record_syntax": 3,
+        "record_selection": 2,
+        "open": 1,
+        "opaque_signature": 1,
+        "of_tokens": 8
+      }
+    },
+    {
+      "path": "src/postkernel/TheoryPP.sml",
+      "features": {
+        "record_syntax": 35,
+        "record_selection": 3,
+        "open": 14,
+        "opaque_signature": 1,
+        "of_tokens": 12
+      }
+    },
+    {
+      "path": "src/postkernel/TheoryReader.sml",
+      "features": {
+        "record_syntax": 12,
+        "record_selection": 2,
+        "open": 2,
+        "opaque_signature": 1
+      }
+    },
+    {
+      "path": "src/postkernel/ThmKind_dtype.sml",
+      "features": {
+        "of_tokens": 3
+      }
+    },
+    {
+      "path": "src/postkernel/ThyDataSexp.sml",
+      "features": {
+        "record_syntax": 23,
+        "open": 4,
+        "opaque_signature": 1,
+        "of_tokens": 53
+      }
+    },
+    {
+      "path": "src/postkernel/Typetab.sml",
+      "features": {
+        "record_syntax": 1,
+        "open": 1,
+        "of_tokens": 1
+      }
+    },
+    {
+      "path": "src/postkernel/prooftrace/PFTOpcodes.sml",
+      "features": {
+        "record_syntax": 66,
+        "opaque_signature": 1,
+        "of_tokens": 12
+      }
+    },
+    {
+      "path": "src/postkernel/prooftrace/PFTReader.sml",
+      "features": {
+        "record_syntax": 16,
+        "record_selection": 100,
+        "open": 1,
+        "opaque_signature": 1,
+        "of_tokens": 5
+      }
+    },
+    {
+      "path": "src/postkernel/prooftrace/PFTReplay.sml",
+      "features": {
+        "record_syntax": 12,
+        "open": 1,
+        "opaque_signature": 1,
+        "of_tokens": 6
+      }
+    },
+    {
+      "path": "src/postkernel/prooftrace/ProofTraceParser.sml",
+      "features": {
+        "record_syntax": 4,
+        "open": 6,
+        "opaque_signature": 1,
+        "of_tokens": 104
+      }
+    },
+    {
+      "path": "src/postkernel/prooftrace/ProofTraceReplay.sml",
+      "features": {
+        "record_syntax": 13,
+        "open": 1,
+        "opaque_signature": 1,
+        "of_tokens": 16
+      }
+    },
+    {
+      "path": "src/postkernel/prooftrace/ProofTraceWalk.sml",
+      "features": {
+        "record_syntax": 3,
+        "open": 1,
+        "opaque_signature": 1,
+        "of_tokens": 9
+      }
+    },
+    {
+      "path": "src/postkernel/prooftrace/ThmSrc_tr.sml",
+      "features": {
+        "record_syntax": 13,
+        "record_selection": 4,
+        "open": 2,
+        "opaque_signature": 1,
+        "of_tokens": 3
+      }
+    },
+    {
+      "path": "src/postkernel/prooftrace/mlton/HOLsexp-dummy.sml",
+      "features": {}
+    },
+    {
+      "path": "src/postkernel/prooftrace/pft-replay-test.sml",
+      "features": {
+        "open": 1,
+        "of_tokens": 1
+      }
+    },
+    {
+      "path": "src/postkernel/prooftrace/replay-test.sml",
+      "features": {}
+    },
+    {
+      "path": "src/prekernel/Coding.sml",
+      "features": {
+        "record_syntax": 2,
+        "open": 2,
+        "opaque_signature": 1,
+        "of_tokens": 2
+      }
+    },
+    {
+      "path": "src/prekernel/Context.sml",
+      "features": {
+        "record_syntax": 17,
+        "record_selection": 8,
+        "opaque_signature": 1,
+        "of_tokens": 6
+      }
+    },
+    {
+      "path": "src/prekernel/Count.sml",
+      "features": {
+        "record_syntax": 8,
+        "record_selection": 112,
+        "opaque_signature": 1,
+        "of_tokens": 1
+      }
+    },
+    {
+      "path": "src/prekernel/Dep.sml",
+      "features": {
+        "record_syntax": 1,
+        "open": 2,
+        "opaque_signature": 1,
+        "of_tokens": 12
+      }
+    },
+    {
+      "path": "src/prekernel/Feedback.sml",
+      "features": {
+        "record_syntax": 41,
+        "record_selection": 5,
+        "open": 4,
+        "opaque_signature": 1,
+        "of_tokens": 23
+      }
+    },
+    {
+      "path": "src/prekernel/Feedback_dtype.sml",
+      "features": {
+        "record_syntax": 2,
+        "of_tokens": 1
+      }
+    },
+    {
+      "path": "src/prekernel/FinalContext-sig.sml",
+      "features": {
+        "record_syntax": 1,
+        "signature": 1
+      }
+    },
+    {
+      "path": "src/prekernel/FinalNet-sig.sml",
+      "features": {
+        "signature": 1
+      }
+    },
+    {
+      "path": "src/prekernel/FinalTag-sig.sml",
+      "features": {
+        "signature": 1
+      }
+    },
+    {
+      "path": "src/prekernel/FinalTerm-sig.sml",
+      "features": {
+        "record_syntax": 5,
+        "signature": 1,
+        "of_tokens": 4
+      }
+    },
+    {
+      "path": "src/prekernel/FinalThm-sig.sml",
+      "features": {
+        "record_syntax": 1,
+        "signature": 1,
+        "of_tokens": 2
+      }
+    },
+    {
+      "path": "src/prekernel/FinalType-sig.sml",
+      "features": {
+        "record_syntax": 7,
+        "signature": 1
+      }
+    },
+    {
+      "path": "src/prekernel/Globals.sml",
+      "features": {
+        "record_syntax": 1,
+        "record_selection": 2,
+        "opaque_signature": 1
+      }
+    },
+    {
+      "path": "src/prekernel/KNametab.sml",
+      "features": {}
+    },
+    {
+      "path": "src/prekernel/KernelSig.sml",
+      "features": {
+        "record_syntax": 40,
+        "record_selection": 1,
+        "opaque_signature": 1,
+        "of_tokens": 16
+      }
+    },
+    {
+      "path": "src/prekernel/Lexis.sml",
+      "features": {
+        "record_syntax": 2,
+        "open": 2,
+        "opaque_signature": 1,
+        "of_tokens": 1
+      }
+    },
+    {
+      "path": "src/prekernel/Lib.sml",
+      "features": {
+        "record_syntax": 1,
+        "open": 3,
+        "opaque_signature": 1,
+        "of_tokens": 5
+      }
+    },
+    {
+      "path": "src/prekernel/Listener.sml",
+      "features": {
+        "open": 1,
+        "opaque_signature": 1,
+        "of_tokens": 2
+      }
+    },
+    {
+      "path": "src/prekernel/Nonce.sml",
+      "features": {
+        "opaque_signature": 1
+      }
+    },
+    {
+      "path": "src/prekernel/Tag.sml",
+      "features": {
+        "record_syntax": 1,
+        "open": 5,
+        "opaque_signature": 1,
+        "of_tokens": 2
+      }
+    },
+    {
+      "path": "src/prekernel/TraceMode.sml",
+      "features": {
+        "opaque_signature": 1,
+        "of_tokens": 1
+      }
+    },
+    {
+      "path": "src/prekernel/Type_dtype.sml",
+      "features": {
+        "of_tokens": 4
+      }
+    },
+    {
+      "path": "src/prekernel/mlton/stubs.sml",
+      "features": {}
+    },
+    {
+      "path": "src/prekernel/selftest.sml",
+      "features": {
+        "record_syntax": 1
+      }
+    },
+    {
+      "path": "src/prekernel/stringfindreplace.sml",
+      "features": {
+        "record_syntax": 1,
+        "opaque_signature": 1,
+        "of_tokens": 10
+      }
+    },
+    {
+      "path": "src/thm/Compute.sml",
+      "features": {
+        "record_syntax": 14,
+        "record_selection": 52,
+        "open": 6,
+        "opaque_signature": 1,
+        "of_tokens": 64
+      }
+    },
+    {
+      "path": "src/thm/Overlay.sml",
+      "features": {
+        "open": 1,
+        "signature": 1,
+        "opaque_signature": 1,
+        "where_type": 3
+      }
+    },
+    {
+      "path": "src/thm/mlton/selftest.sml",
+      "features": {}
+    }
+  ]
+}

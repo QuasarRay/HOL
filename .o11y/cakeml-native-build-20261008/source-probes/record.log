@@ -1,0 +1,7 @@
+### ERROR: parse error
+Parsing failed at line 1
+
+val r = {a=1,b=2};
+^^^^
+
+Program exited with nonzero exit code.

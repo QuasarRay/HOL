@@ -1,0 +1,23 @@
+{
+  "kind": "verification",
+  "project": "HOL4-on-CakeML",
+  "receipt": ".o11y/cakeml-native-build-20261008/verification.json",
+  "receipt_sha256": "d4452d20a0f6ef5f69e0de55693f7227a472dde778207b30eac64a6374c8a963",
+  "outcomes": {
+    "merge_conflicts": "REPAIRED",
+    "native_fixture": "EXECUTED_20",
+    "scoped_theorems": 173,
+    "regression_tests": 31,
+    "full_HOL4": "NOT_BUILT"
+  },
+  "blockers": [
+    "SML97 source parsing and elaboration correspondence",
+    "record, module, signature, functor and remaining syntax lowering",
+    "portable basis/runtime and native build/loading backend",
+    "exact source-to-machine compiler instance",
+    "macro-generator implementation binary correctness",
+    "original vendor HOL proof reconstruction",
+    "CakeML-built HOL4 proof reconstruction"
+  ],
+  "claim": "exposed verification outcomes only"
+}

@@ -1,0 +1,66 @@
+{
+  "scope": "byte identity only; implementation validity checked separately",
+  "source_commit": "4329ddedd3bd2e97402df99d8b9ff29ec6712db7",
+  "files": [
+    {
+      "path": ".agents/database/store.py",
+      "sha256": "8a4bb5d43d2c0cfe73054151ed1a389cc1c6dfbd5fdd09fb820d8e92a2ad0ba8",
+      "locked_hash_matches": true,
+      "upstream_bytes_match": true
+    },
+    {
+      "path": ".agents/database/codec.py",
+      "sha256": "90f50611ca5502a91a901de37662b69f8cda38d737d42cbc1700e6e0b6854584",
+      "locked_hash_matches": true,
+      "upstream_bytes_match": true
+    },
+    {
+      "path": ".agents/database/schema.sql",
+      "sha256": "77230569bf8f80540b24fb695479b30bfb3a7f36ea26fc3132dda4f4a18eed50",
+      "locked_hash_matches": true,
+      "upstream_bytes_match": true
+    },
+    {
+      "path": ".agents/database/admin.py",
+      "sha256": "9f9906b97ada23f52df44fac33130da58f76f5549a04df6c0486bafce9478551",
+      "locked_hash_matches": true,
+      "upstream_bytes_match": true
+    },
+    {
+      "path": ".agents/database/__init__.py",
+      "sha256": "8e9bfbebb0b95c91219b8e04261848c04b511324a8011d0ceeab644394412b77",
+      "locked_hash_matches": true,
+      "upstream_bytes_match": true
+    },
+    {
+      "path": ".agents/database/requirements.txt",
+      "sha256": "d2344076593c14357a86869580f2ff4930051813c887c6c3d5248ff81b3ffe33",
+      "locked_hash_matches": true,
+      "upstream_bytes_match": true
+    },
+    {
+      "path": ".agents/infra/agentinfra/atomic.py",
+      "sha256": "d0a0d9b136aae61b7c42e0d704a413122cc8cea27f55dd7a70ce03d30fda2c8a",
+      "locked_hash_matches": true,
+      "upstream_bytes_match": true
+    },
+    {
+      "path": ".agents/infra/agentinfra/security.py",
+      "sha256": "04d36bdb77d90b2db9508fe38c43b36956cded142349f7318e860585cf9acf62",
+      "locked_hash_matches": true,
+      "upstream_bytes_match": true
+    },
+    {
+      "path": ".agents/infra/agentinfra/governance.py",
+      "sha256": "8db3ba1d9ea335041aed8b875c2d0ce9ad8a71f72a09ccf725eb29b4bc1a3013",
+      "locked_hash_matches": true,
+      "upstream_bytes_match": true
+    },
+    {
+      "path": ".agents/infra/agentinfra/__init__.py",
+      "sha256": "82ce7e51b7e4b7a7be899ead0b31e7d70bb390fc5d4b9fa2eb839772554d0b56",
+      "locked_hash_matches": true,
+      "upstream_bytes_match": true
+    }
+  ]
+}

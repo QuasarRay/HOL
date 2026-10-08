@@ -148,3 +148,5 @@ examples/l3-machine-code/**/*-heap
 /.pi/
 CLAUDE.local.md
 __pycache__
+
+/.hol4-cakeml/

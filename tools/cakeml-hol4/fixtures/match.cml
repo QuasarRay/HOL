@@ -1,0 +1,8 @@
+exception SmlMatch;
+val sml_match_exception = SmlMatch;
+val classify = fn subject =>
+  case subject of
+      0 => 10
+    | 1 => 20
+    | _ => raise sml_match_exception;
+val result = classify 1;

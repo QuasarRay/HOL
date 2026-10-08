@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/hol4-cakeml-semantic-gaps.schema.json",
+  "title": "HOL4/SML features not equivalent in CakeML",
+  "type": "object",
+  "required": [
+    "dataset_id",
+    "schema_version",
+    "snapshots",
+    "sources",
+    "features"
+  ],
+  "properties": {
+    "dataset_id": {
+      "type": "string"
+    },
+    "generated_utc": {
+      "type": "string"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "snapshots": {
+      "type": "object"
+    },
+    "authority_model": {
+      "type": "object"
+    },
+    "scope": {
+      "type": "object"
+    },
+    "counts": {
+      "type": "object"
+    },
+    "sources": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object"
+      }
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "layer",
+          "name",
+          "semantics",
+          "syntax",
+          "hol4",
+          "cakeml"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[CDMSHX][0-9]{2}$"
+          },
+          "layer": {
+            "enum": [
+              "sml_core",
+              "sml_declarations",
+              "sml_modules",
+              "sml_semantics",
+              "hol4_extension",
+              "implementation_extension"
+            ]
+          },
+          "name": {
+            "type": "string"
+          },
+          "semantic_dimension": {
+            "type": "string"
+          },
+          "semantic_relevance": {
+            "enum": [
+              "semantic_or_acceptance",
+              "surface_only"
+            ]
+          },
+          "semantics": {
+            "type": "string"
+          },
+          "syntax": {
+            "type": "object",
+            "required": [
+              "example",
+              "normalized_ebnf"
+            ],
+            "properties": {
+              "example": {
+                "type": "string"
+              },
+              "normalized_ebnf": {
+                "type": "string"
+              }
+            }
+          },
+          "hol4": {
+            "type": "object"
+          },
+          "cakeml": {
+            "type": "object",
+            "required": [
+              "compatibility",
+              "reason",
+              "authority_refs"
+            ],
+            "properties": {
+              "compatibility": {
+                "enum": [
+                  "absent",
+                  "restricted",
+                  "semantic_mismatch",
+                  "parsed_but_semantically_discarded",
+                  "surface_mismatch"
+                ]
+              },
+              "reason": {
+                "type": "string"
+              },
+              "authority_refs": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "translation": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  }
+}

@@ -43,5 +43,25 @@ class MacroFrontendTests(unittest.TestCase):
         self.assertIn("CommandLine.arguments ()", out)
 
 
+    def test_literals_and_nested_comments_keep_their_meaning(self):
+        source = ('val text = "CommandLine.name() PolyML.pointerEq"\n'
+                  '(* Thread.fork (* Universal.tag () *) *)\n'
+                  'val char = #"\\\\"\n')
+        out, rules = self.render(source)
+        self.assertEqual(out, source)
+        self.assertEqual(rules, [])
+
+    def test_string_gap_keeps_literal_and_next_operation_separate(self):
+        source = 'val s = "PolyML.\\\n  \\pointerEq"\nval x = CommandLine.name()\n'
+        out, rules = self.render(source)
+        self.assertEqual(out, source.replace('name()', 'name ()'))
+        self.assertEqual(rules, [{"rule": "basis-commandline-name", "count": 1}])
+
+    def test_unterminated_comment_and_string_fail_closed(self):
+        for source in ['val s = "open', '(* open (* nested *)']:
+            with self.subTest(source=source), self.assertRaisesRegex(ValueError, "unterminated"):
+                self.render(source)
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -1,0 +1,20 @@
+{
+  "title": "HOL4 SML vs CakeML comprehensive gap audit",
+  "date": "2026-10-07",
+  "cake_commit": "f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6",
+  "hol_commit": "652d1f0aad5cd537ed1e5d470ba3444e70ba470e",
+  "files": [
+    "00-scope-method-and-snapshots.md",
+    "01-core-expressions-patterns-and-types.md",
+    "02-declarations-and-fixity.md",
+    "03-module-system-and-signatures.md",
+    "04-static-and-dynamic-semantics.md",
+    "05-hol4-language-extensions.md",
+    "06-polyml-mosml-basis-and-runtime-gaps.md",
+    "07-exhaustive-feature-matrix.md",
+    "08-representative-hol4-evidence.md",
+    "09-porting-priority-and-desugaring.md",
+    "README.md",
+    "SOURCES.md"
+  ]
+}

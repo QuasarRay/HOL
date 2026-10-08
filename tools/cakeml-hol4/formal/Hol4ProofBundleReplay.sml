@@ -1,5 +1,5 @@
-(* Run inside either HOL4 executable. The Python gate binds the exact bundle
-   digest and theory directory; this script validates the named theorem object. *)
+(* Theory import inspection only. Loading .dat files does not replay the
+   original proof derivation. A release requires separate source reconstruction. *)
 open HolKernel boolLib bossLib;
 
 fun require_env name =
@@ -12,6 +12,7 @@ fun split_qname qname =
     [thy, name] => (thy, name)
   | _ => raise Fail "HOL4_RELEASE_THEOREM must be Theory.theorem";
 
+fun inspect () = let
 val bundle_dir = require_env "HOL4_RELEASE_BUNDLE_DIR";
 val bundle_digest = require_env "HOL4_RELEASE_BUNDLE_SHA256";
 val qname = require_env "HOL4_RELEASE_THEOREM";
@@ -28,5 +29,7 @@ val acceptable =
 
 val _ = if acceptable then ()
         else raise Fail ("release theorem is open or contaminated: " ^ qname);
-val _ = print ("HOL4_PROOF_BUNDLE_OK " ^ bundle_digest ^ "\n");
-val _ = OS.Process.exit OS.Process.success;
+in print ("HOL4_PROOF_BUNDLE_OK " ^ bundle_digest ^ "\n") end;
+val _ = ((inspect (); OS.Process.exit OS.Process.success)
+  handle e => (print ("HOL4_PROOF_BUNDLE_FAILED " ^ General.exnMessage e ^ "\n");
+               OS.Process.exit OS.Process.failure));

@@ -1,0 +1,11 @@
+
+---------------------------------------------------------------------
+     HOL4 [Trindemossen 2 (stdknl, built Thu Oct 08 09:14:05 2026)]
+
+     For introductory HOL help, type: help "hol";
+     To exit type <Control>-D
+---------------------------------------------------------------------
+> val require_env = fn: string -> string
+val split_qname = fn: string -> string * string
+val inspect = fn: unit -> unit
+HOL4_PROOF_BUNDLE_FAILED HOL_ERR (at DB.fetch: theorem bool$this_theorem_does_not_exist_20261008 not found)

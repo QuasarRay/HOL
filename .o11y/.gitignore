@@ -1,0 +1,5 @@
+# Retain copied evidence despite the upstream build-artifact ignore rules.
+!*.log
+!*.dat
+!*Theory.sml
+!*Theory.sig

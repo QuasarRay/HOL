@@ -1,0 +1,23 @@
+
+---------------------------------------------------------------------
+     HOL4 [Trindemossen 2 (stdknl, built Thu Oct 08 09:14:05 2026)]
+
+     For introductory HOL help, type: help "hol";
+     To exit type <Control>-D
+---------------------------------------------------------------------
+> val require_env = fn: string -> string
+val split_qname = fn: string -> string * string
+val bundle_dir =
+   "/workspace/scratch/e1d228cc5e69/HOL/.o11y/sml-gap-audit-20261008": string
+val bundle_digest =
+   "0000000000000000000000000000000000000000000000000000000000000000": string
+val qname = "bool.this_theorem_does_not_exist_20261008": string
+val name = "this_theorem_does_not_exist_20261008": string
+val thy = "bool": string
+Exception-
+   HOL_ERR
+     (at DB.fetch:
+          theorem bool$this_theorem_does_not_exist_20261008 not found) raised
+poly: : error: Value or constructor (th) has not been declared
+Found near Tag.dest_tag (Thm.tag th)
+Static Errors

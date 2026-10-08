@@ -1,0 +1,90 @@
+{
+  "schema": 1,
+  "status": "OBSERVED_CHECKPOINT_WITH_OPEN_BRIDGES",
+  "claim": "Observed tool outcomes, not a proof certificate. Exported theory/log/archive artifacts await workspace recovery.",
+  "pins": {
+    "hol4_report": "ec34b4b4c4efb8b225f5bcea598f55a0095a7425",
+    "hol4_checker": "40dd5b03de658f4bd9e3f4225fb0f1602ac90467",
+    "cakeml_report": "f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6",
+    "cakeml_compiler": "c98da7fc904c5d6d0e9a75a18fac1796a9bfb1f9",
+    "sml97": "c4212f434cafd06669171619f7d332341a5b31f3",
+    "metarocq_reuse": "4329ddedd3bd2e97402df99d8b9ff29ec6712db7",
+    "hol4_official_release_tag": "trindemossen-2",
+    "hol4_official_release_commit": "bdc6917eeafd45f1067c08b6061c2243c1b1edb0"
+  },
+  "report_checks": {
+    "status": "INTEGRITY_AND_SOURCE_REFERENCES_CHECKED",
+    "feature_count": 80,
+    "strict_feature_count": 79,
+    "formal_report_verification": "OPEN",
+    "catalog_sources_resolved": 16,
+    "cited_cakeml_files_differ_between_pins": 7,
+    "warnings": [
+      "generated_utc 2026-10-07T00:00:00Z predates the cited CakeML commit 2026-10-07T07:48:42Z"
+    ],
+    "input_archives": [
+      "hol4-cakeml-sml-gap-audit(1).zip",
+      "hol4-sml-cakeml-machine-readable(1).zip"
+    ],
+    "raw_archive_and_full_audit_export_publication": "BLOCKED_WORKSPACE_OFFLINE"
+  },
+  "macro_checks": {
+    "source_build": "PASS_OBSERVED",
+    "fresh_build_qualification": "PASS_OBSERVED",
+    "theorem_export_inspection": "PASS_OBSERVED",
+    "theorem_count": 15,
+    "hypotheses": 0,
+    "axioms": 0,
+    "allowed_dependency_tags": [
+      "DISK_THM"
+    ],
+    "model_theorems": 8,
+    "generated_and_search_theorems": 7,
+    "scope": "normalized CakeML matching, sequencing and closure construction; full SML97 typing/elaboration/application/source equivalence OPEN",
+    "markers": [
+      "HOL4_MACRO_SEARCH_CHECKED egglog-replay z3-reconstruction tactictoe",
+      "HOL4_MACRO_EXPORTS_INSPECTED 15"
+    ],
+    "artifact_export_recovery": "BLOCKED_WORKSPACE_OFFLINE"
+  },
+  "automation": {
+    "egglog": "Native Rust binding 14.0.0 candidate selected and HOL4 named sequence rewrite replayed",
+    "z3": "HolSmtLib.Z3_TAC reconstruction passed for clock-step goal",
+    "tactictoe": "Reused 1948 learned tactic calls; fallback clause count proved",
+    "pinned_rust_cli_bridge": "SOURCE_REPAIRED_NOT_COMPILED_LOCALLY"
+  },
+  "regression_checks": {
+    "local_tests_passed_before_disconnection": 12,
+    "scope": "literal/comment/string-gap preservation and artifact/report rejection boundaries",
+    "post_outage_adjustment": "Report tamper test made self-contained; rerun of this final published fixture is pending"
+  },
+  "lexical_inventory": {
+    "total": 210,
+    "accepted": 196,
+    "rejected": 14,
+    "claim": "lexical preflight, not formally supported or compiled source"
+  },
+  "compiler": {
+    "status": "NOT_QUALIFIED",
+    "observed": "Verified lexer/parser and in-logic compiler evaluation emitted assembly; then the export guard failed on obsolete boolSyntax.is_T. The guard was corrected to compare boolSyntax.T, but subsequent execution disconnected before a completed export.",
+    "final_export": "OPEN",
+    "machine_correctness_composition": "OPEN",
+    "macro_implementation_binary_correctness": "OPEN"
+  },
+  "release": {
+    "status": "BLOCKED",
+    "environment": "Built from official release source, not an official downloaded prebuilt binary",
+    "reason": "Newer cached CakeML ancestry failed original-release import at BoolconvContext's missing marker parent",
+    "original_release_proof_reconstruction": "OPEN",
+    "cakeml_built_hol4_provenance_and_reconstruction": "OPEN",
+    "full_source_to_machine": "OPEN"
+  },
+  "aegis": {
+    "postgresql": "BLOCKED_UNAVAILABLE_EXECUTION_ENVIRONMENT",
+    "outbox": "EXPOSED_OUTCOME_RETAINED"
+  },
+  "publication": {
+    "mode": "GitHub source checkpoint because execution workspace became offline",
+    "existing_platform_history": "Preserve d68957da16875ce6997ab48245f14b2267708007 as a merge parent; do not duplicate its frontend commits"
+  }
+}

@@ -1,0 +1,26 @@
+
+---------------------------------------------------------------------
+     HOL4 [Trindemossen 2 (stdknl, built Thu Oct 08 09:14:05 2026)]
+
+     For introductory HOL help, type: help "hol";
+     To exit type <Control>-D
+---------------------------------------------------------------------
+> val require_env = fn: string -> string
+val split_qname = fn: string -> string * string
+val bundle_dir =
+   "/workspace/scratch/e1d228cc5e69/HOL/.o11y/sml-gap-audit-20261008/negative-open-theorem/.hol/objs":
+   string
+val bundle_digest =
+   "0000000000000000000000000000000000000000000000000000000000000000": string
+val qname = "ReplayGateNegative.open_goal": string
+val name = "open_goal": string
+val thy = "ReplayGateNegative": string
+val th =  [.] ⊢ T: thm
+val axioms = []: string list
+val oracles = ["DISK_THM"]: string list
+val acceptable = false: bool
+Exception-
+   Fail
+     "release theorem is open or contaminated: ReplayGateNegative.open_goal"
+   raised
+HOL4_PROOF_BUNDLE_OK 0000000000000000000000000000000000000000000000000000000000000000

@@ -1,0 +1,32 @@
+Excerpts preserved from returned tool output after workspace transport failure.
+This is not the complete raw log or an exported proof bundle.
+
+Saved theorem _______ "target_closure_equality"
+Saved theorem _______ "target_recursive_closure_equality"
+Saved theorem _______ "target_tuple_raises_second"
+Saved theorem _______ "explicit_sequence_raises_first"
+Saved theorem _______ "target_order_is_observable"
+Saved theorem _______ "target_failed_case_raises_bind"
+Saved theorem _______ "accepted_inline_signature_is_erased"
+Exporting theory "Hol4SmlGapWitness" ... done.
+
+Saved theorem _______ "lower_sml_multifn_application_correct"
+Saved theorem _______ "generated_fn_application_expansion"
+Saved theorem _______ "generated_fn_application_semantics"
+Saved theorem _______ "egglog_sequence_replay"
+<<HOL message: HolSmtLib: parsing Z3 proof>>
+<<HOL message: HolSmtLib: checking Z3 proof>>
+<<HOL message: HolSmtLib: solver reports negated term to be 'unsatisfiable' (proof checked)>>
+Saved theorem _______ "z3_clock_step"
+Loading 1759 tactic calls in 0.03 seconds
+  srw_tac [] []
+Saved theorem _______ "tactictoe_clause_count"
+HOL4_MACRO_SEARCH_CHECKED egglog-replay z3-reconstruction tactictoe
+Exporting theory "Hol4SmlMacroQualification" ... done.
+
+Ran 20 tests in 5.807s
+
+OK
+
+Completed qualification receipt before transport failure:
+{"bundle_sha256":"ef5689f0d37b2b15c04d092d3b435913e069099bed88c56af3a8dffe600fef11","cakeml_commit":"f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6","cakeml_hol4_binary_replay":"OPEN","claim":"scoped target semantics and normalized macro proofs only; not all report claims or a verified HOL4 binary","formal_report_verification":"OPEN","full_sml97_source_bridge":"OPEN","hol4_commit":"0fc4aee8f798f031a3b9cd7bf3800b9f145a221a","hol4_executable_sha256":"216ed86f610a986f6048f8a9661022f4d09d9752662befac6e90789a7a5e80a0","macro_implementation_machine_code":"OPEN","macro_theorems":18,"original_release_binary_replay":"OPEN","schema":1,"source_audit_sha256":"88cf0dee02c7fe3e7a3b1cd20386ce63a11f3bbef9541b6923a1e7dcafe95a96","status":"SCOPED_REPORT_WITNESSES_RECONSTRUCTED","target_witness_theorems":7}

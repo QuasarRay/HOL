@@ -61,10 +61,10 @@ jobs:
           bin/build -j2 -t0 --no-helpdocs --seq=tools/sequences/upto-parallel
           for dependency in 'floating-point machine_ieeeTheory.uo' 'integer integer_wordTheory.uo' 'sort mergesortTheory.uo'; do
             read -r directory theory <<< "$dependency"
-            (cd "$HOLDIR/src/$directory"; "$HOLDIR/bin/Holmake" -j2 "$theory"; "$HOLDIR/bin/linkToSigobj")
+            (cd "$HOLDIR/src/$directory"; "$HOLDIR/bin/Holmake" --nolmbc --no-project --no_preexecs --rebuild_deps -j2 "$theory"; "$HOLDIR/bin/linkToSigobj")
           done
-          (cd "$CAKEMLDIR/misc"; "$HOLDIR/bin/Holmake" -j2 cakeml-heap)
-          (cd "$CAKEMLDIR/basis/pure"; "$HOLDIR/bin/Holmake" -j2 mlstringTheory.uo)
+          (cd "$CAKEMLDIR/misc"; "$HOLDIR/bin/Holmake" --nolmbc --no-project --no_preexecs --rebuild_deps -j2 -I "$HOLDIR/examples/machine-code/hoare-triple" cakeml-heap)
+          (cd "$CAKEMLDIR/basis/pure"; "$HOLDIR/bin/Holmake" --nolmbc --no-project --no_preexecs --rebuild_deps -j2 -I ../../misc mlstringTheory.uo)
 
       - name: Check regressions and reconstruct scoped proofs
         run: |

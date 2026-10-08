@@ -1,0 +1,516 @@
+{
+  "artifacts": [
+    {
+      "path": "Hol4SmlApplicationTheory.dat",
+      "sha256": "11eed7e5faf7554bf506860a301e093781fe85b4fd5c36914b7a5ffab8b757df",
+      "size": 9991
+    },
+    {
+      "path": "Hol4SmlApplicationTheory.sig",
+      "sha256": "3fa1cd0072ea2c01a49f8f55f7b713d219e9fa1428bd6e1a2ff49ee5a77a08da",
+      "size": 3917
+    },
+    {
+      "path": "Hol4SmlApplicationTheory.sml",
+      "sha256": "67a3a289f655b0ab8ea069777784a4f42a2cdec3aa4556bfb347caf6d29f4979",
+      "size": 2314
+    },
+    {
+      "path": "Hol4SmlMacroQualificationTheory.dat",
+      "sha256": "876f275293b6824bfc9a5bd8db07db7b87771fb1554ca161bf36aca17335255d",
+      "size": 56735
+    },
+    {
+      "path": "Hol4SmlMacroQualificationTheory.sig",
+      "sha256": "1c7ceb884ed91e46513fcd37b55e4a2a6365b66e828200309bc2b6bdab8d596e",
+      "size": 11523
+    },
+    {
+      "path": "Hol4SmlMacroQualificationTheory.sml",
+      "sha256": "6d08ca050b8e775468c1cfdd8940ee06e6c22f337d938ef76f584578f1476d6d",
+      "size": 4172
+    },
+    {
+      "path": "Hol4SmlMacroTheory.dat",
+      "sha256": "73c6be2abf3f203df3e5a9266f457d53a9c830d118db9bda48f17a2eefeb15b6",
+      "size": 9489
+    },
+    {
+      "path": "Hol4SmlMacroTheory.sig",
+      "sha256": "74a1ef2312eff29ac0d465cda40d1740b8ea4f3c1615a593c1fba973fd5aeffb",
+      "size": 4388
+    },
+    {
+      "path": "Hol4SmlMacroTheory.sml",
+      "sha256": "b06cbd3b3a7a0b17992624edddcfeaab9766ef4f3afe5beb8465c457830d9ed7",
+      "size": 2574
+    },
+    {
+      "path": "Hol4SmlOrderTheory.dat",
+      "sha256": "754b1171c6ea240d528fd9cb54699a064160749f03fff180d5d226a7eafae5b3",
+      "size": 18732
+    },
+    {
+      "path": "Hol4SmlOrderTheory.sig",
+      "sha256": "1da0c1f570da01b91a4d365e7acc3554b4d92377898ab0a762d2d62cc25970f6",
+      "size": 7717
+    },
+    {
+      "path": "Hol4SmlOrderTheory.sml",
+      "sha256": "8b5e2fc27a44c9b710c8a6c3984688f641f027f0a8e7af357a809a7527d5c89b",
+      "size": 3702
+    },
+    {
+      "path": "Holmakefile",
+      "sha256": "831cf7b3b0f8d0faa9935fc99d606ae110f965c3765645c85152c7dea7653f33",
+      "size": 425
+    },
+    {
+      "path": "application-egglog-receipt.json",
+      "sha256": "56a635af7973b8aff04063064563f3d256eefa51ad57193039188cdf4148f6d4",
+      "size": 484
+    },
+    {
+      "path": "application.rewrites",
+      "sha256": "1557714bfb5d6bffec861c7d3d03e6a8af55c5fdf8506d854813019d8a75379d",
+      "size": 54
+    },
+    {
+      "path": "build.log",
+      "sha256": "352ae5903d485ec45e7169eb114f60c6629ec7d25e939169ce9fc939ceb3860d",
+      "size": 1332
+    },
+    {
+      "path": "checker-build.log",
+      "sha256": "655e52541f7839db29c8e3afea323e1aabf20dd266d2bf1492f1e3f3c5e0b9fe",
+      "size": 329414
+    },
+    {
+      "path": "constructor.rewrites",
+      "sha256": "37969ad964321a94a8ef3ef1e328aeedfff07ce5d7cff9844b7944aba746c5ad",
+      "size": 126
+    },
+    {
+      "path": "egglog-constructor-receipt.json",
+      "sha256": "142acccecffe20c4da3a16c6f8f9cc0be7b651b486c179184ed99f3db095c2a6",
+      "size": 484
+    },
+    {
+      "path": "egglog-operand-application-receipt.json",
+      "sha256": "aab79e5c77987e87242012dc7aea260356370f9f78c1a9173b11eba948913e0a",
+      "size": 484
+    },
+    {
+      "path": "egglog-receipt.json",
+      "sha256": "402dfa4f3d1c8630943f51b180a599f0dd8c62b562c422bf4a9cf16459f52538",
+      "size": 484
+    },
+    {
+      "path": "legacy-cache-hints.json",
+      "sha256": "de3b259c23a919f4d1f7e8440e74b589619fa7af22300b83a3e5956291fdeee4",
+      "size": 4471
+    },
+    {
+      "path": "macro.rewrites",
+      "sha256": "37969ad964321a94a8ef3ef1e328aeedfff07ce5d7cff9844b7944aba746c5ad",
+      "size": 126
+    },
+    {
+      "path": "operand-application.rewrites",
+      "sha256": "37969ad964321a94a8ef3ef1e328aeedfff07ce5d7cff9844b7944aba746c5ad",
+      "size": 126
+    },
+    {
+      "path": "prerequisites-and-first-attempt.log",
+      "sha256": "3dc5974003fc04fe45108b24eead478f1396bb1c752474b96457f4ac21f44dd4",
+      "size": 9629
+    },
+    {
+      "path": "proof-adaptations.json",
+      "sha256": "523a14c2afd2b17612f9e1b492901867a464a23b75129d0400fc8b3b2986e483",
+      "size": 2452
+    },
+    {
+      "path": "proof-logs/Hol4SmlApplicationTheory",
+      "sha256": "8585d40a8991d0b586d8898ba39f4686ec8ea311ed92314553c39b31a027812e",
+      "size": 817
+    },
+    {
+      "path": "proof-logs/Hol4SmlMacroQualificationTheory",
+      "sha256": "15946673b198e25d251a4c29f9f80fbb2968fd2bf3221ebf18e6110a4c4a4d39",
+      "size": 3758
+    },
+    {
+      "path": "proof-logs/Hol4SmlMacroTheory",
+      "sha256": "955d954f99c9382257023293723932274bda30cdbf77ed1660e6e2c2769f8864",
+      "size": 926
+    },
+    {
+      "path": "proof-logs/Hol4SmlOrderTheory",
+      "sha256": "81da64f8cf43436902371cd8c38f030399f2d11f98d2a41ed7dfb1801ce69485",
+      "size": 1379
+    },
+    {
+      "path": "receipt.json",
+      "sha256": "5e8c757d0496a31f5f845f0af010f952d05cbf1e7c463a07664b8830b80c163c",
+      "size": 1978
+    },
+    {
+      "path": "source-staging.json",
+      "sha256": "e5054e44d8b2f9b3436a082c288520a1d16e57d564c8266d191cc4f369963f10",
+      "size": 16719
+    },
+    {
+      "path": "sources/Hol4ProofSearchLib.sig",
+      "sha256": "5d1652b6174e018c8a580deab431f5b3e00a1ef2950a2ad92e9cb430d01b988b",
+      "size": 402
+    },
+    {
+      "path": "sources/Hol4ProofSearchLib.sml",
+      "sha256": "b1d4c2266d554e0a8819c30cde7dbb9c1a31de55584f2994429635b6fa02aebe",
+      "size": 2084
+    },
+    {
+      "path": "sources/Hol4SmlApplicationScript.sml",
+      "sha256": "2fef7cb6fd5acba4e453e991d75e54d7b29947da0cdccf8af7db6831b16cec94",
+      "size": 5035
+    },
+    {
+      "path": "sources/Hol4SmlGapInspect.sml",
+      "sha256": "e7f057ef01ec4b041b65acc868b3caaf80034fb5e74d594f9650096d09f69f37",
+      "size": 1180
+    },
+    {
+      "path": "sources/Hol4SmlGapWitnessScript.sml",
+      "sha256": "1d36e191d59f2725c7798d24dc59a142f4d5157a73539ecf2d38eecad46dd5d4",
+      "size": 3484
+    },
+    {
+      "path": "sources/Hol4SmlMacroInspect.sml",
+      "sha256": "18d140af509e008f5b5ea90f5a95a2982bc627655e183c88f9733d81bb8cad9e",
+      "size": 4307
+    },
+    {
+      "path": "sources/Hol4SmlMacroLib.sig",
+      "sha256": "c06f700855778ca31f877c89b088b6f83bae9797a2b720d9d8bf39a51fe7f796",
+      "size": 893
+    },
+    {
+      "path": "sources/Hol4SmlMacroLib.sml",
+      "sha256": "0d5a922617ff0fbf7718fdc94a36f787f5056124bb00c533c716972ea8c14e23",
+      "size": 5628
+    },
+    {
+      "path": "sources/Hol4SmlMacroQualificationScript.sml",
+      "sha256": "ad77d7c5a0ac19e894dac9068ed9e90c39e5b741c65a0d1705f366b3374e1124",
+      "size": 6887
+    },
+    {
+      "path": "sources/Hol4SmlMacroScript.sml",
+      "sha256": "8e3a3de74e0ac4a515dd7a134fc0a146d9c1077f7fa29386dc86d6fbdc081ef2",
+      "size": 5605
+    },
+    {
+      "path": "sources/Hol4SmlOrderScript.sml",
+      "sha256": "befe493294b603e5e4456e2987cf562679d4380e39cd60ad56261a834fa1d072",
+      "size": 11591
+    },
+    {
+      "path": "sources/astPP.sml",
+      "sha256": "c1fbebc2c5f58c2a9dbfd9bd92cceb46ac12d0ca8a76d1e105ae4e6c80b1a17a",
+      "size": 34212
+    },
+    {
+      "path": "sources/astScript.sml",
+      "sha256": "af9141014a24ec7dba44930a58cbf72f6d8b50aa5847314e0d016924d0728412",
+      "size": 8193
+    },
+    {
+      "path": "sources/astSyntax.sml",
+      "sha256": "8de55934d3d9ee06c41aa092a946a34933e807c1ce3c85fac94a4ac212187ee1",
+      "size": 6331
+    },
+    {
+      "path": "sources/basicComputeLib.sig",
+      "sha256": "46ae9121abec4ed0a4ebb6a5a073f6d3e7eb2bca68e8bb4d203d811d4fc4349f",
+      "size": 104
+    },
+    {
+      "path": "sources/basicComputeLib.sml",
+      "sha256": "b52f1dd68e2048829d69761d7a4c5d0f0e096263543f13d98ebcbfb7d24bfb94",
+      "size": 1920
+    },
+    {
+      "path": "sources/basis_cvScript.sml",
+      "sha256": "2337ea4d1d0ee65eef2a098c68d8eb8012a952a9414d1c690f9afcd99b205402",
+      "size": 5521
+    },
+    {
+      "path": "sources/cmlPtreeConversionPropsScript.sml",
+      "sha256": "4fdf00edae14a280a3c3df24b5fff0017620b79ffe0005ee994e5ccd52b4e3c4",
+      "size": 32604
+    },
+    {
+      "path": "sources/cmlPtreeConversionScript.sml",
+      "sha256": "2b6395a05792a48f4dbee73e07011aa87465bba2eb3ec87740d72791346c50ce",
+      "size": 47880
+    },
+    {
+      "path": "sources/evaluateComputeLib.sml",
+      "sha256": "98c78618c993fe1f5653daee05dce69fe162ffd00cccad082d7ca2caa23a029a",
+      "size": 964
+    },
+    {
+      "path": "sources/evaluatePropsScript.sml",
+      "sha256": "7fcb386f8adc802a73b3477374588a921652a6ea6242386753295f0ec73ad989",
+      "size": 46811
+    },
+    {
+      "path": "sources/evaluateScript.sml",
+      "sha256": "f552951e84b96bae6033e5754ef095347f07d10f95758bf1c508e55287c53e35",
+      "size": 13632
+    },
+    {
+      "path": "sources/ffiScript.sml",
+      "sha256": "91ba9834ba7661c0278d7fcf88a22bca174c088a8eac62a72d6d452e4e39229d",
+      "size": 3236
+    },
+    {
+      "path": "sources/fpSemScript.sml",
+      "sha256": "d49e2cfe46be1da997a46dcbf6f313b296c5649265ad9dca8f90db3a052f18db",
+      "size": 1330
+    },
+    {
+      "path": "sources/gramPropsScript.sml",
+      "sha256": "8aa180e42f90472d162f0fcd6725db225c528af57509e63ec3d6ea2ba73f9fbd",
+      "size": 12173
+    },
+    {
+      "path": "sources/gramScript.sml",
+      "sha256": "e5f57fec083cd28ebd2a053020d6f3a1d08fe955203d5a0fc081b7edc24fe51d",
+      "size": 11059
+    },
+    {
+      "path": "sources/induct_tweakLib.sml",
+      "sha256": "130b30632a89a0e1219cbee594bbccc9a15f8625d3bc13e82edb66c3fa344877",
+      "size": 1954
+    },
+    {
+      "path": "sources/lexer_funScript.sml",
+      "sha256": "5ab19d0956616a47b183a4221afeb705cbf17d4452695cc4c7e75cdb81a1c9ca",
+      "size": 18781
+    },
+    {
+      "path": "sources/miscScript.sml",
+      "sha256": "771348285419ce58a591fa29dd6fed4c69eb483488daf8fffb374884a7799909",
+      "size": 93470
+    },
+    {
+      "path": "sources/mlintScript.sml",
+      "sha256": "cbb02b0dfd636005e7f61d39d94b4965ca6c53639c7fcb616171640341fcfa79",
+      "size": 19309
+    },
+    {
+      "path": "sources/mllistScript.sml",
+      "sha256": "21280a9df00bc9674329eebe2699b453eaffc717ec81ab37f91c3b7cc9d25f27",
+      "size": 17687
+    },
+    {
+      "path": "sources/mlmapScript.sml",
+      "sha256": "8fa160835a8d0b823031c6cb1ed257e605dfbb3e1df56b1170524e25467a9788",
+      "size": 21059
+    },
+    {
+      "path": "sources/mloptionScript.sml",
+      "sha256": "6bc4710f8d755e5a0638f02629d6e7157c7d90e5c0b54645e00293ccc5285a9f",
+      "size": 727
+    },
+    {
+      "path": "sources/mlprettyprinterScript.sml",
+      "sha256": "549980b5eb71748adbc7381aa8cca6c3597ebd096ea0524aebb213c218a06122",
+      "size": 6952
+    },
+    {
+      "path": "sources/mlratScript.sml",
+      "sha256": "4455912cc4e33657dc9442cbf38d772f72c66ff2b4255b0fd741ab48e63725c9",
+      "size": 12668
+    },
+    {
+      "path": "sources/mlsetScript.sml",
+      "sha256": "d8795385a53f238776443522fe52aaf95fda5500045aa8b300368c1a80eafeb0",
+      "size": 2032
+    },
+    {
+      "path": "sources/mlsexpScript.sml",
+      "sha256": "33a33afbe5f356a013281ddab6213eb044b0b5e55c18d0be0022e04dda559467",
+      "size": 23529
+    },
+    {
+      "path": "sources/mlstringLib.sig",
+      "sha256": "d9583b3df9f1518675e373292b831fb95664f9b9ac23b275bd72a5256e2834cc",
+      "size": 229
+    },
+    {
+      "path": "sources/mlstringLib.sml",
+      "sha256": "8ed4a9cb9a1ceed4604114e3b4ee1804aaeaab4d75cbf002d263ab56fe9d0b0c",
+      "size": 2667
+    },
+    {
+      "path": "sources/mlstringScript.sml",
+      "sha256": "6a96b7fbcc8614dd53bc58197f6d00eab50069a0e80fc3f8c7a0c40f38a7ea0a",
+      "size": 42848
+    },
+    {
+      "path": "sources/mlstringSyntax.sig",
+      "sha256": "40c5d34311d23cf38250b3dd9d98c0127c81c4f40237a6531b06102e82f740ff",
+      "size": 1690
+    },
+    {
+      "path": "sources/mlstringSyntax.sml",
+      "sha256": "0d51cf5ced25415a115dd6a8e5af7927fba0f58d7380b50cbf6f65dd2b423360",
+      "size": 1623
+    },
+    {
+      "path": "sources/mlvectorScript.sml",
+      "sha256": "e7daa4df1f842b67e3164f08379e768e1832d35a10848d671d53124c14671f5e",
+      "size": 9915
+    },
+    {
+      "path": "sources/mlvectorSyntax.sig",
+      "sha256": "f3f7233cd1dcd5d42105b9749f7f91a7dfd1395c9c00623eb305222cef5f5709",
+      "size": 187
+    },
+    {
+      "path": "sources/mlvectorSyntax.sml",
+      "sha256": "62550d652f1d0588d31c8c30517166822e1861ac8428196cdad3328bb8fe00a5",
+      "size": 513
+    },
+    {
+      "path": "sources/namespacePropsScript.sml",
+      "sha256": "5d7600686725052d1ff0d4a4a723361b899f1a10a98fc6edd0d67d23e9df186a",
+      "size": 35400
+    },
+    {
+      "path": "sources/namespaceScript.sml",
+      "sha256": "c801a0c47db1a07ddc1cc84b7f72f9bae9215be70d6ee21ee65ef43e82cd8b0c",
+      "size": 2926
+    },
+    {
+      "path": "sources/packLib.sml",
+      "sha256": "a8e6030f1c50d3f6441ad7d1b12ecd49edb1e10b90619b776127e3fd9fb7fb09",
+      "size": 2302
+    },
+    {
+      "path": "sources/preamble.sml",
+      "sha256": "faa6803f8ed3a4888cf563760e319d0999fc6c59b5b4fb5293f8d0e97388bc8b",
+      "size": 18724
+    },
+    {
+      "path": "sources/primSemEnvScript.sml",
+      "sha256": "12843f59526052df532d08bab0c63b3e5801b1abf851cc83aeb13399b4444faa",
+      "size": 2693
+    },
+    {
+      "path": "sources/primTypesScript.sml",
+      "sha256": "fa56d165b0f775b52b11c07736a6e4244326749488656ddd78c48034be23a4a9",
+      "size": 2686
+    },
+    {
+      "path": "sources/semanticPrimitivesPropsScript.sml",
+      "sha256": "89a7d8a03ad47701d5a498435ea6a7056b1642cca384213a69a5325a2524acb1",
+      "size": 22408
+    },
+    {
+      "path": "sources/semanticPrimitivesScript.sml",
+      "sha256": "21879d0f9d956f923bd8f0d8f490880461c9fb30cb55979c3fe78c5372ac28bf",
+      "size": 48561
+    },
+    {
+      "path": "sources/semanticPrimitivesSyntax.sml",
+      "sha256": "b9410953904f4974b447cb0442f52b88065df7e5c7b4dcddb08a7ce427b38563",
+      "size": 3977
+    },
+    {
+      "path": "sources/semanticsComputeLib.sig",
+      "sha256": "445b190477082ff7097c72e560fcb9ee1c9cdf34b6faf7cc7a1a44b96b8183e8",
+      "size": 311
+    },
+    {
+      "path": "sources/semanticsComputeLib.sml",
+      "sha256": "556adbebe2290c8841a19b39411e6ccc77586c4f3b64bb5e80893d4aa0635af5",
+      "size": 5100
+    },
+    {
+      "path": "sources/semanticsPropsScript.sml",
+      "sha256": "67aadd36426512d5de30ac20d5efa12d693041227201c5403e5f2a20098a7688",
+      "size": 10085
+    },
+    {
+      "path": "sources/semanticsScript.sml",
+      "sha256": "ebc161d3a518ffb9d1f2d1867ac834a5bd7c8596a424802de5aabb89dd0a045e",
+      "size": 2901
+    },
+    {
+      "path": "sources/simpleIOScript.sml",
+      "sha256": "8db2d2ceb599e4172a55dd3c6c6fd72000c3aec27734a9074f0c8f3a6c6f8e08",
+      "size": 1269
+    },
+    {
+      "path": "sources/source_cvScript.sml",
+      "sha256": "cae91375f8a9223961b1a284630348fdddd871d45623254ad19db9529fa4358b",
+      "size": 455
+    },
+    {
+      "path": "sources/tokenUtilsScript.sml",
+      "sha256": "b9a9a14a58e4e9cdacb40c85ddc780b7796b2052d56919e3c6fa551842a0ee9a",
+      "size": 2672
+    },
+    {
+      "path": "sources/tokensScript.sml",
+      "sha256": "211c3ac993e1e79ab35ffbeb95d813d9cb5cb67ae24bdc8ec4c08f17169965e1",
+      "size": 987
+    },
+    {
+      "path": "sources/typeSoundInvariantsScript.sml",
+      "sha256": "7950dc3997250c3e1f3a7be7c0c0566aa04ebab4a370f2859254835f7813c749",
+      "size": 8939
+    },
+    {
+      "path": "sources/typeSoundScript.sml",
+      "sha256": "53d460575cec7979e4bc49b65e95aa514f68449873bd44e9a3d8be1db606627d",
+      "size": 89535
+    },
+    {
+      "path": "sources/typeSysPropsScript.sml",
+      "sha256": "6f057ad534128060deabe59c450a7918ab07d586c8aab929a0c2c32dcbac7d4d",
+      "size": 102759
+    },
+    {
+      "path": "sources/typeSystemScript.sml",
+      "sha256": "0b10a496e8202683e1c37fdc44185d35898feb88090d7a04b46b642b67d777d1",
+      "size": 35877
+    },
+    {
+      "path": "sources/weakeningScript.sml",
+      "sha256": "9b2ac5808b933ef01f96be63a68ef564c04b31da1432b02112df1793e01fe25d",
+      "size": 29133
+    },
+    {
+      "path": "sources/wordShiftPropsScript.sml",
+      "sha256": "909404fe1878878874b8f301122fd8d66626f3ce3af94d8f5ccb9c40a843d568",
+      "size": 3235
+    },
+    {
+      "path": "startup.log",
+      "sha256": "033c85680e7d82fcb91fbca0268a42b7c1e8ea36f279c0ce77f8eb1c5b8f26ee",
+      "size": 292
+    },
+    {
+      "path": "theorems.log",
+      "sha256": "7f96377150083c136b390e5f14a6b8d8a1cd991ce564d7440ba9b5c2a1f9ed88",
+      "size": 17333
+    }
+  ],
+  "claim": "source/export identities only; inspect receipt for reconstruction scope",
+  "schema": 1
+}

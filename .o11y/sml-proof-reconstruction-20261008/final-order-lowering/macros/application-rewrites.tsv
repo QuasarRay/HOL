@@ -1,0 +1,1 @@
+Hol4SmlApplication.lower_sml_left_application_correct	(App (App (App (App (Const "LowerLeftApplication") f) a) x) y)	(App (App (Const "LeftApplicationReference") x) y)

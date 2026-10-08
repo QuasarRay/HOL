@@ -1,0 +1,11 @@
+{
+  "archive_sha256": "0a3f73f342c538c1efc1bb4f89512bf9c1b52642ab95d80ed2d877edf3c66b34",
+  "claim": "reused search data; HOL4 manifest validation and kernel replay required",
+  "entries": 533,
+  "manifest_sha256": "8832e20aed5a3e9c620a0f29beece1af319e7aba0567d12b8ae4dae653e730f9",
+  "source_commit": "12b4c993942010862cecebb3faa928b7b80ff9a8",
+  "source_path": ".o11y/local-original-proof-automation-20261005/tactictoe-cache-after-pair-stall.tar.gz.base64",
+  "source_repository": "QuasarRay/MetaRocq-rs",
+  "source_sha256": "b9be1abae0d8800f1adb341af9a6433dde2b3e8dcc2eb027797a99b12190cfa7",
+  "status": "EXACT_SEARCH_DATA_RESTORED"
+}

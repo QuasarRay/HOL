@@ -1,0 +1,505 @@
+{
+  "base_commit": "c98da7fc904c5d6d0e9a75a18fac1796a9bfb1f9",
+  "claim": "CakeML/HOL4 compatibility recipe; not proof evidence",
+  "modified_files": [
+    "basis/CommandLineProofScript.sml",
+    "basis/HashtableProofScript.sml",
+    "basis/MarshallingProgScript.sml",
+    "basis/MarshallingScript.sml",
+    "basis/RatProgScript.sml",
+    "basis/TextIOProofScript.sml",
+    "basis/Word64ProgScript.sml",
+    "basis/Word8ProgScript.sml",
+    "basis/pure/basis_cvScript.sml",
+    "basis/pure/mlintScript.sml",
+    "candle/prover/compute/computeScript.sml",
+    "candle/prover/compute/compute_execScript.sml",
+    "candle/prover/compute/compute_syntaxProofScript.sml",
+    "candle/prover/compute/compute_syntaxScript.sml",
+    "candle/set-theory/setModelScript.sml",
+    "compiler/backend/ag32/ag32_memoryScript.sml",
+    "compiler/backend/ag32/proofs/ag32_basis_ffiProofScript.sml",
+    "compiler/backend/ag32/proofs/ag32_ffi_codeProofScript.sml",
+    "compiler/backend/ag32/proofs/ag32_memoryProofScript.sml",
+    "compiler/backend/backend_commonScript.sml",
+    "compiler/backend/backend_passesScript.sml",
+    "compiler/backend/bvl_to_bviScript.sml",
+    "compiler/backend/clos_to_bvlScript.sml",
+    "compiler/backend/cv_compute/backend_asmScript.sml",
+    "compiler/backend/data_to_wordScript.sml",
+    "compiler/backend/exportScript.sml",
+    "compiler/backend/jsonLangScript.sml",
+    "compiler/backend/presLangScript.sml",
+    "compiler/backend/proofs/backendProofScript.sml",
+    "compiler/backend/proofs/bvi_tailrecProofScript.sml",
+    "compiler/backend/proofs/bvl_to_bviProofScript.sml",
+    "compiler/backend/proofs/clos_to_bvlProofScript.sml",
+    "compiler/backend/proofs/data_to_word_assignProofScript.sml",
+    "compiler/backend/proofs/data_to_word_gcProofScript.sml",
+    "compiler/backend/proofs/data_to_word_memoryProofScript.sml",
+    "compiler/backend/proofs/lab_to_targetProofScript.sml",
+    "compiler/backend/proofs/stack_removeProofScript.sml",
+    "compiler/backend/proofs/stack_to_labProofScript.sml",
+    "compiler/backend/proofs/word_allocProofScript.sml",
+    "compiler/backend/proofs/word_to_stackProofScript.sml",
+    "compiler/backend/reg_alloc/proofs/reg_allocProofScript.sml",
+    "compiler/backend/reg_alloc/reg_allocScript.sml",
+    "compiler/backend/semantics/labPropsScript.sml",
+    "compiler/backend/semantics/labSemScript.sml",
+    "compiler/backend/semantics/stackSemScript.sml",
+    "compiler/backend/semantics/targetSemScript.sml",
+    "compiler/backend/semantics/target_itreeEquivScript.sml",
+    "compiler/backend/semantics/target_itreePropsScript.sml",
+    "compiler/backend/semantics/target_itreeSemScript.sml",
+    "compiler/backend/semantics/wordSemScript.sml",
+    "compiler/backend/serialiser/num_list_enc_decScript.sml",
+    "compiler/backend/word_allocScript.sml",
+    "compiler/bootstrap/translation/caml_lexProgScript.sml",
+    "compiler/bootstrap/translation/explorerProgScript.sml",
+    "compiler/bootstrap/translation/x64ProgScript.sml",
+    "compiler/dafny/proofs/dafny_to_cakemlProofScript.sml",
+    "compiler/encoders/ag32/proofs/ag32_targetProofScript.sml",
+    "compiler/encoders/arm7/proofs/arm7_targetProofScript.sml",
+    "compiler/encoders/arm8/proofs/arm8_targetProofScript.sml",
+    "compiler/encoders/arm8_asl/proofs/arm8_asl_targetProofScript.sml",
+    "compiler/encoders/asm/asmLib.sml",
+    "compiler/encoders/asm/asmPropsScript.sml",
+    "compiler/encoders/asm/asmSemScript.sml",
+    "compiler/encoders/mips/proofs/mips_targetProofScript.sml",
+    "compiler/encoders/monadic_enc/monadic_enc32Script.sml",
+    "compiler/encoders/monadic_enc/monadic_enc64Script.sml",
+    "compiler/encoders/monadic_enc/monadic_encScript.sml",
+    "compiler/encoders/riscv/proofs/riscv_targetProofScript.sml",
+    "compiler/encoders/x64/x64_eval_encodeScript.sml",
+    "compiler/parsing/cmlPEGScript.sml",
+    "compiler/parsing/fromSexpScript.sml",
+    "cv_translator/backend_cvScript.sml",
+    "cv_translator/eval_cake_compileLib.sml",
+    "examples/deflate/deflateScript.sml",
+    "examples/deflate/ringBufferScript.sml",
+    "examples/diffScript.sml",
+    "examples/divScript.sml",
+    "examples/grepProgScript.sml",
+    "examples/lispProgScript.sml",
+    "examples/lpr_checker/array/lpr_listScript.sml",
+    "examples/lpr_checker/lpr_parsingScript.sml",
+    "examples/pseudo_bool/array/npbc_listScript.sml",
+    "examples/pseudo_bool/pbc_normaliseScript.sml",
+    "examples/queueProgScript.sml",
+    "examples/scpog_checker/array/scpog_listScript.sml",
+    "examples/xlrup_checker/array/xlrup_listScript.sml",
+    "examples/xlrup_checker/xlrupScript.sml",
+    "misc/miscScript.sml",
+    "misc/preamble.sml",
+    "pancake/proofs/pan_to_crepProofScript.sml",
+    "pancake/proofs/pan_to_targetProofScript.sml",
+    "pancake/semantics/loopSemScript.sml",
+    "pancake/semantics/pan_commonPropsScript.sml",
+    "semantics/astScript.sml",
+    "translator/ml_progLib.sml",
+    "translator/ml_translatorScript.sml",
+    "translator/okasaki-examples/BinomialHeapScript.sml",
+    "translator/okasaki-examples/BottomUpMergeSortScript.sml",
+    "translator/other-examples/example_primality_testScript.sml"
+  ],
+  "patch_sha256": "7caf2276ea495d83802364f1e8ac957f55c06de23f0d4a34a25b70628767edc1",
+  "schema": 1,
+  "source_digests": {
+    "basis/CommandLineProofScript.sml": {
+      "adapted": "0120eefe8f7e03096117af8ed8aa764ff631349b4fae96bf9d02beccfa063297",
+      "original": "6733f95684bea622d708ddeadbbe63be3a9c05a4082a24157f044c993045da65"
+    },
+    "basis/HashtableProofScript.sml": {
+      "adapted": "20bbb845dbbe35df6f15b650deb5a8137c47ce61762988198851f6aea2ea2a44",
+      "original": "7c3370d5003a1f3d7132a9745f4fb4cc07d05904088ac8a46338c72d35f793dd"
+    },
+    "basis/MarshallingProgScript.sml": {
+      "adapted": "70a1b110bd1e237a5e7dc0ecde30b46713163864f1991e0db0f1e74bcb92abc0",
+      "original": "408c2ee881b78f7511df828c467a496ebee24f9ced4df5d93fa9492d756344c6"
+    },
+    "basis/MarshallingScript.sml": {
+      "adapted": "7a7d899562ca43e1725d52fa69c184b44e5cedb916428fd5c8fe50223b0cecb7",
+      "original": "1e35b71612f32bea3831c104f66a6ffb57b2f59c5db18270d2a58b6db79f1ce5"
+    },
+    "basis/RatProgScript.sml": {
+      "adapted": "187af19ddef527b6edec9d702b14b83af3c51562ea5dee80023941364a7f1221",
+      "original": "7fdc8f05054b91d82be7448b2d93fb2d29242c75f059d88f29b12b5d62cc34f2"
+    },
+    "basis/TextIOProofScript.sml": {
+      "adapted": "e32999af5398e545656c66b6a9e7f8f9c1496be5e40e632ef60d40f842633934",
+      "original": "02c4ffe96f8b073e48b4d70be18b840d33a6a0b9057633316dca0794b5863463"
+    },
+    "basis/Word64ProgScript.sml": {
+      "adapted": "ccf6da59fa298e9b221a69180dae751ed99f6d6174e07f557207c87546b3925f",
+      "original": "9fc851b398fbced4daaf6f6b39f538a2c9b4f3ed716d92e639a3879a45b47882"
+    },
+    "basis/Word8ProgScript.sml": {
+      "adapted": "0756e42fe4e4b963a67015c8373f2dda84285f707922930239b1d63e0bee3005",
+      "original": "ec31eabe2d31880a7961ed501765d567b0871ca4e8e15ae78625fbec2a05010f"
+    },
+    "basis/pure/basis_cvScript.sml": {
+      "adapted": "3c6063e2a02131d1fca1981cf0f72cb5ed40fb1b1ba6a9d1c6831c1ce727b72e",
+      "original": "78bc9801e9a0e2b7ed0ef3fa6a98c6f49595b0feeb3cdeeb4106981f721fe9eb"
+    },
+    "basis/pure/mlintScript.sml": {
+      "adapted": "ae9d72a90a6c4132d5df08119c7b15f17bf9a354982e23980683e24883532a50",
+      "original": "0653c38e66398e997957b93fa6f08ea3efece2599b94ea8d2ab60b6eabdbbabd"
+    },
+    "candle/prover/compute/computeScript.sml": {
+      "adapted": "fa65fc841fba20c276bc22d2af1669f196c94cd3f89450ca759993b0e6e7526c",
+      "original": "6c1e774d9a5c40f66384ad61c5fe859e89070778ddd838220c43088bc0304718"
+    },
+    "candle/prover/compute/compute_execScript.sml": {
+      "adapted": "3f42b3b08ae0ccfd2b0ecf324a8012871fa9dda34bcea1ff1c0b35fa6ca6f24d",
+      "original": "2dddfeb17388f9fae21d86af6cfdfca8518efeee81a59a12fa523e19031d68c0"
+    },
+    "candle/prover/compute/compute_syntaxProofScript.sml": {
+      "adapted": "9f4874472b1651946fcf5a516a15d28878255f7717713bbe4e218208e681470f",
+      "original": "8bd47ecba0993929f15bd7fb9ffa62275de0c4b7ad319abb3c8e7313c068964c"
+    },
+    "candle/prover/compute/compute_syntaxScript.sml": {
+      "adapted": "d7323f2cddc4da1d2a595139606b0c197d15cbfda822483ff26176a9509095a3",
+      "original": "7e5c6f2bc66a2893828dc865d25566e3d295c623cc6ae5e4b2f10316f80025af"
+    },
+    "candle/set-theory/setModelScript.sml": {
+      "adapted": "1d1057d40a1997f46604dfb0436af1c3bab8cf07481358bbb0795f6aa27c0eb8",
+      "original": "42d07ebedb603a022d19c432f564d42c143754c80d92e2221842e58878b78b19"
+    },
+    "compiler/backend/ag32/ag32_memoryScript.sml": {
+      "adapted": "6624c7cc02afac70a1ab8519f2a029827faf6c10c938edf71450b43cbd713c90",
+      "original": "bd29d89dac3deddd17c7f0ac28be9c53d214a0df89370994c89fcf22cb69804f"
+    },
+    "compiler/backend/ag32/proofs/ag32_basis_ffiProofScript.sml": {
+      "adapted": "d82bc8b8620072c83dafd2f3a03930670eef2614dc97dd5857db8374474d1cfc",
+      "original": "c9732f7331f7764f2b388f64acffa2de7c6c3585ffc6c2aa98fae98015ba442f"
+    },
+    "compiler/backend/ag32/proofs/ag32_ffi_codeProofScript.sml": {
+      "adapted": "9bbb845f98cd0b21f93f350d66c99093de58c9dfe7f15cc75c4c8d91a4091b41",
+      "original": "cc6c8ff6f60145fe41db31eef331811f8307fd0652eb7e1807698ae2439c9c96"
+    },
+    "compiler/backend/ag32/proofs/ag32_memoryProofScript.sml": {
+      "adapted": "a057221525b34b66641c1b424a8cf980a7c19a63391552f9001bba89dbcb26b3",
+      "original": "057643e0a1e05b03125379081d713c148b6a930d5f6b6954bbb8d233a6f14f2f"
+    },
+    "compiler/backend/backend_commonScript.sml": {
+      "adapted": "a0793a50d1891477f2f44442a98ea1dfa8be1767919920e350305800a3e60833",
+      "original": "1dac56eae70b591f40525dfe83a118cbf524c5bd329fe1d72b4b672567be90a3"
+    },
+    "compiler/backend/backend_passesScript.sml": {
+      "adapted": "c95988e5881b9cbe101c127ab93f6af94698b7a22f72e6d34ab0bb00a8fc30f7",
+      "original": "e531edc56a614d4c7e62afdb0d3c632d0a499451b38cdc462f2c39c9b95d55b0"
+    },
+    "compiler/backend/bvl_to_bviScript.sml": {
+      "adapted": "96ae498cf7b8b00d03b022ca2542bdfae4afb1f4b86b87ad7c15f724a109f454",
+      "original": "ee48458e52c2210f20cee9a3318b3a4ba3baa5b6bf20212c21ea5c1d379ee6be"
+    },
+    "compiler/backend/clos_to_bvlScript.sml": {
+      "adapted": "4bd913fbf57181833111a2bbce3f25c15a8b4ac446fd716b9f47dec8404e34d9",
+      "original": "aadff1479d6f971e307c846d7aeaa9d38f65003e8912a190b0f86ba93430cd59"
+    },
+    "compiler/backend/cv_compute/backend_asmScript.sml": {
+      "adapted": "7b2a381e49a1d03330e46caee70bd4c125486c30ed6a03ac60d4b65499d3ba43",
+      "original": "a91a10d26f49b05670a441471358dcf6f9d715639649428d09384f740e042694"
+    },
+    "compiler/backend/data_to_wordScript.sml": {
+      "adapted": "0032d96341b3dda1a1952c646cb130eb0f34d7fd1fcc754ef940faadfc64a4f6",
+      "original": "4ffddc377a566af4b20f2cb5d8a390abc8b8b1743a71b674a63415665d5b64ac"
+    },
+    "compiler/backend/exportScript.sml": {
+      "adapted": "8c224c22c65c5c8c26b204207185a41bcc0328bb59a50319d59e9a95c5796d4b",
+      "original": "61bd3c16fa03b960800f4cabe2cccc2b1dc8269f8633747ba19227b33c8a15e7"
+    },
+    "compiler/backend/jsonLangScript.sml": {
+      "adapted": "d25d3197d957c6c935801cccb49074774ace5ba6af5e97119b0facfe75fcbf53",
+      "original": "b0b34976e12389f6c12142ddb81f36cb5104f6d4a165983ca11a0ed532ca3fa0"
+    },
+    "compiler/backend/presLangScript.sml": {
+      "adapted": "3ea2258dcfd68d28c2719cf54dd2deaa48829109d4811adbfa970561434365ad",
+      "original": "7caee6616eeff55b3e415e1556a42ddd25805d02ea5d16e5d8f977e42633eeea"
+    },
+    "compiler/backend/proofs/backendProofScript.sml": {
+      "adapted": "2ea4a805ac60f22a6222282941bc1e408661fe3c0b3575ff89ca87e2e41b2f7a",
+      "original": "53de2e5113101184ddcad8875aa94b1e7ee15312cecac6c7a8da36cecb8c676a"
+    },
+    "compiler/backend/proofs/bvi_tailrecProofScript.sml": {
+      "adapted": "34b8e3ba364c13b4444d4344276033fe7be1b77dc494fe9dad41ee83defa63a3",
+      "original": "056e9bb7ccfc6e93eb0cc116d23e3683c8d10390cf01b7d8d3b226ba240a9beb"
+    },
+    "compiler/backend/proofs/bvl_to_bviProofScript.sml": {
+      "adapted": "550a5d197a221cc223d509112b7f4714f6164a7b441f2258a948dbf012ff3c00",
+      "original": "f86eb3805345c9ce2cb3dccf6be34e582365e239aab0e729efde0fcb8944e07c"
+    },
+    "compiler/backend/proofs/clos_to_bvlProofScript.sml": {
+      "adapted": "ff67d2d6b8fc4387e743126ea19bab52b23df59909cba5781d2aab4877cf7754",
+      "original": "4586d38611106aefb25e09368b8eb511d5a82f55b871ec6234bd81ea5b09536d"
+    },
+    "compiler/backend/proofs/data_to_word_assignProofScript.sml": {
+      "adapted": "3610e7999ccf6f15f944380d53513533a5d076a5064103da25607e0c9bc340ce",
+      "original": "a225bb2d684cf416f02461c0d7d72aaa78e4163b2c6707a64e1202dc5bbd62ba"
+    },
+    "compiler/backend/proofs/data_to_word_gcProofScript.sml": {
+      "adapted": "bc16e52738a45167cb6f9887b02061fa168a5a1c42643938bfaaa9416f71b98e",
+      "original": "53a8c0ea5108e0e252035bde3d8ac109b80b1a972abd8e736bd030cdc3518487"
+    },
+    "compiler/backend/proofs/data_to_word_memoryProofScript.sml": {
+      "adapted": "09eb087ee838bc36fa28095ef6d771be50c34261adf9daf0f21d29e287c18727",
+      "original": "73e9179f1e0b767d1c5d06d9b7eb3243e47a5ae02f6fa67b5b288575677046b8"
+    },
+    "compiler/backend/proofs/lab_to_targetProofScript.sml": {
+      "adapted": "b3a90c78e65a824ba413a1c59298a8868af6b0ed5a09e237fd5ef3552616906c",
+      "original": "998574eddda5e8cbf7c109f068cc75fd1e6478cc4d9fd75a58f284d658ebf47c"
+    },
+    "compiler/backend/proofs/stack_removeProofScript.sml": {
+      "adapted": "a2035eceacc773b15069d7a54b4e80b3de61cd18aa41a95677f013ea4f86e417",
+      "original": "e31ba91606dc7706f4ebf936f39c1de4398f42696ee99d1079e997537be8bad6"
+    },
+    "compiler/backend/proofs/stack_to_labProofScript.sml": {
+      "adapted": "01173f1bf1677395cd76ca783777aa46a21d1ffc67fc85774d5662af3209e08c",
+      "original": "87f28f256b68b84e6a16577b2f69d21c8a9691b62485228d03ce3eb08fa8ee04"
+    },
+    "compiler/backend/proofs/word_allocProofScript.sml": {
+      "adapted": "9fd3380aadc90f9697cb586d498d273c22b48165f70f0950dacea1bf510de409",
+      "original": "4640eb172d5dda8c6a51348ea3251021d926d8925eeb49268906994e8f1e02db"
+    },
+    "compiler/backend/proofs/word_to_stackProofScript.sml": {
+      "adapted": "e2cbc91be4253a211a4cf219bbb176a7a9cf452a1479d55bbd7bef26c688e35f",
+      "original": "b7408fc8b931df582d2a8e6f2b6d53ecf37e2c3e4cd334bbdd18d7dc80a88459"
+    },
+    "compiler/backend/reg_alloc/proofs/reg_allocProofScript.sml": {
+      "adapted": "d1e64624c3e43df44690814cba80ea28e09ff9a582c795e7bf426f16c5ed7538",
+      "original": "ee2dabf39c54d200a288c889022d6c7a4b1285e5c2661dc93cdbfa62dd671aae"
+    },
+    "compiler/backend/reg_alloc/reg_allocScript.sml": {
+      "adapted": "60f14e04f3f4043f95eadd43b8b6ed57af662e01547911659b48847e58ea40c0",
+      "original": "92e40a8d27639ca44feb8c9ee7aaba453b6d40d5f6c4076769912195dbddec46"
+    },
+    "compiler/backend/semantics/labPropsScript.sml": {
+      "adapted": "4ad44f5f3f4d5ed5e8b6fac2165a9e11b31a2b8de2cb41ab202100ec78cb89c4",
+      "original": "912c313f10a02e6862ce3a11b917a69775bd733f45fefd39b55f85ab4fbb9ce4"
+    },
+    "compiler/backend/semantics/labSemScript.sml": {
+      "adapted": "9c9273c290f190938e4be2063ad7c7bfd59b05ec742548cbbf3e80a7fc6cd8c0",
+      "original": "27113c958d7923ddbc20227a3bdd6b2f0ca5c054e9ef964c86e23268881ce7f2"
+    },
+    "compiler/backend/semantics/stackSemScript.sml": {
+      "adapted": "84281cfe297c2b7ca71ff0fd1b4f992420c65b349426f6f8cd25262dab06409d",
+      "original": "db2006b4b3beeaea857479a4c600336fa837ef3b5c48c7e352d066951cc4c2aa"
+    },
+    "compiler/backend/semantics/targetSemScript.sml": {
+      "adapted": "78ed7dba136d8bf3fd886714612946bcec79f460eae83e51a628f1ee76c5e8ab",
+      "original": "0c3059a44aef9369ccabcf2725f94fa052a25572f84b342337be6e141f4e5c48"
+    },
+    "compiler/backend/semantics/target_itreeEquivScript.sml": {
+      "adapted": "4eec0a4d94d6f1205dce3532991d118680bb26c2ca34b10210ca3354013e3e38",
+      "original": "f63fc3081a3e905c73061930cccb62c623e750af0e3a6fe90847e9844463f7fc"
+    },
+    "compiler/backend/semantics/target_itreePropsScript.sml": {
+      "adapted": "2d89c443468aabc7ebc5168634ce0739eadf837b949e78b931c25eaa32dca33e",
+      "original": "c2aba328aeba23c5c8d366521b945b11b12ca9aae3ad3be988d2034f2bf8b462"
+    },
+    "compiler/backend/semantics/target_itreeSemScript.sml": {
+      "adapted": "c72b2088708746e180347226d88993db420c9a9326cc399e3ffc7dcec5961b1c",
+      "original": "1391f17b2d818e8e1633478344bb2932203613ee6ed2906dfd01ff939e248c72"
+    },
+    "compiler/backend/semantics/wordSemScript.sml": {
+      "adapted": "c855aa4b60045cab54041dc471aff60352742b436c1d0b6717f7efc08afe6d0a",
+      "original": "1cb10093eb83fb665d3a0aeebb6fc58578ad80f67fbd6aedd0630a48931f42a7"
+    },
+    "compiler/backend/serialiser/num_list_enc_decScript.sml": {
+      "adapted": "89d546ab2547bf88db4b4263ce5c70085d13d45fddf35837d3157c8744809534",
+      "original": "a526540d9bbc9fea1e152699bb764a5fc33dfcbe3ccee7cb3bdc19c7e412cb8a"
+    },
+    "compiler/backend/word_allocScript.sml": {
+      "adapted": "054e04880d5ee891e9722a4d0a513b616e854c074fb981a6a073d74d3b6681d8",
+      "original": "11f95ac32bcd9e0f961f21b7e9b318930cbd919e162f0af04f3118b256a4366d"
+    },
+    "compiler/bootstrap/translation/caml_lexProgScript.sml": {
+      "adapted": "4eaff59c9d6c092aed9f68a2f14fd328bf297e47430d00eaafb1b0139a2dd1ab",
+      "original": "ba025f5c559179442df23791137a9cb540c9cfe892ed662fc2a9597c0acf8cf7"
+    },
+    "compiler/bootstrap/translation/explorerProgScript.sml": {
+      "adapted": "b68542b0015b6aadd2a1f152e453af2db871879caa6d603888eff2398a12cba5",
+      "original": "ebb2c0020429b0838fede5bf3c8ffc8baf8745889ff8d3c979a61d42b58aa927"
+    },
+    "compiler/bootstrap/translation/x64ProgScript.sml": {
+      "adapted": "831700c09b135814288e6da81d53898917148f68857ff684704c291db1c3d74e",
+      "original": "4e599a812d3fe9dd29192e85fcff566a9a09e581db43167a832d346b12ef30ec"
+    },
+    "compiler/dafny/proofs/dafny_to_cakemlProofScript.sml": {
+      "adapted": "0902c79d60a662abfff1429836d1ecae7b5cf6ba400c8a6f0e8dc93c506d1593",
+      "original": "a694df3dda5529a30723602eeec474ab1a99ec8d29780f9dc439b26819b0ef69"
+    },
+    "compiler/encoders/ag32/proofs/ag32_targetProofScript.sml": {
+      "adapted": "a34d7f6fd21428b5061037d8642e1ef7b0f0f5c35f372440ee783520d221d7c4",
+      "original": "2d2a402d8d01e2f3c5889413bc0ac381a2f7b6f4768209d16604e54ed88454a6"
+    },
+    "compiler/encoders/arm7/proofs/arm7_targetProofScript.sml": {
+      "adapted": "791d2bf98837b37a588bb6e65eefe671248cf8e37f4a037e28cf4d5f15b2284b",
+      "original": "9bc8345c5ed2282d48bbf0cd509a03284f964f28e24ca1aa532c46673cd67b04"
+    },
+    "compiler/encoders/arm8/proofs/arm8_targetProofScript.sml": {
+      "adapted": "15cc9ec819cf269314ab12a5220bbc3700b7ac493e127d3d58d52a688e134503",
+      "original": "de5e7e7d98ed72ad9e3c319be43ab97444b7738f0f1b15ddd1cc9bb3068762b4"
+    },
+    "compiler/encoders/arm8_asl/proofs/arm8_asl_targetProofScript.sml": {
+      "adapted": "abf385fcf5c25e20aacd0aca91bb0fa83eb26aa2d8a340116dab683061dc5f96",
+      "original": "a922185ae7389e188b0d21676c4377e27827398056d33e0317d94a5ecf88a31a"
+    },
+    "compiler/encoders/asm/asmLib.sml": {
+      "adapted": "2c4ae44fee363a0175e44a4feb451bb295bdd8658f50c27045a37f05f452305a",
+      "original": "bcfb3db3f54d7af1e50f087c04543e8a6f6a8c0a1e3dc45cacae5744667c2cdb"
+    },
+    "compiler/encoders/asm/asmPropsScript.sml": {
+      "adapted": "23d7eba5ba2b290bab7767b7fec6a2183f25179912422143b0ef69b2b8c0cb53",
+      "original": "f14128fdbcf2479e74f26ccbd111850c78257e30e7b8b60bb750caeede956bfa"
+    },
+    "compiler/encoders/asm/asmSemScript.sml": {
+      "adapted": "3f5ff14b704042794f56e36f596f6465254f8356d4fa24ebc3868153a23db566",
+      "original": "cfcf2bc0d9ea6cbddf5e52893507386b4d128757a53436ded5712ceebd7f9f0d"
+    },
+    "compiler/encoders/mips/proofs/mips_targetProofScript.sml": {
+      "adapted": "d653e693c8a0effbc319ea741b88f55b556862c377cc96b0002d2d42700ac6f0",
+      "original": "c189622222c721efe592ce59c3196f042a0a20dbbb65c50662d7a78d655fccf4"
+    },
+    "compiler/encoders/monadic_enc/monadic_enc32Script.sml": {
+      "adapted": "6e054a4e85076cd743889a56a472c687ccae6b8c5fc3db543dac6d6bdff52f53",
+      "original": "6daebe3006183940d299bff627bd32b905f1cdcd912f4de3679f71322eb05ce9"
+    },
+    "compiler/encoders/monadic_enc/monadic_enc64Script.sml": {
+      "adapted": "7edd1bdbe51e4036d7d402238fc388d5f568fec921916c9ff813cabccfba0fad",
+      "original": "774895729f86fc6b9ae8dae31e1706ad5fe48548b1866b527bd9197e70c9cfb4"
+    },
+    "compiler/encoders/monadic_enc/monadic_encScript.sml": {
+      "adapted": "9cfc795629f2380a12f4e1924dba194e7d91f24f389798943e8654b4a85639ff",
+      "original": "3b1059efe0f5706b137dcb8f31bc38984d7b768050374f4fc15d064bced0ba34"
+    },
+    "compiler/encoders/riscv/proofs/riscv_targetProofScript.sml": {
+      "adapted": "895f0ee56663bbd6665553c3932d4443baaf211ff5b2c807517b4a006871faf6",
+      "original": "8dbb110021d3c24f1519fafe1c61e232460e59a63c368b43fb5a060a0d9c3401"
+    },
+    "compiler/encoders/x64/x64_eval_encodeScript.sml": {
+      "adapted": "daf6c812055afd80a1775272672986195f89b2fb1a9478af1e2587f73a229025",
+      "original": "1dbe44fbcc84462477dab90c662ef850e966539256500f50f8f341ea57748281"
+    },
+    "compiler/parsing/cmlPEGScript.sml": {
+      "adapted": "8ceba43a3f1e7b9af574172eaad8b4c600e0111c227ea60b05dc240874b525bb",
+      "original": "4bc52931abd635f49c1e9dac4d02790b62b8181ff12a52bae7dd1c9899cb933a"
+    },
+    "compiler/parsing/fromSexpScript.sml": {
+      "adapted": "fcd70f50c8cbb31b2ec8156a7cd75b97e497aa584215c67999a774f3e2dfc762",
+      "original": "b77a4c174049df479fa7aa8e67f8c3dfebcef32fe1034eb1d99472229493ef0b"
+    },
+    "cv_translator/backend_cvScript.sml": {
+      "adapted": "9cf36c6db95a79680e0aa3a0ec7bafeed6f3aabf7136f9ef2258a6c1c027c528",
+      "original": "0dd50c49e0d7494f8c41189539c519122467e17f20337322ac0c3ca120f45252"
+    },
+    "cv_translator/eval_cake_compileLib.sml": {
+      "adapted": "b0934910066e0e19c995065e7a3f55d6692b07f718d652ece27f455ed4543958",
+      "original": "8850db43c55ba2c025b530864a3cd4dd6dd134af76403beb6d129615782aa599"
+    },
+    "examples/deflate/deflateScript.sml": {
+      "adapted": "6e1808f4e05fa819ad7cf50e6130b6efc3ed85efda36d2deb2895d20310534e6",
+      "original": "4920650f1db26f195e49ccff61e6380701cbbc7979c3016c012c1ccd2a524368"
+    },
+    "examples/deflate/ringBufferScript.sml": {
+      "adapted": "4bb25235ec820aede457fb6709e0097b7dcd0e3ef59c32936d3d9e97fba3b7a8",
+      "original": "bbfaeedf5bb152a1b91a8aee0d92615d99f3b1f0592a3502a519786fe9672181"
+    },
+    "examples/diffScript.sml": {
+      "adapted": "68e4fb9cd82b35e7cd96466e79175371846ef112d697fadd419086bf9a6e171b",
+      "original": "1879688266fe818e7b224b5c93875aa97f8f892671a0231b92068b533e3c20c4"
+    },
+    "examples/divScript.sml": {
+      "adapted": "543b8318b6f40af05e3ebff6240a3901b0b10ddbe0e2331575d529dd9fe55789",
+      "original": "d8c73db8e21fa64645ea74186ff6ee6d804c9ba17bfcd955482861b0bbd078c6"
+    },
+    "examples/grepProgScript.sml": {
+      "adapted": "ba1ac4be560600462f5ca8b3a6c156ed011ec3fe74c80895bf10840734d33408",
+      "original": "33630595fc61f59856b583b34cad11a984888478c33ed45600f620a85801e3e0"
+    },
+    "examples/lispProgScript.sml": {
+      "adapted": "4f56d410b0e343af6d5138eaeccee3d25d70095bd7d5ddbeed6f910504967142",
+      "original": "295c58f06b50f265735f43ea99506b3de1b28f50e8ea5df51c1771cc685a53fe"
+    },
+    "examples/lpr_checker/array/lpr_listScript.sml": {
+      "adapted": "c53818a618364c23ca09dccb5988cccc363525972df93feb08644c55b5fc5968",
+      "original": "13128e7c1a7117d992b5a072d29b1cec4ee4b4ee8f10ec154343389e208a2344"
+    },
+    "examples/lpr_checker/lpr_parsingScript.sml": {
+      "adapted": "f59e73a0104859cf63dec7bf310dc9a355392607173fbfa11888d929437dcdb7",
+      "original": "3667b070f74cde8f1f3e6fa2f6cbde734ba61e5414883307522eefc3cff6dbc0"
+    },
+    "examples/pseudo_bool/array/npbc_listScript.sml": {
+      "adapted": "222f9d033480708c72c04cb97cff6305b5fe8a21512180781154a59bc0f55d69",
+      "original": "5d2436091abdf980253404eb34127204835c930782a5ee5a6b049dc59d0af23c"
+    },
+    "examples/pseudo_bool/pbc_normaliseScript.sml": {
+      "adapted": "4b2d2a58b4b23300dd2ccb4e91f28d583ef92be4dc0e3cba764ab81ee0d8deb3",
+      "original": "65ccc56d9a36edd209c48ac704036901358ef4e1af4821de782563b733524d20"
+    },
+    "examples/queueProgScript.sml": {
+      "adapted": "9c9c183ec624945c485c64b2461263b55849f236d27fdc40f10e3a28280421e5",
+      "original": "e9c2ab7a88ac42d77be1fc10f0ac565af2d1819f6cc6a4003a00513833dad8b9"
+    },
+    "examples/scpog_checker/array/scpog_listScript.sml": {
+      "adapted": "4f31bcb45a52b205c359e223642d3fa1fd08b4d90ce5cd63f6d00ee53619467f",
+      "original": "4488b7be12067d0512e070856bff7023de6df667e1152424acfe00d8ad38c6cf"
+    },
+    "examples/xlrup_checker/array/xlrup_listScript.sml": {
+      "adapted": "4b36ce899efd43d640417ee56cd0ae8f73e886cf846f08ecf18b4716f4499d35",
+      "original": "2aa10bb5a3bb9ed24686c06e25b38ea200c50cad15cd28eaab0c90d72f6d840a"
+    },
+    "examples/xlrup_checker/xlrupScript.sml": {
+      "adapted": "a25df3051d4297bad203bef075933b57fa84e3a322b7d5f438fe15f1545144fa",
+      "original": "7f7f92ec385b687638aa0cfa69dc844ebcc1c727b9c5aaed2e20daf392dcc08d"
+    },
+    "misc/miscScript.sml": {
+      "adapted": "92bc23e33bd9f790701b005a715ca8467b003e692920bf621954d161a60cf6fe",
+      "original": "25e415de01edc15190669ae068b6888059fcf5862c5d65ce3a7a8b8b87320d8f"
+    },
+    "misc/preamble.sml": {
+      "adapted": "98eda899a91125e8c7d2f97e752c3d72bafea64b9cd364d6e1776bd91f8a1ff8",
+      "original": "16a9d52a6b28a67998295325db936e783a0026fa33675ed9e135b31fed64ec0b"
+    },
+    "pancake/proofs/pan_to_crepProofScript.sml": {
+      "adapted": "49dd22d2a5660e4055f0b1863590be3c4a27bd335d9fd0c3f224181eb4aeddd7",
+      "original": "1bb55b269736b73712327b8e613c7b223751b732e28e65d4db7c0c76bd84dc96"
+    },
+    "pancake/proofs/pan_to_targetProofScript.sml": {
+      "adapted": "b3e06ec33f7f16dea56a5d376f0a7b39521ab80110c6037fcfd4ea32d7428d5a",
+      "original": "355b77d592f7d10627a1cb3dc84a3552625ab6d183e1a4f8899af0aecf0dcaf3"
+    },
+    "pancake/semantics/loopSemScript.sml": {
+      "adapted": "114684ccdc11f5b8c45ee69dfc2dd600a5c5125537f2f3739f6e74ff956dce89",
+      "original": "e36c3732541fd1ac13b0392649f85626097093f2ac1c3621b2647ef91e1ebd27"
+    },
+    "pancake/semantics/pan_commonPropsScript.sml": {
+      "adapted": "9efd739d24af5c63000812182c963d623234306d665ec52bface7351ccd83ead",
+      "original": "c7a934a7897de79082d14a67c4a9b999541f6a82159a3429ceefabc1dcb10c5d"
+    },
+    "semantics/astScript.sml": {
+      "adapted": "24568c573c4b8affe168ac984abdfe96ad3974ca0176d6a6b8e8dcfd2f39c3c6",
+      "original": "12b18cafa8957529fbf70f2153b8ec0b4aaec3d38be390b6315cde09e6960f51"
+    },
+    "translator/ml_progLib.sml": {
+      "adapted": "d79f567d37c200908741ad855c8e2f35ce21d78e9585d004f1e886d006020110",
+      "original": "8dc6f5ea871ec67c52fd1050469542cf4d755f677aec85223e4a570823decde3"
+    },
+    "translator/ml_translatorScript.sml": {
+      "adapted": "aa9e9cd04f1c85e375f142ba68f6d0856f462cda6ba882455c10473bb421ac84",
+      "original": "bc59994baf20d67836ab182d3b145269ef7bf9719c001aa0fc782000b6888451"
+    },
+    "translator/okasaki-examples/BinomialHeapScript.sml": {
+      "adapted": "7183a94c5abf226a60db85a356f68d5b53a857d278f260f929774d6027548284",
+      "original": "98c4625e9f120a527c07b7f0b7c49f7cc2dc80d49f5c607423cf140dfa652840"
+    },
+    "translator/okasaki-examples/BottomUpMergeSortScript.sml": {
+      "adapted": "b336ce1eed86517c0b76482065f3910a019564ad92d45007d3e480dce3817eb7",
+      "original": "6432a93d7f5c1a796b843a37d2c18664282ca3f0c66c5c19375dbabb11539e67"
+    },
+    "translator/other-examples/example_primality_testScript.sml": {
+      "adapted": "a611723a4c246faac6ab5addb75f60eae568731253528f7562dc6f8bcde7f9e8",
+      "original": "9f448d50c57d42f305d5d18a2c826fbbc8139582ffb6c504316712beca3d5e8c"
+    }
+  }
+}

@@ -1,0 +1,1314 @@
+diff --git a/basis/CommandLineProofScript.sml b/basis/CommandLineProofScript.sml
+index d40796219..2d135d37f 100644
+--- a/basis/CommandLineProofScript.sml
++++ b/basis/CommandLineProofScript.sml
+@@ -6,6 +6,8 @@ Ancestors
+   cfMain cfLetAuto ml_translator CommandLineProg clFFI Word8ArrayProof cfMonad
+ Libs
+   preamble ml_progLib ml_translatorLib cfLib
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ val _ = translation_extends"CommandLineProg";
+ 
+diff --git a/basis/HashtableProofScript.sml b/basis/HashtableProofScript.sml
+index 476e86d30..39835f836 100644
+--- a/basis/HashtableProofScript.sml
++++ b/basis/HashtableProofScript.sml
+@@ -7,6 +7,8 @@ Ancestors
+   MapProg HashtableProg comparison
+ Libs
+   preamble ml_translatorLib cfLib
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ val _ = translation_extends "HashtableProg";
+ 
+diff --git a/basis/MarshallingProgScript.sml b/basis/MarshallingProgScript.sml
+index 969fedb96..d9b8f03a1 100644
+--- a/basis/MarshallingProgScript.sml
++++ b/basis/MarshallingProgScript.sml
+@@ -7,6 +7,8 @@ Ancestors
+   DoubleProg Marshalling Word8ArrayProof ml_translator
+ Libs
+   preamble ml_translatorLib ml_progLib basisFunctionsLib cfLib
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ val _ = translation_extends "DoubleProg";
+ 
+diff --git a/basis/MarshallingScript.sml b/basis/MarshallingScript.sml
+index f97d40dde..03191a55f 100644
+--- a/basis/MarshallingScript.sml
++++ b/basis/MarshallingScript.sml
+@@ -7,6 +7,8 @@ Ancestors
+   words
+ Libs
+   preamble
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ (* encode/decode nums as 2 or 8 bytes *)
+ (* similar to n2l & l2n but with padding *)
+diff --git a/basis/RatProgScript.sml b/basis/RatProgScript.sml
+index 4bcaf2c32..9f4885487 100644
+--- a/basis/RatProgScript.sml
++++ b/basis/RatProgScript.sml
+@@ -7,6 +7,8 @@ Ancestors
+   PrettyPrinterProg[qualified]
+ Libs
+   preamble ml_translatorLib ml_progLib basisFunctionsLib ratLib
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ val _ = translation_extends "PrettyPrinterProg";
+ 
+diff --git a/basis/TextIOProofScript.sml b/basis/TextIOProofScript.sml
+index ccceffc9e..b1875b047 100644
+--- a/basis/TextIOProofScript.sml
++++ b/basis/TextIOProofScript.sml
+@@ -9,6 +9,8 @@ Ancestors
+ Libs
+   preamble ml_translatorLib ml_progLib cfLib basisFunctionsLib
+   cfMonadLib
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ val _ = temp_delsimps ["NORMEQ_CONV", "TAKE_LENGTH_ID_rwt2", "TAKE_LENGTH_ID_rwt2"];
+ 
+diff --git a/basis/Word64ProgScript.sml b/basis/Word64ProgScript.sml
+index a54f63b3b..e091e97b7 100644
+--- a/basis/Word64ProgScript.sml
++++ b/basis/Word64ProgScript.sml
+@@ -6,6 +6,8 @@ Ancestors
+   CharProg
+ Libs
+   preamble ml_translatorLib ml_progLib basisFunctionsLib
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ val _ = translation_extends "CharProg";
+ 
+diff --git a/basis/Word8ProgScript.sml b/basis/Word8ProgScript.sml
+index 0df404ba2..28027e60b 100644
+--- a/basis/Word8ProgScript.sml
++++ b/basis/Word8ProgScript.sml
+@@ -6,6 +6,8 @@ Ancestors
+   Word64Prog ml_translator
+ Libs
+   preamble ml_translatorLib ml_progLib basisFunctionsLib
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ val _ = translation_extends "Word64Prog";
+ 
+diff --git a/basis/pure/basis_cvScript.sml b/basis/pure/basis_cvScript.sml
+index ae244d92a..163b316b0 100644
+--- a/basis/pure/basis_cvScript.sml
++++ b/basis/pure/basis_cvScript.sml
+@@ -6,6 +6,8 @@ Ancestors
+   mlsexp cv_std
+ Libs
+   preamble cv_transLib
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ val _ = cv_memLib.use_long_names := true;
+ 
+diff --git a/basis/pure/mlintScript.sml b/basis/pure/mlintScript.sml
+index ac7776bef..8082ffdcb 100644
+--- a/basis/pure/mlintScript.sml
++++ b/basis/pure/mlintScript.sml
+@@ -6,6 +6,8 @@ Ancestors
+   mlstring gcd
+ Libs
+   preamble
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ Definition toChar_def:
+   toChar digit = if digit < 10 then CHR (ORD #"0" + digit)
+diff --git a/candle/prover/compute/computeScript.sml b/candle/prover/compute/computeScript.sml
+index 06ac39824..b47ee06fc 100644
+--- a/candle/prover/compute/computeScript.sml
++++ b/candle/prover/compute/computeScript.sml
+@@ -7,6 +7,8 @@ Ancestors
+   compute_syntax compute_eval compute_exec
+ Libs
+   preamble
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ 
+ val _ = numLib.temp_prefer_num ();
+diff --git a/candle/prover/compute/compute_execScript.sml b/candle/prover/compute/compute_execScript.sml
+index c3081d895..d6ea128a7 100644
+--- a/candle/prover/compute/compute_execScript.sml
++++ b/candle/prover/compute/compute_execScript.sml
+@@ -7,6 +7,8 @@ Ancestors
+   compute_syntax compute_eval ml_monadBase mlvector
+ Libs
+   preamble ml_monadBaseLib
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ 
+ (* -------------------------------------------------------------------------
+diff --git a/candle/prover/compute/compute_syntaxProofScript.sml b/candle/prover/compute/compute_syntaxProofScript.sml
+index cc4af2455..0917c68b7 100644
+--- a/candle/prover/compute/compute_syntaxProofScript.sml
++++ b/candle/prover/compute/compute_syntaxProofScript.sml
+@@ -7,6 +7,8 @@ Ancestors
+   compute_syntax
+ Libs
+   preamble
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ 
+ val _ = numLib.temp_prefer_num ();
+diff --git a/candle/prover/compute/compute_syntaxScript.sml b/candle/prover/compute/compute_syntaxScript.sml
+index c9cb686e9..1f503336d 100644
+--- a/candle/prover/compute/compute_syntaxScript.sml
++++ b/candle/prover/compute/compute_syntaxScript.sml
+@@ -6,6 +6,8 @@ Ancestors
+   holSyntax holSyntaxExtra holSyntaxLib holKernel holKernelProof
+ Libs
+   preamble
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ 
+ val _ = numLib.temp_prefer_num ();
+diff --git a/candle/set-theory/setModelScript.sml b/candle/set-theory/setModelScript.sml
+index 7f035e729..c2dc98f47 100644
+--- a/candle/set-theory/setModelScript.sml
++++ b/candle/set-theory/setModelScript.sml
+@@ -7,6 +7,8 @@ Ancestors
+   numposrep bit setSpec
+ Libs
+   preamble
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ val _ = temp_delsimps ["NORMEQ_CONV"]
+ val _ = diminish_srw_ss ["ABBREV"]
+diff --git a/compiler/backend/ag32/ag32_memoryScript.sml b/compiler/backend/ag32/ag32_memoryScript.sml
+index 41f8d67ae..0bacacf3e 100644
+--- a/compiler/backend/ag32/ag32_memoryScript.sml
++++ b/compiler/backend/ag32/ag32_memoryScript.sml
+@@ -10,6 +10,8 @@ Ancestors[qualified]
+   lab_to_target
+ Libs
+   preamble blastLib[qualified]
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ 
+ val _ = temp_delsimps ["lift_disj_eq", "lift_imp_disj"]
+diff --git a/compiler/backend/ag32/proofs/ag32_basis_ffiProofScript.sml b/compiler/backend/ag32/proofs/ag32_basis_ffiProofScript.sml
+index 5cebfed4d..dd6094079 100644
+--- a/compiler/backend/ag32/proofs/ag32_basis_ffiProofScript.sml
++++ b/compiler/backend/ag32/proofs/ag32_basis_ffiProofScript.sml
+@@ -8,6 +8,8 @@ Ancestors
+   ag32_memoryProof basis_ffi[qualified]
+ Libs
+   preamble blastLib[qualified]
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ val _ = temp_delsimps ["lift_disj_eq", "lift_imp_disj"]
+ 
+diff --git a/compiler/backend/ag32/proofs/ag32_ffi_codeProofScript.sml b/compiler/backend/ag32/proofs/ag32_ffi_codeProofScript.sml
+index c56ee38c9..75af0853d 100644
+--- a/compiler/backend/ag32/proofs/ag32_ffi_codeProofScript.sml
++++ b/compiler/backend/ag32/proofs/ag32_ffi_codeProofScript.sml
+@@ -7,6 +7,8 @@ Ancestors
+   ag32_prog ag32_memory ag32_targetProof[qualified]
+ Libs
+   preamble ag32_decompilerLib blastLib[qualified]
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ val _ = temp_delsimps ["lift_disj_eq", "lift_imp_disj"]
+ 
+diff --git a/compiler/backend/ag32/proofs/ag32_memoryProofScript.sml b/compiler/backend/ag32/proofs/ag32_memoryProofScript.sml
+index b666e5f6e..9223e392e 100644
+--- a/compiler/backend/ag32/proofs/ag32_memoryProofScript.sml
++++ b/compiler/backend/ag32/proofs/ag32_memoryProofScript.sml
+@@ -11,6 +11,8 @@ Libs
+   preamble wordsLib[qualified] blastLib[qualified]
+   asmLib[qualified] combinLib[qualified]
+   ag32_targetLib[qualified]
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ val _ = temp_delsimps ["NORMEQ_CONV"]
+ val _ = diminish_srw_ss ["ABBREV"]
+diff --git a/compiler/backend/backend_commonScript.sml b/compiler/backend/backend_commonScript.sml
+index 189f7fc9b..8174a48d3 100644
+--- a/compiler/backend/backend_commonScript.sml
++++ b/compiler/backend/backend_commonScript.sml
+@@ -6,6 +6,8 @@ Ancestors[qualified]
+   arithmetic integer words
+ Libs
+   preamble
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ Datatype:
+   opw = Andw | Orw | Xor | Add | Sub
+diff --git a/compiler/backend/backend_passesScript.sml b/compiler/backend/backend_passesScript.sml
+index b896b3094..bb1406d38 100644
+--- a/compiler/backend/backend_passesScript.sml
++++ b/compiler/backend/backend_passesScript.sml
+@@ -7,6 +7,8 @@ Ancestors
+   backend presLang
+ Libs
+   preamble
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ 
+ Datatype:
+diff --git a/compiler/backend/bvl_to_bviScript.sml b/compiler/backend/bvl_to_bviScript.sml
+index d7d75a49d..cf0ab275b 100644
+--- a/compiler/backend/bvl_to_bviScript.sml
++++ b/compiler/backend/bvl_to_bviScript.sml
+@@ -13,6 +13,8 @@ Ancestors
+   bvi_tailrec[qualified] dataLang[qualified]
+ Libs
+   preamble
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ val _ = patternMatchesSyntax.temp_enable_pmatch();
+ 
+diff --git a/compiler/backend/clos_to_bvlScript.sml b/compiler/backend/clos_to_bvlScript.sml
+index 14ca5c7da..24759e136 100644
+--- a/compiler/backend/clos_to_bvlScript.sml
++++ b/compiler/backend/clos_to_bvlScript.sml
+@@ -44,6 +44,8 @@ Ancestors
+   clos_annotate[qualified] bvl_jump closLang bvl
+ Libs
+   preamble
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ val _ = patternMatchesSyntax.temp_enable_pmatch();
+ 
+diff --git a/compiler/backend/cv_compute/backend_asmScript.sml b/compiler/backend/cv_compute/backend_asmScript.sml
+index 73a28eb8b..1802f9989 100644
+--- a/compiler/backend/cv_compute/backend_asmScript.sml
++++ b/compiler/backend/cv_compute/backend_asmScript.sml
+@@ -8,6 +8,8 @@ Ancestors
+   evaluate_dec
+ Libs
+   preamble
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ 
+ (*----------------------------------------------------------------*
+diff --git a/compiler/backend/data_to_wordScript.sml b/compiler/backend/data_to_wordScript.sml
+index 2425956da..d16dee037 100644
+--- a/compiler/backend/data_to_wordScript.sml
++++ b/compiler/backend/data_to_wordScript.sml
+@@ -11,6 +11,8 @@ Ancestors
+   backend_common[qualified] word_depth[qualified]
+ Libs
+   preamble
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ val _ = patternMatchesSyntax.temp_enable_pmatch();
+ 
+diff --git a/compiler/backend/exportScript.sml b/compiler/backend/exportScript.sml
+index c7e1269fb..31a4b8ef1 100644
+--- a/compiler/backend/exportScript.sml
++++ b/compiler/backend/exportScript.sml
+@@ -7,6 +7,8 @@ Ancestors
+   mlstring mlvector mlint
+ Libs
+   preamble
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ Definition split16_def:
+   (split16 f [] = Nil) /\
+diff --git a/compiler/backend/jsonLangScript.sml b/compiler/backend/jsonLangScript.sml
+index 0d556dbcd..d0eee99bc 100644
+--- a/compiler/backend/jsonLangScript.sml
++++ b/compiler/backend/jsonLangScript.sml
+@@ -10,6 +10,8 @@ Ancestors
+   mlint mlstring
+ Libs
+   preamble
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ Datatype:
+   obj =
+diff --git a/compiler/backend/presLangScript.sml b/compiler/backend/presLangScript.sml
+index 386d64a8c..57cf76257 100644
+--- a/compiler/backend/presLangScript.sml
++++ b/compiler/backend/presLangScript.sml
+@@ -8,6 +8,8 @@ Ancestors
+   dataLang wordLang labLang stackLang bvl bvi clos_to_bvl
+ Libs
+   preamble
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ (* basics *)
+ 
+diff --git a/compiler/backend/proofs/backendProofScript.sml b/compiler/backend/proofs/backendProofScript.sml
+index 32cc296f3..761a9f361 100644
+--- a/compiler/backend/proofs/backendProofScript.sml
++++ b/compiler/backend/proofs/backendProofScript.sml
+@@ -11,6 +11,8 @@ Ancestors
+   backend_passes[qualified]
+ Libs
+   preamble finite_mapSyntax[qualified]
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ val _ = temp_delsimps ["NORMEQ_CONV"]
+ val _ = temp_delsimps ["lift_disj_eq", "lift_imp_disj"]
+diff --git a/compiler/backend/proofs/bvi_tailrecProofScript.sml b/compiler/backend/proofs/bvi_tailrecProofScript.sml
+index 7ae5c3b45..7e9307ea3 100644
+--- a/compiler/backend/proofs/bvi_tailrecProofScript.sml
++++ b/compiler/backend/proofs/bvi_tailrecProofScript.sml
+@@ -6,6 +6,8 @@ Ancestors
+   bvi_tailrec bviProps bviSem
+ Libs
+   preamble
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ (* TODO
+ 
+diff --git a/compiler/backend/proofs/bvl_to_bviProofScript.sml b/compiler/backend/proofs/bvl_to_bviProofScript.sml
+index fa5afe9b3..b7bd5fed1 100644
+--- a/compiler/backend/proofs/bvl_to_bviProofScript.sml
++++ b/compiler/backend/proofs/bvl_to_bviProofScript.sml
+@@ -10,6 +10,8 @@ Ancestors
+   bvl_to_bvi
+ Libs
+   preamble helperLib[qualified]
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ (* We want bvi's, not bvl's ML bindings. *)
+ open bviPropsTheory
+diff --git a/compiler/backend/proofs/clos_to_bvlProofScript.sml b/compiler/backend/proofs/clos_to_bvlProofScript.sml
+index 91697d049..67e30fe64 100644
+--- a/compiler/backend/proofs/clos_to_bvlProofScript.sml
++++ b/compiler/backend/proofs/clos_to_bvlProofScript.sml
+@@ -12,6 +12,8 @@ Ancestors[ignore_grammar]
+   clos_mtiProof[qualified] clos_numberProof[qualified]
+   clos_knownProof[qualified] clos_annotateProof[qualified]
+   clos_callProof[qualified] clos_fvsProof[qualified]
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ (* Make sure we get the correct ML bindings (somehow) *)
+ open closLangTheory closSemTheory closPropsTheory
+diff --git a/compiler/backend/proofs/data_to_word_assignProofScript.sml b/compiler/backend/proofs/data_to_word_assignProofScript.sml
+index e1c26e87d..9d06c0a02 100644
+--- a/compiler/backend/proofs/data_to_word_assignProofScript.sml
++++ b/compiler/backend/proofs/data_to_word_assignProofScript.sml
+@@ -11,6 +11,8 @@ Ancestors
+   semanticsProps alignment backendProps word_bignum wordLang
+   word_bignumProof gen_gc_partial gc_shared word_gcFunctions
+   gen_gc[qualified] bvi_to_data[qualified]
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ val _ = (max_print_depth := 1);
+ 
+diff --git a/compiler/backend/proofs/data_to_word_gcProofScript.sml b/compiler/backend/proofs/data_to_word_gcProofScript.sml
+index b4c4a8a37..bc72e2a0a 100644
+--- a/compiler/backend/proofs/data_to_word_gcProofScript.sml
++++ b/compiler/backend/proofs/data_to_word_gcProofScript.sml
+@@ -10,6 +10,8 @@ Ancestors
+   finite_map wordProps While set_sep semanticsProps alignment
+   word_bignum wordLang word_bignumProof gen_gc_partial gc_shared
+   word_gcFunctions gen_gc[qualified]
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ val _ = temp_delsimps ["NORMEQ_CONV"]
+ val _ = temp_delsimps ["lift_disj_eq", "lift_imp_disj"]
+diff --git a/compiler/backend/proofs/data_to_word_memoryProofScript.sml b/compiler/backend/proofs/data_to_word_memoryProofScript.sml
+index 5f711708b..08a3a4211 100644
+--- a/compiler/backend/proofs/data_to_word_memoryProofScript.sml
++++ b/compiler/backend/proofs/data_to_word_memoryProofScript.sml
+@@ -8,6 +8,8 @@ Ancestors
+   alignment multiword
+ Libs
+   preamble helperLib blastLib[qualified]
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ 
+ val shift_def = backend_commonTheory.word_shift_def;
+diff --git a/compiler/backend/proofs/lab_to_targetProofScript.sml b/compiler/backend/proofs/lab_to_targetProofScript.sml
+index b789bd211..d06a8ad08 100644
+--- a/compiler/backend/proofs/lab_to_targetProofScript.sml
++++ b/compiler/backend/proofs/lab_to_targetProofScript.sml
+@@ -8,6 +8,8 @@ Ancestors
+   stack_removeProof[qualified]
+ Libs
+   preamble BasicProvers
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ val _ = temp_delsimps ["NORMEQ_CONV"]
+ val _ = diminish_srw_ss ["ABBREV"]
+diff --git a/compiler/backend/proofs/stack_removeProofScript.sml b/compiler/backend/proofs/stack_removeProofScript.sml
+index cf70504ab..392ad2631 100644
+--- a/compiler/backend/proofs/stack_removeProofScript.sml
++++ b/compiler/backend/proofs/stack_removeProofScript.sml
+@@ -7,6 +7,8 @@ Libs
+ Ancestors
+   stack_remove stackLang stackSem stackProps set_sep
+   semanticsProps
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ val _ = temp_delsimps ["NORMEQ_CONV"]
+ val _ = diminish_srw_ss ["ABBREV"]
+diff --git a/compiler/backend/proofs/stack_to_labProofScript.sml b/compiler/backend/proofs/stack_to_labProofScript.sml
+index e5f000158..a899ee66b 100644
+--- a/compiler/backend/proofs/stack_to_labProofScript.sml
++++ b/compiler/backend/proofs/stack_to_labProofScript.sml
+@@ -10,6 +10,8 @@ Ancestors
+   stack_namesProof stack_rawcallProof[qualified]
+   stack_allocProof stack_removeProof stack_to_lab
+   stackSem stackProps stack_alloc  labSem labProps semanticsProps
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ (* Set up ML bindings *)
+ open stackSemTheory stackPropsTheory
+diff --git a/compiler/backend/proofs/word_allocProofScript.sml b/compiler/backend/proofs/word_allocProofScript.sml
+index 95de308bb..889e15b06 100644
+--- a/compiler/backend/proofs/word_allocProofScript.sml
++++ b/compiler/backend/proofs/word_allocProofScript.sml
+@@ -7,6 +7,8 @@ Libs
+ Ancestors
+   mllist wordLang wordSem wordProps word_alloc reg_alloc
+   reg_allocProof linear_scan linear_scanProof wordConvs
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ (* Ensures we have the correct ML bindings *)
+ open reg_allocTheory reg_allocProofTheory linear_scanTheory
+diff --git a/compiler/backend/proofs/word_to_stackProofScript.sml b/compiler/backend/proofs/word_to_stackProofScript.sml
+index abb4dadbf..0f1f3808c 100644
+--- a/compiler/backend/proofs/word_to_stackProofScript.sml
++++ b/compiler/backend/proofs/word_to_stackProofScript.sml
+@@ -11,6 +11,8 @@ Ancestors
+   wordProps stackSem wordSem word_to_stack
+ Ancestors[ignore_grammar]
+   wordConvs parmove
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ (* Set up ML bindings *)
+ open preamble semanticsPropsTheory stackSemTheory wordSemTheory
+diff --git a/compiler/backend/reg_alloc/proofs/reg_allocProofScript.sml b/compiler/backend/reg_alloc/proofs/reg_allocProofScript.sml
+index a0c1794dd..e93a9a189 100644
+--- a/compiler/backend/reg_alloc/proofs/reg_allocProofScript.sml
++++ b/compiler/backend/reg_alloc/proofs/reg_allocProofScript.sml
+@@ -6,6 +6,8 @@ Libs
+   preamble ml_monadBaseLib
+ Ancestors
+   mllist state_transformer reg_alloc sorting ml_monadBase
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ val _ = temp_delsimps ["lift_disj_eq", "lift_imp_disj"]
+ 
+diff --git a/compiler/backend/reg_alloc/reg_allocScript.sml b/compiler/backend/reg_alloc/reg_allocScript.sml
+index d568f724e..1359c258a 100644
+--- a/compiler/backend/reg_alloc/reg_allocScript.sml
++++ b/compiler/backend/reg_alloc/reg_allocScript.sml
+@@ -6,6 +6,8 @@ Libs
+   preamble ml_monadBaseLib
+ Ancestors
+   mllist state_transformer ml_monadBase sorting
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ 
+ val _ = ParseExtras.temp_tight_equality();
+diff --git a/compiler/backend/semantics/labPropsScript.sml b/compiler/backend/semantics/labPropsScript.sml
+index 51963e0a8..249e92cd7 100644
+--- a/compiler/backend/semantics/labPropsScript.sml
++++ b/compiler/backend/semantics/labPropsScript.sml
+@@ -6,6 +6,8 @@ Ancestors
+   ffi wordSem labSem lab_to_target semanticsProps
+ Libs
+   preamble
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ val _ = Parse.hide"mem";
+ 
+diff --git a/compiler/backend/semantics/labSemScript.sml b/compiler/backend/semantics/labSemScript.sml
+index 33b6c9709..fc07108fd 100644
+--- a/compiler/backend/semantics/labSemScript.sml
++++ b/compiler/backend/semantics/labSemScript.sml
+@@ -6,6 +6,8 @@ Ancestors
+   labLang wordSem alignment[qualified] targetSem[qualified]
+ Libs
+   preamble
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ Datatype:
+   word8_loc = Byte word8 | LocByte num num num
+diff --git a/compiler/backend/semantics/stackSemScript.sml b/compiler/backend/semantics/stackSemScript.sml
+index 48ee3a9dc..20775ceb9 100644
+--- a/compiler/backend/semantics/stackSemScript.sml
++++ b/compiler/backend/semantics/stackSemScript.sml
+@@ -7,6 +7,8 @@ Ancestors
+   wordSem[qualified] (* for word_loc and word_cmp *)
+ Libs
+   preamble
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ 
+ Datatype:
+diff --git a/compiler/backend/semantics/targetSemScript.sml b/compiler/backend/semantics/targetSemScript.sml
+index 04b4df9a2..d7d36cdd4 100644
+--- a/compiler/backend/semantics/targetSemScript.sml
++++ b/compiler/backend/semantics/targetSemScript.sml
+@@ -8,6 +8,8 @@ Ancestors
+   ffi lab_to_target wordSem evaluateProps asmProps
+ Libs
+   preamble
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ (* -- execute target machine with interference from environment -- *)
+ 
+diff --git a/compiler/backend/semantics/target_itreeEquivScript.sml b/compiler/backend/semantics/target_itreeEquivScript.sml
+index 47ecbe3ba..096a5533d 100644
+--- a/compiler/backend/semantics/target_itreeEquivScript.sml
++++ b/compiler/backend/semantics/target_itreeEquivScript.sml
+@@ -8,6 +8,8 @@ Ancestors
+   itree_semanticsProps
+ Libs
+   preamble
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ 
+ (*********** evaluate' **********)
+diff --git a/compiler/backend/semantics/target_itreePropsScript.sml b/compiler/backend/semantics/target_itreePropsScript.sml
+index f281f8516..d170925ad 100644
+--- a/compiler/backend/semantics/target_itreePropsScript.sml
++++ b/compiler/backend/semantics/target_itreePropsScript.sml
+@@ -7,6 +7,8 @@ Ancestors
+   itree_semanticsProps
+ Libs
+   preamble
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ (********** machine_sem_itree **********)
+ 
+diff --git a/compiler/backend/semantics/target_itreeSemScript.sml b/compiler/backend/semantics/target_itreeSemScript.sml
+index eb9bb672a..06ae0b959 100644
+--- a/compiler/backend/semantics/target_itreeSemScript.sml
++++ b/compiler/backend/semantics/target_itreeSemScript.sml
+@@ -6,6 +6,8 @@ Ancestors
+   targetSem itree
+ Libs
+   preamble
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ Overload get_ffi_string = “MAP (λx. case x of ExtCall s => s)”;
+ 
+diff --git a/compiler/backend/semantics/wordSemScript.sml b/compiler/backend/semantics/wordSemScript.sml
+index 44877085f..4999f77bc 100644
+--- a/compiler/backend/semantics/wordSemScript.sml
++++ b/compiler/backend/semantics/wordSemScript.sml
+@@ -10,6 +10,8 @@ Ancestors
+   ffi[qualified] (* for call_FFI *)
+   lprefix_lub[qualified] (* for build_lprefix_lub *)
+   machine_ieee[qualified] (* for FP *)
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ Datatype:
+   buffer =
+diff --git a/compiler/backend/serialiser/num_list_enc_decScript.sml b/compiler/backend/serialiser/num_list_enc_decScript.sml
+index 23d9ac387..8d930ddcd 100644
+--- a/compiler/backend/serialiser/num_list_enc_decScript.sml
++++ b/compiler/backend/serialiser/num_list_enc_decScript.sml
+@@ -7,6 +7,8 @@ Ancestors
+   integer misc namespace ml_translator
+ Libs
+   preamble
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ (* definitions of what good enc/dec functions are *)
+ 
+diff --git a/compiler/backend/word_allocScript.sml b/compiler/backend/word_allocScript.sml
+index afc0377fa..7e314f69c 100644
+--- a/compiler/backend/word_allocScript.sml
++++ b/compiler/backend/word_allocScript.sml
+@@ -13,6 +13,8 @@ Ancestors
+   mllist
+   asm[qualified] (* for arity-2 Const *)
+   reg_alloc misc[qualified] wordLang linear_scan
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ val _ = patternMatchesSyntax.temp_enable_pmatch();
+ 
+diff --git a/compiler/bootstrap/translation/caml_lexProgScript.sml b/compiler/bootstrap/translation/caml_lexProgScript.sml
+index e0075761b..5e065d4ae 100644
+--- a/compiler/bootstrap/translation/caml_lexProgScript.sml
++++ b/compiler/bootstrap/translation/caml_lexProgScript.sml
+@@ -6,6 +6,8 @@ Ancestors
+   caml_lex parserProg ml_translator
+ Libs
+   preamble ml_translatorLib
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ open preamble caml_lexTheory;
+ open parserProgTheory ml_translatorLib ml_translatorTheory;
+diff --git a/compiler/bootstrap/translation/explorerProgScript.sml b/compiler/bootstrap/translation/explorerProgScript.sml
+index b03342fee..45ca2d6bc 100644
+--- a/compiler/bootstrap/translation/explorerProgScript.sml
++++ b/compiler/bootstrap/translation/explorerProgScript.sml
+@@ -6,6 +6,8 @@ Ancestors
+   inferProg
+ Libs
+   preamble ml_translatorLib
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ open preamble
+      ml_translatorLib
+diff --git a/compiler/bootstrap/translation/x64ProgScript.sml b/compiler/bootstrap/translation/x64ProgScript.sml
+index 0b355a86f..904dcf88d 100644
+--- a/compiler/bootstrap/translation/x64ProgScript.sml
++++ b/compiler/bootstrap/translation/x64ProgScript.sml
+@@ -6,6 +6,8 @@ Ancestors
+   evaluate ml_translator from_pancake64Prog x64_target x64
+ Libs
+   preamble ml_translatorLib inliningLib
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ open preamble;
+ open evaluateTheory
+diff --git a/compiler/dafny/proofs/dafny_to_cakemlProofScript.sml b/compiler/dafny/proofs/dafny_to_cakemlProofScript.sml
+index 27fc3d1bb..123eb1745 100644
+--- a/compiler/dafny/proofs/dafny_to_cakemlProofScript.sml
++++ b/compiler/dafny/proofs/dafny_to_cakemlProofScript.sml
+@@ -10,6 +10,8 @@ Ancestors
+   dafny_freshenProof dafny_to_cakeml dafny_ast
+ Libs
+   preamble
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ (* TODO Remove unused definition / trivialities *)
+ 
+diff --git a/compiler/encoders/ag32/proofs/ag32_targetProofScript.sml b/compiler/encoders/ag32/proofs/ag32_targetProofScript.sml
+index efd8f3334..961a1db34 100644
+--- a/compiler/encoders/ag32/proofs/ag32_targetProofScript.sml
++++ b/compiler/encoders/ag32/proofs/ag32_targetProofScript.sml
+@@ -6,6 +6,8 @@ Ancestors
+   ag32_target
+ Libs
+   asmLib Import
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ val () = wordsLib.guess_lengths()
+ 
+diff --git a/compiler/encoders/arm7/proofs/arm7_targetProofScript.sml b/compiler/encoders/arm7/proofs/arm7_targetProofScript.sml
+index abee70557..64d3ce870 100644
+--- a/compiler/encoders/arm7/proofs/arm7_targetProofScript.sml
++++ b/compiler/encoders/arm7/proofs/arm7_targetProofScript.sml
+@@ -6,6 +6,8 @@ Ancestors
+   arm7_target
+ Libs
+   arm_stepLib asmLib
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ val () = wordsLib.guess_lengths ()
+ 
+diff --git a/compiler/encoders/arm8/proofs/arm8_targetProofScript.sml b/compiler/encoders/arm8/proofs/arm8_targetProofScript.sml
+index a40e630df..330aa184a 100644
+--- a/compiler/encoders/arm8/proofs/arm8_targetProofScript.sml
++++ b/compiler/encoders/arm8/proofs/arm8_targetProofScript.sml
+@@ -6,6 +6,8 @@ Ancestors
+   arm8_target
+ Libs
+   asmLib arm8_stepLib arm8_targetProofLib
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ val _ = temp_delsimps ["NORMEQ_CONV"]
+ 
+diff --git a/compiler/encoders/arm8_asl/proofs/arm8_asl_targetProofScript.sml b/compiler/encoders/arm8_asl/proofs/arm8_asl_targetProofScript.sml
+index 29280f9ac..4577c2a51 100644
+--- a/compiler/encoders/arm8_asl/proofs/arm8_asl_targetProofScript.sml
++++ b/compiler/encoders/arm8_asl/proofs/arm8_asl_targetProofScript.sml
+@@ -9,6 +9,8 @@ Ancestors
+ Libs
+   BasicProvers dep_rewrite wordsLib asmLib arm8_targetProofLib
+   l3_equivalenceLib
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ val _ = wordsLib.guess_lengths();
+ val _ = wordsLib.output_words_as_hex();
+diff --git a/compiler/encoders/asm/asmLib.sml b/compiler/encoders/asm/asmLib.sml
+index 4d3319744..a97dace52 100644
+--- a/compiler/encoders/asm/asmLib.sml
++++ b/compiler/encoders/asm/asmLib.sml
+@@ -31,6 +31,11 @@ val asm_ok_rwts =
+    [asm_ok_def, inst_ok_def, reg_ok_def, fp_reg_ok_def, arith_ok_def, fp_ok_def,
+     cmp_ok_def, reg_imm_ok_def, offset_ok_def, alignmentTheory.aligned_0]
+ 
++(* Preserve legacy load-time proof with a scoped context policy. *)
++fun legacy_library_prove ttac =
++  if isSome (Context.current_thy (Context.snapshot())) then Tactical.prove ttac
++  else Feedback.trace ("TAC_PROOF requires current theory", 0) Tactical.prove ttac;
++
+ val asm_rwts =
+    [upd_pc_def, upd_reg_def, upd_fp_reg_def, upd_mem_def, read_reg_def,
+     read_fp_reg_def, read_mem_def, assert_def, reg_imm_def, binop_upd_def,
+@@ -39,7 +44,7 @@ val asm_rwts =
+     read_mem_word ``1n``, read_mem_word ``4n``, read_mem_word ``8n``,
+     write_mem_word ``1n``, write_mem_word ``2n``, write_mem_word ``4n``, write_mem_word ``8n``,
+     mem_op_def, inst_def, jump_to_offset_def, asm_def,
+-    prove
++    legacy_library_prove
+       (“!a b x:'a y. a /\ (a ==> ~b) ==> ((if b then x else y) = y)”, rw [])
+     ]
+ 
+diff --git a/compiler/encoders/asm/asmPropsScript.sml b/compiler/encoders/asm/asmPropsScript.sml
+index f469f0e19..21f3a77f7 100644
+--- a/compiler/encoders/asm/asmPropsScript.sml
++++ b/compiler/encoders/asm/asmPropsScript.sml
+@@ -6,6 +6,8 @@ Ancestors
+   asmSem
+ Libs
+   preamble
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ (* -- semantics is deterministic -- *)
+ 
+diff --git a/compiler/encoders/asm/asmSemScript.sml b/compiler/encoders/asm/asmSemScript.sml
+index 154ca1c6d..054fc4fdb 100644
+--- a/compiler/encoders/asm/asmSemScript.sml
++++ b/compiler/encoders/asm/asmSemScript.sml
+@@ -5,6 +5,8 @@ Theory asmSem
+ Ancestors
+   asm machine_ieee
+   misc (* for bytes_in_memory *)
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ (* -- semantics of ASM program -- *)
+ 
+diff --git a/compiler/encoders/mips/proofs/mips_targetProofScript.sml b/compiler/encoders/mips/proofs/mips_targetProofScript.sml
+index 24e28b3a4..ea693a1be 100644
+--- a/compiler/encoders/mips/proofs/mips_targetProofScript.sml
++++ b/compiler/encoders/mips/proofs/mips_targetProofScript.sml
+@@ -6,6 +6,8 @@ Ancestors
+   mips_target
+ Libs
+   realLib asmLib mips_stepLib
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ val () = wordsLib.guess_lengths()
+ 
+diff --git a/compiler/encoders/monadic_enc/monadic_enc32Script.sml b/compiler/encoders/monadic_enc/monadic_enc32Script.sml
+index 725e694b7..4c17022f1 100644
+--- a/compiler/encoders/monadic_enc/monadic_enc32Script.sml
++++ b/compiler/encoders/monadic_enc/monadic_enc32Script.sml
+@@ -6,6 +6,8 @@ Ancestors
+   state_transformer ml_monadBase asm lab_to_target monadic_enc
+ Libs
+   preamble ml_monadBaseLib
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ val _ = monadsyntax.temp_add_monadsyntax()
+ 
+diff --git a/compiler/encoders/monadic_enc/monadic_enc64Script.sml b/compiler/encoders/monadic_enc/monadic_enc64Script.sml
+index e09cd54c0..ea10bbb3a 100644
+--- a/compiler/encoders/monadic_enc/monadic_enc64Script.sml
++++ b/compiler/encoders/monadic_enc/monadic_enc64Script.sml
+@@ -6,6 +6,8 @@ Ancestors
+   state_transformer ml_monadBase asm lab_to_target monadic_enc
+ Libs
+   preamble ml_monadBaseLib
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ val _ = monadsyntax.temp_add_monadsyntax()
+ 
+diff --git a/compiler/encoders/monadic_enc/monadic_encScript.sml b/compiler/encoders/monadic_enc/monadic_encScript.sml
+index 382f9aa04..2a2f34218 100644
+--- a/compiler/encoders/monadic_enc/monadic_encScript.sml
++++ b/compiler/encoders/monadic_enc/monadic_encScript.sml
+@@ -6,6 +6,8 @@ Ancestors
+   asm lab_to_target
+ Libs
+   preamble
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ (*
+   This hash function is roughly a rolling hash
+diff --git a/compiler/encoders/riscv/proofs/riscv_targetProofScript.sml b/compiler/encoders/riscv/proofs/riscv_targetProofScript.sml
+index 553aa29ad..65b4b87e2 100644
+--- a/compiler/encoders/riscv/proofs/riscv_targetProofScript.sml
++++ b/compiler/encoders/riscv/proofs/riscv_targetProofScript.sml
+@@ -6,6 +6,8 @@ Ancestors
+   riscv_target
+ Libs
+   asmLib riscv_stepLib
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ val () = wordsLib.guess_lengths()
+ 
+diff --git a/compiler/encoders/x64/x64_eval_encodeScript.sml b/compiler/encoders/x64/x64_eval_encodeScript.sml
+index 175504fb6..62da113b0 100644
+--- a/compiler/encoders/x64/x64_eval_encodeScript.sml
++++ b/compiler/encoders/x64/x64_eval_encodeScript.sml
+@@ -4,6 +4,8 @@
+ Theory x64_eval_encode[no_sig_docs]
+ Ancestors
+   x64 x64_target
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ 
+ Theorem not_fail[local]:
+diff --git a/compiler/parsing/cmlPEGScript.sml b/compiler/parsing/cmlPEGScript.sml
+index d2808b3ac..38be54400 100644
+--- a/compiler/parsing/cmlPEGScript.sml
++++ b/compiler/parsing/cmlPEGScript.sml
+@@ -29,7 +29,7 @@ in
+ end
+ 
+ 
+-val _ = (computeLib.the_compset := computeLib.add_thms distinct_ths (!computeLib.the_compset))
++val _ = computeLib.add_funs distinct_ths
+ 
+ Definition sumID_def:
+   sumID (INL x) = x ∧
+diff --git a/compiler/parsing/fromSexpScript.sml b/compiler/parsing/fromSexpScript.sml
+index b01cea307..2a185e4a6 100644
+--- a/compiler/parsing/fromSexpScript.sml
++++ b/compiler/parsing/fromSexpScript.sml
+@@ -11,6 +11,8 @@ Ancestors
+   quantHeuristics ASCIInumbers numposrep mlstring
+ Libs
+   preamble match_goal
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ val _ = temp_delsimps ["lift_disj_eq", "lift_imp_disj"]
+ 
+diff --git a/cv_translator/backend_cvScript.sml b/cv_translator/backend_cvScript.sml
+index 094d25969..0de28d342 100644
+--- a/cv_translator/backend_cvScript.sml
++++ b/cv_translator/backend_cvScript.sml
+@@ -7,6 +7,8 @@ Libs
+ Ancestors
+   mllist mergesort cv_std backend to_data_cv export unify_cv
+   infer_cv basis_cv
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ val _ = cv_memLib.use_long_names := true;
+ 
+diff --git a/cv_translator/eval_cake_compileLib.sml b/cv_translator/eval_cake_compileLib.sml
+index 6f28286a6..674b674ff 100644
+--- a/cv_translator/eval_cake_compileLib.sml
++++ b/cv_translator/eval_cake_compileLib.sml
+@@ -200,7 +200,7 @@ fun eval_cake_compile_explore_with_conf arch prefix conf_def prog_def filename =
+ fun eval_cake_compile_explore arch prefix =
+   eval_cake_compile_explore_with_conf arch prefix (#default_config_def arch);
+ 
+-val _ = Feedback.set_trace "TheoryPP.include_docs" 0;
++val _ = Feedback.set_trace "TheoryPP.include_html_docs" 0;
+ 
+ (* --- for debugging ---
+    val _ = (max_print_depth := 15);
+diff --git a/examples/deflate/deflateScript.sml b/examples/deflate/deflateScript.sml
+index 39423ae24..8ecb976d7 100644
+--- a/examples/deflate/deflateScript.sml
++++ b/examples/deflate/deflateScript.sml
+@@ -7,6 +7,8 @@ Ancestors
+   deflateTable
+ Libs
+   preamble stringLib
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ 
+ Overload END_BLOCK = “256:num”;
+diff --git a/examples/deflate/ringBufferScript.sml b/examples/deflate/ringBufferScript.sml
+index 4e6139aed..f18434638 100644
+--- a/examples/deflate/ringBufferScript.sml
++++ b/examples/deflate/ringBufferScript.sml
+@@ -6,6 +6,8 @@ Ancestors
+   list rich_list arithmetic
+ Libs
+   preamble
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ 
+ (* a ringBuffer is a list with the current size and index of the start *)
+diff --git a/examples/diffScript.sml b/examples/diffScript.sml
+index 49bc707ae..933a8f251 100644
+--- a/examples/diffScript.sml
++++ b/examples/diffScript.sml
+@@ -6,6 +6,8 @@ Ancestors
+   lcs mlint mlstring
+ Libs
+   preamble
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ 
+ val _ = temp_delsimps ["NORMEQ_CONV"]
+diff --git a/examples/divScript.sml b/examples/divScript.sml
+index e8e72c6db..70770a253 100644
+--- a/examples/divScript.sml
++++ b/examples/divScript.sml
+@@ -6,6 +6,8 @@ Ancestors
+   integer cfDiv mlbasicsProg Word8Prog
+ Libs
+   preamble basis cfDivLib
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ val _ = temp_delsimps ["NORMEQ_CONV"]
+ 
+diff --git a/examples/grepProgScript.sml b/examples/grepProgScript.sml
+index 29d85ae57..5755ea0f7 100644
+--- a/examples/grepProgScript.sml
++++ b/examples/grepProgScript.sml
+@@ -7,6 +7,8 @@ Libs
+ Ancestors
+   charset regexp regexp_parser regexp_compiler mlvector
+   cfApp basis_ffi
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ val _ = temp_delsimps ["NORMEQ_CONV"]
+ 
+diff --git a/examples/lispProgScript.sml b/examples/lispProgScript.sml
+index 8da7fced6..269de4fc2 100644
+--- a/examples/lispProgScript.sml
++++ b/examples/lispProgScript.sml
+@@ -7,6 +7,8 @@ Libs
+ Ancestors
+   misc set_sep list mlstring
+   (* lisp: *) parsing source_values printing
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ val _ = translation_extends "basisProg";
+ 
+diff --git a/examples/lpr_checker/array/lpr_listScript.sml b/examples/lpr_checker/array/lpr_listScript.sml
+index 97875c572..5032bcc57 100644
+--- a/examples/lpr_checker/array/lpr_listScript.sml
++++ b/examples/lpr_checker/array/lpr_listScript.sml
+@@ -11,6 +11,8 @@ Ancestors
+   lpr
+ Libs
+   preamble basis
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ Definition w8z_def:
+   w8z = (0w:word8)
+diff --git a/examples/lpr_checker/lpr_parsingScript.sml b/examples/lpr_checker/lpr_parsingScript.sml
+index 104a362f8..a3c428082 100644
+--- a/examples/lpr_checker/lpr_parsingScript.sml
++++ b/examples/lpr_checker/lpr_parsingScript.sml
+@@ -6,6 +6,8 @@ Ancestors
+   misc lpr mlint
+ Libs
+   preamble
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ (*
+   Parses a list of strings (1 per line of a file) in
+diff --git a/examples/pseudo_bool/array/npbc_listScript.sml b/examples/pseudo_bool/array/npbc_listScript.sml
+index df4c41464..1f59ff317 100644
+--- a/examples/pseudo_bool/array/npbc_listScript.sml
++++ b/examples/pseudo_bool/array/npbc_listScript.sml
+@@ -6,6 +6,8 @@ Ancestors
+   npbc_check
+ Libs
+   preamble
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ Theorem any_el_update_resize:
+   any_el n (update_resize fml def v id) def =
+diff --git a/examples/pseudo_bool/pbc_normaliseScript.sml b/examples/pseudo_bool/pbc_normaliseScript.sml
+index a44c3c360..84d022eba 100644
+--- a/examples/pseudo_bool/pbc_normaliseScript.sml
++++ b/examples/pseudo_bool/pbc_normaliseScript.sml
+@@ -6,6 +6,8 @@ Libs
+   preamble
+ Ancestors
+   pbc npbc mllist mlmap mergesort
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ val _ = numLib.temp_prefer_num();
+ 
+diff --git a/examples/queueProgScript.sml b/examples/queueProgScript.sml
+index eacf4e90e..2861decc3 100644
+--- a/examples/queueProgScript.sml
++++ b/examples/queueProgScript.sml
+@@ -9,6 +9,8 @@ Ancestors
+   cfApp
+ Libs
+   preamble basis
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ val _ = translation_extends"basisProg";
+ 
+diff --git a/examples/scpog_checker/array/scpog_listScript.sml b/examples/scpog_checker/array/scpog_listScript.sml
+index 0ab7bd9d8..e3bcbcf33 100644
+--- a/examples/scpog_checker/array/scpog_listScript.sml
++++ b/examples/scpog_checker/array/scpog_listScript.sml
+@@ -6,6 +6,8 @@ Ancestors
+   cnf_scpogSem scpog mlvector
+ Libs
+   preamble basis
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ Definition w8z_def:
+   w8z = (0w:word8)
+diff --git a/examples/xlrup_checker/array/xlrup_listScript.sml b/examples/xlrup_checker/array/xlrup_listScript.sml
+index 056f86f3e..fe8adf118 100644
+--- a/examples/xlrup_checker/array/xlrup_listScript.sml
++++ b/examples/xlrup_checker/array/xlrup_listScript.sml
+@@ -6,6 +6,8 @@ Ancestors
+   xlrup
+ Libs
+   preamble basis
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ Definition w8z_def:
+   w8z = (0w:word8)
+diff --git a/examples/xlrup_checker/xlrupScript.sml b/examples/xlrup_checker/xlrupScript.sml
+index 11bf4957f..0ecb59fc9 100644
+--- a/examples/xlrup_checker/xlrupScript.sml
++++ b/examples/xlrup_checker/xlrupScript.sml
+@@ -7,6 +7,8 @@ Libs
+ Ancestors
+   mlvector mllist sptree misc cnf_ext bitstring[qualified]
+   mlstring mergesort
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ val _ = temp_bring_to_front_overload "range" {Name="range", Thy="misc"};
+ 
+diff --git a/misc/miscScript.sml b/misc/miscScript.sml
+index fa3671a33..e4d632660 100644
+--- a/misc/miscScript.sml
++++ b/misc/miscScript.sml
+@@ -14,6 +14,8 @@ Ancestors
+ Libs
+   boolSimps mp_then dep_rewrite wordsLib BasicProvers
+   ASCIInumbersLib bagLib[qualified] blastLib[qualified]
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ val _ = ParseExtras.tight_equality()
+ 
+diff --git a/misc/preamble.sml b/misc/preamble.sml
+index 2b5481acc..77995ceeb 100644
+--- a/misc/preamble.sml
++++ b/misc/preamble.sml
+@@ -13,12 +13,17 @@ open ASCIInumbersTheory BasicProvers Defn HolKernel Parse SatisfySimps Tactic
+      pairTheory pred_setTheory quantHeuristicsLib relationTheory res_quanTheory
+      rich_listTheory sortingTheory sptreeTheory stringTheory sumTheory
+      wordsTheory;
++(* Preserve the MOD precedence used by this CakeML revision. *)
++val _ = Parse.set_fixity "MOD" (Infixl 650);
+ (*Temporary workaround for cache being slow on long files*)
+-fun clear_cache_prover gtac  =
++fun clear_cache_prover ctxt gtac  =
+  let
+    val _ = List.app Cache.clear_cache [numSimps.arith_cache, intSimps.omega_cache,
+                                        intSimps.cooper_cache]
+-   val res = TAC_PROOF gtac
++   val res =
++     if isSome (Context.current_thy ctxt) then Tactical.TAC_PROOF_in ctxt gtac
++     else Feedback.trace ("TAC_PROOF requires current theory", 0)
++            (Tactical.TAC_PROOF_in ctxt) gtac
+    val _ = List.app Cache.clear_cache [numSimps.arith_cache, intSimps.omega_cache,
+                                        intSimps.cooper_cache]
+  in
+diff --git a/pancake/proofs/pan_to_crepProofScript.sml b/pancake/proofs/pan_to_crepProofScript.sml
+index 046c8fc5c..bdd298bc9 100644
+--- a/pancake/proofs/pan_to_crepProofScript.sml
++++ b/pancake/proofs/pan_to_crepProofScript.sml
+@@ -8,6 +8,8 @@ Ancestors
+   listRange crepProps pan_commonProps pan_to_crep
+ Libs
+   preamble
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ (* state relation *)
+ 
+diff --git a/pancake/proofs/pan_to_targetProofScript.sml b/pancake/proofs/pan_to_targetProofScript.sml
+index f731fbb7c..61e6fde7e 100644
+--- a/pancake/proofs/pan_to_targetProofScript.sml
++++ b/pancake/proofs/pan_to_targetProofScript.sml
+@@ -9,6 +9,8 @@ Ancestors
+   pan_to_wordProof pan_to_target wordConvsProof
+ Libs
+   preamble blastLib[qualified]
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ 
+ Overload stack_remove_prog_comp[local] = ``stack_remove$prog_comp``
+diff --git a/pancake/semantics/loopSemScript.sml b/pancake/semantics/loopSemScript.sml
+index 54547a3fe..a52d8fdf1 100644
+--- a/pancake/semantics/loopSemScript.sml
++++ b/pancake/semantics/loopSemScript.sml
+@@ -8,6 +8,8 @@ Ancestors
+   machine_ieee[qualified] (* for FP *)
+ Libs
+   preamble
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ Datatype:
+   state =
+diff --git a/pancake/semantics/pan_commonPropsScript.sml b/pancake/semantics/pan_commonPropsScript.sml
+index a22ecd323..00fbc1676 100644
+--- a/pancake/semantics/pan_commonPropsScript.sml
++++ b/pancake/semantics/pan_commonPropsScript.sml
+@@ -6,6 +6,8 @@ Ancestors
+   misc[qualified] pan_common
+ Libs
+   preamble
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ 
+ Definition ctxt_max_def:
+diff --git a/semantics/astScript.sml b/semantics/astScript.sml
+index eacfdd2af..d83bd7eea 100644
+--- a/semantics/astScript.sml
++++ b/semantics/astScript.sml
+@@ -260,6 +260,12 @@ Definition pat_bindings_def:
+   pats_bindings [] already_bound = already_bound ∧
+   pats_bindings (p::ps) already_bound =
+   pats_bindings ps (pat_bindings p already_bound)
++Termination
++  WF_REL_TAC
++    `inv_image $< (\x. case x of
++       INL (p,already_bound) => pat_size p
++     | INR (ps,already_bound) => list_size pat_size ps)` >>
++  simp [listTheory.list_size_def]
+ End
+ 
+ Definition every_exp_def[simp]:
+diff --git a/translator/ml_progLib.sml b/translator/ml_progLib.sml
+index a668a12a8..10551e394 100644
+--- a/translator/ml_progLib.sml
++++ b/translator/ml_progLib.sml
+@@ -129,7 +129,7 @@ fun nsLookup_conv tm = REPEATC (BETA_CONV ORELSEC FIRST_CONV
+ 
+ val () = computeLib.add_convs
+     (map (fn t => (t, 2, QCHANGED_CONV nsLookup_conv)) nsLookup_pf_tms)
+-val () = (computeLib.the_compset := computeLib.add_thms [nsLookup_eq] (!computeLib.the_compset))
++val () = computeLib.add_funs [nsLookup_eq]
+ 
+ (* helper functions *)
+ 
+diff --git a/translator/ml_translatorScript.sml b/translator/ml_translatorScript.sml
+index 78cab2573..20226fd0f 100644
+--- a/translator/ml_translatorScript.sml
++++ b/translator/ml_translatorScript.sml
+@@ -11,6 +11,8 @@ Ancestors
+ Libs
+   packLib integer_wordSyntax preamble
+   integer_wordSyntax[qualified]
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ infix \\ val op \\ = op THEN;
+ 
+diff --git a/translator/okasaki-examples/BinomialHeapScript.sml b/translator/okasaki-examples/BinomialHeapScript.sml
+index 1d87e55f8..99e7f6bb6 100644
+--- a/translator/okasaki-examples/BinomialHeapScript.sml
++++ b/translator/okasaki-examples/BinomialHeapScript.sml
+@@ -7,6 +7,8 @@ Ancestors
+   bag okasaki_misc ListProg
+ Libs
+   preamble bagLib ml_translatorLib
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ val fs = full_simp_tac (srw_ss ())
+ val rw = srw_tac []
+diff --git a/translator/okasaki-examples/BottomUpMergeSortScript.sml b/translator/okasaki-examples/BottomUpMergeSortScript.sml
+index 3d254058f..4c54c5d97 100644
+--- a/translator/okasaki-examples/BottomUpMergeSortScript.sml
++++ b/translator/okasaki-examples/BottomUpMergeSortScript.sml
+@@ -7,6 +7,8 @@ Ancestors
+   okasaki_misc bag sorting ListProg
+ Libs
+   preamble bagLib ml_translatorLib
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ val _ = numLib.temp_prefer_num()
+ 
+diff --git a/translator/other-examples/example_primality_testScript.sml b/translator/other-examples/example_primality_testScript.sml
+index da14dfdc7..9ea5e061f 100644
+--- a/translator/other-examples/example_primality_testScript.sml
++++ b/translator/other-examples/example_primality_testScript.sml
+@@ -7,6 +7,8 @@ Ancestors
+   miller_rabin arithmetic combin ListProg
+ Libs
+   ml_translatorLib
++(* Preserve the pinned CakeML MOD grammar after ancestor loading. *)
++val _ = Parse.temp_set_fixity "MOD" (Parse.Infixl 650);
+ 
+ fun find_def tm = let
+   val thy = #Thy (dest_thy_const tm)

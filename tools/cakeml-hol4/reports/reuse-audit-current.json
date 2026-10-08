@@ -1,0 +1,9 @@
+{
+  "schema": 1,
+  "repository": "https://github.com/QuasarRay/MetaRocq-rs.git",
+  "commit": "4329ddedd3bd2e97402df99d8b9ff29ec6712db7",
+  "components": 10,
+  "status": "EXACT_GIT_OBJECT_AND_LOCAL_BYTES_MATCH",
+  "lock_sha256": "8a09627ca27f535eb69f4acdeb5392efccac98f0f9e1be35ee75b4e0c3ef134c",
+  "claim": "reuse identity audit; not a proof of the reused implementations"
+}

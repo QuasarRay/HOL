@@ -1,0 +1,10 @@
+INCLUDES = $(HOLDIR)/src/HolSmt $(HOLDIR)/src/tactictoe/src \
+ $(HOLDIR)/src/finite_maps $(HOLDIR)/src/coalgebras $(HOLDIR)/src/n-bit \
+ $(HOLDIR)/src/bag $(HOLDIR)/src/res_quan/src $(HOLDIR)/src/string \
+ $(HOLDIR)/examples/fun-op-sem/lprefix_lub \
+ $(HOLDIR)/examples/machine-code/hoare-triple \
+ $(HOLDIR)/examples/formal-languages/context-free
+
+all: Hol4SmlMacroQualificationTheory.uo
+
+report: Hol4SmlGapWitnessTheory.uo

@@ -1,0 +1,56 @@
+{
+  "claim": "source-staging hashes describe pre-adaptation inputs; kernel reconstruction required; no semantic definition or theory statement changed",
+  "files": [
+    {
+      "after_sha256": "771348285419ce58a591fa29dd6fed4c69eb483488daf8fffb374884a7799909",
+      "before_sha256": "bd21f980357d3475e13de1f90278805d02d25940d853914b135d088370f81288",
+      "changes": [
+        {
+          "original": "  \\\\ once_rewrite_tac[GSYM MOD_PLUS]\n  \\\\ fs[]\nQED\n\nTheorem FLAT_REPLICATE_NIL:",
+          "reason": "specialize old MOD_PLUS and MOD_MOD after their positivity premise",
+          "replacement": "  \\\\ qpat_x_assum `0 < k` (fn h =>\n       ONCE_REWRITE_TAC [GSYM (MATCH_MP (Q.SPEC `k` MOD_PLUS) h)]\n       THEN ASM_SIMP_TAC (srw_ss()) [MATCH_MP (Q.SPEC `k` MOD_MOD) h])\nQED\n\nTheorem FLAT_REPLICATE_NIL:"
+        },
+        {
+          "original": "val _ = ParseExtras.tight_equality()",
+          "reason": "ML structure spelling in release",
+          "replacement": "structure WhileTheory = whileTheory;\n\nval _ = ParseExtras.tight_equality()"
+        }
+      ],
+      "file": "miscScript.sml",
+      "statement_changed": false
+    },
+    {
+      "after_sha256": "faa6803f8ed3a4888cf563760e319d0999fc6c59b5b4fb5293f8d0e97388bc8b",
+      "before_sha256": "6c3ba19a6af82469595d9e4e1274990dff34fbb6137d238007bda5af285c5540",
+      "changes": [
+        {
+          "original": "val () = Cache.set_capacity numSimps.arith_cache 200000;",
+          "reason": "cache tuning API absent in release",
+          "replacement": ""
+        },
+        {
+          "original": "val () = Cache.set_per_key_cap numSimps.arith_cache 5000;",
+          "reason": "cache tuning API absent in release",
+          "replacement": ""
+        }
+      ],
+      "file": "preamble.sml",
+      "statement_changed": false
+    },
+    {
+      "after_sha256": "6a96b7fbcc8614dd53bc58197f6d00eab50069a0e80fc3f8c7a0c40f38a7ea0a",
+      "before_sha256": "b7a7a18de4561b5ffccaaf5ad10267367c526e4f44c7084e99c716c1b50afa96",
+      "changes": [
+        {
+          "original": "val cpn_distinct = TypeBase.distinct_of ``:ordering``",
+          "reason": "ML structure spelling in release",
+          "replacement": "structure WhileTheory = whileTheory;\n\nval cpn_distinct = TypeBase.distinct_of ``:ordering``"
+        }
+      ],
+      "file": "mlstringScript.sml",
+      "statement_changed": false
+    }
+  ],
+  "schema": 1,
+  "status": "PROOF_AND_ML_API_ADAPTATIONS"
+}

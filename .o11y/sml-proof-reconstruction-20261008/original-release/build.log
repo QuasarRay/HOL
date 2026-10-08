@@ -1,0 +1,32 @@
+Scanning $(HOLDIR)/src/TeX
+Scanning $(HOLDIR)/src/bag
+Scanning $(HOLDIR)/src/sort
+Scanning $(HOLDIR)/src/string
+Scanning $(HOLDIR)/src/n-bit
+Scanning $(HOLDIR)/src/res_quan/src
+Scanning $(HOLDIR)/src/finite_maps
+Scanning $(HOLDIR)/examples/formal-languages/context-free
+Scanning $(HOLDIR)/src/transfer
+Scanning $(HOLDIR)/src/pred_set/src/more_theories
+Scanning $(HOLDIR)/src/coalgebras
+Scanning $(HOLDIR)/examples/fun-op-sem/lprefix_lub
+Scanning $(HOLDIR)/examples/machine-code/hoare-triple
+Scanning $(HOLDIR)/src/hol88
+Scanning $(HOLDIR)/src/integer
+Scanning $(HOLDIR)/src/rational
+Scanning $(HOLDIR)/src/algebra/base
+Scanning $(HOLDIR)/src/algebra/construction
+Scanning $(HOLDIR)/src/algebra
+Scanning $(HOLDIR)/src/real
+Scanning $(HOLDIR)/src/real/analysis
+Scanning $(HOLDIR)/src/HolSmt
+Scanning $(HOLDIR)/src/tactictoe/src
+Scanned 24 directories
+Starting work on Hol4SmlMacroTheory
+Hol4SmlMacroTheory                                                  (6s)     OK
+Starting work on Hol4SmlApplicationTheory
+Hol4SmlApplicationTheory                                            (6s)     OK
+Starting work on Hol4SmlOrderTheory
+Hol4SmlOrderTheory                                                  (7s)     OK
+Starting work on Hol4SmlMacroQualificationTheory
+Hol4SmlMacroQualificationTheory                                    (12s)     OK

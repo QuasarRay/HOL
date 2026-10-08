@@ -1,0 +1,175 @@
+Holmake: Scanning $(HOLDIR)/src/TeX
+Holmake: Scanning $(HOLDIR)/src/bag
+Holmake: Scanning $(HOLDIR)/src/sort
+Holmake: Scanning $(HOLDIR)/src/string
+Holmake: Scanning $(HOLDIR)/src/n-bit
+Holmake: Scanning $(HOLDIR)/src/res_quan/src
+Holmake: Scanning $(HOLDIR)/src/finite_maps
+Holmake: Scanning $(HOLDIR)/src/transfer
+Holmake: Scanning $(HOLDIR)/src/pred_set/src/more_theories
+Holmake: Scanning $(HOLDIR)/src/coalgebras
+Holmake: Scanning $(HOLDIR)/examples/pl-semantics/lprefix_lub
+Holmake: Scanning $(HOLDIR)/src/integer
+Holmake: Scanning $(HOLDIR)/src/rational
+Holmake: Scanning $(HOLDIR)/src/num/theories/cv_compute/automation
+Holmake: Scanning $(HOLDIR)/examples/bootstrap
+Holmake: Scanning $(HOLDIR)/src/algebra/base
+Holmake: Scanning $(HOLDIR)/src/algebra/construction
+Holmake: Scanning $(HOLDIR)/src/algebra
+Holmake: Scanning $(HOLDIR)/src/hol88
+Holmake: Scanning $(HOLDIR)/src/real
+Holmake: Scanning $(HOLDIR)/examples/data-structures/balanced_bst
+Holmake: Scanning $(HOLDIR)/examples/formal-languages
+Holmake: Scanning $(HOLDIR)/examples/formal-languages/context-free
+Holmake: Scanning $(HOLDIR)/src/search
+Holmake: Scanning $(HOLDIR)/examples/formal-languages/regular
+Holmake: Scanning $(HOLDIR)/examples/machine-code/hoare-triple
+Holmake: Scanning $(CAKEMLDIR)/developers
+Holmake: Scanning $(CAKEMLDIR)/misc
+Holmake: Scanning $(CAKEMLDIR)/basis/pure
+Holmake: Scanning $(HOLDIR)/examples/algorithms
+Holmake: Scanning $(HOLDIR)/examples/machine-code/multiword
+Holmake: Scanning $(CAKEMLDIR)/semantics/ffi
+Holmake: Scanning $(CAKEMLDIR)/semantics
+Holmake: Scanning $(CAKEMLDIR)/compiler/backend/pattern_matching
+Holmake: Scanning $(CAKEMLDIR)/translator/monadic/monad_base
+Holmake: Scanning $(CAKEMLDIR)/unverified/reg_alloc
+Holmake: Scanning $(CAKEMLDIR)/compiler/backend/reg_alloc
+Holmake: Scanning $(HOLDIR)/src/floating-point
+Holmake: Scanning $(HOLDIR)/src/monad/more_monads
+Holmake: Scanning $(HOLDIR)/src/update
+Holmake: Scanning $(HOLDIR)/examples/l3-machine-code/common
+Holmake: Scanning $(CAKEMLDIR)/compiler/encoders/asm
+Holmake: Scanning $(CAKEMLDIR)/semantics/proofs
+Holmake: Scanning $(CAKEMLDIR)/compiler/backend
+Holmake: Scanning $(CAKEMLDIR)/compiler/parsing
+Holmake: Scanning $(CAKEMLDIR)/translator
+Holmake: Scanning $(CAKEMLDIR)/characteristic
+Holmake: Scanning $(HOLDIR)/examples/algorithms/unification/triangular
+Holmake: Scanning $(HOLDIR)/src/transfer/examples
+Holmake: Scanning $(HOLDIR)/examples/algorithms/unification/triangular/first-order
+Holmake: Scanning $(HOLDIR)/examples/algorithms/unification/triangular/first-order/compilation
+Holmake: Scanning $(CAKEMLDIR)/compiler/inference
+Holmake: Scanning $(CAKEMLDIR)/compiler/printing
+Holmake: Scanning $(CAKEMLDIR)/translator/monadic
+Holmake: Scanning $(CAKEMLDIR)/basis
+Holmake: Scanning $(CAKEMLDIR)/compiler/encoders/ag32
+Holmake: Scanning $(CAKEMLDIR)/compiler/backend/ag32
+Holmake: Scanning $(HOLDIR)/examples/l3-machine-code/lib
+Holmake: Scanning $(HOLDIR)/examples/l3-machine-code/arm8/model
+Holmake: Scanning $(HOLDIR)/examples/machine-code/decompiler
+Holmake: Scanning $(HOLDIR)/examples/l3-machine-code
+Holmake: Scanning $(HOLDIR)/examples/l3-machine-code/arm8/step
+Holmake: Scanning $(CAKEMLDIR)/compiler/encoders/arm8
+Holmake: Scanning $(CAKEMLDIR)/compiler/backend/arm8
+Holmake: Scanning $(CAKEMLDIR)/compiler/backend/serialiser
+Holmake: Scanning $(HOLDIR)/examples/l3-machine-code/arm/model
+Holmake: Scanning $(HOLDIR)/examples/l3-machine-code/arm/step
+Holmake: Scanning $(CAKEMLDIR)/compiler/encoders/arm7
+Holmake: Scanning $(HOLDIR)/examples/l3-machine-code/mips/model
+Holmake: Scanning $(HOLDIR)/examples/l3-machine-code/mips/step
+Holmake: Scanning $(CAKEMLDIR)/compiler/encoders/mips
+Holmake: Scanning $(HOLDIR)/examples/l3-machine-code/riscv/model
+Holmake: Scanning $(HOLDIR)/examples/l3-machine-code/riscv/step
+Holmake: Scanning $(CAKEMLDIR)/compiler/encoders/riscv
+Holmake: Scanning $(HOLDIR)/examples/l3-machine-code/x64/model
+Holmake: Scanning $(HOLDIR)/examples/l3-machine-code/x64/step
+Holmake: Scanning $(CAKEMLDIR)/compiler/encoders/x64
+Holmake: Scanning $(CAKEMLDIR)/compiler/backend/cv_compute
+Holmake: Scanning $(CAKEMLDIR)/compiler/backend/x64
+Holmake: Scanned 80 directories
+Holmake: Building 110 theory files
+Holmake: Linking /workspace/scratch/7755a98cf62b/cakeml-compat/basis/pure/mlsexpScript.uo to produce theory-builder executable
+<<HOL message: Created theory "mlsexp">>
+Saved theorem _______ "datatype_sexp"
+Saved theorem _______ "sexp_11"
+Saved theorem _______ "sexp_distinct"
+Saved theorem _______ "sexp_nchotomy"
+Saved theorem _______ "sexp_Axiom"
+Saved theorem _______ "sexp_induction"
+Saved theorem _______ "sexp_case_cong"
+Saved theorem _______ "sexp_case_eq"
+<<HOL message: Defined type: "sexp">>
+Saved theorem _______ "datatype_token"
+Saved theorem _______ "token_11"
+Saved theorem _______ "token_distinct"
+Saved theorem _______ "token_nchotomy"
+Saved theorem _______ "token_Axiom"
+Saved theorem _______ "token_induction"
+Saved theorem _______ "token_case_cong"
+Saved theorem _______ "token_case_eq"
+<<HOL message: Defined type: "token">>
+<<HOL warning: Context.snapshot: ambient context read while a proof was running (in mlsexp)>>
+Saved definition ____ "read_string_aux_def"
+Saved induction _____ "read_string_aux_ind"
+Saved definition ____ "read_string_def"
+Saved theorem _______ "read_string_aux_length"
+Saved theorem _______ "read_string_length"
+Saved definition ____ "read_symbol_def"
+Saved theorem _______ "read_symbol_length"
+Saved definition ____ "lex_aux_def"
+Saved induction _____ "lex_aux_ind"
+Saved theorem _______ "lex_aux_length"
+Saved definition ____ "lex_def"
+Saved theorem _______ "lex_IMP_LENGTH_LESS"
+Proved triviality ___ "test_lex"
+Saved definition ____ "parse_aux_def"
+Saved induction _____ "parse_aux_ind"
+Saved definition ____ "parse_def"
+Saved theorem _______ "parse_IMP_LENGTH_LESS"
+Saved theorem _______ "parse_space"
+Proved triviality ___ "test_parse"
+Saved definition ____ "fromString_def"
+Saved theorem _______ "datatype_str_tree"
+Saved theorem _______ "str_tree_11"
+Saved theorem _______ "str_tree_distinct"
+Saved theorem _______ "str_tree_nchotomy"
+Saved theorem _______ "str_tree_Axiom"
+Saved theorem _______ "str_tree_induction"
+Saved theorem _______ "str_tree_case_cong"
+Saved theorem _______ "str_tree_case_eq"
+<<HOL message: Defined type: "str_tree">>
+Saved theorem _______ "datatype_pretty"
+Saved theorem _______ "pretty_11"
+Saved theorem _______ "pretty_distinct"
+Saved theorem _______ "pretty_nchotomy"
+Saved theorem _______ "pretty_Axiom"
+Saved theorem _______ "pretty_induction"
+Saved theorem _______ "pretty_case_cong"
+Saved theorem _______ "pretty_case_eq"
+<<HOL message: Defined type: "pretty">>
+Saved definition ____ "newlines_def"
+Saved induction _____ "newlines_ind"
+Saved definition ____ "v2pretty_def"
+Saved induction _____ "v2pretty_ind"
+Saved definition ____ "get_size_def"
+Saved induction _____ "get_size_ind"
+Saved definition ____ "get_next_size_def"
+Saved induction _____ "get_next_size_ind"
+Saved definition ____ "annotate_def"
+Saved definition ____ "remove_all_def"
+Saved definition ____ "smart_remove_def"
+Saved definition ____ "flatten_def"
+Saved definition ____ "str_tree_to_strs_def"
+Proved triviality ___ "test1_str_tree_to_strs"
+Proved triviality ___ "test2_str_tree_to_strs"
+Saved definition ____ "is_safe_char_def"
+Saved definition ____ "str_every_def"
+Saved induction _____ "str_every_ind"
+Saved definition ____ "make_str_safe_def"
+Saved definition ____ "sexp2tree_def"
+Saved induction _____ "sexp2tree_ind"
+Saved definition ____ "sexp_to_app_list_def"
+Saved induction _____ "sexp_to_app_list_ind"
+Saved definition ____ "sexp_to_string_def"
+Saved definition ____ "sexp_to_pretty_string_def"
+Saved definition ____ "to_tokens_def"
+Saved induction _____ "to_tokens_ind"
+Proved triviality ___ "parse_aux_to_tokens_lemma"
+Saved theorem _______ "parse_aux_to_tokens_thm"
+Saved theorem _______ "str_every_thm"
+Saved theorem _______ "read_symbol_thm"
+Saved theorem _______ "read_string_aux_thm"
+Saved theorem _______ "lex_aux_make_str_safe"
+Saved theorem _______ "flatten_acc"
+Saved theorem _______ "lex_aux_spaces"

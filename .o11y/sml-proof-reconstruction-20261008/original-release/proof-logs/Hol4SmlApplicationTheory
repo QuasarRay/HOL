@@ -1,0 +1,15 @@
+<<HOL message: Created theory "Hol4SmlApplication">>
+Saved definition ____ "sml_left_application_reference_def"
+Saved definition ____ "lower_sml_left_application_def"
+Saved definition ____ "argument_binding_stable_def"
+Saved theorem _______ "literal_argument_binding_stable"
+Saved theorem _______ "variable_argument_binding_stable"
+Saved theorem _______ "lower_sml_left_application_correct"
+Saved theorem _______ "lowered_application_preserves_first_error"
+Saved theorem _______ "application_order_is_observable"
+Saved definition ____ "temporary_capture_env_def"
+Saved theorem _______ "temporary_capture_is_observable"
+Exporting theory "Hol4SmlApplication" ... done.
+Theory "Hol4SmlApplication" took 0.91783s to build
+Exporting theory "Hol4SmlApplication" ... done.
+Theory "Hol4SmlApplication" took 0.94459s to build

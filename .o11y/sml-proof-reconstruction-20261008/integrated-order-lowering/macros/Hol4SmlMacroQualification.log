@@ -1,0 +1,69 @@
+/workspace/scratch/7755a98cf62b/HOL/src/HolSmt/Alethe_ProofReplay.sml:607: warning: Matches are not exhaustive.
+Found near
+  case prems of
+     [p] =>
+     metis_prove [...] target
+     handle Feedback.HOL_ERR _ => let val ... in ... ... end | _ => raise ...
+/workspace/scratch/7755a98cf62b/HOL/src/HolSmt/Alethe_ProofReplay.sml:624: warning: Matches are not exhaustive.
+Found near
+  case prems of
+     [p] =>
+     metis_prove [...] target
+     handle
+        Feedback.HOL_ERR _ => let val ...; ... in ... ... end |
+        _ => raise ...
+/workspace/scratch/7755a98cf62b/HOL/src/HolSmt/Alethe_ProofReplay.sml:1164: warning: Matches are not exhaustive.
+Found near
+  case prems of
+     [p] =>
+     let val ... = ...; val ...; ... in ... ... p end
+     handle Feedback.HOL_ERR _ => ... ... target | _ => ... ...
+/workspace/scratch/7755a98cf62b/HOL/src/HolSmt/Alethe_ProofReplay.sml:1155: warning: Matches are not exhaustive.
+Found near
+  case prems of
+     [p] =>
+     Thm.SYM p handle Feedback.HOL_ERR _ => ... ... (... ...) | _ => ... ...
+<<HOL message: Created theory "Hol4SmlMacroQualification">>
+Saved theorem _______ "generated_match_expansion"
+Saved theorem _______ "generated_match_semantics"
+Saved theorem _______ "generated_fn_expansion"
+Saved theorem _______ "generated_fn_closure"
+Saved theorem _______ "generated_fn_application_expansion"
+Saved theorem _______ "generated_fn_application_semantics"
+Saved theorem _______ "generated_left_application_expansion"
+Saved theorem _______ "generated_left_application_semantics"
+Saved theorem _______ "generated_variable_application_expansion"
+Saved theorem _______ "generated_variable_application_semantics"
+Saved theorem _______ "generated_sequence_expansion"
+Saved theorem _______ "generated_sequence_semantics"
+Saved theorem _______ "generated_sequence_list_expansion"
+Saved theorem _______ "generated_sequence_list_semantics"
+Saved theorem _______ "generated_constructor_ltr_expansion"
+Saved theorem _______ "generated_constructor_ltr_semantics"
+Saved theorem _______ "generated_application_ltr_expansion"
+Saved theorem _______ "generated_application_ltr_semantics"
+Saved theorem _______ "egglog_sequence_replay"
+Saved theorem _______ "egglog_application_replay"
+Saved theorem _______ "egglog_constructor_ltr_replay"
+Saved theorem _______ "egglog_application_ltr_replay"
+<<HOL warning: Context.snapshot: ambient context read while a proof was running (in Hol4SmlMacroQualification)>>
+<<HOL warning: SmtLib.translate_type: uninterpreted type :num>>
+<<HOL warning: SmtLib.translate_term: uninterpreted constant $&>>
+<<HOL warning: SmtLib.translate_term: uninterpreted constant Num>>
+<<HOL warning: SmtLib.translate_term: uninterpreted constant $->>
+<<HOL warning: SmtLib.translate_term: uninterpreted constant $<>>
+<<HOL message: HolSmtLib: calling external command '/workspace/scratch/7755a98cf62b/host-tools/usr/bin/z3 proof=true pp.simplify_implies=false -smt2 -file:/tmp/MLTEMPlvPjYJ > /tmp/MLTEMPms2VcU'>>
+<<HOL message: HolSmtLib: parsing Z3 proof>>
+<<HOL message: HolSmtLib: checking Z3 proof>>
+<<HOL message: HolSmtLib: solver reports negated term to be 'unsatisfiable' (proof checked)>>
+Saved theorem _______ "z3_clock_step"
+Missing tactic data: topology cardinal real_sigma metric nets primeFactor schneiderUtilsContext intExtension frac rat HolSmt semanticPrimitivesProps evaluateProps fpSem ffi semanticPrimitives evaluate mergesort mllist mlstring set_sep tailrec prog alignment address lprefix_lub integer_word gcd int_arith cooper integer intReduce Omega intreal normalizer hrat hreal realax real_arith real RealFieldContext binary_ieee machine_ieee poset fixedPoint llist path toto comparison bag container sorting finite_map alist sptree bitstring numeral_bit iterate fcp sum_num logroot bit numposrep ternaryComparisons string ASCIInumbers words blast byte ConseqConv quantHeuristics patternMatches EnumTypeContext ordinalBasic bnfInitial permutes hurdUtilsContext divides pred_set set_relation wellorder cardinalityCore bnfPrelims bnfFixBNF bnfMutual While NumConvContext cv reduce sum option pairToolsContext pair prim_rec arithmetic numeral basicSize numpair ind_type list rich_list indexedLists hol res_quan misc namespace ast namespaceProps Hol4SmlMacro Hol4SmlApplication Hol4SmlOrder
+Run tttUnfold.ttt_record ()
+Loading 1759 tactic calls in 0.02 seconds
+  srw_tac [] []
+Saved theorem _______ "tactictoe_clause_count"
+HOL4_MACRO_SEARCH_CHECKED egglog-replay z3-reconstruction tactictoe
+Exporting theory "Hol4SmlMacroQualification" ... done.
+Theory "Hol4SmlMacroQualification" took 4.7s to build
+Exporting theory "Hol4SmlMacroQualification" ... done.
+Theory "Hol4SmlMacroQualification" took 5.0s to build

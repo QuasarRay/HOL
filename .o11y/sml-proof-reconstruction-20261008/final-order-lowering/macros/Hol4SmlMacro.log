@@ -1,0 +1,20 @@
+<<HOL message: Created theory "Hol4SmlMacro">>
+Saved definition ____ "sml_match_reference_def"
+Saved definition ____ "lower_sml_match_def"
+Saved definition ____ "lower_sml_multifn_def"
+Saved definition ____ "sml_sequence_reference_def"
+Saved theorem _______ "can_pmatch_all_fallback"
+Saved theorem _______ "evaluate_match_fallback"
+Saved theorem _______ "lower_sml_match_correct"
+Saved theorem _______ "lower_sml_multifn_closure"
+Saved definition ____ "lower_sml_multifn_application_def"
+Saved theorem _______ "lower_sml_multifn_application_correct"
+<<HOL warning: Context.snapshot: ambient context read while a proof was running (in Hol4SmlMacro)>>
+Saved theorem _______ "lower_sml_sequence_correct"
+Saved theorem _______ "cakeml_function_equality"
+Saved theorem _______ "cakeml_empty_match_raises_bind"
+Saved theorem _______ "matched_body_bind_is_preserved"
+Exporting theory "Hol4SmlMacro" ... done.
+Theory "Hol4SmlMacro" took 0.68507s to build
+Exporting theory "Hol4SmlMacro" ... done.
+Theory "Hol4SmlMacro" took 0.97091s to build

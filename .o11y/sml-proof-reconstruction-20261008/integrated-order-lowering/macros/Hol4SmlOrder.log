@@ -1,0 +1,28 @@
+<<HOL message: Created theory "Hol4SmlOrder">>
+Saved definition ____ "lower_sml_sequence_list_def"
+Saved definition ____ "sml_sequence_list_reference_def"
+Saved definition ____ "sml_sequence_list_derived_def"
+<<HOL warning: Context.snapshot: ambient context read while a proof was running (in Hol4SmlOrder)>>
+Saved theorem _______ "lower_sml_sequence_list_correct"
+Saved theorem _______ "derived_sequence_list_correct"
+Saved theorem _______ "lower_sequence_matches_derived_form"
+Saved definition ____ "lower_sml_con_ltr_def"
+Saved definition ____ "lower_sml_application_ltr_def"
+Saved definition ____ "sml_application_ltr_reference_def"
+Saved theorem _______ "application_reference_two"
+Saved definition ____ "sml_con_ltr_reference_def"
+Saved theorem _______ "pmatch_capture_variables"
+Saved theorem _______ "capture_pattern_bindings"
+Saved theorem _______ "evaluate_variable_list"
+Saved theorem _______ "captured_variable_lookups"
+Saved theorem _______ "construct_from_variable_list"
+Saved theorem _______ "lower_sml_con_ltr_correct"
+Saved theorem _______ "apply_from_variable_list"
+Saved theorem _______ "lower_sml_application_ltr_correct"
+Saved theorem _______ "lowered_tuple_raises_first"
+Saved theorem _______ "lowered_tuple_keeps_value_order"
+Saved theorem _______ "source_closure_environment_is_preserved"
+Exporting theory "Hol4SmlOrder" ... done.
+Theory "Hol4SmlOrder" took 1.4s to build
+Exporting theory "Hol4SmlOrder" ... done.
+Theory "Hol4SmlOrder" took 1.8s to build

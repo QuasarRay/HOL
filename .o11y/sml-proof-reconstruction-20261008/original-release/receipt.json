@@ -1,0 +1,38 @@
+{
+  "all_four_macro_theories_reconstructed_from_source_in_final_run": true,
+  "allowed_oracle_tags": [
+    "DISK_THM"
+  ],
+  "axioms": 0,
+  "binary_provenance": "locally source-built official release tag; no vendor prebuilt or CakeML-built HOL4 qualified",
+  "cakeml_commit": "f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6",
+  "checked_exports": 54,
+  "checker_build_scope": "core sequence and required prerequisites completed; help database generation failed; runtime startup and selected source proofs passed",
+  "claim": "independent source reconstruction of normalized macro contracts only; not a whole release certificate",
+  "complete_selected_proof_logs_retained": true,
+  "dependency_proof_or_ML_API_adaptations": 3,
+  "full_sml97_source_bridge": "OPEN",
+  "hol4_commit": "bdc6917eeafd45f1067c08b6061c2243c1b1edb0",
+  "hol4_launcher_sha256": "a2b31a738f716b63426049f7c4c2502df2a2af3b910c021b70eac9b6b74f5282",
+  "hol4_native_runner_sha256": "2c52cca1b7a553846bdd37f078e9572bc4eeaade5e982f3b041d657519193a3a",
+  "hol4_release": "trindemossen-2",
+  "hol4_runtime_image_sha256": "d666466dfb090cc03797a8da26b90e04d12cf01a6aa27273ca7afedf2b426409",
+  "holmake_sha256": "7c7e928375309464be347f5dffc681be55d5ae206c1535d6e4fc15b34e579420",
+  "host_polyml": "5.7.1",
+  "hypotheses": 0,
+  "legacy_cache_trust": "raw untrusted hints; no modern ancestry validation; accepted theorem reconstructed by the kernel",
+  "macro_implementation_machine_code": "OPEN",
+  "own_ML_sources_match_final_development": true,
+  "parser_compatibility": "OPEN: temp_enable_pmatch absent; no substitute case grammar assumed equivalent",
+  "report_witnesses_reconstructed": 0,
+  "schema": 1,
+  "semantic_definitions_and_theorem_statements_changed": false,
+  "staged_ML_sources": 68,
+  "status": "SCOPED_MACRO_SOURCE_RECONSTRUCTION_PASS",
+  "tactictoe_loaded_calls": [
+    1503
+  ],
+  "tracked_HOL4_sources_unchanged": true,
+  "vendor_prebuilt_replay": "OPEN",
+  "z3": "4.8.12 proof-reconstructing Z3_TAC"
+}

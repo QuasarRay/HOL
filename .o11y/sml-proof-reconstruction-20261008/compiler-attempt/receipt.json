@@ -1,0 +1,21 @@
+{
+  "ast_theory_kernel_build": "PASS",
+  "base_commit": "c98da7fc904c5d6d0e9a75a18fac1796a9bfb1f9",
+  "claim": "compiler build compatibility and exposed resource observations; no compiler correctness instance or macro machine-code theorem",
+  "compatibility_files": 99,
+  "initial_attempt": "mlsexpTheory terminated with Signal 9; cgroup oom_kill became 1",
+  "initial_full_log_retained": false,
+  "macro_machine_code_equivalence": "OPEN",
+  "materialization_timestamp_idempotence": "PASS",
+  "pattern_binding_equations_changed": false,
+  "retry": {
+    "heap_limit_megabytes": 4096,
+    "jobs": 1,
+    "last_observed_cpu_seconds": 697.36,
+    "outcome": "manually interrupted with exit 130 after over 700 seconds without advancing beyond lex_aux_spaces",
+    "requested_theory_time_limit_seconds": 600
+  },
+  "schema": 1,
+  "status": "COMPILER_INSTANCE_OPEN",
+  "workspace_memory_limit_bytes": 8589934592
+}

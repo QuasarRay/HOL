@@ -1,0 +1,116 @@
+{
+  "archive_sha256": "0a3f73f342c538c1efc1bb4f89512bf9c1b52642ab95d80ed2d877edf3c66b34",
+  "claim": "untrusted hints only; legacy HOL lacks modern manifest ancestry validation; every accepted proof requires independent kernel reconstruction",
+  "files": [
+    {
+      "calls": 6,
+      "legacy_name": "BoolconvContext",
+      "sha256": "6f87886a88376a4afa4594aebb3ed8d77260679e226201d8249d44fe4be8711b",
+      "source_name": "BoolconvContext-645d313f16d736b63eddce0a7b55f7143b380846"
+    },
+    {
+      "calls": 19,
+      "legacy_name": "Canon_Port_Context",
+      "sha256": "a141e2babcb22e5bdfe21babefccfd4e87ffd7654f83d337f1dd2d72158f0191",
+      "source_name": "Canon_Port_Context-3d41ff8854e9da26d9d4c6f037a06e9e4b276dea"
+    },
+    {
+      "calls": 17,
+      "legacy_name": "InductiveDefinitionContext",
+      "sha256": "37b76a3753464bf24fdcb6d34231e04c2afba798879cde88db61c556ce7b0a3b",
+      "source_name": "InductiveDefinitionContext-360c5df513e80b371d8f60927550b5f4d5f44a49"
+    },
+    {
+      "calls": 4,
+      "legacy_name": "SubAndCondContext",
+      "sha256": "a3665fe75b5380b759c62e75fcc3827926f1680376ac8787567eb3119d90cd1a",
+      "source_name": "SubAndCondContext-9aebc23f58f709f058143c6d5b9492d755079eeb"
+    },
+    {
+      "calls": 10,
+      "legacy_name": "boolSimpsContext",
+      "sha256": "71cb1af237960675c6550ed7e93ce0602a939195bfd28818d32a195ec0f9c21f",
+      "source_name": "boolSimpsContext-247ac44c5ce40b23ab38da2bd50be6891f54a7a7"
+    },
+    {
+      "calls": 48,
+      "legacy_name": "canonContext",
+      "sha256": "f17e9b67f3085b3bc186704d8b407e2bff11790bce5947f90f7a733fa8940367",
+      "source_name": "canonContext-fdc317ca6dd66805235901adb53f0e4c9acf9fb8"
+    },
+    {
+      "calls": 200,
+      "legacy_name": "combin",
+      "sha256": "7c223cfad711987ab8141d3967b55b7f7e2ae7741578319cc1d9beb4f53bbe96",
+      "source_name": "combin-fbee506267717175c59dfd843bbef30b1bf072eb"
+    },
+    {
+      "calls": 7,
+      "legacy_name": "folMappingContext",
+      "sha256": "739a96d6c788ffff88ee701d380a5edf761f06e342d658eda6e94c9ac73fe7f6",
+      "source_name": "folMappingContext-631f69f21dc2dd44dd666711f723265b5e99fe56"
+    },
+    {
+      "calls": 37,
+      "legacy_name": "folToolsContext",
+      "sha256": "b19ef08cc0b105c7b804a5835c61f004b437e28c72e93bb9eec96fa4397ae433",
+      "source_name": "folToolsContext-53beac56b36ead6f35a5cede8fbd0ae797628fb6"
+    },
+    {
+      "calls": 25,
+      "legacy_name": "marker",
+      "sha256": "9096c89cdca69ec1f7603135a10fd1e05d3a2d9d69976671fe1f93ae2b799c5e",
+      "source_name": "marker-49b4cd200c5f2648ec850b6b00400326ba3f1ae6"
+    },
+    {
+      "calls": 9,
+      "legacy_name": "mesonLibContext",
+      "sha256": "8df479515c28af9a3cdc22539f1cd636c02e85ad4f78ad08efe7eb70f14f8c1a",
+      "source_name": "mesonLibContext-f0bda3d9fad150f2a0ac1862eaa63b412e4d35e1"
+    },
+    {
+      "calls": 13,
+      "legacy_name": "normalForms",
+      "sha256": "3c7ec2ac395d7ec5ce76731ff52a694e78b0d43b1d377c70e4036e223a96980f",
+      "source_name": "normalForms-27a8651a16671daec7f1defae6623cf825852329"
+    },
+    {
+      "calls": 99,
+      "legacy_name": "normalFormsContext",
+      "sha256": "f0d58254409cf15170e68e74adfc79a7533cbd9928e8db0d00c92a6e5c6bb26e",
+      "source_name": "normalFormsContext-a46aa97aa18d78457aaf1b03e1d80f02d9abdc78"
+    },
+    {
+      "calls": 42,
+      "legacy_name": "num",
+      "sha256": "9085f855940f9a028cceed558e8c0b26034f6f094566a27c44b40859f68f29c6",
+      "source_name": "num-d03114ca6779e9210d21bc2349334b23558c905a"
+    },
+    {
+      "calls": 30,
+      "legacy_name": "one",
+      "sha256": "c54e3d72980489b15b52e47e3b12b73e191b9753ddd9905d8e8e2ef669908bcb",
+      "source_name": "one-1c768f3de0ed142177072964b4c2234b44e9a26e"
+    },
+    {
+      "calls": 433,
+      "legacy_name": "quotient",
+      "sha256": "e5ca57ae28159bcda9cb916c44bcebcb972fb7711efbac538497853be0e61302",
+      "source_name": "quotient-3b14ac5a3cda019df91b6241e0c98ca6b805803b"
+    },
+    {
+      "calls": 760,
+      "legacy_name": "relation",
+      "sha256": "52ebd35673fe400c7696a52fee8aaf8ffb3784dd37014f3c182747a063697de6",
+      "source_name": "relation-262731de506c0bbb95308395235cf4d26499e9fa"
+    },
+    {
+      "calls": 0,
+      "legacy_name": "sat",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_name": "sat-2fbc3a6381cb94117ea3643692f4e33e1b46ba7f"
+    }
+  ],
+  "schema": 1,
+  "status": "BYTE_IDENTICAL_RAW_CALL_HINTS_EXPORTED"
+}

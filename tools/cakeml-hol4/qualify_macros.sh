@@ -18,6 +18,7 @@ SEARCH_PYTHON="${HOL4_EGGLOG_PYTHON:-python3}"
   --rhs '(App (App (Const "SmlSeq") (Var "e1")) (Var "e2"))' \
   --out "$OUT/macro.rewrites" --receipt "$OUT/egglog-receipt.json"
 export HOL4_MACRO_REWRITES="$OUT/macro.rewrites"
+cp "$SELF/formal/macro-rewrites.tsv" "$OUT/macro-rewrites.tsv"
 # The candidate file and search configuration are environment inputs, not
 # Holmake dependencies. Rebuild from source in a fresh directory every time.
 WORK="$(mktemp -d "$OUT/build-XXXXXXXX")"
@@ -25,11 +26,11 @@ cp "$SELF/formal/"Hol4SmlMacro* "$SELF/formal/"Hol4ProofSearchLib.* \
    "$SELF/formal/Holmakefile" "$WORK/"
 (
   cd "$WORK"
-  "$HOLDIR/bin/Holmake" --qof --no-cache Hol4SmlMacroQualificationTheory.uo \
+  "$HOLDIR/bin/Holmake" --qof --no-cache --rebuild_deps Hol4SmlMacroQualificationTheory.uo \
     > "$OUT/build.log" 2>&1
   "$HOLDIR/bin/hol" < Hol4SmlMacroInspect.sml > "$OUT/theorems.log" 2>&1
 )
-rg -q '^HOL4_MACRO_EXPORTS_INSPECTED 15$' "$OUT/theorems.log"
+rg -q '^HOL4_MACRO_EXPORTS_INSPECTED 18$' "$OUT/theorems.log"
 for theory in Hol4SmlMacro Hol4SmlMacroQualification; do
   for ext in dat sig sml; do
     cp "$(hol4_artifact_path "$WORK/${theory}Theory.$ext")" "$OUT/"
@@ -38,6 +39,6 @@ for theory in Hol4SmlMacro Hol4SmlMacroQualification; do
 done
 (
   cd "$OUT"
-  sha256sum *.dat *.sig *.sml *.log macro.rewrites egglog-receipt.json > SHA256SUMS
+  sha256sum *.dat *.sig *.sml *.log macro.rewrites macro-rewrites.tsv egglog-receipt.json > SHA256SUMS
 )
 printf '%s\n' 'NORMALIZED_MACRO_PROOFS_CHECKED; full SML97/source/machine/release bridge OPEN' > "$OUT/STATUS"

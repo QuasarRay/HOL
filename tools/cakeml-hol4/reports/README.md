@@ -1,65 +1,57 @@
 # Checked scope and remaining obligations
 
-The uploaded archives were integrity/source audited locally. There are 80
-candidate features, including 79 strict semantic or acceptance gaps. Manifest
-hashes, cross-file agreement, counts and 16 exact source references passed.
-This does not formally verify every report assertion.
+The 2026-10-08 run reconstructed and inspected 25 HOL4 theorems: 18
+normalized macro/generated/search theorems and seven target witnesses at the
+report's exact CakeML revision. Twenty regression tests passed under real HOL4,
+including a successful runtime startup before negative inspection tests.
+These are observed outcomes. The workspace transport closed during evidence
+packaging; complete new theory exports and logs remain unavailable for
+publication. See `verification-20261008.json`. The older
+`observed-checks.json` retains the previous session's outcomes.
 
-The generation timestamp predates the cited CakeML commit. All seven cited
-CakeML files differ between the report pin and the reused compiler pin.
-Proofs checked at the compiler pin must not be presented as verification of
-the newer report snapshot.
+The original ZIPs and extracted files are retained in `input/`.
+`source-audit.json` checks manifest identities, cross-file agreement, 80
+candidate entries (79 strict), 16 source authorities and observed HOL4 paths.
+This does not formally certify every report claim. The generation timestamp
+predates the cited CakeML commit, and all seven cited CakeML files differ
+between the report and compiler pins.
 
-Eight model theorems and seven generated/automation theorems were reconstructed
-by real HOL4 builds. A fresh qualification run inspected all fifteen exports
-for no hypotheses, no axioms and only normal DISK_THM dependency tags. The
-match contract retains exception lookup and preserves a matched body's Bind.
-
-| Candidate obligation | Checked scope | Still open |
+| Report obligation | Reconstructed scope | Still open |
 | --- | --- | --- |
-| S07/S08 match fallback | Normalized operational equivalence; matched-body Bind preserved | SML97 source elaboration and exception identity |
-| C08 multi-arm function | Typed expansion and closure construction | Freshness, application, typing and source correspondence |
-| S04/S05 equality | Closure equality is true in the target model at the compiler pin | SML equality kinds and static rejection |
-| Sequencing | Let NONE equals a normalized sequencing reference | SML source correspondence |
-| All 79 strict gaps | Candidate obligation inventory | Complete formal report verification and language coverage |
-| Machine implementation | Compiler evaluation reached assembly emission | Completed compiler artifact export and semantic composition |
-| Original release | Official-source core environment built | Compatible target-theory rebuild and proof reconstruction |
-| CakeML-built HOL4 | No release binary qualified | Full self-host construction and provenance |
+| C08 multi-arm function | Typed expansion, closure and application, with clock and post-binding exception lookup conditions | SML97 elaboration, typing, freshness and source correspondence |
+| S07/S08 Match and Bind | Normalized match equivalence, preservation of a matched body's Bind, literal failed-case witness | SML97 exception identity and source correspondence |
+| S04/S05 equality | Closure and recursive-closure equality return true in the actual report-pinned target model | SML static equality kinds and full reference correspondence |
+| S06 evaluation order | Tuple operands raise the second exception; explicit sequencing raises the first; distinct outcomes are proved | Complete source evaluation relation and general argument-order lowering |
+| M04 sealing | Inline signature is erased when converting an accepted parse tree | Acceptance, SML opaque sealing and generativity preservation |
+| All 79 strict gaps | Source-index and obligation inventory | Complete formal report verification and language coverage |
+| Machine implementation | No new compiler binary qualified | Compiler correctness instance, installation/linking and macro generator binary relation |
+| Original release and CakeML-built HOL4 | No original prebuilt or self-hosted binary qualified | Independent compatible source proof reconstruction and provenance |
 
-The original-release check failed on an incompatible imported theory parent
-(BoolconvContext / marker). This is not original-release acceptance. The
-environment was built from the official source tag, not downloaded as an
-official prebuilt binary. Loading a .dat file is also not source proof replay.
+The release inspection had a real acceptance bug: an interactive top-level
+exception could be followed by a success marker and exit zero for an
+`ASSUME T` theorem. The guarded inspection now exits one without success.
+The preserved negative fixture and before/after logs demonstrate this boundary.
 
-Egglog's native Rust binding selected a named sequence rewrite that HOL4
-replayed. Z3_TAC reconstructed a clock lemma; learned TacticToe proved the
-fallback clause count. The pinned Rust CLI bridge itself was not compiled
-locally. These are search checks, not broad automation coverage of all gaps.
+Egglog's native Rust binding selected a named rewrite that HOL4 replayed.
+Z3_TAC reconstructed its proof. TacticToe loaded 1,759 validated learned calls
+from the exact MetaRocq archive; missing or stale ancestry data stayed missing.
+Neither search output nor an imported .dat file is proof authority.
+The separately pinned Egglog CLI needs a newer Rust toolchain and is still
+unqualified locally.
 
-Twelve local regression tests passed before the execution service disconnected.
-They cover literals, nested comments, string gaps, tampering and rejection
-before either replay binary runs. The published report-tamper test was made
-self-contained after that outage and still needs a rerun. The lexical inventory
-was 210 files: 196 accepted and 14 rejected; none of those counts is formal
-language coverage.
+`qualify_gap_report.sh` rejects the compiler pin and tracked source changes,
+regenerates dependency files, builds selected prerequisites with explicit
+includes, reconstructs in fresh directories, inspects every export and retains
+a digest bundle. Its final metadata additions and the published checkpoint need
+a fresh run after execution recovery. The manual workflow now defaults to this
+scoped check; the existing compiler job remains separately selectable. No
+GitHub Actions run is claimed.
 
-The compiler parsed the exact normalized fixture and evaluated code generation,
-then failed its export guard on an obsolete API. That guard was corrected,
-but the final export could not be verified after the workspace disconnected.
-No completed compiler bundle or machine/reference guarantee is claimed.
+Ten reused Aegis components were checked against exact MetaRocq source bytes.
+`.agents/reuse-lock.json` is preserved; PostgreSQL remains unavailable without
+a DSN. Exposed outcome events are retained without private reasoning.
 
-The source checkpoint was preserved through GitHub after the execution
-workspace became offline. The original archives, complete source-audit JSON,
-exported theory .dat files, full logs and emitted assembly still need recovery.
-`observed-checks.json` is an exposed outcome record, not a substitute for them.
-
-Reuse identities are in `.agents/reuse-lock.json`. Aegis uses a durable exposed
-event outbox and reports PostgreSQL as blocked when unavailable. The expensive
-qualification workflow is manual-only.
-
-The next formal work is SML97 typing/elaboration and environment correspondence;
-then records, fixity, functors/signature sealing, evaluation order and runtime
-contracts. Each admitted source rule needs its own preservation theorem.
-Finish the compiler correctness instance and installation relation, rebuild
-against the original release, and qualify the CakeML-built HOL4 binary before
-closing the complete source-to-machine obligation.
+The next source proof must connect authoritative SML97 typing/elaboration,
+environments, identifiers and patterns to the normalized contracts. Records,
+fixity, functors, signature sealing, evaluation order and runtime contracts each
+need preservation rules before complete source-to-machine or release claims.

@@ -71,6 +71,30 @@ Proof
   simp [lower_sml_multifn_def,evaluate_def]
 QED
 
+Definition lower_sml_multifn_application_def:
+  lower_sml_multifn_application arg clauses match_id value_id =
+    App Opapp [lower_sml_multifn arg clauses match_id; Var value_id]
+End
+
+(* Application, rather than closure construction alone. The exception lookup
+   is checked after parameter binding: a parameter must not silently shadow
+   the chosen Match exception. Full SML97 elaboration/freshness is separate. *)
+Theorem lower_sml_multifn_application_correct:
+  nsLookup env.v value_id = SOME value /\
+  nsLookup (nsBind arg value env.v) match_id = SOME match_value ==>
+  evaluate st env
+    [lower_sml_multifn_application arg clauses match_id value_id] =
+  if st.clock = 0 then (st,Rerr (Rabort Rtimeout_error))
+  else sml_match_reference (dec_clock st)
+         (env with v := nsBind arg value env.v)
+         (Var (Short arg)) clauses match_value
+Proof
+  rpt strip_tac >>
+  simp [lower_sml_multifn_application_def,lower_sml_multifn_def,
+        evaluate_def,do_opapp_def] >>
+  IF_CASES_TAC >> simp [lower_sml_match_correct]
+QED
+
 Theorem lower_sml_sequence_correct:
   evaluate st env [Let NONE e1 e2] =
   sml_sequence_reference st env e1 e2
@@ -118,6 +142,7 @@ val _ = List.app
    ("matched_body_bind_is_preserved",matched_body_bind_is_preserved),
    ("can_pmatch_all_fallback",can_pmatch_all_fallback),
    ("lower_sml_multifn_closure",lower_sml_multifn_closure),
+   ("lower_sml_multifn_application_correct",lower_sml_multifn_application_correct),
    ("cakeml_function_equality",cakeml_function_equality),
    ("cakeml_empty_match_raises_bind",cakeml_empty_match_raises_bind)];
 val _ = export_theory();

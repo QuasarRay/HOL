@@ -2,10 +2,87 @@ name: cakeml-hol4-qualification
 
 on:
   workflow_dispatch:
+    inputs:
+      target:
+        description: Qualification scope
+        type: choice
+        default: report-witnesses
+        options:
+          - report-witnesses
+          - compiler
 # Full regeneration is expensive; source checkpoints do not trigger it.
 
 jobs:
+  report-witnesses:
+    if: inputs.target == 'report-witnesses'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    env:
+      HOLDIR: ${{ github.workspace }}
+      CAKEMLDIR: /tmp/cakeml-report
+      SML97DIR: /tmp/sml97
+      HOL4_TACTICTOE_CACHE: /tmp/tactictoe-reused
+      HOL4_Z3_EXECUTABLE: /usr/bin/z3
+      HOL4_EGGLOG_PYTHON: /tmp/egglog-python/bin/python
+      HOL4_GAP_OUT_BASE: /tmp/gap-evidence
+    steps:
+      - name: Checkout proof sources
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Install and record host tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y polyml libpolyml-dev z3 build-essential python3-venv ripgrep
+          mkdir -p /tmp/gap-evidence
+          dpkg-query -W polyml libpolyml-dev z3 > /tmp/gap-evidence/host-tools.log
+          python3 -m venv /tmp/egglog-python
+          /tmp/egglog-python/bin/pip install egglog==14.0.0
+
+      - name: Fetch immutable source and search-data pins
+        run: |
+          git fetch https://github.com/HOL-Theorem-Prover/HOL.git 652d1f0aad5cd537ed1e5d470ba3444e70ba470e
+          git clone --no-checkout https://github.com/CakeML/cakeml.git "$CAKEMLDIR"
+          git -C "$CAKEMLDIR" checkout --detach f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6
+          git clone --no-checkout https://github.com/SMLFamily/The-Definition-of-Standard-ML-Revised.git "$SML97DIR"
+          git -C "$SML97DIR" checkout --detach c4212f434cafd06669171619f7d332341a5b31f3
+          git init /tmp/metarocq-source
+          git -C /tmp/metarocq-source fetch --depth=1 https://github.com/QuasarRay/MetaRocq-rs.git 12b4c993942010862cecebb3faa928b7b80ff9a8
+          python3 tools/cakeml-hol4/restore_tactictoe_cache.py \
+            --metarocq-source /tmp/metarocq-source --output "$HOL4_TACTICTOE_CACHE"
+
+      - name: Build development HOL4 checker and selected prerequisites
+        run: |
+          polymain="$(dpkg -L libpolyml-dev | rg '/libpolymain\.a$' | head -n1)"
+          test -n "$polymain"
+          printf 'val polymllibdir = "%s";\n' "$(dirname "$polymain")" > tools-poly/poly-includes.ML
+          poly < tools/smart-configure.sml
+          bin/build -j2 -t0 --no-helpdocs --seq=tools/sequences/upto-parallel
+          for dependency in 'floating-point machine_ieeeTheory.uo' 'integer integer_wordTheory.uo' 'sort mergesortTheory.uo'; do
+            read -r directory theory <<< "$dependency"
+            (cd "$HOLDIR/src/$directory"; "$HOLDIR/bin/Holmake" -j2 "$theory"; "$HOLDIR/bin/linkToSigobj")
+          done
+          (cd "$CAKEMLDIR/misc"; "$HOLDIR/bin/Holmake" -j2 cakeml-heap)
+          (cd "$CAKEMLDIR/basis/pure"; "$HOLDIR/bin/Holmake" -j2 mlstringTheory.uo)
+
+      - name: Check regressions and reconstruct scoped proofs
+        run: |
+          python3 -m unittest discover -s tools/cakeml-hol4 -p 'test_*.py' -v
+          tools/cakeml-hol4/qualify_gap_report.sh
+
+      - name: Preserve report qualification evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hol4-sml-scoped-report-witnesses
+          path: |
+            /tmp/gap-evidence/
+            /tmp/tactictoe-reused/reuse-receipt.json
+          if-no-files-found: error
+
   qualify:
+    if: inputs.target == 'compiler'
     runs-on: ubuntu-latest
     timeout-minutes: 180
     steps:
@@ -15,11 +92,11 @@ jobs:
       - name: Install host prerequisites
         run: |
           sudo apt-get update
-          sudo apt-get install -y polyml libpolyml-dev z3 build-essential python3
+          sudo apt-get install -y polyml libpolyml-dev z3 build-essential python3 ripgrep
 
       - name: Build ordinary HOL4 acceptance environment
         run: |
-          polymain="$(dpkg -L libpolyml-dev | grep '/libpolymain\\.a$' | head -n1)"
+          polymain="$(dpkg -L libpolyml-dev | rg '/libpolymain\.a$' | head -n1)"
           test -n "$polymain"
           mkdir -p tools-poly
           printf 'val polymllibdir = "%s";\n' "$(dirname "$polymain")" \

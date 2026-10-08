@@ -1,14 +1,15 @@
 # HOL4 SML through checked CakeML macros
 
 The full HOL4 SML frontend and self-hosting theorem remain OPEN.
-See `reports/README.md` and `reports/observed-checks.json` for checked scope,
+See `reports/README.md` and `reports/verification-20261008.json` for current scope,
 pins, observed results and blockers.
 
 `Hol4SmlMacroLib` expands typed AST terms and returns an expansion theorem and
 a normalized semantic theorem. Matching retains the exception lookup condition
 and preserves an explicit Bind from a matched body. Multi-arm function
-certificates prove closure construction; SML97 typing, elaboration, freshness
-and application correspondence need further proofs.
+certificates cover closure construction and application, including clock and
+post-binding exception lookup conditions. SML97 typing, elaboration, freshness
+and source correspondence remain open.
 
 `Hol4ProofSearchLib` tries named rewrite hints, proof-reconstructing Z3_TAC,
 then bounded learned TacticToe. It checks the exact goal, hypotheses, axioms and
@@ -29,6 +30,21 @@ Every qualification uses a fresh theory directory because environment-selected
 candidates/search configuration are not Holmake dependencies. The command
 retains theorem exports, statements, logs and checksums. The observed local
 native binding version was egglog 14.0.0. No dependency is fetched by this command.
+
+A clean report-pinned CakeML checkout and the pinned SML97 source allow scoped
+report reconstruction:
+
+```sh
+python3 tools/cakeml-hol4/restore_tactictoe_cache.py \
+  --metarocq-source /path/to/metarocq --output /path/to/new-cache
+export SML97DIR=/path/to/sml97 HOL4_TACTICTOE_CACHE=/path/to/new-cache
+tools/cakeml-hol4/qualify_gap_report.sh
+```
+
+The complete local qualification passed before a workspace transport failure
+blocked publication of its exports. The final metadata revision and published
+checkpoint need a fresh execution. The manual workflow has a scoped report job
+and a separate compiler job; it does not run on every source checkpoint.
 
 The uploaded reports can be re-audited after restoring their extracted files
 as sibling `machine/` and `report/` directories:

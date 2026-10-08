@@ -20,6 +20,15 @@ val fn_cert = Hol4SmlMacroLib.multi_fn
 val _ = save_thm ("generated_fn_expansion", #expansion fn_cert);
 val _ = save_thm ("generated_fn_closure", #semantics fn_cert);
 
+val app_cert = Hol4SmlMacroLib.multi_fn_application
+  {parameter = ``«subject»``,
+   clauses = ``[(Plit (IntLit 0),Lit (IntLit 10));
+                (Plit (IntLit 1),Lit (IntLit 20))]``,
+   exception_id = ``Short «sml_match_exception» : (mlstring,mlstring) id``,
+   argument_id = ``Short «argument» : (mlstring,mlstring) id``};
+val _ = save_thm ("generated_fn_application_expansion", #expansion app_cert);
+val _ = save_thm ("generated_fn_application_semantics", #semantics app_cert);
+
 val path = case OS.Process.getEnv "HOL4_MACRO_REWRITES" of
   SOME p => p | NONE => raise Fail "HOL4_MACRO_REWRITES is required";
 val (rewrite_engine,seq_th) = Hol4ProofSearchLib.prove_with_search_file

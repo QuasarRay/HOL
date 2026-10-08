@@ -1,0 +1,100 @@
+{
+  "schema": 1,
+  "date": "2026-10-08",
+  "status": "OBSERVED_KERNEL_CHECKS_SOURCE_CHECKPOINT",
+  "claim": "Observed completed kernel reconstruction and rejection tests. Complete generated exports could not be published after the workspace transport closed; this JSON is not a formal certificate.",
+  "qualification": {
+    "status": "PASS_OBSERVED",
+    "run": "run-QDgTbMuV",
+    "receipt": {
+      "bundle_sha256": "ef5689f0d37b2b15c04d092d3b435913e069099bed88c56af3a8dffe600fef11",
+      "cakeml_commit": "f8da03aeecd4d58a35bb88286780ff7e7e4ca7d6",
+      "cakeml_hol4_binary_replay": "OPEN",
+      "claim": "scoped target semantics and normalized macro proofs only; not all report claims or a verified HOL4 binary",
+      "formal_report_verification": "OPEN",
+      "full_sml97_source_bridge": "OPEN",
+      "hol4_commit": "0fc4aee8f798f031a3b9cd7bf3800b9f145a221a",
+      "hol4_executable_sha256": "216ed86f610a986f6048f8a9661022f4d09d9752662befac6e90789a7a5e80a0",
+      "macro_implementation_machine_code": "OPEN",
+      "macro_theorems": 18,
+      "original_release_binary_replay": "OPEN",
+      "schema": 1,
+      "source_audit_sha256": "88cf0dee02c7fe3e7a3b1cd20386ce63a11f3bbef9541b6923a1e7dcafe95a96",
+      "status": "SCOPED_REPORT_WITNESSES_RECONSTRUCTED",
+      "target_witness_theorems": 7
+    },
+    "macro_theorems": 18,
+    "target_witness_theorems": 7,
+    "total_theorems": 25,
+    "hypotheses": 0,
+    "axioms": 0,
+    "allowed_dependency_tags": [
+      "DISK_THM"
+    ],
+    "target_scope": "actual report-pinned CakeML evaluation and accepted parse-tree conversion",
+    "macro_scope": "normalized matching, sequencing, closure construction and application with explicit lookup and clock conditions",
+    "full_export_publication": "BLOCKED_WORKSPACE_TRANSPORT_CLOSED",
+    "published_command_final_metadata_revision": "RERUN_PENDING",
+    "witness_names": [
+      "target_closure_equality",
+      "target_recursive_closure_equality",
+      "target_tuple_raises_second",
+      "explicit_sequence_raises_first",
+      "target_order_is_observable",
+      "target_failed_case_raises_bind",
+      "accepted_inline_signature_is_erased"
+    ]
+  },
+  "regressions": {
+    "status": "PASS_OBSERVED",
+    "passed": 20,
+    "skipped": 0,
+    "runtime": "real built HOL4, including successful startup before negative inspection cases",
+    "elapsed_seconds": 5.807
+  },
+  "replay_gate_fix": {
+    "before": "An ASSUME T theorem with a hypothesis could still print HOL4_RELEASE_REPLAY_CLEAN and exit 0 after an interactive top-level exception.",
+    "after": "The whole inspection is one guarded operation; the same negative fixture exits 1 and does not print success.",
+    "reproducer": "../../.o11y/sml-gap-audit-20261008/"
+  },
+  "automation": {
+    "egglog": "Native Rust binding 14.0.0 proposed the named sequence rewrite; HOL4 reconstructed it.",
+    "z3": "HolSmtLib.Z3_TAC checked the solver proof; no oracle tactic.",
+    "tactictoe": {
+      "source_commit": "12b4c993942010862cecebb3faa928b7b80ff9a8",
+      "archive_sha256": "0a3f73f342c538c1efc1bb4f89512bf9c1b52642ab95d80ed2d877edf3c66b34",
+      "restored_entries": 533,
+      "manifest_sha256": "8832e20aed5a3e9c620a0f29beece1af319e7aba0567d12b8ae4dae653e730f9",
+      "validated_loaded_calls": 1759,
+      "other_ancestry_data": "Missing/stale entries were not accepted; no complete-library training claimed."
+    },
+    "pinned_egglog_cli": "OPEN: its Rust 2024/resolver 3 workspace is incompatible with the local Rust 1.75 toolchain; native bindings are identified separately.",
+    "workflow": "Updated manual report-witnesses/default and compiler scopes; YAML parsed locally. No GitHub Actions execution claimed."
+  },
+  "reuse": {
+    "aegis_components_byte_verified": 10,
+    "source_commit": "4329ddedd3bd2e97402df99d8b9ff29ec6712db7",
+    "lock": "../../.agents/reuse-lock.json",
+    "postgresql": "BLOCKED_NO_DSN; exposed events retained only"
+  },
+  "report": {
+    "features": 80,
+    "strict_features": 79,
+    "authority_files_resolved": 16,
+    "formal_verification": "OPEN",
+    "report_compiler_files_differ": 7,
+    "timestamp_warning": "generated_utc predates the cited CakeML commit"
+  },
+  "release": {
+    "checker": "development HOL4 source build, not an official downloaded prebuilt binary",
+    "original_release_binary_reconstruction": "OPEN",
+    "cakeml_built_hol4_reconstruction": "OPEN",
+    "macro_implementation_binary_correctness": "OPEN",
+    "full_source_to_machine": "OPEN"
+  },
+  "publication": {
+    "mode": "GitHub source checkpoint reconstructed from returned source/patch content after workspace transport failure",
+    "retained": "Original archives, exact source audits, checked-source additions, prior gate negative evidence, outcome records and reproducible qualification pipeline",
+    "unavailable": "Complete new .dat/.sig/.sml exports, bundle.json and full new build logs"
+  }
+}

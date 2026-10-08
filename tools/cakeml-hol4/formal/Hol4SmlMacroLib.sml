@@ -36,6 +36,14 @@ fun multi_fn {parameter,clauses,exception_id} =
     (instantiate [("arg",parameter),("clauses",clauses),("match_id",exception_id)]
       lower_sml_multifn_closure);
 
+fun multi_fn_application {parameter,clauses,exception_id,argument_id} =
+  certificate
+    (REWRITE_CONV [lower_sml_multifn_application_def,
+                  lower_sml_multifn_def,lower_sml_match_def]
+      ``lower_sml_multifn_application ^parameter ^clauses ^exception_id ^argument_id``)
+    (instantiate [("arg",parameter),("clauses",clauses),("match_id",exception_id),
+                  ("value_id",argument_id)] lower_sml_multifn_application_correct);
+
 fun sequence {first_exp,second_exp} =
   let val expanded = ``Let NONE ^first_exp ^second_exp``
   in certificate (REFL expanded)

@@ -283,7 +283,7 @@ fun oneType db (spec : spec) =
             (asOldQuantified
                (wr (case #induction cs of
                         SOME th => th
-                      | NONE => #set_induction cs)))
+                      | NONE => #set_induction cs ())))
       (* the new type as a functor of its own, so that a later
          specification can recurse through it *)
       (* a type with no arguments is not a functor: there is nothing for
@@ -345,31 +345,48 @@ fun oneType db (spec : spec) =
 and discardAmbient tyname =
     let
       val {ABS, REP, ...} = theTypesConstants tyname
-      val carrier = tyname ^ "_carrier"
-      val doomed = [ABS, REP, carrier ^ "_ABS", carrier ^ "_REP"]
+      val ambients = ambientList tyname
+      val doomed =
+          ABS :: REP ::
+          List.concat (List.map (fn a => [a ^ "_ABS", a ^ "_REP"]) ambients)
       (* A theorem that says what something is *in the ambient* goes
          with the ambient -- the type's own definition as much as a
          constructor's.  What is kept says what those things do, and
          mentions neither the ambient nor the maps onto it. *)
       fun inTy ty =
           (case Lib.total dest_thy_type ty of
-               SOME {Tyop, ...} => Tyop = carrier
+               SOME {Tyop, ...} => Lib.mem Tyop ambients
              | NONE => false) orelse
           (case Lib.total dest_type ty of
                SOME (_, args) => List.exists inTy args
              | NONE => false)
+      (* every theorem in the segment is asked this, and the ones that
+         answer no are the common case, so the question is asked in one
+         pass that stops at the first yes rather than by building a list
+         of every constant and then a list of every subterm *)
       fun scaffolding th =
-          List.exists (fn t => Lib.mem (#1 (dest_const t)) doomed)
-                      (find_terms is_const (concl th)) orelse
-          List.exists (fn t => inTy (type_of t))
-                      (find_terms (fn _ => true) (concl th))
+          let
+            fun walk t =
+                case Lib.total dest_const t of
+                    SOME (nm, ty) => Lib.mem nm doomed orelse inTy ty
+                  | NONE =>
+                    inTy (type_of t) orelse
+                    (case Lib.total dest_comb t of
+                         SOME (f, x) => walk f orelse walk x
+                       | NONE =>
+                         case Lib.total dest_abs t of
+                             SOME (v, b) => walk v orelse walk b
+                           | NONE => false)
+          in
+            walk (concl th)
+          end
       fun gone f x = ignore (Lib.total f x)
     in
       List.app (fn (nm, th) =>
                    if scaffolding th then gone Theory.delete_binding nm else ())
                (DB.thms "-")
     ; List.app (gone Theory.delete_const) doomed
-    ; gone Theory.delete_type carrier
+    ; List.app (gone Theory.delete_type) ambients
     end
 (* an equation is named after the constant it is about.  Each
    constructor's clause carries its own quantifier, so the conjunct has

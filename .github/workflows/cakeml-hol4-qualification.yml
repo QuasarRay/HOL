@@ -151,6 +151,14 @@ jobs:
           cd /tmp/cakeml-compat/cv_translator
           "$HOLDIR/bin/Holmake" -j2 eval_cake_compile_x64Lib.uo
 
+      - name: Reconstruct and inspect pinned mlsexp dependency
+        env:
+          HOLDIR: ${{ github.workspace }}
+          CAKEMLDIR: /tmp/cakeml-compat
+          HOL4_COMPILER_SOURCE: /tmp/cakeml-source
+          HOL4_MLSEXP_OUT: /tmp/mlsexp-proof
+        run: tools/cakeml-hol4/qualify_compiler_mlsexp.sh
+
       - name: Compile proof-search replay library against real HOL4
         env:
           HOLDIR: ${{ github.workspace }}
@@ -191,4 +199,5 @@ jobs:
             /tmp/hol4-cakeml-inventory.json
             /tmp/egglog-receipt.json
             /tmp/cakeml-compat.json
+            /tmp/mlsexp-proof/
             /tmp/hol4-cakeml-proof/

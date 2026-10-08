@@ -22,20 +22,22 @@ class Hol4InspectionTests(unittest.TestCase):
         if cp.returncode != 0 or "HOL4_INSPECTION_READY" not in cp.stdout:
             raise AssertionError("HOL4 startup failed: " + cp.stdout)
 
-    def reject(self, filename, marker, extra_env=None, fixture=None):
+    def reject(self, filename, marker, extra_env=None, fixture=None, fixture_theory="ReplayGateFixture"):
         with tempfile.TemporaryDirectory() as td:
             env = dict(os.environ)
             env.update(extra_env or {})
             env["HOL4_RELEASE_BUNDLE_DIR"] = td
             if fixture:
-                (Path(td) / "ReplayGateFixtureScript.sml").write_text(fixture)
+                (Path(td) / (fixture_theory + "Script.sml")).write_text(fixture)
                 built = subprocess.run([str(HOL.parent / "Holmake"), "--qof", "--no-cache",
-                    "ReplayGateFixtureTheory.uo"], cwd=td, env=env, text=True,
+                    fixture_theory + "Theory.uo"], cwd=td, env=env, text=True,
                     stdout=subprocess.PIPE, stderr=subprocess.STDOUT, timeout=30)
                 self.assertEqual(built.returncode, 0, built.stdout)
                 objects = Path(td) / ".hol/objs"
                 if objects.is_dir():
                     env["HOL4_RELEASE_BUNDLE_DIR"] = str(objects)
+            if filename == "Hol4MlsexpInspect.sml":
+                env["HOL4_MLSEXP_BUILD_DIR"] = td
             cp = subprocess.run(
                 [str(HOL)], input=(HERE / "formal" / filename).read_text(),
                 cwd=td, env=env, text=True, stdout=subprocess.PIPE,
@@ -63,6 +65,19 @@ class Hol4InspectionTests(unittest.TestCase):
 
     def test_missing_report_witness_exports_are_rejected(self):
         self.reject("Hol4SmlGapInspect.sml", "HOL4_GAP_WITNESSES_INSPECTED")
+
+    def test_missing_mlsexp_exports_are_rejected(self):
+        self.reject("Hol4MlsexpInspect.sml", "HOL4_MLSEXP_EXPORTS_INSPECTED")
+
+    def test_open_mlsexp_exports_are_rejected(self):
+        names = ["lex_aux_sexp2tree", "lex_aux_sexp_to_list",
+                 "parse_sexp_to_string", "parse_sexp_to_pretty_string",
+                 "fromString_sexp_to_string", "fromString_sexp_to_pretty_string"]
+        fixture = 'Theory mlsexp\n' + ''.join(
+            f'val _ = save_thm ("{name}", ASSUME boolSyntax.T);\n' for name in names)
+        fixture += 'val _ = export_theory ();\n'
+        self.reject("Hol4MlsexpInspect.sml", "HOL4_MLSEXP_EXPORTS_INSPECTED",
+                    fixture=fixture, fixture_theory="mlsexp")
 
 
 if __name__ == "__main__":

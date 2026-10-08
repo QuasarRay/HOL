@@ -1,0 +1,1 @@
+--nolmbc --qof --no_preexecs --rebuild_deps --no-project --no-cache

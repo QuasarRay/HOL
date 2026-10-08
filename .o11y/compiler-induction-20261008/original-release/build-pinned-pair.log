@@ -1,0 +1,108 @@
+Holmake: Scanning $(HOLDIR)/src/TeX
+Holmake: Scanning $(HOLDIR)/src/bag
+Holmake: Scanning $(HOLDIR)/src/sort
+Holmake: Scanning $(HOLDIR)/src/string
+Holmake: Scanning $(HOLDIR)/src/n-bit
+Holmake: Scanning $(HOLDIR)/src/res_quan/src
+Holmake: Scanning $(HOLDIR)/src/finite_maps
+Holmake: Scanning $(HOLDIR)/examples/formal-languages/context-free
+Holmake: Scanning $(HOLDIR)/src/transfer
+Holmake: Scanning $(HOLDIR)/src/pred_set/src/more_theories
+Holmake: Scanning $(HOLDIR)/src/coalgebras
+Holmake: Scanning $(HOLDIR)/examples/fun-op-sem/lprefix_lub
+Holmake: Scanning $(HOLDIR)/examples/machine-code/hoare-triple
+Holmake: Scanning $(HOLDIR)/src/hol88
+Holmake: Scanning $(HOLDIR)/src/integer
+Holmake: Scanning $(HOLDIR)/src/rational
+Holmake: Scanning $(HOLDIR)/src/algebra/base
+Holmake: Scanning $(HOLDIR)/src/algebra/construction
+Holmake: Scanning $(HOLDIR)/src/algebra
+Holmake: Scanning $(HOLDIR)/src/real
+Holmake: Scanning $(HOLDIR)/src/real/analysis
+Holmake: Scanning $(HOLDIR)/src/HolSmt
+Holmake: Scanning $(HOLDIR)/src/tactictoe/src
+Holmake: Scanning /workspace/scratch/7755a98cf62b/release-context
+Holmake: Scanned 25 directories
+Holmake: Linking /workspace/scratch/7755a98cf62b/mlsexp-original-checker-evidence/mlstringScript.uo to produce theory-builder executable
+<<HOL message: Created theory "mlstring">>
+Saved theorem _______ "datatype_mlstring"
+Saved theorem _______ "mlstring_11"
+Saved theorem _______ "mlstring_nchotomy"
+Saved theorem _______ "mlstring_Axiom"
+Saved theorem _______ "mlstring_induction"
+Saved theorem _______ "mlstring_case_cong"
+Saved theorem _______ "mlstring_case_eq"
+<<HOL message: Defined type: "mlstring">>
+Saved definition ____ "implode_def"
+Saved definition ____ "strlen_def"
+Saved definition ____ "strsub_def"
+Saved definition ____ "substring_def"
+Saved definition ____ "concat_def"
+Saved theorem _______ "concat_nil"
+Saved theorem _______ "explode_aux_compute"
+Saved definition ____ "explode_aux_def"
+Saved theorem _______ "explode_aux_thm"
+Saved definition ____ "explode_def"
+Saved theorem _______ "explode_thm"
+Saved theorem _______ "explode_implode"
+Saved theorem _______ "implode_explode"
+Saved theorem _______ "explode_11"
+Saved theorem _______ "implode_BIJ"
+Saved theorem _______ "explode_BIJ"
+Saved theorem _______ "LENGTH_explode"
+Saved theorem _______ "concat_thm"
+Saved theorem _______ "strlen_implode"
+Saved theorem _______ "strlen_substring"
+Saved definition ____ "extract_def"
+Saved theorem _______ "strlen_extract_le"
+Saved theorem _______ "strsub_substring_0_thm"
+Saved theorem _______ "substring_full"
+Saved theorem _______ "substring_too_long"
+Saved definition ____ "strcat_def"
+Saved theorem _______ "concat_cons"
+Saved theorem _______ "strcat_thm"
+Saved theorem _______ "strcat_assoc"
+Saved theorem _______ "strcat_o"
+Saved theorem _______ "strcat_nil"
+Saved theorem _______ "mlstring_common_prefix"
+Saved theorem _______ "mlstring_common_char_prefix"
+Saved theorem _______ "mlstring_common_suffix"
+Saved theorem _______ "concat_append"
+Saved theorem _______ "implode_STRCAT"
+Saved theorem _______ "explode_strcat"
+Saved theorem _______ "strlen_strcat"
+Saved definition ____ "concatWith_aux_def"
+Saved induction _____ "concatWith_aux_ind"
+Saved definition ____ "concatWith_def"
+/workspace/scratch/7755a98cf62b/mlsexp-original-checker-evidence/mlstringScript.sml:278: error: Value or constructor (CONCAT_WITH_aux_ind) has not been declared
+Found near
+  Q.store_thm_at
+  (
+  DB_dtype.mkloc
+  (
+     "/workspace/scratch/7755a98cf62b/mlsexp-original-checker-evidence/mlstringScript.sml"
+     ,
+     275,
+     ...
+     ))
+  (
+     "concatWith_CONCAT_WITH_aux[local]",
+     [
+        QUOTE
+        " (*#loc 275 43*)\n  !s l fl. (CONCAT_WITH_aux s l fl = REVERSE fl ++ explode (concatWith (implode s) (MAP implode l)))"
+        ],
+     (fn ... => ...)
+     )
+/workspace/scratch/7755a98cf62b/mlsexp-original-checker-evidence/mlstringScript.sml:279: error: Value or constructor (CONCAT_WITH_aux_def) has not been declared
+Found near
+  [
+     CONCAT_WITH_aux_def,
+     concatWith_def,
+     implode_def,
+     concatWith_aux_def,
+     strcat_thm
+     ]
+error in quse /workspace/scratch/7755a98cf62b/mlsexp-original-checker-evidence/mlstringScript.sml : Fail "Static Errors"
+error in load /workspace/scratch/7755a98cf62b/mlsexp-original-checker-evidence/mlstringScript : Fail "Static Errors"
+Uncaught exception at ./basis/FinalPolyML.sml:491: Fail "Static Errors"
+Holmake: Failed script build for /workspace/scratch/7755a98cf62b/mlsexp-original-checker-evidence/mlstringScript - exited with code 1

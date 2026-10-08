@@ -1,0 +1,30 @@
+{
+  "allowed_oracle_tags": [
+    "DISK_THM"
+  ],
+  "axioms": 0,
+  "cakeml_built_hol4": "OPEN",
+  "claim": "checked development compiler dependency proofs only; no complete compiler, source-to-machine, or release theorem",
+  "compatibility_files": 100,
+  "compiler_pin": "c98da7fc904c5d6d0e9a75a18fac1796a9bfb1f9",
+  "compiler_retry": {
+    "dependency_builds_passed": 12,
+    "dependency_builds_planned": 93,
+    "exit_code": 124,
+    "heap_cap_megabytes": 3072,
+    "last_dependency": "linear_scan",
+    "limit_seconds": 120
+  },
+  "definitions_and_statements_unchanged": true,
+  "development_checker_core_build_commit": "bc025dff474b4dabff1a3d7606e929e492778fe8",
+  "hypotheses": 0,
+  "macro_machine_code_equivalence": "OPEN",
+  "mlsexp_exported_theorems_checked": 74,
+  "original_release_checker_commit": "bdc6917eeafd45f1067c08b6061c2243c1b1edb0",
+  "original_release_dependency_reconstruction": "OPEN: report mlstring lacks implode_def; compiler mlstring requires absent CONCAT_WITH_aux exports",
+  "regression_tests": 8,
+  "schema": 1,
+  "source_build_seconds": 3.4,
+  "status": "DEVELOPMENT_DEPENDENCY_PROOF_CHECKED",
+  "vendor_prebuilt_hol4": "OPEN"
+}

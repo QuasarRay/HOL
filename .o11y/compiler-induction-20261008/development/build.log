@@ -1,0 +1,132 @@
+Holmake: Scanning $(HOLDIR)/src/TeX
+Holmake: Scanning $(HOLDIR)/src/bag
+Holmake: Scanning $(HOLDIR)/src/sort
+Holmake: Scanning $(HOLDIR)/src/string
+Holmake: Scanning $(HOLDIR)/src/n-bit
+Holmake: Scanning $(HOLDIR)/src/res_quan/src
+Holmake: Scanning $(HOLDIR)/src/finite_maps
+Holmake: Scanning $(HOLDIR)/src/integer
+Holmake: Scanning $(HOLDIR)/src/transfer
+Holmake: Scanning $(HOLDIR)/src/pred_set/src/more_theories
+Holmake: Scanning $(HOLDIR)/src/algebra/base
+Holmake: Scanning $(HOLDIR)/src/algebra/construction
+Holmake: Scanning $(HOLDIR)/src/algebra
+Holmake: Scanning $(HOLDIR)/src/hol88
+Holmake: Scanning $(HOLDIR)/src/rational
+Holmake: Scanning $(HOLDIR)/src/real
+Holmake: Scanning $(HOLDIR)/examples/data-structures/balanced_bst
+Holmake: Scanning $(HOLDIR)/examples/formal-languages
+Holmake: Scanning $(HOLDIR)/examples/formal-languages/context-free
+Holmake: Scanning $(HOLDIR)/src/search
+Holmake: Scanning $(HOLDIR)/examples/formal-languages/regular
+Holmake: Scanning $(HOLDIR)/examples/machine-code/hoare-triple
+Holmake: Scanning $(HOLDIR)/src/coalgebras
+Holmake: Scanning $(HOLDIR)/examples/pl-semantics/lprefix_lub
+Holmake: Scanning $(CAKEMLDIR)/developers
+Holmake: Scanning $(CAKEMLDIR)/misc
+Holmake: Scanning $(CAKEMLDIR)/basis/pure
+Holmake: Scanned 28 directories
+Holmake: Building 1 theory file
+Holmake: Linking /workspace/scratch/7755a98cf62b/mlsexp-proof-evidence-final/build/mlsexpScript.uo to produce theory-builder executable
+<<HOL message: Created theory "mlsexp">>
+Saved theorem _______ "datatype_sexp"
+Saved theorem _______ "sexp_11"
+Saved theorem _______ "sexp_distinct"
+Saved theorem _______ "sexp_nchotomy"
+Saved theorem _______ "sexp_Axiom"
+Saved theorem _______ "sexp_induction"
+Saved theorem _______ "sexp_case_cong"
+Saved theorem _______ "sexp_case_eq"
+<<HOL message: Defined type: "sexp">>
+Saved theorem _______ "datatype_token"
+Saved theorem _______ "token_11"
+Saved theorem _______ "token_distinct"
+Saved theorem _______ "token_nchotomy"
+Saved theorem _______ "token_Axiom"
+Saved theorem _______ "token_induction"
+Saved theorem _______ "token_case_cong"
+Saved theorem _______ "token_case_eq"
+<<HOL message: Defined type: "token">>
+<<HOL warning: Context.snapshot: ambient context read while a proof was running (in mlsexp)>>
+Saved definition ____ "read_string_aux_def"
+Saved induction _____ "read_string_aux_ind"
+Saved definition ____ "read_string_def"
+Saved theorem _______ "read_string_aux_length"
+Saved theorem _______ "read_string_length"
+Saved definition ____ "read_symbol_def"
+Saved theorem _______ "read_symbol_length"
+Saved definition ____ "lex_aux_def"
+Saved induction _____ "lex_aux_ind"
+Saved theorem _______ "lex_aux_length"
+Saved definition ____ "lex_def"
+Saved theorem _______ "lex_IMP_LENGTH_LESS"
+Proved triviality ___ "test_lex"
+Saved definition ____ "parse_aux_def"
+Saved induction _____ "parse_aux_ind"
+Saved definition ____ "parse_def"
+Saved theorem _______ "parse_IMP_LENGTH_LESS"
+Saved theorem _______ "parse_space"
+Proved triviality ___ "test_parse"
+Saved definition ____ "fromString_def"
+Saved theorem _______ "datatype_str_tree"
+Saved theorem _______ "str_tree_11"
+Saved theorem _______ "str_tree_distinct"
+Saved theorem _______ "str_tree_nchotomy"
+Saved theorem _______ "str_tree_Axiom"
+Saved theorem _______ "str_tree_induction"
+Saved theorem _______ "str_tree_case_cong"
+Saved theorem _______ "str_tree_case_eq"
+<<HOL message: Defined type: "str_tree">>
+Saved theorem _______ "datatype_pretty"
+Saved theorem _______ "pretty_11"
+Saved theorem _______ "pretty_distinct"
+Saved theorem _______ "pretty_nchotomy"
+Saved theorem _______ "pretty_Axiom"
+Saved theorem _______ "pretty_induction"
+Saved theorem _______ "pretty_case_cong"
+Saved theorem _______ "pretty_case_eq"
+<<HOL message: Defined type: "pretty">>
+Saved definition ____ "newlines_def"
+Saved induction _____ "newlines_ind"
+Saved definition ____ "v2pretty_def"
+Saved induction _____ "v2pretty_ind"
+Saved definition ____ "get_size_def"
+Saved induction _____ "get_size_ind"
+Saved definition ____ "get_next_size_def"
+Saved induction _____ "get_next_size_ind"
+Saved definition ____ "annotate_def"
+Saved definition ____ "remove_all_def"
+Saved definition ____ "smart_remove_def"
+Saved definition ____ "flatten_def"
+Saved definition ____ "str_tree_to_strs_def"
+Proved triviality ___ "test1_str_tree_to_strs"
+Proved triviality ___ "test2_str_tree_to_strs"
+Saved definition ____ "is_safe_char_def"
+Saved definition ____ "str_every_def"
+Saved induction _____ "str_every_ind"
+Saved definition ____ "make_str_safe_def"
+Saved definition ____ "sexp2tree_def"
+Saved induction _____ "sexp2tree_ind"
+Saved definition ____ "sexp_to_app_list_def"
+Saved induction _____ "sexp_to_app_list_ind"
+Saved definition ____ "sexp_to_string_def"
+Saved definition ____ "sexp_to_pretty_string_def"
+Saved definition ____ "to_tokens_def"
+Saved induction _____ "to_tokens_ind"
+Proved triviality ___ "parse_aux_to_tokens_lemma"
+Saved theorem _______ "parse_aux_to_tokens_thm"
+Saved theorem _______ "str_every_thm"
+Saved theorem _______ "read_symbol_thm"
+Saved theorem _______ "read_string_aux_thm"
+Saved theorem _______ "lex_aux_make_str_safe"
+Saved theorem _______ "flatten_acc"
+Saved theorem _______ "lex_aux_spaces"
+Saved theorem _______ "lex_aux_sexp2tree"
+Saved theorem _______ "lex_aux_sexp_to_list"
+Saved theorem _______ "parse_sexp_to_string"
+Saved theorem _______ "parse_sexp_to_pretty_string"
+Saved theorem _______ "fromString_sexp_to_string"
+Saved theorem _______ "fromString_sexp_to_pretty_string"
+Exporting theory "mlsexp" ... done.
+Theory "mlsexp" took 3.9s to build
+Holmake: [1/1] mlsexp

@@ -102,7 +102,9 @@ results, missing theory exports and empty assembly are rejected. Compiler
 evaluation alone does not supply the SML bridge, machine installation/linking
 relation, or macro implementation binary correctness. The current compiler
 attempt remains unqualified; its compatibility and resource-limit outcomes
-are recorded in the reconstruction report.
+are recorded in the reconstruction report. The follow-up
+[compiler induction report](reports/compiler-induction.md) records a checked
+repair of the pinned `mlsexp` dependency and the remaining compiler/release gaps.
 
 `proof_bundle.py` checks confined, regular artifact identities before either
 executable runs. `dual_replay.py` rejects identical executable bytes and records

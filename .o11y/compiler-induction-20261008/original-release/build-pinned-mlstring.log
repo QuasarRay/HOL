@@ -1,0 +1,31 @@
+Holmake: Scanning $(HOLDIR)/src/TeX
+Holmake: Scanning $(HOLDIR)/src/bag
+Holmake: Scanning $(HOLDIR)/src/sort
+Holmake: Scanning $(HOLDIR)/src/string
+Holmake: Scanning $(HOLDIR)/src/n-bit
+Holmake: Scanning $(HOLDIR)/src/res_quan/src
+Holmake: Scanning $(HOLDIR)/src/finite_maps
+Holmake: Scanning $(HOLDIR)/examples/formal-languages/context-free
+Holmake: Scanning $(HOLDIR)/src/transfer
+Holmake: Scanning $(HOLDIR)/src/pred_set/src/more_theories
+Holmake: Scanning $(HOLDIR)/src/coalgebras
+Holmake: Scanning $(HOLDIR)/examples/fun-op-sem/lprefix_lub
+Holmake: Scanning $(HOLDIR)/examples/machine-code/hoare-triple
+Holmake: Scanning $(HOLDIR)/src/hol88
+Holmake: Scanning $(HOLDIR)/src/integer
+Holmake: Scanning $(HOLDIR)/src/rational
+Holmake: Scanning $(HOLDIR)/src/algebra/base
+Holmake: Scanning $(HOLDIR)/src/algebra/construction
+Holmake: Scanning $(HOLDIR)/src/algebra
+Holmake: Scanning $(HOLDIR)/src/real
+Holmake: Scanning $(HOLDIR)/src/real/analysis
+Holmake: Scanning $(HOLDIR)/src/HolSmt
+Holmake: Scanning $(HOLDIR)/src/tactictoe/src
+Holmake: Scanning /workspace/scratch/7755a98cf62b/release-context
+Holmake: Scanned 25 directories
+Holmake: Linking /workspace/scratch/7755a98cf62b/mlsexp-original-checker-evidence/mlsexpScript.uo to produce theory-builder executable
+Cannot find file /workspace/scratch/7755a98cf62b/mlsexp-original-checker-evidence/mlstringTheory.ui
+error in load /workspace/scratch/7755a98cf62b/mlsexp-original-checker-evidence/mlstringTheory : Fail "Cannot find file /workspace/scratch/7755a98cf62b/mlsexp-original-checker-evidence/mlstringTheory.ui"
+error in load /workspace/scratch/7755a98cf62b/mlsexp-original-checker-evidence/mlsexpScript : Fail "Cannot find file /workspace/scratch/7755a98cf62b/mlsexp-original-checker-evidence/mlstringTheory.ui"
+Uncaught exception at poly/poly-init2.ML:36: Fail "Cannot find file /workspace/scratch/7755a98cf62b/mlsexp-original-checker-evidence/mlstringTheory.ui"
+Holmake: Failed script build for /workspace/scratch/7755a98cf62b/mlsexp-original-checker-evidence/mlsexpScript - exited with code 1

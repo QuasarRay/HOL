@@ -21,6 +21,13 @@ class Hol4InspectionTests(unittest.TestCase):
             stdout=subprocess.PIPE, stderr=subprocess.STDOUT, timeout=30)
         if cp.returncode != 0 or "HOL4_INSPECTION_READY" not in cp.stdout:
             raise AssertionError("HOL4 startup failed: " + cp.stdout)
+        help_result = subprocess.run([str(HOL.parent / "Holmake"), "--nolmbc", "--help"],
+            text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+            check=True, timeout=30)
+        cls.build_flags = ["--qof", "--nolmbc", "--no_preexecs"]
+        for flag in ["--no-cache", "--no-project"]:
+            if flag in help_result.stdout:
+                cls.build_flags.append(flag)
 
     def reject(self, filename, marker, extra_env=None, fixture=None, fixture_theory="ReplayGateFixture"):
         with tempfile.TemporaryDirectory() as td:
@@ -29,7 +36,7 @@ class Hol4InspectionTests(unittest.TestCase):
             env["HOL4_RELEASE_BUNDLE_DIR"] = td
             if fixture:
                 (Path(td) / (fixture_theory + "Script.sml")).write_text(fixture)
-                built = subprocess.run([str(HOL.parent / "Holmake"), "--qof", "--no-cache",
+                built = subprocess.run([str(HOL.parent / "Holmake"), *self.build_flags,
                     fixture_theory + "Theory.uo"], cwd=td, env=env, text=True,
                     stdout=subprocess.PIPE, stderr=subprocess.STDOUT, timeout=30)
                 self.assertEqual(built.returncode, 0, built.stdout)

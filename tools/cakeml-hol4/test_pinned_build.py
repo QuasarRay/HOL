@@ -4,9 +4,64 @@ from pathlib import Path
 import subprocess
 import tempfile
 import unittest
+from unittest.mock import patch
+
+import recover_pinned_links
 
 
 class PinnedBuildBoundaryTests(unittest.TestCase):
+    def test_invalid_compiler_budget_is_rejected_before_any_build(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            for budget in ["0", "-1", "900; touch marker", "21601", "0001"]:
+                out = root / "evidence"
+                env = dict(os.environ, HOLDIR=str(root), CAKEMLDIR=str(root),
+                           HOL4_PINNED_COMPILER_OUT=str(out),
+                           HOL4_PINNED_COMPILER_SECONDS=budget)
+                script = Path(__file__).with_name("build_pinned_compiler.sh")
+                result = subprocess.run(["bash", str(script)], env=env,
+                                        capture_output=True, timeout=30)
+                self.assertEqual(result.returncode, 64)
+                self.assertFalse(out.exists())
+
+    def test_link_recovery_validates_the_entire_index_before_running(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            host = root / "host"
+            (host / "sigobj").mkdir(parents=True)
+            (host / "src").mkdir()
+            (host / "src/good.sig").write_text("signature good = sig end\n")
+            (host / "sigobj/SRCFILES").write_text(
+                str(host / "src/good") + "\n" + str(root / "outside") + "\n")
+            with patch.object(recover_pinned_links.subprocess, "check_output",
+                              side_effect=[recover_pinned_links.HOL_PIN + "\n", ""]), \
+                 patch.object(recover_pinned_links.subprocess, "run") as linker:
+                with self.assertRaisesRegex(ValueError, "escapes"):
+                    recover_pinned_links.restore(host, root / "receipt.json")
+                linker.assert_not_called()
+            self.assertFalse((root / "receipt.json").exists())
+
+    def test_link_recovery_rejects_an_interrupted_theory_signature(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            host = Path(tmp)
+            objects = host / "src/.hol/objs"
+            objects.mkdir(parents=True)
+            (objects / "IncompleteTheory.sig").write_bytes(b"")
+            with self.assertRaisesRegex(ValueError, "incomplete"):
+                recover_pinned_links.indexed_directories(
+                    host, (str(host / "src/IncompleteTheory") + "\n").encode())
+
+    def test_link_recovery_rejects_a_signature_link_outside_the_checkout(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            host = root / "host"
+            (host / "src").mkdir(parents=True)
+            (root / "outside.sig").write_text("signature bad = sig end\n")
+            (host / "src/bad.sig").symlink_to(root / "outside.sig")
+            with self.assertRaisesRegex(ValueError, "escapes"):
+                recover_pinned_links.indexed_directories(
+                    host, (str(host / "src/bad") + "\n").encode())
+
     def test_checked_compile_refuses_existing_evidence_before_checker_runs(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

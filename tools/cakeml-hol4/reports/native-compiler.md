@@ -72,11 +72,35 @@ The second stopped during `clos_known` export, leaving zero-byte generated SML
 and signature files that the older build tool subsequently treated as available.
 Those five generated artifacts were retained outside build search paths, and
 `clos_known` was rebuilt successfully. Missing host `cv_typeLib`, `cv_transLib`
-and `cv_memLib` links were also repaired. The next attempt has advanced through
-`data_to_word` and `labLang`; no compiler correctness instance has been returned.
+and `cv_memLib` links were also repaired. Further reconstruction passed
+`word_to_stack`, the x64 encoder, backend definitions, inference proofs and their
+evaluation translations. A resumed 900-second attempt completed 37 more
+dependency theories before stopping in `to_data_cv`; no compiler instance has
+been returned.
 The adapter now retains per-stage exit codes. The checked compilation wrapper
 selects flags supported by the chosen HOL release and requires a fresh output
 directory before writing selected source or evidence.
+
+The October 9 workspace restart preserved object and proof files but dropped
+generated library links. Replaying the retained HOL `sigobj/SRCFILES` index
+through HOL's own `linkToSigobj` restored 77 source directories. The guarded
+recovery command validates the entire index, confines paths to the clean pinned
+host, rejects incomplete theory exports, and requires a new receipt. All 36
+regression tests then passed with the release-matched checker and native CakeML,
+without skips. Inspection tests now select flags supported by the chosen HOL
+release, so older checkers actually build the open-theorem rejection fixtures.
+
+The compiler library receives a 3600-second budget by default; individual host
+prerequisites retain their 900-second limits. Set `HOL4_PINNED_COMPILER_SECONDS`
+to an integer between 1 and 21600 to change the compiler budget. Attempt 9 is
+reconstructing `to_data_cv` with that longer limit. These compilation-instance
+theorems establish the backend's returned bytes; the separate
+`backendProof.compile_correct` theorem has additional semantic, configuration
+and machine-installation premises. Successful evaluation must not be described
+as having discharged those premises or the source-to-machine bridge.
+
+The recovery commands, regression output, completed attempts and durable Aegis
+event are retained in `.o11y/cakeml-compiler-resume-20261009/`.
 
 The official Trindemossen 2 archive was also downloaded and checked against its
 published SHA-256 `0a2cba21a07b2eac0a9593a7130d47d48715a122ff6df6d0c6858f7190f71f7c`.
@@ -118,6 +142,14 @@ HOLDIR=/path/to/built/release-matched-HOL \
 CAKEMLDIR=/path/to/clean/c98da7fc-cakeml \
 HOL4_PINNED_COMPILER_OUT=/path/to/new/compiler-evidence \
   bash tools/cakeml-hol4/build_pinned_compiler.sh
+```
+
+If a workspace restart loses generated links, restore them before resuming:
+
+```sh
+python3 tools/cakeml-hol4/recover_pinned_links.py \
+  --host /path/to/built/release-matched-HOL \
+  --receipt /path/to/new/link-recovery.json
 ```
 
 The requested final source-to-machine bridge, macro-generator implementation

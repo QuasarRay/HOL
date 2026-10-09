@@ -1,0 +1,67 @@
+{
+  "schema": 1,
+  "archive": "matched-proof-exports.zip",
+  "files": [
+    {
+      "path": "matched-theories/closLangTheory.dat",
+      "bytes": 236974,
+      "sha256": "1b187db17a144331c2bb5e6e670111cfa504f44e00e744e6d561b5ed7f6e6b32"
+    },
+    {
+      "path": "matched-theories/closLangTheory.sig",
+      "bytes": 125996,
+      "sha256": "17678b38dc8113dccaf4bf96c5818793ee47ade65a6fc9de1ab19eed17559c5e"
+    },
+    {
+      "path": "matched-theories/closLangTheory.sml",
+      "bytes": 10371,
+      "sha256": "f5b72f3eb4a9730f92c0fd31912c6a689de196c757827829aad3ae901000dedc"
+    },
+    {
+      "path": "matched-theories/evaluatePropsTheory.dat",
+      "bytes": 65724,
+      "sha256": "8232ea68460bbb805468d5b234e555efe24d08f86b5f13a59617120608b5d4b2"
+    },
+    {
+      "path": "matched-theories/evaluatePropsTheory.sig",
+      "bytes": 33863,
+      "sha256": "d514fcd994b57bafab7c7e16a4844087576cef197739858da23c074e123db31d"
+    },
+    {
+      "path": "matched-theories/evaluatePropsTheory.sml",
+      "bytes": 10490,
+      "sha256": "e359f32fba927d1f3d820f81a701b1cb085855f8fb374a3214131d05e9068b97"
+    },
+    {
+      "path": "matched-theories/semanticPrimitivesPropsTheory.dat",
+      "bytes": 86965,
+      "sha256": "f46da64851af165b98737a2eb7469b9af1bffe1a4d53999417f3f6c9e326afb6"
+    },
+    {
+      "path": "matched-theories/semanticPrimitivesPropsTheory.sig",
+      "bytes": 45787,
+      "sha256": "3c0b0d1f7603a4eaed91272e51239d86596248f405f72399eae767a67cc2d62a"
+    },
+    {
+      "path": "matched-theories/semanticPrimitivesPropsTheory.sml",
+      "bytes": 9260,
+      "sha256": "75edf66b5bb4253de80b384e517e18b999d508c1b6ea14e98854642ec4a233d5"
+    },
+    {
+      "path": "matched-theories/typeSysPropsTheory.dat",
+      "bytes": 65350,
+      "sha256": "88f767ddf322abefe741f50540e2c8cc5b8e53652f5a61158e562f11e4cfdea2"
+    },
+    {
+      "path": "matched-theories/typeSysPropsTheory.sig",
+      "bytes": 35819,
+      "sha256": "57bbf8a518fe31a78de1bb1a27da2a35871e5cfa0c39573ae8ad14cb52d187b3"
+    },
+    {
+      "path": "matched-theories/typeSysPropsTheory.sml",
+      "bytes": 10501,
+      "sha256": "82abf115965484b8bdb9f2a00565fcf1903c358c0d5e49c81a27c423fb53563d"
+    }
+  ],
+  "claim": "scoped reconstructed exports; loading serialized data is not source proof reconstruction"
+}

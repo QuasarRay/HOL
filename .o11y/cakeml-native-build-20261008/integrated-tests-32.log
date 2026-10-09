@@ -1,0 +1,37 @@
+test_accumulator_repair_preserves_original_contract (test_compiler_compat.CompilerCompatTests.test_accumulator_repair_preserves_original_contract) ... ok
+test_changed_proof_and_already_adapted_input_fail_closed (test_compiler_compat.CompilerCompatTests.test_changed_proof_and_already_adapted_input_fail_closed) ... ok
+test_proof_statements_and_definitions_are_preserved (test_compiler_compat.CompilerCompatTests.test_proof_statements_and_definitions_are_preserved) ... ok
+test_type_system_original_contracts_and_pin_guard (test_compiler_compat.CompilerCompatTests.test_type_system_original_contracts_and_pin_guard) ... ok
+test_changed_artifact_bytes_are_rejected (test_evidence.EvidenceTests.test_changed_artifact_bytes_are_rejected) ... ok
+test_changed_report_bytes_are_rejected_before_source_lookup (test_evidence.EvidenceTests.test_changed_report_bytes_are_rejected_before_source_lookup) ... ok
+test_report_checkout_rejects_wrong_pin_and_dirty_sources (test_evidence.EvidenceTests.test_report_checkout_rejects_wrong_pin_and_dirty_sources) ... ok
+test_symlink_and_empty_bundle_are_rejected (test_evidence.EvidenceTests.test_symlink_and_empty_bundle_are_rejected) ... ok
+test_tampered_bundle_does_not_execute_either_binary_or_retain_receipt (test_evidence.EvidenceTests.test_tampered_bundle_does_not_execute_either_binary_or_retain_receipt) ... ok
+test_missing_macro_exports_are_rejected (test_hol4_inspection.Hol4InspectionTests.test_missing_macro_exports_are_rejected) ... ok
+test_missing_mlsexp_exports_are_rejected (test_hol4_inspection.Hol4InspectionTests.test_missing_mlsexp_exports_are_rejected) ... ok
+test_missing_report_witness_exports_are_rejected (test_hol4_inspection.Hol4InspectionTests.test_missing_report_witness_exports_are_rejected) ... ok
+test_nonexistent_release_theorem_is_rejected (test_hol4_inspection.Hol4InspectionTests.test_nonexistent_release_theorem_is_rejected) ... ok
+test_open_mlsexp_exports_are_rejected (test_hol4_inspection.Hol4InspectionTests.test_open_mlsexp_exports_are_rejected) ... ok
+test_open_release_theorem_is_rejected (test_hol4_inspection.Hol4InspectionTests.test_open_release_theorem_is_rejected) ... ok
+test_commandline_macros_are_audited (test_macro_frontend.MacroFrontendTests.test_commandline_macros_are_audited) ... ok
+test_literals_and_nested_comments_keep_their_meaning (test_macro_frontend.MacroFrontendTests.test_literals_and_nested_comments_keep_their_meaning) ... ok
+test_polyml_universal_runtime_is_rejected (test_macro_frontend.MacroFrontendTests.test_polyml_universal_runtime_is_rejected) ... ok
+test_portable_identifiers_are_not_false_positives (test_macro_frontend.MacroFrontendTests.test_portable_identifiers_are_not_false_positives) ... ok
+test_raw_polyml_runtime_is_rejected (test_macro_frontend.MacroFrontendTests.test_raw_polyml_runtime_is_rejected) ... ok
+test_raw_thread_runtime_is_rejected (test_macro_frontend.MacroFrontendTests.test_raw_thread_runtime_is_rejected) ... ok
+test_string_gap_keeps_literal_and_next_operation_separate (test_macro_frontend.MacroFrontendTests.test_string_gap_keeps_literal_and_next_operation_separate) ... ok
+test_unterminated_comment_and_string_fail_closed (test_macro_frontend.MacroFrontendTests.test_unterminated_comment_and_string_fail_closed) ... ok
+test_exit_zero_with_empty_assembly_is_rejected (test_native_build.NativeBoundaryTests.test_exit_zero_with_empty_assembly_is_rejected) ... ok
+test_foreign_pin_and_version_timeout_are_retained (test_native_build.NativeBoundaryTests.test_foreign_pin_and_version_timeout_are_retained) ... ok
+test_release_digest_rejected_before_extracting_or_running (test_native_build.NativeBoundaryTests.test_release_digest_rejected_before_extracting_or_running) ... ok
+test_real_fixture_executes_and_untranslated_kernel_is_rejected (test_native_build.NativeCompilerTests.test_real_fixture_executes_and_untranslated_kernel_is_rejected) ... ok
+test_checked_compile_refuses_existing_evidence_before_checker_runs (test_pinned_build.PinnedBuildBoundaryTests.test_checked_compile_refuses_existing_evidence_before_checker_runs) ... ok
+test_failed_prerequisite_stops_the_pipeline (test_pinned_build.PinnedBuildBoundaryTests.test_failed_prerequisite_stops_the_pipeline) ... ok
+test_existing_progress_is_preserved (test_tactictoe_cache.CacheConfinementTests.test_existing_progress_is_preserved) ... ok
+test_links_are_rejected (test_tactictoe_cache.CacheConfinementTests.test_links_are_rejected) ... ok
+test_parent_escape_is_rejected (test_tactictoe_cache.CacheConfinementTests.test_parent_escape_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 32 tests in 10.385s
+
+OK

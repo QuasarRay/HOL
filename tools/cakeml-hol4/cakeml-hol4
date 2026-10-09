@@ -3,6 +3,7 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 SELF="$ROOT/tools/cakeml-hol4"
 source "$SELF/hol4_artifacts.sh"
+source "$SELF/hol4_scope.sh"
 OUT="${HOL4_CAKEML_OUT:-$ROOT/.hol4-cakeml}"
 HOLDIR="${HOLDIR:-$ROOT}"
 : "${CAKEMLDIR:?CAKEMLDIR must point to a built CakeML checkout}"
@@ -24,8 +25,11 @@ USAGE
 [[ ${1:-} == build ]] || { usage; exit 64; }
 shift
 (( $# )) || { echo "no SML inputs supplied" >&2; exit 64; }
-mkdir -p "$OUT/lowered" "$OUT/proof"
-rm -f "$OUT/proof/STATUS"
+mkdir -p "$(dirname "$OUT")"
+# Input selection is not a Holmake dependency. Refuse reuse before writing any
+# selected source or status, so a failed run cannot leave a prior success.
+mkdir "$OUT"
+mkdir "$OUT/lowered" "$OUT/proof"
 python3 "$SELF/macro_frontend.py" --root "$ROOT" --out "$OUT/lowered" "$@"
 
 PROGRAM="$OUT/hol4.cml"
@@ -41,9 +45,10 @@ export HOL4_CAKEML_OUTPUT_ASM="$OUT/proof/hol4.S"
 # A fresh build directory prevents an old theorem from certifying new bytes.
 WORK="$(mktemp -d "$OUT/proof/build-XXXXXXXX")"
 cp "$SELF/formal/Hol4CakeCompileScript.sml" "$SELF/formal/Holmakefile" "$WORK/"
+hol4_scope_flags "$HOLDIR/bin/Holmake"
 (
   cd "$WORK"
-  "$HOLDIR/bin/Holmake" --qof --no-cache Hol4CakeCompileTheory.dat
+  "$HOLDIR/bin/Holmake" "${HOL4_SCOPED_FLAGS[@]}" Hol4CakeCompileTheory.dat
 )
 for ext in dat sig sml; do
   cp "$(hol4_artifact_path "$WORK/Hol4CakeCompileTheory.$ext")" "$OUT/proof/"

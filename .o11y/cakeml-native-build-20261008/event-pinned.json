@@ -1,0 +1,12 @@
+{
+  "kind": "verification",
+  "receipt": ".o11y/cakeml-native-build-20261008/verification-pinned.json",
+  "receipt_sha256": "1a5744d1820473bd0cdb6e09d633f43628e441b5a816424b7d9faff91337de87",
+  "outcomes": {
+    "matched_dependency_theorems": 336,
+    "regression_tests": 32,
+    "incomplete_export": "REBUILT",
+    "full_HOL4": "NOT_BUILT"
+  },
+  "claim": "exposed verification outcomes only"
+}

@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "files": {
+    "host-link-recovery-guarded-20261009.json": {
+      "bytes": 3821,
+      "sha256": "bad95c9ff3e8e8374e684f2635e71604a63e8f664e066e808a29d3574132a586"
+    },
+    "event.json": {
+      "bytes": 4720,
+      "sha256": "b586d234726da789c7ec4c6060b337ccc5c44cd74f5fb1808a830e75a8a0926e"
+    },
+    "compiler-resume-tests-matched-20261009.log": {
+      "bytes": 5336,
+      "sha256": "55b3924ffe89888fbd3b269719679d60069c00a07b3fdb6b866fc92a917f31f5"
+    },
+    "resume-attempts.zip": {
+      "bytes": 55703,
+      "sha256": "40d378538eee5cb026356903c4488a75014f57d7364c39614439ecde5574cb8c"
+    },
+    "host-link-recovery-20261009.json": {
+      "bytes": 2029,
+      "sha256": "7f80ad1a4da9839079d49f4fb9235bf4fd7917f51ea79aa096428765604d1bd6"
+    },
+    "verification.json": {
+      "bytes": 3942,
+      "sha256": "1a75ff5d6e263cd703a5738f11b696fdf5a454115222d40dc32e7d11bf37fb29"
+    },
+    "aegis-capture.json": {
+      "bytes": 277,
+      "sha256": "5891c997ffdb24a776a64c2ec2c32d2ae3243c913196a03cb4a96ef99651e562"
+    },
+    "aegis-capture.exit-code": {
+      "bytes": 2,
+      "sha256": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3"
+    }
+  }
+}

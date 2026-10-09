@@ -1,0 +1,19 @@
+{
+  "assembly_sha256": "b5d5e9096b3da11079c39d01f9c3e388f81712c2f9c969dc05057b2c7fe495d1",
+  "binary_sha256": "b088ff1c43598a5a1650afbba4d829f1257f47ae9d7118f62b2567802f9f9208",
+  "claim": "native compilation observation; source preservation and machine-code proofs remain OPEN",
+  "compiler_advertised_commit": "c98da7fc904c5d6d0e9a75a18fac1796a9bfb1f9",
+  "compiler_exit_code": 0,
+  "compiler_sha256": "85fbcdc9264b978abb11691376f752156a2b14587c83cb1cb78d2818970694e1",
+  "ffi_sha256": "e020485bd018e71cee8d3d02ccfa504fb378aa8d710ff0f0c6d52b1d96419335",
+  "inputs": [
+    {
+      "path": "tools/cakeml-hol4/fixtures/native-result.cml",
+      "sha256": "d9e0da3518fcb38c37d50e32dc09342caf9a3ff51c147fc12884987c21922c78"
+    }
+  ],
+  "link_exit_code": 0,
+  "program_sha256": "4b0e536d6e526698432f8f9dfe10f3529863d0fc519790feadda912029ebdb2b",
+  "schema": 1,
+  "status": "NATIVE_COMPILED_UNQUALIFIED"
+}

@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "release": "trindemossen-2",
+  "url": "https://github.com/HOL-Theorem-Prover/HOL/releases/download/trindemossen-2/hol-trindemossen-2.tar.gz",
+  "archive_sha256": "0a2cba21a07b2eac0a9593a7130d47d48715a122ff6df6d0c6858f7190f71f7c",
+  "bytes": 21870373,
+  "entries": 11065,
+  "native_executable_magic_entries": [
+    {
+      "path": "hol-trindemossen-2/tools/win-binaries/minisat.exe",
+      "bytes": 1180703
+    },
+    {
+      "path": "hol-trindemossen-2/tools/win-binaries/zc2hs.exe",
+      "bytes": 1213792
+    },
+    {
+      "path": "hol-trindemossen-2/tools/win-binaries/muddy.so",
+      "bytes": 114688
+    }
+  ],
+  "candidate_runtime_paths": [
+    {
+      "path": "hol-trindemossen-2/tools/Holmake",
+      "bytes": 0,
+      "regular": false
+    },
+    {
+      "path": "hol-trindemossen-2/tools-poly/Holmake",
+      "bytes": 0,
+      "regular": false
+    }
+  ],
+  "claim": "vendor archive byte inspection only; does not qualify an original HOL executable"
+}

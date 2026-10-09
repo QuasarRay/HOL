@@ -1,0 +1,7 @@
+### ERROR: parse error
+Parsing failed at line 1
+
+structure K = struct val x = 1 end; open K; val y = x;
+                                             ^^^^^
+
+Program exited with nonzero exit code.

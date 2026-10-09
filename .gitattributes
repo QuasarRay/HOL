@@ -1,2 +1,5 @@
 *.txt text
 *.md text
+
+# Preserve the exact audited source, generated exports and build-log bytes.
+.o11y/cakeml-native-build-20261008/** -text -whitespace

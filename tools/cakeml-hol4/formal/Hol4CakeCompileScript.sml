@@ -46,7 +46,7 @@ val hol4_cakeml_compiled =
   eval_cake_compile_x64 "hol4_cakeml_" hol4_cakeml_prog_def output_asm
   |> check_thm;
 val _ = if aconv (Thm.concl hol4_cakeml_compiled) boolSyntax.T
-        then raise Fail "compiler returned only TRUTH, not a machine-code theorem"
+        then raise Fail "compiler returned only TRUTH, not a checked compilation instance"
         else ();
 
 fun require_clean_closed name th =

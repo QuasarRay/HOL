@@ -1,0 +1,17 @@
+
+---------------------------------------------------------------------
+     HOL4 [Trindemossen 2 (stdknl, built Thu Oct 08 11:34:41 2026)]
+
+     For introductory HOL help, type: help "hol";
+     To exit type <Control>-D
+---------------------------------------------------------------------
+** Load path (see loadPath variable) now contains 97 entries
+** after consulting Holmakefiles and any holproject.toml
+
+[In non-standard heap: /workspace/scratch/7755a98cf62b/cakeml-compat/misc/cakeml-heap]
+> <<HOL message: inventing new type variable names: 'a>>
+exp1_size
+<<HOL message: inventing new type variable names: 'a>>
+EXP1_SIZE_IS_NOT_A_CONSTANT
+poly: : warning: The type of (it) contains a free type variable. Setting it to a unique
+   monotype.

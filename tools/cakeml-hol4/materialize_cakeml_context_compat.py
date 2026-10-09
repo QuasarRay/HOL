@@ -22,6 +22,8 @@ ASM_LIBRARY = "compiler/encoders/asm/asmLib.sml"
 EVALUATOR_LIBRARY = "cv_translator/eval_cake_compileLib.sml"
 PATTERN_AST = "semantics/astScript.sml"
 MLSEXP = "basis/pure/mlsexpScript.sml"
+PRIMITIVES_PROPS = "semantics/proofs/semanticPrimitivesPropsScript.sml"
+TYPE_SYS_PROPS = "semantics/proofs/typeSysPropsScript.sml"
 COMPUTE_UPDATES = {
     "compiler/parsing/cmlPEGScript.sml": (
         "val _ = (computeLib.the_compset := computeLib.add_thms distinct_ths (!computeLib.the_compset))",
@@ -149,6 +151,123 @@ def compatible_mlsexp_induction(original: str) -> str:
     return original
 
 
+def compatible_pattern_accumulator_proof(original: str) -> str:
+    """Generalize accumulator induction without changing its equation theorem."""
+    start = original.index("\nProof\n", original.index("Theorem pat_bindings_accum:"))
+    end = original.index("\nQED", start)
+    expected = '5d73fc22c1ada5f60bb7375f5105bdd9d11fecbe26a6daeb9669a75f14f85757'
+    if hashlib.sha256(original[start:end].encode()).hexdigest() != expected:
+        raise ValueError("pinned accumulator proof changed; re-audit required")
+    proof = r'''
+Proof
+  match_mp_tac (pat_bindings_ind |> Q.SPECL
+    [‘λp ignored. ∀acc. pat_bindings p acc = pat_bindings p [] ++ acc’,
+     ‘λps ignored. ∀acc. pats_bindings ps acc = pats_bindings ps [] ++ acc’]
+    |> SIMP_RULE std_ss [])
+  \\ rpt conj_tac \\ rpt strip_tac
+  \\ simp_tac std_ss [pat_bindings_def]
+  \\ (fn (asl,w) => once_rewrite_tac (map ASSUME asl) (asl,w))
+  \\ (fn (asl,w) => once_rewrite_tac (map ASSUME asl) (asl,w))
+  \\ simp_tac std_ss [APPEND, GSYM APPEND_ASSOC]'''
+    return original[:start] + proof + original[end:]
+
+
+def compatible_type_system_induction(original: str) -> str:
+    """Restore nested-list induction proof rules; all original contracts remain."""
+    expected = '386db51efb9a74274dd9ecc594eb3f6d6219620ed6b6885ee3b5a723735ca7d6'
+    if hashlib.sha256(original.encode()).hexdigest() != expected:
+        raise ValueError("pinned type-system proof source changed; re-audit required")
+    repairs = (
+        (r'''
+Proof
+ho_match_mp_tac t_induction >>
+srw_tac[][deBruijn_inc_def] >>
+metis_tac []''', r'''
+Proof
+  ‘∀t sk. deBruijn_inc sk 0 t = t’ by
+    (ho_match_mp_tac t_induction >> rw [deBruijn_inc_def] >>
+     fs [MAP_EQ_ID]) >>
+  rw [MAP_EQ_ID]'''),
+        (r'''
+Proof
+ho_match_mp_tac t_induction >>
+srw_tac[][deBruijn_subst_def, deBruijn_inc_def] >>
+full_simp_tac(srw_ss())[EL_MAP, MAP_MAP_o, combinTheory.o_DEF] >>
+srw_tac[][] >>
+full_simp_tac (srw_ss()++ARITH_ss) [deBruijn_subst_def, check_freevars_def] >>
+metis_tac []''', r'''
+Proof
+ho_match_mp_tac t_list_induction >>
+srw_tac[][deBruijn_subst_def, deBruijn_inc_def] >>
+full_simp_tac(srw_ss())[EL_MAP, MAP_MAP_o, combinTheory.o_DEF] >>
+srw_tac[][] >>
+full_simp_tac (srw_ss()++ARITH_ss) [deBruijn_subst_def, check_freevars_def] >>
+metis_tac []'''),
+        (r'''
+Proof
+Induct >>
+srw_tac[][deBruijn_subst_def, LENGTH_COUNT_LIST, EL_MAP, EL_COUNT_LIST,
+    check_freevars_def] >>
+metis_tac []''', r'''
+Proof
+ho_match_mp_tac t_list_induction >>
+srw_tac[][deBruijn_subst_def, LENGTH_COUNT_LIST, EL_MAP, EL_COUNT_LIST,
+    check_freevars_def] >>
+metis_tac []'''),
+        (r'''
+Proof
+ Induct >>
+ rw [] >>
+ ONCE_REWRITE_TAC [type_p_cases] >>
+ simp [] >>
+ metis_tac []''', r'''
+Proof
+ ho_match_mp_tac pat_list_induction >>
+ rw [] >>
+ ONCE_REWRITE_TAC [type_p_cases] >>
+ simp [] >>
+ metis_tac []'''),
+        (r'''
+Proof
+ho_match_mp_tac t_induction >>
+srw_tac[][deBruijn_subst_def, deBruijn_inc_def] >>
+full_simp_tac (srw_ss()++ARITH_ss) [] >>
+metis_tac []''', r'''
+Proof
+ho_match_mp_tac t_list_induction >>
+srw_tac[][deBruijn_subst_def, deBruijn_inc_def] >>
+full_simp_tac (srw_ss()++ARITH_ss) [] >>
+metis_tac []'''),
+    )
+    for before, after in repairs:
+        if original.count(before) != 1:
+            raise ValueError("type-system proof anchor changed; re-audit required")
+        original = original.replace(before, after)
+    split = original.index("Theorem deBruijn_subst2:")
+    original = original[:split] + original[split:].replace(
+        "ho_match_mp_tac t_induction", "ho_match_mp_tac t_list_induction")
+    original = original.replace('Theorem deBruijn_subst2:', r'''val t_list_induction = prove (
+  “∀P Q.
+    (∀v. P (Tvar v)) ∧ (∀n. P (Tvar_db n)) ∧
+    (∀ts tn. Q ts ⇒ P (Tapp ts tn)) ∧ Q [] ∧
+    (∀t ts. P t ∧ Q ts ⇒ Q (t::ts)) ⇒
+    (∀t. P t) ∧ (∀ts. Q ts)”,
+  rpt gen_tac >> strip_tac >>
+  ‘∀ts. (∀t. MEM t ts ⇒ P t) ⇒ Q ts’ by
+    (Induct >> rw [] >> metis_tac []) >>
+  ‘∀t. P t’ by
+    (ho_match_mp_tac t_induction >> rw [] >> metis_tac []) >>
+  metis_tac []);
+
+''' + 'Theorem deBruijn_subst2:', 1)
+    original = original.replace('Theorem type_p_tenvV_indep:', r'''val pat_list_induction = pat_bindings_ind |> Q.SPECL
+  [‘λp ignored. P p’, ‘λps ignored. Q ps’]
+  |> SIMP_RULE std_ss [] |> GEN_ALL;
+
+''' + 'Theorem type_p_tenvV_indep:', 1)
+    return original
+
+
 def adaptations(source: Path) -> dict[str, str]:
     result = {PREAMBLE: compatible_preamble((source / PREAMBLE).read_text())}
     result[ASM_LIBRARY] = compatible_asm_library((source / ASM_LIBRARY).read_text())
@@ -166,6 +285,10 @@ def adaptations(source: Path) -> dict[str, str]:
     result[PATTERN_AST] = compatible_pattern_termination(text)
     text = result.get(MLSEXP, (source / MLSEXP).read_text())
     result[MLSEXP] = compatible_mlsexp_induction(text)
+    text = result.get(PRIMITIVES_PROPS, (source / PRIMITIVES_PROPS).read_text())
+    result[PRIMITIVES_PROPS] = compatible_pattern_accumulator_proof(text)
+    text = (source / TYPE_SYS_PROPS).read_text()
+    result[TYPE_SYS_PROPS] = compatible_type_system_induction(text)
     return result
 
 
